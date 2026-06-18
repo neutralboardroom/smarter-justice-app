@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 220" role="img" aria-labelledby="title desc">
+<title id="title">Smarter Justice logo</title><desc id="desc">A balanced shield, pathway, and checkmark mark beside Smarter Justice wordmark.</desc>
+<defs><linearGradient id="g" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#123d5f"/><stop offset="1" stop-color="#0f7d7a"/></linearGradient></defs>
+<rect x="18" y="18" width="184" height="184" rx="44" fill="url(#g)"/>
+<path d="M110 42c31 19 61 24 82 26-1 61-27 101-82 126C55 169 29 129 28 68c21-2 51-7 82-26Z" fill="#f7fbfb" opacity=".96"/>
+<path d="M70 116l28 28 58-72" fill="none" stroke="#0f7d7a" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M72 78h78" stroke="#123d5f" stroke-width="10" stroke-linecap="round" opacity=".9"/>
+<path d="M72 101h48" stroke="#123d5f" stroke-width="10" stroke-linecap="round" opacity=".65"/>
+<text x="236" y="104" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="62" font-weight="800" fill="#123d5f">Smarter</text>
+<text x="236" y="166" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="62" font-weight="800" fill="#0f7d7a">Justice</text>
+<text x="540" y="166" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="22" font-weight="600" fill="#5d6b75">start • organize • review</text>
+</svg>
