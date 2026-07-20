@@ -1,0 +1,15 @@
+# Smarter Justice
+
+Smarter Justice is an umbrella access platform, public professional directory, and private portfolio coordinator for focused justice micro-portals. It is not a law firm, tax firm, accounting firm, insurer, or government website and does not guarantee outcomes.
+
+Version 1.6.1 strengthens a controlled New York City founding-professional marketplace. The directory combines curated source-tracked Downtown Brooklyn profiles with live approved New York attorney-registration lookup. Official and seeded records are unclaimed unless control is verified and do not imply specialty, participation, membership, consultation availability, endorsement, quality, or trust.
+
+One central Smarter Justice professional or firm account can manage approved profiles, firm seats, practice areas, locations, services, and participation across multiple micro-portals. A claim request never grants edit rights; owner approval is required. Credential verification, payment, agreements, service activation, availability, and consultation eligibility remain separate.
+
+Founding membership is modeled at $15 monthly or $150 annually. Firm plans use per-professional seats and transparent volume discounts. Stripe activation occurs only after a verified Checkout session or signed webhook confirms payment. Missing credentials leave membership inactive. Payment and sponsorship never control AI risk analysis, warnings, credentials, ratings, or neutral eligibility.
+
+The private Control Center tracks real and planned portals, package roles, versions, releases, tests, roadmaps, risks, blockers, source records, professional accounts, claims, outreach, memberships, revenue programs, and generated continuation prompts. The versioned Master Rules and Suggestions Pack is checksummed, embedded in prompts, recorded in manifests, and available to approved portals through a protected API.
+
+The operating model uses one Smarter Justice Master Coordination track and separate portal development chats. Shared standards are strong defaults, not inflexible rules. Documented specialty adaptations are permitted when beneficial and may not weaken privacy, security, source verification, consent, truthful language, professional independence, or compliance.
+
+Version 1.6.0 preserves those public systems and adds fail-closed production persistence, owner and professional account security, paused-by-default professional pilot limits, credential and complaint procedures, and a Cross-Portal Capability Registry. The pilot remains closed until production and first-cohort evidence are complete.

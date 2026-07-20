@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Community Partner Tools | Smarter Justice</title>
+  <meta name="description" content="Private Community Partner dashboard, tracked start links, QR code, and flyer tools.">
+  <meta property="og:title" content="Community Partner Tools | Smarter Justice">
+  <meta property="og:description" content="Private Community Partner dashboard, tracked start links, QR code, and flyer tools.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#123d5f">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="/favicon.svg">
+  <link rel="stylesheet" href="/styles.css">
+  <script defer src="/app.js"></script>
+  <script defer src="/live-chat.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="Smarter Justice home"><img src="/logo.svg" alt=""></a>
+    <button class="nav-toggle" aria-label="Open menu" data-nav-toggle>Menu</button>
+    <nav class="top-nav" data-nav><a href="/">Start Free</a><a href="/portals.html">Portals</a><a href="/upload-notice.html">Upload Notice</a><a href="/practice-areas.html">Practice Areas</a><a href="/professionals.html">Find Professionals</a><a href="/pricing.html">Pricing</a><a href="/how-it-works.html">How It Works</a><a href="/dashboard.html">Dashboard</a><a href="/contact.html">Contact</a><a class="mobile-only-nav" href="/professional-membership.html">For Professionals</a></nav>
+    <button class="language-toggle" data-lang-toggle>Español</button>
+  </header>
+  <main id="main"><section class="page-hero"><p class="eyebrow">Community Partner Tools</p><h1>Private partner dashboard, tracked start links, QR code, and flyer tools.</h1><p class="lead">Use the Community Partner code and private dashboard access key to see referral totals. The dashboard never shows user names, email addresses, uploaded documents, or issue topics. Community Partners do not give legal advice, promise outcomes, or complete forms for users.</p></section><section class="section split"><div class="card"><h2>Open a private partner dashboard</h2><form id="partnerLookupForm"><label>Community Partner code<input name="code" id="partnerCodeInput" autocomplete="off" placeholder="Example: COMMUNITY-1A2B3C4D"></label><label>Private dashboard access key<input name="access" id="partnerAccessInput" type="password" autocomplete="off" placeholder="Use the key from your private dashboard link"></label><button class="primary">Open private dashboard</button></form><p class="fine-print">For privacy, a partner code by itself cannot open referral activity. Keep the private dashboard link or access key secure.</p><div id="partnerDashboard" class="result-panel" hidden></div></div><div class="flyer-preview" id="flyerPreview"><h2>Flyer preview</h2><p class="eyebrow">Scan to start privately</p><img id="qrPreview" alt="Tracked code" src="/api/qr?data=SmarterJustice"><p>Smarter Justice helps people ask a free starting question, upload a notice or document, and get a private continuation link.</p><p class="fine-print">Private support service. Not a law firm. Not the government. No guaranteed outcomes.</p></div></section></main>
+  <footer class="site-footer">
+    <div><img src="/logo.svg" alt="" class="footer-logo"><p><strong>Smarter Justice</strong><br>Private support service. Not a law firm. Not the government. No guaranteed outcomes.</p></div>
+    <div class="footer-links"><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/disclaimer.html">Disclaimer</a><a href="/security.html">Security</a><a href="/forms-roadmap.html">Forms Roadmap</a><a href="/review-delivery.html">Review Delivery</a></div>
+  </footer>
+</body>
+</html>

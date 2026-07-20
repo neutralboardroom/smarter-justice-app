@@ -1,0 +1,96 @@
+services:
+  - type: web
+    name: smarter-justice-v1
+    env: node
+    plan: free
+    buildCommand: npm ci --omit=dev
+    startCommand: npm start
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: NODE_VERSION
+        value: 22
+      - key: OWNER_NOTIFICATION_EMAIL
+        sync: false
+      - key: OWNER_ACCOUNT_NAME
+        value: "Smarter Justice Owner"
+      - key: OWNER_ACCOUNT_EMAIL
+        sync: false
+      - key: OWNER_ACCOUNT_PASSWORD
+        sync: false
+      - key: OWNER_SESSION_HOURS
+        value: "8"
+      - key: ALLOW_LEGACY_OWNER_TOKEN
+        value: "false"
+      - key: APP_BASE_URL
+        sync: false
+      - key: OWNER_CONTROL_CENTER_TOKEN
+        sync: false
+      - key: PORTAL_RULES_API_TOKEN
+        sync: false
+      - key: ADMIN_TOKEN
+        sync: false
+      - key: ALLOW_ADMIN_TOKEN_QUERY
+        value: "false"
+      - key: STAFF_SIGNUP_CODE
+        sync: false
+      - key: SESSION_SECRET
+        sync: false
+      - key: PROFESSIONAL_SESSION_DAYS
+        value: "14"
+      - key: DATABASE_URL
+        sync: false
+      - key: PG_CONNECT_TIMEOUT_MS
+        value: "5000"
+      - key: SMARTER_JUSTICE_STORAGE_DIR
+        sync: false
+      - key: RENDER_DISK_MOUNT_PATH
+        sync: false
+      - key: SMTP_HOST
+        sync: false
+      - key: SMTP_PORT
+        value: "587"
+      - key: SMTP_USER
+        sync: false
+      - key: SMTP_PASS
+        sync: false
+      - key: SMTP_FROM
+        sync: false
+      - key: TAWK_PROPERTY_ID
+        sync: false
+      - key: TAWK_WIDGET_ID
+        sync: false
+      - key: STRIPE_SECRET_KEY
+        sync: false
+      - key: STRIPE_WEBHOOK_SECRET
+        sync: false
+      - key: STRIPE_WEBHOOK_TOLERANCE_SECONDS
+        value: "300"
+      - key: STRIPE_STARTER_REVIEW_PRICE_ID
+        sync: false
+      - key: STRIPE_NOTICE_REVIEW_PRICE_ID
+        sync: false
+      - key: STRIPE_FORM_PREP_PRICE_ID
+        sync: false
+      - key: STRIPE_TAX_REVIEW_PRICE_ID
+        sync: false
+      - key: STRIPE_ATTORNEY_REVIEW_PRICE_ID
+        sync: false
+      - key: STRIPE_PROFESSIONAL_REVIEW_PRICE_ID
+        sync: false
+      - key: MAX_UPLOADS_PER_REQUEST
+        sync: false
+      - key: MAX_UPLOAD_BYTES
+        sync: false
+
+# Optional AI vars can be added in Render after first deploy:
+# AI_REVIEW_ENABLED=false
+# AI_PROVIDER_ORDER=openai,anthropic,google,xai
+# OPENAI_API_KEY=
+# OPENAI_MODEL=
+# ANTHROPIC_API_KEY=
+# ANTHROPIC_MODEL=
+# GOOGLE_API_KEY=
+# GEMINI_MODEL=
+# XAI_API_KEY=
+# XAI_MODEL=

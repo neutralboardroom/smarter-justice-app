@@ -1,0 +1,26 @@
+{
+  "name": "smarter-justice-v1",
+  "version": "1.6.1",
+  "description": "Smarter Justice v1.6.1 - pre-deployment brand-header correction over the controlled founding-professional launch-readiness foundation.",
+  "main": "server.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "test": "node tests/catalog.test.js && node tests/static-checks.test.js && node tests/public-ux.test.js && node tests/storage-readiness.test.js && node tests/smoke.test.js && node tests/marketplace.test.js && node tests/security-readiness.test.js",
+    "test:catalog": "node tests/catalog.test.js",
+    "test:static": "node tests/static-checks.test.js",
+    "test:smoke": "node tests/smoke.test.js",
+    "zip:check": "node scripts/zip-integrity-check.js",
+    "test:marketplace": "node tests/marketplace.test.js",
+    "governance:export": "node scripts/export-governance-artifacts.js",
+    "test:public-ux": "node tests/public-ux.test.js",
+    "test:security": "node tests/security-readiness.test.js",
+    "test:storage": "node tests/storage-readiness.test.js"
+  },
+  "dependencies": {
+    "nodemailer": "^9.0.3",
+    "pg": "^8.13.1"
+  }
+}

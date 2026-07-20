@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="noindex,nofollow,noarchive" name="robots"/>
+<title>Private Owner Control Center | Smarter Justice</title>
+<meta content="Private owner-only Smarter Justice portal portfolio, build, readiness, and continuation-prompt control center." name="description"/>
+<meta content="#123d5f" name="theme-color"/>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/styles.css" rel="stylesheet"/>
+<script defer="" src="/app.js"></script>
+</head>
+<body class="control-center-page">
+<a class="skip" href="#main">Skip to content</a>
+<header class="private-header">
+<a class="brand" href="/" aria-label="Smarter Justice home"><img src="/logo.svg" alt=""></a>
+<div><strong>Private Owner Control Center</strong><br/><small>Portfolio coordination — not customer-facing</small></div>
+</header>
+<main class="control-center-shell" id="main">
+<section class="page-hero private-hero">
+<p class="eyebrow">Owner-only ecosystem management</p>
+<h1>Coordinate every portal without making every portal identical.</h1>
+<p class="lead">Track builds, versions, releases, priorities, readiness, decisions, risks, specialty requirements, and justified adaptations across the Smarter Justice family. Generate governed portal-specific handoffs while preserving the shared system and each portal’s separate legal-specialty needs.</p>
+</section>
+<section class="section narrow" id="controlCenterLoginSection">
+<form class="card" id="controlCenterTokenForm">
+<h2>Open the private Control Center</h2>
+<div class="form-grid two">
+<label>Owner email<input autocomplete="username" name="email" type="email"/></label>
+<label>Owner password<input autocomplete="current-password" name="password" type="password"/></label>
+<label>Authenticator or recovery code<input autocomplete="one-time-code" inputmode="numeric" name="mfaCode" placeholder="Required after MFA is enabled"/></label>
+</div>
+<button class="primary">Sign in securely</button>
+<p class="fine-print">Production owner access uses a short-lived secure session. Authenticator MFA and one-time recovery codes can be enabled after the first sign-in.</p><p class="fine-print">The owner account uses a separate owner credential from staff administration. Do not reuse staff credentials for owner access.</p>
+<details class="details-card"><summary>Temporary development token access</summary><label>Legacy owner token<input autocomplete="off" name="token" type="password"/></label><p class="fine-print">This migration path is disabled by default in production and should not replace the owner account.</p></details>
+<div aria-live="polite" id="controlCenterLoginResult"></div>
+</form>
+</section>
+<section class="section control-center-workspace" hidden="" id="controlCenterWorkspace">
+<div class="control-owner-actions card">
+<div><p class="eyebrow">Master coordination</p><h2>Portfolio tools</h2><p>Use the master prompt for ecosystem decisions. Use each portal prompt for detailed specialty builds.</p></div>
+<div class="card-actions">
+<button class="secondary" id="generateMasterCoordinationPrompt" type="button">Generate master prompt</button>
+<button class="secondary" id="exportControlCenterPortfolio" type="button">Export portfolio JSON</button>
+<button class="text-button" id="closeControlCenter" type="button">Close private session</button>
+</div>
+</div>
+<details class="card control-add-portal">
+<summary>Add a private planned portal record</summary>
+<p class="fine-print">This adds a portal to the owner portfolio only. It does not add a customer-facing card, domain, route, or live-portal claim.</p>
+<form id="controlCenterAddPortalForm">
+<div class="form-grid two">
+<label>Portal name<input name="name" placeholder="Focused portal name" required=""/></label>
+<label>Private portal identifier<input name="slug" placeholder="auto-created-from-name"/></label>
+<label>Brand/family description<input name="brandFamily" placeholder="Focused specialty portal"/></label>
+<label>Priority<select name="priority"><option value="high">High</option><option selected="" value="medium">Medium</option><option value="low">Low</option><option value="backlog">Backlog</option></select></label>
+</div>
+<label>Initial build target<textarea name="currentBuildTarget" placeholder="What this portal should become and the first material build" rows="3"></textarea></label>
+<label>Initial portal-specific requirements — one per line<textarea name="portalSpecificRequirements" rows="4"></textarea></label>
+<div class="control-form-actions"><button class="secondary">Add private record</button><span aria-live="polite" class="fine-print" id="controlCenterAddPortalResult"></span></div>
+</form>
+</details>
+<div class="control-summary-grid" id="controlCenterSummary"></div>
+<section class="card system-readiness-card" id="controlCenterSystemReadiness"></section>
+<section class="card" id="controlCenterSecurity"></section>
+<section class="card governance-card" id="controlCenterGovernance"></section>
+<section class="card capability-registry-card" id="controlCenterCapabilityRegistry"></section>
+<section class="card rules-pack-card" id="controlCenterRulesPack">
+<div class="section-heading">
+<div><p class="eyebrow">Versioned ecosystem governance</p><h2>Master Rules and Suggestions Pack</h2></div>
+<div class="card-actions">
+<button class="secondary" id="viewMasterRulesMarkdown" type="button">View current rules</button>
+<button class="secondary" id="downloadMasterRulesJson" type="button">Download JSON</button>
+</div>
+</div>
+<div id="controlCenterRulesPackSummary"><p>Loading the governing rules-pack record...</p></div>
+</section>
+<section class="card release-quality-card">
+  <p class="eyebrow">Required before every portal release</p>
+  <h2>Public experience and build-handoff checklist</h2>
+  <div class="cards four">
+    <article><h3>Customer language</h3><p>Review navigation, headings, buttons, forms, prices, status labels, legal pages, empty states, errors, and messages. Keep staff, builder, technical, and readiness terminology on protected surfaces.</p></article>
+    <article><h3>Phone, tablet, and accessibility</h3><p>Check primary starting, upload, account, payment, profile, and dashboard paths at phone, tablet, and desktop widths. Confirm labels, autofill, useful mobile keyboards, touch targets, keyboard use, error summaries, and no clipped required actions.</p></article>
+    <article><h3>Discovery and connected funnel</h3><p>Verify useful default result sizes, official-source pagination, clear and shareable public filters, source-grounded profile metadata, search-to-claim continuity, onboarding progress, firm pricing explanations, and payment-versus-eligibility separation.</p></article>
+    <article><h3>Complete handoff</h3><p>Record the current ZIP, version, tests, rules-pack version and checksum, portal decisions, specialty adaptations, open risks, launch blockers, and next build before generating a replacement continuation prompt.</p></article>
+  </div>
+  <p class="fine-print">Each portal record now tracks public language, mobile devices, accessibility, signup and conversion, and prompt/build-handoff readiness separately.</p>
+</section>
+<section class="marketplace-owner-section" id="professionalMarketplaceSection">
+<div class="card marketplace-heading-card">
+<div class="section-heading">
+<div><p class="eyebrow">NYC founding-professional launch and centralized profile management</p><h2>Professional Network, Membership, and Revenue Center</h2></div>
+<div class="card-actions"><button class="secondary" id="refreshProfessionalMarketplace" type="button">Refresh</button><button class="secondary" id="exportProfessionalMarketplace" type="button">Export marketplace JSON</button></div>
+</div>
+<p>Manage source-tracked professional and firm records, fixed-fee membership eligibility, services, consultation readiness, claim and correction requests, and the phased revenue architecture. Payment never creates verification, endorsement, ratings, or substantive AI preference.</p>
+<div class="control-summary-grid marketplace-summary-grid" id="professionalMarketplaceSummary"></div>
+<div id="professionalMarketplaceGovernance"></div>
+</div>
+<details class="card marketplace-panel" id="professionalAccountsPanel" open="">
+<summary>Central professional and firm accounts</summary>
+<p class="fine-print">One Smarter Justice account can manage multiple approved professional profiles, firm seats, practice areas, and micro-portal participation. A claim request remains read-only until owner approval; credential verification, paid membership, services, and consultation eligibility remain separate.</p>
+<div class="control-summary-grid marketplace-summary-grid" id="professionalAccountSummary"></div>
+<div class="marketplace-record-list" id="professionalAccountList"></div>
+</details>
+<details class="card marketplace-panel" id="professionalPilotControlsPanel" open="">
+<summary>Controlled founding-pilot gates and professional safeguards</summary>
+<p class="fine-print">Keep enrollment paused until production persistence, owner MFA, Stripe test evidence, credential procedures, and first-cohort approval are complete. These limits are operational controls, not marketing claims.</p>
+<div class="marketplace-two-column">
+<form class="marketplace-item" id="professionalPilotControlsForm">
+<h3>Pilot capacity and enrollment state</h3>
+<div class="form-grid two">
+<label>Pilot state<select name="status"><option value="paused">Paused</option><option value="pilot-open">Controlled pilot open</option><option value="active">Active</option><option value="closed">Closed</option></select></label>
+<label>Maximum active individual memberships<input name="maxActiveProfessionalMemberships" min="0" type="number"></label>
+<label>Maximum active firm memberships<input name="maxActiveFirmMemberships" min="0" type="number"></label>
+<label>Maximum total firm seats<input name="maxTotalFirmSeats" min="0" type="number"></label>
+<label><input name="ownerApprovalRequired" type="checkbox"> Require owner approval before activation</label>
+</div>
+<label>Operational notes<textarea name="notes" rows="4"></textarea></label>
+<div class="control-form-actions"><button class="secondary">Save Pilot Controls</button><span class="fine-print" id="professionalPilotControlsResult" aria-live="polite"></span></div>
+</form>
+<div class="marketplace-item"><h3>Current capacity</h3><div id="professionalPilotCapacity"></div><p class="fine-print">Capacity limits do not replace credential verification, jurisdiction, service, conflicts, membership, suspension, or owner-approval requirements.</p></div>
+</div>
+<div class="marketplace-two-column">
+<form class="marketplace-item" id="professionalCredentialVerificationForm"><h3>Record a credential review</h3><label>Professional<select name="professionalId" id="credentialProfessionalId" required></select></label><div class="form-grid two"><label>Credential type<input name="credentialType" required placeholder="Attorney registration"></label><label>Verification outcome<select name="status"><option value="active">Active and verified</option><option value="pending">Pending</option><option value="unverified">Unverified</option><option value="inactive">Inactive</option><option value="expired">Expired</option><option value="suspended">Suspended</option><option value="revoked">Revoked</option></select></label><label>Jurisdiction<input name="jurisdiction"></label><label>Official source<input name="sourceName"></label></div><label>Source URL<input name="verificationSource" type="url"></label><label>Review notes<textarea name="notes" rows="3"></textarea></label><div class="control-form-actions"><button class="secondary">Save Credential Review</button><span class="fine-print" id="professionalCredentialVerificationResult" aria-live="polite"></span></div></form>
+<form class="marketplace-item" id="professionalComplaintForm"><h3>Record a complaint or compliance concern</h3><label>Professional<select name="professionalId" id="complaintProfessionalId" required></select></label><div class="form-grid two"><label>Category<input name="category" required placeholder="Identity, conduct, privacy, billing"></label><label>Severity<select name="severity"><option value="low">Low</option><option value="medium">Medium</option><option value="high">High</option><option value="critical">Critical</option></select></label></div><label>Private summary<textarea name="summary" rows="4" required></textarea></label><label><input name="suspendImmediately" type="checkbox"> Suspend marketplace eligibility immediately</label><div class="control-form-actions"><button class="secondary">Record Concern</button><span class="fine-print" id="professionalComplaintResult" aria-live="polite"></span></div></form>
+</div>
+</details>
+<details class="card marketplace-panel" open="">
+<summary>Revenue architecture and membership plans</summary>
+<p class="fine-print">Founding-pilot pricing is configured for testing. Live collection still requires Stripe credentials, verified webhook handling, final membership terms, refund/cancellation rules, and jurisdiction-specific legal/ethics review.</p>
+<div class="marketplace-two-column">
+<div><h3>Membership plans</h3><div class="marketplace-stack" id="professionalMembershipPlans"></div></div>
+<div><h3>Revenue programs</h3><div class="marketplace-stack" id="professionalRevenuePrograms"></div></div>
+</div>
+</details>
+<details class="card marketplace-panel" id="professionalOutreachPanel" open="">
+<summary>NYC founding-member outreach, firm discounts, and mobile enrollment</summary>
+<p class="fine-print">Create private outreach campaigns, generate mobile/QR enrollment links, estimate transparent multi-professional firm discounts, and track visits, follow-up, potential seats, and projected recurring revenue. Membership activates only after verified Stripe payment and all independent eligibility gates. No plan guarantees appointments, users, ranking, or outcomes.</p>
+<div class="marketplace-two-column">
+<form class="marketplace-item" id="createOutreachCampaignForm">
+<h3>Create an outreach campaign</h3>
+<div class="form-grid two">
+<label>Campaign name<input name="name" required="" value="NYC Founding Professional Pilot"/></label>
+<label>Public offer name<input name="publicName" value="NYC Founding Professional Membership"/></label>
+<label>Campaign code<input name="campaignCode" placeholder="auto-generated"/></label>
+<label>Status<select id="outreachCampaignStatus" name="status"></select></label>
+<label>Market<input name="market" value="New York City"/></label>
+<label>Channel<select id="outreachCampaignChannel" name="channel"></select></label>
+<label>Building<input name="building"/></label>
+<label>Address<input name="address"/></label>
+<label>Borough<input name="borough"/></label>
+<label>Individual offer<select id="outreachIndividualPlan" name="offerPlanId"></select></label>
+<label>Firm offer<select id="outreachFirmPlan" name="firmOfferPlanId"></select></label>
+</div>
+<label>Private campaign notes<textarea name="notes" rows="3"></textarea></label>
+<div class="control-form-actions"><button class="secondary">Create campaign</button><span aria-live="polite" class="fine-print" id="createOutreachCampaignResult"></span></div>
+</form>
+<form class="marketplace-item" id="firmDiscountQuoteForm">
+<h3>Firm membership quote</h3>
+<label>Firm plan<select id="firmQuotePlan" name="planId"></select></label>
+<label>Covered attorneys or professionals<input max="10000" min="1" name="seatCount" type="number" value="5"/></label>
+<button class="secondary">Calculate transparent pilot quote</button>
+<div class="result-panel" hidden="" id="firmDiscountQuoteResult"></div>
+<h4>Current suggested discount tiers</h4>
+<div class="marketplace-stack" id="firmVolumeDiscountTiers"></div>
+</form>
+</div>
+<form class="marketplace-item" id="createOutreachProspectForm">
+<h3>Add an office, firm, or professional to the private sales pipeline</h3>
+<div class="form-grid three">
+<label>Campaign<select id="outreachProspectCampaign" name="campaignId"></select></label>
+<label>Building<input name="building"/></label>
+<label>Address<input name="address"/></label>
+<label>Floor<input name="floor"/></label>
+<label>Firm<input name="firmName"/></label>
+<label>Professional or contact name<input name="contactName" required=""/></label>
+<label>Professional category<select id="outreachProspectType" name="professionalType"></select></label>
+<label>Email<input name="email" type="email"/></label>
+<label>Phone<input name="phone"/></label>
+<label>Potential seats<input min="1" name="potentialSeats" type="number" value="1"/></label>
+<label>Proposed plan<select id="outreachProspectPlan" name="proposalPlanId"></select></label>
+<label>Status<select id="outreachProspectStatus" name="status"></select></label>
+<label>Next follow-up<input name="nextFollowUpAt" type="datetime-local"/></label>
+</div>
+<label>Practice areas — one per line<textarea name="practiceAreas" rows="3"></textarea></label>
+<label>Objections or questions — one per line<textarea name="objections" rows="3"></textarea></label>
+<label>Private notes<textarea name="notes" rows="3"></textarea></label>
+<div class="control-form-actions"><button class="secondary">Add pipeline record</button><span aria-live="polite" class="fine-print" id="createOutreachProspectResult"></span></div>
+</form>
+<h3>Campaigns and enrollment links</h3><div class="marketplace-record-list" id="professionalOutreachCampaigns"></div>
+<h3>Professional and firm outreach pipeline</h3><div class="marketplace-record-list" id="professionalOutreachProspects"></div>
+</details>
+<details class="card marketplace-panel" open="">
+<summary>Official New York attorney source</summary>
+<p class="fine-print">Search the official NYS Attorney Registrations dataset without scraping a public search page. Previewed records are not saved automatically. Imported records remain unclaimed, nonparticipating, and ineligible for consultations. Registration data alone does not establish practice area or focused-portal suitability.</p>
+<form id="nysAttorneySourceSearchForm">
+<div class="form-grid three">
+<label>Registration number<input inputmode="numeric" name="registrationNumber"/></label>
+<label>First name<input name="firstName"/></label>
+<label>Last name<input name="lastName"/></label>
+<label>County<input name="county"/></label>
+<label>City<input name="city"/></label>
+<label>Status contains<input name="status" placeholder="Currently registered"/></label>
+<label>Preview limit<input max="100" min="1" name="limit" type="number" value="25"/></label>
+</div>
+<div class="control-form-actions"><button class="secondary">Search official source</button><span aria-live="polite" class="fine-print" id="nysAttorneySourceSearchResult"></span></div>
+</form>
+<div class="marketplace-record-list" id="nysAttorneySourcePreview"></div>
+<form hidden="" id="nysAttorneySourceImportForm">
+<input name="registrationNumbers" type="hidden"/>
+<div class="form-grid two">
+<label>Internal portal candidates<select id="nysAttorneyImportPortals" multiple="" name="portalEligibility" size="6"></select><small>General Start is safest until a reliable source supports specialty mapping.</small></label>
+<label>Source-supported practice areas — one per line<textarea name="practiceAreas" placeholder="Leave blank unless supported by another reliable public source or professional confirmation." rows="6"></textarea></label>
+</div>
+<div class="notice"><strong>Import boundary</strong><p>Selected records will be saved as unclaimed public-source records. They will not be published, bookable, verified, participating, sponsored, or described as suitable for a matter.</p></div>
+<div class="control-form-actions"><button class="secondary">Import selected unclaimed profiles</button><span aria-live="polite" class="fine-print" id="nysAttorneySourceImportResult"></span></div>
+</form>
+</details>
+<details class="card marketplace-panel">
+<summary>Seed a public-information professional profile</summary>
+<p class="fine-print">Create only conservative, source-tracked records from lawful public information. The result remains unclaimed, nonparticipating, and ineligible for appointments until every marketplace gate is satisfied.</p>
+<form id="seedProfessionalProfileForm">
+<div class="form-grid three">
+<label>Professional display name<input name="displayName" required=""/></label>
+<label>Professional category<select id="seedProfessionalType" name="professionalType"></select></label>
+<label>Public website<input name="website" placeholder="https://..." type="url"/></label>
+<label>Eligible portal records<select id="seedProfessionalPortal" multiple="" name="portalEligibility" required="" size="5"></select></label>
+<label>Jurisdictions — one per line<textarea name="jurisdictions" placeholder="New York" required="" rows="5"></textarea></label>
+<label>Practice areas — one per line<textarea name="practiceAreas" placeholder="Estate planning" required="" rows="5"></textarea></label>
+</div>
+<fieldset class="marketplace-fieldset"><legend>Public source record</legend><div class="form-grid three">
+<label>Source name<input name="sourceName" placeholder="Official state bar directory" required=""/></label>
+<label>Source type<input name="sourceType" placeholder="official licensing directory" required=""/></label>
+<label>Source URL<input name="verificationSource" placeholder="https://..." required="" type="url"/></label>
+<label>Authority level<select id="seedSourceAuthority" name="authorityLevel"></select></label>
+<label>Review status<select id="seedSourceReviewStatus" name="reviewStatus"></select></label>
+<label>Facts supported — one per line<textarea name="factsSupported" placeholder="Name
+License status
+Jurisdiction" required="" rows="4"></textarea></label>
+</div><label>Terms, permitted-use, or source limitations<textarea name="termsOrUseNotes" placeholder="Record any source-use limits or review needed before publication." rows="3"></textarea></label></fieldset>
+<label>Private owner notes<textarea name="ownerNotes" rows="3"></textarea></label>
+<div class="control-form-actions"><button class="secondary">Create unclaimed source-tracked record</button><span aria-live="polite" class="fine-print" id="seedProfessionalProfileResult"></span></div>
+</form>
+</details>
+<details class="card marketplace-panel">
+<summary>Add a private firm record</summary>
+<form id="createProfessionalFirmForm">
+<div class="form-grid three">
+<label>Firm name<input name="name" required=""/></label>
+<label>Website<input name="website" type="url"/></label>
+<label>Estimated covered professionals<input min="1" name="seatCount" type="number" value="1"/></label>
+<label>Billing administrator<input name="billingAdministratorName"/></label>
+<label>Billing administrator email<input name="billingAdministratorEmail" type="email"/></label>
+<label>Portals<select id="createFirmPortals" multiple="" name="portalEligibility" size="5"></select></label>
+</div>
+<label>Jurisdictions — one per line<textarea name="jurisdictions" rows="3"></textarea></label>
+<label>Private notes<textarea name="notes" rows="3"></textarea></label>
+<div class="control-form-actions"><button class="secondary">Create private firm record</button><span aria-live="polite" class="fine-print" id="createProfessionalFirmResult"></span></div>
+</form>
+</details>
+<details class="card marketplace-panel" open="">
+<summary>Professional and firm records</summary>
+<div class="marketplace-record-list" id="professionalFirmList"></div>
+<div class="marketplace-record-list" id="professionalRecordList"></div>
+</details>
+<details class="card marketplace-panel">
+<summary>Profile claims, corrections, removals, and other requests</summary>
+<form id="createProfileRequestForm">
+<div class="form-grid three">
+<label>Professional or firm<select id="profileRequestProfileId" name="profileId" required=""></select></label>
+<label>Request type<select id="profileRequestType" name="requestType" required=""></select></label>
+<label>Requester name<input name="requesterName" required=""/></label>
+<label>Requester email<input name="requesterEmail" required="" type="email"/></label>
+<label>Relationship<input name="requesterRelationship" placeholder="Professional, firm administrator, authorized agent"/></label>
+</div>
+<label>Request details<textarea name="details" required="" rows="4"></textarea></label>
+<label>Evidence URLs — one per line<textarea name="evidenceUrls" rows="3"></textarea></label>
+<div class="control-form-actions"><button class="secondary">Record request</button><span aria-live="polite" class="fine-print" id="createProfileRequestResult"></span></div>
+</form>
+<div class="marketplace-record-list" id="professionalProfileRequests"></div>
+</details>
+<details class="card marketplace-panel">
+<summary>Portal-specific public-source plans</summary>
+<div class="marketplace-record-list" id="professionalSourcePlans"></div>
+</details>
+</section>
+<div class="control-toolbar card">
+<label>Filter portals<input id="controlCenterSearch" placeholder="Search portal, version, milestone, decision, risk, adaptation, or note" type="search"/></label>
+<label>Portfolio status<select id="controlCenterStatusFilter"><option value="">All statuses</option></select></label>
+<label>Priority<select id="controlCenterPriorityFilter"><option value="">All priorities</option></select></label>
+</div>
+<div class="control-portal-list" id="controlCenterPortalList"></div>
+<section class="card prompt-workspace" hidden="" id="controlCenterArtifactPanel">
+<div class="section-heading">
+<div><p class="eyebrow" id="controlCenterArtifactKind">Governed artifact</p><h2 id="controlCenterArtifactTitle">Portal continuation prompt</h2></div>
+<div class="card-actions"><button class="secondary" id="copyControlCenterArtifact" type="button">Copy</button><button class="secondary" id="downloadControlCenterArtifact" type="button">Download</button></div>
+</div>
+<p class="fine-print" id="controlCenterArtifactHelp">A generated portal prompt is a governed starting point. Before treating it as the final handoff, preserve and merge the complete latest portal-specific decisions, version history, code findings, forms, workflows, risks, and unresolved work.</p>
+<label for="controlCenterArtifactText">Generated prompt, manifest, rules, or portfolio export</label><textarea id="controlCenterArtifactText" readonly="" rows="30"></textarea>
+<p aria-live="polite" class="fine-print" id="controlCenterArtifactResult"></p>
+</section>
+</section>
+</main>
+<footer class="private-footer"><p>Private Smarter Justice owner workspace. Do not enter passwords, API keys, payment secrets, or other credentials into portfolio notes.</p><p class="fine-print platform-boundary">Smarter Justice is a private support service, not a law firm and not the government. No clients, appointments, professional results, or legal outcomes are guaranteed.</p></footer>
+</body>
+</html>

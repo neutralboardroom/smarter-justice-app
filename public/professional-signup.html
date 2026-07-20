@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="noindex,nofollow,noarchive" name="robots"/>
+<title>Create Your Professional Account | Smarter Justice</title>
+<meta content="Create one Smarter Justice professional or firm account, request control of your profile, and continue to founding-member checkout." name="description"/>
+<meta content="#123d5f" name="theme-color"/>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/styles.css" rel="stylesheet"/>
+<script defer="" src="/app.js"></script>
+<script defer="" src="/professional.js"></script>
+</head>
+<body class="professional-signup-page">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+<a class="brand" href="/" aria-label="Smarter Justice home"><img src="/logo.svg" alt=""></a>
+<button aria-expanded="false" aria-label="Open menu" class="nav-toggle" data-nav-toggle="" type="button">Menu</button>
+<nav class="top-nav" data-nav=""><a href="/professional-membership.html">Membership</a><a href="/professionals.html">Find My Profile</a><a href="/professional-login.html">Sign In</a></nav>
+</header>
+<main id="main">
+<section class="page-hero professional-signup-hero">
+<p class="eyebrow">NYC founding-professional enrollment</p>
+<h1>Create one account for your profile, firm, and practice areas.</h1>
+<p class="lead">Complete the information below, request control of any existing public profile, and continue to secure online membership checkout when payment is available.</p>
+<div class="signup-assurance-row"><span>Individual: $15/month or $150/year</span><span>Firm: per-professional pricing with volume discounts</span><span>No guaranteed clients or appointments</span></div>
+</section>
+<section class="section professional-signup-layout">
+<aside class="card signup-side-card">
+<p class="eyebrow">What happens next</p>
+<ol class="numbered-list"><li>Your central account is created.</li><li>An existing profile claim is recorded, if selected.</li><li>You continue to membership checkout or review your dashboard.</li><li>Profile control and credentials are reviewed separately.</li></ol>
+<p class="fine-print">Already have an account? <a href="/professional-login.html">Sign in here</a>.</p>
+</aside>
+<div class="card signup-main-card">
+<form id="professionalSignupForm" novalidate="">
+<input id="claimProfessionalId" name="claimProfessionalId" type="hidden"/><input id="claimFirmId" name="claimFirmId" type="hidden"/>
+<input id="officialRegistrationNumber" name="registrationNumber" type="hidden"/>
+<input id="professionalCampaignCode" name="campaignCode" type="hidden" value="NYC-FOUNDING-WEB"/>
+<fieldset class="signup-fieldset">
+<legend>1. Choose your account</legend>
+<div aria-label="Account type" class="account-type-cards" role="radiogroup">
+<label class="account-type-card"><input checked="" name="accountType" type="radio" value="individual"/><span><strong>Individual professional</strong><small>For one attorney, CPA, enrolled agent, accountant, or other approved professional.</small></span></label>
+<label class="account-type-card"><input name="accountType" type="radio" value="firm"/><span><strong>Law firm or professional firm</strong><small>For central billing and multiple professional profiles.</small></span></label>
+</div>
+</fieldset>
+<fieldset class="signup-fieldset">
+<legend>2. Account and public profile information</legend>
+<div class="form-grid two">
+<label>Your name<input autocomplete="name" name="displayName" placeholder="Name of the account contact" required=""/></label>
+<label>Email address<input autocomplete="email" name="email" required="" type="email"/></label>
+<label>Create a password<input aria-describedby="passwordHelp" autocomplete="new-password" minlength="10" name="password" required="" type="password"/><small id="passwordHelp">Use at least 10 characters.</small></label>
+<label>Confirm password<input autocomplete="new-password" minlength="10" name="confirmPassword" required="" type="password"/></label>
+<label>Phone number<input autocomplete="tel" inputmode="tel" name="phone" type="tel"/></label>
+</div>
+<div data-individual-fields="">
+<div class="form-grid two">
+<label>First name<input autocomplete="given-name" name="firstName"/></label>
+<label>Last name<input autocomplete="family-name" name="lastName"/></label>
+<label>Professional category<select name="professionalType"><option value="attorney">Attorney</option><option value="tax attorney">Tax attorney</option><option value="CPA">CPA</option><option value="enrolled agent">Enrolled agent</option><option value="accountant">Accountant</option><option value="registered patent attorney">Registered patent attorney</option><option value="registered patent agent">Registered patent agent</option><option value="other approved professional">Other approved professional</option></select></label>
+<label>Professional website<input autocomplete="url" name="website" placeholder="https://" type="url"/></label>
+</div>
+</div>
+<div data-firm-fields="" hidden="">
+<div class="form-grid two">
+<label>Firm name<input autocomplete="organization" name="firmName"/></label>
+<label>Number of professional seats<input aria-describedby="seatHelp" inputmode="numeric" max="10000" min="1" name="seatCount" type="number" value="2"/><small id="seatHelp">Volume discounts are calculated automatically.</small></label>
+<label>Firm website<input autocomplete="url" name="firmWebsite" placeholder="https://" type="url"/></label>
+</div>
+</div>
+<label>Primary office address<input autocomplete="street-address" name="officeLocation" placeholder="26 Court Street, Suite…, Brooklyn, NY"/></label>
+<label>Practice areas<textarea name="practiceAreas" placeholder="Examples: Divorce and family law
+Criminal defense
+Personal injury" rows="4"></textarea><small>Enter one practice area per line. You can update this later.</small></label>
+<fieldset class="portal-choice-fieldset">
+<legend>Where would you like your profile to appear?</legend>
+<p class="fine-print">Choose the Smarter Justice areas that fit your work. Final publication remains subject to profile and credential review.</p>
+<div class="checkbox-grid">
+<label class="check"><input checked="" name="portalEligibility" type="checkbox" value="general-smarter-justice-start"/> General Smarter Justice directory</label>
+<label class="check"><input name="portalEligibility" type="checkbox" value="justice-tax-solutions"/> Tax help</label>
+<label class="check"><input name="portalEligibility" type="checkbox" value="estate-planning-probate"/> Estate planning and probate</label>
+<label class="check"><input name="portalEligibility" type="checkbox" value="business-launch-desk"/> Business launch and compliance</label>
+<label class="check"><input name="portalEligibility" type="checkbox" value="contract-creator"/> Contracts and business documents</label>
+<label class="check"><input name="portalEligibility" type="checkbox" value="bankruptcy-debt-help"/> Bankruptcy and debt</label>
+<label class="check"><input name="portalEligibility" type="checkbox" value="disability-benefits-help"/> Disability and benefits</label>
+<label class="check"><input name="portalEligibility" type="checkbox" value="housing-tenant-help"/> Housing and landlord/tenant</label>
+<label class="check"><input name="portalEligibility" type="checkbox" value="accident-injury-help"/> Accident and injury</label>
+<label class="check"><input name="portalEligibility" type="checkbox" value="name-records-employment"/> Employment, records, and related help</label>
+<label class="check"><input name="portalEligibility" type="checkbox" value="intellectual-property-desk"/> Intellectual property</label>
+</div>
+</fieldset>
+</fieldset>
+<fieldset class="signup-fieldset">
+<legend>3. Membership preference</legend>
+<div aria-label="Billing preference" class="billing-choice-cards" role="radiogroup">
+<label class="account-type-card"><input checked="" name="billingCadence" type="radio" value="monthly"/><span><strong>Monthly</strong><small>$15 per individual professional or covered firm seat before volume discounts.</small></span></label>
+<label class="account-type-card"><input name="billingCadence" type="radio" value="annual"/><span><strong>Annual</strong><small>$150 per individual professional or covered firm seat before volume discounts.</small></span></label>
+</div>
+<label class="check checkout-preference"><input checked="" name="startMembership" type="checkbox"/> Continue directly to secure membership checkout after creating my account.</label>
+</fieldset>
+<fieldset class="signup-fieldset terms-fieldset">
+<legend>Agreements</legend>
+<label class="check"><input name="acceptTerms" required="" type="checkbox"/> I accept the <a href="/professional-membership-terms.html" rel="noopener" target="_blank">Professional Membership Terms</a>, understand that membership does not guarantee clients, appointments, ranking, revenue, or outcomes, and agree to maintain accurate professional information.</label>
+<label class="check"><input name="acceptPrivacy" required="" type="checkbox"/> I accept the <a href="/privacy.html" rel="noopener" target="_blank">Privacy Notice</a> and authorize Smarter Justice to maintain this account and related verification records.</label>
+</fieldset>
+<div class="sticky-signup-action">
+<button class="primary" type="submit">Create Account and Continue</button>
+<span class="fine-print">Profile claims remain pending until identity and authority review is completed.</span>
+</div>
+</form>
+<div aria-live="polite" hidden="" id="professionalSignupResult"></div>
+</div>
+</section>
+</main>
+<footer class="site-footer"><p><a href="/professional-membership-terms.html">Membership Terms</a> · <a href="/privacy.html">Privacy</a> · <a href="/professional-login.html">Professional Sign In</a></p><p class="fine-print">Smarter Justice is a private support service and professional marketplace, not a law firm and not the government.</p></footer>
+</body>
+</html>

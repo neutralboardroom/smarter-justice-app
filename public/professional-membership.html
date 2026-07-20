@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Join the Smarter Justice Professional Network</title>
+  <meta name="description" content="Create one professional or firm account, claim your public profile, manage multiple practice areas, and join the NYC founding network from $15 per month.">
+  <meta property="og:title" content="Join the Smarter Justice Professional Network">
+  <meta property="og:description" content="One central profile and membership for attorneys, law firms, and approved tax professionals across the Smarter Justice portal family.">
+  <meta name="theme-color" content="#123d5f">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+  <script defer src="/app.js"></script>
+  <script defer src="/professional.js"></script>
+</head>
+<body class="professional-membership-page">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="Smarter Justice home"><img src="/logo.svg" alt=""></a>
+    <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" data-nav-toggle>Menu</button>
+    <nav class="top-nav" data-nav><a href="/professionals.html">Find Professionals</a><a href="/professional-membership.html" aria-current="page">For Professionals</a><a href="/professional-login.html">Sign In</a><a href="/contact.html">Contact</a></nav>
+    <a class="header-cta" href="/professional-signup.html">Join Now</a>
+  </header>
+  <main id="main">
+    <section class="page-hero professional-member-hero professional-sales-hero">
+      <div class="professional-sales-copy">
+        <p class="eyebrow">New York City founding-professional network</p>
+        <h1>Claim your profile. Reach more people. Manage everything in one place.</h1>
+        <p class="lead">Create one Smarter Justice account for your professional profile, firm seats, practice areas, and participation across our focused legal and tax portals.</p>
+        <div class="founding-price-line"><strong>$15 per month</strong><span>or $150 per year for an individual founding membership</span></div>
+        <div class="hero-actions">
+          <a class="primary link-btn" href="/professional-signup.html?campaign=NYC-FOUNDING-WEB">Create My Account</a>
+          <a class="secondary link-btn" href="/professionals.html">Find and Claim My Profile</a>
+        </div>
+        <p class="fine-print">No long application is required to create an account. Profile control and professional credentials are reviewed separately before participation features are activated.</p>
+      </div>
+      <aside class="card professional-hero-summary" aria-label="Founding membership highlights">
+        <p class="eyebrow">Founding member benefits</p>
+        <h2>Start with the essentials</h2>
+        <ul class="check-list">
+          <li>One central professional or firm account</li>
+          <li>Claim and improve your public profile</li>
+          <li>Appear across relevant Smarter Justice practice areas</li>
+          <li>Firm billing with per-professional discounts</li>
+          <li>Eligibility for future free and paid consultations after verification</li>
+          <li>Early access to scheduling, organized prospective-client information, review, and practice-growth tools as they become available</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section class="section narrow professional-steps-section">
+      <div class="section-heading"><p class="eyebrow">Simple enrollment</p><h2>Join in three steps</h2><p>You can begin on your phone while meeting with a Smarter Justice representative or complete it later from your office.</p></div>
+      <div class="steps professional-join-steps">
+        <div><span>1</span><h3>Create one account</h3><p>Choose an individual or firm account and add your basic professional information.</p></div>
+        <div><span>2</span><h3>Claim or create profiles</h3><p>Find an existing public profile or add the professionals covered by your firm account.</p></div>
+        <div><span>3</span><h3>Choose membership</h3><p>Continue to secure online checkout, then complete profile and credential review.</p></div>
+      </div>
+    </section>
+
+    <section class="section light-section">
+      <div class="section-heading"><p class="eyebrow">Founding pricing</p><h2>Low-cost entry for individual professionals and firms</h2><p>The founding offer is designed to make early participation practical while the network and service tools continue to grow.</p></div>
+      <div class="pricing-grid professional-pricing-grid">
+        <article class="price-card">
+          <p class="eyebrow">Public listing</p><h3>Basic Profile</h3><p class="price">Free</p>
+          <ul><li>Public facts supported by listed sources</li><li>Claim and correction request</li><li>Clear claimed or unclaimed label</li><li>No appointment or service eligibility</li></ul>
+          <a class="secondary button-link" href="/professionals.html">Search Profiles</a>
+        </article>
+        <article class="price-card featured">
+          <p class="eyebrow">NYC founding rate</p><h3>Individual Professional</h3><p class="price">$15<span>/month</span></p><p class="annual-note">or $150 annually</p>
+          <ul><li>Central professional dashboard</li><li>Enhanced profile after verification</li><li>Multiple practice areas and portal listings</li><li>Potential consultation participation after all requirements are met</li><li>Future scheduling, client-information, review, and analytics tools</li></ul>
+          <a class="primary button-link" href="/professional-signup.html?account=individual&campaign=NYC-FOUNDING-WEB">Join as an Individual</a>
+        </article>
+        <article class="price-card">
+          <p class="eyebrow">Law firms and professional firms</p><h3>Firm Membership</h3><p class="price">$15<span>/seat/month</span></p>
+          <p class="annual-note">Volume discounts apply automatically</p>
+          <ul><li>One firm administrator account</li><li>Individual professional profiles</li><li>Central billing and seat management</li><li>10% off 2–4 seats</li><li>15% off 5–9 seats</li><li>20% off 10–24 seats</li><li>25% founding discount for 25+ seats, subject to review</li></ul>
+          <a class="primary button-link" href="/professional-signup.html?account=firm&campaign=NYC-FOUNDING-WEB">Create firm account</a>
+        </article>
+      </div>
+    </section>
+
+
+    <section class="section narrow firm-savings-section">
+      <div class="card firm-savings-card">
+        <div>
+          <p class="eyebrow">Firm founding-rate estimate</p>
+          <h2>See the estimated cost for your firm.</h2>
+          <p>Enter the number of participating attorneys or professionals. The estimate applies the current founding volume discounts automatically.</p>
+        </div>
+        <form id="firmSavingsCalculator" class="firm-savings-form">
+          <div class="form-grid two">
+            <label>Professional seats<input id="firmSavingsSeats" name="seats" type="number" min="2" max="500" value="5" inputmode="numeric"></label>
+            <label>Billing frequency<select id="firmSavingsCadence" name="cadence"><option value="monthly">Monthly</option><option value="annual">Annual</option></select></label>
+          </div>
+          <div id="firmSavingsResult" class="firm-savings-result" aria-live="polite"></div>
+          <a id="firmSavingsSignupLink" class="primary button-link" href="/professional-signup.html?account=firm&campaign=NYC-FOUNDING-WEB&seats=5">Start Firm Enrollment</a>
+          <p class="fine-print">This is an estimate based on the current founding rates. The final recurring amount, seats, discount, and renewal terms are shown before checkout.</p>
+        </form>
+      </div>
+    </section>
+
+    <section class="section narrow">
+      <div class="split professional-member-grid">
+        <div class="card">
+          <p class="eyebrow">What works now</p>
+          <h2>A real account, profile, and membership system</h2>
+          <ul class="check-list"><li>Create a secure central account</li><li>Find an existing profile or request a new one</li><li>Manage approved public profile information</li><li>Create and manage a firm roster</li><li>Select monthly or annual membership</li><li>Complete secure online membership payment when checkout is available</li></ul>
+        </div>
+        <div class="card">
+          <p class="eyebrow">What comes next</p>
+          <h2>More ways to connect and grow</h2>
+          <ul class="check-list"><li>Published free and paid consultation availability</li><li>Structured, user-authorized matter summaries</li><li>Document and form review services</li><li>Appointment reminders and calendar connections</li><li>Profile, appointment-request, and conversion analytics</li><li>Firm team tools and practice-management integrations</li></ul>
+          <p class="fine-print">Planned tools are not presented as active until they are configured and tested.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section soft">
+      <div class="section-heading"><p class="eyebrow">Why professionals may join</p><h2>More useful than an ordinary directory listing</h2></div>
+      <div class="cards three">
+        <article><h3>Organized prospective clients</h3><p>Smarter Justice is designed to help users identify their issue, gather facts, and organize documents before they request professional help.</p></article>
+        <article><h3>One profile across specialties</h3><p>Manage multiple practice areas and relevant Smarter Justice portals through one central account instead of maintaining a separate account for every specialty.</p></article>
+        <article><h3>Clear professional boundaries</h3><p>You decide which services you offer and whether to accept an engagement. Membership does not create a professional relationship or interfere with independent judgment.</p></article>
+      </div>
+    </section>
+
+    <section class="section narrow">
+      <div class="card founding-location-card">
+        <div><p class="eyebrow">Downtown Brooklyn launch</p><h2>Starting around 26 Court Street</h2><p>Smarter Justice is beginning with public-information profiles near the Brooklyn courts, then expanding across Brooklyn, Manhattan, and the Bronx. Find your profile, request control, and become part of the founding network.</p></div>
+        <div class="button-row"><a class="primary button-link" href="/professionals.html?q=26%20Court">Browse 26 Court Street Profiles</a><a class="secondary button-link" href="/professional-signup.html?campaign=NYC-FOUNDING-26-COURT">Create an Account</a></div>
+      </div>
+    </section>
+
+    <section class="section trust-band professional-trust-band">
+      <h2>Membership is platform access—not a promise of clients or results.</h2>
+      <p>Payment does not improve credential status, ratings, substantive guidance, or placement in neutral search results. Professional identity, credentials, service scope, jurisdiction, availability, and platform approval are reviewed separately.</p>
+      <p class="fine-print"><strong>Membership never buys endorsement.</strong> It does not create a recommendation, guarantee clients, or make a professional eligible for appointments until all separate requirements are satisfied.</p>
+    </section>
+  </main>
+  <section class="footer-cta no-print"><div><strong>Ready to become a founding member?</strong><span>Create your account now or find your existing profile first.</span></div><div><a class="primary" href="/professional-signup.html">Join Now</a><a class="secondary" href="/professionals.html">Find My Profile</a></div></section>
+  <footer class="site-footer">
+    <div><img src="/logo.svg" alt="" class="footer-logo"><p><strong>Smarter Justice Professional Network</strong><br>One central account for professional profiles and firm participation across the Smarter Justice portal family. Smarter Justice is a private support service, not a law firm and not the government.</p></div>
+    <div class="footer-links"><a href="/professional-membership-terms.html">Membership Terms</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Platform Terms</a><a href="/disclaimer.html">Disclaimer</a><a href="/professional-login.html">Professional Sign In</a></div>
+  </footer>
+</body>
+</html>

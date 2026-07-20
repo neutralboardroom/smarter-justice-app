@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://smarterjustice.com/schemas/portal-manifest.schema.json",
+  "title": "Smarter Justice Portal Manifest",
+  "type": "object",
+  "required": [
+    "portalId",
+    "portalName",
+    "currentDevelopmentVersion",
+    "productionStatus",
+    "healthEndpoint",
+    "sharedStandardVersion"
+  ],
+  "properties": {
+    "portalId": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 120
+    },
+    "portalName": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 160
+    },
+    "role": {
+      "type": "string"
+    },
+    "currentDevelopmentVersion": {
+      "type": "string"
+    },
+    "productionVersion": {
+      "type": "string"
+    },
+    "productionStatus": {
+      "enum": [
+        "live",
+        "pilot",
+        "testing",
+        "development",
+        "planned",
+        "paused",
+        "archived"
+      ]
+    },
+    "productionUrl": {
+      "type": "string"
+    },
+    "stagingUrl": {
+      "type": "string"
+    },
+    "repository": {
+      "type": "string"
+    },
+    "deploymentService": {
+      "type": "string"
+    },
+    "healthEndpoint": {
+      "type": "string"
+    },
+    "sharedStandardVersion": {
+      "type": "string"
+    },
+    "customerFacing": {
+      "type": "boolean"
+    },
+    "privateControlCenter": {
+      "type": "boolean"
+    },
+    "continuationPromptStandard": {
+      "type": "string"
+    },
+    "sharedPlatformStandard": {
+      "type": "string"
+    },
+    "releaseNotes": {
+      "type": "string"
+    },
+    "roadmap": {
+      "type": "string"
+    },
+    "lastAuditDate": {
+      "type": "string"
+    },
+    "capabilities": {
+      "type": "object",
+      "additionalProperties": {
+        "type": [
+          "boolean",
+          "string",
+          "number"
+        ]
+      }
+    },
+    "latestZipName": {
+      "type": "string"
+    },
+    "masterCoordinationStandard": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}
