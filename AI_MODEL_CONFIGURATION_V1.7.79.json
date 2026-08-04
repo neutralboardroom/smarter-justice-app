@@ -1,0 +1,28 @@
+{
+  "schema": "smarter-justice-openai-model-configuration",
+  "configurationId": "sj-openai-model-config-v1.0.0",
+  "releaseVersion": "1.7.79",
+  "vendor": "openai",
+  "api": "responses",
+  "apiPath": "/v1/responses",
+  "defaultModelAlias": "gpt-5-mini",
+  "environmentOverride": "OPENAI_MODEL",
+  "allowlist": [
+    "gpt-5-mini"
+  ],
+  "snapshotState": "ALIAS_REQUIRES_EVENT_AND_PERIODIC_REGRESSION",
+  "promptRegistry": "AI_TOOL_AND_PROMPT_REGISTRY_V1.7.79.json",
+  "structuredOutputs": "strict json_schema",
+  "storeResponses": false,
+  "backgroundMode": false,
+  "maxOutputTokens": 900,
+  "timeoutMs": 12000,
+  "costPolicy": {
+    "dailyRequestHardStop": 250,
+    "monthlyEstimatedUsdHardStop": 100,
+    "anonymousRequestsDefault": false
+  },
+  "evaluationState": "MOCK_AND_SYNTHETIC_ACCEPTED_LIVE_SMOKE_PENDING",
+  "rollback": "AI disabled; deterministic rules-only organization",
+  "deploymentAuthorized": false
+}

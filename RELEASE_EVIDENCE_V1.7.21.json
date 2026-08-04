@@ -1,0 +1,12 @@
+{
+  "version": "1.7.21",
+  "status": "working release candidate",
+  "deployed": false,
+  "productionLastVerifiedVersion": "1.6.1",
+  "activationGatesChanged": false,
+  "sensitiveTrafficApproved": false,
+  "professionalPaidPilot": "paused",
+  "publicPaidHumanReview": "paused",
+  "primaryChange": "Private cross-sector command-center architecture and portable owner specification",
+  "standaloneCommandCenterBuilt": false
+}

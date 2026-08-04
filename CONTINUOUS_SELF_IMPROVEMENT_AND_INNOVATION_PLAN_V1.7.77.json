@@ -1,0 +1,112 @@
+{
+  "schema_id": "SJP-LMP-CONTINUOUS-SELF-IMPROVEMENT-AND-INNOVATION-PLAN-2026-08-03-V1",
+  "product": {
+    "name": "Smarter Justice",
+    "starting_version": "1.7.76",
+    "starting_artifact_sha256": "000b3eaadb6ef0b933f038284940e3d680e6fcf46f0394909dc74fa663bf4df4",
+    "target_version": "1.7.77"
+  },
+  "core_owner_mission_sha256": "1e4efe3dd80a4c3ed6d03aabd1414c60fb91d747b463405c52bf8a0902556d0b",
+  "governing_packet": {
+    "id": "SJP-LMP-UNIVERSAL-ONE-STEP-2026-08-03-V12-CONTINUOUS-SELF-IMPROVEMENT",
+    "sha256": "37d90cab818b71613c388bf195b08d129eb569dd183de5358f32dd335975a1d5"
+  },
+  "independent_opportunity_discovery": {
+    "exact_artifact_findings": [
+      "v1.7.76 could create and export a valid local handoff pack but could not safely inspect a previously downloaded pack.",
+      "The release report linked evidence by filename but did not verify that all claimed files and test commands existed or that the durable backlog remained complete."
+    ],
+    "public_user_journey_findings": [
+      "A user returning to a downloaded pack had no local integrity, expiry, or destination-compatibility check."
+    ],
+    "professional_staff_owner_findings": [
+      "Owner visibility showed dual-track status but not whether evidence references and carry-forward obligations were complete."
+    ],
+    "source_currentness_findings": [],
+    "defects_and_friction": [
+      "A malformed, expired, mismatched, or extended JSON file could not be distinguished locally from a valid handoff pack.",
+      "A future builder could accidentally drop unresolved backlog items or cite missing tests without the dual-track schema itself detecting it."
+    ],
+    "missing_capabilities": [
+      "Device-only local handoff inspector",
+      "Release evidence and backlog coverage gate"
+    ],
+    "accessibility_privacy_security_data_findings": [
+      "Local file inspection can improve continuity without network transfer or persistent storage when unknown fields and oversize files fail closed."
+    ],
+    "deployment_and_operations_findings": [
+      "Both improvements are dependency-independent and require no provider, credential, deployment, or production access."
+    ],
+    "prior_release_and_deferral_findings": [
+      "v1.7.76 deferred a portal import adapter because product-local acceptance was absent; a central local inspector is a smaller safe slice that does not claim portal acceptance.",
+      "v1.7.76 preserved the 21-item backlog only after a regression exposed accidental collapse; that lesson should become an executable invariant."
+    ],
+    "relevant_external_developments_when_used": []
+  },
+  "creative_new_capability_candidates": [
+    {
+      "id": "DEVICE_ONLY_HANDOFF_IMPORT_INSPECTOR",
+      "selected": true,
+      "reason": "Completes the next safe local continuity slice without server or portal transfer."
+    },
+    {
+      "id": "RELEASE_EVIDENCE_COVERAGE_GATE",
+      "selected": true,
+      "reason": "Makes affected-file, test, limitation, source identity, and backlog-preservation evidence fail closed."
+    },
+    {
+      "id": "DESTINATION_PORTAL_IMPORT_ADAPTER",
+      "selected": false,
+      "reason": "Still requires exact product-local artifact, schema, privacy, and owner acceptance."
+    },
+    {
+      "id": "AUTOMATIC_DESTINATION_OPEN_OR_TRANSFER",
+      "selected": false,
+      "reason": "Would violate the preserved no-automatic-transfer boundary."
+    }
+  ],
+  "product_platform_track": {
+    "primary_objective": "Let a user safely inspect a minimal handoff pack locally before deciding what to do next.",
+    "connected_objectives": [
+      "Strict local JSON parsing and size limit",
+      "Exact field and integrity validation",
+      "Expiry and future-time rejection",
+      "Central destination compatibility guidance",
+      "Accessible status and reset controls",
+      "No network or persistent storage"
+    ],
+    "candidate_waves": [
+      "Contract and deterministic inspector",
+      "Public local-file inspection experience",
+      "Protected owner visibility"
+    ],
+    "acceptance_evidence": [
+      "tests/journey-handoff-inspector-v1777.test.js"
+    ]
+  },
+  "builder_prompt_system_track": {
+    "prompt_and_continuation_findings": [
+      "Dual-track evidence needed executable coverage validation, not only structural validation."
+    ],
+    "schema_and_test_findings": [
+      "Affected files and tests could be named without existence or package-script verification."
+    ],
+    "automation_and_recovery_findings": [
+      "A deterministic gate can preserve all prior unresolved backlog IDs and exact source identity before packaging."
+    ],
+    "evidence_and_reporting_findings": [
+      "Prior limitations and learning must be explicitly reviewed and linked to current evidence."
+    ],
+    "candidate_waves": [
+      "Coverage contract and validator",
+      "Backlog and limitation preservation",
+      "Protected owner view and release test"
+    ],
+    "acceptance_evidence": [
+      "tests/release-evidence-coverage-v1777.test.js"
+    ]
+  },
+  "protected_owner_decisions_required": [],
+  "strongest_justified_set_selected": true,
+  "hard_constraints_preserved": true
+}

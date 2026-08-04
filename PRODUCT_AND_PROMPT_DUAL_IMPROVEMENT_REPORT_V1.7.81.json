@@ -1,0 +1,116 @@
+{
+  "schema_id": "SJP-LMP-PRODUCT-AND-PROMPT-DUAL-IMPROVEMENT-REPORT-2026-08-03-V1",
+  "product": {
+    "name": "Smarter Justice",
+    "version": "1.7.81",
+    "artifact_sha256": "DETACHED_FINAL_NOT_YET_BUILT"
+  },
+  "release_classification": "ORDINARY_MATERIAL_DUAL_TRACK_RELEASE",
+  "independently_discovered_opportunities": [
+    "Reconcile multiple exact receipts without silently promoting inconsistent dependencies.",
+    "Bind the immutable final archive only after packaging through a detached, reproducible, cross-checked delivery receipt."
+  ],
+  "creative_new_capability_candidates": [
+    "Batch evidence workspace",
+    "All-or-nothing promotion preview",
+    "Detached final delivery receipt",
+    "Seventeen-field cross-receipt verifier"
+  ],
+  "product_platform_improvements": [
+    {
+      "category": "PRODUCT_PLATFORM",
+      "problem": "v1.7.80 could validate only one receipt at a time and did not detect conflicts or replay across a proposed launch evidence set.",
+      "implementation": "Added an owner-only batch evidence workspace that validates up to 32 exact nonsecret receipts, rejects duplicate IDs/digests, component conflicts, mixed environments, stale or tampered members, and emits a deterministic all-or-nothing promotion transaction preview. It never persists receipts, calls providers, mutates the register, infers owner GO, writes, deploys, or activates production.",
+      "before_state": "Owner review required separate receipt previews with no batch-level reconciliation.",
+      "after_state": "A complete proposed evidence set can be checked for internal consistency and reviewed as one non-applicable transaction preview.",
+      "affected_files_records_or_systems": [
+        "V14_EVIDENCE_BATCH_WORKSPACE_CONTRACT_V1.7.81.json",
+        "lib/v14EvidenceBatchWorkspace.js",
+        "lib/v14LiveEvidenceConnector.js",
+        "server.js",
+        "tests/v14-evidence-batch-workspace-v1781.test.js"
+      ],
+      "tests_and_acceptance_evidence": [
+        "tests/v14-evidence-batch-workspace-v1781.test.js",
+        "tests/v14-live-evidence-connector-v1780.test.js"
+      ],
+      "benefit": "Reduces owner review effort while preventing partial, conflicting, replayed, or cross-environment evidence from appearing promotable.",
+      "limitations": [
+        "No evidence is persisted or applied; exact external receipts remain unavailable."
+      ]
+    }
+  ],
+  "builder_prompt_system_improvements": [
+    {
+      "category": "BUILDER_PROMPT_SYSTEM",
+      "problem": "v1.7.80 required manual post-package reporting and did not provide one deterministic detached final delivery receipt with cross-receipt verification.",
+      "implementation": "Added a post-package generator and verifier that compares two immutable final archives and binds final SHA-256/size to accepted candidate identity, source artifact, package/lock/SBOM, V14 and legacy inventories, owner receipt, and test-log evidence across seventeen required fields. The receipt is written outside the final ZIP.",
+      "before_state": "Final identity was reported manually after packaging.",
+      "after_state": "One deterministic command creates a detached receipt and fails closed on twin mismatch, candidate/final reuse, or any embedded evidence mismatch.",
+      "affected_files_or_artifacts": [
+        "V14_DETACHED_FINAL_DELIVERY_RECEIPT_CONTRACT_V1.7.81.json",
+        "lib/v14DetachedDeliveryReceipt.js",
+        "scripts/generate-detached-delivery-receipt.js",
+        "tests/v14-detached-delivery-receipt-v1781.test.js",
+        "package.json"
+      ],
+      "tests_and_acceptance_evidence": [
+        "tests/v14-detached-delivery-receipt-v1781.test.js",
+        "tests/v14-release-receipt-automation-v1780.test.js",
+        "tests/detached-final-identity-v1767.test.js"
+      ],
+      "future_build_benefit": "Makes delivered outer-archive identity reproducible and auditable without self-reference.",
+      "limitations": [
+        "Receipt generation can occur only after candidate acceptance, source sealing, and immutable final packaging."
+      ]
+    }
+  ],
+  "accepted_innovation_waves": [
+    "Batch evidence reconciliation workspace",
+    "Detached final delivery receipt automation"
+  ],
+  "reverted_or_rejected_innovation_waves": [
+    "Automatic batch application was rejected.",
+    "Receipt persistence, provider access, partial promotion, writes, deployment, and production activation were rejected."
+  ],
+  "lessons_carried_forward": [
+    "Single-receipt validation is insufficient for a multi-dependency launch decision.",
+    "Final archive identity must remain detached but should be automatically cross-checked against embedded evidence."
+  ],
+  "prior_limitations_reviewed": [
+    {
+      "id": "live-provider-and-deployment",
+      "source": "v1.7.80",
+      "disposition": "Preserved; connector validates only supplied evidence and performs no external action.",
+      "evidence": "V14_LIVE_EVIDENCE_CONNECTOR_CONTRACT_V1.7.81.json"
+    },
+    {
+      "id": "portal-compatibility",
+      "source": "v1.7.80",
+      "disposition": "Preserved; no portal receipt is invented.",
+      "evidence": "OWNER_RECEIPT.txt"
+    },
+    {
+      "id": "sensitive-document-ai",
+      "source": "v1.7.80",
+      "disposition": "Remains CLOSED_BY_DESIGN.",
+      "evidence": "V14_UNIFIED_LIVE_OPERATIONS_REGISTER_V1.7.81.json"
+    }
+  ],
+  "deferred_opportunities_with_exact_reasons": [
+    "External adapters require exact canonical identities and protected read-only access.",
+    "Applying a valid batch requires a separate authenticated, audited, reversible owner authorization transaction.",
+    "Live OpenAI smoke and portal compatibility require protected deployment and exact portal artifacts."
+  ],
+  "next_innovation_opportunities": [
+    "Read-only GitHub and Render adapters after exact identities are supplied.",
+    "Audited single-use owner authorization for applying a validated promotion transaction.",
+    "Publish the detached delivery receipt beside the final artifact without modifying either file."
+  ],
+  "dual_track_gate": {
+    "product_platform_track_passed": true,
+    "builder_prompt_system_track_passed": true,
+    "ordinary_material_release_authorized": true
+  },
+  "hard_constraints_preserved": true
+}

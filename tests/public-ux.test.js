@@ -5,11 +5,11 @@ const path = require('path');
 const pub = path.join(__dirname, '..', 'public');
 const htmlFiles = fs.readdirSync(pub).filter(name => name.endsWith('.html'));
 const protectedPages = new Set([
-  'admin.html','staff.html','control-center.html','dashboard.html','next-path.html',
+  'admin.html','staff.html','control-center.html','launch-activation.html','dashboard.html','next-path.html',
   'checkout-success.html','checkout-cancel.html','launch-readiness.html','production-readiness.html',
-  'ai-summary.html','professional-login.html','professional-signup.html','professional-dashboard.html'
+  'ai-summary.html','professional-network.html','professional-login.html','professional-signup.html','professional-dashboard.html'
 ]);
-const internalOnlyPages = new Set(['admin.html','staff.html','control-center.html','launch-readiness.html','production-readiness.html','ai-summary.html']);
+const internalOnlyPages = new Set(['admin.html','staff.html','control-center.html','launch-activation.html','launch-readiness.html','production-readiness.html','ai-summary.html','professional-network.html']);
 const professionalPages = new Set(['professional-membership.html','professional-membership-terms.html','professionals.html','professional-profile.html','firm-profile.html','professional-login.html','professional-signup.html','professional-dashboard.html']);
 
 for (const name of htmlFiles) {
@@ -22,14 +22,19 @@ for (const name of htmlFiles) {
   }
 }
 
-const localTargets = new Set(fs.readdirSync(pub));
+function publicTargetExists(link) {
+  const target = link.split(/[?#]/)[0].replace(/^\//, '') || 'index.html';
+  const resolved = path.resolve(pub, target);
+  const publicRoot = path.resolve(pub) + path.sep;
+  if (resolved !== path.resolve(pub) && !resolved.startsWith(publicRoot)) return false;
+  return fs.existsSync(resolved) && fs.statSync(resolved).isFile();
+}
 for (const name of htmlFiles) {
   const html = fs.readFileSync(path.join(pub, name), 'utf8');
   const links = [...html.matchAll(/(?:href|src)=["']([^"']+)["']/gi)].map(match => match[1]);
   for (const link of links) {
     if (!link.startsWith('/') || link.startsWith('/api/')) continue;
-    const target = link.split(/[?#]/)[0].replace(/^\//, '') || 'index.html';
-    assert(localTargets.has(target), `${name} contains broken local link ${link}`);
+    assert(publicTargetExists(link), `${name} contains broken local link ${link}`);
   }
 }
 
@@ -72,7 +77,8 @@ assert(/firmSavingsCalculator/.test(fs.readFileSync(path.join(pub, 'professional
 assert(/setupChecklist\(data\)/.test(directoryScript), 'professional dashboard missing connected setup checklist');
 assert(/setStructuredData/.test(directoryScript) && /application\/ld\+json/.test(directoryScript), 'public profiles missing structured-data support');
 const pricing = fs.readFileSync(path.join(pub, 'pricing.html'), 'utf8');
-assert(/substantial guidance free/i.test(pricing) && /AI-Guided Start/.test(pricing), 'pricing page does not reflect the approved free-first public strategy');
+assert(/Professional membership plans/i.test(pricing) && /Meaningful guided starting help stays free/i.test(pricing) && /Optional human help/i.test(pricing) && /Published only when ready/i.test(pricing), 'pricing page must reflect professional-first membership, meaningful free AI help, and truthful future-service boundaries');
+assert(!/from \$79|from \$197|from \$295/.test(pricing), 'pricing page must not advertise unapproved public paid services');
 assert(/autocomplete="street-address"/.test(signup) && /inputmode="tel"/.test(signup), 'professional signup is missing mobile autofill improvements');
 assert(/paid via stripe checkout':'Paid online'/.test(fs.readFileSync(path.join(pub, 'app.js'), 'utf8')), 'customer payment status should not expose processor-specific implementation wording');
 
@@ -90,5 +96,14 @@ for (const name of htmlFiles) {
 const controlCenter = fs.readFileSync(path.join(pub, 'control-center.html'), 'utf8');
 assert(/Public experience and build-handoff checklist/i.test(controlCenter), 'Control Center missing public experience and handoff governance checklist');
 assert(/Customer language/i.test(controlCenter) && /phone, tablet, and desktop/i.test(controlCenter), 'Control Center checklist missing customer-language or responsive review requirements');
+
+
+const documentTools = fs.readFileSync(path.join(pub, 'document-tools.html'), 'utf8');
+assert(/Your text stays in this browser tab/i.test(documentTools), 'document tools must explain device-only handling');
+assert(/does not transmit document contents/i.test(documentTools), 'document tools must explain that contents are not transmitted');
+assert(/document-tools\.html/.test(sitemap), 'device-only document tools must appear in the public sitemap');
+const documentToolsScript = fs.readFileSync(path.join(pub, 'document-tools.js'), 'utf8');
+assert(/Instruction-like text detected/.test(documentToolsScript) && /does not execute or follow instructions/.test(documentToolsScript), 'document tools must treat embedded instructions as source content');
+assert(/Line \$\{item\.line\}/.test(documentToolsScript), 'document review must display one-based line provenance');
 
 console.log(`public-ux.test.js passed: ${htmlFiles.length} HTML pages and local links audited`);

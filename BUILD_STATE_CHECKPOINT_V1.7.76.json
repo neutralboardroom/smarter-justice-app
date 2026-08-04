@@ -1,0 +1,73 @@
+{
+  "schema_id": "SJP-BUILD-STATE-CHECKPOINT-2026-08-03-V12",
+  "checkpoint_status": "FINAL_SOURCE_SEALED",
+  "product": {
+    "name": "Smarter Justice",
+    "id": "smarter-justice-central",
+    "version": "1.7.76",
+    "artifact_sha256": "PREFINAL_NOT_YET_BOUND",
+    "central_role": "federated legal network identity, governance, professional operations, shared contracts, and privacy-preserving journey preparation"
+  },
+  "checkpoint_sequence": 4,
+  "generated_at": "2026-08-03T12:20:00-04:00",
+  "last_known_good": {
+    "artifact_name": "smarter-justice-v1.7.75.zip",
+    "artifact_sha256": "8995ae6c794d5fa454eb5d62b41fd0a4290af853eac46b0400535de951fd5459",
+    "artifact_size_bytes": 8377369
+  },
+  "accepted_waves": [
+    {
+      "wave": 1,
+      "name": "Exact V12 intake, baseline reproduction, and release-scope selection",
+      "status": "ACCEPTED"
+    },
+    {
+      "wave": 2,
+      "name": "Device-only Journey Handoff Planner product improvement",
+      "status": "ACCEPTED"
+    },
+    {
+      "wave": 3,
+      "name": "V12 dual-track continuous-improvement builder gate",
+      "status": "ACCEPTED"
+    }
+  ],
+  "current_working_wave": {
+    "wave": 4,
+    "name": "Deterministic candidate and detached-final artifact acceptance",
+    "status": "CANDIDATE_ACCEPTED_FINAL_ARCHIVE_PENDING"
+  },
+  "candidate_queue_remaining": [
+    {
+      "candidate_id": "JOURNEY_HANDOFF_PORTAL_IMPORT_ADAPTER",
+      "decision": "DEFERRED",
+      "maturity": "D0_PRODUCT_LOCAL_ACCEPTANCE_REQUIRED",
+      "minimum_slice": null,
+      "deployment_effect": "NONE",
+      "exact_reason": "Requires one exact portal artifact and product-local owner/schema acceptance; central must not create automatic transfer."
+    },
+    {
+      "candidate_id": "ACCESSIBLE_LOCAL_QR_EXPORT",
+      "decision": "DEFERRED",
+      "maturity": "D0_PRIVACY_AND_ACCESSIBILITY_REVIEW_REQUIRED",
+      "minimum_slice": null,
+      "deployment_effect": "NONE",
+      "exact_reason": "Requires shoulder-surfing, offline decoding, accessibility, and payload-limit evidence."
+    },
+    {
+      "candidate_id": "DUAL_TRACK_CANDIDATE_SCORING",
+      "decision": "DEFERRED",
+      "maturity": "D0_TRANSPARENT_RUBRIC_REQUIRED",
+      "minimum_slice": null,
+      "deployment_effect": "NONE",
+      "exact_reason": "Scoring must remain explainable, subordinate to safety constraints, and unable to replace human judgment."
+    }
+  ],
+  "recovery_state": "EXACT_V1.7.75_SOURCE_AND_ROLLBACK",
+  "architecture_and_strategy_state": "V12_DUAL_TRACK_FINAL_SOURCE_SEALED",
+  "candidate_acceptance": {
+    "record": "CANDIDATE_ARTIFACT_ACCEPTANCE_V1.7.76.json",
+    "sha256": "661b594fe2adf8a810b9136b543579d616f627956c4f92cbf73c4ae48d8725ad",
+    "size_bytes": 8413818
+  }
+}

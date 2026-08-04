@@ -1,0 +1,20 @@
+{
+  "schemaName": "smarter-justice-professional-portal-alias-registry",
+  "schemaVersion": "1.0.0",
+  "releaseVersion": "1.7.36",
+  "generatedAt": "2026-07-27T15:30:00-04:00",
+  "policy": "Map only unambiguous historical identifiers. Preserve ambiguous identifiers for explicit evidence review.",
+  "resolvedCanonicalAssignments": 678,
+  "unresolvedLegacyAssignments": 14,
+  "unresolvedIdentifiers": [
+    {
+      "sourcePortalId": "name-records-employment",
+      "reason": "Mixed employment, name-change, and record-correction category cannot be mapped to one current portal safely."
+    },
+    {
+      "sourcePortalId": "domestic-violence-safety-support",
+      "reason": "Safety support is not automatically an attorney-placement portal."
+    }
+  ],
+  "carAccidentBoundary": "Broad accident or personal-injury eligibility does not automatically establish Car Accident Law Aid eligibility."
+}

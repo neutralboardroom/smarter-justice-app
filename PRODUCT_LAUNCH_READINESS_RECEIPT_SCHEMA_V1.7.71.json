@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "smarter-justice://schemas/product-launch-readiness-receipt/v1.7.71",
+  "title": "Smarter Justice Product Launch Readiness Receipt",
+  "schemaVersion": "2026-08-02-v1",
+  "releaseVersion": "1.7.71",
+  "type": "object",
+  "required": [
+    "schema_id",
+    "product",
+    "readiness_state",
+    "gates",
+    "exact_blockers",
+    "builder_controlled_work_remaining",
+    "protected_owner_actions",
+    "next_executable_action",
+    "evidence_files"
+  ],
+  "allowedReadinessStates": [
+    "BUILD_IN_PROGRESS",
+    "EXACT_RELEASE_ACCEPTED",
+    "DEPLOYMENT_CONTRACT_COMPLETE",
+    "DEPLOYMENT_QUALIFIED",
+    "LAUNCH_READY_NOT_SCHEDULED",
+    "PRODUCTION_AUTHORIZED",
+    "PRODUCTION_CUTOVER",
+    "POST_DEPLOY_VERIFIED",
+    "STABILIZED",
+    "BLOCKED_WITH_EXACT_REASON"
+  ],
+  "successfulReadinessStates": [
+    "EXACT_RELEASE_ACCEPTED",
+    "DEPLOYMENT_CONTRACT_COMPLETE",
+    "DEPLOYMENT_QUALIFIED",
+    "LAUNCH_READY_NOT_SCHEDULED",
+    "PRODUCTION_AUTHORIZED",
+    "PRODUCTION_CUTOVER",
+    "POST_DEPLOY_VERIFIED",
+    "STABILIZED"
+  ],
+  "requiredGateKeys": [
+    "product_quality",
+    "practice_specific_legal_and_safety",
+    "current_authoritative_sources",
+    "profile_growth_and_enrichment",
+    "smarter_justice_compatibility",
+    "tests_and_exact_release",
+    "repository_and_workflow",
+    "deployment_contract",
+    "provider_service",
+    "domain_dns_tls",
+    "migration",
+    "health_and_smoke",
+    "monitoring_support_incident",
+    "stabilization_and_rollback"
+  ],
+  "allowedGateStates": [
+    "ACCEPTED",
+    "READY_FOR_REVIEW",
+    "PENDING_EXTERNAL_ACCEPTANCE",
+    "BLOCKED_WITH_EXACT_REASON",
+    "NOT_APPLICABLE"
+  ],
+  "policy": {
+    "missingReceiptInferenceAllowed": false,
+    "crossProductBlockingAllowed": false,
+    "nonInitialSuccessfulState": "LAUNCH_READY_NOT_SCHEDULED",
+    "initialCutoverScopeIsSchedulingNotPermanentEligibility": true,
+    "secretValuesAllowed": false
+  }
+}

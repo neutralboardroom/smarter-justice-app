@@ -1,0 +1,104 @@
+{
+  "schemaVersion": "1.0.0",
+  "project": "Smarter Justice",
+  "releaseVersion": "1.7.12",
+  "overallState": "exact-tested predeployment development package; not deployed or production accepted",
+  "dimensions": [
+    {
+      "id": "product",
+      "status": "exact artifact tested",
+      "evidence": "v1.7.12 device-only text review, neutral comparison, one-based source-line provenance, local downloads, embedded-instruction non-execution, and public integration are implemented and regression-tested.",
+      "remaining": "No production activation implied."
+    },
+    {
+      "id": "customerLanguage",
+      "status": "exact artifact tested",
+      "evidence": "The device-only boundary, supported formats, limits, source references, comparison results, error states, downloads, and professional-advice boundaries use public language and are regression-tested across 52 customer-facing pages.",
+      "remaining": "Real-user cohort validation remains pending."
+    },
+    {
+      "id": "accessibility",
+      "status": "automated foundation passed",
+      "evidence": "Automated accessibility foundations now cover labeled local-file inputs, text areas, counters, alert focus, result focus, keyboard-operable actions, table captions, and responsive document-tool layouts.",
+      "remaining": "Physical assistive-technology and real-device acceptance remain pending."
+    },
+    {
+      "id": "mobile",
+      "status": "automated foundation passed",
+      "evidence": "Phone and tablet safeguards now include single-column document sources, full-width actions, 16-pixel inputs, touch targets, wrapping, and horizontally scrollable comparison tables.",
+      "remaining": "Physical iPhone, Android, and tablet acceptance remain pending."
+    },
+    {
+      "id": "security",
+      "status": "code foundation passed",
+      "evidence": "The new document tools run in the browser tab, render source content through textContent, do not add a document API, and preserve all authentication, CSRF, route, sensitive-traffic, and fail-closed tests.",
+      "remaining": "Production account, email, bootstrap-removal, and operational acceptance remain pending."
+    },
+    {
+      "id": "privacy",
+      "status": "code foundation passed",
+      "evidence": "Supported document text remains in browser-tab memory, is not transmitted to Smarter Justice, is not saved to an account, is not used by AI, and is not shared with a professional. Local downloads occur only at the user\u2019s direction.",
+      "remaining": "Real-browser confirmation, shared-device guidance acceptance, downloaded-file handling, and future-format/privacy review remain pending."
+    },
+    {
+      "id": "database",
+      "status": "external evidence required",
+      "evidence": "PostgreSQL, migrations, advisory locking, reconnect, and fail-closed foundations exist.",
+      "remaining": "Production durability, concurrency, backup, and restore proof remain pending."
+    },
+    {
+      "id": "email",
+      "status": "external evidence required",
+      "evidence": "v1.7.11 adds audited communication categories and immutable essential-notice protection at the account layer.",
+      "remaining": "SPF, DKIM, DMARC, sender identity, provider enforcement, unsubscribe behavior, delivery, bounce, complaint, reply, and channel-choice evidence remain pending."
+    },
+    {
+      "id": "payments",
+      "status": "closed",
+      "evidence": "Stripe and billing lifecycle foundations exist, but public and professional charges remain fail-closed.",
+      "remaining": "Full provider-side test lifecycle, reconciliation, legal review, support, and owner activation remain pending."
+    },
+    {
+      "id": "legal",
+      "status": "external review required",
+      "evidence": "Advertising, profile, referral, sponsorship, engagement, terms, privacy, billing, and complaint boundaries are documented.",
+      "remaining": "Qualified legal and professional-responsibility review remains pending."
+    },
+    {
+      "id": "support",
+      "status": "named operations required",
+      "evidence": "Structured profile-operation requests now enter a governed owner-visible queue with public references, source URLs, status, notes, and audit history.",
+      "remaining": "Named owner and backup, identity/source review, requester communications, appeals, hours, response targets, complaint handling, and exercised procedures remain pending."
+    },
+    {
+      "id": "professionalOperations",
+      "status": "pilot foundation only",
+      "evidence": "v1.7.11 adds trackable profile requests, protected communication preferences, and direct setup next actions while paid enrollment remains paused.",
+      "remaining": "Real cohort, identity-review operations, request service levels, authenticated email, MFA acceptance, support, seat lifecycle, and billing evidence remain pending."
+    },
+    {
+      "id": "deployment",
+      "status": "not deployed",
+      "evidence": "Controlled deployment instructions and rollback controls exist.",
+      "remaining": "Owner approval and exact v1.7.12 production deployment remain pending."
+    },
+    {
+      "id": "liveVerification",
+      "status": "not verified",
+      "evidence": "The last verified production version remains v1.6.1.",
+      "remaining": "DNS, SSL, health, public routes including document tools, protected pages, logs, monitoring, mobile, and accessibility checks are pending for v1.7.12."
+    },
+    {
+      "id": "recovery",
+      "status": "external exercise required",
+      "evidence": "Backup, restore, rollback, incident, and emergency-pause requirements are recorded.",
+      "remaining": "A production-equivalent recovery and rollback exercise remains pending."
+    }
+  ],
+  "summary": {
+    "totalDimensions": 15,
+    "exactOrAutomatedFoundation": 6,
+    "externalOrProductionEvidencePending": 8
+  },
+  "rule": "No single percentage or polished screen may be used as proof of operational readiness. Each dimension has separate evidence and approval."
+}

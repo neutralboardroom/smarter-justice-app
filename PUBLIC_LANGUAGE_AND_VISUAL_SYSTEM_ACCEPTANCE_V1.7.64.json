@@ -1,0 +1,42 @@
+{
+  "schema": "smarter-justice-public-language-visual-system-acceptance",
+  "schemaVersion": "1.0.0",
+  "releaseVersion": "1.7.64",
+  "generatedAt": "2026-07-31T23:58:00-04:00",
+  "inventory": {
+    "publicHtmlPages": 76,
+    "languageToggleOccurrencesBefore": 33,
+    "languageToggleOccurrencesAfter": 0,
+    "highConfidencePublicInternalLanguageFindings": []
+  },
+  "englishFirst": {
+    "activePublicLanguages": [
+      "en"
+    ],
+    "inactiveLanguageControlsVisible": false,
+    "dormantFutureLanguageArchitecturePreserved": true,
+    "mixedLanguageNavigationDetected": false
+  },
+  "firstSecondsHomepage": {
+    "headlineExplainsPublicStartingHelp": true,
+    "attorneyEntryDiscoverable": true,
+    "onePrimaryPublicStartPath": true,
+    "freeCoreVisible": true,
+    "noFakeLiveClaims": true,
+    "decision": "PRESERVE_STRONG_HOMEPAGE"
+  },
+  "visualSystem": {
+    "logoAndFaviconPresent": true,
+    "brightNearWhiteProfessionalDefault": true,
+    "consistentTypographyAndHierarchy": true,
+    "responsiveFoundationsPreserved": true,
+    "decorativeNonfunctionalPillsAdded": false,
+    "cosmeticChurn": false,
+    "materialChange": "Removed an unfinished visible language control while preserving dormant future architecture."
+  },
+  "accessibilityReference": "WCAG 2.2",
+  "sourceLevelResult": "PASS",
+  "realDeviceAndAssistiveTechnologyAcceptance": "REMAINS_OPEN_EXTERNAL_HUMAN_GATE",
+  "decision": "PRESERVE_STRONG_PUBLIC_SYSTEM_NO_PUBLIC_SOURCE_CHANGE",
+  "releaseChange": "No public HTML, CSS, email, notification, QR or print presentation change was justified in v1.7.64."
+}

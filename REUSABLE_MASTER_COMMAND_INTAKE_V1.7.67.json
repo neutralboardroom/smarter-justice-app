@@ -1,0 +1,60 @@
+{
+  "schema": "smarter-justice-reusable-master-command-intake",
+  "releaseVersion": "1.7.67",
+  "generatedAt": "2026-08-01T12:54:00-04:00",
+  "prompt": {
+    "pass": "THIRTEENTH PASS",
+    "filename": "Smarter_Justice_Central_Master_Thirteenth_Pass_Current_Pack_Authority_Final_Continuation_and_No_Churn_Control_2026-08-01.txt",
+    "sha256": "2027379953b53b17eaafceb8aaf10871e0efc51282e0de095d42d2de0e253f4d",
+    "sizeBytes": 366579,
+    "lineCount": 7920,
+    "packagedPath": "governance/masters/Smarter_Justice_Central_Master_Thirteenth_Pass.txt",
+    "openingMarkerVerified": true,
+    "finalMarkerVerified": true
+  },
+  "integrityMarkers": {
+    "opening": "SMARTER JUSTICE CENTRAL MASTER / THIRTEENTH-PASS REUSABLE VERSION-NEUTRAL COMPLETE IMMEDIATE BUILD COMMAND",
+    "closing": "END OF SMARTER JUSTICE CENTRAL MASTER THIRTEENTH-PASS CURRENT PACK AUTHORITY FINAL CONTINUATION AND NO-CHURN CONTROL",
+    "verified": true
+  },
+  "authorityUse": "CONTROLLING_BUILD_INTENT",
+  "implementationTruthSource": "smarter-justice-v1.7.66.zip",
+  "implementationTruthSha256": "7f3846b38705f86ba660b70e102bdd00007e5d81027df2fbb05a136cefb516bc",
+  "nextVersionDerived": "1.7.67",
+  "sameVersionReleasePrevented": true,
+  "historicalV1761LearningPreserved": true,
+  "newestV1761LearningRevalidated": true,
+  "fixedCurrentPortalIdentityInReusableMaster": false,
+  "durableRuleCount": 74,
+  "activeMasterPairReceipt": {
+    "filename": "Smarter_Justice_Eighth_Pass_Four_Portal_Twenty_Sixth_Pass_Master_Pair_Commit_Receipt_2026-07-31.txt",
+    "packagedPath": "governance/receipts/MASTER_PAIR_COMMIT_RECEIPT_E1_R0.txt",
+    "sha256": "4dd826cb0f9d89e41528b9732f250899cab45ce89766ae7fdfdb8a44d48d906e",
+    "sizeBytes": 5295,
+    "lineCount": 92,
+    "receiptId": "MPCR-2026-07-31-E1-R0-05F4296ED378",
+    "transactionId": "MPPT-2026-07-31-SJ8-FP26-304CB87BF174",
+    "pairEpoch": 1,
+    "pairRevision": 0,
+    "state": "MASTER PAIR COMMITTED \u2014 PROMPT COMPATIBILITY ONLY"
+  },
+  "currentPackId": "SJP-2026-08-01-C13-P35-V11",
+  "currentPackState": "PACK FINALIZED \u2014 READY FOR USE",
+  "canonicalPackCommitProven": false,
+  "portalFamilyMaster": {
+    "pass": "THIRTY-FIFTH PASS",
+    "filename": "Legal_Micro_Portals_Master_Thirty_Fifth_Pass_Current_Pack_Authority_Final_Continuation_and_No_Churn_Control_2026-08-01.txt",
+    "sha256": "fbf5b70ae2c9fcdd57ac0bbf51bbd57da2db1479e726f2a9dab4472558cdc28a",
+    "sizeBytes": 729484,
+    "lineCount": 14951,
+    "packagedPath": "governance/masters/Legal_Micro_Portals_Master_Thirty_Fifth_Pass.txt"
+  },
+  "packManifest": {
+    "filename": "Smarter_Justice_Coordinated_Prompt_Pack_Manifest_Central_Thirteenth_Portal_Thirty_Fifth_2026-08-01.txt",
+    "sha256": "51936ac6d2b2e67d0851a4ff4cb23e976f532138b2f3f99abbff3dfc68ab3778",
+    "sizeBytes": 5525,
+    "lineCount": 119,
+    "selfExcludingSha256": "2f1d1fbfc1501143d366bbc962c624fbf82052dc9d489f14ebeb9f6bd1f18608",
+    "packagedPath": "governance/receipts/Smarter_Justice_Coordinated_Prompt_Pack_Manifest_C13_P35.txt"
+  }
+}

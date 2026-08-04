@@ -1,0 +1,9 @@
+{
+  "version":"1.7.24",
+  "reviewedAt":"2026-07-22",
+  "researchThemes":["Civil legal problems often cluster across housing, income, health, safety, family, consumer, and benefits needs.","User-centered legal technology should be mobile-friendly, plain-language, remote-accessible, and continuously refined.","Guided forms, multilingual intake, legal-help navigation, and filing support remain active access-to-justice investment areas.","AI-assisted legal workflows require confidentiality, competence, supervision, verification, and secure information handling."],
+  "implemented":{"name":"Whole Situation Map","architecture":"device-only transparent rules with local exports","automaticSharing":false,"leadCreation":false,"riskScore":false},
+  "ownerGovernance":{"innovationLab":true,"requiresUserProblem":true,"requiresHypothesis":true,"requiresSuccessMeasures":true,"requiresFailureSignals":true,"requiresSafeguards":true,"requiresNextDecision":true},
+  "deferred":["source freshness receipts","accessible guided voice research","cross-sector consent receipt"],
+  "rejected":["general AI chatbot inviting confidential facts","legal-risk, win-probability, case-value, deadline, or eligibility scores","automatic professional matching or lead transmission","paid ranking and unverified reviews"]
+}

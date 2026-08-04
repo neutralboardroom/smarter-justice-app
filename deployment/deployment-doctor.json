@@ -1,0 +1,47 @@
+{
+  "schema": "smarter-justice-deployment-doctor-result",
+  "version": "1.0.0",
+  "productId": "smarter-justice-central",
+  "mode": "READ_ONLY_LOCAL",
+  "result": "PASS_LOCAL_PROVIDER_BINDING_PENDING",
+  "checks": [
+    {
+      "key": "package",
+      "state": "PASS"
+    },
+    {
+      "key": "lockfile",
+      "state": "PASS"
+    },
+    {
+      "key": "render-blueprint",
+      "state": "PASS_LOCAL_SCHEMA"
+    },
+    {
+      "key": "liveness",
+      "state": "PASS_ROUTE_PRESENT"
+    },
+    {
+      "key": "readiness",
+      "state": "PASS_ROUTE_PRESENT"
+    },
+    {
+      "key": "github-repository",
+      "state": "UNBOUND"
+    },
+    {
+      "key": "render-service",
+      "state": "UNBOUND"
+    },
+    {
+      "key": "production-secrets",
+      "state": "UNTESTED"
+    },
+    {
+      "key": "last-known-good",
+      "state": "PARTIAL_VERSION_ONLY"
+    }
+  ],
+  "secretValuesIncluded": false,
+  "releaseVersion": null
+}

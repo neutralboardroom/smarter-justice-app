@@ -1,0 +1,59 @@
+{
+  "schema_id": "SMARTER-NETWORK-CONSENT-BASED-JOURNEY-TRANSFER-2026-08-03-V1",
+  "releaseVersion": "1.7.75",
+  "runtime_enabled": false,
+  "required_fields": [
+    "transfer_id",
+    "source_product",
+    "destination_product",
+    "purpose",
+    "data_categories",
+    "explicit_user_choice",
+    "consent_receipt_id",
+    "created_at",
+    "expires_at",
+    "revocation_path",
+    "correction_path",
+    "deletion_path",
+    "automatic_sync"
+  ],
+  "prohibited_data_categories": [
+    "legal_narrative",
+    "health_record",
+    "financial_account",
+    "authentication_secret",
+    "full_user_record",
+    "client_confidential_material"
+  ],
+  "invariants": {
+    "explicit_user_choice_required": true,
+    "least_data_required": true,
+    "purpose_limitation_required": true,
+    "source_and_destination_identity_required": true,
+    "consent_receipt_required": true,
+    "revocation_required": true,
+    "correction_and_deletion_handling_required": true,
+    "automatic_sensitive_sync_prohibited": true,
+    "universal_sensitive_database_prohibited": true
+  },
+  "sample_valid_non_sensitive_receipt": {
+    "transfer_id": "fixture-consent-transfer-001",
+    "source_product": "smarter-justice-central",
+    "destination_product": "divorce-law-aid",
+    "purpose": "Continue a user-selected public preparation checklist in the destination product.",
+    "data_categories": [
+      "user_selected_matter_category",
+      "user_selected_journey_step"
+    ],
+    "explicit_user_choice": true,
+    "consent_receipt_id": "fixture-consent-receipt-001",
+    "created_at": "2026-08-03T10:20:00-04:00",
+    "expires_at": "2026-08-03T11:20:00-04:00",
+    "revocation_path": "/privacy/consent/revoke",
+    "correction_path": "/privacy/consent/correct",
+    "deletion_path": "/privacy/consent/delete",
+    "automatic_sync": false
+  },
+  "deployment_authorized": false,
+  "production_request_sent": false
+}

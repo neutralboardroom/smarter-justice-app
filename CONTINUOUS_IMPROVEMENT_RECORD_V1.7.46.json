@@ -1,0 +1,26 @@
+{
+  "releaseVersion": "1.7.46",
+  "generatedAt": "2026-07-29T19:35:00-04:00",
+  "materialOpportunity": "Convert a feature-rich but fragmented development platform into a simpler evidence-driven launch operating system.",
+  "implemented": [
+    "Deduplicated launch blocker workbench",
+    "Rehearsal and pause-trigger records",
+    "Focused attorney launch entry",
+    "Legal-only active launch messaging",
+    "Unapproved price removal"
+  ],
+  "sharedLearning": [
+    "Launch truth should be derived once and reused across owner surfaces.",
+    "Evidence recording must never silently activate a gate.",
+    "Free profile-control rights must remain visible and separate from paid growth.",
+    "Portal-specific public profiles and search stay local; shared identity and management stay central."
+  ],
+  "nextValidation": [
+    "Real attorney enrollment rehearsal",
+    "Public user route rehearsal",
+    "Exact portal D4 staging",
+    "Support and incident drill",
+    "Rollback and restore drill",
+    "Device and accessibility acceptance"
+  ]
+}

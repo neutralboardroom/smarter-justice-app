@@ -1,0 +1,23 @@
+{
+  "release": "1.7.51",
+  "status": "GATED_NOT_IMPLEMENTED_CENTRALLY",
+  "supportedCentralProfileClasses": [
+    "attorney",
+    "law-firm"
+  ],
+  "organizationProfileClasses": [
+    "legal-aid-organization",
+    "advocate",
+    "victim-service-organization",
+    "nonprofit",
+    "community-organization",
+    "public-agency",
+    "shelter",
+    "service-provider",
+    "prevention-education-organization"
+  ],
+  "rule": "Do not force non-attorney profiles into attorney verification. Do not claim central organization authority until a separate versioned contract, tests, staging, and owner approval exist.",
+  "temporaryBoundary": "Only private, bounded, owner-reviewed candidate records may exist; no automatic publication, authority, capacity, availability, location, or service claim.",
+  "confidentialLocationSuppression": true,
+  "paymentProvesAuthority": false
+}

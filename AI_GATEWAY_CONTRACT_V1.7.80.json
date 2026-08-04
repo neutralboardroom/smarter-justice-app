@@ -1,0 +1,94 @@
+{
+  "schema": "smarter-justice-central-ai-gateway-contract",
+  "contractVersion": "sj-ai-gateway-v1.0.0",
+  "releaseVersion": "1.7.80",
+  "launchBatchId": "SJP-OPENAI-LIVE-2026-08-03-BATCH-02",
+  "environment": "production-target-dark",
+  "vendorPolicy": "OPENAI_ONLY",
+  "endpoint": "/api/internal/ai-gateway/v1/tools/{toolId}",
+  "method": "POST",
+  "authentication": {
+    "type": "server-to-server bearer credential",
+    "portalIdentityHeader": "x-sj-portal-id",
+    "browserPortalIdentityTrusted": false,
+    "correlationIdIsAuthorization": false
+  },
+  "request": {
+    "registeredToolsOnly": true,
+    "arbitraryPromptAccepted": false,
+    "maxBytes": 16384,
+    "requiredFields": [
+      "contractVersion",
+      "toolId",
+      "input"
+    ],
+    "optionalFields": [
+      "schemaVersion",
+      "correlationId",
+      "idempotencyKey"
+    ]
+  },
+  "response": {
+    "structuredOutputRequired": true,
+    "schemaValidationRequired": true,
+    "safeRenderingRequired": true,
+    "errorVocabulary": [
+      "AI_DISABLED",
+      "KILL_SWITCH_ACTIVE",
+      "PORTAL_UNAUTHORIZED",
+      "TOOL_NOT_REGISTERED",
+      "TOOL_DISABLED",
+      "INPUT_INVALID",
+      "INJECTION_SUSPECTED",
+      "RATE_LIMITED",
+      "HARD_STOP_ACTIVE",
+      "PROVIDER_TIMEOUT",
+      "PROVIDER_ERROR",
+      "OUTPUT_INVALID",
+      "SOURCE_REQUIRED",
+      "REVIEW_REQUIRED"
+    ]
+  },
+  "privacy": {
+    "rawPromptLogging": false,
+    "rawResponseLogging": false,
+    "storeResponses": false,
+    "minimumOperationalEvidence": [
+      "traceId",
+      "providerRequestId",
+      "portal",
+      "tool",
+      "promptVersion",
+      "schemaVersion",
+      "model",
+      "status",
+      "latencyMs",
+      "tokenUsage",
+      "safetyOutcome",
+      "schemaValidation",
+      "errorCategory",
+      "timestamp"
+    ]
+  },
+  "retry": {
+    "maximumProviderAttempts": 1,
+    "automaticUserRetry": false
+  },
+  "timeoutMs": 12000,
+  "killSwitch": {
+    "global": "AI_GLOBAL_KILL_SWITCH",
+    "perPortalPrefix": "AI_PORTAL_",
+    "perToolPrefix": "AI_TOOL_"
+  },
+  "degradedMode": {
+    "deterministicFallbackRequired": true,
+    "publicNonAiFunctionsRemainAvailable": true
+  },
+  "compatibility": {
+    "policy": "explicit receipt required per portal artifact",
+    "deprecation": "minimum one accepted contract overlap",
+    "rollbackContract": "disabled AI plus deterministic fallback"
+  },
+  "effectiveTime": "2026-08-03T12:19:00-04:00",
+  "deploymentAuthorized": false
+}

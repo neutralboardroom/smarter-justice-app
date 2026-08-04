@@ -1,0 +1,109 @@
+{
+  "release": "1.7.60",
+  "generatedAt": "2026-07-31T16:19:00-04:00",
+  "status": "SEALED_SOURCE_ACCEPTED_DETACHED_FINAL_IDENTITY_PENDING",
+  "sourceBaseline": {
+    "filename": "smarter-justice-v1.7.59.zip",
+    "version": "1.7.59",
+    "sha256": "f08909fbf879e9005d47b7361f089decc946d78c21c6118471b4be1fb77f9bb0",
+    "sizeBytes": 5140893,
+    "entries": 1540,
+    "files": 1522,
+    "directories": 18,
+    "uncompressedBytes": 14436218,
+    "compressedBytes": 4915537,
+    "inventoryRecords": 1521,
+    "inventorySha256": "3d88800f9dffc009de333cc37564f8f8a78a7f6a5700d12f54fc4b29acb4b891",
+    "packageJsonSha256": "4989e6fe8315ce1aefa7d6293e697ead2e529f4867c878ff7875254594b36a38",
+    "packageLockSha256": "0a57574b69b77be51de3b0b3473ca297f3871a9f5e4c3d20494826842d161743",
+    "lockfileSha256": "0a57574b69b77be51de3b0b3473ca297f3871a9f5e4c3d20494826842d161743",
+    "sbomSha256": "655acf4a8b0ce9497a14f676015aec7d1dcf9a27957aeb21f39e13dc4a6f1fd1",
+    "treeSha256": "b1d0354584ec57223cca8dc48a62462a13a91adf6ee22f8f1714241fb72bc9cf",
+    "dependencyIndependentParts": 113,
+    "totalReadinessParts": 114,
+    "testLogSha256": "30a26f564c97905a6f8bd527058f1b67bdaa402e06290f2a7a7c5aafe9c5f87e",
+    "concurrentBaselineRuns": 2,
+    "concurrentBaselineResult": "PASS_IDENTICAL_OUTPUT",
+    "evidenceState": "CURRENT_CHAT_REPRODUCED"
+  },
+  "scope": [
+    "reconcile exact v1.7.59 source and rollback truth",
+    "advance current owner-recorded four-portal authority",
+    "verify reusable command integrity and no-loss disposition",
+    "add capability-specific launch matrix and owner-action readiness/transition validation",
+    "add learning lineage/propagation and tamper-evident evidence manifest",
+    "preserve one central account/Stripe/subscription/seat architecture",
+    "preserve and govern Matter Path Engine and deterministic AI fallback",
+    "deliver clean v1.7.60-to-v1.7.61 reusable continuation"
+  ],
+  "sourceAcceptance": {
+    "runs": 2,
+    "mode": "INDEPENDENT_CLEAN_EXTRACTIONS",
+    "commandPartsPerRun": 113,
+    "result": "PASS_IDENTICAL_OUTPUT",
+    "identicalOutput": true,
+    "testLogSha256": "30a26f564c97905a6f8bd527058f1b67bdaa402e06290f2a7a7c5aafe9c5f87e"
+  },
+  "testModel": {
+    "dependencyIndependentParts": 114,
+    "postgresDependentParts": 1,
+    "totalReadinessParts": 115
+  },
+  "workingTreeAcceptance": {
+    "record": "WORKING_TREE_ACCEPTANCE_V1.7.60.json",
+    "status": "PASS_IDENTICAL_OUTPUT",
+    "runs": 2,
+    "commandsPerRun": 114,
+    "testLogSha256": "756b4cb4f36c381b63f11cec582645f12c9a0245d026294539f07fe5e05348f0"
+  },
+  "candidateAcceptance": {
+    "record": "CANDIDATE_ARTIFACT_ACCEPTANCE_V1.7.60.json",
+    "status": "PASS_ACCEPTED_FOR_FINAL_SEAL",
+    "sha256": "739f4e9127433fbad0ce8daa58b690a6b06c29a52e209d41f20251c68a81a535",
+    "sizeBytes": 5262538,
+    "testLogSha256": "756b4cb4f36c381b63f11cec582645f12c9a0245d026294539f07fe5e05348f0"
+  },
+  "finalAcceptance": {
+    "record": "FINAL_ARTIFACT_ACCEPTANCE_V1.7.60.json",
+    "status": "SEALED_SOURCE_ACCEPTED_DETACHED_FINAL_ARCHIVE_IDENTITY_PENDING",
+    "acceptedPresealArchiveSha256": "76808815dd3c13fb42fe80042e68562b7fa5670229ddf81866a9f9ff36658f1c",
+    "testLogSha256": "756b4cb4f36c381b63f11cec582645f12c9a0245d026294539f07fe5e05348f0"
+  },
+  "exactArtifact": {
+    "filename": "smarter-justice-v1.7.60.zip",
+    "identityMode": "DETACHED_AFTER_PACKAGING",
+    "sha256": "DETACHED_FINAL_DELIVERY_RECEIPT",
+    "sizeBytes": 0
+  },
+  "launchState": "NO_GO",
+  "deploymentAuthorized": false,
+  "closedGates": [
+    "live portal connections",
+    "automatic cross-repository writes",
+    "payments",
+    "subscriptions",
+    "professional opportunities",
+    "appointments",
+    "reviews",
+    "confidential uploads",
+    "sensitive external AI",
+    "filing",
+    "deployment",
+    "launch GO"
+  ],
+  "authenticBlockers": [
+    "configured registry/audit 404",
+    "PostgreSQL-dependent acceptance",
+    "exact four-portal D4 staging",
+    "Domestic Violence resource/safety review",
+    "real-device/assistive-technology acceptance",
+    "production services and operations review",
+    "legal/privacy/support/incident review",
+    "Roger explicit GO"
+  ],
+  "currentPackageEvidence": {
+    "packageJsonSha256": "fc87ec5cf1b64149f4e6938d1e974cd703d24bd8bbfe3d0dbc4ebb283e3a5965",
+    "packageLockSha256": "b812fdcdccc58aa9b547979ce9aae9aeb76ade2b3bc10d151b122bda4235d10e",
+    "sbomSha256": "bd321a506703e9a87e04e5406a47424b9dac0ad738da0a12f8a0b539a4b34c32"
+  }
+}

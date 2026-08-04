@@ -1,0 +1,21 @@
+{
+  "schema": "smarter-justice-central-deploy-config",
+  "version": "1.0.0",
+  "productId": "smarter-justice-central",
+  "releaseVersion": "1.7.73",
+  "productionBranch": "main",
+  "packageRoot": ".",
+  "runtime": "node 22.x",
+  "commands": {
+    "build": "npm ci --omit=dev",
+    "preDeploy": "npm run migrate",
+    "start": "npm start"
+  },
+  "probes": {
+    "liveness": "/livez",
+    "readiness": "/readyz?lane=free-professional-profiles"
+  },
+  "selectedMode": "UNSELECTED_PROVIDER_DISCOVERY_REQUIRED",
+  "autoDeployTrigger": "off",
+  "secretValuesIncluded": false
+}

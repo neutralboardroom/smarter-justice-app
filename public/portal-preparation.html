@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portal Preparation Pack | Smarter Justice</title>
+  <meta name="description" content="Build a private device-only preparation pack for a focused Smarter Justice portal using facts, documents, dates, questions, and goals you confirm.">
+  <link rel="canonical" href="https://smarterjustice.com/portal-preparation.html">
+  <meta property="og:image" content="https://smarterjustice.com/images/brand/smarter-justice-social.png">
+  <meta property="og:title" content="Portal Preparation Pack | Smarter Justice">
+  <meta property="og:description" content="Organize confirmed facts, documents, dates, questions, and goals before continuing to a focused legal or tax portal.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://smarterjustice.com/portal-preparation.html">
+  <meta name="theme-color" content="#0b3356">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/images/brand/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="/images/brand/favicon-48.png" sizes="48x48" type="image/png">
+  <link rel="apple-touch-icon" href="/images/brand/apple-touch-icon.png" sizes="180x180">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/styles.css">
+  <script defer src="/app.js"></script>
+  <script defer src="/portal-preparation.js"></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Smarter Justice Portal Preparation Pack","url":"https://smarterjustice.com/portal-preparation.html","applicationCategory":"LegalService","operatingSystem":"Web browser","description":"A device-only organizer that helps users prepare confirmed facts, documents, dates, questions, and goals before continuing to a focused Smarter Justice portal."}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><a class="brand" href="/" aria-label="Smarter Justice home"><img src="/logo.svg" alt="Smarter Justice"></a><button class="nav-toggle" aria-label="Open menu" aria-expanded="false" data-nav-toggle>Menu</button><nav class="top-nav" data-nav aria-label="Main navigation"><a href="/free-tools.html">Free Tools</a><a href="/professionals.html">Profile Lookup</a><a href="/portals.html">Portals</a><a href="/how-it-works.html">How It Works</a></nav></header>
+<main id="main">
+<section class="page-hero compact"><p class="eyebrow">Device-only portal preparation</p><h1>Prepare the facts you want to carry into a focused portal.</h1><p class="lead">Choose a portal, record only details you confirm, and download a local preparation pack. Nothing you type here is sent to Smarter Justice, saved to an account, routed to a professional, or used to calculate a deadline.</p></section>
+<section class="section"><div class="portal-prep-layout">
+<form class="card portal-prep-form" id="portalPreparationForm">
+  <div class="section-heading"><div><p class="eyebrow">Step 1</p><h2>Choose the focused path.</h2></div><span class="status-pill">Device only</span></div>
+  <label>Focused portal<select id="portalPreparationPortal" name="portal" required><option value="">Loading portal choices…</option></select></label>
+  <div class="notice" id="portalPreparationScope"><strong>Choose a portal</strong><p>The portal’s public scope and current availability will appear here.</p></div>
+  <fieldset><legend>Location and timing you confirm</legend><div class="form-grid two"><label>State or jurisdiction<input name="jurisdiction" autocomplete="address-level1" placeholder="Example: New York"></label><label>County, city, or agency<input name="locality" autocomplete="address-level2" placeholder="Example: Kings County or IRS"></label><label>Known date or event<input name="knownDate" placeholder="Example: Hearing listed for August 4"></label><label>User-chosen target date<input name="targetDate" type="date"><small>This is your planning date, not a calculated legal deadline.</small></label></div></fieldset>
+  <fieldset><legend>What you already have</legend><div class="checkbox-list">
+    <label><input type="checkbox" name="materials" value="Notice, letter, email, or court/agency document">Notice, letter, email, or court/agency document</label>
+    <label><input type="checkbox" name="materials" value="Contract, policy, lease, agreement, or plan document">Contract, policy, lease, agreement, or plan document</label>
+    <label><input type="checkbox" name="materials" value="Timeline or dated event list">Timeline or dated event list</label>
+    <label><input type="checkbox" name="materials" value="Payments, bills, statements, receipts, or wage records">Payments, bills, statements, receipts, or wage records</label>
+    <label><input type="checkbox" name="materials" value="Photos, messages, recordings, or other evidence">Photos, messages, recordings, or other evidence</label>
+    <label><input type="checkbox" name="materials" value="Names and contact information for involved people or organizations">Names and contact information for involved people or organizations</label>
+  </div></fieldset>
+  <label>Confirmed situation summary<textarea name="summary" rows="5" placeholder="Write only facts you know or clearly label uncertainty. Avoid Social Security numbers, full account numbers, medical details, or other unnecessary sensitive information."></textarea></label>
+  <label>Questions you want answered<textarea name="questions" rows="4" placeholder="One question per line"></textarea></label>
+  <label>Outcome or next step you are seeking<textarea name="goal" rows="3" placeholder="Example: understand the notice, prepare for a meeting, correct a record, compare options, or find a qualified professional"></textarea></label>
+  <label>Access, language, safety, or communication needs<textarea name="needs" rows="3" placeholder="Record only what would help the next step. Do not use this tool for an emergency."></textarea></label>
+  <label class="checkbox-label"><input type="checkbox" name="confirmed" required> I understand this pack contains only information I entered or selected, does not calculate a legal deadline, and is not sent or saved by Smarter Justice.</label>
+  <div class="portal-prep-actions"><button class="primary" type="submit">Build preparation pack</button><button class="secondary" id="clearPortalPreparation" type="button">Clear</button></div>
+  <p class="fine-print portal-prep-status" id="portalPreparationStatus" aria-live="polite"></p>
+</form>
+<aside class="card portal-prep-output" aria-labelledby="portalPreparationOutputTitle">
+  <p class="eyebrow">Local output</p><h2 id="portalPreparationOutputTitle">Your preparation pack will appear here.</h2>
+  <p id="portalPreparationOutputIntro">Complete the form and choose “Build preparation pack.”</p>
+  <pre id="portalPreparationOutput" hidden></pre>
+  <div class="portal-prep-actions" id="portalPreparationDownloads" hidden><button class="secondary" id="downloadPortalPreparationText" type="button">Download text</button><button class="secondary" id="downloadPortalPreparationJson" type="button">Download JSON</button><button class="secondary" id="copyPortalPreparation" type="button">Copy</button></div>
+</aside>
+</div></section>
+<section class="section subtle-section"><div class="section-heading"><div><p class="eyebrow">Boundaries</p><h2>What this tool does not do.</h2></div></div><ul class="portal-prep-boundary-list"><li>It does not upload documents, transmit your notes, create an account, or save a case.</li><li>It does not use AI, interpret a document, determine a legal claim, or calculate a filing or response deadline.</li><li>It does not contact a professional, create a lead, schedule a consultation, file anything, or form a professional relationship.</li><li>Focused portal availability and services vary. The downloaded pack remains yours to review and edit before sharing it.</li></ul></section>
+</main>
+<footer class="site-footer"><div><strong>Smarter Justice</strong><p>Free starting help and a transparent professional network. Smarter Justice is not a law firm and does not provide legal advice.</p></div><nav aria-label="Footer"><a href="/privacy.html">Privacy</a><a href="/security.html">Security</a><a href="/disclaimer.html">Disclaimer</a><a href="/contact.html">Contact</a></nav></footer>
+</body>
+</html>

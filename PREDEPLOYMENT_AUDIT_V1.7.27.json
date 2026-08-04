@@ -1,0 +1,56 @@
+{
+  "version": "1.7.27",
+  "date": "2026-07-23",
+  "sourceArtifact": {
+    "name": "smarter-justice-v1.7.26.zip",
+    "sha256": "a91eb979f62b4c26977619f0b0867f57673a3d399f93a5defb672b773d28d3f1"
+  },
+  "baselineRegressionParts": 58,
+  "scope": [
+    "public pages and navigation",
+    "free public tools and forms",
+    "registration, login, dashboards, and profile workflows",
+    "directory search, source transparency, claim/correction/removal",
+    "professional pricing, enrollment, inquiry, communications, and appointment gates",
+    "owner/staff administration and permissions",
+    "privacy, retention, storage, accessibility, responsive behavior, security, dependency metadata, and packaging"
+  ],
+  "findings": {
+    "sensitivePublicFormCollectionWhileClosed": "corrected with server-side rejection and truthful disabled public forms",
+    "publicFormAvailability": "now driven by public gate configuration and plain-language status messaging",
+    "directorySourceFreshness": "added optional 30, 90, 365, and 730 day source-review filters",
+    "professionalProgramCopy": "clarified free account/profile preparation versus separately approved paid enrollment and tools",
+    "profileGrowth": "12 professionals, 2 firms, and 12 professional-firm links; Manhattan led",
+    "sourceAccuracy": "current professional-controlled sources, review dates, exact Little Falls office data, and neutral statuses retained",
+    "nextVersionPriorities": "refreshed to seven classified launch, revenue, accessibility, and source-maintenance priorities"
+  },
+  "revenue": {
+    "implementedNow": [
+      "clearer professional account and gated-enrollment messaging",
+      "source-freshness discovery that supports trust, correction, and future claim conversion",
+      "preserved approved $15 monthly and $150 annual professional prices with no pricing change"
+    ],
+    "ownerApproval": [
+      "controlled founding professional enrollment cohort",
+      "team, location, and branded-intake add-ons",
+      "public continuity or monitoring services"
+    ],
+    "reviewRequired": [
+      "paid Human Review Specialist service",
+      "professional consultations and document reviews",
+      "professional compensation, transaction fees, expedited filing or submission assistance"
+    ],
+    "rejected": [
+      "ping-post or auctioned lead selling",
+      "improper referral fees or fee sharing",
+      "paid status affecting organic rank",
+      "unverified reviews, outcome promises, or guaranteed inquiries, clients, or revenue"
+    ]
+  },
+  "limitations": [
+    "configured npm registry timeout; no fresh vulnerability count",
+    "physical-device, browser-matrix, screen-reader, high-contrast, and 400-percent zoom acceptance pending",
+    "production database, MFA, email, Stripe, DNS/SSL, monitoring, backup restoration, incident response, and deployment evidence unavailable"
+  ],
+  "deployed": false
+}

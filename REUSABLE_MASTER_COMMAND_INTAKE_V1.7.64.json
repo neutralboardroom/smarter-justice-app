@@ -1,0 +1,41 @@
+{
+  "schema": "smarter-justice-reusable-master-command-intake",
+  "releaseVersion": "1.7.64",
+  "generatedAt": "2026-07-31T23:58:00-04:00",
+  "prompt": {
+    "filename": "Smarter_Justice_Reusable_Version_Neutral_Complete_Immediate_Build_Master_Command_Eighth_Pass_Canonical_Active_Master_Pair_Runtime_Discovery_Pair_Epoch_Replay_Protection_Detached_Commit_Finalization_v1.7.61_Learning_2026-07-31.txt",
+    "packagedPath": "governance/masters/Smarter_Justice_Eighth_Pass_Master.txt",
+    "pass": "EIGHTH PASS",
+    "sha256": "89f49e1433d05a937a31c2144e42e408a94c4502d8c388ad5f3a6eae7ad5aa68",
+    "sizeBytes": 282387,
+    "lineCount": 6542,
+    "openingMarkerVerified": true,
+    "finalMarkerVerified": true
+  },
+  "integrityMarkers": {
+    "opening": "SMARTER JUSTICE / EIGHTH-PASS REFINED REUSABLE VERSION-NEUTRAL",
+    "closing": "END OF EIGHTH-PASS REFINED SMARTER JUSTICE REUSABLE VERSION-NEUTRAL COMPLETE IMMEDIATE BUILD MASTER COMMAND",
+    "verified": true
+  },
+  "authorityUse": "CONTROLLING_BUILD_INTENT",
+  "implementationTruthSource": "smarter-justice-v1.7.63.zip",
+  "implementationTruthSha256": "54e22e82f78c09cebff0343080d3fc46841117ec4faa0739fc31d72b3d34d408",
+  "nextVersionDerived": "1.7.64",
+  "sameVersionReleasePrevented": true,
+  "historicalV1761LearningPreserved": true,
+  "newestV1761LearningRevalidated": true,
+  "fixedCurrentPortalIdentityInReusableMaster": false,
+  "durableRuleCount": 43,
+  "activeMasterPairReceipt": {
+    "filename": "Smarter_Justice_Eighth_Pass_Four_Portal_Twenty_Sixth_Pass_Master_Pair_Commit_Receipt_2026-07-31.txt",
+    "packagedPath": "governance/receipts/MASTER_PAIR_COMMIT_RECEIPT_E1_R0.txt",
+    "sha256": "4dd826cb0f9d89e41528b9732f250899cab45ce89766ae7fdfdb8a44d48d906e",
+    "sizeBytes": 5295,
+    "lineCount": 92,
+    "receiptId": "MPCR-2026-07-31-E1-R0-05F4296ED378",
+    "transactionId": "MPPT-2026-07-31-SJ8-FP26-304CB87BF174",
+    "pairEpoch": 1,
+    "pairRevision": 0,
+    "state": "MASTER PAIR COMMITTED — PROMPT COMPATIBILITY ONLY"
+  }
+}

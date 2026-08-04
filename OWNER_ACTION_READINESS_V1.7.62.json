@@ -1,0 +1,82 @@
+{
+  "schema": "smarter-justice-owner-action-readiness",
+  "schemaVersion": "1.0.0",
+  "releaseVersion": "1.7.62",
+  "generatedAt": "2026-07-31T22:24:00-04:00",
+  "queueSource": "OWNER_ACTION_QUEUE_V1.7.60.json",
+  "singleWriter": "Smarter Justice coordination",
+  "allowedStates": [
+    "OWNER ACTION PREPARATION",
+    "OWNER ACTION REQUESTED",
+    "OWNER ACTION RECEIVED",
+    "OWNER ACTION VERIFICATION FAILED",
+    "OWNER ACTION VERIFIED",
+    "OWNER ACTION REVALIDATION REQUIRED",
+    "OWNER ACTION DECLINED",
+    "OWNER ACTION DEFERRED",
+    "OWNER ACTION CANCELLED",
+    "QUALIFIED REVIEWER REQUIRED",
+    "EXTERNAL VENDOR REQUIRED"
+  ],
+  "requiredFields": [
+    "requestId",
+    "deduplicationKey",
+    "state",
+    "priority",
+    "product",
+    "capability",
+    "tier",
+    "environment",
+    "criticalPathEffect",
+    "alreadyComplete",
+    "ownerAction",
+    "where",
+    "mustNotPaste",
+    "safeConfirmation",
+    "builderVerification",
+    "rollback",
+    "ownerEffort",
+    "builderPrerequisitesComplete",
+    "verificationRequiredAfterReceipt",
+    "expiresOrRevalidateOn"
+  ],
+  "transitionRules": {
+    "OWNER ACTION PREPARATION": [
+      "OWNER ACTION REQUESTED",
+      "OWNER ACTION DEFERRED",
+      "OWNER ACTION CANCELLED"
+    ],
+    "OWNER ACTION REQUESTED": [
+      "OWNER ACTION RECEIVED",
+      "OWNER ACTION DECLINED",
+      "OWNER ACTION DEFERRED",
+      "OWNER ACTION CANCELLED"
+    ],
+    "OWNER ACTION RECEIVED": [
+      "OWNER ACTION VERIFIED",
+      "OWNER ACTION VERIFICATION FAILED",
+      "OWNER ACTION REVALIDATION REQUIRED"
+    ],
+    "OWNER ACTION VERIFIED": [
+      "OWNER ACTION REVALIDATION REQUIRED",
+      "OWNER ACTION CANCELLED"
+    ]
+  },
+  "requestableIds": [
+    "SJOA-1761-P0-REGISTRY-AUDIT",
+    "SJOA-1761-P0-PORTAL-D4",
+    "SJOA-1761-P0-STRIPE-15"
+  ],
+  "qualifiedReviewIds": [
+    "SJOA-1760-P0-DV-REVIEW",
+    "SJOA-1760-P0-LEGAL-OWNER-GO"
+  ],
+  "deferredIds": [
+    "SJOA-1760-P1-STRIPE-PILOT",
+    "SJOA-1760-P2-AI-PROVIDER"
+  ],
+  "rawSecretsProhibited": true,
+  "receivedIsNotVerified": true,
+  "launchState": "NO_GO",
+  "queue": "OWNER_ACTION_QUEUE_V1.7.62.json"
+}

@@ -1,0 +1,23 @@
+{
+  "version": "1.7.39",
+  "date": "2026-07-28",
+  "removedFileCount": 0,
+  "removedUncompressedBytes": 0,
+  "addedMaterial": [
+    "streamlined attorney and firm signup",
+    "profile completeness and unsaved-change controls",
+    "authoritative recurring membership checkout safeguards",
+    "active-membership billing support state",
+    "attorney enrollment acceptance runbook",
+    "95th regression test",
+    "current release evidence"
+  ],
+  "retainedReason": "Historical release evidence remains intentionally preserved; no inherited file could be removed safely without risking audit or rollback context.",
+  "packagingRules": [
+    "exclude node_modules",
+    "exclude credentials and secret environment files",
+    "exclude runtime logs and database data",
+    "exclude test-only compatibility modules",
+    "include one self-excluding inventory"
+  ]
+}

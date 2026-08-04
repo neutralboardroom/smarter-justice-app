@@ -1,0 +1,53 @@
+{
+  "schema": "smarter-justice-source-acceptance",
+  "releaseVersion": "1.7.69",
+  "generatedAt": "2026-08-02T12:16:00-04:00",
+  "state": "FROZEN_SOURCE_ACCEPTED_IDENTICAL",
+  "selectedBase": {
+    "filename": "smarter-justice-v1.7.68.zip",
+    "version": "1.7.68",
+    "sha256": "a7cb9f15c98959e60736408d6d081022ddebbd2371d14c72c6724f8483310920",
+    "sizeBytes": 7084707,
+    "entries": 2255,
+    "files": 2231,
+    "directories": 24,
+    "uncompressedBytes": 20793829,
+    "compressedBytes": 6748521,
+    "inventoryRecords": 2230,
+    "inventorySha256": "233031bc56e4ac31481cbd090958c894c33770326f70f1a329cbf9af0f61a77c",
+    "treeSha256": "233031bc56e4ac31481cbd090958c894c33770326f70f1a329cbf9af0f61a77c",
+    "packageJsonSha256": "e50ec1c66858c55ba08d91bf875f21a2f29de78b61171d4e065933943faf6736",
+    "packageLockSha256": "218a227d0101c9ec962e619e5cdc550b623011f31aa15f4408ef778f5eb7eaa4",
+    "dependencyIndependentParts": 122,
+    "totalReadinessParts": 123,
+    "testLogSha256": "6979fd0d02f47f989511b12d2f27a97a0da50457373cb82f0ab7d4ccb99aec9b"
+  },
+  "workingTree": {
+    "commandsPerRun": 123,
+    "runs": 2,
+    "identicalOutput": true,
+    "testLogSha256": "1519303460f7dd2f0f5bc77cdd663853cba6068bb63c91e5b525655792328da2",
+    "packageJsonSha256": "b7568c2f270cba1a8c8da775d61e121b7dbcd4aa454afa4c4d5b5bfd1167a2cf",
+    "packageLockSha256": "093c536b76ec9a2b5c2051b37b7d4cca3901549756f6e75049302caa16a08ccf",
+    "sbomSha256": "8f35180560392eef1a8d3fa1142f1c8492058261828fa453bf99336863546c63"
+  },
+  "supplyChain": {
+    "cleanInstallState": "BLOCKED_CONFIGURED_REGISTRY_HTTP_404_XTEND_4_0_2",
+    "vulnerabilityAuditState": "BLOCKED_CONFIGURED_AUDIT_ENDPOINT_HTTP_404",
+    "privateRegistryCoordinatesPackaged": false,
+    "postgresAcceptanceClaimed": false,
+    "vulnerabilityAcceptanceClaimed": false
+  },
+  "launchState": "NO_GO",
+  "deploymentAuthorized": false,
+  "frozenSourceAcceptance": {
+    "trees": 2,
+    "commandsPerTree": 123,
+    "concurrent": true,
+    "identicalOutput": true,
+    "testLogSha256": "1519303460f7dd2f0f5bc77cdd663853cba6068bb63c91e5b525655792328da2",
+    "sourceA": "sj1769-source-a",
+    "sourceB": "sj1769-source-b",
+    "state": "PASS_IDENTICAL_OUTPUT"
+  }
+}

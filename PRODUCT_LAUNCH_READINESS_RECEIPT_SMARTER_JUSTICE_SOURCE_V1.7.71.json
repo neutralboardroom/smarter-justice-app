@@ -1,0 +1,48 @@
+{
+  "schema_id": "SJP-PRODUCT-LAUNCH-READINESS-RECEIPT-2026-08-02-V1",
+  "receipt_id": "sj-source-v1.7.71-readiness-receipt",
+  "generated_for_release": "1.7.70",
+  "product": {
+    "id": "smarter-justice-central",
+    "name": "Smarter Justice central",
+    "version": "1.7.71",
+    "artifact_name": "smarter-justice-v1.7.71.zip",
+    "artifact_sha256": "d83a25d224f0cec197569204fb33ac19e32e6f3d307e57e48a265f53b052569c",
+    "artifact_size_bytes": 7894341,
+    "initial_cutover_track": true,
+    "build_and_readiness_track": true
+  },
+  "readiness_state": "EXACT_RELEASE_ACCEPTED",
+  "gates": {
+    "product_quality": "ACCEPTED",
+    "practice_specific_legal_and_safety": "NOT_APPLICABLE",
+    "current_authoritative_sources": "ACCEPTED",
+    "profile_growth_and_enrichment": "READY_FOR_REVIEW",
+    "smarter_justice_compatibility": "ACCEPTED",
+    "tests_and_exact_release": "ACCEPTED",
+    "repository_and_workflow": "PENDING_EXTERNAL_ACCEPTANCE",
+    "deployment_contract": "ACCEPTED",
+    "provider_service": "BLOCKED_WITH_EXACT_REASON",
+    "domain_dns_tls": "BLOCKED_WITH_EXACT_REASON",
+    "migration": "READY_FOR_REVIEW",
+    "health_and_smoke": "READY_FOR_REVIEW",
+    "monitoring_support_incident": "BLOCKED_WITH_EXACT_REASON",
+    "stabilization_and_rollback": "BLOCKED_WITH_EXACT_REASON"
+  },
+  "exact_blockers": [
+    "The exact GitHub repository, commit/tree, Render workspace/service, canonical production domain and provider secret-presence states have not been independently bound.",
+    "Production PostgreSQL, authenticated SMTP, MFA, monitoring, backup, restore, live smoke, screenshot and stabilization acceptance remain incomplete.",
+    "No production deployment is authorized or claimed."
+  ],
+  "builder_controlled_work_remaining": [],
+  "protected_owner_actions": [
+    "Authorize exact product-scoped production action only after read-only provider discovery and qualification evidence are complete."
+  ],
+  "next_executable_action": "Run read-only provider discovery and bind the exact repository, commit/tree, service and canonical-domain states without exposing secret values.",
+  "evidence_files": [
+    "smarter-justice-v1.7.71.zip",
+    "FILE_INVENTORY_SHA256.txt",
+    "RELEASE_EVIDENCE_V1.7.71.json"
+  ],
+  "generated_at": "2026-08-02T17:04:00-04:00"
+}

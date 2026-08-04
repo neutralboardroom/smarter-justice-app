@@ -1,0 +1,26 @@
+{
+  "schema": "smarter-justice-final-source-acceptance",
+  "releaseVersion": "1.7.79",
+  "generatedAt": "2026-08-03T13:40:00-04:00",
+  "state": "CANDIDATE_ACCEPTED_FINAL_SOURCE_SEALED",
+  "sourceAcceptance": {
+    "commandsPerRun": 137,
+    "runs": 2,
+    "testLogSha256": "c0f49f555c082b4515a8f39cd0fec52494c665efd8f40caec4d20c29adf1b486",
+    "identicalOutput": true,
+    "sourceHashes": {
+      "packageJsonSha256": "8490026b9c00f2efa4db13512767fb6501d3b2cb69c5fdbb1df3df5ca27fca65",
+      "packageLockSha256": "5c1a85d14755452a2c32f04f7fe5a2ad558f8fbc2ab4ac2a67491ee2e672baf4",
+      "sbomSha256": "fe567d113bae7dd502fde2f44463a7752154cad9b96d0b84df8259bed0b941f6"
+    },
+    "sealedAfterCandidateAcceptance": true
+  },
+  "candidateAcceptance": {
+    "record": "CANDIDATE_ARTIFACT_ACCEPTANCE_V1.7.79.json",
+    "state": "CANDIDATE_ACCEPTED_NONCIRCULAR",
+    "sha256": "5dabc2121574cb2952e7a08586f54b0b46e5c74758bf13fc4fbb724a4fa21bb0",
+    "sizeBytes": 8686218,
+    "testLogSha256": "c0f49f555c082b4515a8f39cd0fec52494c665efd8f40caec4d20c29adf1b486"
+  },
+  "deploymentAuthorized": false
+}

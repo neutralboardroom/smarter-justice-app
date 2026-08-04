@@ -1,0 +1,27 @@
+{
+  "schema": "smarter-justice-working-tree-acceptance",
+  "releaseVersion": "1.7.81",
+  "generatedAt": "2026-08-03T17:46:00-04:00",
+  "state": "ACCEPTED_COMPLETE_RUNS",
+  "commandsPerRun": 141,
+  "runs": 2,
+  "testLogSha256": "ad0f912ac3b7f958b0f6dadd4996db299f1e80e8ef330740ec53b01bc323074e",
+  "identicalOutput": true,
+  "postgresDependentParts": 1,
+  "postgresAcceptanceClaimed": false,
+  "sourceHashes": {
+    "packageJsonSha256": "368e14ec101496339f29d8b1082961dc34838235ff4316747edb9fb4dbba7be7",
+    "packageLockSha256": "c32343534da9b76bae22e259e3749f2c2ed9542714105b3ba856e95ba6b4c6aa",
+    "sbomSha256": "fb86c17cc96986a4a56eece2df3910714108139db7313d6f04551561193f6c96"
+  },
+  "materialImplementation": {
+    "productPlatform": [
+      "V14 batch evidence reconciliation and all-or-nothing promotion transaction preview with no persistence or mutation"
+    ],
+    "builderPromptSystem": [
+      "Detached post-package final delivery receipt generation and seventeen-field cross-receipt verification"
+    ]
+  },
+  "launchState": "NO_GO",
+  "deploymentAuthorized": false
+}

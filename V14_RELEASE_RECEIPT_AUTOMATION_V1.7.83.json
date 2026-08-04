@@ -1,0 +1,19 @@
+{
+  "schema_id": "SJP-V14-RELEASE-RECEIPT-AUTOMATION-2026-08-03-V1",
+  "release_version": "1.7.83",
+  "governing_packet_sha256": "fce42ce0927748f94189692ef5b3bf8e0fe9f8d12273287f03a68eb7bccdad6f",
+  "owner_receipt": "OWNER_RECEIPT.txt",
+  "payload_inventory": "RELEASE_PAYLOAD_INVENTORY_SHA256.txt",
+  "legacy_inventory": "FILE_INVENTORY_SHA256.txt",
+  "payload_exclusions": [
+    "OWNER_RECEIPT.txt",
+    "RELEASE_PAYLOAD_INVENTORY_SHA256.txt",
+    "FILE_INVENTORY_SHA256.txt"
+  ],
+  "deterministic_sort": "UTF8_PATH_ASCENDING",
+  "line_format": "<sha256><two spaces><relative path><LF>",
+  "outer_zip_identity_embedded": false,
+  "check_mode_required": true,
+  "deployment_authorized": false,
+  "launch_state": "NO_GO"
+}

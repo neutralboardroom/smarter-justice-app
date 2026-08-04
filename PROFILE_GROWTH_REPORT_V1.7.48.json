@@ -1,0 +1,23 @@
+{
+  "releaseVersion": "1.7.48",
+  "newProfessionals": 0,
+  "updatedProfessionals": 0,
+  "newFirms": 0,
+  "totalProfessionals": 233,
+  "publicDirectory": {
+    "total": 281
+  },
+  "generatedAt": "2026-07-29T16:22:00-04:00",
+  "sourceFactChanges": false,
+  "livePublication": false,
+  "note": "No production profile-growth batch was run and no public professional or firm facts were added or changed.",
+  "summary": "v1.7.48 improves personalized outreach and privacy-minimized funnel measurement. Temporary tests create outreach contacts and invitation records only; they are not production profiles.",
+  "v1748Change": {
+    "newProductionProfessionals": 0,
+    "publicProfileFactsChanged": false,
+    "productionBatchesCommitted": 0,
+    "testFixtureProfileCandidatesCreated": 0,
+    "testFixtureOutreachContactsCreated": 1,
+    "note": "All test records use temporary test storage and are not packaged production data."
+  }
+}

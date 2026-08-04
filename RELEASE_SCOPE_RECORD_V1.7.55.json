@@ -1,0 +1,48 @@
+{
+  "release": "1.7.55",
+  "generatedAt": "2026-07-30",
+  "theme": "Exact v1.7.54 final-truth reconciliation, current four-portal evidence refresh, and parallel-safe release acceptance",
+  "selectedOutcomes": [
+    "record exact accepted v1.7.54 as source and rollback",
+    "update four initial portal owner-recorded identities",
+    "remove fixed-port collision from smoke acceptance",
+    "prove two smoke journeys can run concurrently",
+    "preserve strong attorney-tour and public surfaces by hash",
+    "keep all live gates closed"
+  ],
+  "preserved": [
+    "all working public tools and routes",
+    "Attorney Partner Tour, presenter mode, QR and print card",
+    "four independent portal repositories",
+    "free basic profile control",
+    "English-first state",
+    "Domestic Violence and Stop Sign safety boundaries",
+    "NO_GO and not deployed truth"
+  ],
+  "deferred": [
+    "D4 portal staging",
+    "real-device and assistive-technology acceptance",
+    "production PostgreSQL/SMTP/MFA/monitoring/backup/restore",
+    "legal/privacy/support/incident and owner GO"
+  ],
+  "closedGates": [
+    "payments",
+    "subscriptions",
+    "booking",
+    "reviews",
+    "confidential uploads",
+    "sensitive external AI",
+    "automatic filing",
+    "unrestricted professional routing",
+    "automatic cross-repository synchronization",
+    "automatic public-user matter transfer",
+    "live portal connections",
+    "professional opportunities",
+    "appointments"
+  ],
+  "completionEvidence": [
+    "tests/release-reproducibility-v1755.test.js",
+    "FINAL_V1.7.54_TRUTH_RECONCILIATION_V1.7.55.json",
+    "PUBLIC_SURFACE_PRESERVATION_ACCEPTANCE_V1.7.55.json"
+  ]
+}

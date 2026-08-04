@@ -1,0 +1,110 @@
+{
+  "schema": "smarter-justice-provider-discovery-owner-authorization-packet",
+  "releaseVersion": "1.7.73",
+  "packet_id": "SJP-PROVIDER-DISCOVERY-OWNER-AUTHORIZATION-2026-08-03-V1773",
+  "generatedAt": "2026-08-03T08:35:00-04:00",
+  "packId": "SJP-2026-08-02-C15-P37-D11-V13",
+  "source": {
+    "artifact_name": "smarter-justice-v1.7.72.zip",
+    "artifact_sha256": "db2b08c866c826abfc5d2a4b920419bacacbe6185f6f3d883cdec7c4af31c678",
+    "artifact_size_bytes": 8044070,
+    "identity_evidence_state": "EXACT_CURRENT_CHAT_VERIFIED"
+  },
+  "request_reference": {
+    "authorization_request_id": "provider-discovery-smarter-justice-v1.7.72-draft",
+    "authorization_request_digest": "a39c7ece67cee32894b0163d746156150ee9cf79fa52b1546b49e9a8f48e3a62",
+    "product": {
+      "id": "smarter-justice-central",
+      "name": "Smarter Justice",
+      "version": "1.7.72",
+      "artifact_name": "smarter-justice-v1.7.72.zip",
+      "artifact_sha256": "db2b08c866c826abfc5d2a4b920419bacacbe6185f6f3d883cdec7c4af31c678",
+      "artifact_size_bytes": 8044070,
+      "identity_evidence_state": "EXACT_CURRENT_CHAT_VERIFIED"
+    },
+    "created_at": "2026-08-03T08:35:00-04:00",
+    "expires_at": "2026-08-03T16:35:00-04:00",
+    "scopes": [
+      "GITHUB_REPOSITORY_METADATA",
+      "GITHUB_DEFAULT_BRANCH_COMMIT_TREE",
+      "RENDER_WORKSPACE_SERVICE_METADATA",
+      "DOMAIN_DNS_TLS_REDIRECT_METADATA",
+      "REQUIRED_SECRET_PRESENCE_ONLY",
+      "MIGRATION_CLASSIFICATION_METADATA",
+      "ROLLBACK_CANDIDATE_METADATA"
+    ],
+    "forbidden_actions": [
+      "READ_SECRET_VALUES",
+      "WRITE_REPOSITORY",
+      "CHANGE_BRANCH_OR_COMMIT",
+      "CREATE_OR_TRIGGER_DEPLOYMENT",
+      "CHANGE_RENDER_CONFIGURATION",
+      "CHANGE_DNS_OR_TLS",
+      "MUTATE_DATABASE",
+      "CREATE_OR_CHANGE_WEBHOOK",
+      "CHANGE_BILLING_OR_ENTITLEMENTS"
+    ]
+  },
+  "decision_state": "OWNER_DECISION_REQUIRED",
+  "decision": null,
+  "decision_template": {
+    "schema_id": "SJP-PROVIDER-DISCOVERY-OWNER-AUTHORIZATION-DECISION-2026-08-03-V1",
+    "decision_id": null,
+    "authorization_request_id": "provider-discovery-smarter-justice-v1.7.72-draft",
+    "authorization_request_digest": "a39c7ece67cee32894b0163d746156150ee9cf79fa52b1546b49e9a8f48e3a62",
+    "product": {
+      "id": "smarter-justice-central",
+      "name": "Smarter Justice",
+      "version": "1.7.72",
+      "artifact_name": "smarter-justice-v1.7.72.zip",
+      "artifact_sha256": "db2b08c866c826abfc5d2a4b920419bacacbe6185f6f3d883cdec7c4af31c678",
+      "artifact_size_bytes": 8044070,
+      "identity_evidence_state": "EXACT_CURRENT_CHAT_VERIFIED"
+    },
+    "decision_state": null,
+    "issued_at": null,
+    "expires_at": null,
+    "authorized_scopes": [
+      "GITHUB_REPOSITORY_METADATA",
+      "GITHUB_DEFAULT_BRANCH_COMMIT_TREE",
+      "RENDER_WORKSPACE_SERVICE_METADATA",
+      "DOMAIN_DNS_TLS_REDIRECT_METADATA",
+      "REQUIRED_SECRET_PRESENCE_ONLY",
+      "MIGRATION_CLASSIFICATION_METADATA",
+      "ROLLBACK_CANDIDATE_METADATA"
+    ],
+    "forbidden_actions_acknowledged": [
+      "READ_SECRET_VALUES",
+      "WRITE_REPOSITORY",
+      "CHANGE_BRANCH_OR_COMMIT",
+      "CREATE_OR_TRIGGER_DEPLOYMENT",
+      "CHANGE_RENDER_CONFIGURATION",
+      "CHANGE_DNS_OR_TLS",
+      "MUTATE_DATABASE",
+      "CREATE_OR_CHANGE_WEBHOOK",
+      "CHANGE_BILLING_OR_ENTITLEMENTS"
+    ],
+    "owner_confirmation": null,
+    "execution_nonce": null,
+    "read_only": true,
+    "secret_values_forbidden": true,
+    "write_operations_forbidden": true,
+    "deployment_authorized": false,
+    "production_request_sent": false,
+    "cohort_freeze_authorized": false,
+    "canary_authorized": false,
+    "single_use": true
+  },
+  "authorizationReady": false,
+  "executionEnvelope": null,
+  "providerMetadataRead": false,
+  "secretValuesRead": false,
+  "deploymentAuthorized": false,
+  "productionRequestSent": false,
+  "cohortFrozen": false,
+  "canarySelected": false,
+  "exact_blockers": [
+    "No detached owner authorization decision has been supplied."
+  ],
+  "nextProtectedAction": "Review the exact request and issue a detached decision only if the listed read-only scopes and time window are intended; otherwise decline or allow the draft to expire."
+}

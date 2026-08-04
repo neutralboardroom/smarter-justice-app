@@ -1,0 +1,32 @@
+{
+  "schema": "smarter-justice-final-source-acceptance",
+  "releaseVersion": "1.7.65",
+  "generatedAt": "2026-08-01T00:27:00-04:00",
+  "state": "PRESEAL_FINAL_SOURCE_ACCEPTED_IMMUTABLE_FINAL_BUILD_AUTHORIZED",
+  "presealArtifact": {
+    "sha256": "4542a7f18458ec1f8a38df3e850327449618235a3c33f5c8cd1e307903d2f31c",
+    "sizeBytes": 5904344,
+    "entries": 1941,
+    "files": 1923,
+    "directories": 18,
+    "uncompressedBytes": 17007764,
+    "compressedBytes": 5617368,
+    "inventoryRecords": 1922,
+    "inventorySha256": "1a8bd92a64b3be20480ad1b9c260b735970e45c56ef075a4b62fa416bfe35a9e"
+  },
+  "deterministicBuilds": 2,
+  "byteIdentical": true,
+  "crc": "PASS",
+  "safePaths": "PASS",
+  "duplicatePaths": "PASS",
+  "symlinks": [],
+  "encryption": [],
+  "sourceEquality": true,
+  "freshExtractions": 2,
+  "commandsPerExtraction": 119,
+  "testLogSha256": "117bd79c2e1abd118cb38fef573a465bd18e04c816292a1196a0364cae0768a6",
+  "identicalOutput": true,
+  "identityBoundary": "The immutable final ZIP is built after this record and identified only by a detached receipt.",
+  "launchState": "NO_GO",
+  "deploymentAuthorized": false
+}

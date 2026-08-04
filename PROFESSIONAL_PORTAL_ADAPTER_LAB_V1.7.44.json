@@ -1,0 +1,44 @@
+{
+  "schemaName": "smarter-justice-professional-portal-adapter-lab",
+  "schemaVersion": "1.4.0",
+  "releaseVersion": "1.7.44",
+  "generatedAt": "2026-07-29T13:26:00-04:00",
+  "readiness": "D3_ADAPTER_TESTS_PASS",
+  "contractVersion": "1.4.0",
+  "portalContracts": 25,
+  "fixtures": {
+    "passed": 25,
+    "failed": 0,
+    "populated": 13,
+    "validEmpty": 12
+  },
+  "assignments": {
+    "centralCanonicalTracked": 678,
+    "distributedToFocusedPortalFixtures": 445,
+    "excludedSmarterJusticeAccountOnlyAssignments": 233,
+    "unresolvedLegacy": 14
+  },
+  "safety": {
+    "prohibitedDataFindings": 0,
+    "liveConnections": 0,
+    "automaticWrites": 0,
+    "userMatterData": false,
+    "paymentData": false,
+    "credentials": false,
+    "confidentialData": false,
+    "integratedPortalStandardEnvelope": true,
+    "smarterJusticePublicDirectory": false,
+    "paymentCreatesPublication": false,
+    "profilePayloadsIncluded": true,
+    "firmPayloadsIncluded": true,
+    "publicationRequiresIndependentGates": true,
+    "exactRevisionReviewRequired": true,
+    "exactRevisionAssignmentApprovalRequired": true,
+    "duplicatePortalAccounts": false,
+    "duplicatePortalBilling": false,
+    "automaticWriteBack": false,
+    "historicalComplimentaryPilotCreatesPublication": false
+  },
+  "claimBoundary": "D3 proves local read-only producer-consumer validation for exact-revision assignments and portal-safe profile/firm payloads. It does not prove dedicated portal adoption, D4 staging, production, live connectivity, payment activation, publication, or portal writes.",
+  "fixtureVersion": "1.3.0"
+}

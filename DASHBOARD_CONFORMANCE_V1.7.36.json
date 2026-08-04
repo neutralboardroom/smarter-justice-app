@@ -1,0 +1,59 @@
+{
+  "version": "1.7.36",
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-07-27T15:30:00-04:00",
+  "highestClaim": "D3_INTEGRATION_TESTED_LOCAL_ONLY",
+  "states": [
+    "D0_CONCEPT_ONLY",
+    "D1_FIXTURE_RENDERED",
+    "D2_CONTRACT_TESTED",
+    "D3_INTEGRATION_TESTED",
+    "D4_STAGING_VERIFIED",
+    "D5_PRODUCTION_VERIFIED"
+  ],
+  "runs": [
+    {
+      "conformanceRunId": "conformance:professional-portal-adapters:v1.7.36",
+      "surfaceId": "surface:professional-portal-adapter-lab",
+      "state": "D3_INTEGRATION_TESTED",
+      "passed": [
+        "25 producer-consumer fixtures",
+        "14 populated fixtures",
+        "11 valid empty fixtures",
+        "678 canonical assignments",
+        "14 unresolved assignments excluded",
+        "required fields",
+        "allowed fields",
+        "prohibited key scan",
+        "duplicate assignment detection",
+        "portal ID match",
+        "closed appointment gate",
+        "no write",
+        "no live connection",
+        "deterministic fingerprints"
+      ],
+      "notProven": [
+        "dedicated portal staging adapter",
+        "production connection",
+        "portal write",
+        "live monitoring"
+      ]
+    },
+    {
+      "conformanceRunId": "conformance:portfolio-truth:v1.7.36",
+      "surfaceId": "surface:portfolio-control-center",
+      "state": "D2_CONTRACT_TESTED",
+      "passed": [
+        "stable identifiers",
+        "evidence states",
+        "owner-only route",
+        "legal-only scope"
+      ],
+      "notProven": [
+        "live portal producer integration",
+        "production monitoring"
+      ]
+    }
+  ],
+  "claimBoundary": "The D3 claim applies only to local read-only professional portal adapter fixtures. Overall production and portal integration remain unverified."
+}

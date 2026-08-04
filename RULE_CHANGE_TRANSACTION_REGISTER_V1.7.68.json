@@ -1,0 +1,41 @@
+{
+  "schema": "smarter-justice-rule-change-transaction-register",
+  "schemaVersion": "2.0.0",
+  "releaseVersion": "1.7.68",
+  "generatedAt": "2026-08-02T11:24:00-04:00",
+  "appendOnly": true,
+  "currentBaselineId": "DRB-2026-08-01-DUR001-DUR080-V12",
+  "transactions": [
+    {
+      "transactionId": "DRC-2026-08-01-DUR072-DUR074-PACK-STABILITY-C6D6C7C95D3E",
+      "type": "ADD_AND_CLARIFY",
+      "parentBaselineId": "DRB-2026-08-01-DUR001-DUR071-V10",
+      "successorBaselineId": "DRB-2026-08-01-DUR001-DUR080-V12",
+      "affectedRuleIds": [
+        "DUR-072",
+        "DUR-073",
+        "DUR-074"
+      ],
+      "authority": "Roger approved coordinated prompt pack",
+      "result": "ACCEPTED_PACK_GOVERNANCE_BASELINE"
+    },
+    {
+      "transactionId": "DRC-2026-08-01-DUR075-DUR080-DEPLOYMENT-BC097F85CA8B",
+      "type": "ADD_AND_ACTIVATE_DEPLOYMENT_FILE_4",
+      "parentBaselineId": "DRB-2026-08-01-DUR001-DUR080-V12",
+      "successorBaselineId": "DRB-2026-08-01-DUR001-DUR080-V12",
+      "affectedRuleIds": [
+        "DUR-075",
+        "DUR-076",
+        "DUR-077",
+        "DUR-078",
+        "DUR-079",
+        "DUR-080"
+      ],
+      "authority": "Roger supplied finalized four-file prompt pack with active Deployment File 4",
+      "result": "ACCEPTED_FOUR_FILE_PACK_DEPLOYMENT_GOVERNANCE_BASELINE"
+    }
+  ],
+  "tombstones": [],
+  "forkMergeConflicts": []
+}

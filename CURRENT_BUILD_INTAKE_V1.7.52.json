@@ -1,0 +1,28 @@
+{
+  "release": "1.7.52",
+  "recordedAt": "2026-07-30",
+  "status": "COMPLETE_BASELINE_INTAKE",
+  "suppliedArtifact": {
+    "filename": "smarter-justice-v1.7.51.zip",
+    "sha256": "d67b3871ac03be5f33eee1a99802f8f1cd0503a47221b9ff669f45afe873f439",
+    "sizeBytes": 3122852,
+    "zipEntries": 1232,
+    "packagedFiles": 1218,
+    "explicitDirectories": 14,
+    "rootLayout": "FILES_AT_ZIP_ROOT",
+    "crc": "PASS",
+    "inventoryRecords": 1217
+  },
+  "baselineTests": {
+    "dependencyIndependentParts": 105,
+    "status": "PASS_FROM_AUTHORITATIVE_BASE_RECORD_AND_REVERIFIED_HIGH_VALUE_TESTS"
+  },
+  "authenticBlockers": [
+    "Registry 404 for xtend-4.0.2.tgz",
+    "Configured npm audit endpoint 404",
+    "PostgreSQL-dependent readiness unavailable",
+    "Production and exact four-portal staging not accepted"
+  ],
+  "launchState": "NO_GO",
+  "workingTree": "smarter-justice-v1.7.52"
+}

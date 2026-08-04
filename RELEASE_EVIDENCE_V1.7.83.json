@@ -1,0 +1,87 @@
+{
+  "schema": "smarter-justice-release-evidence",
+  "releaseVersion": "1.7.83",
+  "generatedAt": "2026-08-03T19:45:00-04:00",
+  "status": "FINAL_SOURCE_ACCEPTED_DETACHED_FINAL_PENDING",
+  "sourceArtifact": {
+    "filename": "smarter-justice-v1.7.82.zip",
+    "version": "1.7.82",
+    "sha256": "61fea278a69055915e9b4b916e4b64ec514614f1746cacf659a6931ccd0228b1",
+    "sizeBytes": 8829574,
+    "entries": 3135,
+    "files": 3111,
+    "directories": 24,
+    "uncompressedBytes": 26230593,
+    "compressedBytes": 8353654,
+    "payloadInventoryRecords": 3108,
+    "payloadInventorySha256": "e0a33aaf4935ec7fc00b68b6b32fef9e3c17060d80090f7698502175b33b5cca",
+    "inventoryRecords": 3110,
+    "inventorySha256": "c41f6f11f4845894431c95f58fef6762eb272d8d7da460bc5678e48575079044",
+    "treeSha256": "c41f6f11f4845894431c95f58fef6762eb272d8d7da460bc5678e48575079044",
+    "packageJsonSha256": "db426c566ea41c9be7a899718bbbe904a624922071e5f04ddc4b3b849c141a67",
+    "packageLockSha256": "0e7bd658a2618f69848bf11a8286769d560693a08096543248ec41126298bd68",
+    "sbomSha256": "a5fa82094de6453a319371c6c38ce59ce310cd66ef67bac2d73b43efcb37e449",
+    "dependencyIndependentParts": 143,
+    "totalReadinessParts": 144,
+    "testLogSha256": "75ac27c328cacc1f39f3d92b675c27325662b9bc5a54f2de00556b9fe4306c11"
+  },
+  "workingTreeAcceptance": {
+    "record": "WORKING_TREE_ACCEPTANCE_V1.7.83.json",
+    "commandsPerRun": 145,
+    "runs": 2,
+    "identicalOutput": true,
+    "testLogSha256": "65997d8bb250b85b36c1c111f452a3b3caf4f044670fe01e276a21edb5240ef5",
+    "state": "FINALIZED_WORKING_TREE_ACCEPTED"
+  },
+  "materialImprovements": {
+    "productPlatform": [
+      "First-gap-only owner evidence collection packet with provider-specific nonsecret fields, required PASS checks, dependencies, forbidden inputs, expiry, deterministic digest, and JSON/text export without provider calls or state mutation"
+    ],
+    "builderPromptSystem": [
+      "Dynamic non-persisted V14 acceptance evidence bundle cross-checking the 145-command manifest, working receipt, package identities, both inventories, owner receipt, exact source/packet binding, and detached-final boundary"
+    ]
+  },
+  "candidateAcceptance": {
+    "record": "CANDIDATE_ARTIFACT_ACCEPTANCE_V1.7.83.json",
+    "state": "CANDIDATE_ACCEPTED_FINAL_SOURCE_SEALED",
+    "sha256": "97ce078e17ccd96253f04e0300988680683a8dd8f8bf40177ff1d9db12f414cb",
+    "sizeBytes": 8886983,
+    "testLogSha256": "65997d8bb250b85b36c1c111f452a3b3caf4f044670fe01e276a21edb5240ef5"
+  },
+  "finalAcceptance": {
+    "record": "FINAL_ARTIFACT_ACCEPTANCE_V1.7.83.json",
+    "state": "FINAL_SOURCE_ACCEPTED_DETACHED_FINAL_PENDING"
+  },
+  "v14": {
+    "packetId": "SJP-LMP-UNIVERSAL-ONE-STEP-2026-08-03-V14-ALL-CHAT-MODES",
+    "packetSha256": "fce42ce0927748f94189692ef5b3bf8e0fe9f8d12273287f03a68eb7bccdad6f",
+    "mode": "MODE_B_EXISTING_CHAT_PACKET_ONLY",
+    "artifactBindingReceipt": "ARTIFACT_BINDING_AND_MODE_RECEIPT.json",
+    "ownerReceipt": "OWNER_RECEIPT.txt",
+    "releasePayloadInventory": "RELEASE_PAYLOAD_INVENTORY_SHA256.txt",
+    "unifiedLiveOperations": "V14_UNIFIED_LIVE_OPERATIONS_REGISTER_V1.7.83.json",
+    "liveEvidenceConnector": "V14_LIVE_EVIDENCE_CONNECTOR_CONTRACT_V1.7.83.json",
+    "receiptAutomation": "V14_RELEASE_RECEIPT_AUTOMATION_V1.7.83.json",
+    "finalDeliveryIdentity": "REPORTED_AFTER_PACKAGING",
+    "evidenceBatchWorkspace": "V14_EVIDENCE_BATCH_WORKSPACE_CONTRACT_V1.7.83.json",
+    "detachedDeliveryReceiptContract": "V14_DETACHED_FINAL_DELIVERY_RECEIPT_CONTRACT_V1.7.83.json",
+    "evidenceReadinessPlanner": "V14_EVIDENCE_READINESS_PLANNER_CONTRACT_V1.7.83.json",
+    "segmentedAcceptanceManifest": "ACCEPTANCE_SUITE_MANIFEST_V1.7.83.json",
+    "segmentedAcceptanceManifestSha256": "568aae7bccd73705db0135d088a786dbcfa5de3fba47fecb61b61f4f1392d737",
+    "evidenceCollectionPacket": "V14_EVIDENCE_COLLECTION_PACKET_CONTRACT_V1.7.83.json",
+    "acceptanceEvidenceBundle": "V14_ACCEPTANCE_EVIDENCE_BUNDLE_CONTRACT_V1.7.83.json"
+  },
+  "launchState": "NO_GO",
+  "deploymentAuthorized": false,
+  "sourcePackageHashes": {
+    "packageJsonSha256": "adb5e986a2f8062ffae5bee7374ded80157768d62f74af0e412de4a56a1eb557",
+    "packageLockSha256": "e795006890fa9230e3bbd9759c3136485d9cc93237deb598f293ee56c4ca04f8",
+    "sbomSha256": "88c32b78db48539944662ea3afa2f9fa51af01ffa0dec5c943d6f34f2c605ce4"
+  },
+  "finalSourceAcceptance": {
+    "record": "FINAL_SOURCE_ACCEPTANCE_V1.7.83.json",
+    "state": "FINAL_SOURCE_ACCEPTED",
+    "runs": 2,
+    "testLogSha256": "65997d8bb250b85b36c1c111f452a3b3caf4f044670fe01e276a21edb5240ef5"
+  }
+}

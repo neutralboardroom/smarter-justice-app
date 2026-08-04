@@ -1,0 +1,55 @@
+{
+  "version": "1.7.30",
+  "reviewDate": "2026-07-24",
+  "items": [
+    {
+      "id": "SJ-WATCH-001",
+      "area": "Node.js 22 runtime",
+      "reason": "The exact build runtime is v22.16.0 while newer Node 22 patches exist.",
+      "trigger": "Before deployment or after a Node security release, test on the currently supported Node 22 patch and record exact runtime evidence.",
+      "status": "action required before deployment"
+    },
+    {
+      "id": "SJ-WATCH-002",
+      "area": "npm dependency audit",
+      "reason": "The configured registry timed out, so no fresh vulnerability count exists.",
+      "trigger": "When registry access is restored, run clean npm ci --omit=dev --ignore-scripts and npm audit against the exact lockfile.",
+      "status": "blocked by registry availability"
+    },
+    {
+      "id": "SJ-WATCH-003",
+      "area": "WCAG 2.2 acceptance",
+      "reason": "Source checks cannot replace real browser, device, zoom, contrast, keyboard, and screen-reader testing.",
+      "trigger": "Before public launch or after material UI changes, complete physical-device and assistive-technology acceptance.",
+      "status": "external acceptance required"
+    },
+    {
+      "id": "SJ-WATCH-004",
+      "area": "Professional profile freshness",
+      "reason": "The v1.7.30 batch uses professional-controlled public pages reviewed on 2026-07-24.",
+      "trigger": "Revalidate on claim/correction, source change, stale threshold, or before verification/participation approval.",
+      "status": "monitor"
+    },
+    {
+      "id": "SJ-WATCH-005",
+      "area": "Official forms and rules in dedicated portals",
+      "reason": "Smarter Justice coordinates legal portals but does not supersede their dedicated form provenance.",
+      "trigger": "When a dedicated portal ZIP is uploaded or an official source changes, verify the exact artifact and update adoption records.",
+      "status": "monitor"
+    },
+    {
+      "id": "SJ-WATCH-006",
+      "area": "Sensitive and commercial activation",
+      "reason": "Uploads, payments, booking, reviews, routing, external AI, and human review remain unapproved.",
+      "trigger": "Only after infrastructure, security, privacy, support, professional-responsibility, payment, and live acceptance evidence plus explicit owner approval.",
+      "status": "fail closed"
+    },
+    {
+      "id": "SJ-WATCH-007",
+      "area": "Date and deadline tool boundaries",
+      "reason": "Users may mistake organization for legal deadline calculation.",
+      "trigger": "Any user feedback, copy change, or future rule-engine proposal must preserve source/status distinctions and require authoritative maintained rules before calculations.",
+      "status": "monitor"
+    }
+  ]
+}

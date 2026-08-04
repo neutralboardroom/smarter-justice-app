@@ -1,0 +1,30 @@
+{
+  "schema": "smarter-justice-final-artifact-acceptance",
+  "releaseVersion": "1.7.65",
+  "generatedAt": "2026-08-01T00:27:00-04:00",
+  "status": "PRESEAL_SOURCE_ACCEPTED_IMMUTABLE_FINAL_IDENTITY_DETACHED",
+  "identityMode": "NON_SELF_REFERENTIAL_PRESEAL_ACCEPTANCE_PLUS_DETACHED_FINAL_DELIVERY_RECEIPT",
+  "detachedFinalArchiveRequired": true,
+  "presealArtifact": {
+    "sha256": "4542a7f18458ec1f8a38df3e850327449618235a3c33f5c8cd1e307903d2f31c",
+    "sizeBytes": 5904344,
+    "entries": 1941,
+    "files": 1923,
+    "directories": 18,
+    "uncompressedBytes": 17007764,
+    "compressedBytes": 5617368,
+    "inventoryRecords": 1922,
+    "inventorySha256": "1a8bd92a64b3be20480ad1b9c260b735970e45c56ef075a4b62fa416bfe35a9e"
+  },
+  "deterministicPresealBuilds": 2,
+  "presealFreshExtractions": 2,
+  "commandsPerRun": 119,
+  "testLogSha256": "117bd79c2e1abd118cb38fef573a465bd18e04c816292a1196a0364cae0768a6",
+  "totalReadinessParts": 120,
+  "finalArchiveExpectedFilename": "smarter-justice-v1.7.65.zip",
+  "finalArchiveSha256": "DETACHED_FINAL_DELIVERY_RECEIPT",
+  "finalArchiveSizeBytes": "DETACHED_FINAL_DELIVERY_RECEIPT",
+  "launchState": "NO_GO",
+  "deploymentAuthorized": false,
+  "scopeLimit": "Exact package acceptance does not prove deployment, D4/D5, billing activation, portal acceptance or live operation."
+}

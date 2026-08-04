@@ -1,0 +1,49 @@
+{
+  "release": "1.7.56",
+  "generatedAt": "2026-07-30",
+  "theme": "Exact v1.7.55 source reconciliation and conflict-detecting current four-portal owner-recorded truth",
+  "selectedOutcomes": [
+    "record exact accepted v1.7.55 as source and immediate rollback",
+    "refresh the four initial portal owner-recorded exact identities",
+    "add one machine-validated currentness receipt across the Control Center truth surfaces",
+    "surface currentness validation in the owner portfolio-truth API",
+    "preserve strong public and Attorney Partner Tour surfaces without visual churn",
+    "keep every live, commercial, sensitive, portal and deployment gate closed"
+  ],
+  "preserved": [
+    "all working public tools and routes",
+    "Attorney Partner Tour, presenter mode, QR and print card",
+    "four independent portal repositories",
+    "free basic profile control",
+    "English-first state",
+    "Domestic Violence and Stop Sign safety boundaries",
+    "NO_GO and not deployed truth"
+  ],
+  "deferred": [
+    "D4 portal staging",
+    "real-device and assistive-technology acceptance",
+    "production PostgreSQL/SMTP/MFA/monitoring/backup/restore",
+    "legal/privacy/support/incident and owner GO"
+  ],
+  "closedGates": [
+    "payments",
+    "subscriptions",
+    "booking",
+    "reviews",
+    "confidential uploads",
+    "sensitive external AI",
+    "automatic filing",
+    "unrestricted professional routing",
+    "automatic cross-repository synchronization",
+    "automatic public-user matter transfer",
+    "live portal connections",
+    "professional opportunities",
+    "appointments"
+  ],
+  "completionEvidence": [
+    "tests/initial-portal-currentness-v1756.test.js",
+    "INITIAL_PORTAL_CURRENTNESS_RECEIPT_V1.7.56.json",
+    "FINAL_V1.7.55_TRUTH_RECONCILIATION_V1.7.56.json",
+    "PUBLIC_SURFACE_PRESERVATION_ACCEPTANCE_V1.7.56.json"
+  ]
+}

@@ -1,0 +1,94 @@
+'use strict';
+const assert=require('assert');
+const fs=require('fs');
+const path=require('path');
+const os=require('os');
+const http=require('http');
+const root=path.join(__dirname,'..');
+process.env.NODE_ENV='test';
+process.env.SMARTER_JUSTICE_STORAGE_DIR=fs.mkdtempSync(path.join(os.tmpdir(),'sj-attorney-tour-v1752-'));
+process.env.OWNER_CONTROL_CENTER_TOKEN='owner-attorney-tour-v1752-token-123456789';
+const server=require('../server');
+const store=require('../lib/store');
+const tour=require('../lib/attorneyPartnerTour');
+const readiness=require('../ATTORNEY_OUTREACH_READINESS_V1.7.52.json');
+const booth=require('../JUSTICE_BOOTH_TRUTH_MODEL_V1.7.52.json');
+const documentHelp=require('../DOCUMENT_HELP_CAPABILITY_MATRIX_V1.7.52.json');
+function request(base,pathname,options={}){return new Promise((resolve,reject)=>{const url=new URL(pathname,base);const req=http.request(url,{method:options.method||'GET',headers:options.headers||{}},res=>{const chunks=[];res.on('data',chunk=>chunks.push(chunk));res.on('end',()=>{const raw=Buffer.concat(chunks).toString('utf8');let data=null;try{data=JSON.parse(raw);}catch{}resolve({status:res.statusCode,headers:res.headers,raw,data});});});req.on('error',reject);req.end();});}
+(async()=>{
+  assert.equal(readiness.releaseVersion,'1.7.52');
+  assert.equal(readiness.launchState,'NO_GO');
+  assert.equal(readiness.canonicalTour.route,'/attorney-partner-tour.html');
+  assert.equal(readiness.canonicalTour.shortPath,'/attorney-tour');
+  assert.equal(tour.PRACTICES.length,4);
+  assert.deepEqual(tour.PRACTICES.map(x=>x.id),['divorce-law-aid','estate-law-aid','personal-injury-law-aid','domestic-violence-aid']);
+  const divorce=tour.publicTourData('divorce');
+  const estate=tour.publicTourData('estate-law-aid');
+  const injury=tour.publicTourData('personal-injury');
+  const dv=tour.publicTourData('domestic-violence');
+  assert.equal(divorce.selected.portalName,'Divorce Law Aid');
+  assert.equal(estate.selected.portalName,'Estate Law Aid');
+  assert.equal(injury.selected.portalName,'Personal Injury Law Aid');
+  assert(/workers’ compensation and medical malpractice remain separate/i.test(injury.selected.specialtySummary));
+  assert.equal(dv.selected.portalName,'Domestic Violence Aid');
+  assert(/synthetic demonstration details/i.test(dv.safetyBoundary));
+  for(const data of [divorce,estate,injury,dv]){
+    assert.equal(data.launchState,'NO_GO');
+    assert.equal(data.profileShowcase.demonstrationOnly,true);
+    assert(/Demonstration Record/.test(data.profileShowcase.professionalName));
+    assert(data.profileShowcase.statuses.some(x=>/Synthetic demonstration data/.test(x)));
+    assert(/No leads, clients, revenue/.test(data.membershipTruth.disclosure));
+    assert(data.selected.tool.route.includes('tour=1'));
+    assert(data.continuation.profilePath.includes('ATTORNEY-TOUR'));
+  }
+  assert.equal(booth.summary.publicClaimsAllowed,false);
+  assert.equal(booth.records.length,0);
+  assert(booth.allowedStatuses.includes('SCHEDULED')&&booth.allowedStatuses.includes('ACTIVE')&&booth.allowedStatuses.includes('UNVERIFIED'));
+  assert.equal(documentHelp.sharedCapabilities.length,12);
+  assert.equal(documentHelp.portals.length,4);
+  assert.equal(documentHelp.sharedRules.confidentialUploads,'CLOSED_UNLESS_SEPARATELY_APPROVED');
+  assert.equal(documentHelp.sharedRules.externalAi,'CLOSED_UNLESS_SEPARATELY_APPROVED');
+  assert.equal(documentHelp.sharedRules.electronicFiling,'NOT_OFFERED_OR_IMPLIED');
+  assert(documentHelp.officialFormCurrentnessFields.includes('officialSourceUrl'));
+  assert(documentHelp.portals.every(x=>/VERIFY/.test(x.adoptionState)));
+
+  const html=fs.readFileSync(path.join(root,'public','attorney-partner-tour.html'),'utf8');
+  const js=fs.readFileSync(path.join(root,'public','attorney-partner-tour.js'),'utf8');
+  const app=fs.readFileSync(path.join(root,'public','app.js'),'utf8');
+  const home=fs.readFileSync(path.join(root,'public','index.html'),'utf8');
+  const styles=fs.readFileSync(path.join(root,'public','styles.css'),'utf8');
+  assert(html.includes('<link rel="canonical" href="https://smarterjustice.com/attorney-partner-tour.html">'));
+  assert(html.includes('Synthetic demonstration record — not a live attorney or firm'));
+  assert(html.includes('smarterjustice.com/attorney-tour'));
+  assert(html.includes('Smarter Justice remains NO_GO'));
+  assert(!/guaranteed leads|guaranteed clients|guaranteed revenue|guaranteed return on investment/i.test(html));
+  assert(js.includes('/api/public/attorney-partner-tour'));
+  assert(app.includes('tour-return-banner'));
+  assert(app.includes('Public-tool demonstration using synthetic information only.'));
+  assert(home.includes('/attorney-partner-tour.html'));
+  assert(styles.includes('.tour-hero'));
+  assert(styles.includes('@media(max-width:720px)'));
+
+  await store.init();
+  const address=await new Promise(resolve=>server.listen(0,'127.0.0.1',()=>resolve(server.address())));
+  const base=`http://127.0.0.1:${address.port}`;
+  try{
+    const api=await request(base,'/api/public/attorney-partner-tour?practice=estate');
+    assert.equal(api.status,200);assert.equal(api.data.ok,true);assert.equal(api.data.tour.selected.portalName,'Estate Law Aid');
+    assert.equal(api.headers['cache-control'],'no-store');
+    const short=await request(base,'/attorney-tour');
+    assert.equal(short.status,302);assert.equal(short.headers.location,'/attorney-partner-tour.html');
+    const page=await request(base,'/attorney-partner-tour.html');
+    assert.equal(page.status,200);assert(page.raw.includes('Attorney Partner Tour'));
+    const ownerDenied=await request(base,'/api/owner/control-center');
+    assert.equal(ownerDenied.status,403);
+    const owner=await request(base,'/api/owner/control-center',{headers:{'x-owner-control-token':process.env.OWNER_CONTROL_CENTER_TOKEN}});
+    assert.equal(owner.status,200);assert.equal(owner.data.version,'1.7.83');assert.equal(owner.data.attorneyOutreachReadiness.summary.launchState,'NO_GO');
+    assert.equal(owner.data.attorneyOutreachReadiness.summary.justiceBoothPublicClaimsAllowed,false);
+    const boothPublic=await request(base,'/api/public/justice-booths');
+    assert.equal(boothPublic.status,404,'no unsupported public Justice Booth schedule API may be opened');
+    const health=await request(base,'/health');
+    assert.equal(health.status,200);assert.equal(health.data.version,'1.7.83');
+  } finally {await new Promise(resolve=>server.close(resolve));}
+  console.log('attorney-partner-tour-v1752.test.js passed');
+})().catch(error=>{console.error(error);try{server.close(()=>{});}catch{}process.exit(1);});

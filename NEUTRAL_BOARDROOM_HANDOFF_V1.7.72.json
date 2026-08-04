@@ -1,0 +1,282 @@
+{
+  "handoffVersion": "1.2.0",
+  "handoffId": "handoff:smarter-justice:neutral-boardroom:1.7.50:dormant",
+  "sourceSystemId": "smarter-justice",
+  "sourceSystemName": "Smarter Justice",
+  "sourceRelease": "1.7.60",
+  "destinationSystemId": "neutral-boardroom-portfolio-os",
+  "destinationSystemName": "Neutral Boardroom Portfolio OS",
+  "scope": "Optional future non-confidential export only",
+  "operatingPhase": "DORMANT_NOT_PART_OF_INITIAL_LAUNCH",
+  "relationship": {
+    "neutralBoardroom": "Dormant optional future export destination; not a runtime, management, launch, deployment, billing, profile, support, monitoring, backup, rollback, integration, or source-of-truth dependency.",
+    "smarterJustice": "Active self-contained legal-portfolio operating and governance system. Roger is the final owner authority.",
+    "legalPortals": "Independent authoritative implementations with separate repositories, artifacts, deployments, data, safeguards, receipts, and rollback records."
+  },
+  "informationFlow": "NONE_UNLESS_FUTURE_OWNER_APPROVED_EXPORT",
+  "decisionFlow": "ROGER_TO_SMARTER_JUSTICE_TO_RESPONSIBLE_LEGAL_PORTAL",
+  "dataPrinciple": "NO_AUTOMATIC_TRANSMISSION; NONCONFIDENTIAL_METADATA_ONLY_IF_FUTURE_APPROVED",
+  "evidenceBoundary": "This dormant compatibility record cannot mutate Smarter Justice or a portal, open a gate, block launch, or override an exact artifact.",
+  "sourceBase": "smarter-justice-v1.7.54.zip",
+  "releaseStatus": "CANDIDATE_PENDING_FINAL_EXACT_ACCEPTANCE",
+  "deployment": {
+    "deployed": false,
+    "lastVerifiedProduction": "1.6.1",
+    "productionVerificationClaimed": false
+  },
+  "launchCritical": false,
+  "runtimeDependency": false,
+  "managementDependency": false,
+  "sourceOfTruth": false,
+  "automaticTransmission": false,
+  "automaticWrites": false,
+  "liveConnection": false,
+  "containsUserMatterData": false,
+  "containsCredentials": false,
+  "containsPaymentData": false,
+  "containsConfidentialData": false,
+  "prohibitedData": [
+    "legal matter contents",
+    "uploaded documents",
+    "privileged communications",
+    "user accounts",
+    "credentials and secrets",
+    "payment details",
+    "private professional claim evidence",
+    "production database exports"
+  ],
+  "closedGates": [
+    "future Neutral Boardroom export",
+    "automatic cross-repository writes",
+    "automatic professional-record writes",
+    "production deployment",
+    "live billing",
+    "live portal imports"
+  ],
+  "ownerDecisions": [
+    {
+      "id": "decision-self-contained-smarter-justice",
+      "status": "IMPLEMENTED",
+      "decision": "Smarter Justice is the active self-contained legal-portfolio operating and governance system."
+    },
+    {
+      "id": "decision-neutral-boardroom-dormant",
+      "status": "IMPLEMENTED",
+      "decision": "Neutral Boardroom is dormant, optional, noncritical, and disabled from automatic transmission."
+    }
+  ],
+  "limitations": [
+    "No export is activated.",
+    "No live connection exists.",
+    "This record is retained only for safe future compatibility and historical continuity."
+  ],
+  "generatedAt": "2026-08-02T17:04:00-04:00",
+  "releaseVersion": "1.7.72",
+  "summary": {
+    "legalPortalsTracked": 25,
+    "exactVerified": 1,
+    "productionVerified": 0,
+    "ownerRecorded": 24,
+    "attentionNeeded": 24,
+    "blocked": 0,
+    "conflicts": 0,
+    "closedGates": 10,
+    "workspaceActiveBuilds": 23,
+    "actionCenterNow": 4,
+    "actionCenterNext": 21,
+    "actionCenterDeferred": 0
+  },
+  "primaryLegalNetworkAction": {
+    "actionId": "action:SJ-ACT-004:divorce-law-aid",
+    "portalId": "divorce-law-aid",
+    "portalName": "Divorce Law Aid",
+    "tier": "NOW",
+    "title": "Prepare pilot 1: Divorce Law Aid",
+    "reason": "Roger selected this portal for the initial controlled read-only pilot sequence; dedicated exact-artifact verification and staging acceptance remain pending.",
+    "nextAction": "Pilot 1: independently verify the exact artifact in its dedicated builder chat, add the v1.4.0 adapter, and complete staging acceptance.",
+    "evidenceState": "OWNER_RECORDED",
+    "dispositionStatus": "ACTIVE"
+  },
+  "attentionItems": [
+    {
+      "portalId": "immigration-oasis",
+      "name": "Immigration Oasis Plus Humans",
+      "evidenceState": "OWNER_RECORDED",
+      "status": "ATTENTION_NEEDED",
+      "reason": "The current artifact identity is owner-recorded and must be independently verified in the dedicated portal context.",
+      "nextAction": "Complete or independently verify the owner-authorized deployment in the dedicated portal context using full archive v1.10.162 plus the lean overlay; never clean-deploy the lean overlay alone."
+    },
+    {
+      "portalId": "justice-tax-solutions",
+      "name": "Justice Tax Solutions",
+      "evidenceState": "OWNER_RECORDED",
+      "status": "ATTENTION_NEEDED",
+      "reason": "The current artifact identity is owner-recorded and must be independently verified in the dedicated portal context.",
+      "nextAction": "Verify the dedicated v0.1.121 artifact and deployment state."
+    },
+    {
+      "portalId": "estate-law-aid",
+      "name": "Estate Law Aid",
+      "evidenceState": "OWNER_RECORDED",
+      "status": "ATTENTION_NEEDED",
+      "reason": "The current artifact identity is owner-recorded and must be independently verified in the dedicated portal context.",
+      "nextAction": "Pilot 2: independently verify the exact artifact in its dedicated builder chat, add the v1.4.0 adapter, and complete staging acceptance."
+    },
+    {
+      "portalId": "business-launch-desk",
+      "name": "Business Launch Desk",
+      "evidenceState": "OWNER_RECORDED",
+      "status": "ATTENTION_NEEDED",
+      "reason": "The current artifact identity is owner-recorded and must be independently verified in the dedicated portal context.",
+      "nextAction": "Verify the dedicated v0.2.55 artifact and preserve its strict Smarter Justice legal-micro-portal-only scope."
+    },
+    {
+      "portalId": "contract-creator",
+      "name": "ContractCreator.com",
+      "evidenceState": "OWNER_RECORDED",
+      "status": "ATTENTION_NEEDED",
+      "reason": "The current artifact identity is owner-recorded and must be independently verified in the dedicated portal context.",
+      "nextAction": "Obtain and verify the exact current v0.28.0 artifact identity."
+    },
+    {
+      "portalId": "employment-law-aid",
+      "name": "Employment Law Aid",
+      "evidenceState": "OWNER_RECORDED",
+      "status": "ATTENTION_NEEDED",
+      "reason": "The current artifact identity is owner-recorded and must be independently verified in the dedicated portal context.",
+      "nextAction": "Verify the dedicated v0.31.0 artifact and deployment state."
+    },
+    {
+      "portalId": "divorce-law-aid",
+      "name": "Divorce Law Aid",
+      "evidenceState": "OWNER_RECORDED",
+      "status": "ATTENTION_NEEDED",
+      "reason": "The current artifact identity is owner-recorded and must be independently verified in the dedicated portal context.",
+      "nextAction": "Pilot 1: independently verify the exact artifact in its dedicated builder chat, add the v1.4.0 adapter, and complete staging acceptance."
+    },
+    {
+      "portalId": "landlord-tenant-aid",
+      "name": "Landlord Tenant Aid",
+      "evidenceState": "OWNER_RECORDED",
+      "status": "ATTENTION_NEEDED",
+      "reason": "The current artifact identity is owner-recorded and must be independently verified in the dedicated portal context.",
+      "nextAction": "Verify the dedicated v0.22.0 artifact and deployment state."
+    },
+    {
+      "portalId": "personal-injury-law-aid",
+      "name": "Personal Injury Law Aid",
+      "evidenceState": "OWNER_RECORDED",
+      "status": "ATTENTION_NEEDED",
+      "reason": "The current artifact identity is owner-recorded and must be independently verified in the dedicated portal context.",
+      "nextAction": "Pilot 3: verify v0.30.0 in its dedicated builder chat and add a simple v1.4.0 consumer covering vehicle accidents and other personal-injury starting paths without claim-value, liability, deadline, or acceptance predictions."
+    },
+    {
+      "portalId": "criminal-law-aid",
+      "name": "Criminal Law Aid",
+      "evidenceState": "OWNER_RECORDED",
+      "status": "ATTENTION_NEEDED",
+      "reason": "The current artifact identity is owner-recorded and must be independently verified in the dedicated portal context.",
+      "nextAction": "Verify the dedicated v0.26.0 artifact and preserve criminal-law safety and deployment gates."
+    },
+    {
+      "portalId": "disability-law-aid",
+      "name": "Disability Law Aid",
+      "evidenceState": "OWNER_RECORDED",
+      "status": "ATTENTION_NEEDED",
+      "reason": "The current artifact identity is owner-recorded and must be independently verified in the dedicated portal context.",
+      "nextAction": "Obtain and verify the exact current v0.21.0 artifact identity."
+    },
+    {
+      "portalId": "workers-compensation-law-aid",
+      "name": "Workers’ Compensation Law Aid",
+      "evidenceState": "OWNER_RECORDED",
+      "status": "ATTENTION_NEEDED",
+      "reason": "The current artifact identity is owner-recorded and must be independently verified in the dedicated portal context.",
+      "nextAction": "Keep Workers’ Compensation Law Aid separate from the Personal Injury pilot; verify its dedicated artifact only in its own builder chat."
+    }
+  ],
+  "risks": [],
+  "nextActions": [
+    {
+      "actionId": "action:SJ-ACT-004:divorce-law-aid",
+      "portalId": "divorce-law-aid",
+      "tier": "NOW",
+      "action": "Pilot 1: independently verify the exact artifact in its dedicated builder chat, add the v1.4.0 adapter, and complete staging acceptance.",
+      "evidenceState": "OWNER_RECORDED",
+      "ownerDisposition": "ACTIVE"
+    },
+    {
+      "actionId": "action:SJ-ACT-004:estate-law-aid",
+      "portalId": "estate-law-aid",
+      "tier": "NOW",
+      "action": "Pilot 2: independently verify the exact artifact in its dedicated builder chat, add the v1.4.0 adapter, and complete staging acceptance.",
+      "evidenceState": "OWNER_RECORDED",
+      "ownerDisposition": "ACTIVE"
+    },
+    {
+      "actionId": "action:SJ-ACT-004:immigration-oasis",
+      "portalId": "immigration-oasis",
+      "tier": "NOW",
+      "action": "Complete or independently verify the owner-authorized deployment in the dedicated portal context using full archive v1.10.162 plus the lean overlay; never clean-deploy the lean overlay alone.",
+      "evidenceState": "OWNER_RECORDED",
+      "ownerDisposition": "ACTIVE"
+    },
+    {
+      "actionId": "action:SJ-ACT-004:personal-injury-law-aid",
+      "portalId": "personal-injury-law-aid",
+      "tier": "NOW",
+      "action": "Pilot 3: verify v0.30.0 in its dedicated builder chat and add a simple v1.4.0 consumer covering vehicle accidents and other personal-injury starting paths without claim-value, liability, deadline, or acceptance predictions.",
+      "evidenceState": "OWNER_RECORDED",
+      "ownerDisposition": "ACTIVE"
+    },
+    {
+      "actionId": "action:SJ-ACT-005:attorneyride",
+      "portalId": "attorneyride",
+      "tier": "NEXT",
+      "action": "Keep public-user transfer closed and obtain the exact current v0.2.0 artifact identity.",
+      "evidenceState": "OWNER_RECORDED",
+      "ownerDisposition": "ACTIVE"
+    },
+    {
+      "actionId": "action:SJ-ACT-005:bankruptcy-debt-law-aid",
+      "portalId": "bankruptcy-debt-law-aid",
+      "tier": "NEXT",
+      "action": "Verify the dedicated v0.21.0 artifact and deployment state.",
+      "evidenceState": "OWNER_RECORDED",
+      "ownerDisposition": "ACTIVE"
+    },
+    {
+      "actionId": "action:SJ-ACT-005:business-launch-desk",
+      "portalId": "business-launch-desk",
+      "tier": "NEXT",
+      "action": "Verify the dedicated v0.2.55 artifact and preserve its strict Smarter Justice legal-micro-portal-only scope.",
+      "evidenceState": "OWNER_RECORDED",
+      "ownerDisposition": "ACTIVE"
+    },
+    {
+      "actionId": "action:SJ-ACT-005:car-accident-law-aid",
+      "portalId": "car-accident-law-aid",
+      "tier": "NEXT",
+      "action": "Preserve the independent repository and exact history as a dormant compatibility asset; do not separately launch during the Personal Injury pilot and do not automatically reassign records.",
+      "evidenceState": "OWNER_RECORDED",
+      "ownerDisposition": "ACTIVE"
+    },
+    {
+      "actionId": "action:SJ-ACT-005:consumer-protection-law-aid",
+      "portalId": "consumer-protection-law-aid",
+      "tier": "NEXT",
+      "action": "Verify the dedicated v0.19.0 artifact and current consumer-source freshness.",
+      "evidenceState": "OWNER_RECORDED",
+      "ownerDisposition": "ACTIVE"
+    },
+    {
+      "actionId": "action:SJ-ACT-005:contract-creator",
+      "portalId": "contract-creator",
+      "tier": "NEXT",
+      "action": "Obtain and verify the exact current v0.28.0 artifact identity.",
+      "evidenceState": "OWNER_RECORDED",
+      "ownerDisposition": "ACTIVE"
+    }
+  ],
+  "automaticActions": false
+}

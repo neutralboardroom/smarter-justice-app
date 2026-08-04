@@ -1,0 +1,1583 @@
+{
+  "schema": "smarter-justice-durable-rule-coverage-matrix",
+  "schemaVersion": "3.0.0",
+  "releaseVersion": "1.7.75",
+  "generatedAt": "2026-08-02T17:04:00-04:00",
+  "baselineId": "DRB-2026-08-02-DUR001-DUR086-V13",
+  "semanticCapsuleSha256": "fb405d2b8e4301d8a2f02c33951dc28ebe7e492a181f679d6e088ebf31f6196b",
+  "ruleCount": 86,
+  "rows": [
+    {
+      "ruleId": "DUR-001",
+      "classification": "STANDING UNTIL EXPLICITLY SUPERSEDED.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "PRESERVED_WITH_EXISTING_SCOPE_SPECIFIC_EVIDENCE",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "PRESERVED"
+    },
+    {
+      "ruleId": "DUR-002",
+      "classification": "STANDING UNTIL EXPLICITLY SUPERSEDED.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "PRESERVED_WITH_EXISTING_SCOPE_SPECIFIC_EVIDENCE",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "PRESERVED"
+    },
+    {
+      "ruleId": "DUR-003",
+      "classification": "STANDING UNTIL EXPLICITLY SUPERSEDED.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "PRESERVED_WITH_EXISTING_SCOPE_SPECIFIC_EVIDENCE",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "PRESERVED"
+    },
+    {
+      "ruleId": "DUR-004",
+      "classification": "PERSISTENT SAFEGUARD.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "PRESERVED_WITH_EXISTING_SCOPE_SPECIFIC_EVIDENCE",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "PRESERVED"
+    },
+    {
+      "ruleId": "DUR-005",
+      "classification": "PERSISTENT SAFEGUARD.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "PRESERVED_WITH_EXISTING_SCOPE_SPECIFIC_EVIDENCE",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "PRESERVED"
+    },
+    {
+      "ruleId": "DUR-006",
+      "classification": "STANDING UNTIL EXPLICITLY SUPERSEDED.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "PRESERVED_WITH_EXISTING_SCOPE_SPECIFIC_EVIDENCE",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "PRESERVED"
+    },
+    {
+      "ruleId": "DUR-007",
+      "classification": "PERSISTENT SAFEGUARD.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "PRESERVED_WITH_EXISTING_SCOPE_SPECIFIC_EVIDENCE",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "PRESERVED"
+    },
+    {
+      "ruleId": "DUR-008",
+      "classification": "STANDING UNTIL EXPLICITLY SUPERSEDED.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "PRESERVED_WITH_EXISTING_SCOPE_SPECIFIC_EVIDENCE",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "PRESERVED"
+    },
+    {
+      "ruleId": "DUR-009",
+      "classification": "PERSISTENT SAFEGUARD.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "PRESERVED_WITH_EXISTING_SCOPE_SPECIFIC_EVIDENCE",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "PRESERVED"
+    },
+    {
+      "ruleId": "DUR-010",
+      "classification": "PROMPT-HELPER ONLY.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "PRESERVED_WITH_EXISTING_SCOPE_SPECIFIC_EVIDENCE",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "PRESERVED"
+    },
+    {
+      "ruleId": "DUR-011",
+      "classification": "STANDING UNTIL EXPLICITLY SUPERSEDED.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "PRESERVED_WITH_EXISTING_SCOPE_SPECIFIC_EVIDENCE",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "PRESERVED"
+    },
+    {
+      "ruleId": "DUR-012",
+      "classification": "STANDING UNTIL EXPLICITLY SUPERSEDED.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "PRESERVED_WITH_EXISTING_SCOPE_SPECIFIC_EVIDENCE",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "PRESERVED"
+    },
+    {
+      "ruleId": "DUR-013",
+      "classification": "STANDING UNTIL EXPLICITLY SUPERSEDED.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "PRESERVED_WITH_EXISTING_SCOPE_SPECIFIC_EVIDENCE",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "PRESERVED"
+    },
+    {
+      "ruleId": "DUR-014",
+      "classification": "PERSISTENT SAFEGUARD.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "PRESERVED_WITH_EXISTING_SCOPE_SPECIFIC_EVIDENCE",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "PRESERVED"
+    },
+    {
+      "ruleId": "DUR-015",
+      "classification": "CURRENT BUSINESS DECISION.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "PRESERVED_WITH_EXISTING_SCOPE_SPECIFIC_EVIDENCE",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "PRESERVED"
+    },
+    {
+      "ruleId": "DUR-016",
+      "classification": "CURRENT BUSINESS DECISION.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "PRESERVED_WITH_EXISTING_SCOPE_SPECIFIC_EVIDENCE",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "PRESERVED"
+    },
+    {
+      "ruleId": "DUR-017",
+      "classification": "CURRENT BUSINESS DECISION.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "PRESERVED_WITH_EXISTING_SCOPE_SPECIFIC_EVIDENCE",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "PRESERVED"
+    },
+    {
+      "ruleId": "DUR-018",
+      "classification": "STANDING UNTIL EXPLICITLY SUPERSEDED.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "PRESERVED_WITH_EXISTING_SCOPE_SPECIFIC_EVIDENCE",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "PRESERVED"
+    },
+    {
+      "ruleId": "DUR-019",
+      "classification": "STANDING UNTIL EXPLICITLY SUPERSEDED.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "PRESERVED_WITH_EXISTING_SCOPE_SPECIFIC_EVIDENCE",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "PRESERVED"
+    },
+    {
+      "ruleId": "DUR-020",
+      "classification": "CURRENT BUSINESS DECISION.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "PRESERVED_WITH_EXISTING_SCOPE_SPECIFIC_EVIDENCE",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "PRESERVED"
+    },
+    {
+      "ruleId": "DUR-021",
+      "classification": "CURRENT BUSINESS DECISION.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "PRESERVED_WITH_EXISTING_SCOPE_SPECIFIC_EVIDENCE",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "PRESERVED"
+    },
+    {
+      "ruleId": "DUR-022",
+      "classification": "CURRENT BUSINESS DECISION.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "PRESERVED_WITH_EXISTING_SCOPE_SPECIFIC_EVIDENCE",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "PRESERVED"
+    },
+    {
+      "ruleId": "DUR-023",
+      "classification": "PERSISTENT SAFEGUARD.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "PRESERVED_WITH_EXISTING_SCOPE_SPECIFIC_EVIDENCE",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "PRESERVED"
+    },
+    {
+      "ruleId": "DUR-024",
+      "classification": "STANDING UNTIL EXPLICITLY SUPERSEDED.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "PRESERVED_WITH_EXISTING_SCOPE_SPECIFIC_EVIDENCE",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "PRESERVED"
+    },
+    {
+      "ruleId": "DUR-025",
+      "classification": "STANDING UNTIL EXPLICITLY SUPERSEDED.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "PRESERVED_WITH_EXISTING_SCOPE_SPECIFIC_EVIDENCE",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "PRESERVED"
+    },
+    {
+      "ruleId": "DUR-026",
+      "classification": "PERSISTENT SAFEGUARD; PRODUCT SPECIFIC.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "PRESERVED_WITH_EXISTING_SCOPE_SPECIFIC_EVIDENCE",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "PRESERVED"
+    },
+    {
+      "ruleId": "DUR-027",
+      "classification": "PERSISTENT SAFEGUARD.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "PRESERVED_WITH_EXISTING_SCOPE_SPECIFIC_EVIDENCE",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "PRESERVED"
+    },
+    {
+      "ruleId": "DUR-028",
+      "classification": "PERSISTENT SAFEGUARD.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "PRESERVED_WITH_EXISTING_SCOPE_SPECIFIC_EVIDENCE",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "PRESERVED"
+    },
+    {
+      "ruleId": "DUR-029",
+      "classification": "PERSISTENT SAFEGUARD.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "PRESERVED_WITH_EXISTING_SCOPE_SPECIFIC_EVIDENCE",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "PRESERVED"
+    },
+    {
+      "ruleId": "DUR-030",
+      "classification": "PERSISTENT SAFEGUARD.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "PRESERVED_WITH_EXISTING_SCOPE_SPECIFIC_EVIDENCE",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "PRESERVED"
+    },
+    {
+      "ruleId": "DUR-031",
+      "classification": "STANDING UNTIL EXPLICITLY SUPERSEDED.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "PRESERVED_WITH_EXISTING_SCOPE_SPECIFIC_EVIDENCE",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "PRESERVED"
+    },
+    {
+      "ruleId": "DUR-032",
+      "classification": "STANDING UNTIL EXPLICITLY SUPERSEDED.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "PRESERVED_WITH_EXISTING_SCOPE_SPECIFIC_EVIDENCE",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "PRESERVED"
+    },
+    {
+      "ruleId": "DUR-033",
+      "classification": "STANDING UNTIL EXPLICITLY SUPERSEDED.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "PRESERVED_WITH_EXISTING_SCOPE_SPECIFIC_EVIDENCE",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "PRESERVED"
+    },
+    {
+      "ruleId": "DUR-034",
+      "classification": "STANDING UNTIL EXPLICITLY SUPERSEDED.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "PRESERVED_WITH_EXISTING_SCOPE_SPECIFIC_EVIDENCE",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "PRESERVED"
+    },
+    {
+      "ruleId": "DUR-035",
+      "classification": "PERSISTENT SAFEGUARD.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "PRESERVED_WITH_EXISTING_SCOPE_SPECIFIC_EVIDENCE",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "PRESERVED"
+    },
+    {
+      "ruleId": "DUR-036",
+      "classification": "PERSISTENT SAFEGUARD.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "PRESERVED_WITH_EXISTING_SCOPE_SPECIFIC_EVIDENCE",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "PRESERVED"
+    },
+    {
+      "ruleId": "DUR-037",
+      "classification": "STANDING UNTIL EXPLICITLY SUPERSEDED.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "PRESERVED_WITH_EXISTING_SCOPE_SPECIFIC_EVIDENCE",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "PRESERVED"
+    },
+    {
+      "ruleId": "DUR-038",
+      "classification": "PRODUCT OR SPECIALTY SPECIFIC; STANDING UNTIL EXPLICITLY SUPERSEDED.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "PRESERVED_WITH_EXISTING_SCOPE_SPECIFIC_EVIDENCE",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "PRESERVED"
+    },
+    {
+      "ruleId": "DUR-039",
+      "classification": "CURRENT BUSINESS DECISION; PILOT OR EXPERIMENT WHEN SELECTED.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "PRESERVED_WITH_EXISTING_SCOPE_SPECIFIC_EVIDENCE",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "PRESERVED"
+    },
+    {
+      "ruleId": "DUR-040",
+      "classification": "PERSISTENT SAFEGUARD.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "PRESERVED_WITH_EXISTING_SCOPE_SPECIFIC_EVIDENCE",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "PRESERVED"
+    },
+    {
+      "ruleId": "DUR-041",
+      "classification": "STANDING UNTIL EXPLICITLY SUPERSEDED.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "PRESERVED_WITH_EXISTING_SCOPE_SPECIFIC_EVIDENCE",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "PRESERVED"
+    },
+    {
+      "ruleId": "DUR-042",
+      "classification": "PERSISTENT SAFEGUARD; PROMPT-HELPER ONLY FOR GOVERNANCE,",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "PRESERVED_WITH_EXISTING_SCOPE_SPECIFIC_EVIDENCE",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "PRESERVED"
+    },
+    {
+      "ruleId": "DUR-043",
+      "classification": "PERSISTENT SAFEGUARD; PROMPT-HELPER ONLY FOR GOVERNANCE,",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "PRESERVED_WITH_EXISTING_SCOPE_SPECIFIC_EVIDENCE",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "PRESERVED"
+    },
+    {
+      "ruleId": "DUR-044",
+      "classification": "STANDING UNTIL EXPLICITLY SUPERSEDED.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "PRESERVED_WITH_EXISTING_SCOPE_SPECIFIC_EVIDENCE",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "PRESERVED"
+    },
+    {
+      "ruleId": "DUR-045",
+      "classification": "STANDING UNTIL EXPLICITLY SUPERSEDED.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "PRESERVED_WITH_EXISTING_SCOPE_SPECIFIC_EVIDENCE",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "PRESERVED"
+    },
+    {
+      "ruleId": "DUR-046",
+      "classification": "STANDING UNTIL EXPLICITLY SUPERSEDED.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "PRESERVED_WITH_EXISTING_SCOPE_SPECIFIC_EVIDENCE",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "PRESERVED"
+    },
+    {
+      "ruleId": "DUR-047",
+      "classification": "PERSISTENT SAFEGUARD.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "PRESERVED_WITH_EXISTING_SCOPE_SPECIFIC_EVIDENCE",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "PRESERVED"
+    },
+    {
+      "ruleId": "DUR-048",
+      "classification": "STANDING UNTIL EXPLICITLY SUPERSEDED.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "PRESERVED_WITH_EXISTING_SCOPE_SPECIFIC_EVIDENCE",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "PRESERVED"
+    },
+    {
+      "ruleId": "DUR-049",
+      "classification": "PERSISTENT SAFEGUARD.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "PRESERVED_WITH_EXISTING_SCOPE_SPECIFIC_EVIDENCE",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "PRESERVED"
+    },
+    {
+      "ruleId": "DUR-050",
+      "classification": "STANDING UNTIL EXPLICITLY SUPERSEDED.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "PRESERVED_WITH_EXISTING_SCOPE_SPECIFIC_EVIDENCE",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "PRESERVED"
+    },
+    {
+      "ruleId": "DUR-051",
+      "classification": "PERSISTENT SAFEGUARD.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "PRESERVED_WITH_EXISTING_SCOPE_SPECIFIC_EVIDENCE",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "PRESERVED"
+    },
+    {
+      "ruleId": "DUR-052",
+      "classification": "STANDING UNTIL EXPLICITLY SUPERSEDED.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "PRESERVED_WITH_EXISTING_SCOPE_SPECIFIC_EVIDENCE",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "PRESERVED"
+    },
+    {
+      "ruleId": "DUR-053",
+      "classification": "PERSISTENT SAFEGUARD.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "PRESERVED_WITH_EXISTING_SCOPE_SPECIFIC_EVIDENCE",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "PRESERVED"
+    },
+    {
+      "ruleId": "DUR-054",
+      "classification": "PERSISTENT SAFEGUARD.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "IMPLEMENTED_IN_V1.7.75_CENTRAL_REGISTRY_CONTRACTS",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "IMPLEMENTED"
+    },
+    {
+      "ruleId": "DUR-055",
+      "classification": "PERSISTENT SAFEGUARD.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "IMPLEMENTED_IN_V1.7.75_CENTRAL_REGISTRY_CONTRACTS",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "IMPLEMENTED"
+    },
+    {
+      "ruleId": "DUR-056",
+      "classification": "PERSISTENT SAFEGUARD.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "IMPLEMENTED_IN_V1.7.75_CENTRAL_REGISTRY_CONTRACTS",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "IMPLEMENTED"
+    },
+    {
+      "ruleId": "DUR-057",
+      "classification": "STANDING UNTIL EXPLICITLY SUPERSEDED.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "IMPLEMENTED_IN_V1.7.75_CENTRAL_REGISTRY_CONTRACTS",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "IMPLEMENTED"
+    },
+    {
+      "ruleId": "DUR-058",
+      "classification": "PERSISTENT SAFEGUARD.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "IMPLEMENTED_IN_V1.7.75_CENTRAL_REGISTRY_CONTRACTS",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "IMPLEMENTED"
+    },
+    {
+      "ruleId": "DUR-059",
+      "classification": "TIME-BOUND CURRENT BUSINESS DECISION WITH PERSISTENT NO-FALSE-GO SAFEGUARDS.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "PRESERVED_WITH_EXTERNAL_HUMAN_AND_DEPLOYMENT_ACCEPTANCE_OPEN",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "PRESERVED"
+    },
+    {
+      "ruleId": "DUR-060",
+      "classification": "STANDING UNTIL EXPLICITLY SUPERSEDED.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "PRESERVED_WITH_EXTERNAL_HUMAN_AND_DEPLOYMENT_ACCEPTANCE_OPEN",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "PRESERVED"
+    },
+    {
+      "ruleId": "DUR-061",
+      "classification": "CURRENT OWNER PROGRAM DECISION WITH PERSISTENT SAFETY AND TRUTH CONTROLS.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "PRESERVED_WITH_EXTERNAL_HUMAN_AND_DEPLOYMENT_ACCEPTANCE_OPEN",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "PRESERVED"
+    },
+    {
+      "ruleId": "DUR-062",
+      "classification": "PERSISTENT SAFEGUARD; DOMESTIC-VIOLENCE AND SENSITIVE-MATTER SPECIFIC.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "PRESERVED_WITH_EXTERNAL_HUMAN_AND_DEPLOYMENT_ACCEPTANCE_OPEN",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "PRESERVED"
+    },
+    {
+      "ruleId": "DUR-063",
+      "classification": "CURRENT LAUNCH PROCEDURE WITH STANDING REPEATABLE ACCEPTANCE VALUE.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "PRESERVED_WITH_EXTERNAL_HUMAN_AND_DEPLOYMENT_ACCEPTANCE_OPEN",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "PRESERVED"
+    },
+    {
+      "ruleId": "DUR-064",
+      "classification": "PERSISTENT SAFEGUARD WITH CURRENT MONDAY-LAUNCH APPLICATION.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "PRESERVED_WITH_EXTERNAL_HUMAN_AND_DEPLOYMENT_ACCEPTANCE_OPEN",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "PRESERVED"
+    },
+    {
+      "ruleId": "DUR-065",
+      "classification": "PERSISTENT SAFEGUARD.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "PRESERVED_WITH_EXTERNAL_HUMAN_AND_DEPLOYMENT_ACCEPTANCE_OPEN",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "PRESERVED"
+    },
+    {
+      "ruleId": "DUR-066",
+      "classification": "STANDING UNTIL EXPLICITLY SUPERSEDED.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "IMPLEMENTED_IN_V1.7.75_PACK_CONTINUATION_AND_NO_CHURN_GOVERNANCE",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "IMPLEMENTED"
+    },
+    {
+      "ruleId": "DUR-067",
+      "classification": "STANDING UNTIL EXPLICITLY SUPERSEDED.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "IMPLEMENTED_IN_V1.7.75_PACK_CONTINUATION_AND_NO_CHURN_GOVERNANCE",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "IMPLEMENTED"
+    },
+    {
+      "ruleId": "DUR-068",
+      "classification": "PERSISTENT SAFEGUARD.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "IMPLEMENTED_IN_V1.7.75_PACK_CONTINUATION_AND_NO_CHURN_GOVERNANCE",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "IMPLEMENTED"
+    },
+    {
+      "ruleId": "DUR-069",
+      "classification": "PERSISTENT PROMPT-GOVERNANCE SAFEGUARD.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "IMPLEMENTED_IN_V1.7.75_PACK_CONTINUATION_AND_NO_CHURN_GOVERNANCE",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "IMPLEMENTED"
+    },
+    {
+      "ruleId": "DUR-070",
+      "classification": "STANDING UNTIL EXPLICITLY SUPERSEDED.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "IMPLEMENTED_IN_V1.7.75_PACK_CONTINUATION_AND_NO_CHURN_GOVERNANCE",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "IMPLEMENTED"
+    },
+    {
+      "ruleId": "DUR-071",
+      "classification": "PERSISTENT SAFEGUARD.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "IMPLEMENTED_IN_V1.7.75_PACK_CONTINUATION_AND_NO_CHURN_GOVERNANCE",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "IMPLEMENTED"
+    },
+    {
+      "ruleId": "DUR-072",
+      "classification": "PERSISTENT PROMPT-GOVERNANCE SAFEGUARD.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "IMPLEMENTED_IN_V1.7.75_PACK_CONTINUATION_AND_NO_CHURN_GOVERNANCE",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "IMPLEMENTED"
+    },
+    {
+      "ruleId": "DUR-073",
+      "classification": "PERSISTENT SAFEGUARD.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "IMPLEMENTED_IN_V1.7.75_PACK_CONTINUATION_AND_NO_CHURN_GOVERNANCE",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "IMPLEMENTED"
+    },
+    {
+      "ruleId": "DUR-074",
+      "classification": "STANDING UNTIL EXPLICITLY SUPERSEDED.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "IMPLEMENTED_IN_V1.7.75_PACK_CONTINUATION_AND_NO_CHURN_GOVERNANCE",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "IMPLEMENTED"
+    },
+    {
+      "ruleId": "DUR-075",
+      "classification": "STANDING UNTIL EXPLICITLY SUPERSEDED.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "IMPLEMENTED_IN_V1.7.75_DEPLOYMENT_READINESS_AND_PACK_GOVERNANCE",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75",
+        "DEPLOYMENT_READINESS_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "DEPLOYMENT_TARGET_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "IMPLEMENTED"
+    },
+    {
+      "ruleId": "DUR-076",
+      "classification": "STANDING UNTIL EXPLICITLY SUPERSEDED.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "IMPLEMENTED_IN_V1.7.75_DEPLOYMENT_READINESS_AND_PACK_GOVERNANCE",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75",
+        "DEPLOYMENT_READINESS_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "DEPLOYMENT_TARGET_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "IMPLEMENTED"
+    },
+    {
+      "ruleId": "DUR-077",
+      "classification": "PERSISTENT SAFEGUARD.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "IMPLEMENTED_IN_V1.7.75_DEPLOYMENT_READINESS_AND_PACK_GOVERNANCE",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75",
+        "DEPLOYMENT_READINESS_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "DEPLOYMENT_TARGET_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "IMPLEMENTED"
+    },
+    {
+      "ruleId": "DUR-078",
+      "classification": "PERSISTENT SAFEGUARD.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "IMPLEMENTED_IN_V1.7.75_DEPLOYMENT_READINESS_AND_PACK_GOVERNANCE",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75",
+        "DEPLOYMENT_READINESS_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "DEPLOYMENT_TARGET_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "IMPLEMENTED"
+    },
+    {
+      "ruleId": "DUR-079",
+      "classification": "PERSISTENT SAFEGUARD.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "IMPLEMENTED_IN_V1.7.75_DEPLOYMENT_READINESS_AND_PACK_GOVERNANCE",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75",
+        "DEPLOYMENT_READINESS_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "DEPLOYMENT_TARGET_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "IMPLEMENTED"
+    },
+    {
+      "ruleId": "DUR-080",
+      "classification": "PERSISTENT SAFEGUARD.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "IMPLEMENTED_IN_V1.7.75_DEPLOYMENT_READINESS_AND_PACK_GOVERNANCE",
+      "evidenceIds": [
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75",
+        "DEPLOYMENT_READINESS_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "DEPLOYMENT_TARGET_CHANGE",
+        "ARTIFACT_CHANGE",
+        "OWNER_DECISION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "IMPLEMENTED"
+    },
+    {
+      "ruleId": "DUR-081",
+      "classification": "TIME-BOUND CURRENT BUSINESS DECISION WITH PERSISTENT TRANSITION TRUTH.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "IMPLEMENTED_AS_FAIL_CLOSED_LOCAL_ORCHESTRATION",
+      "evidenceIds": [
+        "LAUNCH_DAY_ORCHESTRATION_V1.7.75",
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "PROVIDER_BINDING_CHANGE",
+        "OWNER_AUTHORIZATION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "IMPLEMENTED"
+    },
+    {
+      "ruleId": "DUR-082",
+      "classification": "CURRENT LAUNCH DECISION WITH REUSABLE BATCH-AUTHORIZATION SAFEGUARDS.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "IMPLEMENTED_AS_FAIL_CLOSED_LOCAL_ORCHESTRATION",
+      "evidenceIds": [
+        "LAUNCH_DAY_ORCHESTRATION_V1.7.75",
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "PROVIDER_BINDING_CHANGE",
+        "OWNER_AUTHORIZATION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "IMPLEMENTED"
+    },
+    {
+      "ruleId": "DUR-083",
+      "classification": "PERSISTENT DEPLOYMENT SAFEGUARD.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "IMPLEMENTED_AS_FAIL_CLOSED_LOCAL_ORCHESTRATION",
+      "evidenceIds": [
+        "LAUNCH_DAY_ORCHESTRATION_V1.7.75",
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "PROVIDER_BINDING_CHANGE",
+        "OWNER_AUTHORIZATION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "IMPLEMENTED"
+    },
+    {
+      "ruleId": "DUR-084",
+      "classification": "PERSISTENT DEPLOYMENT AND PUBLIC-TRUTH SAFEGUARD.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "IMPLEMENTED_AS_FAIL_CLOSED_LOCAL_ORCHESTRATION",
+      "evidenceIds": [
+        "LAUNCH_DAY_ORCHESTRATION_V1.7.75",
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "PROVIDER_BINDING_CHANGE",
+        "OWNER_AUTHORIZATION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "IMPLEMENTED"
+    },
+    {
+      "ruleId": "DUR-085",
+      "classification": "PERSISTENT SAFEGUARD.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "IMPLEMENTED_AS_FAIL_CLOSED_LOCAL_ORCHESTRATION",
+      "evidenceIds": [
+        "LAUNCH_DAY_ORCHESTRATION_V1.7.75",
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "PROVIDER_BINDING_CHANGE",
+        "OWNER_AUTHORIZATION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "IMPLEMENTED"
+    },
+    {
+      "ruleId": "DUR-086",
+      "classification": "PERSISTENT LAUNCH AND CONTINUED-LIVE SAFEGUARD.",
+      "lifecycleState": "ACTIVE",
+      "implementationState": "IMPLEMENTED_AS_FAIL_CLOSED_LOCAL_ORCHESTRATION",
+      "evidenceIds": [
+        "LAUNCH_DAY_ORCHESTRATION_V1.7.75",
+        "COORDINATED_PROMPT_PACK_AUTHORITY_V1.7.75"
+      ],
+      "validityScope": "V1.7.75_SOURCE_AND_EXACT_ARTIFACT_ONLY",
+      "invalidationTriggers": [
+        "SOURCE_CHANGE",
+        "PACK_CHANGE",
+        "ARTIFACT_CHANGE",
+        "PROVIDER_BINDING_CHANGE",
+        "OWNER_AUTHORIZATION_CHANGE"
+      ],
+      "exceptions": [],
+      "result": "IMPLEMENTED"
+    }
+  ]
+}

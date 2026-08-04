@@ -1,0 +1,4210 @@
+{
+  "handoffVersion": "1.4.0",
+  "handoffDigest": "8ad6df8dc0e735037689473caaa36a183c38dc316dc266238e48f15080b5118c",
+  "sourceSystem": "smarter-justice",
+  "destinationPortalId": "divorce-law-aid",
+  "contract": {
+    "contractId": "professional-contract:divorce-law-aid:v1.4.0",
+    "contractVersion": "1.4.0",
+    "portalId": "divorce-law-aid",
+    "portalName": "Divorce Law Aid",
+    "portalEvidenceState": "OWNER_RECORDED",
+    "contractState": "D3_ADAPTER_TESTS_PASS",
+    "adapterMode": "LOCAL_READ_ONLY_CONSUMER_SIMULATION",
+    "sourceSystem": "Smarter Justice centralized professional business layer",
+    "destinationSystem": "Independent legal portal: Divorce Law Aid",
+    "direction": "Smarter Justice to portal — read-only export by default",
+    "userExperienceOwner": "Divorce Law Aid",
+    "accountAndBillingOwner": "Smarter Justice",
+    "professionalRecordOwner": "Dedicated portal for specialty rendering and source-specific public facts; Smarter Justice for shared account, organization, seat, and billing metadata.",
+    "allowedFields": [
+      "contractVersion",
+      "assignmentId",
+      "sourceRevision",
+      "approvedSourceRevision",
+      "recordFingerprint",
+      "distributionAction",
+      "suppressionState",
+      "portalId",
+      "portalName",
+      "sourcePortalIds",
+      "mappingState",
+      "professionalId",
+      "organizationId",
+      "seatId",
+      "officeIds",
+      "practiceAssignments",
+      "jurisdictions",
+      "languages",
+      "serviceMethods",
+      "publicProfileState",
+      "claimState",
+      "credentialState",
+      "sourceFreshness",
+      "participationState",
+      "availabilityState",
+      "inquiryEligibility",
+      "appointmentEligibility",
+      "membershipCoverageState",
+      "sponsorshipState",
+      "evidenceState",
+      "sourceOrigin",
+      "dataAuthority",
+      "portalPublicationState",
+      "publicationEligible",
+      "generatedAt"
+    ],
+    "prohibitedFields": [
+      "password hashes or authentication secrets",
+      "payment card or bank data",
+      "Stripe secret identifiers or webhook payloads",
+      "user legal matters or intake facts",
+      "privileged or confidential communications",
+      "uploaded user documents",
+      "private professional claim evidence",
+      "private correction or dispute evidence",
+      "internal support conversations",
+      "production database credentials",
+      "automatic instructions to change portal data"
+    ],
+    "rules": {
+      "paymentDoesNotBuyVerification": true,
+      "paymentDoesNotBuyPracticeAssignment": true,
+      "paymentDoesNotBuyOrganicRank": true,
+      "individualEvidenceRequired": true,
+      "correctionNeverRequiresPayment": true,
+      "noAutomaticWrites": true,
+      "noUserMatterTransfer": true
+    },
+    "liveConnection": false,
+    "automaticWrites": false,
+    "stagingVerified": false,
+    "productionVerified": false
+  },
+  "portalBuildStandard": {
+    "standardId": "legal-micro-portal-integrated",
+    "standardVersion": "1.0.0",
+    "standardPath": "LEGAL_MICRO_PORTAL_INTEGRATED_STANDARD_V1.0.0.md",
+    "conformanceState": "REQUIRED_AT_PORTAL_RELEASE",
+    "exactArtifactAuthority": true,
+    "dualMissionRequired": true,
+    "profileMetricsRequired": true,
+    "completeSurfaceAuditRequired": true,
+    "exactArtifactTestingRequired": true,
+    "ownerActivationRequired": true
+  },
+  "publicationPolicy": {
+    "accountAndBillingSystem": "Smarter Justice",
+    "publicProfileSystem": "destination micro-portal",
+    "smarterJusticePublicDirectory": false,
+    "claimOrCreateEntryPointsAllowed": true,
+    "professionalSelfEntryAllowed": true,
+    "ownerAssistedEntryAllowed": true,
+    "publicationRequiresOwnerApprovedAssignment": true,
+    "publicationRequiresCredentialVerification": true,
+    "paymentAloneNeverPublishes": true,
+    "automaticWrites": false
+  },
+  "assignments": [
+    {
+      "contractVersion": "1.4.0",
+      "assignmentId": "portal-assignment:professional-austin-burnett:divorce-law-aid",
+      "sourceRevision": 1,
+      "approvedSourceRevision": 0,
+      "recordFingerprint": "8668781e9e657fc395f8768b940d528a69068e3ee7b747ca3e8cac4cfea423d0",
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "portalId": "divorce-law-aid",
+      "sourcePortalIds": [
+        "digital-divorce"
+      ],
+      "mappingState": "LEGACY_ALIAS_MAPPED",
+      "professionalId": "professional-austin-burnett",
+      "organizationId": "organization:firm:firm-bhatt-law-group",
+      "seatId": "seat:professional:professional-austin-burnett",
+      "officeIds": [
+        "office:firm:firm-bhatt-law-group:1"
+      ],
+      "practiceAssignments": [
+        "practice-assignment:professional-austin-burnett:family-law",
+        "practice-assignment:professional-austin-burnett:divorce",
+        "practice-assignment:professional-austin-burnett:child-custody",
+        "practice-assignment:professional-austin-burnett:prenuptial-agreements",
+        "practice-assignment:professional-austin-burnett:child-support",
+        "practice-assignment:professional-austin-burnett:restraining-orders",
+        "practice-assignment:professional-austin-burnett:criminal-defense",
+        "practice-assignment:professional-austin-burnett:dwi"
+      ],
+      "jurisdictions": [
+        "New Jersey"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceMethods": [
+        "telephone",
+        "in person"
+      ],
+      "publicProfileState": "unclaimed public profile",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "sourceFreshness": {
+        "state": "SOURCE_OBSERVED",
+        "reviewedAt": "2026-07-23T00:00:00.000Z",
+        "sourceCount": 2
+      },
+      "participationState": "not participating",
+      "availabilityState": "not configured",
+      "inquiryEligibility": false,
+      "appointmentEligibility": false,
+      "membershipCoverageState": "no qualifying active coverage",
+      "sponsorshipState": "none",
+      "evidenceState": "SOURCE_OBSERVED",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "generatedAt": "2026-07-29T02:29:54.124Z"
+    },
+    {
+      "contractVersion": "1.4.0",
+      "assignmentId": "portal-assignment:professional-sean-doyle:divorce-law-aid",
+      "sourceRevision": 1,
+      "approvedSourceRevision": 0,
+      "recordFingerprint": "bac92efe8c90a9b2072a051769d4f4fd63d2e39694a61512ba94a4a804a02899",
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "portalId": "divorce-law-aid",
+      "sourcePortalIds": [
+        "digital-divorce"
+      ],
+      "mappingState": "LEGACY_ALIAS_MAPPED",
+      "professionalId": "professional-sean-doyle",
+      "organizationId": "organization:firm:firm-bhatt-law-group",
+      "seatId": "seat:professional:professional-sean-doyle",
+      "officeIds": [
+        "office:firm:firm-bhatt-law-group:1"
+      ],
+      "practiceAssignments": [
+        "practice-assignment:professional-sean-doyle:family-law",
+        "practice-assignment:professional-sean-doyle:divorce",
+        "practice-assignment:professional-sean-doyle:prenuptial-agreements",
+        "practice-assignment:professional-sean-doyle:child-custody",
+        "practice-assignment:professional-sean-doyle:restraining-orders",
+        "practice-assignment:professional-sean-doyle:child-support",
+        "practice-assignment:professional-sean-doyle:dcpp-investigations",
+        "practice-assignment:professional-sean-doyle:criminal-defense",
+        "practice-assignment:professional-sean-doyle:dwi",
+        "practice-assignment:professional-sean-doyle:mediation"
+      ],
+      "jurisdictions": [
+        "New Jersey"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceMethods": [
+        "telephone",
+        "in person"
+      ],
+      "publicProfileState": "unclaimed public profile",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "sourceFreshness": {
+        "state": "SOURCE_OBSERVED",
+        "reviewedAt": "2026-07-23T00:00:00.000Z",
+        "sourceCount": 1
+      },
+      "participationState": "not participating",
+      "availabilityState": "not configured",
+      "inquiryEligibility": false,
+      "appointmentEligibility": false,
+      "membershipCoverageState": "no qualifying active coverage",
+      "sponsorshipState": "none",
+      "evidenceState": "SOURCE_OBSERVED",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "generatedAt": "2026-07-29T02:29:54.124Z"
+    },
+    {
+      "contractVersion": "1.4.0",
+      "assignmentId": "portal-assignment:professional-christian-moreira:divorce-law-aid",
+      "sourceRevision": 1,
+      "approvedSourceRevision": 0,
+      "recordFingerprint": "63e472fc5f1158ecd6f3f2237e4b05b41bb31a69e39e906a48f5dbae5c18bcce",
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "portalId": "divorce-law-aid",
+      "sourcePortalIds": [
+        "digital-divorce"
+      ],
+      "mappingState": "LEGACY_ALIAS_MAPPED",
+      "professionalId": "professional-christian-moreira",
+      "organizationId": "organization:firm:firm-bhatt-law-group",
+      "seatId": "seat:professional:professional-christian-moreira",
+      "officeIds": [
+        "office:firm:firm-bhatt-law-group:1"
+      ],
+      "practiceAssignments": [
+        "practice-assignment:professional-christian-moreira:family-law",
+        "practice-assignment:professional-christian-moreira:divorce",
+        "practice-assignment:professional-christian-moreira:prenuptial-agreements",
+        "practice-assignment:professional-christian-moreira:restraining-orders",
+        "practice-assignment:professional-christian-moreira:child-custody",
+        "practice-assignment:professional-christian-moreira:child-support",
+        "practice-assignment:professional-christian-moreira:criminal-defense",
+        "practice-assignment:professional-christian-moreira:dwi",
+        "practice-assignment:professional-christian-moreira:municipal-court",
+        "practice-assignment:professional-christian-moreira:name-changes"
+      ],
+      "jurisdictions": [
+        "New Jersey"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceMethods": [
+        "telephone",
+        "in person"
+      ],
+      "publicProfileState": "unclaimed public profile",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "sourceFreshness": {
+        "state": "SOURCE_OBSERVED",
+        "reviewedAt": "2026-07-23T00:00:00.000Z",
+        "sourceCount": 1
+      },
+      "participationState": "not participating",
+      "availabilityState": "not configured",
+      "inquiryEligibility": false,
+      "appointmentEligibility": false,
+      "membershipCoverageState": "no qualifying active coverage",
+      "sponsorshipState": "none",
+      "evidenceState": "SOURCE_OBSERVED",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "generatedAt": "2026-07-29T02:29:54.124Z"
+    },
+    {
+      "contractVersion": "1.4.0",
+      "assignmentId": "portal-assignment:professional-roseann-branda:divorce-law-aid",
+      "sourceRevision": 1,
+      "approvedSourceRevision": 0,
+      "recordFingerprint": "ef12e1c1fdcad77874aac7e9ebd0c11dac9709a3756f72137a0a78d4ff5f1444",
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "portalId": "divorce-law-aid",
+      "sourcePortalIds": [
+        "digital-divorce"
+      ],
+      "mappingState": "LEGACY_ALIAS_MAPPED",
+      "professionalId": "professional-roseann-branda",
+      "organizationId": "organization:firm:firm-abrams-fensterman",
+      "seatId": "seat:professional:professional-roseann-branda",
+      "officeIds": [
+        "office:firm:firm-abrams-fensterman:1"
+      ],
+      "practiceAssignments": [
+        "practice-assignment:professional-roseann-branda:divorce",
+        "practice-assignment:professional-roseann-branda:matrimonial-law",
+        "practice-assignment:professional-roseann-branda:family-law",
+        "practice-assignment:professional-roseann-branda:child-custody",
+        "practice-assignment:professional-roseann-branda:civil-litigation"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceMethods": [
+        "telephone",
+        "in person"
+      ],
+      "publicProfileState": "unclaimed public profile",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "sourceFreshness": {
+        "state": "SOURCE_OBSERVED",
+        "reviewedAt": "2026-07-23T00:00:00.000Z",
+        "sourceCount": 1
+      },
+      "participationState": "not participating",
+      "availabilityState": "not configured",
+      "inquiryEligibility": false,
+      "appointmentEligibility": false,
+      "membershipCoverageState": "no qualifying active coverage",
+      "sponsorshipState": "none",
+      "evidenceState": "SOURCE_OBSERVED",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "generatedAt": "2026-07-29T02:29:54.124Z"
+    },
+    {
+      "contractVersion": "1.4.0",
+      "assignmentId": "portal-assignment:professional-grace-borrino:divorce-law-aid",
+      "sourceRevision": 1,
+      "approvedSourceRevision": 0,
+      "recordFingerprint": "98febf8565362aa77d15278ccfd322dba79577f7351489b9c7abe4ec0ebaf411",
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "portalId": "divorce-law-aid",
+      "sourcePortalIds": [
+        "digital-divorce"
+      ],
+      "mappingState": "LEGACY_ALIAS_MAPPED",
+      "professionalId": "professional-grace-borrino",
+      "organizationId": "organization:firm:firm-abrams-fensterman",
+      "seatId": "seat:professional:professional-grace-borrino",
+      "officeIds": [
+        "office:firm:firm-abrams-fensterman:1"
+      ],
+      "practiceAssignments": [
+        "practice-assignment:professional-grace-borrino:divorce",
+        "practice-assignment:professional-grace-borrino:matrimonial-law",
+        "practice-assignment:professional-grace-borrino:family-law",
+        "practice-assignment:professional-grace-borrino:child-custody",
+        "practice-assignment:professional-grace-borrino:prenuptial-and-postnuptial-agreements"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceMethods": [
+        "telephone",
+        "in person"
+      ],
+      "publicProfileState": "unclaimed public profile",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "sourceFreshness": {
+        "state": "SOURCE_OBSERVED",
+        "reviewedAt": "2026-07-23T00:00:00.000Z",
+        "sourceCount": 1
+      },
+      "participationState": "not participating",
+      "availabilityState": "not configured",
+      "inquiryEligibility": false,
+      "appointmentEligibility": false,
+      "membershipCoverageState": "no qualifying active coverage",
+      "sponsorshipState": "none",
+      "evidenceState": "SOURCE_OBSERVED",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "generatedAt": "2026-07-29T02:29:54.124Z"
+    },
+    {
+      "contractVersion": "1.4.0",
+      "assignmentId": "portal-assignment:professional-michael-a-coscia:divorce-law-aid",
+      "sourceRevision": 1,
+      "approvedSourceRevision": 0,
+      "recordFingerprint": "3631dac71ccb0368fa984837512816cb3f0293e53fff403d96898fd0327878b6",
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "portalId": "divorce-law-aid",
+      "sourcePortalIds": [
+        "digital-divorce"
+      ],
+      "mappingState": "LEGACY_ALIAS_MAPPED",
+      "professionalId": "professional-michael-a-coscia",
+      "organizationId": "organization:firm:firm-abrams-fensterman",
+      "seatId": "seat:professional:professional-michael-a-coscia",
+      "officeIds": [
+        "office:firm:firm-abrams-fensterman:1"
+      ],
+      "practiceAssignments": [
+        "practice-assignment:professional-michael-a-coscia:divorce-and-matrimonial-law",
+        "practice-assignment:professional-michael-a-coscia:family-law",
+        "practice-assignment:professional-michael-a-coscia:child-custody",
+        "practice-assignment:professional-michael-a-coscia:real-estate-law",
+        "practice-assignment:professional-michael-a-coscia:commercial-litigation",
+        "practice-assignment:professional-michael-a-coscia:business-transactions",
+        "practice-assignment:professional-michael-a-coscia:estate-matters"
+      ],
+      "jurisdictions": [
+        "New York",
+        "New Jersey"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceMethods": [
+        "telephone",
+        "in person"
+      ],
+      "publicProfileState": "unclaimed public profile",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "sourceFreshness": {
+        "state": "SOURCE_OBSERVED",
+        "reviewedAt": "2026-07-23T00:00:00.000Z",
+        "sourceCount": 1
+      },
+      "participationState": "not participating",
+      "availabilityState": "not configured",
+      "inquiryEligibility": false,
+      "appointmentEligibility": false,
+      "membershipCoverageState": "no qualifying active coverage",
+      "sponsorshipState": "none",
+      "evidenceState": "SOURCE_OBSERVED",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "generatedAt": "2026-07-29T02:29:54.124Z"
+    },
+    {
+      "contractVersion": "1.4.0",
+      "assignmentId": "portal-assignment:professional-vernita-charles:divorce-law-aid",
+      "sourceRevision": 1,
+      "approvedSourceRevision": 0,
+      "recordFingerprint": "4224c2d7f3d691e9d3ab3943ea4f09bde051e80265d1aded3e891f8f8b6b9dd2",
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "portalId": "divorce-law-aid",
+      "sourcePortalIds": [
+        "digital-divorce"
+      ],
+      "mappingState": "LEGACY_ALIAS_MAPPED",
+      "professionalId": "professional-vernita-charles",
+      "organizationId": "organization:firm:firm-law-office-vernita-charles",
+      "seatId": "seat:professional:professional-vernita-charles",
+      "officeIds": [
+        "office:firm:firm-law-office-vernita-charles:1"
+      ],
+      "practiceAssignments": [
+        "practice-assignment:professional-vernita-charles:divorce-and-family-law",
+        "practice-assignment:professional-vernita-charles:estate-planning",
+        "practice-assignment:professional-vernita-charles:probate",
+        "practice-assignment:professional-vernita-charles:trusts-and-estates"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceMethods": [
+        "telephone",
+        "in person"
+      ],
+      "publicProfileState": "unclaimed public profile",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "sourceFreshness": {
+        "state": "SOURCE_OBSERVED",
+        "reviewedAt": "2026-07-23T00:00:00.000Z",
+        "sourceCount": 2
+      },
+      "participationState": "not participating",
+      "availabilityState": "not configured",
+      "inquiryEligibility": false,
+      "appointmentEligibility": false,
+      "membershipCoverageState": "no qualifying active coverage",
+      "sponsorshipState": "none",
+      "evidenceState": "SOURCE_OBSERVED",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "generatedAt": "2026-07-29T02:29:54.124Z"
+    },
+    {
+      "contractVersion": "1.4.0",
+      "assignmentId": "portal-assignment:professional-elizabeth-garvey:divorce-law-aid",
+      "sourceRevision": 1,
+      "approvedSourceRevision": 0,
+      "recordFingerprint": "0f00a447591c0aed48143398a8f51d0f5a043ae60b306c8c36e7a18225c1b801",
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "portalId": "divorce-law-aid",
+      "sourcePortalIds": [
+        "digital-divorce"
+      ],
+      "mappingState": "LEGACY_ALIAS_MAPPED",
+      "professionalId": "professional-elizabeth-garvey",
+      "organizationId": "organization:firm:firm-abrams-fensterman",
+      "seatId": "seat:professional:professional-elizabeth-garvey",
+      "officeIds": [
+        "office:firm:firm-abrams-fensterman:1"
+      ],
+      "practiceAssignments": [
+        "practice-assignment:professional-elizabeth-garvey:divorce-and-family-law",
+        "practice-assignment:professional-elizabeth-garvey:child-custody",
+        "practice-assignment:professional-elizabeth-garvey:spousal-support"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceMethods": [
+        "telephone",
+        "in person"
+      ],
+      "publicProfileState": "unclaimed public profile",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "sourceFreshness": {
+        "state": "SOURCE_OBSERVED",
+        "reviewedAt": "2026-07-23T00:00:00.000Z",
+        "sourceCount": 1
+      },
+      "participationState": "not participating",
+      "availabilityState": "not configured",
+      "inquiryEligibility": false,
+      "appointmentEligibility": false,
+      "membershipCoverageState": "no qualifying active coverage",
+      "sponsorshipState": "none",
+      "evidenceState": "SOURCE_OBSERVED",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "generatedAt": "2026-07-29T02:29:54.124Z"
+    },
+    {
+      "contractVersion": "1.4.0",
+      "assignmentId": "portal-assignment:professional-gabrielle-hagege:divorce-law-aid",
+      "sourceRevision": 1,
+      "approvedSourceRevision": 0,
+      "recordFingerprint": "c2c5b90c2958267a866d1249a94ad59cae3ac09255c6acd9aa050ecde7f40bca",
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "portalId": "divorce-law-aid",
+      "sourcePortalIds": [
+        "digital-divorce"
+      ],
+      "mappingState": "LEGACY_ALIAS_MAPPED",
+      "professionalId": "professional-gabrielle-hagege",
+      "organizationId": "organization:firm:firm-abrams-fensterman",
+      "seatId": "seat:professional:professional-gabrielle-hagege",
+      "officeIds": [
+        "office:firm:firm-abrams-fensterman:1"
+      ],
+      "practiceAssignments": [
+        "practice-assignment:professional-gabrielle-hagege:divorce-and-matrimonial-law",
+        "practice-assignment:professional-gabrielle-hagege:family-law",
+        "practice-assignment:professional-gabrielle-hagege:child-custody-and-support"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "languages": [
+        "English",
+        "French"
+      ],
+      "serviceMethods": [
+        "telephone",
+        "in person"
+      ],
+      "publicProfileState": "unclaimed public profile",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "sourceFreshness": {
+        "state": "SOURCE_OBSERVED",
+        "reviewedAt": "2026-07-24T00:00:00.000Z",
+        "sourceCount": 1
+      },
+      "participationState": "not participating",
+      "availabilityState": "not configured",
+      "inquiryEligibility": false,
+      "appointmentEligibility": false,
+      "membershipCoverageState": "no qualifying active coverage",
+      "sponsorshipState": "none",
+      "evidenceState": "SOURCE_OBSERVED",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "generatedAt": "2026-07-29T02:29:54.124Z"
+    },
+    {
+      "contractVersion": "1.4.0",
+      "assignmentId": "portal-assignment:professional-ferris-kim:divorce-law-aid",
+      "sourceRevision": 1,
+      "approvedSourceRevision": 0,
+      "recordFingerprint": "08273a946a78a16163826e04a2aef9a29468778d1629b5f97ec699362bb34166",
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "portalId": "divorce-law-aid",
+      "sourcePortalIds": [
+        "digital-divorce"
+      ],
+      "mappingState": "LEGACY_ALIAS_MAPPED",
+      "professionalId": "professional-ferris-kim",
+      "organizationId": "organization:firm:firm-abrams-fensterman",
+      "seatId": "seat:professional:professional-ferris-kim",
+      "officeIds": [
+        "office:firm:firm-abrams-fensterman:1"
+      ],
+      "practiceAssignments": [
+        "practice-assignment:professional-ferris-kim:divorce-and-matrimonial-law",
+        "practice-assignment:professional-ferris-kim:family-law",
+        "practice-assignment:professional-ferris-kim:civil-litigation"
+      ],
+      "jurisdictions": [
+        "New York",
+        "California"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceMethods": [
+        "telephone",
+        "in person"
+      ],
+      "publicProfileState": "unclaimed public profile",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "sourceFreshness": {
+        "state": "SOURCE_OBSERVED",
+        "reviewedAt": "2026-07-24T00:00:00.000Z",
+        "sourceCount": 1
+      },
+      "participationState": "not participating",
+      "availabilityState": "not configured",
+      "inquiryEligibility": false,
+      "appointmentEligibility": false,
+      "membershipCoverageState": "no qualifying active coverage",
+      "sponsorshipState": "none",
+      "evidenceState": "SOURCE_OBSERVED",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "generatedAt": "2026-07-29T02:29:54.124Z"
+    },
+    {
+      "contractVersion": "1.4.0",
+      "assignmentId": "portal-assignment:professional-rachel-a-pencu:divorce-law-aid",
+      "sourceRevision": 1,
+      "approvedSourceRevision": 0,
+      "recordFingerprint": "267bc617ee8b61107e7d99e1ad954d82200601fd1a4bc0c3e868ab52b4d7c475",
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "portalId": "divorce-law-aid",
+      "sourcePortalIds": [
+        "digital-divorce"
+      ],
+      "mappingState": "LEGACY_ALIAS_MAPPED",
+      "professionalId": "professional-rachel-a-pencu",
+      "organizationId": "organization:firm:firm-cohen-wolf",
+      "seatId": "seat:professional:professional-rachel-a-pencu",
+      "officeIds": [
+        "office:firm:firm-cohen-wolf:1",
+        "office:firm:firm-cohen-wolf:2"
+      ],
+      "practiceAssignments": [
+        "practice-assignment:professional-rachel-a-pencu:family-law",
+        "practice-assignment:professional-rachel-a-pencu:divorce-and-custody-litigation"
+      ],
+      "jurisdictions": [
+        "Connecticut"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceMethods": [
+        "telephone",
+        "in person"
+      ],
+      "publicProfileState": "unclaimed public profile",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "sourceFreshness": {
+        "state": "SOURCE_OBSERVED",
+        "reviewedAt": "2026-07-24T00:00:00.000Z",
+        "sourceCount": 1
+      },
+      "participationState": "not participating",
+      "availabilityState": "not configured",
+      "inquiryEligibility": false,
+      "appointmentEligibility": false,
+      "membershipCoverageState": "no qualifying active coverage",
+      "sponsorshipState": "none",
+      "evidenceState": "SOURCE_OBSERVED",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "generatedAt": "2026-07-29T02:29:54.124Z"
+    },
+    {
+      "contractVersion": "1.4.0",
+      "assignmentId": "portal-assignment:professional-jenna-a-shankman:divorce-law-aid",
+      "sourceRevision": 1,
+      "approvedSourceRevision": 0,
+      "recordFingerprint": "fcce9b4f19505a3805bbc6e0bfec06a9bd38c9d1151d67edaf63322eb0c2e043",
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "portalId": "divorce-law-aid",
+      "sourcePortalIds": [
+        "digital-divorce"
+      ],
+      "mappingState": "LEGACY_ALIAS_MAPPED",
+      "professionalId": "professional-jenna-a-shankman",
+      "organizationId": "organization:firm:firm-cohen-wolf",
+      "seatId": "seat:professional:professional-jenna-a-shankman",
+      "officeIds": [
+        "office:firm:firm-cohen-wolf:1",
+        "office:firm:firm-cohen-wolf:2"
+      ],
+      "practiceAssignments": [
+        "practice-assignment:professional-jenna-a-shankman:family-law",
+        "practice-assignment:professional-jenna-a-shankman:trusts-and-estates",
+        "practice-assignment:professional-jenna-a-shankman:probate-litigation",
+        "practice-assignment:professional-jenna-a-shankman:civil-litigation"
+      ],
+      "jurisdictions": [
+        "Connecticut"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceMethods": [
+        "telephone",
+        "in person"
+      ],
+      "publicProfileState": "unclaimed public profile",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "sourceFreshness": {
+        "state": "SOURCE_OBSERVED",
+        "reviewedAt": "2026-07-24T00:00:00.000Z",
+        "sourceCount": 1
+      },
+      "participationState": "not participating",
+      "availabilityState": "not configured",
+      "inquiryEligibility": false,
+      "appointmentEligibility": false,
+      "membershipCoverageState": "no qualifying active coverage",
+      "sponsorshipState": "none",
+      "evidenceState": "SOURCE_OBSERVED",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "generatedAt": "2026-07-29T02:29:54.124Z"
+    },
+    {
+      "contractVersion": "1.4.0",
+      "assignmentId": "portal-assignment:professional-michelle-m-zulawski:divorce-law-aid",
+      "sourceRevision": 1,
+      "approvedSourceRevision": 0,
+      "recordFingerprint": "ffef032e94cfbbebc3b3cf5a9e932335e0c491c0d4f166ae6ca43887a12b04b6",
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "portalId": "divorce-law-aid",
+      "sourcePortalIds": [
+        "digital-divorce"
+      ],
+      "mappingState": "LEGACY_ALIAS_MAPPED",
+      "professionalId": "professional-michelle-m-zulawski",
+      "organizationId": "organization:firm:firm-cohen-wolf",
+      "seatId": "seat:professional:professional-michelle-m-zulawski",
+      "officeIds": [
+        "office:firm:firm-cohen-wolf:1",
+        "office:firm:firm-cohen-wolf:2"
+      ],
+      "practiceAssignments": [
+        "practice-assignment:professional-michelle-m-zulawski:family-law",
+        "practice-assignment:professional-michelle-m-zulawski:divorce-and-custody-litigation"
+      ],
+      "jurisdictions": [
+        "Connecticut"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceMethods": [
+        "telephone",
+        "in person"
+      ],
+      "publicProfileState": "unclaimed public profile",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "sourceFreshness": {
+        "state": "SOURCE_OBSERVED",
+        "reviewedAt": "2026-07-24T00:00:00.000Z",
+        "sourceCount": 1
+      },
+      "participationState": "not participating",
+      "availabilityState": "not configured",
+      "inquiryEligibility": false,
+      "appointmentEligibility": false,
+      "membershipCoverageState": "no qualifying active coverage",
+      "sponsorshipState": "none",
+      "evidenceState": "SOURCE_OBSERVED",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "generatedAt": "2026-07-29T02:29:54.124Z"
+    },
+    {
+      "contractVersion": "1.4.0",
+      "assignmentId": "portal-assignment:professional-emilio-a-estrella-teron:divorce-law-aid",
+      "sourceRevision": 1,
+      "approvedSourceRevision": 0,
+      "recordFingerprint": "0c54f14bc556547dff1e335aa731415db0e2b9b34359c53869fcf3c56f27176b",
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "portalId": "divorce-law-aid",
+      "sourcePortalIds": [
+        "digital-divorce"
+      ],
+      "mappingState": "LEGACY_ALIAS_MAPPED",
+      "professionalId": "professional-emilio-a-estrella-teron",
+      "organizationId": "organization:firm:firm-cohen-wolf",
+      "seatId": "seat:professional:professional-emilio-a-estrella-teron",
+      "officeIds": [
+        "office:firm:firm-cohen-wolf:1",
+        "office:firm:firm-cohen-wolf:2"
+      ],
+      "practiceAssignments": [
+        "practice-assignment:professional-emilio-a-estrella-teron:civil-litigation",
+        "practice-assignment:professional-emilio-a-estrella-teron:family-law",
+        "practice-assignment:professional-emilio-a-estrella-teron:employment-law",
+        "practice-assignment:professional-emilio-a-estrella-teron:personal-injury",
+        "practice-assignment:professional-emilio-a-estrella-teron:intellectual-property"
+      ],
+      "jurisdictions": [
+        "Connecticut"
+      ],
+      "languages": [
+        "English",
+        "Spanish"
+      ],
+      "serviceMethods": [
+        "telephone",
+        "in person"
+      ],
+      "publicProfileState": "unclaimed public profile",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "sourceFreshness": {
+        "state": "SOURCE_OBSERVED",
+        "reviewedAt": "2026-07-24T00:00:00.000Z",
+        "sourceCount": 1
+      },
+      "participationState": "not participating",
+      "availabilityState": "not configured",
+      "inquiryEligibility": false,
+      "appointmentEligibility": false,
+      "membershipCoverageState": "no qualifying active coverage",
+      "sponsorshipState": "none",
+      "evidenceState": "SOURCE_OBSERVED",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "generatedAt": "2026-07-29T02:29:54.124Z"
+    },
+    {
+      "contractVersion": "1.4.0",
+      "assignmentId": "portal-assignment:professional-mustapha-ndanusa:divorce-law-aid",
+      "sourceRevision": 1,
+      "approvedSourceRevision": 0,
+      "recordFingerprint": "ebafc082396699783df4216786a072bde5a0cea1ea70358f7152677ab8330e98",
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "portalId": "divorce-law-aid",
+      "sourcePortalIds": [
+        "digital-divorce"
+      ],
+      "mappingState": "LEGACY_ALIAS_MAPPED",
+      "professionalId": "professional-mustapha-ndanusa",
+      "organizationId": "organization:firm:firm-dnis-law",
+      "seatId": "seat:professional:professional-mustapha-ndanusa",
+      "officeIds": [
+        "office:firm:firm-dnis-law:1"
+      ],
+      "practiceAssignments": [
+        "practice-assignment:professional-mustapha-ndanusa:immigration-law",
+        "practice-assignment:professional-mustapha-ndanusa:criminal-defense",
+        "practice-assignment:professional-mustapha-ndanusa:family-law"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceMethods": [
+        "telephone",
+        "in person"
+      ],
+      "publicProfileState": "unclaimed public profile",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "sourceFreshness": {
+        "state": "SOURCE_OBSERVED",
+        "reviewedAt": "2026-07-24T18:00:00.000Z",
+        "sourceCount": 1
+      },
+      "participationState": "not participating",
+      "availabilityState": "not configured",
+      "inquiryEligibility": false,
+      "appointmentEligibility": false,
+      "membershipCoverageState": "no qualifying active coverage",
+      "sponsorshipState": "none",
+      "evidenceState": "SOURCE_OBSERVED",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "generatedAt": "2026-07-29T02:29:54.124Z"
+    },
+    {
+      "contractVersion": "1.4.0",
+      "assignmentId": "portal-assignment:professional-tarik-davis:divorce-law-aid",
+      "sourceRevision": 1,
+      "approvedSourceRevision": 0,
+      "recordFingerprint": "8bf0608100b18bc9a36f5a651bd776d6e52b8f87e0fbde01d221907036b9e7e0",
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "portalId": "divorce-law-aid",
+      "sourcePortalIds": [
+        "digital-divorce"
+      ],
+      "mappingState": "LEGACY_ALIAS_MAPPED",
+      "professionalId": "professional-tarik-davis",
+      "organizationId": "organization:firm:firm-dnis-law",
+      "seatId": "seat:professional:professional-tarik-davis",
+      "officeIds": [
+        "office:firm:firm-dnis-law:1"
+      ],
+      "practiceAssignments": [
+        "practice-assignment:professional-tarik-davis:immigration-law",
+        "practice-assignment:professional-tarik-davis:criminal-defense",
+        "practice-assignment:professional-tarik-davis:family-law"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceMethods": [
+        "telephone",
+        "in person"
+      ],
+      "publicProfileState": "unclaimed public profile",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "sourceFreshness": {
+        "state": "SOURCE_OBSERVED",
+        "reviewedAt": "2026-07-24T18:00:00.000Z",
+        "sourceCount": 1
+      },
+      "participationState": "not participating",
+      "availabilityState": "not configured",
+      "inquiryEligibility": false,
+      "appointmentEligibility": false,
+      "membershipCoverageState": "no qualifying active coverage",
+      "sponsorshipState": "none",
+      "evidenceState": "SOURCE_OBSERVED",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "generatedAt": "2026-07-29T02:29:54.124Z"
+    },
+    {
+      "contractVersion": "1.4.0",
+      "assignmentId": "portal-assignment:professional-mohammad-a-saleem:divorce-law-aid",
+      "sourceRevision": 1,
+      "approvedSourceRevision": 0,
+      "recordFingerprint": "49b34845f2f2f685d31664790eb1c41d147b277e0014d72c047cf69e6c2e193e",
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "portalId": "divorce-law-aid",
+      "sourcePortalIds": [
+        "digital-divorce"
+      ],
+      "mappingState": "LEGACY_ALIAS_MAPPED",
+      "professionalId": "professional-mohammad-a-saleem",
+      "organizationId": "organization:firm:firm-dnis-law",
+      "seatId": "seat:professional:professional-mohammad-a-saleem",
+      "officeIds": [
+        "office:firm:firm-dnis-law:1"
+      ],
+      "practiceAssignments": [
+        "practice-assignment:professional-mohammad-a-saleem:immigration-law",
+        "practice-assignment:professional-mohammad-a-saleem:criminal-defense",
+        "practice-assignment:professional-mohammad-a-saleem:family-law"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceMethods": [
+        "telephone",
+        "in person"
+      ],
+      "publicProfileState": "unclaimed public profile",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "sourceFreshness": {
+        "state": "SOURCE_OBSERVED",
+        "reviewedAt": "2026-07-24T18:00:00.000Z",
+        "sourceCount": 1
+      },
+      "participationState": "not participating",
+      "availabilityState": "not configured",
+      "inquiryEligibility": false,
+      "appointmentEligibility": false,
+      "membershipCoverageState": "no qualifying active coverage",
+      "sponsorshipState": "none",
+      "evidenceState": "SOURCE_OBSERVED",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "generatedAt": "2026-07-29T02:29:54.124Z"
+    },
+    {
+      "contractVersion": "1.4.0",
+      "assignmentId": "portal-assignment:professional-alyssa-eisner:divorce-law-aid",
+      "sourceRevision": 1,
+      "approvedSourceRevision": 0,
+      "recordFingerprint": "15b7a9e01a7e7318638771c07e755c6a14d8b203edff1e88d8f7854d9d46f38d",
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "portalId": "divorce-law-aid",
+      "sourcePortalIds": [
+        "digital-divorce"
+      ],
+      "mappingState": "LEGACY_ALIAS_MAPPED",
+      "professionalId": "professional-alyssa-eisner",
+      "organizationId": "organization:firm:firm-sager-gellerman-eisner",
+      "seatId": "seat:professional:professional-alyssa-eisner",
+      "officeIds": [
+        "office:firm:firm-sager-gellerman-eisner:1"
+      ],
+      "practiceAssignments": [
+        "practice-assignment:professional-alyssa-eisner:divorce-and-matrimonial-law",
+        "practice-assignment:professional-alyssa-eisner:family-law",
+        "practice-assignment:professional-alyssa-eisner:child-custody-and-support"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceMethods": [
+        "telephone",
+        "in person"
+      ],
+      "publicProfileState": "unclaimed public profile",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "sourceFreshness": {
+        "state": "SOURCE_OBSERVED",
+        "reviewedAt": "2026-07-24T18:00:00.000Z",
+        "sourceCount": 1
+      },
+      "participationState": "not participating",
+      "availabilityState": "not configured",
+      "inquiryEligibility": false,
+      "appointmentEligibility": false,
+      "membershipCoverageState": "no qualifying active coverage",
+      "sponsorshipState": "none",
+      "evidenceState": "SOURCE_OBSERVED",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "generatedAt": "2026-07-29T02:29:54.124Z"
+    },
+    {
+      "contractVersion": "1.4.0",
+      "assignmentId": "portal-assignment:professional-lauren-kurland:divorce-law-aid",
+      "sourceRevision": 1,
+      "approvedSourceRevision": 0,
+      "recordFingerprint": "3d1316609cb06def5d8d3fa39d32a96ce1fbbe505e41198725f859e8bd412b95",
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "portalId": "divorce-law-aid",
+      "sourcePortalIds": [
+        "digital-divorce"
+      ],
+      "mappingState": "LEGACY_ALIAS_MAPPED",
+      "professionalId": "professional-lauren-kurland",
+      "organizationId": "organization:firm:firm-sager-gellerman-eisner",
+      "seatId": "seat:professional:professional-lauren-kurland",
+      "officeIds": [
+        "office:firm:firm-sager-gellerman-eisner:1"
+      ],
+      "practiceAssignments": [
+        "practice-assignment:professional-lauren-kurland:divorce-and-matrimonial-law",
+        "practice-assignment:professional-lauren-kurland:family-law",
+        "practice-assignment:professional-lauren-kurland:child-custody-and-support"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceMethods": [
+        "telephone",
+        "in person"
+      ],
+      "publicProfileState": "unclaimed public profile",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "sourceFreshness": {
+        "state": "SOURCE_OBSERVED",
+        "reviewedAt": "2026-07-24T18:00:00.000Z",
+        "sourceCount": 1
+      },
+      "participationState": "not participating",
+      "availabilityState": "not configured",
+      "inquiryEligibility": false,
+      "appointmentEligibility": false,
+      "membershipCoverageState": "no qualifying active coverage",
+      "sponsorshipState": "none",
+      "evidenceState": "SOURCE_OBSERVED",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "generatedAt": "2026-07-29T02:29:54.124Z"
+    },
+    {
+      "contractVersion": "1.4.0",
+      "assignmentId": "portal-assignment:professional-rebeca-gonche:divorce-law-aid",
+      "sourceRevision": 1,
+      "approvedSourceRevision": 0,
+      "recordFingerprint": "94e44fe6b30d65b6a921a35bc934ef8cbda100f730f832b21be3c2b4253256ae",
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "portalId": "divorce-law-aid",
+      "sourcePortalIds": [
+        "digital-divorce"
+      ],
+      "mappingState": "LEGACY_ALIAS_MAPPED",
+      "professionalId": "professional-rebeca-gonche",
+      "organizationId": "organization:firm:firm-sager-gellerman-eisner",
+      "seatId": "seat:professional:professional-rebeca-gonche",
+      "officeIds": [
+        "office:firm:firm-sager-gellerman-eisner:1"
+      ],
+      "practiceAssignments": [
+        "practice-assignment:professional-rebeca-gonche:divorce-and-matrimonial-law",
+        "practice-assignment:professional-rebeca-gonche:family-law",
+        "practice-assignment:professional-rebeca-gonche:child-custody-and-support"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceMethods": [
+        "telephone",
+        "in person"
+      ],
+      "publicProfileState": "unclaimed public profile",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "sourceFreshness": {
+        "state": "SOURCE_OBSERVED",
+        "reviewedAt": "2026-07-24T18:00:00.000Z",
+        "sourceCount": 1
+      },
+      "participationState": "not participating",
+      "availabilityState": "not configured",
+      "inquiryEligibility": false,
+      "appointmentEligibility": false,
+      "membershipCoverageState": "no qualifying active coverage",
+      "sponsorshipState": "none",
+      "evidenceState": "SOURCE_OBSERVED",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "generatedAt": "2026-07-29T02:29:54.124Z"
+    },
+    {
+      "contractVersion": "1.4.0",
+      "assignmentId": "portal-assignment:professional-caitlin-vasington:divorce-law-aid",
+      "sourceRevision": 1,
+      "approvedSourceRevision": 0,
+      "recordFingerprint": "52d6b6584c4b98945a043f9415aea3d50547314b7c3bfb0b4f4d9e897171a5b6",
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "portalId": "divorce-law-aid",
+      "sourcePortalIds": [
+        "digital-divorce"
+      ],
+      "mappingState": "LEGACY_ALIAS_MAPPED",
+      "professionalId": "professional-caitlin-vasington",
+      "organizationId": "organization:firm:firm-sager-gellerman-eisner",
+      "seatId": "seat:professional:professional-caitlin-vasington",
+      "officeIds": [
+        "office:firm:firm-sager-gellerman-eisner:1"
+      ],
+      "practiceAssignments": [
+        "practice-assignment:professional-caitlin-vasington:divorce-and-matrimonial-law",
+        "practice-assignment:professional-caitlin-vasington:family-law",
+        "practice-assignment:professional-caitlin-vasington:child-custody-and-support"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceMethods": [
+        "telephone",
+        "in person"
+      ],
+      "publicProfileState": "unclaimed public profile",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "sourceFreshness": {
+        "state": "SOURCE_OBSERVED",
+        "reviewedAt": "2026-07-24T18:00:00.000Z",
+        "sourceCount": 1
+      },
+      "participationState": "not participating",
+      "availabilityState": "not configured",
+      "inquiryEligibility": false,
+      "appointmentEligibility": false,
+      "membershipCoverageState": "no qualifying active coverage",
+      "sponsorshipState": "none",
+      "evidenceState": "SOURCE_OBSERVED",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "generatedAt": "2026-07-29T02:29:54.124Z"
+    },
+    {
+      "contractVersion": "1.4.0",
+      "assignmentId": "portal-assignment:professional-frances-kweller:divorce-law-aid",
+      "sourceRevision": 1,
+      "approvedSourceRevision": 0,
+      "recordFingerprint": "9fc904679205ecb99c1084ab5311f8a8ef6e92154e49efbfbe5f3b765fd56ab6",
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "portalId": "divorce-law-aid",
+      "sourcePortalIds": [
+        "digital-divorce"
+      ],
+      "mappingState": "LEGACY_ALIAS_MAPPED",
+      "professionalId": "professional-frances-kweller",
+      "organizationId": "organization:firm:firm-fk-law-group",
+      "seatId": "seat:professional:professional-frances-kweller",
+      "officeIds": [
+        "office:firm:firm-fk-law-group:1"
+      ],
+      "practiceAssignments": [
+        "practice-assignment:professional-frances-kweller:divorce",
+        "practice-assignment:professional-frances-kweller:family-law",
+        "practice-assignment:professional-frances-kweller:prenuptial-agreements",
+        "practice-assignment:professional-frances-kweller:mediation"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceMethods": [
+        "telephone",
+        "in person"
+      ],
+      "publicProfileState": "unclaimed public profile",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "sourceFreshness": {
+        "state": "SOURCE_OBSERVED",
+        "reviewedAt": "2026-07-24T18:00:00.000Z",
+        "sourceCount": 1
+      },
+      "participationState": "not participating",
+      "availabilityState": "not configured",
+      "inquiryEligibility": false,
+      "appointmentEligibility": false,
+      "membershipCoverageState": "no qualifying active coverage",
+      "sponsorshipState": "none",
+      "evidenceState": "SOURCE_OBSERVED",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "generatedAt": "2026-07-29T02:29:54.124Z"
+    },
+    {
+      "contractVersion": "1.4.0",
+      "assignmentId": "portal-assignment:professional-donald-domitrz:divorce-law-aid",
+      "sourceRevision": 1,
+      "approvedSourceRevision": 0,
+      "recordFingerprint": "93af8fde8b1ff35d62e840ac08a4d7f22d07cedecbaf8a15a93f972edcf6c6fa",
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "portalId": "divorce-law-aid",
+      "sourcePortalIds": [
+        "digital-divorce"
+      ],
+      "mappingState": "LEGACY_ALIAS_MAPPED",
+      "professionalId": "professional-donald-domitrz",
+      "organizationId": "organization:firm:firm-fk-law-group",
+      "seatId": "seat:professional:professional-donald-domitrz",
+      "officeIds": [
+        "office:firm:firm-fk-law-group:1"
+      ],
+      "practiceAssignments": [
+        "practice-assignment:professional-donald-domitrz:divorce",
+        "practice-assignment:professional-donald-domitrz:family-law",
+        "practice-assignment:professional-donald-domitrz:child-custody-and-support"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceMethods": [
+        "telephone",
+        "in person"
+      ],
+      "publicProfileState": "unclaimed public profile",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "sourceFreshness": {
+        "state": "SOURCE_OBSERVED",
+        "reviewedAt": "2026-07-24T18:00:00.000Z",
+        "sourceCount": 1
+      },
+      "participationState": "not participating",
+      "availabilityState": "not configured",
+      "inquiryEligibility": false,
+      "appointmentEligibility": false,
+      "membershipCoverageState": "no qualifying active coverage",
+      "sponsorshipState": "none",
+      "evidenceState": "SOURCE_OBSERVED",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "generatedAt": "2026-07-29T02:29:54.124Z"
+    },
+    {
+      "contractVersion": "1.4.0",
+      "assignmentId": "portal-assignment:professional-robyn-mar:divorce-law-aid",
+      "sourceRevision": 1,
+      "approvedSourceRevision": 0,
+      "recordFingerprint": "e546d2f0808c91442b338c5584597651d0cc1673765d507c846098ddbfd58f5b",
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "portalId": "divorce-law-aid",
+      "sourcePortalIds": [
+        "digital-divorce"
+      ],
+      "mappingState": "LEGACY_ALIAS_MAPPED",
+      "professionalId": "professional-robyn-mar",
+      "organizationId": "organization:firm:firm-bronx-defenders",
+      "seatId": "seat:professional:professional-robyn-mar",
+      "officeIds": [
+        "office:firm:firm-bronx-defenders:1"
+      ],
+      "practiceAssignments": [
+        "practice-assignment:professional-robyn-mar:criminal-defense",
+        "practice-assignment:professional-robyn-mar:family-defense",
+        "practice-assignment:professional-robyn-mar:immigration-representation",
+        "practice-assignment:professional-robyn-mar:housing-and-employment-advocacy"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceMethods": [
+        "telephone",
+        "in person"
+      ],
+      "publicProfileState": "unclaimed public profile",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "sourceFreshness": {
+        "state": "SOURCE_OBSERVED",
+        "reviewedAt": "2026-07-24T18:00:00.000Z",
+        "sourceCount": 1
+      },
+      "participationState": "not participating",
+      "availabilityState": "not configured",
+      "inquiryEligibility": false,
+      "appointmentEligibility": false,
+      "membershipCoverageState": "no qualifying active coverage",
+      "sponsorshipState": "none",
+      "evidenceState": "SOURCE_OBSERVED",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "generatedAt": "2026-07-29T02:29:54.124Z"
+    },
+    {
+      "contractVersion": "1.4.0",
+      "assignmentId": "portal-assignment:professional-emma-ketteringham:divorce-law-aid",
+      "sourceRevision": 1,
+      "approvedSourceRevision": 0,
+      "recordFingerprint": "897d69622a5a4f0364bc3b03b0d11dd4614f22fe068e9236420d0c488a528551",
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "portalId": "divorce-law-aid",
+      "sourcePortalIds": [
+        "digital-divorce"
+      ],
+      "mappingState": "LEGACY_ALIAS_MAPPED",
+      "professionalId": "professional-emma-ketteringham",
+      "organizationId": "organization:firm:firm-bronx-defenders",
+      "seatId": "seat:professional:professional-emma-ketteringham",
+      "officeIds": [
+        "office:firm:firm-bronx-defenders:1"
+      ],
+      "practiceAssignments": [
+        "practice-assignment:professional-emma-ketteringham:family-defense",
+        "practice-assignment:professional-emma-ketteringham:child-welfare-proceedings"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceMethods": [
+        "telephone",
+        "in person"
+      ],
+      "publicProfileState": "unclaimed public profile",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "sourceFreshness": {
+        "state": "SOURCE_OBSERVED",
+        "reviewedAt": "2026-07-24T18:00:00.000Z",
+        "sourceCount": 1
+      },
+      "participationState": "not participating",
+      "availabilityState": "not configured",
+      "inquiryEligibility": false,
+      "appointmentEligibility": false,
+      "membershipCoverageState": "no qualifying active coverage",
+      "sponsorshipState": "none",
+      "evidenceState": "SOURCE_OBSERVED",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "generatedAt": "2026-07-29T02:29:54.124Z"
+    },
+    {
+      "contractVersion": "1.4.0",
+      "assignmentId": "portal-assignment:professional-jonathan-howe:divorce-law-aid",
+      "sourceRevision": 1,
+      "approvedSourceRevision": 0,
+      "recordFingerprint": "9d6c42949bd85b5a2c953b8ab18f499b3f4ee922cd6141f49f719e3e4a7c0dae",
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "portalId": "divorce-law-aid",
+      "sourcePortalIds": [
+        "digital-divorce"
+      ],
+      "mappingState": "LEGACY_ALIAS_MAPPED",
+      "professionalId": "professional-jonathan-howe",
+      "organizationId": "organization:firm:firm-bronx-defenders",
+      "seatId": "seat:professional:professional-jonathan-howe",
+      "officeIds": [
+        "office:firm:firm-bronx-defenders:1"
+      ],
+      "practiceAssignments": [
+        "practice-assignment:professional-jonathan-howe:family-defense",
+        "practice-assignment:professional-jonathan-howe:child-welfare-proceedings"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceMethods": [
+        "telephone",
+        "in person"
+      ],
+      "publicProfileState": "unclaimed public profile",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "sourceFreshness": {
+        "state": "SOURCE_OBSERVED",
+        "reviewedAt": "2026-07-24T18:00:00.000Z",
+        "sourceCount": 1
+      },
+      "participationState": "not participating",
+      "availabilityState": "not configured",
+      "inquiryEligibility": false,
+      "appointmentEligibility": false,
+      "membershipCoverageState": "no qualifying active coverage",
+      "sponsorshipState": "none",
+      "evidenceState": "SOURCE_OBSERVED",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "generatedAt": "2026-07-29T02:29:54.124Z"
+    },
+    {
+      "contractVersion": "1.4.0",
+      "assignmentId": "portal-assignment:professional-livia-defilippis-barndollar:divorce-law-aid",
+      "sourceRevision": 1,
+      "approvedSourceRevision": 0,
+      "recordFingerprint": "2208232d6ceeb81d3652007d84e76da766c65a9decad0beac0567deef562cea5",
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "portalId": "divorce-law-aid",
+      "sourcePortalIds": [
+        "digital-divorce"
+      ],
+      "mappingState": "LEGACY_ALIAS_MAPPED",
+      "professionalId": "professional-livia-defilippis-barndollar",
+      "organizationId": "organization:firm:firm-pullman-comley",
+      "seatId": "seat:professional:professional-livia-defilippis-barndollar",
+      "officeIds": [
+        "office:firm:firm-pullman-comley:1"
+      ],
+      "practiceAssignments": [
+        "practice-assignment:professional-livia-defilippis-barndollar:family-law",
+        "practice-assignment:professional-livia-defilippis-barndollar:custody-and-relocation-litigation",
+        "practice-assignment:professional-livia-defilippis-barndollar:prenuptial-and-postnuptial-agreements",
+        "practice-assignment:professional-livia-defilippis-barndollar:appeals"
+      ],
+      "jurisdictions": [
+        "Connecticut"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceMethods": [
+        "telephone",
+        "in person"
+      ],
+      "publicProfileState": "unclaimed public profile",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "sourceFreshness": {
+        "state": "SOURCE_OBSERVED",
+        "reviewedAt": "2026-07-24T18:00:00.000Z",
+        "sourceCount": 1
+      },
+      "participationState": "not participating",
+      "availabilityState": "not configured",
+      "inquiryEligibility": false,
+      "appointmentEligibility": false,
+      "membershipCoverageState": "no qualifying active coverage",
+      "sponsorshipState": "none",
+      "evidenceState": "SOURCE_OBSERVED",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "generatedAt": "2026-07-29T02:29:54.124Z"
+    },
+    {
+      "contractVersion": "1.4.0",
+      "assignmentId": "portal-assignment:professional-jill-c-stone:divorce-law-aid",
+      "sourceRevision": 1,
+      "approvedSourceRevision": 0,
+      "recordFingerprint": "1da5211792bef8d56980bd4a185dcdc0d85c2b4f71731a33b4711d075ff0527a",
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "portalId": "divorce-law-aid",
+      "sourcePortalIds": [
+        "digital-divorce"
+      ],
+      "mappingState": "LEGACY_ALIAS_MAPPED",
+      "professionalId": "professional-jill-c-stone",
+      "organizationId": "organization:firm:firm-addabbo-greenberg",
+      "seatId": "seat:professional:professional-jill-c-stone",
+      "officeIds": [
+        "office:firm:firm-addabbo-greenberg:1"
+      ],
+      "practiceAssignments": [
+        "practice-assignment:professional-jill-c-stone:criminal-law",
+        "practice-assignment:professional-jill-c-stone:matrimonial-law",
+        "practice-assignment:professional-jill-c-stone:family-law"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceMethods": [
+        "telephone",
+        "in person"
+      ],
+      "publicProfileState": "unclaimed public profile",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "sourceFreshness": {
+        "state": "SOURCE_OBSERVED",
+        "reviewedAt": "2026-07-24T20:00:00.000Z",
+        "sourceCount": 1
+      },
+      "participationState": "not participating",
+      "availabilityState": "not configured",
+      "inquiryEligibility": false,
+      "appointmentEligibility": false,
+      "membershipCoverageState": "no qualifying active coverage",
+      "sponsorshipState": "none",
+      "evidenceState": "SOURCE_OBSERVED",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "generatedAt": "2026-07-29T02:29:54.124Z"
+    },
+    {
+      "contractVersion": "1.4.0",
+      "assignmentId": "portal-assignment:professional-alan-t-rothbard:divorce-law-aid",
+      "sourceRevision": 1,
+      "approvedSourceRevision": 0,
+      "recordFingerprint": "513a7edb1bf2096f7da64dc610ec748572ee03931e55f30ed01c813379059d55",
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "portalId": "divorce-law-aid",
+      "sourcePortalIds": [
+        "digital-divorce"
+      ],
+      "mappingState": "LEGACY_ALIAS_MAPPED",
+      "professionalId": "professional-alan-t-rothbard",
+      "organizationId": "organization:firm:firm-addabbo-greenberg",
+      "seatId": "seat:professional:professional-alan-t-rothbard",
+      "officeIds": [
+        "office:firm:firm-addabbo-greenberg:1"
+      ],
+      "practiceAssignments": [
+        "practice-assignment:professional-alan-t-rothbard:personal-injury",
+        "practice-assignment:professional-alan-t-rothbard:criminal-law",
+        "practice-assignment:professional-alan-t-rothbard:real-estate",
+        "practice-assignment:professional-alan-t-rothbard:family-law"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceMethods": [
+        "telephone",
+        "in person"
+      ],
+      "publicProfileState": "unclaimed public profile",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "sourceFreshness": {
+        "state": "SOURCE_OBSERVED",
+        "reviewedAt": "2026-07-24T20:00:00.000Z",
+        "sourceCount": 1
+      },
+      "participationState": "not participating",
+      "availabilityState": "not configured",
+      "inquiryEligibility": false,
+      "appointmentEligibility": false,
+      "membershipCoverageState": "no qualifying active coverage",
+      "sponsorshipState": "none",
+      "evidenceState": "SOURCE_OBSERVED",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "generatedAt": "2026-07-29T02:29:54.124Z"
+    },
+    {
+      "contractVersion": "1.4.0",
+      "assignmentId": "portal-assignment:professional-anne-m-fox:divorce-law-aid",
+      "sourceRevision": 1,
+      "approvedSourceRevision": 0,
+      "recordFingerprint": "79522c743ce173f312a296590fe523367bf91142a0a11d052b9a934bf2b19140",
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "portalId": "divorce-law-aid",
+      "sourcePortalIds": [
+        "digital-divorce"
+      ],
+      "mappingState": "LEGACY_ALIAS_MAPPED",
+      "professionalId": "professional-anne-m-fox",
+      "organizationId": "organization:firm:firm-meyerson-fox-conte",
+      "seatId": "seat:professional:professional-anne-m-fox",
+      "officeIds": [
+        "office:firm:firm-meyerson-fox-conte:1"
+      ],
+      "practiceAssignments": [
+        "practice-assignment:professional-anne-m-fox:divorce",
+        "practice-assignment:professional-anne-m-fox:family-law",
+        "practice-assignment:professional-anne-m-fox:mediation"
+      ],
+      "jurisdictions": [
+        "New Jersey"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceMethods": [
+        "telephone",
+        "in person"
+      ],
+      "publicProfileState": "unclaimed public profile",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "sourceFreshness": {
+        "state": "SOURCE_OBSERVED",
+        "reviewedAt": "2026-07-24T20:00:00.000Z",
+        "sourceCount": 1
+      },
+      "participationState": "not participating",
+      "availabilityState": "not configured",
+      "inquiryEligibility": false,
+      "appointmentEligibility": false,
+      "membershipCoverageState": "no qualifying active coverage",
+      "sponsorshipState": "none",
+      "evidenceState": "SOURCE_OBSERVED",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "generatedAt": "2026-07-29T02:29:54.124Z"
+    },
+    {
+      "contractVersion": "1.4.0",
+      "assignmentId": "portal-assignment:professional-john-wayne-fox:divorce-law-aid",
+      "sourceRevision": 1,
+      "approvedSourceRevision": 0,
+      "recordFingerprint": "d3b94fae863cc1621622b9e4d9498eda21754ee3c3724c25253804802bb335c8",
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "portalId": "divorce-law-aid",
+      "sourcePortalIds": [
+        "digital-divorce"
+      ],
+      "mappingState": "LEGACY_ALIAS_MAPPED",
+      "professionalId": "professional-john-wayne-fox",
+      "organizationId": "organization:firm:firm-curtis-brinckerhoff-barrett",
+      "seatId": "seat:professional:professional-john-wayne-fox",
+      "officeIds": [
+        "office:firm:firm-curtis-brinckerhoff-barrett:1"
+      ],
+      "practiceAssignments": [
+        "practice-assignment:professional-john-wayne-fox:civil-and-commercial-litigation",
+        "practice-assignment:professional-john-wayne-fox:family-law",
+        "practice-assignment:professional-john-wayne-fox:municipal-law",
+        "practice-assignment:professional-john-wayne-fox:tax-appeals"
+      ],
+      "jurisdictions": [
+        "Connecticut"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceMethods": [
+        "telephone",
+        "in person"
+      ],
+      "publicProfileState": "unclaimed public profile",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "sourceFreshness": {
+        "state": "SOURCE_OBSERVED",
+        "reviewedAt": "2026-07-24T20:00:00.000Z",
+        "sourceCount": 1
+      },
+      "participationState": "not participating",
+      "availabilityState": "not configured",
+      "inquiryEligibility": false,
+      "appointmentEligibility": false,
+      "membershipCoverageState": "no qualifying active coverage",
+      "sponsorshipState": "none",
+      "evidenceState": "SOURCE_OBSERVED",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "generatedAt": "2026-07-29T02:29:54.124Z"
+    }
+  ],
+  "profiles": [
+    {
+      "recordVersion": "1.4.0",
+      "professionalId": "professional-austin-burnett",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "displayName": "Austin Burnett",
+      "professionalType": "attorney",
+      "firmId": "firm-bhatt-law-group",
+      "firmName": "Bhatt Law Group",
+      "biography": "Attorney whose public profile describes family, matrimonial, criminal-defense, DWI, and municipal-court matters throughout New Jersey.",
+      "phone": "201-798-8000",
+      "website": "https://www.bhattlawgroup.com/attorney-austin-burnett/",
+      "photoUrl": "",
+      "officeLocations": [
+        "378 Summit Avenue, Jersey City, NJ 07306"
+      ],
+      "jurisdictions": [
+        "New Jersey"
+      ],
+      "practiceAreas": [
+        "Family law",
+        "Divorce",
+        "Child custody",
+        "Prenuptial agreements",
+        "Child support",
+        "Restraining orders",
+        "Criminal defense",
+        "DWI"
+      ],
+      "serviceRoles": [],
+      "languages": [
+        "English"
+      ],
+      "consultationModes": [
+        "telephone",
+        "in person"
+      ],
+      "serviceRegions": [
+        "Hudson County",
+        "Northern Metro New Jersey"
+      ],
+      "availabilityStatus": "not configured",
+      "availabilityNote": "",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "publicListingDestination": "divorce-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "5e08f464157156bb6fc50ba912a92a1c672c5f17464f9a5e136d94a0f63e7830",
+      "generatedAt": "2026-07-29T02:29:54.129Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "professionalId": "professional-sean-doyle",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "displayName": "Sean Doyle",
+      "professionalType": "attorney",
+      "firmId": "firm-bhatt-law-group",
+      "firmName": "Bhatt Law Group",
+      "biography": "Attorney and mediator whose public profile describes family-law, DCPP, criminal-defense, DWI, and municipal-court matters.",
+      "phone": "201-798-8000",
+      "website": "https://www.bhattlawgroup.com/attorney-sean-doyle/",
+      "photoUrl": "",
+      "officeLocations": [
+        "378 Summit Avenue, Jersey City, NJ 07306"
+      ],
+      "jurisdictions": [
+        "New Jersey"
+      ],
+      "practiceAreas": [
+        "Family law",
+        "Divorce",
+        "Prenuptial agreements",
+        "Child custody",
+        "Restraining orders",
+        "Child support",
+        "DCPP investigations",
+        "Criminal defense",
+        "DWI",
+        "Mediation"
+      ],
+      "serviceRoles": [],
+      "languages": [
+        "English"
+      ],
+      "consultationModes": [
+        "telephone",
+        "in person"
+      ],
+      "serviceRegions": [
+        "Hudson County",
+        "Northern Metro New Jersey"
+      ],
+      "availabilityStatus": "not configured",
+      "availabilityNote": "",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "publicListingDestination": "divorce-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "fe527b5be3b3dbf93b6e8b45d0aa7f9f768174552117cc3cbda3571dc9238be4",
+      "generatedAt": "2026-07-29T02:29:54.129Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "professionalId": "professional-christian-moreira",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "displayName": "Christian Moreira",
+      "professionalType": "attorney",
+      "firmId": "firm-bhatt-law-group",
+      "firmName": "Bhatt Law Group",
+      "biography": "Attorney whose public profile describes New Jersey family-law, criminal-defense, DWI, municipal-court, and name-change matters.",
+      "phone": "201-798-8000",
+      "website": "https://www.bhattlawgroup.com/attorney-christian-moreira/",
+      "photoUrl": "",
+      "officeLocations": [
+        "378 Summit Avenue, Jersey City, NJ 07306"
+      ],
+      "jurisdictions": [
+        "New Jersey"
+      ],
+      "practiceAreas": [
+        "Family law",
+        "Divorce",
+        "Prenuptial agreements",
+        "Restraining orders",
+        "Child custody",
+        "Child support",
+        "Criminal defense",
+        "DWI",
+        "Municipal court",
+        "Name changes"
+      ],
+      "serviceRoles": [],
+      "languages": [
+        "English"
+      ],
+      "consultationModes": [
+        "telephone",
+        "in person"
+      ],
+      "serviceRegions": [
+        "Hudson County",
+        "Northern Metro New Jersey"
+      ],
+      "availabilityStatus": "not configured",
+      "availabilityNote": "",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "publicListingDestination": "divorce-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "47fd0121731a7627ba99b3a9b864d76e17934da13494a7291349cb420fb59e9e",
+      "generatedAt": "2026-07-29T02:29:54.129Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "professionalId": "professional-roseann-branda",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "displayName": "RoseAnn C. Branda",
+      "professionalType": "attorney",
+      "firmId": "firm-abrams-fensterman",
+      "firmName": "Abrams Fensterman, LLP",
+      "biography": "Executive partner whose public profile describes matrimonial, family-law, custody, and related civil-litigation work.",
+      "phone": "718-215-5300",
+      "website": "https://www.abramslaw.com/attorneys/roseann-branda/",
+      "photoUrl": "",
+      "officeLocations": [
+        "1 MetroTech Center, Suite 1701, Brooklyn, NY 11201"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "practiceAreas": [
+        "Divorce",
+        "Matrimonial law",
+        "Family law",
+        "Child custody",
+        "Civil litigation"
+      ],
+      "serviceRoles": [],
+      "languages": [
+        "English"
+      ],
+      "consultationModes": [
+        "telephone",
+        "in person"
+      ],
+      "serviceRegions": [
+        "Kings County",
+        "Brooklyn",
+        "New York City"
+      ],
+      "availabilityStatus": "not configured",
+      "availabilityNote": "",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "publicListingDestination": "divorce-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "0c7b54c453cc20a7a4bef09f3a6e49d7d85918f5ec7a80446b710fc080f42e47",
+      "generatedAt": "2026-07-29T02:29:54.129Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "professionalId": "professional-grace-borrino",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "displayName": "Grace M. Borrino",
+      "professionalType": "attorney",
+      "firmId": "firm-abrams-fensterman",
+      "firmName": "Abrams Fensterman, LLP",
+      "biography": "Partner whose public profile describes matrimonial and family-law matters including divorce, custody, and marital agreements.",
+      "phone": "718-215-5300",
+      "website": "https://www.abramslaw.com/attorneys/grace-borrino/",
+      "photoUrl": "",
+      "officeLocations": [
+        "1 MetroTech Center, Suite 1701, Brooklyn, NY 11201"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "practiceAreas": [
+        "Divorce",
+        "Matrimonial law",
+        "Family law",
+        "Child custody",
+        "Prenuptial and postnuptial agreements"
+      ],
+      "serviceRoles": [],
+      "languages": [
+        "English"
+      ],
+      "consultationModes": [
+        "telephone",
+        "in person"
+      ],
+      "serviceRegions": [
+        "Kings County",
+        "Brooklyn",
+        "New York City"
+      ],
+      "availabilityStatus": "not configured",
+      "availabilityNote": "",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "publicListingDestination": "divorce-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "09fac5309486bab352bf914fba5d8b8c6b6892715c09bc468a997db3668f6b76",
+      "generatedAt": "2026-07-29T02:29:54.129Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "professionalId": "professional-michael-a-coscia",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "displayName": "Michael A. Coscia",
+      "professionalType": "attorney",
+      "firmId": "firm-abrams-fensterman",
+      "firmName": "Abrams Fensterman, LLP",
+      "biography": "Partner whose public profile describes matrimonial and family law, custody, real-estate, litigation, business-transaction, and estate matters.",
+      "phone": "718-215-5300",
+      "website": "https://www.abramslaw.com/attorneys/michael-coscia/",
+      "photoUrl": "",
+      "officeLocations": [
+        "1 MetroTech Center, Suite 1701, Brooklyn, NY 11201"
+      ],
+      "jurisdictions": [
+        "New York",
+        "New Jersey"
+      ],
+      "practiceAreas": [
+        "Divorce and matrimonial law",
+        "Family law",
+        "Child custody",
+        "Real estate law",
+        "Commercial litigation",
+        "Business transactions",
+        "Estate matters"
+      ],
+      "serviceRoles": [],
+      "languages": [
+        "English"
+      ],
+      "consultationModes": [
+        "telephone",
+        "in person"
+      ],
+      "serviceRegions": [
+        "Kings County",
+        "Brooklyn",
+        "New York City"
+      ],
+      "availabilityStatus": "not configured",
+      "availabilityNote": "",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "publicListingDestination": "divorce-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "3783d30a3f864cbec3625b8eb2b6cba4fd8fe377ac4148393943102c4a45fa71",
+      "generatedAt": "2026-07-29T02:29:54.129Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "professionalId": "professional-vernita-charles",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "displayName": "Vernita Charles",
+      "professionalType": "attorney",
+      "firmId": "firm-law-office-vernita-charles",
+      "firmName": "Law Office of Vernita Charles",
+      "biography": "Founder whose professional profile describes family-law, estate-planning, probate, and estate matters for New York clients.",
+      "phone": "718-802-9749",
+      "website": "https://www.vernitacharles.com/attorneys/vernita-charles/",
+      "photoUrl": "",
+      "officeLocations": [
+        "44 Court Street, Suite 910, Brooklyn, NY 11201"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "practiceAreas": [
+        "Divorce and family law",
+        "Estate planning",
+        "Probate",
+        "Trusts and estates"
+      ],
+      "serviceRoles": [],
+      "languages": [
+        "English"
+      ],
+      "consultationModes": [
+        "telephone",
+        "in person"
+      ],
+      "serviceRegions": [
+        "Kings County",
+        "Brooklyn",
+        "New York City"
+      ],
+      "availabilityStatus": "not configured",
+      "availabilityNote": "",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "publicListingDestination": "divorce-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "0075db1978e43ad7a9dd69920a14cb7b9d07b7567aaa61b159500d4b9d4ccd4f",
+      "generatedAt": "2026-07-29T02:29:54.129Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "professionalId": "professional-elizabeth-garvey",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "displayName": "Elizabeth Garvey",
+      "professionalType": "attorney",
+      "firmId": "firm-abrams-fensterman",
+      "firmName": "Abrams Fensterman, LLP",
+      "biography": "Associate in the firm’s matrimonial and family-law department, working from its Brooklyn office.",
+      "phone": "516-328-2300 ext. 148",
+      "website": "https://www.abramslaw.com/attorneys/elizabeth-garvey/",
+      "photoUrl": "",
+      "officeLocations": [
+        "1 MetroTech Center, Suite 1701, Brooklyn, NY 11201"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "practiceAreas": [
+        "Divorce and family law",
+        "Child custody",
+        "Spousal support"
+      ],
+      "serviceRoles": [],
+      "languages": [
+        "English"
+      ],
+      "consultationModes": [
+        "telephone",
+        "in person"
+      ],
+      "serviceRegions": [
+        "Kings County",
+        "Brooklyn",
+        "New York City"
+      ],
+      "availabilityStatus": "not configured",
+      "availabilityNote": "",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "publicListingDestination": "divorce-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "f17680c5a0520731627ef948110051eb6689f4376fd0d17570856fad58044905",
+      "generatedAt": "2026-07-29T02:29:54.129Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "professionalId": "professional-gabrielle-hagege",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "displayName": "Gabrielle Hagege",
+      "professionalType": "attorney",
+      "firmId": "firm-abrams-fensterman",
+      "firmName": "Abrams Fensterman, LLP",
+      "biography": "Associate in the Brooklyn office whose public profile describes matrimonial and family-law work.",
+      "phone": "718-215-5300",
+      "website": "https://www.abramslaw.com/attorneys/gabrielle-hagege/",
+      "photoUrl": "",
+      "officeLocations": [
+        "1 MetroTech Center, Suite 1701, Brooklyn, NY 11201"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "practiceAreas": [
+        "Divorce and matrimonial law",
+        "Family law",
+        "Child custody and support"
+      ],
+      "serviceRoles": [],
+      "languages": [
+        "English",
+        "French"
+      ],
+      "consultationModes": [
+        "telephone",
+        "in person"
+      ],
+      "serviceRegions": [
+        "Kings County",
+        "Brooklyn",
+        "New York City"
+      ],
+      "availabilityStatus": "not configured",
+      "availabilityNote": "",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "publicListingDestination": "divorce-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "e4b9c8a4e9dae85127c5e572e84cae67c03f85c45da244f22cb3e2ebbaa39219",
+      "generatedAt": "2026-07-29T02:29:54.129Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "professionalId": "professional-ferris-kim",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "displayName": "Ferris Kim",
+      "professionalType": "attorney",
+      "firmId": "firm-abrams-fensterman",
+      "firmName": "Abrams Fensterman, LLP",
+      "biography": "Associate in the Brooklyn office whose public profile describes matrimonial, family, and related litigation work.",
+      "phone": "718-215-5300",
+      "website": "https://www.abramslaw.com/attorneys/ferris-kim/",
+      "photoUrl": "",
+      "officeLocations": [
+        "1 MetroTech Center, Suite 1701, Brooklyn, NY 11201"
+      ],
+      "jurisdictions": [
+        "New York",
+        "California"
+      ],
+      "practiceAreas": [
+        "Divorce and matrimonial law",
+        "Family law",
+        "Civil litigation"
+      ],
+      "serviceRoles": [],
+      "languages": [
+        "English"
+      ],
+      "consultationModes": [
+        "telephone",
+        "in person"
+      ],
+      "serviceRegions": [
+        "Kings County",
+        "Brooklyn",
+        "New York City"
+      ],
+      "availabilityStatus": "not configured",
+      "availabilityNote": "",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "publicListingDestination": "divorce-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "1d2433f38b2086c68d1cd4c6f386fee318045467b8561ad36b6011be2c420ab8",
+      "generatedAt": "2026-07-29T02:29:54.129Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "professionalId": "professional-rachel-a-pencu",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "displayName": "Rachel A. Pencu",
+      "professionalType": "attorney",
+      "firmId": "firm-cohen-wolf",
+      "firmName": "Cohen and Wolf, P.C.",
+      "biography": "Principal whose public profile and firm materials describe family-law, divorce, and custody matters.",
+      "phone": "203-368-0211",
+      "website": "https://www.cohenandwolf.com/team-Rachel-Pencu",
+      "photoUrl": "",
+      "officeLocations": [
+        "320 Post Road West, Westport, CT 06880"
+      ],
+      "jurisdictions": [
+        "Connecticut"
+      ],
+      "practiceAreas": [
+        "Family law",
+        "Divorce and custody litigation"
+      ],
+      "serviceRoles": [],
+      "languages": [
+        "English"
+      ],
+      "consultationModes": [
+        "telephone",
+        "in person"
+      ],
+      "serviceRegions": [
+        "Fairfield County",
+        "Bridgeport",
+        "Westport",
+        "NYC-connected Connecticut",
+        "Connecticut"
+      ],
+      "availabilityStatus": "not configured",
+      "availabilityNote": "",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "publicListingDestination": "divorce-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "90e656e0e878e8f31577263fb8dfb7ddab24e55cca98e4415e40e6db07692dfb",
+      "generatedAt": "2026-07-29T02:29:54.129Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "professionalId": "professional-jenna-a-shankman",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "displayName": "Jenna A. Shankman",
+      "professionalType": "attorney",
+      "firmId": "firm-cohen-wolf",
+      "firmName": "Cohen and Wolf, P.C.",
+      "biography": "Associate whose public profile and firm practice listings identify family, trusts-and-estates, probate-litigation, and civil-litigation work.",
+      "phone": "203-368-0211",
+      "website": "https://www.cohenandwolf.com/team-Jenna-Shankman",
+      "photoUrl": "",
+      "officeLocations": [
+        "1115 Broad Street, Bridgeport, CT 06604"
+      ],
+      "jurisdictions": [
+        "Connecticut"
+      ],
+      "practiceAreas": [
+        "Family law",
+        "Trusts and estates",
+        "Probate litigation",
+        "Civil litigation"
+      ],
+      "serviceRoles": [],
+      "languages": [
+        "English"
+      ],
+      "consultationModes": [
+        "telephone",
+        "in person"
+      ],
+      "serviceRegions": [
+        "Fairfield County",
+        "Bridgeport",
+        "Westport",
+        "NYC-connected Connecticut",
+        "Connecticut"
+      ],
+      "availabilityStatus": "not configured",
+      "availabilityNote": "",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "publicListingDestination": "divorce-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "79316c6597f877881846802ae8874ef1e1449e34f3fef03b7af737acf1cea85c",
+      "generatedAt": "2026-07-29T02:29:54.129Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "professionalId": "professional-michelle-m-zulawski",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "displayName": "Michelle M. Zulawski",
+      "professionalType": "attorney",
+      "firmId": "firm-cohen-wolf",
+      "firmName": "Cohen and Wolf, P.C.",
+      "biography": "Principal whose public profile and firm materials describe family-law, divorce, and custody matters.",
+      "phone": "203-368-0211",
+      "website": "https://www.cohenandwolf.com/team-Michelle-Zulawski",
+      "photoUrl": "",
+      "officeLocations": [
+        "1115 Broad Street, Bridgeport, CT 06604"
+      ],
+      "jurisdictions": [
+        "Connecticut"
+      ],
+      "practiceAreas": [
+        "Family law",
+        "Divorce and custody litigation"
+      ],
+      "serviceRoles": [],
+      "languages": [
+        "English"
+      ],
+      "consultationModes": [
+        "telephone",
+        "in person"
+      ],
+      "serviceRegions": [
+        "Fairfield County",
+        "Bridgeport",
+        "Westport",
+        "NYC-connected Connecticut",
+        "Connecticut"
+      ],
+      "availabilityStatus": "not configured",
+      "availabilityNote": "",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "publicListingDestination": "divorce-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "36a8e70a5a58ff4929323720ed02721b1379890b16b78cb7919257d7a939aac3",
+      "generatedAt": "2026-07-29T02:29:54.129Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "professionalId": "professional-emilio-a-estrella-teron",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "displayName": "Emilio A. Estrella Terón",
+      "professionalType": "attorney",
+      "firmId": "firm-cohen-wolf",
+      "firmName": "Cohen and Wolf, P.C.",
+      "biography": "Associate whose public profile describes civil litigation, family, employment, personal-injury, and intellectual-property matters.",
+      "phone": "203-337-4143",
+      "website": "https://www.cohenandwolf.com/team-Emilio-Estrella-Teron",
+      "photoUrl": "",
+      "officeLocations": [
+        "1115 Broad Street, Bridgeport, CT 06604"
+      ],
+      "jurisdictions": [
+        "Connecticut"
+      ],
+      "practiceAreas": [
+        "Civil litigation",
+        "Family law",
+        "Employment law",
+        "Personal injury",
+        "Intellectual property"
+      ],
+      "serviceRoles": [],
+      "languages": [
+        "English",
+        "Spanish"
+      ],
+      "consultationModes": [
+        "telephone",
+        "in person"
+      ],
+      "serviceRegions": [
+        "Fairfield County",
+        "Bridgeport",
+        "Westport",
+        "NYC-connected Connecticut",
+        "Connecticut"
+      ],
+      "availabilityStatus": "not configured",
+      "availabilityNote": "",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "publicListingDestination": "divorce-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "c49348f9d8eade65162aec85c4a75ea0faac349a55af64b5fb913225b17c1c64",
+      "generatedAt": "2026-07-29T02:29:54.129Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "professionalId": "professional-mustapha-ndanusa",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "displayName": "Mustapha Ndanusa",
+      "professionalType": "attorney",
+      "firmId": "firm-dnis-law",
+      "firmName": "Davis Ndanusa Ikhlas & Saleem LLP",
+      "biography": "Attorney listed on the firm’s current Brooklyn roster; the firm describes immigration, criminal-defense, and family-law services.",
+      "phone": "718-783-6819",
+      "website": "https://dnishlaw.com/attorneys/",
+      "photoUrl": "",
+      "officeLocations": [
+        "26 Court Street, Suite 603, Brooklyn, NY 11242"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "practiceAreas": [
+        "Immigration law",
+        "Criminal defense",
+        "Family law"
+      ],
+      "serviceRoles": [],
+      "languages": [
+        "English"
+      ],
+      "consultationModes": [
+        "telephone",
+        "in person"
+      ],
+      "serviceRegions": [
+        "Kings County",
+        "Brooklyn",
+        "New York City"
+      ],
+      "availabilityStatus": "not configured",
+      "availabilityNote": "",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "publicListingDestination": "divorce-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "3c8c8e02583065e9839ef840f60b9551b2770f5be7c3aa137d3a15e06e688f3f",
+      "generatedAt": "2026-07-29T02:29:54.129Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "professionalId": "professional-tarik-davis",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "displayName": "Tarik Davis",
+      "professionalType": "attorney",
+      "firmId": "firm-dnis-law",
+      "firmName": "Davis Ndanusa Ikhlas & Saleem LLP",
+      "biography": "Attorney listed on the firm’s current Brooklyn roster; the firm describes immigration, criminal-defense, and family-law services.",
+      "phone": "718-783-6819",
+      "website": "https://dnishlaw.com/attorneys/",
+      "photoUrl": "",
+      "officeLocations": [
+        "26 Court Street, Suite 603, Brooklyn, NY 11242"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "practiceAreas": [
+        "Immigration law",
+        "Criminal defense",
+        "Family law"
+      ],
+      "serviceRoles": [],
+      "languages": [
+        "English"
+      ],
+      "consultationModes": [
+        "telephone",
+        "in person"
+      ],
+      "serviceRegions": [
+        "Kings County",
+        "Brooklyn",
+        "New York City"
+      ],
+      "availabilityStatus": "not configured",
+      "availabilityNote": "",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "publicListingDestination": "divorce-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "a7ffd57eb391605db208130b18453149f66e70701392d435ae3e53dcd37a4c87",
+      "generatedAt": "2026-07-29T02:29:54.129Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "professionalId": "professional-mohammad-a-saleem",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "displayName": "Mohammad A. Saleem",
+      "professionalType": "attorney",
+      "firmId": "firm-dnis-law",
+      "firmName": "Davis Ndanusa Ikhlas & Saleem LLP",
+      "biography": "Attorney listed on the firm’s current Brooklyn roster; the firm describes immigration, criminal-defense, and family-law services.",
+      "phone": "718-783-6819",
+      "website": "https://dnishlaw.com/attorneys/",
+      "photoUrl": "",
+      "officeLocations": [
+        "26 Court Street, Suite 603, Brooklyn, NY 11242"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "practiceAreas": [
+        "Immigration law",
+        "Criminal defense",
+        "Family law"
+      ],
+      "serviceRoles": [],
+      "languages": [
+        "English"
+      ],
+      "consultationModes": [
+        "telephone",
+        "in person"
+      ],
+      "serviceRegions": [
+        "Kings County",
+        "Brooklyn",
+        "New York City"
+      ],
+      "availabilityStatus": "not configured",
+      "availabilityNote": "",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "publicListingDestination": "divorce-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "2ba2f34f8b442951f7a7e8901df7f2417ff9b0be01d85a63accdcd47bbe5d66b",
+      "generatedAt": "2026-07-29T02:29:54.129Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "professionalId": "professional-alyssa-eisner",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "displayName": "Alyssa Eisner",
+      "professionalType": "attorney",
+      "firmId": "firm-sager-gellerman-eisner",
+      "firmName": "Sager Gellerman Eisner LLP",
+      "biography": "Attorney listed on the firm’s current Queens roster, which describes matrimonial and family-law services.",
+      "phone": "718-261-2300",
+      "website": "https://www.sagergellerman.com/our-attorneys/",
+      "photoUrl": "",
+      "officeLocations": [
+        "118-35 Queens Boulevard, Suite 910, Forest Hills, NY 11375"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "practiceAreas": [
+        "Divorce and matrimonial law",
+        "Family law",
+        "Child custody and support"
+      ],
+      "serviceRoles": [],
+      "languages": [
+        "English"
+      ],
+      "consultationModes": [
+        "telephone",
+        "in person"
+      ],
+      "serviceRegions": [
+        "Queens County",
+        "Queens",
+        "New York City"
+      ],
+      "availabilityStatus": "not configured",
+      "availabilityNote": "",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "publicListingDestination": "divorce-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "c69ea57889c9823729ec991fdad4e17c26d21ab4ff6aa3ac1f51c0ada8d38de1",
+      "generatedAt": "2026-07-29T02:29:54.129Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "professionalId": "professional-lauren-kurland",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "displayName": "Lauren Kurland",
+      "professionalType": "attorney",
+      "firmId": "firm-sager-gellerman-eisner",
+      "firmName": "Sager Gellerman Eisner LLP",
+      "biography": "Attorney listed on the firm’s current Queens roster, which describes matrimonial and family-law services.",
+      "phone": "718-261-2300",
+      "website": "https://www.sagergellerman.com/our-attorneys/",
+      "photoUrl": "",
+      "officeLocations": [
+        "118-35 Queens Boulevard, Suite 910, Forest Hills, NY 11375"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "practiceAreas": [
+        "Divorce and matrimonial law",
+        "Family law",
+        "Child custody and support"
+      ],
+      "serviceRoles": [],
+      "languages": [
+        "English"
+      ],
+      "consultationModes": [
+        "telephone",
+        "in person"
+      ],
+      "serviceRegions": [
+        "Queens County",
+        "Queens",
+        "New York City"
+      ],
+      "availabilityStatus": "not configured",
+      "availabilityNote": "",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "publicListingDestination": "divorce-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "cdfaa4b842fddad362df60b9f11631e8c68b3d599ba149d4f11893674d87229b",
+      "generatedAt": "2026-07-29T02:29:54.129Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "professionalId": "professional-rebeca-gonche",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "displayName": "Rebeca Gonche",
+      "professionalType": "attorney",
+      "firmId": "firm-sager-gellerman-eisner",
+      "firmName": "Sager Gellerman Eisner LLP",
+      "biography": "Attorney listed on the firm’s current Queens roster, which describes matrimonial and family-law services.",
+      "phone": "718-261-2300",
+      "website": "https://www.sagergellerman.com/our-attorneys/",
+      "photoUrl": "",
+      "officeLocations": [
+        "118-35 Queens Boulevard, Suite 910, Forest Hills, NY 11375"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "practiceAreas": [
+        "Divorce and matrimonial law",
+        "Family law",
+        "Child custody and support"
+      ],
+      "serviceRoles": [],
+      "languages": [
+        "English"
+      ],
+      "consultationModes": [
+        "telephone",
+        "in person"
+      ],
+      "serviceRegions": [
+        "Queens County",
+        "Queens",
+        "New York City"
+      ],
+      "availabilityStatus": "not configured",
+      "availabilityNote": "",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "publicListingDestination": "divorce-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "37e3c3728516ea4379e49ef4305419c13205ad6cd6ab8ab19c84446d2c080ea0",
+      "generatedAt": "2026-07-29T02:29:54.129Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "professionalId": "professional-caitlin-vasington",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "displayName": "Caitlin Vasington",
+      "professionalType": "attorney",
+      "firmId": "firm-sager-gellerman-eisner",
+      "firmName": "Sager Gellerman Eisner LLP",
+      "biography": "Attorney listed on the firm’s current Queens roster, which describes matrimonial and family-law services.",
+      "phone": "718-261-2300",
+      "website": "https://www.sagergellerman.com/our-attorneys/",
+      "photoUrl": "",
+      "officeLocations": [
+        "118-35 Queens Boulevard, Suite 910, Forest Hills, NY 11375"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "practiceAreas": [
+        "Divorce and matrimonial law",
+        "Family law",
+        "Child custody and support"
+      ],
+      "serviceRoles": [],
+      "languages": [
+        "English"
+      ],
+      "consultationModes": [
+        "telephone",
+        "in person"
+      ],
+      "serviceRegions": [
+        "Queens County",
+        "Queens",
+        "New York City"
+      ],
+      "availabilityStatus": "not configured",
+      "availabilityNote": "",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "publicListingDestination": "divorce-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "4cd104d303fc37a47257712e0f8a8d2ae1ec90650e34c3cd04b330d60877934a",
+      "generatedAt": "2026-07-29T02:29:54.129Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "professionalId": "professional-frances-kweller",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "displayName": "Frances Kweller",
+      "professionalType": "attorney",
+      "firmId": "firm-fk-law-group",
+      "firmName": "FK Law Group, P.C.",
+      "biography": "Attorney whose public firm profile describes civil divorce, family-law, prenuptial-agreement, and mediation work.",
+      "phone": "800-631-1757",
+      "website": "https://www.fklawgroup.com/attorneys/",
+      "photoUrl": "",
+      "officeLocations": [
+        "108-22 Queens Boulevard, 2nd Floor, Forest Hills, NY 11375"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "practiceAreas": [
+        "Divorce",
+        "Family law",
+        "Prenuptial agreements",
+        "Mediation"
+      ],
+      "serviceRoles": [],
+      "languages": [
+        "English"
+      ],
+      "consultationModes": [
+        "telephone",
+        "in person"
+      ],
+      "serviceRegions": [
+        "Queens County",
+        "Queens",
+        "New York City"
+      ],
+      "availabilityStatus": "not configured",
+      "availabilityNote": "",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "publicListingDestination": "divorce-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "73acc3405cb28d95b056f92b23e0dde0d78f4139fd60934c9425983e33031e98",
+      "generatedAt": "2026-07-29T02:29:54.129Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "professionalId": "professional-donald-domitrz",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "displayName": "Donald Domitrz",
+      "professionalType": "attorney",
+      "firmId": "firm-fk-law-group",
+      "firmName": "FK Law Group, P.C.",
+      "biography": "Attorney listed on the firm’s current Queens roster, which describes divorce and family-law services.",
+      "phone": "800-631-1757",
+      "website": "https://www.fklawgroup.com/attorneys/",
+      "photoUrl": "",
+      "officeLocations": [
+        "108-22 Queens Boulevard, 2nd Floor, Forest Hills, NY 11375"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "practiceAreas": [
+        "Divorce",
+        "Family law",
+        "Child custody and support"
+      ],
+      "serviceRoles": [],
+      "languages": [
+        "English"
+      ],
+      "consultationModes": [
+        "telephone",
+        "in person"
+      ],
+      "serviceRegions": [
+        "Queens County",
+        "Queens",
+        "New York City"
+      ],
+      "availabilityStatus": "not configured",
+      "availabilityNote": "",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "publicListingDestination": "divorce-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "735343eb52fbd108115e4f6a764e4aee669c1a1fe3e5cc27999724b944be3e88",
+      "generatedAt": "2026-07-29T02:29:54.129Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "professionalId": "professional-robyn-mar",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "displayName": "Robyn Mar",
+      "professionalType": "attorney",
+      "firmId": "firm-bronx-defenders",
+      "firmName": "The Bronx Defenders",
+      "biography": "Chief practice officer whose public profile describes oversight of criminal, family, immigration, social-work, housing, employment, and other civil services.",
+      "phone": "718-838-7878",
+      "website": "https://www.bronxdefenders.org/staff/robyn-mar/",
+      "photoUrl": "",
+      "officeLocations": [
+        "360 East 161st Street, Bronx, NY 10451"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "practiceAreas": [
+        "Criminal defense",
+        "Family defense",
+        "Immigration representation",
+        "Housing and employment advocacy"
+      ],
+      "serviceRoles": [],
+      "languages": [
+        "English"
+      ],
+      "consultationModes": [
+        "telephone",
+        "in person"
+      ],
+      "serviceRegions": [
+        "Bronx County",
+        "The Bronx",
+        "New York City"
+      ],
+      "availabilityStatus": "not configured",
+      "availabilityNote": "",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "publicListingDestination": "divorce-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "b9afed6b1003ffeb61704a961c08834a86f09964e44eaa801f64a785c7af41e7",
+      "generatedAt": "2026-07-29T02:29:54.129Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "professionalId": "professional-emma-ketteringham",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "displayName": "Emma Ketteringham",
+      "professionalType": "attorney",
+      "firmId": "firm-bronx-defenders",
+      "firmName": "The Bronx Defenders",
+      "biography": "Managing director of the Family Defense Practice identified on the organization’s current public pages.",
+      "phone": "718-838-7878",
+      "website": "https://www.bronxdefenders.org/about-us/",
+      "photoUrl": "",
+      "officeLocations": [
+        "360 East 161st Street, Bronx, NY 10451"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "practiceAreas": [
+        "Family defense",
+        "Child-welfare proceedings"
+      ],
+      "serviceRoles": [],
+      "languages": [
+        "English"
+      ],
+      "consultationModes": [
+        "telephone",
+        "in person"
+      ],
+      "serviceRegions": [
+        "Bronx County",
+        "The Bronx",
+        "New York City"
+      ],
+      "availabilityStatus": "not configured",
+      "availabilityNote": "",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "publicListingDestination": "divorce-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "97a93dbde44a8037f76b3c9fda9987807e732979a9a54a77af0de478680d13f4",
+      "generatedAt": "2026-07-29T02:29:54.129Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "professionalId": "professional-jonathan-howe",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "displayName": "Jonathan Howe",
+      "professionalType": "attorney",
+      "firmId": "firm-bronx-defenders",
+      "firmName": "The Bronx Defenders",
+      "biography": "Family Defense Practice attorney identified on the organization’s current public pages.",
+      "phone": "718-838-7878",
+      "website": "https://www.bronxdefenders.org/about-us/",
+      "photoUrl": "",
+      "officeLocations": [
+        "360 East 161st Street, Bronx, NY 10451"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "practiceAreas": [
+        "Family defense",
+        "Child-welfare proceedings"
+      ],
+      "serviceRoles": [],
+      "languages": [
+        "English"
+      ],
+      "consultationModes": [
+        "telephone",
+        "in person"
+      ],
+      "serviceRegions": [
+        "Bronx County",
+        "The Bronx",
+        "New York City"
+      ],
+      "availabilityStatus": "not configured",
+      "availabilityNote": "",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "publicListingDestination": "divorce-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "40e3b261ed8fd86e7dca18042ee085084a2bcf0e66bd9b0d355e6dea65be0887",
+      "generatedAt": "2026-07-29T02:29:54.129Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "professionalId": "professional-livia-defilippis-barndollar",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "displayName": "Livia DeFilippis Barndollar",
+      "professionalType": "attorney",
+      "firmId": "firm-pullman-comley",
+      "firmName": "Pullman & Comley, LLC",
+      "biography": "Member whose public profile lists family-law, custody, relocation, agreement, litigation, and appellate work.",
+      "phone": "203-330-2205",
+      "website": "https://www.pullcom.com/people-liviabarndollar",
+      "photoUrl": "",
+      "officeLocations": [
+        "850 Main Street, P.O. Box 7006, Bridgeport, CT 06601-7006"
+      ],
+      "jurisdictions": [
+        "Connecticut"
+      ],
+      "practiceAreas": [
+        "Family law",
+        "Custody and relocation litigation",
+        "Prenuptial and postnuptial agreements",
+        "Appeals"
+      ],
+      "serviceRoles": [],
+      "languages": [
+        "English"
+      ],
+      "consultationModes": [
+        "telephone",
+        "in person"
+      ],
+      "serviceRegions": [
+        "Fairfield County",
+        "Bridgeport",
+        "NYC-connected Connecticut",
+        "Connecticut"
+      ],
+      "availabilityStatus": "not configured",
+      "availabilityNote": "",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "publicListingDestination": "divorce-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "c0a1642723672422cd8fb0bfcfb732c3ef7406a93567a5eb6e83f65fb715360e",
+      "generatedAt": "2026-07-29T02:29:54.129Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "professionalId": "professional-jill-c-stone",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "displayName": "Jill C. Stone",
+      "professionalType": "attorney",
+      "firmId": "firm-addabbo-greenberg",
+      "firmName": "Addabbo & Greenberg Law",
+      "biography": "Queens attorney whose professional page identifies criminal, matrimonial, and family-law work.",
+      "phone": "718-268-0400",
+      "website": "https://www.addabboandgreenberg.com/attorney/jill-c-stone/",
+      "photoUrl": "",
+      "officeLocations": [
+        "118-21 Queens Boulevard, Suite 306, Forest Hills, NY 11375-7209"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "practiceAreas": [
+        "Criminal law",
+        "Matrimonial law",
+        "Family law"
+      ],
+      "serviceRoles": [],
+      "languages": [
+        "English"
+      ],
+      "consultationModes": [
+        "telephone",
+        "in person"
+      ],
+      "serviceRegions": [
+        "Queens County",
+        "Queens",
+        "New York City"
+      ],
+      "availabilityStatus": "not configured",
+      "availabilityNote": "",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "publicListingDestination": "divorce-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "44af252f1ce0d1c2a92ef1e4cdb6cce0ebb90c7d7d680820b1d942b138671d47",
+      "generatedAt": "2026-07-29T02:29:54.129Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "professionalId": "professional-alan-t-rothbard",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "displayName": "Alan T. Rothbard",
+      "professionalType": "attorney",
+      "firmId": "firm-addabbo-greenberg",
+      "firmName": "Addabbo & Greenberg Law",
+      "biography": "Queens attorney listed on the firm’s current attorney roster; current firm materials describe personal-injury, criminal, real-estate, and family-law services.",
+      "phone": "718-268-0400",
+      "website": "https://www.addabboandgreenberg.com/attorney/alan-t-rothbard/",
+      "photoUrl": "",
+      "officeLocations": [
+        "118-21 Queens Boulevard, Suite 306, Forest Hills, NY 11375-7209"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "practiceAreas": [
+        "Personal injury",
+        "Criminal law",
+        "Real estate",
+        "Family law"
+      ],
+      "serviceRoles": [],
+      "languages": [
+        "English"
+      ],
+      "consultationModes": [
+        "telephone",
+        "in person"
+      ],
+      "serviceRegions": [
+        "Queens County",
+        "Queens",
+        "New York City"
+      ],
+      "availabilityStatus": "not configured",
+      "availabilityNote": "",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "publicListingDestination": "divorce-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "bf0d30a29799ea4b71bc33c7abe4712e00c77c38163a33ecb88d5298c0fddecf",
+      "generatedAt": "2026-07-29T02:29:54.129Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "professionalId": "professional-anne-m-fox",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "displayName": "Anne M. Fox",
+      "professionalType": "attorney",
+      "firmId": "firm-meyerson-fox-conte",
+      "firmName": "Meyerson, Fox & Conte, P.A.",
+      "biography": "Montvale attorney whose professional page describes divorce, family-law, and mediation work.",
+      "phone": "201-802-9202",
+      "website": "https://www.lawfirmmfc.com/attorneys/anne-m-fox/",
+      "photoUrl": "",
+      "officeLocations": [
+        "One Paragon Drive, Suite 240, Montvale, NJ 07645"
+      ],
+      "jurisdictions": [
+        "New Jersey"
+      ],
+      "practiceAreas": [
+        "Divorce",
+        "Family law",
+        "Mediation"
+      ],
+      "serviceRoles": [],
+      "languages": [
+        "English"
+      ],
+      "consultationModes": [
+        "telephone",
+        "in person"
+      ],
+      "serviceRegions": [
+        "Bergen County",
+        "Montvale",
+        "Northern Metro New Jersey",
+        "New Jersey"
+      ],
+      "availabilityStatus": "not configured",
+      "availabilityNote": "",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "publicListingDestination": "divorce-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "b2ea7cd56594ab881851fe4cd6683af7776f3fe8151b9a90d451e0ce4478691f",
+      "generatedAt": "2026-07-29T02:29:54.129Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "professionalId": "professional-john-wayne-fox",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "displayName": "John Wayne Fox",
+      "professionalType": "attorney",
+      "firmId": "firm-curtis-brinckerhoff-barrett",
+      "firmName": "Curtis, Brinckerhoff & Barrett, P.C.",
+      "biography": "Stamford attorney whose professional page describes civil and commercial litigation, family, municipal, and tax-appeal work.",
+      "phone": "203-324-6777",
+      "website": "https://www.cbbllc.com/attorneys/john-wayne-fox/",
+      "photoUrl": "",
+      "officeLocations": [
+        "666 Summer Street, Stamford, CT 06901"
+      ],
+      "jurisdictions": [
+        "Connecticut"
+      ],
+      "practiceAreas": [
+        "Civil and commercial litigation",
+        "Family law",
+        "Municipal law",
+        "Tax appeals"
+      ],
+      "serviceRoles": [],
+      "languages": [
+        "English"
+      ],
+      "consultationModes": [
+        "telephone",
+        "in person"
+      ],
+      "serviceRegions": [
+        "Fairfield County",
+        "Stamford",
+        "NYC-connected Connecticut",
+        "Connecticut"
+      ],
+      "availabilityStatus": "not configured",
+      "availabilityNote": "",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "publicListingDestination": "divorce-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "4a9aaa62fa8741cfc8a1844c0db982cf76b5caf91107aed09bb69b9023a10b3e",
+      "generatedAt": "2026-07-29T02:29:54.129Z"
+    }
+  ],
+  "firms": [
+    {
+      "recordVersion": "1.4.0",
+      "firmId": "firm-bhatt-law-group",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "name": "Bhatt Law Group",
+      "website": "https://www.bhattlawgroup.com/",
+      "phone": "201-798-8000",
+      "locations": [
+        "378 Summit Avenue, Jersey City, NJ 07306"
+      ],
+      "jurisdictions": [
+        "New Jersey"
+      ],
+      "practiceAreas": [
+        "Personal injury",
+        "Motor vehicle accidents",
+        "Premises liability",
+        "Wrongful death",
+        "Family law",
+        "Divorce",
+        "Child custody",
+        "Child support",
+        "Domestic violence",
+        "Criminal defense"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceRegions": [
+        "Hudson County",
+        "Northern Metro New Jersey"
+      ],
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "verificationState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicListingDestination": "divorce-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "18831663f4eb6fd71b78b83715f36d0b68d0cb4395455513b4903e32d1a1ed65",
+      "generatedAt": "2026-07-23T00:00:00.000Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "firmId": "firm-abrams-fensterman",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "name": "Abrams Fensterman, LLP",
+      "website": "https://www.abramslaw.com/",
+      "phone": "718-215-5300",
+      "locations": [
+        "1 MetroTech Center, Suite 1701, Brooklyn, NY 11201"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "practiceAreas": [
+        "Divorce and family law",
+        "Real estate law",
+        "Elder law",
+        "Trusts and estates",
+        "Transportation law",
+        "Civil litigation"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceRegions": [
+        "Kings County",
+        "Brooklyn",
+        "New York City",
+        "New York"
+      ],
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "verificationState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicListingDestination": "divorce-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "97cf84a5c999b0dc712d6758f738549aaefff9b6d40682451415484258c64529",
+      "generatedAt": "2026-07-22T00:00:00.000Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "firmId": "firm-law-office-vernita-charles",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "name": "Law Office of Vernita Charles",
+      "website": "https://www.vernitacharles.com/",
+      "phone": "718-802-9749",
+      "locations": [
+        "44 Court Street, Suite 910, Brooklyn, NY 11201"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "practiceAreas": [
+        "Divorce and family law",
+        "Trusts and estates",
+        "Estate planning",
+        "Probate"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceRegions": [
+        "Kings County",
+        "Brooklyn",
+        "New York City"
+      ],
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "verificationState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicListingDestination": "divorce-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "e73bc5da24d69c7826c06744b1b77986bb1756a6a4a7a8b1d6ef3d99e7ee8566",
+      "generatedAt": "2026-07-23T00:00:00.000Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "firmId": "firm-cohen-wolf",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "name": "Cohen and Wolf, P.C.",
+      "website": "https://www.cohenandwolf.com/",
+      "phone": "203-368-0211",
+      "locations": [
+        "1115 Broad Street, Bridgeport, CT 06604",
+        "320 Post Road West, Westport, CT 06880"
+      ],
+      "jurisdictions": [
+        "Connecticut",
+        "New York"
+      ],
+      "practiceAreas": [
+        "Business and corporate law",
+        "Employment law",
+        "Family law",
+        "Litigation",
+        "Personal injury",
+        "Criminal defense",
+        "Elder law",
+        "Trusts and estates",
+        "Probate litigation",
+        "Tax law",
+        "Intellectual property",
+        "Real estate"
+      ],
+      "languages": [
+        "English",
+        "Spanish"
+      ],
+      "serviceRegions": [
+        "Fairfield County",
+        "Bridgeport",
+        "Westport",
+        "NYC-connected Connecticut",
+        "Connecticut"
+      ],
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "verificationState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicListingDestination": "divorce-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "165943bf54fb03f010a272313c0722d572892dd1c2a22c713511e448953d0acf",
+      "generatedAt": "2026-07-24T00:00:00.000Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "firmId": "firm-dnis-law",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "name": "Davis Ndanusa Ikhlas & Saleem LLP",
+      "website": "https://dnishlaw.com/",
+      "phone": "718-783-6819",
+      "locations": [
+        "26 Court Street, Suite 603, Brooklyn, NY 11242"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "practiceAreas": [
+        "Immigration law",
+        "Criminal defense",
+        "Family law",
+        "Civil litigation"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceRegions": [
+        "Kings County",
+        "Brooklyn",
+        "New York City"
+      ],
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "verificationState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicListingDestination": "divorce-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "ed0f36baca56fef1c58dce079a45f6a78723d63e42997212dabb8741c574c9ec",
+      "generatedAt": "2026-07-24T18:00:00.000Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "firmId": "firm-sager-gellerman-eisner",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "name": "Sager Gellerman Eisner LLP",
+      "website": "https://www.sagergellerman.com/",
+      "phone": "718-261-2300",
+      "locations": [
+        "118-35 Queens Boulevard, Suite 910, Forest Hills, NY 11375"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "practiceAreas": [
+        "Divorce and matrimonial law",
+        "Family law",
+        "Child custody and support",
+        "Family-law appeals"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceRegions": [
+        "Queens County",
+        "Queens",
+        "New York City"
+      ],
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "verificationState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicListingDestination": "divorce-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "830e18c4a643da4bfb5bf63e36028784efeced061dfc5480485bbddb4dc77dfe",
+      "generatedAt": "2026-07-24T18:00:00.000Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "firmId": "firm-fk-law-group",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "name": "FK Law Group, P.C.",
+      "website": "https://www.fklawgroup.com/",
+      "phone": "800-631-1757",
+      "locations": [
+        "108-22 Queens Boulevard, 2nd Floor, Forest Hills, NY 11375"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "practiceAreas": [
+        "Divorce",
+        "Family law",
+        "Child custody and support",
+        "Prenuptial agreements",
+        "Mediation"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceRegions": [
+        "Queens County",
+        "Queens",
+        "New York City"
+      ],
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "verificationState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicListingDestination": "divorce-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "c47f41f46223060922de499c9905fbae28d53e0812fecca8e7596e77dbe178f0",
+      "generatedAt": "2026-07-24T18:00:00.000Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "firmId": "firm-bronx-defenders",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "name": "The Bronx Defenders",
+      "website": "https://www.bronxdefenders.org/",
+      "phone": "718-838-7878",
+      "locations": [
+        "360 East 161st Street, Bronx, NY 10451"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "practiceAreas": [
+        "Criminal defense",
+        "Family defense",
+        "Immigration representation",
+        "Civil legal services",
+        "Impact litigation"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceRegions": [
+        "Bronx County",
+        "The Bronx",
+        "New York City"
+      ],
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "verificationState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicListingDestination": "divorce-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "7a95025f374de87bbc15e53d3b6dc71e0556dd565f8f3b122c0e4b541780be52",
+      "generatedAt": "2026-07-24T18:00:00.000Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "firmId": "firm-pullman-comley",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "name": "Pullman & Comley, LLC",
+      "website": "https://www.pullcom.com/",
+      "phone": "203-330-2000",
+      "locations": [
+        "850 Main Street, P.O. Box 7006, Bridgeport, CT 06601-7006"
+      ],
+      "jurisdictions": [
+        "Connecticut",
+        "New York"
+      ],
+      "practiceAreas": [
+        "Business and finance",
+        "Employment law",
+        "Family law",
+        "Health care",
+        "Municipal law",
+        "Litigation",
+        "Real estate",
+        "Intellectual property and technology"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceRegions": [
+        "Fairfield County",
+        "Bridgeport",
+        "NYC-connected Connecticut",
+        "Connecticut"
+      ],
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "verificationState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicListingDestination": "divorce-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "1dbd6ac40e5685af1f64ee96cd96125ea886b6465ef1fb8acc3b1744f3b232b7",
+      "generatedAt": "2026-07-24T18:00:00.000Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "firmId": "firm-addabbo-greenberg",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "name": "Addabbo & Greenberg Law",
+      "website": "https://www.addabboandgreenberg.com/",
+      "phone": "718-268-0400",
+      "locations": [
+        "118-21 Queens Boulevard, Suite 306, Forest Hills, NY 11375-7209"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "practiceAreas": [
+        "Personal injury",
+        "Criminal defense",
+        "Real estate",
+        "Family law"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceRegions": [
+        "Queens County",
+        "Queens",
+        "New York City",
+        "New York"
+      ],
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "verificationState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicListingDestination": "divorce-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "689cc2c34baa4e4a494821ab3b8fbe44a49e24a21fac4cbab2ddd07bd22f0865",
+      "generatedAt": "2026-07-24T20:00:00.000Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "firmId": "firm-meyerson-fox-conte",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "name": "Meyerson, Fox & Conte, P.A.",
+      "website": "https://www.lawfirmmfc.com/",
+      "phone": "201-802-9202",
+      "locations": [
+        "One Paragon Drive, Suite 240, Montvale, NJ 07645"
+      ],
+      "jurisdictions": [
+        "New Jersey"
+      ],
+      "practiceAreas": [
+        "Family law",
+        "Estate planning and administration",
+        "Elder law and guardianship",
+        "Civil and commercial litigation",
+        "Real estate and land use",
+        "Business law"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceRegions": [
+        "Bergen County",
+        "Montvale",
+        "Northern Metro New Jersey",
+        "New Jersey"
+      ],
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "verificationState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicListingDestination": "divorce-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "25d11d6e327595589ec5456f6480e67b2f0948d32f8f40ce5696f9cfe7ef4544",
+      "generatedAt": "2026-07-24T20:00:00.000Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "firmId": "firm-curtis-brinckerhoff-barrett",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "name": "Curtis, Brinckerhoff & Barrett, P.C.",
+      "website": "https://www.cbbllc.com/",
+      "phone": "203-324-6777",
+      "locations": [
+        "666 Summer Street, Stamford, CT 06901"
+      ],
+      "jurisdictions": [
+        "Connecticut"
+      ],
+      "practiceAreas": [
+        "Civil and commercial litigation",
+        "Real estate and land use",
+        "Estate planning and probate",
+        "Family law",
+        "Business law",
+        "Tax law"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceRegions": [
+        "Fairfield County",
+        "Stamford",
+        "NYC-connected Connecticut",
+        "Connecticut"
+      ],
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "verificationState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicListingDestination": "divorce-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "f2caf2d35a2f775573f35732c4d019599b2f38dea0974eed3b6c90bee674f78f",
+      "generatedAt": "2026-07-24T20:00:00.000Z"
+    }
+  ],
+  "containsUserMatterData": false,
+  "containsCredentials": false,
+  "containsPaymentData": false,
+  "containsConfidentialData": false,
+  "automaticWrites": false,
+  "liveConnection": false,
+  "generatedAt": "2026-07-29T02:29:54.124Z"
+}

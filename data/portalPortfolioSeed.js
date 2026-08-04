@@ -5,7 +5,7 @@ const PORTFOLIO_SEED_OVERRIDES = {
   "immigration-oasis": {
     "portfolioStatus": "live",
     "priority": "medium",
-    "activeBuildState": "testing",
+    "activeBuildState": "ready for release",
     "currentProductionVersion": "1.10.116 (last confirmed live June 22, 2026; verify live)",
     "latestDevelopmentVersion": "1.10.227 effective overlay",
     "latestZipName": "v1.10.162 full archival/deployment base + v1.10.227 lean continuation overlay (do not clean-deploy lean alone)",
@@ -63,6 +63,7 @@ const PORTFOLIO_SEED_OVERRIDES = {
       "Permit deliberate documented specialty adaptations when they improve safety, compliance, usability, or the portal’s legal workflow"
     ],
     "releaseHistory": [
+      "1.7.8 | 2026-07-21 | exact artifact tested | public first impression, quick-start completion, saved-work dashboard, focused portal language, professional dashboard, form explanations, responsive actions, and strengthened customer-experience regression",
       "1.10.116 | 2026-06-22 | last confirmed live | I-601A provisional-waiver support track",
       "1.10.162 | 2026-06 | first-base packages | full archive plus lean continuation base"
     ],
@@ -91,8 +92,8 @@ const PORTFOLIO_SEED_OVERRIDES = {
     "priority": "high",
     "activeBuildState": "testing",
     "currentProductionVersion": "Not confirmed deployed",
-    "latestDevelopmentVersion": "0.1.93",
-    "latestZipName": "justice-tax-solutions-v0.1.93.zip",
+    "latestDevelopmentVersion": "0.1.94 (central recorded build truth; dedicated artifact re-verification required)",
+    "latestZipName": "justice-tax-solutions-v0.1.94 package (exact dedicated filename and checksum require re-verification)",
     "currentBuildTarget": "Build the focused tax preparation and tax-resolution portal with distinct but coordinated service lanes.",
     "lastReleaseSummary": "Nationwide free-first guided 2025 return foundation with Schedule EIC sample, exact EIC calculations, official-form governance, secure document intelligence, MFA, professional operations, and production-readiness controls.",
     "progressPercent": 84,
@@ -105,7 +106,7 @@ const PORTFOLIO_SEED_OVERRIDES = {
     "lastHealthCheckAt": "",
     "lastBuildAt": "",
     "lastDeploymentAt": "",
-    "continuationPromptVersion": "Create or refresh from v0.1.93 second-pass audit and current Smarter Justice Rules Pack",
+    "continuationPromptVersion": "Create or refresh from the current Justice Tax Solutions dedicated prompt; central record currently notes v0.1.94 but does not replace dedicated artifact evidence",
     "continuationPromptLocation": "",
     "activeDevelopmentChat": "",
     "paymentReadiness": "not started",
@@ -331,9 +332,9 @@ const PORTFOLIO_SEED_OVERRIDES = {
     "priority": "high",
     "activeBuildState": "planning",
     "currentProductionVersion": "Not deployed for confidential production use",
-    "latestDevelopmentVersion": "0.1.0",
-    "latestZipName": "contractcreator-v0.1.0-first-base.zip",
-    "currentBuildTarget": "Build the multi-AI contract creation, review, explanation, comparison, and professional-review platform.",
+    "latestDevelopmentVersion": "0.7.0 (current owner-recorded dedicated product base; dedicated artifact re-verification required)",
+    "latestZipName": "contractcreator-v0.7.0-revision-change-intelligence-smarter-justice.zip (central record only; dedicated artifact remains authoritative)",
+    "currentBuildTarget": "Continue the Business and Contract Law platform for startup, formation, contract, compliance, business-tax, and appropriate IP-routing workflows while a replacement public brand/domain is selected.",
     "lastReleaseSummary": "Functional first-base preview with five contract intents, deterministic issue detection, side-specific multi-perspective Contract Board, risk routing, and dashboard/library concepts.",
     "progressPercent": 30,
     "repository": "",
@@ -345,7 +346,7 @@ const PORTFOLIO_SEED_OVERRIDES = {
     "lastHealthCheckAt": "",
     "lastBuildAt": "",
     "lastDeploymentAt": "",
-    "continuationPromptVersion": "Create or refresh from ContractCreator.com v0.1.0 audit",
+    "continuationPromptVersion": "Create or refresh from the current ContractCreator v0.7.0 dedicated record and current Smarter Justice standards; domain ownership and deployment require separate verification.",
     "continuationPromptLocation": "",
     "activeDevelopmentChat": "",
     "paymentReadiness": "not started",
@@ -407,29 +408,29 @@ const PORTFOLIO_SEED_OVERRIDES = {
   "general-smarter-justice-start": {
     "portfolioStatus": "pilot",
     "priority": "critical",
-    "activeBuildState": "ready for release",
-    "currentProductionVersion": "1.0.6 (last known; verify live)",
-    "latestDevelopmentVersion": "1.6.1 — Rules Pack 1.4.3",
-    "latestZipName": "smarter-justice-v1.6.1.zip",
-    "currentBuildTarget": "Complete controlled founding-professional launch readiness with production persistence, privileged-account security, pilot capacity, compliance procedures, test evidence, and continued cross-portal build tracking.",
-    "lastReleaseSummary": "Fail-closed production startup, detected-write blocking, durable-upload gating, truthful storage readiness, owner account sessions and MFA, professional password recovery and MFA, controlled pilot capacity, credential and complaint procedures, and a first-class cross-portal Capability Registry.",
-    "progressPercent": 99,
+    "activeBuildState": "testing",
+    "currentProductionVersion": "1.6.1 — last verified live; reverify before relying on production state",
+    "latestDevelopmentVersion": "1.7.10",
+    "latestZipName": "smarter-justice-v1.7.10.zip",
+    "currentBuildTarget": "Preserve the exact-tested v1.7.10 corrective and governance foundation while gathering real production database, backup/restore, authenticated email, payment, security, legal, support, monitoring, real-device, named-cohort, and owner-activation evidence with all paid and sensitive gates closed.",
+    "lastReleaseSummary": "Truthful paused professional enrollment, explicit assistance choice, public response minimization, service-role classification, visible profile correction paths, maintained governance, and reconciled central portal truth.",
+    "progressPercent": 100,
     "repository": "https://github.com/neutralboardroom/smarter-justice-app",
-    "productionUrl": "https://smarter-justice-app.onrender.com",
+    "productionUrl": "https://smarterjustice.com",
     "stagingUrl": "",
     "deploymentService": "Render",
     "healthEndpoint": "/health",
-    "healthStatus": "not configured",
+    "healthStatus": "not checked for this release",
     "lastHealthCheckAt": "",
     "lastBuildAt": "2026-07-20",
     "lastDeploymentAt": "",
-    "continuationPromptVersion": "v1.6.1 Rules Pack 1.4.3, v1.6.0 controlled-launch safeguards plus verified pre-deployment brand-header correction",
+    "continuationPromptVersion": "v1.7.10 release governance, public truth, explicit AI choice, side-role controls, and portal reconciliation plus all compatible prior safeguards",
     "continuationPromptLocation": "",
     "activeDevelopmentChat": "",
-    "paymentReadiness": "not started",
-    "emailReadiness": "not started",
-    "storageReadiness": "not started",
-    "securityReadiness": "foundation",
+    "paymentReadiness": "foundation — fail-closed; external Stripe lifecycle and owner activation evidence required",
+    "emailReadiness": "foundation — verification/reset workflows implemented; authenticated production delivery evidence required",
+    "storageReadiness": "foundation — versioned PostgreSQL migrations and locking implemented; production persistence, backup, and restore evidence required",
+    "securityReadiness": "foundation — explicit activation, owner readiness, email verification, MFA and revocation foundations; production acceptance required",
     "legalComplianceReadiness": "needs review",
     "mobileReadiness": "pilot ready",
     "accessibilityReadiness": "pilot ready",
@@ -449,116 +450,94 @@ const PORTFOLIO_SEED_OVERRIDES = {
       "Other approved professional"
     ],
     "sharedCapabilities": [
-      "Umbrella portal router",
-      "Community Partner foundation",
-      "Human Review Specialist workflow",
+      "Umbrella portal router and free starting-point help",
+      "Community Partner and field-attribution foundation",
+      "Human Review Specialist fail-closed catalog and order lifecycle",
       "Matter Path Engine and conservative form foundations",
-      "Private owner Control Center foundation",
-      "Versioned Master Rules Pack",
-      "Professional network and marketplace foundation",
-      "Membership eligibility and revenue architecture foundation",
-      "NYC founding-member outreach, mobile/QR enrollment, and firm volume-discount foundation",
-      "Cross-portal capability matrix and real-package portfolio tracking",
-      "Full/lean/overlay/deployable package-role tracking",
-      "Green/Yellow/Red exact-lane readiness standard",
-      "No-guess guided journey and human-only service standard",
-      "Evidence-backed official-form approval ledgers and universal reviewed-file fallback",
-      "Launch evidence packs, manual QA, first-case/cohort controls, and capacity gates",
-      "Healthcare-arm portfolio tracking through CoveredNYC",
-      "Fail-closed production persistence and truthful storage readiness",
-      "Owner and professional account sessions, MFA, recovery, and revocation",
-      "Controlled professional pilot capacity, credential review, complaints, and suspension controls",
-      "Cross-portal Capability Registry and Success Pattern Library"
+      "Private owner Control Center",
+      "Versioned Master Rules Pack 1.4.3",
+      "Professional and firm marketplace foundation",
+      "Professional membership and firm-seat foundation",
+      "Owner-visible Build Program with 194 shared items",
+      "Official portal-domain registry",
+      "Versioned PostgreSQL schema migrations with checksum ledger",
+      "Database advisory transaction locking and idempotency foundations",
+      "Operational paid-pilot readiness gate and owner evidence panel",
+      "Professional email verification, password reset, MFA, session, and revocation foundations",
+      "Explicit sensitive-traffic and paid-pilot owner activation flags",
+      "Truthful StopSignProject.org dedicated-portal bridge without confidential data sharing"
     ],
     "portalSpecificRequirements": [
-      "Smarter Justice will help identify the likely starting point and recommend a focused portal or review path."
+      "Smarter Justice identifies a likely starting point and recommends a focused portal or qualified review path.",
+      "StopSignProject.org remains a separately versioned domestic-violence portal; general Smarter Justice must not store confidential domestic-violence records while sensitive traffic is closed."
     ],
     "completedMilestones": [
-      "Umbrella portal-router foundation completed",
-      "Community Partner and administrator privacy hardening completed",
-      "Private Control Center foundation added in v1.3.0",
-      "Versioned Master Rules Pack and professional marketplace foundation completed in v1.4.0",
-      "NYC founding-member outreach, mobile/QR enrollment, and firm volume-discount foundation completed in v1.4.0",
-      "Justice Tax Solutions v0.1.93 second-pass audit incorporated into Rules Pack 1.3.0",
-      "Immigration Oasis v1.10.162 full plus v1.10.227 lean second-pass audit incorporated",
-      "Six real platforms recorded in the private portfolio",
-      "DigitalDivorce and Motor Vehicle / Personal Injury Help Center added as private planned portals",
-      "Controlled professional launch-readiness safeguards completed in v1.6.0"
+      "Umbrella portal-router, Community Partner, private Control Center, Rules Pack, professional marketplace, and domain registry foundations completed",
+      "Controlled professional launch-readiness safeguards completed in v1.6.0",
+      "Professional-first public and member experience completed through v1.7.0",
+      "Build Program and official domain registry completed in v1.7.1-v1.7.2",
+      "Paid-pilot applications and seven-practice readiness completed in v1.7.3",
+      "Transactional pilot operations, public Human Review lifecycle, shared revenue model, NYC field launch, Justice Truck origin story, and Stop Sign Project initiative foundation exact-artifact tested in v1.7.4",
+      "PostgreSQL migrations, locking, operational readiness, explicit activation, professional email verification, and Stop Sign dedicated-portal bridge passed automated tests in v1.7.5"
     ],
     "nextMilestones": [
-      "Stage v1.6.1 with verified PostgreSQL and durable private upload storage",
-      "Bootstrap the owner account and complete authenticator MFA enrollment before opening pilot enrollment",
-      "Configure SMTP and Stripe test mode and record signed webhook, cancellation, refund, and failed-payment evidence",
-      "Complete credential, complaint, suspension, privacy, advertising, ethics, and first-cohort operating procedures",
-      "Run real-device, QR, office-enrollment, backup/restore, and first-case acceptance testing",
-      "Add controlled portal-manifest synchronization and read-only health/build integrations",
-      "Generate refreshed continuation prompts for each real platform using Rules Pack 1.4.3",
-      "Select and begin the next approved focused-portal build after launch-readiness evidence is recorded"
+      "Preserve exact-artifact-tested v1.7.9 as current source and v1.7.8 as rollback",
+      "Verify production PostgreSQL migrations, restart persistence, interruption/reconnect, backup, restore, and recovery",
+      "Configure authenticated email and prove SPF, DKIM, DMARC, delivery, bounce visibility, and reply handling",
+      "Complete Stripe professional membership and public Human Review lifecycle acceptance",
+      "Complete owner and professional MFA, recovery, revocation, bootstrap removal, legal review, support, monitoring, real-device, named-cohort, and owner-activation evidence",
+      "Keep StopSignProject.org development separate and synchronize only shared standards and truthful status records",
+      "Move shared public identity and consent-controlled cross-portal continuity to a later release after paid-pilot readiness is proven"
     ],
     "ownerDecisions": [
-      "Use one Master Coordination track plus separate portal-specific development chats",
-      "Treat shared standards as strong defaults, not inflexible rules",
-      "Keep the Control Center private and separate from customer and staff workspaces",
-      "Do not automate production deployment until owner authentication, staging, audit, and rollback controls mature",
-      "Build the professional directory and marketplace in phased compliance-first releases; keep lead-sale ping-post integrations out until explicitly authorized",
-      "Use NYC in-person outreach, mobile/QR enrollment, introductory fixed-price founding memberships, per-professional firm billing, and transparent volume discounts as an early pilot strategy without letting payment affect substantive eligibility or AI analysis"
+      "Meaningful public AI starting help remains free or extremely low cost",
+      "Professional founding membership remains low priced without guaranteed leads or outcomes",
+      "Paid and sensitive functions remain fail-closed until evidence and explicit owner approval",
+      "Do not make changes for the sake of making changes",
+      "StopSignProject.org is owner-confirmed and will host a complete separate domestic-violence safety and legal-help portal"
     ],
     "releaseHistory": [
-      "1.2.1 | 2026-07-20 | completed | umbrella-router polish and privacy/security hardening",
-      "1.3.0 | 2026-07-20 | completed | private owner Control Center foundation",
-      "1.4.0 | 2026-07-20 | completed | Master Rules Pack, private marketplace, official NY attorney connector, paid-membership eligibility, NYC founding outreach, firm discounts, consultation, and revenue foundation",
-      "1.5.0 | 2026-07-20 | completed | public claimable professional finder, central professional and firm accounts, owner-approved profile claims, Downtown Brooklyn source-tracked launch profiles, Stripe membership checkout, and firm roster/seat management",
-      "1.5.1 | 2026-07-20 | completed | pre-deployment public-language, professional acquisition funnel, mobile, legal-page, indexing, and Control Center readiness polish",
-      "1.5.2 | 2026-07-20 | completed | directory reliability, firm-profile parity, campaign attribution, and narrow-phone safeguards",
-      "1.5.3 | 2026-07-20 | completed | official-source pagination, shareable filters, profile metadata, onboarding, and firm pricing clarity",
-      "1.6.0 | 2026-07-20 | completed | fail-closed production persistence, account security, pilot capacity, compliance procedures, and Capability Registry",
-      "1.6.1 | 2026-07-20 | completed | corrected duplicate header wordmark and standardized brand metadata before deployment"
+      "1.7.9 | 2026-07-21 | exact artifact tested | maintained improvement queue, release evidence, readiness dimensions, specialty-portal truth, capability deviations, workflow inventory, and professional application clarity",
+      "1.7.8 | 2026-07-21 | exact artifact tested | public first impression, quick-start completion, saved-work dashboard, focused portal language, professional dashboard, form explanations, responsive actions, and customer-experience regression",
+      "1.7.7 | 2026-07-21 | exact artifact tested | sensitive-traffic shutdown, CSRF, private-page authentication, runtime language, upload validation, continuation-link lifecycle, persistence serialization, controlled deployment, and SBOM",
+      "1.7.6 | 2026-07-21 | exact artifact tested | customer-facing language, funnel, responsive UX, professional dashboard clarity, active Justice Truck relationship, and regression protection",
+      "1.7.5 | 2026-07-20 | exact artifact tested | migrations, advisory transaction locking, operational readiness, explicit activation, professional email verification, owner readiness, and Stop Sign bridge",
+      "1.7.4 | 2026-07-20 | exact artifact tested | transactional pilot operations, public Human Review, revenue model, NYC field launch, Justice Truck origin story, and Stop Sign Project foundation",
+      "1.7.3 | 2026-07-20 | exact artifact tested | paid-pilot applications, evidence-gated payments, support, and seven-practice readiness",
+      "1.7.2 | 2026-07-20 | exact artifact tested | official domain registry and professional network status",
+      "1.7.1 | 2026-07-20 | exact artifact tested | visible structured Build Program"
     ],
     "futureFeatures": [
-      "Portal manifests and controlled portfolio synchronization",
-      "Evidence-based expansion and ongoing maintenance of the Cross-Portal Capability Registry",
-      "Evidence-backed official-form approval ledgers, universal reviewed-file delivery gates, expansion ledgers, and first-cohort review controls",
-      "AI-guided, human-first, and human-only service preferences with consent and audit history",
-      "Central build, version, roadmap, release, deployment, health, incident, and launch-readiness tracking",
-      "Shared forms and official-source registry with edition and jurisdiction tracking",
-      "Centralized staff, paralegal, attorney, CPA, enrolled-agent, accountant, and specialist role framework",
-      "Referral and Community Partner coordination across portals",
-      "Consent-based cross-portal routing and continuity",
-      "Central configuration, feature flags, analytics, alerts, feedback, and compliance-review history",
-      "GitHub, Render, database, email, Stripe, and AI status integrations without exposing secrets",
-      "Staging previews, approval gates, controlled deployment, and rollback only after authentication, audit, and safety controls mature",
-      "Automated credential monitoring, calendars, booking, consent-controlled matter sharing, moderated reviews, analytics, CRM integrations, and white-label services",
-      "Priority future portals: bankruptcy/debt, housing/tenant, disability/benefits, employment/wage, consumer protection/fraud/identity theft, veterans benefits, elder law/Medicaid/long-term care, education/special education, record relief/traffic/license, and small claims/everyday civil disputes",
-      "Portal relationship map to avoid duplicate brands and workflows",
-      "Market-demand, legal-compliance, workflow-fit, and professional-revenue scoring for future portal selection"
+      "Shared public identity and consent-controlled cross-portal continuity after paid-pilot operating acceptance",
+      "Controlled portal-manifest synchronization and read-only deployment health integrations",
+      "Concierge enrollment, support analytics, member success, and first-cohort operating evidence"
     ],
     "knownLimitations": [
-      "Owner and professional account security foundations are implemented, but production owner bootstrap, MFA enrollment, SMTP delivery, recovery-code custody, and operating procedures still require deployed evidence",
-      "Portfolio records are manually maintained and do not yet synchronize from portal repositories or deployments",
-      "No automatic production deployment, staging approval, or rollback controls",
-      "Portfolio manifests generated here are not yet imported back from each source repository",
-      "Credential reverification and complaint monitoring are manual-first rather than automated",
-      "Real-device, backup/restore, Stripe lifecycle, and first-cohort acceptance evidence remain outstanding"
+      "v1.7.9 is exact-artifact tested and not deployed; v1.7.8 remains rollback and production remains last verified v1.6.1",
+      "Production PostgreSQL durability, backup, restore, and recovery have not been externally proven",
+      "SMTP authentication and delivery, Stripe lifecycle, legal review, support, monitoring, real-device, and named-cohort evidence remain outstanding",
+      "StopSignProject.org ownership is confirmed, but its dedicated portal deployment and live state are separate and unverified"
     ],
     "nextBuildInstructions": [
-      "Stage the audited v1.6.1 controlled-launch readiness release with PostgreSQL and durable private upload storage",
-      "Use fresh owner account, portal-rules, staff, Stripe, SMTP, and session configuration; keep legacy owner-token access disabled in production",
-      "Complete owner MFA enrollment and save recovery codes securely before opening enrollment",
-      "Record Stripe test lifecycle, backup/restore, real-device, QR, office-enrollment, credential, complaint, and first-cohort evidence",
-      "Create or refresh each active portal’s complete continuation prompt using shared standards plus portal-specific history",
-      "Continue controlled manifest synchronization planning without adding unsafe one-click production deployment"
+      "Preserve exact-tested v1.7.9, retain v1.7.8 as rollback, and continue controlled external evidence collection",
+      "Keep all paid and sensitive gates closed during deployment until external evidence and explicit owner activation",
+      "Verify one production requirement at a time and record evidence in the owner Control Center",
+      "Do not build broad shared identity or unrelated portal functionality in this release",
+      "Develop StopSignProject.org in its dedicated portal chat and synchronize only shared standards and status records"
     ],
     "blockers": [
-      "Latest development release is not yet aligned with the last-known live Render/GitHub version",
-      "Production database and durable private upload storage are still required before sensitive paid traffic",
-      "Stripe, SMTP, final legal/compliance review, and deployed user-acceptance testing remain outstanding"
+      "v1.7.9 is exact-artifact tested and not deployed; v1.7.8 remains the prior exact-tested rollback",
+      "Production remains last verified v1.6.1 until controlled deployment and live health verification",
+      "Production database, backup/restore, SMTP, Stripe, legal, support, monitoring, real-device, and first-cohort evidence remain outstanding",
+      "SensitiveTrafficApproved=false and all paid/sensitive gates remain closed"
     ],
     "risks": [
-      "Manually entered portfolio records can become stale until controlled repository/deployment synchronization is added",
-      "Legacy owner-token access must remain disabled in production after owner account setup; privileged sessions and recovery codes require careful operational handling"
+      "Manually maintained portfolio records can become stale until controlled synchronization exists",
+      "Privileged owner sessions, MFA recovery, and bootstrap removal require careful production operations",
+      "Publishing an unverified StopSignProject.org destination could mislead users, so the destination must remain configuration-gated until live verification"
     ],
     "documentedDeviations": [],
-    "notes": "The Control Center now tracks the full real and planned portfolio, a first-class Capability Registry, controlled professional pilot gates, and account-security foundations under Rules Pack 1.4.3. Production services and first-cohort evidence remain required before enrollment opens."
+    "notes": "The Control Center tracks the shared 194-item Build Program, official domain registry, operational readiness, closed activation gates, and the dedicated Stop Sign Project portal relationship under Rules Pack 1.4.3. Code completion is not external configuration, deployment, legal approval, staffing, or operational acceptance."
   }
 };
 
@@ -574,16 +553,128 @@ const PRIVATE_PORTFOLIO_SEEDS = [
     portalSpecificRequirements:['Do not present CoveredNYC as an insurer, carrier, government agency, official eligibility decision-maker, or live enrollment service until verified.'],
     knownLimitations:['Readiness mode only; live broker, enrollment, secure-upload, and carrier capabilities are not yet verified.']
   },
-  { slug:'digital-divorce', name:'DigitalDivorce', brandFamily:'Smarter Justice planned legal portal', portfolioStatus:'planned', priority:'critical', activeBuildState:'planning', progressPercent:5, currentBuildTarget:'Build a state-aware divorce platform with guided intake, forms, agreements, parenting, support, property/debt organization, filing readiness, and attorney review.', professionalReviewTypes:['Human Review Specialist','Family-law attorney','Mediator where appropriate'], futureFeatures:['Uncontested and contested path separation','Divorce forms','Separation and settlement agreements','Parenting plans','Child and spousal support organizers','Property and debt schedules','State/county filing source tracking','Signing, notarization, service, filing, and court-stage gates'] },
-  { slug:'motor-vehicle-personal-injury-help-center', name:'Motor Vehicle / Personal Injury Help Center', brandFamily:'Smarter Justice planned legal portal', portfolioStatus:'planned', priority:'critical', activeBuildState:'planning', progressPercent:5, currentBuildTarget:'Build an accident and injury portal with evidence, medical, insurance, deadline, claim, damages, consultation, and attorney-engagement workflows.', professionalReviewTypes:['Human Review Specialist','Personal-injury attorney','No-fault attorney','Trial attorney'], futureFeatures:['Crash and incident timeline','Police report and insurance organization','Medical treatment and bills','Lost-income and damages organizer','No-fault/PIP and claim deadlines','Attorney profile and consultation marketplace','Demand-package and litigation-readiness support'] },
-  { slug:'criminal-law-help-center', name:'Criminal Law Help Center', brandFamily:'Smarter Justice planned legal portal', portfolioStatus:'planned', priority:'high', activeBuildState:'planning', progressPercent:3, currentBuildTarget:'Create urgent, jurisdiction-aware arrest, charge, court-date, bail, evidence, collateral-consequence, and attorney-connection workflows.', professionalReviewTypes:['Criminal-defense attorney','Appellate attorney','Human Review Specialist within non-advice limits'] },
+  { slug:'digital-divorce', name:'Divorce Law Aid', officialDomain:'divorcelawaid.com', brandFamily:'Official Smarter Justice divorce and related family-law portal brand', portfolioStatus:'planned', priority:'critical', activeBuildState:'planning', progressPercent:5, currentBuildTarget:'Build a state-aware divorce platform with guided intake, forms, agreements, parenting, support, property/debt organization, filing readiness, and attorney review.', professionalReviewTypes:['Human Review Specialist','Family-law attorney','Mediator where appropriate'], futureFeatures:['Uncontested and contested path separation','Divorce forms','Separation and settlement agreements','Parenting plans','Child and spousal support organizers','Property and debt schedules','State/county filing source tracking','Signing, notarization, service, filing, and court-stage gates'] },
+  { slug:'motor-vehicle-personal-injury-help-center', name:'Personal Injury Law Aid', officialDomain:'personalinjurylawaid.com', brandFamily:'Official Smarter Justice personal-injury portal brand', portfolioStatus:'planned', priority:'critical', activeBuildState:'planning', progressPercent:5, currentBuildTarget:'Pilot a simple Personal Injury Law Aid experience covering vehicle accidents and other negligence injuries, with evidence preservation, insurance organization, and attorney-profile discovery. Keep workers’ compensation separate.', professionalReviewTypes:['Human Review Specialist','Personal-injury attorney','No-fault attorney','Trial attorney'], futureFeatures:['Vehicle-accident and incident starting paths','Police report and insurance organization','Medical treatment and bills checklist','Premises, product, construction third-party, dog-bite, wrongful-death and other negligence starting paths','Attorney profile discovery','Deadline-warning links to current official sources','No claim-value, liability, or acceptance prediction'] },
+  { slug:'criminal-law-help-center', name:'Criminal Law Aid', officialDomain:'criminallawaid.com', brandFamily:'Official Smarter Justice criminal-law portal brand', portfolioStatus:'planned', priority:'high', activeBuildState:'planning', progressPercent:3, currentBuildTarget:'Create urgent, jurisdiction-aware arrest, charge, court-date, bail, evidence, collateral-consequence, and attorney-connection workflows.', professionalReviewTypes:['Criminal-defense attorney','Appellate attorney','Human Review Specialist within non-advice limits'] },
+  {
+    slug:'stop-sign-project', name:'Stop Sign Project', officialDomain:'stopsignproject.org', brandFamily:'Separate survivor-centered Smarter Justice ecosystem portal',
+    portfolioStatus:'development', priority:'critical', activeBuildState:'exact artifact tested', currentProductionVersion:'Not confirmed deployed',
+    latestDevelopmentVersion:'0.9.0 (current owner-recorded dedicated base; reverify dedicated artifact)', latestZipName:'stopsignproject-v0.9.0.zip', progressPercent:82,
+    currentBuildTarget:'Preserve survivor-centered safety, privacy, neutral-display, deliberate Quick Exit, and no-sharing boundaries in the dedicated project.',
+    professionalReviewTypes:['Domestic-violence attorney where appropriate','Qualified survivor advocate where appropriate'],
+    portalSpecificRequirements:['General Smarter Justice saved-matter intake for domestic-violence facts remains disabled.','No public bridge until destination verification and configuration pass.'],
+    knownLimitations:['The dedicated artifact remains authoritative; this central record does not independently verify its checksum or deployment.']
+  },
+  {
+    slug:'attorneyride', name:'AttorneyRide', brandFamily:'Separate private owner and staff product',
+    portfolioStatus:'private', priority:'high', activeBuildState:'exact artifact tested', currentProductionVersion:'Not confirmed deployed',
+    latestDevelopmentVersion:'0.2.0 (current owner-recorded authoritative base; reverify dedicated artifact)', latestZipName:'attorneyride-v0.2.0 package; exact dedicated filename and checksum remain governed by the AttorneyRide project', progressPercent:45,
+    currentBuildTarget:'Preserve separate private lead-routing, attribution, billing, return, dispute, adapter, and consent truth.',
+    professionalReviewTypes:[],
+    portalSpecificRequirements:['Public Smarter Justice profiles do not imply AttorneyRide participation or buyer status.','Any transfer requires separate explanation, affirmative commercial consent, minimum-necessary data, and independent AttorneyRide acceptance.'],
+    knownLimitations:['AttorneyRide is not a public Smarter Justice portal and must not share matter data by default.']
+  },
+  {
+    slug:'justice-truck', name:'Justice Truck', brandFamily:'Separate historical and community-access brand',
+    portfolioStatus:'planning', priority:'medium', activeBuildState:'governing prompt recorded; exact build artifact not reconciled', currentProductionVersion:'Not confirmed deployed',
+    latestDevelopmentVersion:'Not independently reconciled in this Smarter Justice release', latestZipName:'Dedicated Justice Truck package required', progressPercent:18,
+    currentBuildTarget:'Preserve the approved legacy logo, first-truck historical artwork, and community-access story under dedicated project rules.',
+    professionalReviewTypes:[],
+    portalSpecificRequirements:['Justice Truck is not the Smarter Justice Control Center and is not a ping-post lead-management product.'],
+    knownLimitations:['No exact current Justice Truck artifact was supplied for this release.']
+  },
   { slug:'medical-malpractice-assistant-center', name:'Medical Malpractice Assistant Center', brandFamily:'Smarter Justice planned legal portal', portfolioStatus:'planned', priority:'high', activeBuildState:'planning', progressPercent:3, currentBuildTarget:'Create a high-risk medical-malpractice evidence, chronology, records, expert-review preparation, deadline, and attorney-routing portal.', professionalReviewTypes:['Medical-malpractice attorney','Qualified medical expert through attorney workflow','Human Review Specialist for organization only'] },
   { slug:'family-law-help-center', name:'Family Law Help Center', brandFamily:'Smarter Justice planned legal portal', portfolioStatus:'planned', priority:'high', activeBuildState:'planning', progressPercent:3, currentBuildTarget:'Create broader family-court workflows beyond divorce, including custody, support, visitation, adoption, guardianship, and protection-related routing.', professionalReviewTypes:['Family-law attorney','Domestic-violence attorney or advocate where appropriate','Mediator where appropriate'] },
-  { slug:'social-security-disability-help-center', name:'Social Security and Disability Help Center', brandFamily:'Smarter Justice planned legal portal', portfolioStatus:'planned', priority:'high', activeBuildState:'planning', progressPercent:3, currentBuildTarget:'Create SSDI/SSI application, evidence, provider, denial, reconsideration, hearing, deadline, and representative-routing workflows.', professionalReviewTypes:['Social Security disability attorney','Accredited representative where permitted','Human Review Specialist'] },
+  { slug:'social-security-disability-help-center', name:'Disability Law Aid', officialDomain:'disabilitylawaid.com', brandFamily:'Official Smarter Justice disability-law portal brand', portfolioStatus:'planned', priority:'high', activeBuildState:'planning', progressPercent:3, currentBuildTarget:'Create SSDI/SSI application, evidence, provider, denial, reconsideration, hearing, deadline, and representative-routing workflows.', professionalReviewTypes:['Social Security disability attorney','Accredited representative where permitted','Human Review Specialist'] },
   { slug:'bankruptcy-debt-help-center', name:'Bankruptcy and Debt Help Center', brandFamily:'Smarter Justice planned legal portal', portfolioStatus:'planned', priority:'high', activeBuildState:'planning', progressPercent:8, currentBuildTarget:'Expand the existing bankruptcy/debt foundation into a focused portal for debt lawsuits, collections, bankruptcy organizers, judgments, garnishment, and attorney review.', professionalReviewTypes:['Bankruptcy attorney','Consumer-debt attorney','Human Review Specialist'] },
   { slug:'workers-comp-help-center', name:"Workers' Compensation Help Center", brandFamily:'Smarter Justice planned legal portal', portfolioStatus:'planned', priority:'high', activeBuildState:'planning', progressPercent:3, currentBuildTarget:'Create injury reporting, employer/carrier documents, medical treatment, wage-loss, hearing, appeal, deadline, and workers’ compensation attorney workflows.', professionalReviewTypes:["Workers' compensation attorney",'Human Review Specialist'] },
-  { slug:'employment-labor-law-help-center', name:'Employment and Labor Law Help Center', brandFamily:'Smarter Justice planned legal portal', portfolioStatus:'planned', priority:'high', activeBuildState:'planning', progressPercent:5, currentBuildTarget:'Create wage, discrimination, retaliation, leave, termination, contract, agency-charge, union/labor, evidence, deadline, and attorney-routing workflows.', professionalReviewTypes:['Employment attorney','Labor attorney','Human Review Specialist'] },
-  { slug:'tenant-landlord-help-center', name:'Tenant / Landlord Help Center', brandFamily:'Smarter Justice planned legal portal', portfolioStatus:'planned', priority:'high', activeBuildState:'planning', progressPercent:5, currentBuildTarget:'Create role-specific tenant and landlord workflows for notices, rent, repairs, deposits, eviction, housing court, evidence, deadlines, and attorney routing.', professionalReviewTypes:['Tenant attorney','Landlord attorney','Housing attorney','Human Review Specialist'] }
+  { slug:'employment-labor-law-help-center', name:'Employment Law Aid', officialDomain:'employmentlawaid.com', brandFamily:'Official Smarter Justice employment-law portal brand', portfolioStatus:'planned', priority:'high', activeBuildState:'planning', progressPercent:5, currentBuildTarget:'Create wage, discrimination, retaliation, leave, termination, contract, agency-charge, union/labor, evidence, deadline, and attorney-routing workflows.', professionalReviewTypes:['Employment attorney','Labor attorney','Human Review Specialist'] },
+  { slug:'tenant-landlord-help-center', name:'Landlord Tenant Aid', officialDomain:'landlordtenantaid.com', brandFamily:'Official Smarter Justice landlord-tenant portal brand', portfolioStatus:'planned', priority:'high', activeBuildState:'planning', progressPercent:5, currentBuildTarget:'Create role-specific tenant and landlord workflows for notices, rent, repairs, deposits, eviction, housing court, evidence, deadlines, and attorney routing.', professionalReviewTypes:['Tenant attorney','Landlord attorney','Housing attorney','Human Review Specialist'] }
 ];
 
-module.exports = { PORTFOLIO_SEED_OVERRIDES, PRIVATE_PORTFOLIO_SEEDS };
+
+const SPECIALTY_PORTAL_OVERRIDES = {
+  'digital-divorce': {
+    portfolioStatus:'development', priority:'critical', activeBuildState:'testing',
+    currentProductionVersion:'Not deployed or live verified', latestDevelopmentVersion:'0.5.0 (current owner-recorded dedicated base; reverify dedicated artifact)', latestZipName:'divorce-law-aid-v0.5.0.zip',
+    progressPercent:72, continuationPromptVersion:'Current owner-recorded Divorce Law Aid v0.5.0 continuation record; dedicated artifact remains authoritative',
+    lastReleaseSummary:'Exact-tested New York-first divorce and family-law platform with public starting help, document organization, professional profiles, security boundaries, and closed production gates.',
+    completedMilestones:['First-build prompt completed','Current owner record identifies v0.5.0 as the newest dedicated exact-tested base; reverify in the portal project'],
+    nextMilestones:['Complete real-device, professional legal, accessibility, privacy, and deployment acceptance before public launch'],
+    blockers:['Not deployed or live verified','External legal, device, accessibility, privacy, operational, and deployment acceptance remains pending'],
+    knownLimitations:['The source package remains separate from Smarter Justice and must be verified in its dedicated portal project before deployment.']
+  },
+  'criminal-law-help-center': {
+    portfolioStatus:'development', priority:'high', activeBuildState:'testing',
+    currentProductionVersion:'Not deployed or live verified', latestDevelopmentVersion:'0.5.0 (current owner-recorded dedicated base; reverify dedicated artifact)', latestZipName:'criminal-law-aid-v0.5.0.zip',
+    progressPercent:70, continuationPromptVersion:'Current owner-recorded Criminal Law Aid v0.5.0 continuation record; dedicated artifact remains authoritative',
+    lastReleaseSummary:'Exact-tested criminal-law development platform with urgent issue sorting, court and document organization, professional profiles, safety controls, and closed production gates.',
+    completedMilestones:['First-build prompt completed','Current owner record identifies v0.5.0 as the newest dedicated exact-tested base; reverify in the portal project'],
+    nextMilestones:['Complete real-device, criminal-law, accessibility, privacy, directory, and deployment acceptance before public launch'],
+    blockers:['Not deployed or live verified','External legal, device, accessibility, privacy, operational, and deployment acceptance remains pending']
+  },
+  'employment-labor-law-help-center': {
+    portfolioStatus:'development', priority:'high', activeBuildState:'testing',
+    currentProductionVersion:'Not deployed or live verified', latestDevelopmentVersion:'0.8.0 (current owner-recorded dedicated base; reverify dedicated artifact)',
+    latestZipName:'employment-law-aid-v0.8.0.zip',
+    progressPercent:78, continuationPromptVersion:'Current owner-recorded Employment Law Aid v0.8.0 continuation record; dedicated artifact remains authoritative',
+    lastReleaseSummary:'Exact-tested employment-law and workers’ compensation development platform with employee and employer separation, document organization, professional profiles, and closed production gates.',
+    completedMilestones:['First-build prompt completed','Current owner record identifies v0.8.0 as the newest dedicated exact-tested base; reverify in the portal project'],
+    nextMilestones:['Complete real-device, employment-law, workers’ compensation, accessibility, privacy, directory, and deployment acceptance before public launch'],
+    blockers:['Not deployed or live verified','External legal, device, accessibility, privacy, operational, and deployment acceptance remains pending']
+  },
+  'accident-injury-help': {
+    portfolioStatus:'development', priority:'critical', activeBuildState:'testing',
+    currentProductionVersion:'Not deployed or live verified', latestDevelopmentVersion:'0.32.0', latestZipName:'personal-injury-law-aid-v0.32.0.zip',
+    progressPercent:74, continuationPromptVersion:'Current Personal Injury Law Aid v0.3.0 exact-tested continuation record',
+    lastReleaseSummary:'Owner-recorded exact-tested Personal Injury Law Aid v0.32.0 covering vehicle accidents and other injury categories. Workers’ Compensation Law Aid remains a separate portal; live integration and deployment remain closed.',
+    completedMilestones:['First-build prompt completed','v0.3.0 exact-artifact-tested development package completed'],
+    nextMilestones:['Complete dedicated exact-artifact verification, v1.4.0 read-only adapter, staging receipt/rollback, real-device, personal-injury, accessibility, privacy, directory, and deployment acceptance'],
+    blockers:['Not deployed or live verified','External legal, medical-language, device, accessibility, privacy, operational, and deployment acceptance remains pending']
+  },
+  'disability-benefits-help': {
+    portfolioStatus:'development', priority:'high', activeBuildState:'testing',
+    currentProductionVersion:'Not deployed or live verified', latestDevelopmentVersion:'0.4.0 (current owner-recorded dedicated base; reverify dedicated artifact)', latestZipName:'disability-law-aid-v0.4.0.zip',
+    progressPercent:68, continuationPromptVersion:'Current owner-recorded Disability Law Aid v0.4.0 continuation record; dedicated artifact remains authoritative',
+    lastReleaseSummary:'Exact-tested disability-law platform with SSI, SSDI, appeals, private disability, ERISA, veterans, disability-rights, professional profiles, accessibility, and closed production gates.',
+    completedMilestones:['First-build prompt completed','Current owner record identifies v0.4.0 as the newest dedicated exact-tested base; reverify in the portal project'],
+    nextMilestones:['Complete real-device, disability-law, benefits, accessibility, privacy, directory, and deployment acceptance'],
+    blockers:['Not deployed or live verified','External legal, benefits, device, accessibility, privacy, operational, and deployment acceptance remains pending']
+  },
+  'housing-tenant-help': {
+    portfolioStatus:'development', priority:'high', activeBuildState:'testing',
+    currentProductionVersion:'Not deployed or live verified', latestDevelopmentVersion:'0.6.0 (current owner-recorded dedicated base; reverify dedicated artifact)',
+    latestZipName:'landlord-tenant-aid-v0.6.0.zip',
+    progressPercent:76, continuationPromptVersion:'Current owner-recorded Landlord Tenant Aid v0.6.0 continuation record; dedicated artifact remains authoritative',
+    lastReleaseSummary:'Exact-tested landlord-tenant platform with tenant and landlord separation, eviction, rent, repairs, public and subsidized housing, professional profiles, and closed production gates.',
+    completedMilestones:['First-build prompt completed','Current owner record identifies v0.6.0 as the newest dedicated exact-tested base; reverify in the portal project'],
+    nextMilestones:['Complete real-device, housing-law, accessibility, privacy, directory, source, and deployment acceptance'],
+    blockers:['Not deployed or live verified','External housing-law, device, accessibility, privacy, operational, and deployment acceptance remains pending']
+  },
+  'estate-planning-probate': {
+    latestDevelopmentVersion:'1.0.36', latestZipName:'estate-help-desk-v1.0.36.zip',
+    currentProductionVersion:'Not deployed or live verified', activeBuildState:'testing', progressPercent:72,
+    continuationPromptVersion:'Estate Law Aid v1.0.36 continuation record',
+    blockers:['Not deployed or live verified','External estate-law, device, accessibility, privacy, professional, and deployment acceptance remains pending']
+  }
+};
+
+const CANONICAL_SPECIALTY_SLUGS = new Set([
+  'digital-divorce',
+  'criminal-law-help-center',
+  'employment-labor-law-help-center',
+  'accident-injury-help',
+  'disability-benefits-help',
+  'housing-tenant-help',
+  'estate-planning-probate'
+]);
+const LEGACY_SPECIALTY_ALIASES = new Set([
+  'motor-vehicle-personal-injury-help-center',
+  'social-security-disability-help-center',
+  'tenant-landlord-help-center'
+]);
+
+module.exports = {
+  PORTFOLIO_SEED_OVERRIDES: { ...PORTFOLIO_SEED_OVERRIDES, ...SPECIALTY_PORTAL_OVERRIDES },
+  PRIVATE_PORTFOLIO_SEEDS: PRIVATE_PORTFOLIO_SEEDS.filter(item => !CANONICAL_SPECIALTY_SLUGS.has(item.slug) && !LEGACY_SPECIALTY_ALIASES.has(item.slug))
+};

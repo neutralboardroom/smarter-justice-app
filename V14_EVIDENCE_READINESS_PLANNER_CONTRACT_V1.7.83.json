@@ -1,0 +1,69 @@
+{
+  "schema_id": "SJP-V14-EVIDENCE-READINESS-PLANNER-CONTRACT-2026-08-03-V1",
+  "release_version": "1.7.83",
+  "governing_packet": {
+    "id": "SJP-LMP-UNIVERSAL-ONE-STEP-2026-08-03-V14-ALL-CHAT-MODES",
+    "sha256": "fce42ce0927748f94189692ef5b3bf8e0fe9f8d12273287f03a68eb7bccdad6f"
+  },
+  "exact_source_artifact": {
+    "filename": "smarter-justice-v1.7.82.zip",
+    "version": "1.7.82",
+    "sha256": "61fea278a69055915e9b4b916e4b64ec514614f1746cacf659a6931ccd0228b1"
+  },
+  "purpose": "Convert a preview-only V14 evidence batch into a deterministic owner-readable coverage and gap plan without applying any state change.",
+  "priority_order": [
+    "github-canonical-repository",
+    "render-central-service",
+    "postgres-database",
+    "transactional-email",
+    "domains-dns-tls-health",
+    "openai-central-gateway",
+    "neutral-boardroom-billing",
+    "production-deployment"
+  ],
+  "dependencies": {
+    "github-canonical-repository": [],
+    "render-central-service": [
+      "github-canonical-repository"
+    ],
+    "postgres-database": [],
+    "transactional-email": [],
+    "domains-dns-tls-health": [
+      "render-central-service"
+    ],
+    "openai-central-gateway": [
+      "render-central-service"
+    ],
+    "neutral-boardroom-billing": [],
+    "production-deployment": [
+      "github-canonical-repository",
+      "render-central-service",
+      "postgres-database",
+      "transactional-email",
+      "domains-dns-tls-health",
+      "openai-central-gateway",
+      "neutral-boardroom-billing"
+    ]
+  },
+  "owner_actions": {
+    "github-canonical-repository": "Identify the exact canonical GitHub repository and collect one current nonsecret repository-observation receipt.",
+    "render-central-service": "Identify the exact approved Render central service and collect one current nonsecret dark-deployment receipt.",
+    "postgres-database": "Collect one current nonsecret PostgreSQL provider receipt covering connection, migration, backup, and restore evidence.",
+    "transactional-email": "Collect one current nonsecret transactional-email receipt covering sender authentication, delivery, bounce handling, and secret absence.",
+    "domains-dns-tls-health": "Collect one current nonsecret domain receipt covering canonical URL, DNS, TLS, health, and redirect policy.",
+    "openai-central-gateway": "After the protected key action, collect one controlled nonsecret OpenAI central-gateway smoke receipt with kill-switch and fallback evidence.",
+    "neutral-boardroom-billing": "Collect one current nonsecret billing receipt covering seller boundary, entitlements, webhooks, refunds, and secret absence.",
+    "production-deployment": "After all dependency receipts pass, collect a separate exact deployment receipt with monitoring, rollback, and detached owner GO evidence."
+  },
+  "fail_closed_rules": {
+    "preview_only": true,
+    "persists_receipts": false,
+    "mutates_live_register": false,
+    "applies_promotions": false,
+    "external_calls": false,
+    "secrets_allowed": false,
+    "owner_go_inferred": false,
+    "deployment_authorized": false,
+    "launch_state": "NO_GO"
+  }
+}

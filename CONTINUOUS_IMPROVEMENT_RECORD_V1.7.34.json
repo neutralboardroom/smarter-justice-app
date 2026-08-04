@@ -1,0 +1,51 @@
+{
+  "version": "1.7.34",
+  "date": "2026-07-27",
+  "theme": "Legal-Network Action Center and current portal truth",
+  "builderOriginatedCandidates": [
+    {
+      "id": "v1734-candidate-action-center",
+      "decision": "IMPROVE_NOW",
+      "problem": "Owner attention records lacked a concise execution queue and dispositions.",
+      "result": "Implemented deterministic action lanes, fingerprints, dispositions, and resurfacing."
+    },
+    {
+      "id": "v1734-candidate-truth-unification",
+      "decision": "IMPROVE_NOW",
+      "problem": "Owner Control Center and workspace represented conflicting portal subsets.",
+      "result": "Unified both to the 25-record current registry."
+    },
+    {
+      "id": "v1734-candidate-self-identity",
+      "decision": "IMPROVE_NOW",
+      "problem": "An archive cannot contain its own stable checksum.",
+      "result": "Implemented truthful detached self-identity semantics."
+    },
+    {
+      "id": "v1734-candidate-live-adapters",
+      "decision": "DEFER",
+      "problem": "No exact live producer-consumer evidence exists.",
+      "result": "Preserved D2 and no live connection."
+    },
+    {
+      "id": "v1734-candidate-profile-growth",
+      "decision": "DEFER",
+      "problem": "Profile growth would displace current deployment and owner-operation priorities.",
+      "result": "Added zero profiles; no weak padding."
+    },
+    {
+      "id": "v1734-candidate-cross-pillar-admin",
+      "decision": "REJECT",
+      "problem": "Smarter Justice should not administer other pillars.",
+      "result": "Legal-only scope preserved."
+    }
+  ],
+  "releaseWarrant": {
+    "material": true,
+    "coherent": true,
+    "safe": true,
+    "completeSubjectToExactArtifactGate": true
+  },
+  "ownerBenefit": "The owner now receives one current legal-network picture and a deterministic next-action queue rather than multiple conflicting portal subsets.",
+  "publicUserBenefit": "No public workflow was disrupted; current public summaries are more accurate and all sensitive gates remain closed."
+}

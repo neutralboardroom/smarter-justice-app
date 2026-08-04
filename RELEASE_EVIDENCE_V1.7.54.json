@@ -1,0 +1,145 @@
+{
+  "release": "1.7.54",
+  "generatedAt": "2026-07-30",
+  "status": "CANDIDATE_PENDING_FINAL_EXACT_ACCEPTANCE",
+  "sourceBaseline": {
+    "filename": "smarter-justice-v1.7.53.zip",
+    "sha256": "f6c881faf1f72de44d062b15d3d7701574663a2b22a9d9273a6930580a359cac",
+    "sizeBytes": 4570546,
+    "entries": 1306,
+    "files": 1288,
+    "directories": 18,
+    "uncompressedBytes": 12560761,
+    "compressedBytes": 4380270,
+    "inventoryRecords": 1287,
+    "inventorySha256": "9c3c86944989026ebafe325d497a973e805e9e494f35418f9e3b3dab9dfcc31a",
+    "packageJsonSha256": "d74047957da87b20724f56c6e2dd72ea4013c13e316239cb4fe39039ea28f8c6",
+    "packageLockSha256": "551330437c360961c4362e82fd66fc5ab35d80582f7ab4a48b263450c659fed3",
+    "twoIndependentExtractionTreesEqual": true,
+    "dependencyIndependentSuiteRuns": 2,
+    "dependencyIndependentCommandParts": 107,
+    "totalReadinessParts": 108
+  },
+  "scope": {
+    "release": "1.7.54",
+    "generatedAt": "2026-07-30",
+    "theme": "Exact source/portfolio truth reconciliation plus conflict-safe professional lifecycle, notification and operational-governance foundation",
+    "selectedOutcomes": [
+      "final v1.7.53 exact source and rollback truth",
+      "current four-portal owner-recorded identity reconciliation",
+      "versioned field ownership and projection conflict controls",
+      "firm/office/seat/roster lifecycle separation",
+      "billing/entitlement/opportunity gate decision foundations",
+      "transactional notification classification, redaction, idempotency and provider receipts",
+      "liveness/readiness/dependency/public-status separation",
+      "supply-chain diagnostics and exact blocker evidence"
+    ],
+    "preserved": [
+      "all working public tools and routes",
+      "four separate portal repositories",
+      "one portal canonical profile boundary",
+      "free basic profile control",
+      "English-first state",
+      "Domestic Violence safety and Stop Sign continuity",
+      "all closed live gates",
+      "NO_GO and not deployed truth"
+    ],
+    "deferred": [
+      "D4 portal staging requires exact portal artifacts",
+      "real-device/accessibility acceptance requires physical review",
+      "PostgreSQL/SMTP/monitoring/backup/restore require external services",
+      "legal/privacy/support/incident/owner GO require named acceptance"
+    ],
+    "closedGates": [
+      "payments",
+      "subscriptions",
+      "booking",
+      "reviews",
+      "confidential uploads",
+      "sensitive external AI",
+      "automatic filing",
+      "unrestricted professional routing",
+      "automatic cross-repository synchronization",
+      "automatic public-user matter transfer",
+      "live portal connections",
+      "professional opportunities",
+      "appointments",
+      "reviews"
+    ],
+    "completionEvidence": [
+      "tests/truth-lifecycle-governance-v1754.test.js",
+      "BASELINE_AND_PORTFOLIO_TRUTH_RECONCILIATION_V1.7.54.json",
+      "PROFESSIONAL_LIFECYCLE_GOVERNANCE_ACCEPTANCE_V1.7.54.json"
+    ]
+  },
+  "testModel": {
+    "dependencyIndependentCommandParts": 108,
+    "postgresDependentParts": 1,
+    "totalReadinessParts": 109,
+    "baselineRuns": 2,
+    "finalSourceRunsPending": false,
+    "finalSourceRuns": 2,
+    "sourceRunsResult": "PASS_IDENTICAL_OUTPUT",
+    "sourceRunLogSha256": "d2a0d07e98caa62683fca6a5ce8bb6d9adc28648f29d49702abc45ae6ed955d1"
+  },
+  "exactArtifact": {
+    "identityMode": "DETACHED_AFTER_PACKAGING",
+    "finalReceiptLocation": "delivery response",
+    "selfReferentialHashClaim": false,
+    "deterministicDoubleBuildRequired": true,
+    "independentFreshExtractionsRequired": 2,
+    "candidateAcceptance": "PASSED",
+    "candidateEvidence": "CANDIDATE_ARTIFACT_ACCEPTANCE_V1.7.54.json",
+    "candidateSha256": "3f30b524469e1302a758f3389ce429812b5bdc8c75d979fa9784b347c7427a84",
+    "candidateFreshExtractionRuns": 2,
+    "candidateSuiteResult": "PASS_TWICE_IDENTICAL_OUTPUT"
+  },
+  "launchState": "NO_GO",
+  "deploymentAuthorized": false,
+  "closedGates": [
+    "payments",
+    "subscriptions",
+    "booking",
+    "reviews",
+    "confidential uploads",
+    "sensitive external AI",
+    "automatic filing",
+    "unrestricted professional routing",
+    "automatic cross-repository synchronization",
+    "automatic public-user matter transfer",
+    "live portal connections",
+    "professional opportunities",
+    "appointments",
+    "reviews"
+  ],
+  "authenticBlockers": {
+    "npmCi": "BLOCKED",
+    "request": "xtend-4.0.2.tgz",
+    "registryResult": "HTTP 404 from configured internal npm proxy",
+    "npmAudit": "BLOCKED",
+    "auditResult": "HTTP 404 from configured audit endpoint",
+    "postgresAcceptance": "NOT_RUN_DEPENDENCY_UNAVAILABLE",
+    "claimBoundary": "No clean-install, PostgreSQL, vulnerability or supply-chain acceptance is claimed."
+  },
+  "workingTreeValidation": {
+    "fieldOwnershipAndLifecycleGovernance": true,
+    "notificationEnvelope": true,
+    "ownerEndpoint": true,
+    "fourPortalTruthReconciled": true,
+    "deterministicSbom": true,
+    "sourceTreeCopyEqualityBeforeEvidenceFinalization": true
+  },
+  "blockedChecks": [
+    "clean npm install",
+    "fresh vulnerability audit",
+    "PostgreSQL acceptance",
+    "SMTP acceptance",
+    "real-device/accessibility",
+    "portal D4 staging",
+    "monitoring/backup/restore",
+    "legal/privacy/support/incident/owner GO"
+  ],
+  "supplyChainEvidence": "SUPPLY_CHAIN_DIAGNOSTIC_V1.7.54.json",
+  "automatedTestEvidence": "AUTOMATED_TEST_EVIDENCE_V1.7.54.json",
+  "finalReleaseEvidenceIndex": "FINAL_RELEASE_EVIDENCE_INDEX_V1.7.54.json"
+}

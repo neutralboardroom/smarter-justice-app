@@ -1,0 +1,73 @@
+{
+  "releaseVersion": "1.7.55",
+  "generatedAt": "2026-07-30",
+  "nodeVersion": "v22.16.0",
+  "npmVersion": "10.9.2",
+  "testModel": {
+    "dependencyIndependentCommandParts": 109,
+    "postgresqlDependentReadinessParts": 1,
+    "totalReadinessParts": 110
+  },
+  "baselineSource": {
+    "filename": "smarter-justice-v1.7.54.zip",
+    "sha256": "761961a2545165e95c5e1581d4dbdb52218d055533921e03bbf546311e160f71",
+    "sizeBytes": 4667259,
+    "entries": 1340,
+    "files": 1322,
+    "directories": 18,
+    "uncompressedBytes": 12873793,
+    "compressedBytes": 4471873,
+    "inventoryRecords": 1321,
+    "inventorySha256": "65caaa08a52b1f04c03cf4dbcd0098876cbfb31785073f6c932ffae68de56071",
+    "packageJsonSha256": "ab3b087bedc3883fdb5d985e7d5b60194940a44ad14c48b8a3359b04d1119a0a",
+    "packageLockSha256": "ae22c56b733d2738aab637e30ff167b7d5b174a1f51c8f9a2662836406fe040f",
+    "sbomSha256": "4663b42a3e5d6f34b0fb961e1f09988cb04eef2adca45532fa494de98b3b072e",
+    "treeSha256": "113730a2908cc465eca2a0061781711ce3ee62a6e96ff9eddfb0b8d7ec07aee6",
+    "dependencyIndependentParts": 108,
+    "totalReadinessParts": 109,
+    "testLogSha256": "d2a0d07e98caa62683fca6a5ce8bb6d9adc28648f29d49702abc45ae6ed955d1",
+    "serialBaselineRuns": 2,
+    "serialBaselineResult": "PASS_IDENTICAL_OUTPUT"
+  },
+  "newReleaseTest": "tests/release-reproducibility-v1755.test.js",
+  "newReleaseCoverage": [
+    "exact v1.7.54 source and rollback truth",
+    "current four initial portal owner-recorded identities",
+    "ephemeral or process-isolated server test startup across the complete suite",
+    "two complete 109-command suites running concurrently from independent trees",
+    "public-surface preservation hashes",
+    "NO_GO and closed gates"
+  ],
+  "sourceAcceptance": {
+    "result": "PASS_TWO_INDEPENDENT_SOURCE_TREES_CONCURRENTLY",
+    "runs": 2,
+    "commandPartsPerRun": 109,
+    "testLogSha256": "13fc73a7ade3561e2760cdee704e012f8696ec8e6569bff77866f740912b039c",
+    "identicalOutput": true,
+    "parallelIsolation": "PASS",
+    "fixedPortScan": "PASS_NO_FIXED_SERVER_TEST_PORTS",
+    "newHelper": "tests/test-port.js"
+  },
+  "candidateArchiveAcceptance": {
+    "extractions": 2,
+    "inventoryValidation": "PASS",
+    "sourceTreeEquality": "PASS",
+    "concurrentCompleteSuites": 2,
+    "commandPartsPerSuite": 109,
+    "result": "PASS",
+    "identicalOutput": true,
+    "testLogSha256": "13fc73a7ade3561e2760cdee704e012f8696ec8e6569bff77866f740912b039c",
+    "candidateSha256": "856687218d1c6b0d64851ff0569bdedb493692108476e701864b2ed23ecffbd3",
+    "deterministicDoubleBuild": true
+  },
+  "finalArchiveAcceptance": "DETACHED_AFTER_FINAL_BUILD",
+  "claimsNotMade": [
+    "PostgreSQL acceptance",
+    "clean configured-registry dependency installation",
+    "fresh vulnerability audit",
+    "SMTP acceptance",
+    "real-device or assistive-technology acceptance",
+    "D4 portal staging",
+    "deployment or launch approval"
+  ]
+}

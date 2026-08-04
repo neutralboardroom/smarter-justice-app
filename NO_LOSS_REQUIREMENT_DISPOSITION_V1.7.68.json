@@ -1,0 +1,65 @@
+{
+  "schema": "smarter-justice-no-loss-requirement-disposition",
+  "releaseVersion": "1.7.68",
+  "generatedAt": "2026-07-31T23:58:00-04:00",
+  "controllingPrompt": {
+    "filename": "Smarter_Justice_Central_Master_Thirteenth_Pass_Current_Pack_Authority_Final_Continuation_and_No_Churn_Control_2026-08-01.txt",
+    "sha256": "2027379953b53b17eaafceb8aaf10871e0efc51282e0de095d42d2de0e253f4d",
+    "sizeBytes": 366579,
+    "lineCount": 7920,
+    "openingMarkerVerified": true,
+    "finalMarkerVerified": true,
+    "packId": "SJP-2026-08-01-C14-P36-D10-V12"
+  },
+  "dispositions": [
+    {
+      "requirement": "all v1.7.61 working capabilities",
+      "disposition": "PRESERVED",
+      "evidence": "full regression suite plus public-surface audit"
+    },
+    {
+      "requirement": "visible Spanish toggle while English-only release is active",
+      "disposition": "CORRECTED AS STALE",
+      "evidence": "PUBLIC_LANGUAGE_AND_VISUAL_SYSTEM_ACCEPTANCE_V1.7.68.json"
+    },
+    {
+      "requirement": "public homepage and visual system",
+      "disposition": "PRESERVED",
+      "evidence": "no evidence-supported redesign required"
+    },
+    {
+      "requirement": "external production and live gates",
+      "disposition": "DEFERRED WITH GENUINE DEPENDENCY",
+      "evidence": "LAUNCH_CAPABILITY_MATRIX_V1.7.68.json"
+    },
+    {
+      "requirement": "DUR-001 through DUR-074 coordinated-pack baseline",
+      "disposition": "IMPLEMENTED",
+      "evidence": "DURABLE_RULE_COVERAGE_MATRIX_V1.7.68.json"
+    }
+  ],
+  "silentOmissions": 0,
+  "weakenedMandatoryRules": 0,
+  "items": [
+    {
+      "requirement": "Canonical active master-pair runtime discovery and detached receipt binding",
+      "disposition": "IMPLEMENTED",
+      "evidence": "CANONICAL_ACTIVE_MASTER_PAIR_V1.7.68.json"
+    },
+    {
+      "requirement": "Pair epoch/revision replay and split-brain protection",
+      "disposition": "IMPLEMENTED",
+      "evidence": "MASTER_PAIR_REPLAY_AND_SPLIT_BRAIN_ACCEPTANCE_V1.7.68.json"
+    },
+    {
+      "requirement": "Public experience preservation without cosmetic churn",
+      "disposition": "PRESERVED",
+      "evidence": "PUBLIC_LANGUAGE_AND_VISUAL_SYSTEM_ACCEPTANCE_V1.7.68.json"
+    },
+    {
+      "requirement": "DUR-001 through DUR-074 closed inheritance and pack stability",
+      "disposition": "IMPLEMENTED",
+      "evidence": "DURABLE_RULE_BASELINE_MANIFEST_V1.7.68.json"
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+# Continue Smarter Justice from v1.7.27
+
+Treat the exact v1.7.27 ZIP as the source of truth. Preserve server-enforced sensitive public-form closure, truthful public availability messaging, source-freshness directory filtering, free core tools, approved $15 monthly/$150 annual professional pricing, neutral organic ordering, profile sources and review dates, and all closed activation gates. Brooklyn must lead the next profile-growth batch. Do not activate paid enrollment, Human Review, professional services, payments, inquiries, booking, uploads, reviews, routing, reporting, sharing, or filing without owner approval and required legal, ethics, privacy, payment, security, and operational evidence.

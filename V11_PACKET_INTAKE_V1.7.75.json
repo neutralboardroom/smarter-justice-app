@@ -1,0 +1,17 @@
+{
+  "schema_id": "SJP-V11-PACKET-INTAKE-2026-08-03-V1",
+  "releaseVersion": "1.7.75",
+  "packet_id": "SJP-LMP-UNIVERSAL-ONE-STEP-2026-08-03-V11-STRUCTURED-WORKFLOWS-GOVERNANCE",
+  "packet_sha256": "5fc583752204994082de559b0b240aa78272ef2d92d6b5ebcba11f9ff38c15cc",
+  "all_packet_checksums_valid": true,
+  "shared_rule_total": 206,
+  "source": {
+    "artifact_name": "smarter-justice-v1.7.73.zip",
+    "artifact_sha256": "5ed64a1c13de1a536303b07a2277e234a822b9bc316b7ea97cf2547e90811898",
+    "artifact_size_bytes": 8196348
+  },
+  "missing_intermediate_artifact": "smarter-justice-v1.7.74.zip",
+  "recovery_rule_applied": true,
+  "byte_exact_v174_recovery_claimed": false,
+  "generated_at": "2026-08-03T10:20:00-04:00"
+}

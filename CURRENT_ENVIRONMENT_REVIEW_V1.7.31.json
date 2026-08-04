@@ -1,0 +1,75 @@
+{
+  "version": "1.7.31",
+  "reviewDate": "2026-07-24",
+  "scope": "Targeted legal-portal public-user, technology, accessibility, deployment, marketplace, and source review",
+  "items": [
+    {
+      "area": "Communication and evidence organization",
+      "source": "v1.7.30 artifact journey audit",
+      "finding": "Users could organize dates, source findings, action plans, drafts, and binders, but lacked one factual chronology for calls, messages, meetings, observations, preservation status, and follow-up.",
+      "materiality": "high",
+      "actionNow": "Add a deterministic device-only Communication & Evidence Log with local text/JSON export and explicit evidence, recording, deadline, storage, and professional-sharing limits.",
+      "monitorTrigger": "User feedback, accessibility failure, or evidence that the workflow duplicates rather than connects existing tools."
+    },
+    {
+      "area": "Node.js runtime",
+      "source": "Official Node.js release records reviewed 2026-07-24",
+      "sourceUrl": "https://nodejs.org/en/blog/release/v22.23.1",
+      "finding": "Node 22 remains an LTS line and newer patched Node 22 releases exist beyond the exact build runtime v22.16.0.",
+      "materiality": "medium",
+      "actionNow": "Preserve the 22.x architecture and require a current supported Node 22 patch in deployment acceptance rather than an unneeded major migration.",
+      "monitorTrigger": "A Node 22 security release, end-of-life milestone, or hosting runtime change."
+    },
+    {
+      "area": "Accessibility",
+      "source": "W3C WCAG 2.2 Recommendation reviewed 2026-07-24",
+      "sourceUrl": "https://www.w3.org/TR/WCAG22/",
+      "finding": "Focus visibility, target size, consistent help, redundant entry, and accessible authentication remain material to public and professional workflows.",
+      "materiality": "high",
+      "actionNow": "Use explicit labels, native keyboard-operable controls, visible status output, clear error recovery, and no authentication barrier in the new public workflow.",
+      "monitorTrigger": "New WCAG guidance, accessibility complaint, or failed real-device/assistive-technology acceptance."
+    },
+    {
+      "area": "Dependency installation and audit",
+      "source": "Controlled npm ci and npm audit attempts",
+      "finding": "The configured npm registry timed out; no clean-install or current vulnerability result can be claimed.",
+      "materiality": "high",
+      "actionNow": "Keep dependencies unchanged, package no test shims, preserve fail-closed truth, and rerun clean install/audit when registry access is available.",
+      "monitorTrigger": "Registry availability or a dependency advisory."
+    },
+    {
+      "area": "AI and confidential document handling",
+      "source": "Artifact behavior, privacy boundaries, and current activation gates",
+      "finding": "External AI for sensitive content and confidential production uploads remain unapproved and lack live operational evidence.",
+      "materiality": "high",
+      "actionNow": "Keep the new log deterministic and device-only rather than collecting files, recording communications, or transmitting content.",
+      "monitorTrigger": "Approved provider, private storage, privacy, security, retention, support, and human-escalation evidence."
+    },
+    {
+      "area": "Professional marketplace",
+      "source": "Current professional-controlled firm, office, roster, and attorney pages reviewed 2026-07-24",
+      "finding": "Qualifying Phase One inventory remained available across all six priority regions, including the Queens lead region.",
+      "materiality": "high",
+      "actionNow": "Add 36 source-tracked attorneys and 6 firms while retaining unclaimed, independently unverified, unpaid, non-participating, unavailable, and inquiry-ineligible states.",
+      "monitorTrigger": "Source staleness, correction or claim request, duplicate finding, or documented geographic diminishing returns."
+    }
+  ],
+  "rejectedTrends": [
+    {
+      "trend": "Record calls, capture messages, or collect evidence files in the new public tool",
+      "reason": "That would create consent, privacy, storage, metadata, security, jurisdiction, and operational burdens without approved infrastructure; a user-entered local index provides safer immediate value."
+    },
+    {
+      "trend": "Activate external AI to judge evidence or communications",
+      "reason": "No approved provider, evidence-authentication method, privacy/retention system, or human-escalation acceptance exists; the tool must not fabricate authenticity or legal significance."
+    },
+    {
+      "trend": "Change the Node major version",
+      "reason": "No verified material user benefit over the supported Node 22.x architecture in this release; patch-level currency is the appropriate action."
+    },
+    {
+      "trend": "Open uploads, payments, booking, reviews, or unrestricted routing",
+      "reason": "Required production infrastructure, professional-responsibility, support, and live acceptance evidence remain unavailable."
+    }
+  ]
+}

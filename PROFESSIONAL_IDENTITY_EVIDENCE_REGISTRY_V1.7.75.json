@@ -1,0 +1,93 @@
+{
+  "schema": "smarter-justice-professional-identity-evidence-registry",
+  "schemaVersion": "1.0.0",
+  "releaseVersion": "1.7.75",
+  "generatedAt": "2026-08-02T17:04:00-04:00",
+  "state": "CENTRAL_CONTRACTS_LOCALLY_ACCEPTED_EXTERNAL_SOURCE_INGESTION_NOT_ACTIVATED",
+  "credentialNamespace": "NY-OCA-{seven-digit registration number}",
+  "canonicalIdentityWriter": "SMARTER_JUSTICE_CENTRAL_ONLY",
+  "portalAccess": "VERSIONED_READ_ONLY_PROJECTIONS_AND_RECEIPTS",
+  "automaticPortalWriteBack": false,
+  "source": {
+    "datasetId": "eqw2-r5nb",
+    "title": "NYS Attorney Registrations",
+    "provider": "NYS Unified Court System / NY Open Data",
+    "retrievedAt": "2026-08-01T12:56:00-04:00",
+    "observedLastUpdated": "2026-07-28",
+    "postingFrequencyLabel": "Quarterly",
+    "observedApproxRows": 432000,
+    "observedColumns": 20,
+    "fullSnapshotDownloadedInThisBuild": false,
+    "metadataState": "CURRENT_OFFICIAL_SOURCE_RESEARCH",
+    "targetedDirectoryRecheckRequiredFor": [
+      "FIRST_PUBLICATION",
+      "CLAIM_APPROVAL",
+      "OUTREACH",
+      "FEATURED_PLACEMENT",
+      "OPPORTUNITY_ELIGIBILITY",
+      "REINSTATEMENT_AFTER_HOLD",
+      "MATERIAL_DISCREPANCY"
+    ]
+  },
+  "stateSeparation": [
+    "IDENTITY",
+    "JURISDICTION_CREDENTIAL",
+    "REGISTRATION_OBSERVATION",
+    "BUSINESS_CONTACT",
+    "FIRM_RELATIONSHIP",
+    "SPECIALTY_EVIDENCE",
+    "COURT_EVIDENCE",
+    "PUBLIC_DISCIPLINE",
+    "GOOD_STANDING_EVIDENCE",
+    "CLAIM",
+    "MEMBERSHIP",
+    "OPPORTUNITY_ELIGIBILITY",
+    "PORTAL_SPECIALTY_ACCEPTANCE",
+    "PUBLICATION",
+    "CURRENTNESS",
+    "SUPPRESSION"
+  ],
+  "privacy": {
+    "publishResidentialStreetAddress": false,
+    "businessContactOnly": true,
+    "safeFallback": [
+      "COMPANY",
+      "CITY",
+      "STATE",
+      "COUNTY",
+      "SAFE_CONTACT_PATH"
+    ],
+    "addressAloneDoesNotProveOfficeOrResidence": true
+  },
+  "truth": {
+    "registrationStatusDoesNotMeanGoodStanding": true,
+    "absenceOfDisciplineClaimProhibited": true,
+    "specialtyInferenceFromRegistrationProhibited": true,
+    "outcomeRankingProhibited": true,
+    "clientFactHarvestingProhibited": true
+  },
+  "portalPacket": {
+    "schemaVersion": "1.0.0",
+    "requiredForOrdinaryPortalRelease": true,
+    "receiptStates": [
+      "ACCEPTED",
+      "REJECTED",
+      "HELD",
+      "CORRECTED",
+      "PUBLISHED",
+      "SUPPRESSED"
+    ],
+    "centralSuppressionPropagation": true,
+    "staleRestorationPrevention": true
+  },
+  "gates": {
+    "liveSourceRefresh": false,
+    "portalD4": false,
+    "publication": false,
+    "claimApproval": false,
+    "outreach": false,
+    "opportunityEligibility": false,
+    "deployment": false
+  },
+  "launchState": "NO_GO"
+}

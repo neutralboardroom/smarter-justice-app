@@ -1,0 +1,99 @@
+{
+  "schema": "smarter-justice-continuation-snapshot",
+  "schemaVersion": "1.1.0",
+  "releaseVersion": "1.7.60",
+  "updatedAt": "2026-07-31T16:19:00-04:00",
+  "controllingPrompt": {
+    "filename": "Smarter_Justice_Reusable_Version_1(1).txt",
+    "canonicalFilename": "Smarter_Justice_Reusable_Version_1.txt",
+    "sha256": "3951396dafb92a5d706cf0483000717a70d5f72c0ef84888a7d77f9163d5b8ac",
+    "sizeBytes": 152541,
+    "lineCount": 4320,
+    "openingMarkerVerified": true,
+    "finalMarkerVerified": true
+  },
+  "baseArtifact": {
+    "filename": "smarter-justice-v1.7.59.zip",
+    "version": "1.7.59",
+    "sha256": "f08909fbf879e9005d47b7361f089decc946d78c21c6118471b4be1fb77f9bb0",
+    "sizeBytes": 5140893,
+    "entries": 1540,
+    "files": 1522,
+    "directories": 18,
+    "uncompressedBytes": 14436218,
+    "compressedBytes": 4915537,
+    "inventoryRecords": 1521,
+    "inventorySha256": "3d88800f9dffc009de333cc37564f8f8a78a7f6a5700d12f54fc4b29acb4b891",
+    "packageJsonSha256": "4989e6fe8315ce1aefa7d6293e697ead2e529f4867c878ff7875254594b36a38",
+    "packageLockSha256": "0a57574b69b77be51de3b0b3473ca297f3871a9f5e4c3d20494826842d161743",
+    "lockfileSha256": "0a57574b69b77be51de3b0b3473ca297f3871a9f5e4c3d20494826842d161743",
+    "sbomSha256": "655acf4a8b0ce9497a14f676015aec7d1dcf9a27957aeb21f39e13dc4a6f1fd1",
+    "treeSha256": "b1d0354584ec57223cca8dc48a62462a13a91adf6ee22f8f1714241fb72bc9cf",
+    "dependencyIndependentParts": 113,
+    "totalReadinessParts": 114,
+    "testLogSha256": "30a26f564c97905a6f8bd527058f1b67bdaa402e06290f2a7a7c5aafe9c5f87e",
+    "concurrentBaselineRuns": 2,
+    "concurrentBaselineResult": "PASS_IDENTICAL_OUTPUT",
+    "evidenceState": "CURRENT_CHAT_REPRODUCED"
+  },
+  "candidate": {
+    "filename": "smarter-justice-v1.7.60-candidate.zip",
+    "state": "PENDING_DETERMINISTIC_BUILD"
+  },
+  "workspace": {
+    "state": "SOURCE_IMPLEMENTED_TESTING_PENDING",
+    "publicHtmlPreserved": true
+  },
+  "completed": [
+    "exact prompt and v1.7.59 intake",
+    "two independent 113-command baselines",
+    "connected release scope",
+    "portal authority update",
+    "owner-action readiness implementation",
+    "newest-artifact learning revalidation"
+  ],
+  "pending": [
+    "working-tree acceptance",
+    "candidate deterministic builds",
+    "candidate clean-extraction acceptance",
+    "final sealed builds",
+    "final clean-extraction acceptance",
+    "detached final identity"
+  ],
+  "blocked": [
+    "PostgreSQL and vulnerability audit",
+    "D4 portal staging",
+    "Domestic Violence qualified review",
+    "real-device/accessibility acceptance",
+    "production services",
+    "legal/privacy/support/incident review",
+    "Roger GO"
+  ],
+  "rollback": {
+    "filename": "smarter-justice-v1.7.59.zip",
+    "version": "1.7.59",
+    "sha256": "f08909fbf879e9005d47b7361f089decc946d78c21c6118471b4be1fb77f9bb0",
+    "sizeBytes": 5140893,
+    "entries": 1540,
+    "files": 1522,
+    "directories": 18,
+    "uncompressedBytes": 14436218,
+    "compressedBytes": 4915537,
+    "inventoryRecords": 1521,
+    "inventorySha256": "3d88800f9dffc009de333cc37564f8f8a78a7f6a5700d12f54fc4b29acb4b891",
+    "packageJsonSha256": "4989e6fe8315ce1aefa7d6293e697ead2e529f4867c878ff7875254594b36a38",
+    "packageLockSha256": "0a57574b69b77be51de3b0b3473ca297f3871a9f5e4c3d20494826842d161743",
+    "lockfileSha256": "0a57574b69b77be51de3b0b3473ca297f3871a9f5e4c3d20494826842d161743",
+    "sbomSha256": "655acf4a8b0ce9497a14f676015aec7d1dcf9a27957aeb21f39e13dc4a6f1fd1",
+    "treeSha256": "b1d0354584ec57223cca8dc48a62462a13a91adf6ee22f8f1714241fb72bc9cf",
+    "dependencyIndependentParts": 113,
+    "totalReadinessParts": 114,
+    "testLogSha256": "30a26f564c97905a6f8bd527058f1b67bdaa402e06290f2a7a7c5aafe9c5f87e",
+    "concurrentBaselineRuns": 2,
+    "concurrentBaselineResult": "PASS_IDENTICAL_OUTPUT",
+    "evidenceState": "CURRENT_CHAT_REPRODUCED"
+  },
+  "recoveryProcedure": "Revalidate the exact working tree and continue from the next pending acceptance stage.",
+  "nextCommand": "Run the complete dependency-independent suite and exact release pipeline.",
+  "launchState": "NO_GO"
+}

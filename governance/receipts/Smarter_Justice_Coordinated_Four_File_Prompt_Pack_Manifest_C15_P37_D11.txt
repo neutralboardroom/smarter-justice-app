@@ -1,0 +1,137 @@
+SMARTER JUSTICE + LEGAL MICRO-PORTALS
+CURRENT COORDINATED FOUR-FILE PROMPT PACK MANIFEST
+CENTRAL FIFTEENTH PASS + PORTAL-FAMILY THIRTY-SEVENTH PASS
++ ACTIVE DEPLOYMENT FILE 4 ELEVENTH PASS
+SUNDAY LAUNCH-DAY ORCHESTRATION AND PRODUCTION STABILIZATION
+
+PACK ID: SJP-2026-08-02-C15-P37-D11-V13
+OWNER: ROGER GILLMAN
+PREPARED: AUGUST 2, 2026 AT APPROXIMATELY 11:22 AM — AMERICA/NEW_YORK
+TRANSACTION: MPPT-2026-08-02-SJ15-LMP37-D11-8147A3179ABD
+PACK STATE: FOUR-FILE PACK FINALIZED — READY FOR SUNDAY DEPLOYMENT EXECUTION
+DEPLOYMENT FILE 4 STATE: ACTIVE — INCLUDED — EXACTLY BOUND
+CURRENT DATE STATE: SUNDAY, AUGUST 2, 2026 — DEPLOYMENT DAY
+MONDAY OBJECTIVE: AUGUST 3, 2026 — LIVE LAUNCH AND ATTORNEY DEMONSTRATION
+CANONICAL ACTIVE-PAIR REGISTER STATE: COMMIT NOT PROVEN BY THIS PACK
+PRODUCT DEPLOYMENT AND LIVE ACCEPTANCE: SEPARATELY EVIDENCED
+
+PARENT FOUR-FILE PACK
+- Pack ID: SJP-2026-08-01-C14-P36-D10-V12
+- manifest: `Smarter_Justice_Coordinated_Four_File_Prompt_Pack_Manifest_Central_Fourteenth_Portal_Thirty_Sixth_Deployment_Tenth_2026-08-01.txt`
+- SHA-256: 46f3242fa096bf2a933b814d203772e915094fca8927fbf8e4e36897b2e3ca0c
+- size: 6,041 bytes
+- lines: 125
+- disposition: HISTORICAL ROLLBACK PACK
+
+FILE 1 — SMARTER JUSTICE CENTRAL MASTER
+- filename: Smarter_Justice_Central_Master_Fifteenth_Pass_Sunday_Launch_Day_Deployment_Orchestration_2026-08-02.txt
+- SHA-256: 5dad361bae18b25dc8193ce32ca4263a72b12ce90316d6b97dbd191ce2b74223
+- size: 383,921 bytes
+- lines: 8,204
+- role: central repository authority, portfolio launch orchestration, and
+  shared-boundary constraint.
+- parent SHA-256: aa195e85f8b76ca6e3cb388477fd7acc0ed7e057c5a680e1c14ee7e801715250
+
+FILE 2 — UNIVERSAL LEGAL MICRO-PORTALS MASTER
+- filename: Legal_Micro_Portals_Master_Thirty_Seventh_Pass_Sunday_Launch_Day_Deployment_Orchestration_2026-08-02.txt
+- SHA-256: 9e158fb5e3eaca32861d067e026513ac179f0b416e6abe6f51d889faaf29a387
+- size: 746,617 bytes
+- lines: 15,240
+- role: one assigned portal repository authority and launch-wave execution.
+- parent SHA-256: 043bbe3b7f3cc3a2b6e4c7991c6c0d213a617db7606beb4199f892eff8c57884
+
+FILE 3 — THIS COORDINATED MANIFEST
+- role: exact four-file, launch-cohort, baseline, state, parent, and rollback
+  binding;
+- does not replace any complete master.
+
+FILE 4 — ACTIVE LIVE-DEPLOYMENT MASTER
+- filename: Smarter_Justice_and_Legal_Micro_Portals_Deployment_Master_Eleventh_Pass_Sunday_Launch_Day_Batch_Authorization_and_Production_Stabilization_2026-08-02.txt
+- SHA-256: 3b35a35490fdf159d278c1d949dc2537da51b58c6fa079f387fb036d8c0843a7
+- size: 246,306 bytes
+- lines: 4,308
+- role: deployment doctor, exact cohort authorization, canary/wave execution,
+  GitHub/Render/Codex operations, DNS/TLS, external-service activation,
+  production verification, stabilization, incident, and rollback.
+- parent SHA-256: f9fe1c62e2f2c1b02b23b2aeb256218872238f382db2e4d354ce0af9381a41da
+
+DURABLE-RULE BASELINE
+- baseline: DRB-2026-08-02-DUR001-DUR086-V13
+- immediate parent: DRB-2026-08-01-DUR001-DUR080-V12
+- active rules: DUR-001 through DUR-086
+- semantic-capsule SHA-256: fb405d2b8e4301d8a2f02c33951dc28ebe7e492a181f679d6e088ebf31f6196b
+- parent semantic-capsule SHA-256: bc097f85ca8b6a4ae9a143a6b218d320c1d3000e4c406565850cbfbc945c27b5
+- transaction: DRC-2026-08-02-DUR081-DUR086-LAUNCH-DAY-FB405D2B8E43
+
+EXACT LAUNCH COHORT
+1. Smarter Justice central.
+2. Divorce Law Aid.
+3. Estate Law Aid.
+4. Personal Injury Law Aid.
+5. Domestic Violence Aid.
+
+PORTFOLIO AUTHORIZATION
+Roger may authorize the exact frozen five-product cohort with one clear current-
+chat command. The cohort manifest must bind each exact release, repository,
+commit/tree, Render service, canonical domain, deployment mode, migration class,
+last-known-good, rollback, qualification, and protected actions. Do not request
+duplicate approval. Reauthorize only changed identities or affected shared
+dependencies.
+
+SUNDAY EXECUTION
+- preflight every product before the first production request;
+- freeze the cohort release manifest;
+- choose a canary from evidence;
+- deploy in bounded waves;
+- verify DNS/TLS/canonical origins and callbacks;
+- configure and test available external services;
+- close protected actions one at a time;
+- run exact production smoke, screenshots, and stabilization checks;
+- return one portfolio GO, CONDITIONAL GO, or NO GO report.
+
+WHY LIVE STATUS REMAINS SEPARATELY EVIDENCED
+This pack authorizes and requires execution. It cannot itself prove that an
+exact release reached an exact production service and canonical domain. That is
+not a restriction. Builders must perform every available action and record live
+status only from exact GitHub, Render, domain, health, smoke, screenshot,
+monitoring, migration, and rollback evidence.
+
+NEW SMARTER JUSTICE CHAT
+latest exact Smarter Justice artifact + exact-matched final continuation +
+Files 1, 2, 3, and 4 + current product deployment records.
+
+EXISTING SMARTER JUSTICE CHAT
+reuse exact accessible verified artifact and continuation; add or use Files 1,
+2, 3, and 4; do not request duplicate uploads or authorization.
+
+NEW MICRO-PORTAL CHAT
+latest exact assigned-portal artifact + exact-matched final continuation +
+Files 2, 1, 3, and 4 + current portal deployment records.
+
+EXISTING MICRO-PORTAL CHAT
+reuse exact accessible verified portal artifact and continuation; add or use
+Files 2, 1, 3, and 4; do not request duplicate uploads or authorization.
+
+ROLLBACK
+- central parent SHA-256: aa195e85f8b76ca6e3cb388477fd7acc0ed7e057c5a680e1c14ee7e801715250
+- portal parent SHA-256: 043bbe3b7f3cc3a2b6e4c7991c6c0d213a617db7606beb4199f892eff8c57884
+- deployment parent SHA-256: f9fe1c62e2f2c1b02b23b2aeb256218872238f382db2e4d354ce0af9381a41da
+- parent manifest SHA-256: 46f3242fa096bf2a933b814d203772e915094fca8927fbf8e4e36897b2e3ca0c
+- product rollback remains product-specific.
+
+===============================================================================
+SELF-EXCLUDING FOUR-FILE PACK-MANIFEST INTEGRITY
+===============================================================================
+
+BEGIN SELF-EXCLUDING FOUR-FILE PACK MANIFEST INTEGRITY VALUE
+SELF_EXCLUDING_SHA256: de3b716b924a51cf9873a757bf0e03385f62b3fed9334728cc51d6c9b4e33916
+SELF_EXCLUDING_CANONICAL_BYTES: 6207
+SELF_EXCLUDING_CANONICAL_LINES: 130
+ALGORITHM: SHA-256
+CANONICALIZATION: SJ-FOUR-FILE-PACK-MANIFEST-CANON-2
+END SELF-EXCLUDING FOUR-FILE PACK MANIFEST INTEGRITY VALUE
+
+The detached full-file SHA-256 supplied at delivery remains the stronger exact
+identity.
+
+END OF CURRENT SMARTER JUSTICE COORDINATED FOUR-FILE PROMPT PACK MANIFEST

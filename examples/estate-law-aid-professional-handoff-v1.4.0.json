@@ -1,0 +1,4501 @@
+{
+  "handoffVersion": "1.4.0",
+  "handoffDigest": "8099ebca512c0fa79d24821407845b5400c83bf6c2ca945807400d6c9d34a0b1",
+  "sourceSystem": "smarter-justice",
+  "destinationPortalId": "estate-law-aid",
+  "contract": {
+    "contractId": "professional-contract:estate-law-aid:v1.4.0",
+    "contractVersion": "1.4.0",
+    "portalId": "estate-law-aid",
+    "portalName": "Estate Law Aid",
+    "portalEvidenceState": "OWNER_RECORDED",
+    "contractState": "D3_ADAPTER_TESTS_PASS",
+    "adapterMode": "LOCAL_READ_ONLY_CONSUMER_SIMULATION",
+    "sourceSystem": "Smarter Justice centralized professional business layer",
+    "destinationSystem": "Independent legal portal: Estate Law Aid",
+    "direction": "Smarter Justice to portal — read-only export by default",
+    "userExperienceOwner": "Estate Law Aid",
+    "accountAndBillingOwner": "Smarter Justice",
+    "professionalRecordOwner": "Dedicated portal for specialty rendering and source-specific public facts; Smarter Justice for shared account, organization, seat, and billing metadata.",
+    "allowedFields": [
+      "contractVersion",
+      "assignmentId",
+      "sourceRevision",
+      "approvedSourceRevision",
+      "recordFingerprint",
+      "distributionAction",
+      "suppressionState",
+      "portalId",
+      "portalName",
+      "sourcePortalIds",
+      "mappingState",
+      "professionalId",
+      "organizationId",
+      "seatId",
+      "officeIds",
+      "practiceAssignments",
+      "jurisdictions",
+      "languages",
+      "serviceMethods",
+      "publicProfileState",
+      "claimState",
+      "credentialState",
+      "sourceFreshness",
+      "participationState",
+      "availabilityState",
+      "inquiryEligibility",
+      "appointmentEligibility",
+      "membershipCoverageState",
+      "sponsorshipState",
+      "evidenceState",
+      "sourceOrigin",
+      "dataAuthority",
+      "portalPublicationState",
+      "publicationEligible",
+      "generatedAt"
+    ],
+    "prohibitedFields": [
+      "password hashes or authentication secrets",
+      "payment card or bank data",
+      "Stripe secret identifiers or webhook payloads",
+      "user legal matters or intake facts",
+      "privileged or confidential communications",
+      "uploaded user documents",
+      "private professional claim evidence",
+      "private correction or dispute evidence",
+      "internal support conversations",
+      "production database credentials",
+      "automatic instructions to change portal data"
+    ],
+    "rules": {
+      "paymentDoesNotBuyVerification": true,
+      "paymentDoesNotBuyPracticeAssignment": true,
+      "paymentDoesNotBuyOrganicRank": true,
+      "individualEvidenceRequired": true,
+      "correctionNeverRequiresPayment": true,
+      "noAutomaticWrites": true,
+      "noUserMatterTransfer": true
+    },
+    "liveConnection": false,
+    "automaticWrites": false,
+    "stagingVerified": false,
+    "productionVerified": false
+  },
+  "portalBuildStandard": {
+    "standardId": "legal-micro-portal-integrated",
+    "standardVersion": "1.0.0",
+    "standardPath": "LEGAL_MICRO_PORTAL_INTEGRATED_STANDARD_V1.0.0.md",
+    "conformanceState": "REQUIRED_AT_PORTAL_RELEASE",
+    "exactArtifactAuthority": true,
+    "dualMissionRequired": true,
+    "profileMetricsRequired": true,
+    "completeSurfaceAuditRequired": true,
+    "exactArtifactTestingRequired": true,
+    "ownerActivationRequired": true
+  },
+  "publicationPolicy": {
+    "accountAndBillingSystem": "Smarter Justice",
+    "publicProfileSystem": "destination micro-portal",
+    "smarterJusticePublicDirectory": false,
+    "claimOrCreateEntryPointsAllowed": true,
+    "professionalSelfEntryAllowed": true,
+    "ownerAssistedEntryAllowed": true,
+    "publicationRequiresOwnerApprovedAssignment": true,
+    "publicationRequiresCredentialVerification": true,
+    "paymentAloneNeverPublishes": true,
+    "automaticWrites": false
+  },
+  "assignments": [
+    {
+      "contractVersion": "1.4.0",
+      "assignmentId": "portal-assignment:professional-kreuza-ganolli:estate-law-aid",
+      "sourceRevision": 1,
+      "approvedSourceRevision": 0,
+      "recordFingerprint": "0ca2ef748eca743a20e9709d0ffbad05432ffcbfd99a5b4291f3678b63e49965",
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "portalId": "estate-law-aid",
+      "sourcePortalIds": [
+        "estate-planning-probate"
+      ],
+      "mappingState": "LEGACY_ALIAS_MAPPED",
+      "professionalId": "professional-kreuza-ganolli",
+      "organizationId": "organization:firm:firm-ganolli-law",
+      "seatId": "seat:professional:professional-kreuza-ganolli",
+      "officeIds": [
+        "office:firm:firm-ganolli-law:1"
+      ],
+      "practiceAssignments": [
+        "practice-assignment:professional-kreuza-ganolli:family-law",
+        "practice-assignment:professional-kreuza-ganolli:divorce",
+        "practice-assignment:professional-kreuza-ganolli:child-custody",
+        "practice-assignment:professional-kreuza-ganolli:child-support",
+        "practice-assignment:professional-kreuza-ganolli:adoption",
+        "practice-assignment:professional-kreuza-ganolli:wills"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "languages": [],
+      "serviceMethods": [],
+      "publicProfileState": "unclaimed public profile",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "sourceFreshness": {
+        "state": "SOURCE_OBSERVED",
+        "reviewedAt": "2026-07-20T00:00:00.000Z",
+        "sourceCount": 1
+      },
+      "participationState": "not participating",
+      "availabilityState": "not configured",
+      "inquiryEligibility": false,
+      "appointmentEligibility": false,
+      "membershipCoverageState": "no qualifying active coverage",
+      "sponsorshipState": "none",
+      "evidenceState": "SOURCE_OBSERVED",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "generatedAt": "2026-07-29T02:29:54.377Z"
+    },
+    {
+      "contractVersion": "1.4.0",
+      "assignmentId": "portal-assignment:professional-andrew-bokser:estate-law-aid",
+      "sourceRevision": 1,
+      "approvedSourceRevision": 0,
+      "recordFingerprint": "9c96c883e5725267685f5756708dbf792a57cf3a830972a85226b303df4cee33",
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "portalId": "estate-law-aid",
+      "sourcePortalIds": [
+        "estate-planning-probate"
+      ],
+      "mappingState": "LEGACY_ALIAS_MAPPED",
+      "professionalId": "professional-andrew-bokser",
+      "organizationId": "organization:firm:firm-andrew-bokser",
+      "seatId": "seat:professional:professional-andrew-bokser",
+      "officeIds": [
+        "office:firm:firm-andrew-bokser:1"
+      ],
+      "practiceAssignments": [
+        "practice-assignment:professional-andrew-bokser:family-law",
+        "practice-assignment:professional-andrew-bokser:divorce",
+        "practice-assignment:professional-andrew-bokser:criminal-defense",
+        "practice-assignment:professional-andrew-bokser:probate",
+        "practice-assignment:professional-andrew-bokser:estate-administration"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "languages": [],
+      "serviceMethods": [],
+      "publicProfileState": "unclaimed public profile",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "sourceFreshness": {
+        "state": "SOURCE_OBSERVED",
+        "reviewedAt": "2026-07-20T00:00:00.000Z",
+        "sourceCount": 1
+      },
+      "participationState": "not participating",
+      "availabilityState": "not configured",
+      "inquiryEligibility": false,
+      "appointmentEligibility": false,
+      "membershipCoverageState": "no qualifying active coverage",
+      "sponsorshipState": "none",
+      "evidenceState": "SOURCE_OBSERVED",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "generatedAt": "2026-07-29T02:29:54.377Z"
+    },
+    {
+      "contractVersion": "1.4.0",
+      "assignmentId": "portal-assignment:professional-frank-hosein:estate-law-aid",
+      "sourceRevision": 1,
+      "approvedSourceRevision": 0,
+      "recordFingerprint": "44a2b2ae55b1f7a7c93fe42cff197ac1339e9f8d1d627e527e15b66cd3ace281",
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "portalId": "estate-law-aid",
+      "sourcePortalIds": [
+        "estate-planning-probate"
+      ],
+      "mappingState": "LEGACY_ALIAS_MAPPED",
+      "professionalId": "professional-frank-hosein",
+      "organizationId": "organization:firm:firm-frank-hosein",
+      "seatId": "seat:professional:professional-frank-hosein",
+      "officeIds": [
+        "office:firm:firm-frank-hosein:1"
+      ],
+      "practiceAssignments": [
+        "practice-assignment:professional-frank-hosein:estate-planning"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "languages": [],
+      "serviceMethods": [],
+      "publicProfileState": "unclaimed public profile",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "sourceFreshness": {
+        "state": "SOURCE_OBSERVED",
+        "reviewedAt": "2026-07-20T00:00:00.000Z",
+        "sourceCount": 1
+      },
+      "participationState": "not participating",
+      "availabilityState": "not configured",
+      "inquiryEligibility": false,
+      "appointmentEligibility": false,
+      "membershipCoverageState": "no qualifying active coverage",
+      "sponsorshipState": "none",
+      "evidenceState": "SOURCE_OBSERVED",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "generatedAt": "2026-07-29T02:29:54.377Z"
+    },
+    {
+      "contractVersion": "1.4.0",
+      "assignmentId": "portal-assignment:professional-roger-archibald:estate-law-aid",
+      "sourceRevision": 1,
+      "approvedSourceRevision": 0,
+      "recordFingerprint": "7dec1534aa0c0c9484710d163b41be96d2f5f2cbc50b8a006fae7dcb1d8f7c79",
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "portalId": "estate-law-aid",
+      "sourcePortalIds": [
+        "estate-planning-probate"
+      ],
+      "mappingState": "LEGACY_ALIAS_MAPPED",
+      "professionalId": "professional-roger-archibald",
+      "organizationId": "organization:firm:firm-roger-archibald",
+      "seatId": "seat:professional:professional-roger-archibald",
+      "officeIds": [
+        "office:firm:firm-roger-archibald:1"
+      ],
+      "practiceAssignments": [
+        "practice-assignment:professional-roger-archibald:criminal-law",
+        "practice-assignment:professional-roger-archibald:employment-law",
+        "practice-assignment:professional-roger-archibald:civil-rights",
+        "practice-assignment:professional-roger-archibald:medical-malpractice",
+        "practice-assignment:professional-roger-archibald:real-estate",
+        "practice-assignment:professional-roger-archibald:trusts-and-estates"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "languages": [],
+      "serviceMethods": [],
+      "publicProfileState": "unclaimed public profile",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "sourceFreshness": {
+        "state": "SOURCE_OBSERVED",
+        "reviewedAt": "2026-07-20T00:00:00.000Z",
+        "sourceCount": 1
+      },
+      "participationState": "not participating",
+      "availabilityState": "not configured",
+      "inquiryEligibility": false,
+      "appointmentEligibility": false,
+      "membershipCoverageState": "no qualifying active coverage",
+      "sponsorshipState": "none",
+      "evidenceState": "SOURCE_OBSERVED",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "generatedAt": "2026-07-29T02:29:54.377Z"
+    },
+    {
+      "contractVersion": "1.4.0",
+      "assignmentId": "portal-assignment:professional-orion-karagiannis:estate-law-aid",
+      "sourceRevision": 1,
+      "approvedSourceRevision": 0,
+      "recordFingerprint": "1c09651f363c6522a9aa4f2494537d8c1dd90bd470e3da8adf6b55123de2bb00",
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "portalId": "estate-law-aid",
+      "sourcePortalIds": [
+        "estate-planning-probate"
+      ],
+      "mappingState": "LEGACY_ALIAS_MAPPED",
+      "professionalId": "professional-orion-karagiannis",
+      "organizationId": "organization:firm:firm-pardalis-nohavicka",
+      "seatId": "seat:professional:professional-orion-karagiannis",
+      "officeIds": [
+        "office:firm:firm-pardalis-nohavicka:1"
+      ],
+      "practiceAssignments": [
+        "practice-assignment:professional-orion-karagiannis:real-estate",
+        "practice-assignment:professional-orion-karagiannis:intellectual-property",
+        "practice-assignment:professional-orion-karagiannis:entertainment-law",
+        "practice-assignment:professional-orion-karagiannis:trusts-and-estates",
+        "practice-assignment:professional-orion-karagiannis:cooperative-and-condominium-law"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceMethods": [
+        "telephone",
+        "in person"
+      ],
+      "publicProfileState": "unclaimed public profile",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "sourceFreshness": {
+        "state": "SOURCE_OBSERVED",
+        "reviewedAt": "2026-07-23T00:00:00.000Z",
+        "sourceCount": 2
+      },
+      "participationState": "not participating",
+      "availabilityState": "not configured",
+      "inquiryEligibility": false,
+      "appointmentEligibility": false,
+      "membershipCoverageState": "no qualifying active coverage",
+      "sponsorshipState": "none",
+      "evidenceState": "SOURCE_OBSERVED",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "generatedAt": "2026-07-29T02:29:54.377Z"
+    },
+    {
+      "contractVersion": "1.4.0",
+      "assignmentId": "portal-assignment:professional-amedeo-calandriello:estate-law-aid",
+      "sourceRevision": 1,
+      "approvedSourceRevision": 0,
+      "recordFingerprint": "9530b40f18c56d76f82bf98c1f47f4976801c6f919e1ac1856ea3c509bd53188",
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "portalId": "estate-law-aid",
+      "sourcePortalIds": [
+        "estate-planning-probate"
+      ],
+      "mappingState": "LEGACY_ALIAS_MAPPED",
+      "professionalId": "professional-amedeo-calandriello",
+      "organizationId": "organization:firm:firm-pardalis-nohavicka",
+      "seatId": "seat:professional:professional-amedeo-calandriello",
+      "officeIds": [
+        "office:firm:firm-pardalis-nohavicka:1"
+      ],
+      "practiceAssignments": [
+        "practice-assignment:professional-amedeo-calandriello:commercial-litigation",
+        "practice-assignment:professional-amedeo-calandriello:business-litigation",
+        "practice-assignment:professional-amedeo-calandriello:estate-planning",
+        "practice-assignment:professional-amedeo-calandriello:medicaid-related-matters"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceMethods": [
+        "telephone",
+        "in person"
+      ],
+      "publicProfileState": "unclaimed public profile",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "sourceFreshness": {
+        "state": "SOURCE_OBSERVED",
+        "reviewedAt": "2026-07-23T00:00:00.000Z",
+        "sourceCount": 1
+      },
+      "participationState": "not participating",
+      "availabilityState": "not configured",
+      "inquiryEligibility": false,
+      "appointmentEligibility": false,
+      "membershipCoverageState": "no qualifying active coverage",
+      "sponsorshipState": "none",
+      "evidenceState": "SOURCE_OBSERVED",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "generatedAt": "2026-07-29T02:29:54.377Z"
+    },
+    {
+      "contractVersion": "1.4.0",
+      "assignmentId": "portal-assignment:professional-michael-kayal:estate-law-aid",
+      "sourceRevision": 1,
+      "approvedSourceRevision": 0,
+      "recordFingerprint": "e610cb157ff2f70e96640c1db418ab4379928ad9d45e3c9fb72388b7563b0144",
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "portalId": "estate-law-aid",
+      "sourcePortalIds": [
+        "estate-planning-probate"
+      ],
+      "mappingState": "LEGACY_ALIAS_MAPPED",
+      "professionalId": "professional-michael-kayal",
+      "organizationId": "organization:firm:firm-chasan-lamparello-mallon-cappuzzo",
+      "seatId": "seat:professional:professional-michael-kayal",
+      "officeIds": [
+        "office:firm:firm-chasan-lamparello-mallon-cappuzzo:1"
+      ],
+      "practiceAssignments": [
+        "practice-assignment:professional-michael-kayal:commercial-litigation",
+        "practice-assignment:professional-michael-kayal:governmental-law",
+        "practice-assignment:professional-michael-kayal:wills-and-trusts",
+        "practice-assignment:professional-michael-kayal:estate-planning-and-administration"
+      ],
+      "jurisdictions": [
+        "New Jersey",
+        "New York"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceMethods": [
+        "telephone",
+        "in person"
+      ],
+      "publicProfileState": "unclaimed public profile",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "sourceFreshness": {
+        "state": "SOURCE_OBSERVED",
+        "reviewedAt": "2026-07-23T00:00:00.000Z",
+        "sourceCount": 1
+      },
+      "participationState": "not participating",
+      "availabilityState": "not configured",
+      "inquiryEligibility": false,
+      "appointmentEligibility": false,
+      "membershipCoverageState": "no qualifying active coverage",
+      "sponsorshipState": "none",
+      "evidenceState": "SOURCE_OBSERVED",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "generatedAt": "2026-07-29T02:29:54.377Z"
+    },
+    {
+      "contractVersion": "1.4.0",
+      "assignmentId": "portal-assignment:professional-matthew-nosenchuk:estate-law-aid",
+      "sourceRevision": 1,
+      "approvedSourceRevision": 0,
+      "recordFingerprint": "7e05bab886c41b5dc9aa7f483dbc3358d21a30b62bb2682a09fd9b8615b9f08c",
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "portalId": "estate-law-aid",
+      "sourcePortalIds": [
+        "estate-planning-probate"
+      ],
+      "mappingState": "LEGACY_ALIAS_MAPPED",
+      "professionalId": "professional-matthew-nosenchuk",
+      "organizationId": "organization:firm:firm-shulman-hill",
+      "seatId": "seat:professional:professional-matthew-nosenchuk",
+      "officeIds": [
+        "office:firm:firm-shulman-hill:1"
+      ],
+      "practiceAssignments": [
+        "practice-assignment:professional-matthew-nosenchuk:workers-compensation",
+        "practice-assignment:professional-matthew-nosenchuk:landlord-tenant-matters",
+        "practice-assignment:professional-matthew-nosenchuk:business-litigation",
+        "practice-assignment:professional-matthew-nosenchuk:trusts-and-estates",
+        "practice-assignment:professional-matthew-nosenchuk:criminal-law"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceMethods": [
+        "telephone",
+        "in person"
+      ],
+      "publicProfileState": "unclaimed public profile",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "sourceFreshness": {
+        "state": "SOURCE_OBSERVED",
+        "reviewedAt": "2026-07-23T00:00:00.000Z",
+        "sourceCount": 1
+      },
+      "participationState": "not participating",
+      "availabilityState": "not configured",
+      "inquiryEligibility": false,
+      "appointmentEligibility": false,
+      "membershipCoverageState": "no qualifying active coverage",
+      "sponsorshipState": "none",
+      "evidenceState": "SOURCE_OBSERVED",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "generatedAt": "2026-07-29T02:29:54.377Z"
+    },
+    {
+      "contractVersion": "1.4.0",
+      "assignmentId": "portal-assignment:professional-ellyn-kravitz:estate-law-aid",
+      "sourceRevision": 1,
+      "approvedSourceRevision": 0,
+      "recordFingerprint": "2e9a20a299057c6e00f39adfe54cdb7f00dcb64fd979c8528700d5578b38cb9a",
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "portalId": "estate-law-aid",
+      "sourcePortalIds": [
+        "estate-planning-probate"
+      ],
+      "mappingState": "LEGACY_ALIAS_MAPPED",
+      "professionalId": "professional-ellyn-kravitz",
+      "organizationId": "organization:firm:firm-abrams-fensterman",
+      "seatId": "seat:professional:professional-ellyn-kravitz",
+      "officeIds": [
+        "office:firm:firm-abrams-fensterman:1"
+      ],
+      "practiceAssignments": [
+        "practice-assignment:professional-ellyn-kravitz:elder-law",
+        "practice-assignment:professional-ellyn-kravitz:trusts-and-estates",
+        "practice-assignment:professional-ellyn-kravitz:estate-planning",
+        "practice-assignment:professional-ellyn-kravitz:guardianships",
+        "practice-assignment:professional-ellyn-kravitz:special-needs-planning"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceMethods": [
+        "telephone",
+        "in person"
+      ],
+      "publicProfileState": "unclaimed public profile",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "sourceFreshness": {
+        "state": "SOURCE_OBSERVED",
+        "reviewedAt": "2026-07-23T00:00:00.000Z",
+        "sourceCount": 1
+      },
+      "participationState": "not participating",
+      "availabilityState": "not configured",
+      "inquiryEligibility": false,
+      "appointmentEligibility": false,
+      "membershipCoverageState": "no qualifying active coverage",
+      "sponsorshipState": "none",
+      "evidenceState": "SOURCE_OBSERVED",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "generatedAt": "2026-07-29T02:29:54.377Z"
+    },
+    {
+      "contractVersion": "1.4.0",
+      "assignmentId": "portal-assignment:professional-michael-korsinsky:estate-law-aid",
+      "sourceRevision": 1,
+      "approvedSourceRevision": 0,
+      "recordFingerprint": "8a9fcda37b71dbe15d1351136f14c6852bb479450342c362aabdfbaa90f5ef12",
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "portalId": "estate-law-aid",
+      "sourcePortalIds": [
+        "estate-planning-probate"
+      ],
+      "mappingState": "LEGACY_ALIAS_MAPPED",
+      "professionalId": "professional-michael-korsinsky",
+      "organizationId": "organization:firm:firm-korsinsky-klein",
+      "seatId": "seat:professional:professional-michael-korsinsky",
+      "officeIds": [
+        "office:firm:firm-korsinsky-klein:1"
+      ],
+      "practiceAssignments": [
+        "practice-assignment:professional-michael-korsinsky:elder-law",
+        "practice-assignment:professional-michael-korsinsky:medicaid-planning",
+        "practice-assignment:professional-michael-korsinsky:estate-planning",
+        "practice-assignment:professional-michael-korsinsky:guardianships",
+        "practice-assignment:professional-michael-korsinsky:probate"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceMethods": [
+        "telephone",
+        "in person"
+      ],
+      "publicProfileState": "unclaimed public profile",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "sourceFreshness": {
+        "state": "SOURCE_OBSERVED",
+        "reviewedAt": "2026-07-23T00:00:00.000Z",
+        "sourceCount": 1
+      },
+      "participationState": "not participating",
+      "availabilityState": "not configured",
+      "inquiryEligibility": false,
+      "appointmentEligibility": false,
+      "membershipCoverageState": "no qualifying active coverage",
+      "sponsorshipState": "none",
+      "evidenceState": "SOURCE_OBSERVED",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "generatedAt": "2026-07-29T02:29:54.377Z"
+    },
+    {
+      "contractVersion": "1.4.0",
+      "assignmentId": "portal-assignment:professional-joseph-klein:estate-law-aid",
+      "sourceRevision": 1,
+      "approvedSourceRevision": 0,
+      "recordFingerprint": "450b20118245c427edb6603f93801e75fd8a9a1617b4a9fc2b5b70bf2669e06c",
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "portalId": "estate-law-aid",
+      "sourcePortalIds": [
+        "estate-planning-probate"
+      ],
+      "mappingState": "LEGACY_ALIAS_MAPPED",
+      "professionalId": "professional-joseph-klein",
+      "organizationId": "organization:firm:firm-korsinsky-klein",
+      "seatId": "seat:professional:professional-joseph-klein",
+      "officeIds": [
+        "office:firm:firm-korsinsky-klein:1"
+      ],
+      "practiceAssignments": [
+        "practice-assignment:professional-joseph-klein:civil-litigation",
+        "practice-assignment:professional-joseph-klein:construction-law",
+        "practice-assignment:professional-joseph-klein:real-estate-law",
+        "practice-assignment:professional-joseph-klein:employment-law",
+        "practice-assignment:professional-joseph-klein:estate-planning"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceMethods": [
+        "telephone",
+        "in person"
+      ],
+      "publicProfileState": "unclaimed public profile",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "sourceFreshness": {
+        "state": "SOURCE_OBSERVED",
+        "reviewedAt": "2026-07-23T00:00:00.000Z",
+        "sourceCount": 1
+      },
+      "participationState": "not participating",
+      "availabilityState": "not configured",
+      "inquiryEligibility": false,
+      "appointmentEligibility": false,
+      "membershipCoverageState": "no qualifying active coverage",
+      "sponsorshipState": "none",
+      "evidenceState": "SOURCE_OBSERVED",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "generatedAt": "2026-07-29T02:29:54.377Z"
+    },
+    {
+      "contractVersion": "1.4.0",
+      "assignmentId": "portal-assignment:professional-ronald-solow:estate-law-aid",
+      "sourceRevision": 1,
+      "approvedSourceRevision": 0,
+      "recordFingerprint": "8e7d92359a4185a83c1b43fe86bb533ef67b2a599ca7f75d4152ff1ca655a009",
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "portalId": "estate-law-aid",
+      "sourcePortalIds": [
+        "estate-planning-probate"
+      ],
+      "mappingState": "LEGACY_ALIAS_MAPPED",
+      "professionalId": "professional-ronald-solow",
+      "organizationId": "organization:firm:firm-schwartz-perry-heller",
+      "seatId": "seat:professional:professional-ronald-solow",
+      "officeIds": [
+        "office:firm:firm-schwartz-perry-heller:1"
+      ],
+      "practiceAssignments": [
+        "practice-assignment:professional-ronald-solow:estate-planning",
+        "practice-assignment:professional-ronald-solow:business-development",
+        "practice-assignment:professional-ronald-solow:client-relations"
+      ],
+      "jurisdictions": [
+        "California",
+        "New York",
+        "District of Columbia"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceMethods": [
+        "telephone",
+        "in person"
+      ],
+      "publicProfileState": "unclaimed public profile",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "sourceFreshness": {
+        "state": "SOURCE_OBSERVED",
+        "reviewedAt": "2026-07-23T00:00:00.000Z",
+        "sourceCount": 1
+      },
+      "participationState": "not participating",
+      "availabilityState": "not configured",
+      "inquiryEligibility": false,
+      "appointmentEligibility": false,
+      "membershipCoverageState": "no qualifying active coverage",
+      "sponsorshipState": "none",
+      "evidenceState": "SOURCE_OBSERVED",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "generatedAt": "2026-07-29T02:29:54.377Z"
+    },
+    {
+      "contractVersion": "1.4.0",
+      "assignmentId": "portal-assignment:professional-michael-a-coscia:estate-law-aid",
+      "sourceRevision": 1,
+      "approvedSourceRevision": 0,
+      "recordFingerprint": "8d4eaa5eb253d35f3619239f2fd89f998daa66a9baa8526f842d71e4072efa92",
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "portalId": "estate-law-aid",
+      "sourcePortalIds": [
+        "estate-planning-probate"
+      ],
+      "mappingState": "LEGACY_ALIAS_MAPPED",
+      "professionalId": "professional-michael-a-coscia",
+      "organizationId": "organization:firm:firm-abrams-fensterman",
+      "seatId": "seat:professional:professional-michael-a-coscia",
+      "officeIds": [
+        "office:firm:firm-abrams-fensterman:1"
+      ],
+      "practiceAssignments": [
+        "practice-assignment:professional-michael-a-coscia:divorce-and-matrimonial-law",
+        "practice-assignment:professional-michael-a-coscia:family-law",
+        "practice-assignment:professional-michael-a-coscia:child-custody",
+        "practice-assignment:professional-michael-a-coscia:real-estate-law",
+        "practice-assignment:professional-michael-a-coscia:commercial-litigation",
+        "practice-assignment:professional-michael-a-coscia:business-transactions",
+        "practice-assignment:professional-michael-a-coscia:estate-matters"
+      ],
+      "jurisdictions": [
+        "New York",
+        "New Jersey"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceMethods": [
+        "telephone",
+        "in person"
+      ],
+      "publicProfileState": "unclaimed public profile",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "sourceFreshness": {
+        "state": "SOURCE_OBSERVED",
+        "reviewedAt": "2026-07-23T00:00:00.000Z",
+        "sourceCount": 1
+      },
+      "participationState": "not participating",
+      "availabilityState": "not configured",
+      "inquiryEligibility": false,
+      "appointmentEligibility": false,
+      "membershipCoverageState": "no qualifying active coverage",
+      "sponsorshipState": "none",
+      "evidenceState": "SOURCE_OBSERVED",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "generatedAt": "2026-07-29T02:29:54.377Z"
+    },
+    {
+      "contractVersion": "1.4.0",
+      "assignmentId": "portal-assignment:professional-amanda-small:estate-law-aid",
+      "sourceRevision": 1,
+      "approvedSourceRevision": 0,
+      "recordFingerprint": "94e904b0aeec70ff199bf7c54211afd6425e9e232c95185a7425ce346cc2bebe",
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "portalId": "estate-law-aid",
+      "sourcePortalIds": [
+        "estate-planning-probate"
+      ],
+      "mappingState": "LEGACY_ALIAS_MAPPED",
+      "professionalId": "professional-amanda-small",
+      "organizationId": "organization:firm:firm-abrams-fensterman",
+      "seatId": "seat:professional:professional-amanda-small",
+      "officeIds": [
+        "office:firm:firm-abrams-fensterman:1"
+      ],
+      "practiceAssignments": [
+        "practice-assignment:professional-amanda-small:commercial-litigation",
+        "practice-assignment:professional-amanda-small:employment-litigation",
+        "practice-assignment:professional-amanda-small:estate-administration",
+        "practice-assignment:professional-amanda-small:consumer-justice"
+      ],
+      "jurisdictions": [
+        "New York",
+        "New Jersey"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceMethods": [
+        "telephone",
+        "in person"
+      ],
+      "publicProfileState": "unclaimed public profile",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "sourceFreshness": {
+        "state": "SOURCE_OBSERVED",
+        "reviewedAt": "2026-07-23T00:00:00.000Z",
+        "sourceCount": 1
+      },
+      "participationState": "not participating",
+      "availabilityState": "not configured",
+      "inquiryEligibility": false,
+      "appointmentEligibility": false,
+      "membershipCoverageState": "no qualifying active coverage",
+      "sponsorshipState": "none",
+      "evidenceState": "SOURCE_OBSERVED",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "generatedAt": "2026-07-29T02:29:54.377Z"
+    },
+    {
+      "contractVersion": "1.4.0",
+      "assignmentId": "portal-assignment:professional-vernita-charles:estate-law-aid",
+      "sourceRevision": 1,
+      "approvedSourceRevision": 0,
+      "recordFingerprint": "eaac3ee7ad26fb29e1b8893e104aa1a859127b83509866fbe409479f0b234f54",
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "portalId": "estate-law-aid",
+      "sourcePortalIds": [
+        "estate-planning-probate"
+      ],
+      "mappingState": "LEGACY_ALIAS_MAPPED",
+      "professionalId": "professional-vernita-charles",
+      "organizationId": "organization:firm:firm-law-office-vernita-charles",
+      "seatId": "seat:professional:professional-vernita-charles",
+      "officeIds": [
+        "office:firm:firm-law-office-vernita-charles:1"
+      ],
+      "practiceAssignments": [
+        "practice-assignment:professional-vernita-charles:divorce-and-family-law",
+        "practice-assignment:professional-vernita-charles:estate-planning",
+        "practice-assignment:professional-vernita-charles:probate",
+        "practice-assignment:professional-vernita-charles:trusts-and-estates"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceMethods": [
+        "telephone",
+        "in person"
+      ],
+      "publicProfileState": "unclaimed public profile",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "sourceFreshness": {
+        "state": "SOURCE_OBSERVED",
+        "reviewedAt": "2026-07-23T00:00:00.000Z",
+        "sourceCount": 2
+      },
+      "participationState": "not participating",
+      "availabilityState": "not configured",
+      "inquiryEligibility": false,
+      "appointmentEligibility": false,
+      "membershipCoverageState": "no qualifying active coverage",
+      "sponsorshipState": "none",
+      "evidenceState": "SOURCE_OBSERVED",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "generatedAt": "2026-07-29T02:29:54.377Z"
+    },
+    {
+      "contractVersion": "1.4.0",
+      "assignmentId": "portal-assignment:professional-sabrina-distefano:estate-law-aid",
+      "sourceRevision": 1,
+      "approvedSourceRevision": 0,
+      "recordFingerprint": "d9216a91338bb6560c5276a2b99737047ae3d7f52c757ff44e50b328e744ef90",
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "portalId": "estate-law-aid",
+      "sourcePortalIds": [
+        "estate-planning-probate"
+      ],
+      "mappingState": "LEGACY_ALIAS_MAPPED",
+      "professionalId": "professional-sabrina-distefano",
+      "organizationId": "organization:firm:firm-abrams-fensterman",
+      "seatId": "seat:professional:professional-sabrina-distefano",
+      "officeIds": [
+        "office:firm:firm-abrams-fensterman:1"
+      ],
+      "practiceAssignments": [
+        "practice-assignment:professional-sabrina-distefano:commercial-litigation",
+        "practice-assignment:professional-sabrina-distefano:trust-and-estate-litigation",
+        "practice-assignment:professional-sabrina-distefano:real-property-disputes"
+      ],
+      "jurisdictions": [
+        "New York",
+        "New Jersey"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceMethods": [
+        "telephone",
+        "in person"
+      ],
+      "publicProfileState": "unclaimed public profile",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "sourceFreshness": {
+        "state": "SOURCE_OBSERVED",
+        "reviewedAt": "2026-07-23T00:00:00.000Z",
+        "sourceCount": 2
+      },
+      "participationState": "not participating",
+      "availabilityState": "not configured",
+      "inquiryEligibility": false,
+      "appointmentEligibility": false,
+      "membershipCoverageState": "no qualifying active coverage",
+      "sponsorshipState": "none",
+      "evidenceState": "SOURCE_OBSERVED",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "generatedAt": "2026-07-29T02:29:54.377Z"
+    },
+    {
+      "contractVersion": "1.4.0",
+      "assignmentId": "portal-assignment:professional-karen-l-dippold:estate-law-aid",
+      "sourceRevision": 1,
+      "approvedSourceRevision": 0,
+      "recordFingerprint": "3236f915a197c36ce1dfbb8e2ff07e91be91710320cc2cc418226af25df28207",
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "portalId": "estate-law-aid",
+      "sourcePortalIds": [
+        "estate-planning-probate"
+      ],
+      "mappingState": "LEGACY_ALIAS_MAPPED",
+      "professionalId": "professional-karen-l-dippold",
+      "organizationId": "organization:firm:firm-beldock-levine-hoffman",
+      "seatId": "seat:professional:professional-karen-l-dippold",
+      "officeIds": [
+        "office:firm:firm-beldock-levine-hoffman:1"
+      ],
+      "practiceAssignments": [
+        "practice-assignment:professional-karen-l-dippold:civil-rights",
+        "practice-assignment:professional-karen-l-dippold:criminal-defense",
+        "practice-assignment:professional-karen-l-dippold:employment-law",
+        "practice-assignment:professional-karen-l-dippold:contested-estates",
+        "practice-assignment:professional-karen-l-dippold:landlord-tenant-disputes",
+        "practice-assignment:professional-karen-l-dippold:personal-injury-and-property-damage",
+        "practice-assignment:professional-karen-l-dippold:tax-audits-and-investigations"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceMethods": [
+        "telephone",
+        "in person"
+      ],
+      "publicProfileState": "unclaimed public profile",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "sourceFreshness": {
+        "state": "SOURCE_OBSERVED",
+        "reviewedAt": "2026-07-23T00:00:00.000Z",
+        "sourceCount": 1
+      },
+      "participationState": "not participating",
+      "availabilityState": "not configured",
+      "inquiryEligibility": false,
+      "appointmentEligibility": false,
+      "membershipCoverageState": "no qualifying active coverage",
+      "sponsorshipState": "none",
+      "evidenceState": "SOURCE_OBSERVED",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "generatedAt": "2026-07-29T02:29:54.377Z"
+    },
+    {
+      "contractVersion": "1.4.0",
+      "assignmentId": "portal-assignment:professional-tatiana-f-dasilva:estate-law-aid",
+      "sourceRevision": 1,
+      "approvedSourceRevision": 0,
+      "recordFingerprint": "72049d3c06eeff40554ba14bd826ad6ba761dfc4a9ae21e7a021ef72dc76443b",
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "portalId": "estate-law-aid",
+      "sourcePortalIds": [
+        "estate-planning-probate"
+      ],
+      "mappingState": "LEGACY_ALIAS_MAPPED",
+      "professionalId": "professional-tatiana-f-dasilva",
+      "organizationId": "organization:firm:firm-cohen-wolf",
+      "seatId": "seat:professional:professional-tatiana-f-dasilva",
+      "officeIds": [
+        "office:firm:firm-cohen-wolf:1",
+        "office:firm:firm-cohen-wolf:2"
+      ],
+      "practiceAssignments": [
+        "practice-assignment:professional-tatiana-f-dasilva:trusts-and-estates",
+        "practice-assignment:professional-tatiana-f-dasilva:elder-law",
+        "practice-assignment:professional-tatiana-f-dasilva:tax-law"
+      ],
+      "jurisdictions": [
+        "Connecticut"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceMethods": [
+        "telephone",
+        "in person"
+      ],
+      "publicProfileState": "unclaimed public profile",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "sourceFreshness": {
+        "state": "SOURCE_OBSERVED",
+        "reviewedAt": "2026-07-24T00:00:00.000Z",
+        "sourceCount": 1
+      },
+      "participationState": "not participating",
+      "availabilityState": "not configured",
+      "inquiryEligibility": false,
+      "appointmentEligibility": false,
+      "membershipCoverageState": "no qualifying active coverage",
+      "sponsorshipState": "none",
+      "evidenceState": "SOURCE_OBSERVED",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "generatedAt": "2026-07-29T02:29:54.377Z"
+    },
+    {
+      "contractVersion": "1.4.0",
+      "assignmentId": "portal-assignment:professional-jenna-a-shankman:estate-law-aid",
+      "sourceRevision": 1,
+      "approvedSourceRevision": 0,
+      "recordFingerprint": "7950e8cbff831e595971c3032769ab32ba4405ba94017ad4bf6e8e3a178512af",
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "portalId": "estate-law-aid",
+      "sourcePortalIds": [
+        "estate-planning-probate"
+      ],
+      "mappingState": "LEGACY_ALIAS_MAPPED",
+      "professionalId": "professional-jenna-a-shankman",
+      "organizationId": "organization:firm:firm-cohen-wolf",
+      "seatId": "seat:professional:professional-jenna-a-shankman",
+      "officeIds": [
+        "office:firm:firm-cohen-wolf:1",
+        "office:firm:firm-cohen-wolf:2"
+      ],
+      "practiceAssignments": [
+        "practice-assignment:professional-jenna-a-shankman:family-law",
+        "practice-assignment:professional-jenna-a-shankman:trusts-and-estates",
+        "practice-assignment:professional-jenna-a-shankman:probate-litigation",
+        "practice-assignment:professional-jenna-a-shankman:civil-litigation"
+      ],
+      "jurisdictions": [
+        "Connecticut"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceMethods": [
+        "telephone",
+        "in person"
+      ],
+      "publicProfileState": "unclaimed public profile",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "sourceFreshness": {
+        "state": "SOURCE_OBSERVED",
+        "reviewedAt": "2026-07-24T00:00:00.000Z",
+        "sourceCount": 1
+      },
+      "participationState": "not participating",
+      "availabilityState": "not configured",
+      "inquiryEligibility": false,
+      "appointmentEligibility": false,
+      "membershipCoverageState": "no qualifying active coverage",
+      "sponsorshipState": "none",
+      "evidenceState": "SOURCE_OBSERVED",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "generatedAt": "2026-07-29T02:29:54.377Z"
+    },
+    {
+      "contractVersion": "1.4.0",
+      "assignmentId": "portal-assignment:professional-ann-l-fowler-cruz:estate-law-aid",
+      "sourceRevision": 1,
+      "approvedSourceRevision": 0,
+      "recordFingerprint": "5bd23d1c609d3cd4b33dd502373595326805b46be761b177897fa2454ef53695",
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "portalId": "estate-law-aid",
+      "sourcePortalIds": [
+        "estate-planning-probate"
+      ],
+      "mappingState": "LEGACY_ALIAS_MAPPED",
+      "professionalId": "professional-ann-l-fowler-cruz",
+      "organizationId": "organization:firm:firm-cohen-wolf",
+      "seatId": "seat:professional:professional-ann-l-fowler-cruz",
+      "officeIds": [
+        "office:firm:firm-cohen-wolf:1",
+        "office:firm:firm-cohen-wolf:2"
+      ],
+      "practiceAssignments": [
+        "practice-assignment:professional-ann-l-fowler-cruz:elder-law",
+        "practice-assignment:professional-ann-l-fowler-cruz:trusts-and-estates",
+        "practice-assignment:professional-ann-l-fowler-cruz:probate"
+      ],
+      "jurisdictions": [
+        "Connecticut",
+        "New York"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceMethods": [
+        "telephone",
+        "in person"
+      ],
+      "publicProfileState": "unclaimed public profile",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "sourceFreshness": {
+        "state": "SOURCE_OBSERVED",
+        "reviewedAt": "2026-07-24T00:00:00.000Z",
+        "sourceCount": 1
+      },
+      "participationState": "not participating",
+      "availabilityState": "not configured",
+      "inquiryEligibility": false,
+      "appointmentEligibility": false,
+      "membershipCoverageState": "no qualifying active coverage",
+      "sponsorshipState": "none",
+      "evidenceState": "SOURCE_OBSERVED",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "generatedAt": "2026-07-29T02:29:54.377Z"
+    },
+    {
+      "contractVersion": "1.4.0",
+      "assignmentId": "portal-assignment:professional-greta-e-solomon:estate-law-aid",
+      "sourceRevision": 1,
+      "approvedSourceRevision": 0,
+      "recordFingerprint": "47b05678fc81bc57744693458f2fd7dbde3c4532d0b48d655682b55b080b40a9",
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "portalId": "estate-law-aid",
+      "sourcePortalIds": [
+        "estate-planning-probate"
+      ],
+      "mappingState": "LEGACY_ALIAS_MAPPED",
+      "professionalId": "professional-greta-e-solomon",
+      "organizationId": "organization:firm:firm-cohen-wolf",
+      "seatId": "seat:professional:professional-greta-e-solomon",
+      "officeIds": [
+        "office:firm:firm-cohen-wolf:1",
+        "office:firm:firm-cohen-wolf:2"
+      ],
+      "practiceAssignments": [
+        "practice-assignment:professional-greta-e-solomon:elder-law",
+        "practice-assignment:professional-greta-e-solomon:tax-law",
+        "practice-assignment:professional-greta-e-solomon:trusts-and-estates"
+      ],
+      "jurisdictions": [
+        "Connecticut"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceMethods": [
+        "telephone",
+        "in person"
+      ],
+      "publicProfileState": "unclaimed public profile",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "sourceFreshness": {
+        "state": "SOURCE_OBSERVED",
+        "reviewedAt": "2026-07-24T00:00:00.000Z",
+        "sourceCount": 1
+      },
+      "participationState": "not participating",
+      "availabilityState": "not configured",
+      "inquiryEligibility": false,
+      "appointmentEligibility": false,
+      "membershipCoverageState": "no qualifying active coverage",
+      "sponsorshipState": "none",
+      "evidenceState": "SOURCE_OBSERVED",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "generatedAt": "2026-07-29T02:29:54.377Z"
+    },
+    {
+      "contractVersion": "1.4.0",
+      "assignmentId": "portal-assignment:professional-philip-c-pires:estate-law-aid",
+      "sourceRevision": 1,
+      "approvedSourceRevision": 0,
+      "recordFingerprint": "864b16e82819b06586c50c82e68d685ca91d253533c73214038df112be5b7659",
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "portalId": "estate-law-aid",
+      "sourcePortalIds": [
+        "estate-planning-probate"
+      ],
+      "mappingState": "LEGACY_ALIAS_MAPPED",
+      "professionalId": "professional-philip-c-pires",
+      "organizationId": "organization:firm:firm-cohen-wolf",
+      "seatId": "seat:professional:professional-philip-c-pires",
+      "officeIds": [
+        "office:firm:firm-cohen-wolf:1",
+        "office:firm:firm-cohen-wolf:2"
+      ],
+      "practiceAssignments": [
+        "practice-assignment:professional-philip-c-pires:commercial-litigation",
+        "practice-assignment:professional-philip-c-pires:probate-litigation",
+        "practice-assignment:professional-philip-c-pires:municipal-law",
+        "practice-assignment:professional-philip-c-pires:land-use-and-zoning",
+        "practice-assignment:professional-philip-c-pires:property-tax-appeals"
+      ],
+      "jurisdictions": [
+        "Connecticut"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceMethods": [
+        "telephone",
+        "in person"
+      ],
+      "publicProfileState": "unclaimed public profile",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "sourceFreshness": {
+        "state": "SOURCE_OBSERVED",
+        "reviewedAt": "2026-07-24T00:00:00.000Z",
+        "sourceCount": 1
+      },
+      "participationState": "not participating",
+      "availabilityState": "not configured",
+      "inquiryEligibility": false,
+      "appointmentEligibility": false,
+      "membershipCoverageState": "no qualifying active coverage",
+      "sponsorshipState": "none",
+      "evidenceState": "SOURCE_OBSERVED",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "generatedAt": "2026-07-29T02:29:54.377Z"
+    },
+    {
+      "contractVersion": "1.4.0",
+      "assignmentId": "portal-assignment:professional-joe-demarco:estate-law-aid",
+      "sourceRevision": 1,
+      "approvedSourceRevision": 0,
+      "recordFingerprint": "ed726042f02ac6b9b6e3e98192f7f1710279a708c67222c7aae674c5c1527616",
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "portalId": "estate-law-aid",
+      "sourcePortalIds": [
+        "estate-planning-probate"
+      ],
+      "mappingState": "LEGACY_ALIAS_MAPPED",
+      "professionalId": "professional-joe-demarco",
+      "organizationId": "organization:firm:firm-scarinci-hollenbeck",
+      "seatId": "seat:professional:professional-joe-demarco",
+      "officeIds": [
+        "office:firm:firm-scarinci-hollenbeck:1"
+      ],
+      "practiceAssignments": [
+        "practice-assignment:professional-joe-demarco:tax-law",
+        "practice-assignment:professional-joe-demarco:business-law",
+        "practice-assignment:professional-joe-demarco:trusts-and-estates"
+      ],
+      "jurisdictions": [
+        "New Jersey"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceMethods": [
+        "telephone",
+        "in person"
+      ],
+      "publicProfileState": "unclaimed public profile",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "sourceFreshness": {
+        "state": "SOURCE_OBSERVED",
+        "reviewedAt": "2026-07-24T18:00:00.000Z",
+        "sourceCount": 1
+      },
+      "participationState": "not participating",
+      "availabilityState": "not configured",
+      "inquiryEligibility": false,
+      "appointmentEligibility": false,
+      "membershipCoverageState": "no qualifying active coverage",
+      "sponsorshipState": "none",
+      "evidenceState": "SOURCE_OBSERVED",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "generatedAt": "2026-07-29T02:29:54.377Z"
+    },
+    {
+      "contractVersion": "1.4.0",
+      "assignmentId": "portal-assignment:professional-lester-e-lipschutz:estate-law-aid",
+      "sourceRevision": 1,
+      "approvedSourceRevision": 0,
+      "recordFingerprint": "bd9f69e3732731aafda9c3428e9e063d69917c906725e0eb9bf813628e1e0b48",
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "portalId": "estate-law-aid",
+      "sourcePortalIds": [
+        "estate-planning-probate"
+      ],
+      "mappingState": "LEGACY_ALIAS_MAPPED",
+      "professionalId": "professional-lester-e-lipschutz",
+      "organizationId": "organization:firm:firm-cozen-oconnor",
+      "seatId": "seat:professional:professional-lester-e-lipschutz",
+      "officeIds": [
+        "office:firm:firm-cozen-oconnor:1"
+      ],
+      "practiceAssignments": [
+        "practice-assignment:professional-lester-e-lipschutz:private-client-services",
+        "practice-assignment:professional-lester-e-lipschutz:trusts-and-estates"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceMethods": [
+        "telephone",
+        "in person"
+      ],
+      "publicProfileState": "unclaimed public profile",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "sourceFreshness": {
+        "state": "SOURCE_OBSERVED",
+        "reviewedAt": "2026-07-24T20:00:00.000Z",
+        "sourceCount": 1
+      },
+      "participationState": "not participating",
+      "availabilityState": "not configured",
+      "inquiryEligibility": false,
+      "appointmentEligibility": false,
+      "membershipCoverageState": "no qualifying active coverage",
+      "sponsorshipState": "none",
+      "evidenceState": "SOURCE_OBSERVED",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "generatedAt": "2026-07-29T02:29:54.377Z"
+    },
+    {
+      "contractVersion": "1.4.0",
+      "assignmentId": "portal-assignment:professional-lawrence-n-meyerson:estate-law-aid",
+      "sourceRevision": 1,
+      "approvedSourceRevision": 0,
+      "recordFingerprint": "932e8846f7d6fda5668bf3ad749be8c4c8eba46fe20d29d8b13b490dc091b569",
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "portalId": "estate-law-aid",
+      "sourcePortalIds": [
+        "estate-planning-probate"
+      ],
+      "mappingState": "LEGACY_ALIAS_MAPPED",
+      "professionalId": "professional-lawrence-n-meyerson",
+      "organizationId": "organization:firm:firm-meyerson-fox-conte",
+      "seatId": "seat:professional:professional-lawrence-n-meyerson",
+      "officeIds": [
+        "office:firm:firm-meyerson-fox-conte:1"
+      ],
+      "practiceAssignments": [
+        "practice-assignment:professional-lawrence-n-meyerson:elder-law",
+        "practice-assignment:professional-lawrence-n-meyerson:guardianship",
+        "practice-assignment:professional-lawrence-n-meyerson:estate-planning-and-administration",
+        "practice-assignment:professional-lawrence-n-meyerson:real-estate"
+      ],
+      "jurisdictions": [
+        "New Jersey"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceMethods": [
+        "telephone",
+        "in person"
+      ],
+      "publicProfileState": "unclaimed public profile",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "sourceFreshness": {
+        "state": "SOURCE_OBSERVED",
+        "reviewedAt": "2026-07-24T20:00:00.000Z",
+        "sourceCount": 1
+      },
+      "participationState": "not participating",
+      "availabilityState": "not configured",
+      "inquiryEligibility": false,
+      "appointmentEligibility": false,
+      "membershipCoverageState": "no qualifying active coverage",
+      "sponsorshipState": "none",
+      "evidenceState": "SOURCE_OBSERVED",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "generatedAt": "2026-07-29T02:29:54.377Z"
+    },
+    {
+      "contractVersion": "1.4.0",
+      "assignmentId": "portal-assignment:professional-john-a-conte-jr:estate-law-aid",
+      "sourceRevision": 1,
+      "approvedSourceRevision": 0,
+      "recordFingerprint": "67dc460236463aba39215e7b57b59182ad99b9f542e2184b7507386f632fca9e",
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "portalId": "estate-law-aid",
+      "sourcePortalIds": [
+        "estate-planning-probate"
+      ],
+      "mappingState": "LEGACY_ALIAS_MAPPED",
+      "professionalId": "professional-john-a-conte-jr",
+      "organizationId": "organization:firm:firm-meyerson-fox-conte",
+      "seatId": "seat:professional:professional-john-a-conte-jr",
+      "officeIds": [
+        "office:firm:firm-meyerson-fox-conte:1"
+      ],
+      "practiceAssignments": [
+        "practice-assignment:professional-john-a-conte-jr:civil-litigation",
+        "practice-assignment:professional-john-a-conte-jr:estate-matters",
+        "practice-assignment:professional-john-a-conte-jr:land-use",
+        "practice-assignment:professional-john-a-conte-jr:real-estate",
+        "practice-assignment:professional-john-a-conte-jr:commercial-law"
+      ],
+      "jurisdictions": [
+        "New Jersey"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceMethods": [
+        "telephone",
+        "in person"
+      ],
+      "publicProfileState": "unclaimed public profile",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "sourceFreshness": {
+        "state": "SOURCE_OBSERVED",
+        "reviewedAt": "2026-07-24T20:00:00.000Z",
+        "sourceCount": 1
+      },
+      "participationState": "not participating",
+      "availabilityState": "not configured",
+      "inquiryEligibility": false,
+      "appointmentEligibility": false,
+      "membershipCoverageState": "no qualifying active coverage",
+      "sponsorshipState": "none",
+      "evidenceState": "SOURCE_OBSERVED",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "generatedAt": "2026-07-29T02:29:54.377Z"
+    },
+    {
+      "contractVersion": "1.4.0",
+      "assignmentId": "portal-assignment:professional-andrew-p-bolson:estate-law-aid",
+      "sourceRevision": 1,
+      "approvedSourceRevision": 0,
+      "recordFingerprint": "0baa44f2d09e37367c51e005b915b601cb25f9c8235f85a003fb92a2cc7ad50c",
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "portalId": "estate-law-aid",
+      "sourcePortalIds": [
+        "estate-planning-probate"
+      ],
+      "mappingState": "LEGACY_ALIAS_MAPPED",
+      "professionalId": "professional-andrew-p-bolson",
+      "organizationId": "organization:firm:firm-meyerson-fox-conte",
+      "seatId": "seat:professional:professional-andrew-p-bolson",
+      "officeIds": [
+        "office:firm:firm-meyerson-fox-conte:1"
+      ],
+      "practiceAssignments": [
+        "practice-assignment:professional-andrew-p-bolson:commercial-litigation",
+        "practice-assignment:professional-andrew-p-bolson:estate-litigation-and-planning",
+        "practice-assignment:professional-andrew-p-bolson:business-law",
+        "practice-assignment:professional-andrew-p-bolson:real-estate-and-land-use",
+        "practice-assignment:professional-andrew-p-bolson:guardianship"
+      ],
+      "jurisdictions": [
+        "New Jersey"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceMethods": [
+        "telephone",
+        "in person"
+      ],
+      "publicProfileState": "unclaimed public profile",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "sourceFreshness": {
+        "state": "SOURCE_OBSERVED",
+        "reviewedAt": "2026-07-24T20:00:00.000Z",
+        "sourceCount": 1
+      },
+      "participationState": "not participating",
+      "availabilityState": "not configured",
+      "inquiryEligibility": false,
+      "appointmentEligibility": false,
+      "membershipCoverageState": "no qualifying active coverage",
+      "sponsorshipState": "none",
+      "evidenceState": "SOURCE_OBSERVED",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "generatedAt": "2026-07-29T02:29:54.377Z"
+    },
+    {
+      "contractVersion": "1.4.0",
+      "assignmentId": "portal-assignment:professional-christine-h-odonnell:estate-law-aid",
+      "sourceRevision": 1,
+      "approvedSourceRevision": 0,
+      "recordFingerprint": "879dc40413197f0e44e3f1600ae4e03903b5a22a90c8281419b1e4e576cad59a",
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "portalId": "estate-law-aid",
+      "sourcePortalIds": [
+        "estate-planning-probate"
+      ],
+      "mappingState": "LEGACY_ALIAS_MAPPED",
+      "professionalId": "professional-christine-h-odonnell",
+      "organizationId": "organization:firm:firm-meyerson-fox-conte",
+      "seatId": "seat:professional:professional-christine-h-odonnell",
+      "officeIds": [
+        "office:firm:firm-meyerson-fox-conte:1"
+      ],
+      "practiceAssignments": [
+        "practice-assignment:professional-christine-h-odonnell:guardianship",
+        "practice-assignment:professional-christine-h-odonnell:estate-administration"
+      ],
+      "jurisdictions": [
+        "New Jersey"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceMethods": [
+        "telephone",
+        "in person"
+      ],
+      "publicProfileState": "unclaimed public profile",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "sourceFreshness": {
+        "state": "SOURCE_OBSERVED",
+        "reviewedAt": "2026-07-24T20:00:00.000Z",
+        "sourceCount": 1
+      },
+      "participationState": "not participating",
+      "availabilityState": "not configured",
+      "inquiryEligibility": false,
+      "appointmentEligibility": false,
+      "membershipCoverageState": "no qualifying active coverage",
+      "sponsorshipState": "none",
+      "evidenceState": "SOURCE_OBSERVED",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "generatedAt": "2026-07-29T02:29:54.377Z"
+    },
+    {
+      "contractVersion": "1.4.0",
+      "assignmentId": "portal-assignment:professional-ward-frank-cleary:estate-law-aid",
+      "sourceRevision": 1,
+      "approvedSourceRevision": 0,
+      "recordFingerprint": "bf57caee390dbb74d6546564361d6dd342f6433042f441e10ed4f55752677823",
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "portalId": "estate-law-aid",
+      "sourcePortalIds": [
+        "estate-planning-probate"
+      ],
+      "mappingState": "LEGACY_ALIAS_MAPPED",
+      "professionalId": "professional-ward-frank-cleary",
+      "organizationId": "organization:firm:firm-curtis-brinckerhoff-barrett",
+      "seatId": "seat:professional:professional-ward-frank-cleary",
+      "officeIds": [
+        "office:firm:firm-curtis-brinckerhoff-barrett:1"
+      ],
+      "practiceAssignments": [
+        "practice-assignment:professional-ward-frank-cleary:tax-law",
+        "practice-assignment:professional-ward-frank-cleary:estate-planning-and-administration",
+        "practice-assignment:professional-ward-frank-cleary:real-estate"
+      ],
+      "jurisdictions": [
+        "Connecticut"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceMethods": [
+        "telephone",
+        "in person"
+      ],
+      "publicProfileState": "unclaimed public profile",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "sourceFreshness": {
+        "state": "SOURCE_OBSERVED",
+        "reviewedAt": "2026-07-24T20:00:00.000Z",
+        "sourceCount": 1
+      },
+      "participationState": "not participating",
+      "availabilityState": "not configured",
+      "inquiryEligibility": false,
+      "appointmentEligibility": false,
+      "membershipCoverageState": "no qualifying active coverage",
+      "sponsorshipState": "none",
+      "evidenceState": "SOURCE_OBSERVED",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "generatedAt": "2026-07-29T02:29:54.377Z"
+    },
+    {
+      "contractVersion": "1.4.0",
+      "assignmentId": "portal-assignment:professional-daniel-j-fox:estate-law-aid",
+      "sourceRevision": 1,
+      "approvedSourceRevision": 0,
+      "recordFingerprint": "c7cf39b0c97d27a5405b400e9e7e13ae0032b06ee1e7ef38d852866eeb13a919",
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "portalId": "estate-law-aid",
+      "sourcePortalIds": [
+        "estate-planning-probate"
+      ],
+      "mappingState": "LEGACY_ALIAS_MAPPED",
+      "professionalId": "professional-daniel-j-fox",
+      "organizationId": "organization:firm:firm-curtis-brinckerhoff-barrett",
+      "seatId": "seat:professional:professional-daniel-j-fox",
+      "officeIds": [
+        "office:firm:firm-curtis-brinckerhoff-barrett:1"
+      ],
+      "practiceAssignments": [
+        "practice-assignment:professional-daniel-j-fox:real-estate",
+        "practice-assignment:professional-daniel-j-fox:municipal-law",
+        "practice-assignment:professional-daniel-j-fox:commercial-law",
+        "practice-assignment:professional-daniel-j-fox:probate"
+      ],
+      "jurisdictions": [
+        "Connecticut"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceMethods": [
+        "telephone",
+        "in person"
+      ],
+      "publicProfileState": "unclaimed public profile",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "sourceFreshness": {
+        "state": "SOURCE_OBSERVED",
+        "reviewedAt": "2026-07-24T20:00:00.000Z",
+        "sourceCount": 1
+      },
+      "participationState": "not participating",
+      "availabilityState": "not configured",
+      "inquiryEligibility": false,
+      "appointmentEligibility": false,
+      "membershipCoverageState": "no qualifying active coverage",
+      "sponsorshipState": "none",
+      "evidenceState": "SOURCE_OBSERVED",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "generatedAt": "2026-07-29T02:29:54.377Z"
+    },
+    {
+      "contractVersion": "1.4.0",
+      "assignmentId": "portal-assignment:professional-j-paul-johnson:estate-law-aid",
+      "sourceRevision": 1,
+      "approvedSourceRevision": 0,
+      "recordFingerprint": "6d26734483e731d98f47b004dd096253b3668475b78203464192cae739072319",
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "portalId": "estate-law-aid",
+      "sourcePortalIds": [
+        "estate-planning-probate"
+      ],
+      "mappingState": "LEGACY_ALIAS_MAPPED",
+      "professionalId": "professional-j-paul-johnson",
+      "organizationId": "organization:firm:firm-curtis-brinckerhoff-barrett",
+      "seatId": "seat:professional:professional-j-paul-johnson",
+      "officeIds": [
+        "office:firm:firm-curtis-brinckerhoff-barrett:1"
+      ],
+      "practiceAssignments": [
+        "practice-assignment:professional-j-paul-johnson:estate-planning",
+        "practice-assignment:professional-j-paul-johnson:real-estate",
+        "practice-assignment:professional-j-paul-johnson:probate-litigation",
+        "practice-assignment:professional-j-paul-johnson:business-law"
+      ],
+      "jurisdictions": [
+        "Connecticut"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceMethods": [
+        "telephone",
+        "in person"
+      ],
+      "publicProfileState": "unclaimed public profile",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "sourceFreshness": {
+        "state": "SOURCE_OBSERVED",
+        "reviewedAt": "2026-07-24T20:00:00.000Z",
+        "sourceCount": 1
+      },
+      "participationState": "not participating",
+      "availabilityState": "not configured",
+      "inquiryEligibility": false,
+      "appointmentEligibility": false,
+      "membershipCoverageState": "no qualifying active coverage",
+      "sponsorshipState": "none",
+      "evidenceState": "SOURCE_OBSERVED",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "generatedAt": "2026-07-29T02:29:54.377Z"
+    },
+    {
+      "contractVersion": "1.4.0",
+      "assignmentId": "portal-assignment:professional-robert-j-burney:estate-law-aid",
+      "sourceRevision": 1,
+      "approvedSourceRevision": 0,
+      "recordFingerprint": "b872a1bb17085f4907b53d0197356ee99f4433791621f279a0d2d4ba150f55c3",
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "portalId": "estate-law-aid",
+      "sourcePortalIds": [
+        "estate-planning-probate"
+      ],
+      "mappingState": "LEGACY_ALIAS_MAPPED",
+      "professionalId": "professional-robert-j-burney",
+      "organizationId": "organization:firm:firm-curtis-brinckerhoff-barrett",
+      "seatId": "seat:professional:professional-robert-j-burney",
+      "officeIds": [
+        "office:firm:firm-curtis-brinckerhoff-barrett:1"
+      ],
+      "practiceAssignments": [
+        "practice-assignment:professional-robert-j-burney:commercial-litigation",
+        "practice-assignment:professional-robert-j-burney:municipal-law",
+        "practice-assignment:professional-robert-j-burney:land-use-and-real-estate",
+        "practice-assignment:professional-robert-j-burney:wills-and-trusts",
+        "practice-assignment:professional-robert-j-burney:federal-tax"
+      ],
+      "jurisdictions": [
+        "Connecticut"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceMethods": [
+        "telephone",
+        "in person"
+      ],
+      "publicProfileState": "unclaimed public profile",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "sourceFreshness": {
+        "state": "SOURCE_OBSERVED",
+        "reviewedAt": "2026-07-24T20:00:00.000Z",
+        "sourceCount": 1
+      },
+      "participationState": "not participating",
+      "availabilityState": "not configured",
+      "inquiryEligibility": false,
+      "appointmentEligibility": false,
+      "membershipCoverageState": "no qualifying active coverage",
+      "sponsorshipState": "none",
+      "evidenceState": "SOURCE_OBSERVED",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "generatedAt": "2026-07-29T02:29:54.377Z"
+    }
+  ],
+  "profiles": [
+    {
+      "recordVersion": "1.4.0",
+      "professionalId": "professional-kreuza-ganolli",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "displayName": "Kreuza Ganolli",
+      "professionalType": "attorney",
+      "firmId": "firm-ganolli-law",
+      "firmName": "Ganolli Law",
+      "biography": "",
+      "phone": "",
+      "website": "https://www.ganollilaw.com/about",
+      "photoUrl": "",
+      "officeLocations": [
+        "26 Court Street, Suite 514, Brooklyn, NY 11242"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "practiceAreas": [
+        "Family law",
+        "Divorce",
+        "Child custody",
+        "Child support",
+        "Adoption",
+        "Wills"
+      ],
+      "serviceRoles": [],
+      "languages": [],
+      "consultationModes": [],
+      "serviceRegions": [],
+      "availabilityStatus": "not configured",
+      "availabilityNote": "",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "publicListingDestination": "estate-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "8b40ad225294f665c1bda2abe24465b42e3a091e3bb661ca9c60f5e304e493f9",
+      "generatedAt": "2026-07-29T02:29:54.382Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "professionalId": "professional-andrew-bokser",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "displayName": "Andrew A. Bokser",
+      "professionalType": "attorney",
+      "firmId": "firm-andrew-bokser",
+      "firmName": "Law Office of Andrew A. Bokser",
+      "biography": "",
+      "phone": "718-834-1904",
+      "website": "https://www.bokserlaw.net/brooklyn-family-law-office/",
+      "photoUrl": "",
+      "officeLocations": [
+        "26 Court Street, Suite 1003, Brooklyn, NY 11242"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "practiceAreas": [
+        "Family law",
+        "Divorce",
+        "Criminal defense",
+        "Probate",
+        "Estate administration"
+      ],
+      "serviceRoles": [],
+      "languages": [],
+      "consultationModes": [],
+      "serviceRegions": [],
+      "availabilityStatus": "not configured",
+      "availabilityNote": "",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "publicListingDestination": "estate-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "833f4be41b35a47a85a72108e06e0fc3b00871388d536dcb32ee28086d23b29a",
+      "generatedAt": "2026-07-29T02:29:54.382Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "professionalId": "professional-frank-hosein",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "displayName": "Frank Hosein, Jr.",
+      "professionalType": "attorney",
+      "firmId": "firm-frank-hosein",
+      "firmName": "Law Office of Frank Hosein, Jr.",
+      "biography": "",
+      "phone": "",
+      "website": "",
+      "photoUrl": "",
+      "officeLocations": [
+        "26 Court Street, Suite 1600, Brooklyn, NY 11242"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "practiceAreas": [
+        "Estate planning"
+      ],
+      "serviceRoles": [],
+      "languages": [],
+      "consultationModes": [],
+      "serviceRegions": [],
+      "availabilityStatus": "not configured",
+      "availabilityNote": "",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "publicListingDestination": "estate-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "cfdf5b8f8a2a02e1e20c2949cdd102273068b9dedf040d2bd7f595676190fa2f",
+      "generatedAt": "2026-07-29T02:29:54.382Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "professionalId": "professional-roger-archibald",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "displayName": "Roger Victor Archibald",
+      "professionalType": "attorney",
+      "firmId": "firm-roger-archibald",
+      "firmName": "Roger Victor Archibald, PLLC",
+      "biography": "",
+      "phone": "",
+      "website": "https://www.brooklynatty.com/brooklyn/",
+      "photoUrl": "",
+      "officeLocations": [
+        "26 Court Street, Suite 711, Brooklyn, NY 11242"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "practiceAreas": [
+        "Criminal law",
+        "Employment law",
+        "Civil rights",
+        "Medical malpractice",
+        "Real estate",
+        "Trusts and estates"
+      ],
+      "serviceRoles": [],
+      "languages": [],
+      "consultationModes": [],
+      "serviceRegions": [],
+      "availabilityStatus": "not configured",
+      "availabilityNote": "",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "publicListingDestination": "estate-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "5d66c18072781d6140bd095e32cb38140691298a05fe99e730ff5e38e064b05d",
+      "generatedAt": "2026-07-29T02:29:54.382Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "professionalId": "professional-orion-karagiannis",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "displayName": "Orion Karagiannis",
+      "professionalType": "attorney",
+      "firmId": "firm-pardalis-nohavicka",
+      "firmName": "Pardalis & Nohavicka LLP",
+      "biography": "Attorney whose public profile describes a background in real estate, intellectual property, entertainment, trusts and estates, and cooperative and condominium matters.",
+      "phone": "212-213-8511",
+      "website": "https://www.pnlawyers.com/team-members/orion-karagiannis/",
+      "photoUrl": "",
+      "officeLocations": [
+        "950 Third Avenue, 11th Floor, New York, NY 10022"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "practiceAreas": [
+        "Real estate",
+        "Intellectual property",
+        "Entertainment law",
+        "Trusts and estates",
+        "Cooperative and condominium law"
+      ],
+      "serviceRoles": [],
+      "languages": [
+        "English"
+      ],
+      "consultationModes": [
+        "telephone",
+        "in person"
+      ],
+      "serviceRegions": [
+        "Manhattan",
+        "New York City"
+      ],
+      "availabilityStatus": "not configured",
+      "availabilityNote": "",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "publicListingDestination": "estate-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "2b5a429436cad925683fe5fd09980249ec4e9fc127887e2301a2fe99f8b2c8bc",
+      "generatedAt": "2026-07-29T02:29:54.382Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "professionalId": "professional-amedeo-calandriello",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "displayName": "Amedeo Calandriello",
+      "professionalType": "attorney",
+      "firmId": "firm-pardalis-nohavicka",
+      "firmName": "Pardalis & Nohavicka LLP",
+      "biography": "Attorney whose public profile describes federal and state commercial litigation together with estate-planning and Medicaid-related matters.",
+      "phone": "212-213-8511",
+      "website": "https://www.pnlawyers.com/team-members/amedeo-calandriello/",
+      "photoUrl": "",
+      "officeLocations": [
+        "950 Third Avenue, 11th Floor, New York, NY 10022"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "practiceAreas": [
+        "Commercial litigation",
+        "Business litigation",
+        "Estate planning",
+        "Medicaid-related matters"
+      ],
+      "serviceRoles": [],
+      "languages": [
+        "English"
+      ],
+      "consultationModes": [
+        "telephone",
+        "in person"
+      ],
+      "serviceRegions": [
+        "New York County",
+        "Manhattan",
+        "New York City"
+      ],
+      "availabilityStatus": "not configured",
+      "availabilityNote": "",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "publicListingDestination": "estate-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "e3d22ac90451d236611190d10dc93db7a277a17567ecf23ae27f59a0c6336ff3",
+      "generatedAt": "2026-07-29T02:29:54.382Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "professionalId": "professional-michael-kayal",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "displayName": "Michael G. Kayal",
+      "professionalType": "attorney",
+      "firmId": "firm-chasan-lamparello-mallon-cappuzzo",
+      "firmName": "Chasan Lamparello Mallon & Cappuzzo, PC",
+      "biography": "Associate attorney whose public profile describes commercial litigation, governmental law, and wills, trusts, and estate-planning work.",
+      "phone": "201-809-6041",
+      "website": "https://www.chasanlaw.com/professional/michael-kayal/",
+      "photoUrl": "",
+      "officeLocations": [
+        "300 Lighting Way, Suite 200, Secaucus, NJ 07094"
+      ],
+      "jurisdictions": [
+        "New Jersey",
+        "New York"
+      ],
+      "practiceAreas": [
+        "Commercial litigation",
+        "Governmental law",
+        "Wills and trusts",
+        "Estate planning and administration"
+      ],
+      "serviceRoles": [],
+      "languages": [
+        "English"
+      ],
+      "consultationModes": [
+        "telephone",
+        "in person"
+      ],
+      "serviceRegions": [
+        "Hudson County",
+        "Northern Metro New Jersey"
+      ],
+      "availabilityStatus": "not configured",
+      "availabilityNote": "",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "publicListingDestination": "estate-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "d69dec098eb669ad1fb77e6b55c3d01b1025be8c84c52f272de90ee449beee90",
+      "generatedAt": "2026-07-29T02:29:54.382Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "professionalId": "professional-matthew-nosenchuk",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "displayName": "Matthew Nosenchuk",
+      "professionalType": "attorney",
+      "firmId": "firm-shulman-hill",
+      "firmName": "Shulman & Hill",
+      "biography": "Associate attorney whose public profile describes workers’ compensation work and prior experience in landlord-tenant, business-litigation, trusts-and-estates, and criminal matters.",
+      "phone": "212-221-1000",
+      "website": "https://shulman-hill.com/our-team/matthew-nosenchuk/",
+      "photoUrl": "",
+      "officeLocations": [
+        "26 Court Street, Suite 2216, Brooklyn, NY 11242"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "practiceAreas": [
+        "Workers compensation",
+        "Landlord-tenant matters",
+        "Business litigation",
+        "Trusts and estates",
+        "Criminal law"
+      ],
+      "serviceRoles": [],
+      "languages": [
+        "English"
+      ],
+      "consultationModes": [
+        "telephone",
+        "in person"
+      ],
+      "serviceRegions": [
+        "Kings County",
+        "Brooklyn",
+        "New York City"
+      ],
+      "availabilityStatus": "not configured",
+      "availabilityNote": "",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "publicListingDestination": "estate-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "90bdd2a6c00c07956422c7d7cf44d2d51ac860076777c8813345db2324d6aa1a",
+      "generatedAt": "2026-07-29T02:29:54.382Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "professionalId": "professional-ellyn-kravitz",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "displayName": "Ellyn S. Kravitz",
+      "professionalType": "attorney",
+      "firmId": "firm-abrams-fensterman",
+      "firmName": "Abrams Fensterman, LLP",
+      "biography": "Attorney whose public profile describes elder law, trusts and estates, guardianship, and special-needs planning work.",
+      "phone": "718-215-5300",
+      "website": "https://www.abramslaw.com/attorneys/ellyn-s-kravitz/",
+      "photoUrl": "",
+      "officeLocations": [
+        "1 MetroTech Center, Suite 1701, Brooklyn, NY 11201"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "practiceAreas": [
+        "Elder law",
+        "Trusts and estates",
+        "Estate planning",
+        "Guardianships",
+        "Special needs planning"
+      ],
+      "serviceRoles": [],
+      "languages": [
+        "English"
+      ],
+      "consultationModes": [
+        "telephone",
+        "in person"
+      ],
+      "serviceRegions": [
+        "Kings County",
+        "Brooklyn",
+        "New York City"
+      ],
+      "availabilityStatus": "not configured",
+      "availabilityNote": "",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "publicListingDestination": "estate-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "e093387d3c45e6eacf2949e157105e771f564659decc48e0529046cd0688ec16",
+      "generatedAt": "2026-07-29T02:29:54.382Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "professionalId": "professional-michael-korsinsky",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "displayName": "Michael Korsinsky",
+      "professionalType": "attorney",
+      "firmId": "firm-korsinsky-klein",
+      "firmName": "Korsinsky & Klein LLP",
+      "biography": "Attorney whose public profile describes elder-law, Medicaid-planning, estate-planning, guardianship, and probate work.",
+      "phone": "212-257-0199",
+      "website": "https://www.kklawfirm.com/attorney/korsinsky-esq-michael/",
+      "photoUrl": "",
+      "officeLocations": [
+        "2926 Avenue L, Brooklyn, NY 11210"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "practiceAreas": [
+        "Elder law",
+        "Medicaid planning",
+        "Estate planning",
+        "Guardianships",
+        "Probate"
+      ],
+      "serviceRoles": [],
+      "languages": [
+        "English"
+      ],
+      "consultationModes": [
+        "telephone",
+        "in person"
+      ],
+      "serviceRegions": [
+        "Kings County",
+        "Brooklyn",
+        "New York City"
+      ],
+      "availabilityStatus": "not configured",
+      "availabilityNote": "",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "publicListingDestination": "estate-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "74c8633993b4fd69bc17d96e04f74b26acc7812ea0966e8627c1763de59fdeae",
+      "generatedAt": "2026-07-29T02:29:54.382Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "professionalId": "professional-joseph-klein",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "displayName": "Joseph Klein",
+      "professionalType": "attorney",
+      "firmId": "firm-korsinsky-klein",
+      "firmName": "Korsinsky & Klein LLP",
+      "biography": "Attorney whose public profile describes civil litigation, construction, real-estate, employment, and estate-planning work.",
+      "phone": "212-257-0199",
+      "website": "https://www.kklawfirm.com/attorney/klein-joseph-esq/",
+      "photoUrl": "",
+      "officeLocations": [
+        "2926 Avenue L, Brooklyn, NY 11210"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "practiceAreas": [
+        "Civil litigation",
+        "Construction law",
+        "Real estate law",
+        "Employment law",
+        "Estate planning"
+      ],
+      "serviceRoles": [],
+      "languages": [
+        "English"
+      ],
+      "consultationModes": [
+        "telephone",
+        "in person"
+      ],
+      "serviceRegions": [
+        "Kings County",
+        "Brooklyn",
+        "New York City"
+      ],
+      "availabilityStatus": "not configured",
+      "availabilityNote": "",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "publicListingDestination": "estate-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "6a74c54add36e9864c730ed535ce2041ef69098298c27188136a9c8179ef4434",
+      "generatedAt": "2026-07-29T02:29:54.382Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "professionalId": "professional-ronald-solow",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "displayName": "Ronald S. Solow",
+      "professionalType": "attorney",
+      "firmId": "firm-schwartz-perry-heller",
+      "firmName": "Schwartz Perry & Heller LLP",
+      "biography": "Firm manager and attorney whose public profile describes a prior estate-planning practice and current business-development and client-relations responsibilities.",
+      "phone": "646-490-0221",
+      "website": "https://www.schwartzandperry.com/our-team/ronald-s-solow/",
+      "photoUrl": "",
+      "officeLocations": [
+        "3 Park Avenue, Suite 2700, New York, NY 10016"
+      ],
+      "jurisdictions": [
+        "California",
+        "New York",
+        "District of Columbia"
+      ],
+      "practiceAreas": [
+        "Estate planning",
+        "Business development",
+        "Client relations"
+      ],
+      "serviceRoles": [],
+      "languages": [
+        "English"
+      ],
+      "consultationModes": [
+        "telephone",
+        "in person"
+      ],
+      "serviceRegions": [
+        "New York County",
+        "Manhattan",
+        "New York City"
+      ],
+      "availabilityStatus": "not configured",
+      "availabilityNote": "",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "publicListingDestination": "estate-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "991ad582688f5c1d461a37d5a44884e907fc32d76732840a059969de038a1be8",
+      "generatedAt": "2026-07-29T02:29:54.382Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "professionalId": "professional-michael-a-coscia",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "displayName": "Michael A. Coscia",
+      "professionalType": "attorney",
+      "firmId": "firm-abrams-fensterman",
+      "firmName": "Abrams Fensterman, LLP",
+      "biography": "Partner whose public profile describes matrimonial and family law, custody, real-estate, litigation, business-transaction, and estate matters.",
+      "phone": "718-215-5300",
+      "website": "https://www.abramslaw.com/attorneys/michael-coscia/",
+      "photoUrl": "",
+      "officeLocations": [
+        "1 MetroTech Center, Suite 1701, Brooklyn, NY 11201"
+      ],
+      "jurisdictions": [
+        "New York",
+        "New Jersey"
+      ],
+      "practiceAreas": [
+        "Divorce and matrimonial law",
+        "Family law",
+        "Child custody",
+        "Real estate law",
+        "Commercial litigation",
+        "Business transactions",
+        "Estate matters"
+      ],
+      "serviceRoles": [],
+      "languages": [
+        "English"
+      ],
+      "consultationModes": [
+        "telephone",
+        "in person"
+      ],
+      "serviceRegions": [
+        "Kings County",
+        "Brooklyn",
+        "New York City"
+      ],
+      "availabilityStatus": "not configured",
+      "availabilityNote": "",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "publicListingDestination": "estate-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "934a455d05dbce3363eee74be354f62118d1c2c37e2f9a31f9a65642a5bbaf3a",
+      "generatedAt": "2026-07-29T02:29:54.382Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "professionalId": "professional-amanda-small",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "displayName": "Amanda Small",
+      "professionalType": "attorney",
+      "firmId": "firm-abrams-fensterman",
+      "firmName": "Abrams Fensterman, LLP",
+      "biography": "Associate in the Commercial Litigation Practice Group whose public profile also describes prior employment-litigation and estate-administration experience.",
+      "phone": "718-215-5300",
+      "website": "https://www.abramslaw.com/attorneys/amanda-small/",
+      "photoUrl": "",
+      "officeLocations": [
+        "1 MetroTech Center, Suite 1701, Brooklyn, NY 11201"
+      ],
+      "jurisdictions": [
+        "New York",
+        "New Jersey"
+      ],
+      "practiceAreas": [
+        "Commercial litigation",
+        "Employment litigation",
+        "Estate administration",
+        "Consumer justice"
+      ],
+      "serviceRoles": [],
+      "languages": [
+        "English"
+      ],
+      "consultationModes": [
+        "telephone",
+        "in person"
+      ],
+      "serviceRegions": [
+        "Kings County",
+        "Brooklyn",
+        "New York City"
+      ],
+      "availabilityStatus": "not configured",
+      "availabilityNote": "",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "publicListingDestination": "estate-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "001415e101b533e0f24575419f23256995c944dde10d54a753806c8f5f907e38",
+      "generatedAt": "2026-07-29T02:29:54.382Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "professionalId": "professional-vernita-charles",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "displayName": "Vernita Charles",
+      "professionalType": "attorney",
+      "firmId": "firm-law-office-vernita-charles",
+      "firmName": "Law Office of Vernita Charles",
+      "biography": "Founder whose professional profile describes family-law, estate-planning, probate, and estate matters for New York clients.",
+      "phone": "718-802-9749",
+      "website": "https://www.vernitacharles.com/attorneys/vernita-charles/",
+      "photoUrl": "",
+      "officeLocations": [
+        "44 Court Street, Suite 910, Brooklyn, NY 11201"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "practiceAreas": [
+        "Divorce and family law",
+        "Estate planning",
+        "Probate",
+        "Trusts and estates"
+      ],
+      "serviceRoles": [],
+      "languages": [
+        "English"
+      ],
+      "consultationModes": [
+        "telephone",
+        "in person"
+      ],
+      "serviceRegions": [
+        "Kings County",
+        "Brooklyn",
+        "New York City"
+      ],
+      "availabilityStatus": "not configured",
+      "availabilityNote": "",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "publicListingDestination": "estate-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "3e83cd9caecd78fe7529c3b65cd7c7dc1a286ad76bb2a26e071d1a78d1d75d66",
+      "generatedAt": "2026-07-29T02:29:54.382Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "professionalId": "professional-sabrina-distefano",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "displayName": "Sabrina DiStefano",
+      "professionalType": "attorney",
+      "firmId": "firm-abrams-fensterman",
+      "firmName": "Abrams Fensterman, LLP",
+      "biography": "Associate listed in the Brooklyn office whose firm materials describe commercial litigation and work involving trust and real-property disputes.",
+      "phone": "718-215-5300",
+      "website": "https://www.abramslaw.com/attorneys/sabrina-distefano/",
+      "photoUrl": "",
+      "officeLocations": [
+        "1 MetroTech Center, Suite 1701, Brooklyn, NY 11201"
+      ],
+      "jurisdictions": [
+        "New York",
+        "New Jersey"
+      ],
+      "practiceAreas": [
+        "Commercial litigation",
+        "Trust and estate litigation",
+        "Real property disputes"
+      ],
+      "serviceRoles": [],
+      "languages": [
+        "English"
+      ],
+      "consultationModes": [
+        "telephone",
+        "in person"
+      ],
+      "serviceRegions": [
+        "Kings County",
+        "Brooklyn",
+        "New York City"
+      ],
+      "availabilityStatus": "not configured",
+      "availabilityNote": "",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "publicListingDestination": "estate-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "ca1b9664e22ba3db33a142c1c254ca6b83311b4082b3eb7d52fd5cdcddcd8c8f",
+      "generatedAt": "2026-07-29T02:29:54.382Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "professionalId": "professional-karen-l-dippold",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "displayName": "Karen L. Dippold",
+      "professionalType": "attorney",
+      "firmId": "firm-beldock-levine-hoffman",
+      "firmName": "Beldock Levine & Hoffman LLP",
+      "biography": "Partner whose public profile describes civil and criminal litigation, including civil-rights, employment, contested-estate, landlord-tenant, injury, property-damage, and tax matters.",
+      "phone": "212-277-5822",
+      "website": "https://www.blhny.com/karen-dippold",
+      "photoUrl": "",
+      "officeLocations": [
+        "99 Park Avenue, PH/26th Floor, New York, NY 10016"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "practiceAreas": [
+        "Civil rights",
+        "Criminal defense",
+        "Employment law",
+        "Contested estates",
+        "Landlord-tenant disputes",
+        "Personal injury and property damage",
+        "Tax audits and investigations"
+      ],
+      "serviceRoles": [],
+      "languages": [
+        "English"
+      ],
+      "consultationModes": [
+        "telephone",
+        "in person"
+      ],
+      "serviceRegions": [
+        "New York County",
+        "Manhattan",
+        "New York City"
+      ],
+      "availabilityStatus": "not configured",
+      "availabilityNote": "",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "publicListingDestination": "estate-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "b734650eee2c5f5780899318dc6e26f0d68befcc7ab27d3596ce628006923063",
+      "generatedAt": "2026-07-29T02:29:54.382Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "professionalId": "professional-tatiana-f-dasilva",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "displayName": "Tatiana F. DaSilva",
+      "professionalType": "attorney",
+      "firmId": "firm-cohen-wolf",
+      "firmName": "Cohen and Wolf, P.C.",
+      "biography": "Principal whose public profile and firm practice materials describe trusts, estates, elder-law, and tax work.",
+      "phone": "203-368-0211",
+      "website": "https://www.cohenandwolf.com/team-Tatiana-DaSilva",
+      "photoUrl": "",
+      "officeLocations": [
+        "1115 Broad Street, Bridgeport, CT 06604"
+      ],
+      "jurisdictions": [
+        "Connecticut"
+      ],
+      "practiceAreas": [
+        "Trusts and estates",
+        "Elder law",
+        "Tax law"
+      ],
+      "serviceRoles": [],
+      "languages": [
+        "English"
+      ],
+      "consultationModes": [
+        "telephone",
+        "in person"
+      ],
+      "serviceRegions": [
+        "Fairfield County",
+        "Bridgeport",
+        "Westport",
+        "NYC-connected Connecticut",
+        "Connecticut"
+      ],
+      "availabilityStatus": "not configured",
+      "availabilityNote": "",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "publicListingDestination": "estate-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "58329ed40106d5e430f189f9c009e22efc1f332d324c48313cfc61edd1733c4c",
+      "generatedAt": "2026-07-29T02:29:54.382Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "professionalId": "professional-jenna-a-shankman",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "displayName": "Jenna A. Shankman",
+      "professionalType": "attorney",
+      "firmId": "firm-cohen-wolf",
+      "firmName": "Cohen and Wolf, P.C.",
+      "biography": "Associate whose public profile and firm practice listings identify family, trusts-and-estates, probate-litigation, and civil-litigation work.",
+      "phone": "203-368-0211",
+      "website": "https://www.cohenandwolf.com/team-Jenna-Shankman",
+      "photoUrl": "",
+      "officeLocations": [
+        "1115 Broad Street, Bridgeport, CT 06604"
+      ],
+      "jurisdictions": [
+        "Connecticut"
+      ],
+      "practiceAreas": [
+        "Family law",
+        "Trusts and estates",
+        "Probate litigation",
+        "Civil litigation"
+      ],
+      "serviceRoles": [],
+      "languages": [
+        "English"
+      ],
+      "consultationModes": [
+        "telephone",
+        "in person"
+      ],
+      "serviceRegions": [
+        "Fairfield County",
+        "Bridgeport",
+        "Westport",
+        "NYC-connected Connecticut",
+        "Connecticut"
+      ],
+      "availabilityStatus": "not configured",
+      "availabilityNote": "",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "publicListingDestination": "estate-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "edce27ce0abf9c988fbd89d9586cb925db0754ae454e915d17a5ff69643c998b",
+      "generatedAt": "2026-07-29T02:29:54.382Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "professionalId": "professional-ann-l-fowler-cruz",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "displayName": "Ann L. Fowler-Cruz",
+      "professionalType": "attorney",
+      "firmId": "firm-cohen-wolf",
+      "firmName": "Cohen and Wolf, P.C.",
+      "biography": "Principal whose public profile and firm materials describe elder-law, trusts-and-estates, and probate work.",
+      "phone": "203-222-1034",
+      "website": "https://www.cohenandwolf.com/team-Ann-Fowler-Cruz",
+      "photoUrl": "",
+      "officeLocations": [
+        "320 Post Road West, Westport, CT 06880"
+      ],
+      "jurisdictions": [
+        "Connecticut",
+        "New York"
+      ],
+      "practiceAreas": [
+        "Elder law",
+        "Trusts and estates",
+        "Probate"
+      ],
+      "serviceRoles": [],
+      "languages": [
+        "English"
+      ],
+      "consultationModes": [
+        "telephone",
+        "in person"
+      ],
+      "serviceRegions": [
+        "Fairfield County",
+        "Bridgeport",
+        "Westport",
+        "NYC-connected Connecticut",
+        "Connecticut"
+      ],
+      "availabilityStatus": "not configured",
+      "availabilityNote": "",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "publicListingDestination": "estate-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "05829d0c13891f5e03c2fa4364a8fd4b722f4bd46ba7e5b9206c83b1f36a896d",
+      "generatedAt": "2026-07-29T02:29:54.382Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "professionalId": "professional-greta-e-solomon",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "displayName": "Greta E. Solomon",
+      "professionalType": "attorney",
+      "firmId": "firm-cohen-wolf",
+      "firmName": "Cohen and Wolf, P.C.",
+      "biography": "Principal whose public profile and firm materials describe elder-law, tax, and trusts-and-estates work.",
+      "phone": "203-222-1034",
+      "website": "https://www.cohenandwolf.com/team-Greta-Solomon",
+      "photoUrl": "",
+      "officeLocations": [
+        "320 Post Road West, Westport, CT 06880"
+      ],
+      "jurisdictions": [
+        "Connecticut"
+      ],
+      "practiceAreas": [
+        "Elder law",
+        "Tax law",
+        "Trusts and estates"
+      ],
+      "serviceRoles": [],
+      "languages": [
+        "English"
+      ],
+      "consultationModes": [
+        "telephone",
+        "in person"
+      ],
+      "serviceRegions": [
+        "Fairfield County",
+        "Bridgeport",
+        "Westport",
+        "NYC-connected Connecticut",
+        "Connecticut"
+      ],
+      "availabilityStatus": "not configured",
+      "availabilityNote": "",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "publicListingDestination": "estate-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "00a71974e69770bb9c8243a91b2c4eb9348fe2e71a1a52905c343afb1cf9bcdc",
+      "generatedAt": "2026-07-29T02:29:54.382Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "professionalId": "professional-philip-c-pires",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "displayName": "Philip C. Pires",
+      "professionalType": "attorney",
+      "firmId": "firm-cohen-wolf",
+      "firmName": "Cohen and Wolf, P.C.",
+      "biography": "Principal whose public profile describes commercial, probate, municipal, land-use, and property-tax litigation.",
+      "phone": "203-337-4122",
+      "website": "https://www.cohenandwolf.com/team-philip-pires",
+      "photoUrl": "",
+      "officeLocations": [
+        "320 Post Road West, Westport, CT 06880"
+      ],
+      "jurisdictions": [
+        "Connecticut"
+      ],
+      "practiceAreas": [
+        "Commercial litigation",
+        "Probate litigation",
+        "Municipal law",
+        "Land use and zoning",
+        "Property tax appeals"
+      ],
+      "serviceRoles": [],
+      "languages": [
+        "English"
+      ],
+      "consultationModes": [
+        "telephone",
+        "in person"
+      ],
+      "serviceRegions": [
+        "Fairfield County",
+        "Bridgeport",
+        "Westport",
+        "NYC-connected Connecticut",
+        "Connecticut"
+      ],
+      "availabilityStatus": "not configured",
+      "availabilityNote": "",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "publicListingDestination": "estate-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "f0a4220dbf9cff2f6c8e76f8f3a4a6a8e3be89297150656900b599ed5f669a74",
+      "generatedAt": "2026-07-29T02:29:54.382Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "professionalId": "professional-joe-demarco",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "displayName": "Joe DeMarco",
+      "professionalType": "attorney",
+      "firmId": "firm-scarinci-hollenbeck",
+      "firmName": "Scarinci Hollenbeck, LLC",
+      "biography": "Partner listed on the firm’s current Little Falls roster; the firm describes tax, business, and trusts-and-estates services.",
+      "phone": "201-896-7027",
+      "website": "https://scarincihollenbeck.com/attorneys",
+      "photoUrl": "",
+      "officeLocations": [
+        "150 Clove Road, 9th Floor, Little Falls, NJ 07424"
+      ],
+      "jurisdictions": [
+        "New Jersey"
+      ],
+      "practiceAreas": [
+        "Tax law",
+        "Business law",
+        "Trusts and estates"
+      ],
+      "serviceRoles": [],
+      "languages": [
+        "English"
+      ],
+      "consultationModes": [
+        "telephone",
+        "in person"
+      ],
+      "serviceRegions": [
+        "Passaic County",
+        "Little Falls",
+        "Northern Metro New Jersey",
+        "New Jersey"
+      ],
+      "availabilityStatus": "not configured",
+      "availabilityNote": "",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "publicListingDestination": "estate-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "72ab20712b9d6ae676cd704ea6ea9217a83f393c8eae6d02cd05c67cc82be35e",
+      "generatedAt": "2026-07-29T02:29:54.382Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "professionalId": "professional-lester-e-lipschutz",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "displayName": "Lester E. Lipschutz",
+      "professionalType": "attorney",
+      "firmId": "firm-cozen-oconnor",
+      "firmName": "Cozen O’Connor",
+      "biography": "New York attorney identified on the firm’s current office roster as co-chair of Private Client, Trusts and Estates.",
+      "phone": "212-509-9400",
+      "website": "https://www.cozen.com/offices/new-york",
+      "photoUrl": "",
+      "officeLocations": [
+        "3 World Trade Center, 175 Greenwich Street, 55th Floor, New York, NY 10007"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "practiceAreas": [
+        "Private client services",
+        "Trusts and estates"
+      ],
+      "serviceRoles": [],
+      "languages": [
+        "English"
+      ],
+      "consultationModes": [
+        "telephone",
+        "in person"
+      ],
+      "serviceRegions": [
+        "New York County",
+        "Manhattan",
+        "New York City"
+      ],
+      "availabilityStatus": "not configured",
+      "availabilityNote": "",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "publicListingDestination": "estate-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "d9f6721d61a58342fce5ef416a40a3c6a6c74039fca59671fe44cb9895f8e1fe",
+      "generatedAt": "2026-07-29T02:29:54.382Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "professionalId": "professional-lawrence-n-meyerson",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "displayName": "Lawrence N. Meyerson",
+      "professionalType": "attorney",
+      "firmId": "firm-meyerson-fox-conte",
+      "firmName": "Meyerson, Fox & Conte, P.A.",
+      "biography": "Montvale attorney whose professional page describes elder-law, guardianship, estate, and real-estate work.",
+      "phone": "201-802-9202",
+      "website": "https://www.lawfirmmfc.com/attorneys/lawrence-n-meyerson/",
+      "photoUrl": "",
+      "officeLocations": [
+        "One Paragon Drive, Suite 240, Montvale, NJ 07645"
+      ],
+      "jurisdictions": [
+        "New Jersey"
+      ],
+      "practiceAreas": [
+        "Elder law",
+        "Guardianship",
+        "Estate planning and administration",
+        "Real estate"
+      ],
+      "serviceRoles": [],
+      "languages": [
+        "English"
+      ],
+      "consultationModes": [
+        "telephone",
+        "in person"
+      ],
+      "serviceRegions": [
+        "Bergen County",
+        "Montvale",
+        "Northern Metro New Jersey",
+        "New Jersey"
+      ],
+      "availabilityStatus": "not configured",
+      "availabilityNote": "",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "publicListingDestination": "estate-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "1ae13bca19854292c2276e41501c63c292a70d6fff9957b18105581b371bc91d",
+      "generatedAt": "2026-07-29T02:29:54.382Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "professionalId": "professional-john-a-conte-jr",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "displayName": "John A. Conte Jr.",
+      "professionalType": "attorney",
+      "firmId": "firm-meyerson-fox-conte",
+      "firmName": "Meyerson, Fox & Conte, P.A.",
+      "biography": "Montvale attorney whose professional page describes civil-litigation, estate, land-use, real-estate, and commercial matters.",
+      "phone": "201-802-9202",
+      "website": "https://www.lawfirmmfc.com/attorneys/john-a-conte-jr/",
+      "photoUrl": "",
+      "officeLocations": [
+        "One Paragon Drive, Suite 240, Montvale, NJ 07645"
+      ],
+      "jurisdictions": [
+        "New Jersey"
+      ],
+      "practiceAreas": [
+        "Civil litigation",
+        "Estate matters",
+        "Land use",
+        "Real estate",
+        "Commercial law"
+      ],
+      "serviceRoles": [],
+      "languages": [
+        "English"
+      ],
+      "consultationModes": [
+        "telephone",
+        "in person"
+      ],
+      "serviceRegions": [
+        "Bergen County",
+        "Montvale",
+        "Northern Metro New Jersey",
+        "New Jersey"
+      ],
+      "availabilityStatus": "not configured",
+      "availabilityNote": "",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "publicListingDestination": "estate-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "4764e8762d4d3f00095322bdc26d7a4a5d78708d16bacdf5b84110d12f67524d",
+      "generatedAt": "2026-07-29T02:29:54.382Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "professionalId": "professional-andrew-p-bolson",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "displayName": "Andrew P. Bolson",
+      "professionalType": "attorney",
+      "firmId": "firm-meyerson-fox-conte",
+      "firmName": "Meyerson, Fox & Conte, P.A.",
+      "biography": "Montvale attorney whose professional page describes commercial and estate litigation, estate planning, business, real-estate, land-use, and guardianship work.",
+      "phone": "201-802-9202",
+      "website": "https://www.lawfirmmfc.com/attorneys/andrew-p-bolson/",
+      "photoUrl": "",
+      "officeLocations": [
+        "One Paragon Drive, Suite 240, Montvale, NJ 07645"
+      ],
+      "jurisdictions": [
+        "New Jersey"
+      ],
+      "practiceAreas": [
+        "Commercial litigation",
+        "Estate litigation and planning",
+        "Business law",
+        "Real estate and land use",
+        "Guardianship"
+      ],
+      "serviceRoles": [],
+      "languages": [
+        "English"
+      ],
+      "consultationModes": [
+        "telephone",
+        "in person"
+      ],
+      "serviceRegions": [
+        "Bergen County",
+        "Montvale",
+        "Northern Metro New Jersey",
+        "New Jersey"
+      ],
+      "availabilityStatus": "not configured",
+      "availabilityNote": "",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "publicListingDestination": "estate-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "369d90a0da404a7d5e82fcf9a44f778469a0f4b019533bcc0e9037e9f22f06a0",
+      "generatedAt": "2026-07-29T02:29:54.382Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "professionalId": "professional-christine-h-odonnell",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "displayName": "Christine H. O’Donnell",
+      "professionalType": "attorney",
+      "firmId": "firm-meyerson-fox-conte",
+      "firmName": "Meyerson, Fox & Conte, P.A.",
+      "biography": "Montvale attorney listed on the firm’s current roster with guardianship and estate-administration work described in current firm materials.",
+      "phone": "201-802-9202",
+      "website": "https://www.lawfirmmfc.com/attorneys/",
+      "photoUrl": "",
+      "officeLocations": [
+        "One Paragon Drive, Suite 240, Montvale, NJ 07645"
+      ],
+      "jurisdictions": [
+        "New Jersey"
+      ],
+      "practiceAreas": [
+        "Guardianship",
+        "Estate administration"
+      ],
+      "serviceRoles": [],
+      "languages": [
+        "English"
+      ],
+      "consultationModes": [
+        "telephone",
+        "in person"
+      ],
+      "serviceRegions": [
+        "Bergen County",
+        "Montvale",
+        "Northern Metro New Jersey",
+        "New Jersey"
+      ],
+      "availabilityStatus": "not configured",
+      "availabilityNote": "",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "publicListingDestination": "estate-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "06d5f28773ce0960d02b9b0931a5835aa7adc114faf6195747861928b5eb5ff1",
+      "generatedAt": "2026-07-29T02:29:54.382Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "professionalId": "professional-ward-frank-cleary",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "displayName": "Ward Frank Cleary",
+      "professionalType": "attorney",
+      "firmId": "firm-curtis-brinckerhoff-barrett",
+      "firmName": "Curtis, Brinckerhoff & Barrett, P.C.",
+      "biography": "Stamford attorney whose professional page describes tax, estate, and real-estate work.",
+      "phone": "203-324-6777",
+      "website": "https://www.cbbllc.com/attorneys/ward-frank-cleary/",
+      "photoUrl": "",
+      "officeLocations": [
+        "666 Summer Street, Stamford, CT 06901"
+      ],
+      "jurisdictions": [
+        "Connecticut"
+      ],
+      "practiceAreas": [
+        "Tax law",
+        "Estate planning and administration",
+        "Real estate"
+      ],
+      "serviceRoles": [],
+      "languages": [
+        "English"
+      ],
+      "consultationModes": [
+        "telephone",
+        "in person"
+      ],
+      "serviceRegions": [
+        "Fairfield County",
+        "Stamford",
+        "NYC-connected Connecticut",
+        "Connecticut"
+      ],
+      "availabilityStatus": "not configured",
+      "availabilityNote": "",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "publicListingDestination": "estate-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "b751f9067f7c98534ba5a583ce45f9fa64a651fe51c0c1c3817366789faecb97",
+      "generatedAt": "2026-07-29T02:29:54.382Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "professionalId": "professional-daniel-j-fox",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "displayName": "Daniel J. Fox",
+      "professionalType": "attorney",
+      "firmId": "firm-curtis-brinckerhoff-barrett",
+      "firmName": "Curtis, Brinckerhoff & Barrett, P.C.",
+      "biography": "Stamford attorney whose professional page describes real-estate, municipal, commercial, and probate work.",
+      "phone": "203-324-6777",
+      "website": "https://www.cbbllc.com/attorneys/daniel-j-fox/",
+      "photoUrl": "",
+      "officeLocations": [
+        "666 Summer Street, Stamford, CT 06901"
+      ],
+      "jurisdictions": [
+        "Connecticut"
+      ],
+      "practiceAreas": [
+        "Real estate",
+        "Municipal law",
+        "Commercial law",
+        "Probate"
+      ],
+      "serviceRoles": [],
+      "languages": [
+        "English"
+      ],
+      "consultationModes": [
+        "telephone",
+        "in person"
+      ],
+      "serviceRegions": [
+        "Fairfield County",
+        "Stamford",
+        "NYC-connected Connecticut",
+        "Connecticut"
+      ],
+      "availabilityStatus": "not configured",
+      "availabilityNote": "",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "publicListingDestination": "estate-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "0f143c345f1a5c6fc54fee7dcb23fb6dd52a7b0c6fc4576cc4f7d2deb7f5765d",
+      "generatedAt": "2026-07-29T02:29:54.382Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "professionalId": "professional-j-paul-johnson",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "displayName": "J. Paul Johnson",
+      "professionalType": "attorney",
+      "firmId": "firm-curtis-brinckerhoff-barrett",
+      "firmName": "Curtis, Brinckerhoff & Barrett, P.C.",
+      "biography": "Stamford attorney whose professional page describes estate-planning, real-estate, probate-litigation, and business work.",
+      "phone": "203-324-6777",
+      "website": "https://www.cbbllc.com/attorneys/j-paul-johnson/",
+      "photoUrl": "",
+      "officeLocations": [
+        "666 Summer Street, Stamford, CT 06901"
+      ],
+      "jurisdictions": [
+        "Connecticut"
+      ],
+      "practiceAreas": [
+        "Estate planning",
+        "Real estate",
+        "Probate litigation",
+        "Business law"
+      ],
+      "serviceRoles": [],
+      "languages": [
+        "English"
+      ],
+      "consultationModes": [
+        "telephone",
+        "in person"
+      ],
+      "serviceRegions": [
+        "Fairfield County",
+        "Stamford",
+        "NYC-connected Connecticut",
+        "Connecticut"
+      ],
+      "availabilityStatus": "not configured",
+      "availabilityNote": "",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "publicListingDestination": "estate-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "d29cf2faee780fa4614bb402dfdbe615ddedd16156d9e8a13341245ac7c721d6",
+      "generatedAt": "2026-07-29T02:29:54.382Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "professionalId": "professional-robert-j-burney",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "displayName": "Robert J. Burney",
+      "professionalType": "attorney",
+      "firmId": "firm-curtis-brinckerhoff-barrett",
+      "firmName": "Curtis, Brinckerhoff & Barrett, P.C.",
+      "biography": "Stamford attorney whose professional page describes commercial litigation, municipal, land-use, real-estate, wills-and-trusts, and federal-tax work.",
+      "phone": "203-324-6777",
+      "website": "https://www.cbbllc.com/attorneys/robert-j-burney/",
+      "photoUrl": "",
+      "officeLocations": [
+        "666 Summer Street, Stamford, CT 06901"
+      ],
+      "jurisdictions": [
+        "Connecticut"
+      ],
+      "practiceAreas": [
+        "Commercial litigation",
+        "Municipal law",
+        "Land use and real estate",
+        "Wills and trusts",
+        "Federal tax"
+      ],
+      "serviceRoles": [],
+      "languages": [
+        "English"
+      ],
+      "consultationModes": [
+        "telephone",
+        "in person"
+      ],
+      "serviceRegions": [
+        "Fairfield County",
+        "Stamford",
+        "NYC-connected Connecticut",
+        "Connecticut"
+      ],
+      "availabilityStatus": "not configured",
+      "availabilityNote": "",
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "credentialState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicationEligible": false,
+      "publicListingDestination": "estate-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "f71cdd16fc0bf01b37a9abe1f857f2c130c1dcd1f4a6b1d2195564d4984e8d1b",
+      "generatedAt": "2026-07-29T02:29:54.382Z"
+    }
+  ],
+  "firms": [
+    {
+      "recordVersion": "1.4.0",
+      "firmId": "firm-ganolli-law",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "name": "Ganolli Law",
+      "website": "https://www.ganollilaw.com/",
+      "phone": "",
+      "locations": [
+        "26 Court Street, Suite 514, Brooklyn, NY 11242"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "practiceAreas": [
+        "Family law",
+        "Estate planning"
+      ],
+      "languages": [],
+      "serviceRegions": [],
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "verificationState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicListingDestination": "estate-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "6238df56c0538e723bcb71926af5240f592a24fd380d2acb0836b1e2f85daae6",
+      "generatedAt": "2026-07-20T00:00:00.000Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "firmId": "firm-andrew-bokser",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "name": "Law Office of Andrew A. Bokser",
+      "website": "https://www.bokserlaw.net/",
+      "phone": "718-834-1904",
+      "locations": [
+        "26 Court Street, Suite 1003, Brooklyn, NY 11242"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "practiceAreas": [
+        "Family law",
+        "Divorce",
+        "Criminal defense",
+        "Probate",
+        "Estate administration"
+      ],
+      "languages": [],
+      "serviceRegions": [],
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "verificationState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicListingDestination": "estate-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "8ddb23d2061dc168807dbeeb3ce107cccee38eae877b4b67dfc2c1cf61983491",
+      "generatedAt": "2026-07-20T00:00:00.000Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "firmId": "firm-shulman-hill",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "name": "Shulman & Hill",
+      "website": "https://shulman-hill.com/areas-we-serve/brooklyn/",
+      "phone": "866-311-5673",
+      "locations": [
+        "26 Court Street, Suite 2216, Brooklyn, NY 11242"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "practiceAreas": [
+        "Personal injury",
+        "Workers’ compensation",
+        "Construction accidents",
+        "Motor vehicle accidents",
+        "Premises liability",
+        "Wrongful death"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceRegions": [],
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "verificationState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicListingDestination": "estate-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "b8d778976b4dd37a208bf225c8ab45f5f3b99d973de9429b0cf7c14de884e62b",
+      "generatedAt": "2026-07-22T00:00:00.000Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "firmId": "firm-frank-hosein",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "name": "Law Office of Frank Hosein, Jr.",
+      "website": "",
+      "phone": "",
+      "locations": [
+        "26 Court Street, Suite 1600, Brooklyn, NY 11242"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "practiceAreas": [
+        "Estate planning"
+      ],
+      "languages": [],
+      "serviceRegions": [],
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "verificationState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicListingDestination": "estate-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "397e3d8c5f62427ef2dd4c9c762c624665d84555adac805820701e4c47497187",
+      "generatedAt": "2026-07-20T00:00:00.000Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "firmId": "firm-roger-archibald",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "name": "Roger Victor Archibald, PLLC",
+      "website": "https://www.brooklynatty.com/brooklyn/",
+      "phone": "",
+      "locations": [
+        "26 Court Street, Suite 711, Brooklyn, NY 11242"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "practiceAreas": [
+        "Criminal law",
+        "Employment law",
+        "Civil rights",
+        "Medical malpractice",
+        "Real estate",
+        "Trusts and estates"
+      ],
+      "languages": [],
+      "serviceRegions": [],
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "verificationState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicListingDestination": "estate-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "955988090458127f326689e9bdce5dd8e351975e1dc92b563a79a2d3cdb3fbc8",
+      "generatedAt": "2026-07-20T00:00:00.000Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "firmId": "firm-pardalis-nohavicka",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "name": "Pardalis & Nohavicka LLP",
+      "website": "https://www.pnlawyers.com/",
+      "phone": "212-213-8511",
+      "locations": [
+        "950 Third Avenue, 11th Floor, New York, NY 10022"
+      ],
+      "jurisdictions": [
+        "New York",
+        "New Jersey"
+      ],
+      "practiceAreas": [
+        "Commercial litigation",
+        "Criminal law",
+        "Intellectual property",
+        "Business and corporate law",
+        "Entertainment and sports law",
+        "Real estate",
+        "Employment and labor",
+        "Personal injury",
+        "Bankruptcy"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceRegions": [
+        "New York County",
+        "Manhattan",
+        "New York City"
+      ],
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "verificationState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicListingDestination": "estate-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "7d27a4230c373aaf4d0855565bba0f7e7c64c1e037f6d97f07a0cca143670fe2",
+      "generatedAt": "2026-07-23T00:00:00.000Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "firmId": "firm-schwartz-perry-heller",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "name": "Schwartz Perry & Heller LLP",
+      "website": "https://www.schwartzandperry.com/",
+      "phone": "646-490-0221",
+      "locations": [
+        "3 Park Avenue, Suite 2700, New York, NY 10016"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "practiceAreas": [
+        "Employment law",
+        "Employment discrimination",
+        "Sexual harassment",
+        "Retaliation",
+        "Reasonable accommodation",
+        "Employment contracts",
+        "Severance agreements",
+        "Wage claims",
+        "Family and medical leave"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceRegions": [
+        "New York County",
+        "Manhattan",
+        "New York City"
+      ],
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "verificationState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicListingDestination": "estate-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "cd5ab86f0f20e6dba006a2f0f3474c08fece22e612bbef9765065606e996a3ba",
+      "generatedAt": "2026-07-23T00:00:00.000Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "firmId": "firm-chasan-lamparello-mallon-cappuzzo",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "name": "Chasan Lamparello Mallon & Cappuzzo, PC",
+      "website": "https://www.chasanlaw.com/",
+      "phone": "201-348-6000",
+      "locations": [
+        "300 Lighting Way, Suite 200, Secaucus, NJ 07094"
+      ],
+      "jurisdictions": [
+        "New Jersey"
+      ],
+      "practiceAreas": [
+        "Civil litigation",
+        "Employment and labor law",
+        "Education law",
+        "Governmental law",
+        "Land use and zoning",
+        "Business law",
+        "Estate planning"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceRegions": [
+        "Hudson County",
+        "Northern Metro New Jersey",
+        "New Jersey"
+      ],
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "verificationState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicListingDestination": "estate-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "a6869fd50582943bf99f54f8ea18d52a07683fcc87b3e26a3d83fc602d92ab51",
+      "generatedAt": "2026-07-23T00:00:00.000Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "firmId": "firm-abrams-fensterman",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "name": "Abrams Fensterman, LLP",
+      "website": "https://www.abramslaw.com/",
+      "phone": "718-215-5300",
+      "locations": [
+        "1 MetroTech Center, Suite 1701, Brooklyn, NY 11201"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "practiceAreas": [
+        "Divorce and family law",
+        "Real estate law",
+        "Elder law",
+        "Trusts and estates",
+        "Transportation law",
+        "Civil litigation"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceRegions": [
+        "Kings County",
+        "Brooklyn",
+        "New York City",
+        "New York"
+      ],
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "verificationState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicListingDestination": "estate-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "558a096843de08517d07811d0ae7c8f8b2ebd6800de98dbe3f3c89fd7520fa67",
+      "generatedAt": "2026-07-22T00:00:00.000Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "firmId": "firm-korsinsky-klein",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "name": "Korsinsky & Klein LLP",
+      "website": "https://www.kklawfirm.com/",
+      "phone": "212-257-0199",
+      "locations": [
+        "2926 Avenue L, Brooklyn, NY 11210"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "practiceAreas": [
+        "Elder law",
+        "Medicaid planning",
+        "Estate planning and probate",
+        "Guardianships",
+        "Civil litigation",
+        "Construction law",
+        "Real estate law",
+        "Employment law"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceRegions": [
+        "Kings County",
+        "Brooklyn",
+        "New York City",
+        "New York"
+      ],
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "verificationState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicListingDestination": "estate-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "3ea21da401f99959396f0605a7ceb2a75a9d3659d8189396e2ae991fbef04539",
+      "generatedAt": "2026-07-23T00:00:00.000Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "firmId": "firm-law-office-vernita-charles",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "name": "Law Office of Vernita Charles",
+      "website": "https://www.vernitacharles.com/",
+      "phone": "718-802-9749",
+      "locations": [
+        "44 Court Street, Suite 910, Brooklyn, NY 11201"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "practiceAreas": [
+        "Divorce and family law",
+        "Trusts and estates",
+        "Estate planning",
+        "Probate"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceRegions": [
+        "Kings County",
+        "Brooklyn",
+        "New York City"
+      ],
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "verificationState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicListingDestination": "estate-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "f3cc953bc4dd6b3832fa3cb77baae0033bc81ccd88254ec57e2f031f01eb1579",
+      "generatedAt": "2026-07-23T00:00:00.000Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "firmId": "firm-beldock-levine-hoffman",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "name": "Beldock Levine & Hoffman LLP",
+      "website": "https://www.blhny.com/",
+      "phone": "212-490-0400",
+      "locations": [
+        "99 Park Avenue, PH/26th Floor, New York, NY 10016"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "practiceAreas": [
+        "Civil rights and discrimination",
+        "Employment law",
+        "Criminal defense",
+        "Wrongful death",
+        "Family and matrimonial law",
+        "Real estate",
+        "Estate planning and administration",
+        "Nonprofit governance"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceRegions": [
+        "New York County",
+        "Manhattan",
+        "New York City"
+      ],
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "verificationState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicListingDestination": "estate-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "1a0962e4684968ec080e56fbc24841d16033cdcd3d62c720304ea616cabbf7d3",
+      "generatedAt": "2026-07-23T00:00:00.000Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "firmId": "firm-scarinci-hollenbeck",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "name": "Scarinci Hollenbeck, LLC",
+      "website": "https://scarincihollenbeck.com/",
+      "phone": "201-896-4100",
+      "locations": [
+        "150 Clove Road, 9th Floor, Little Falls, NJ 07424"
+      ],
+      "jurisdictions": [
+        "New Jersey",
+        "New York"
+      ],
+      "practiceAreas": [
+        "Labor and employment",
+        "Education law",
+        "Public law",
+        "Business law",
+        "Litigation",
+        "Tax, trusts, and estates",
+        "Real estate"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceRegions": [
+        "Passaic County",
+        "Little Falls",
+        "Northern Metro New Jersey",
+        "New Jersey"
+      ],
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "verificationState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicListingDestination": "estate-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "7478bc8f4cec1a05a8998e838f21e3a7e9da4ba14aaa627e6f4ee5c60adaac28",
+      "generatedAt": "2026-07-22T00:00:00.000Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "firmId": "firm-cohen-wolf",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "name": "Cohen and Wolf, P.C.",
+      "website": "https://www.cohenandwolf.com/",
+      "phone": "203-368-0211",
+      "locations": [
+        "1115 Broad Street, Bridgeport, CT 06604",
+        "320 Post Road West, Westport, CT 06880"
+      ],
+      "jurisdictions": [
+        "Connecticut",
+        "New York"
+      ],
+      "practiceAreas": [
+        "Business and corporate law",
+        "Employment law",
+        "Family law",
+        "Litigation",
+        "Personal injury",
+        "Criminal defense",
+        "Elder law",
+        "Trusts and estates",
+        "Probate litigation",
+        "Tax law",
+        "Intellectual property",
+        "Real estate"
+      ],
+      "languages": [
+        "English",
+        "Spanish"
+      ],
+      "serviceRegions": [
+        "Fairfield County",
+        "Bridgeport",
+        "Westport",
+        "NYC-connected Connecticut",
+        "Connecticut"
+      ],
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "verificationState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicListingDestination": "estate-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "217cf48c067b1d8aadf2bacdb5a27a4cf1b90530c5420900cfa1b5924619c7d0",
+      "generatedAt": "2026-07-24T00:00:00.000Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "firmId": "firm-cozen-oconnor",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "name": "Cozen O’Connor",
+      "website": "https://www.cozen.com/offices/new-york",
+      "phone": "212-509-9400",
+      "locations": [
+        "3 World Trade Center, 175 Greenwich Street, 55th Floor, New York, NY 10007"
+      ],
+      "jurisdictions": [
+        "New York"
+      ],
+      "practiceAreas": [
+        "Real estate",
+        "Business litigation",
+        "Construction law",
+        "Trademark prosecution",
+        "Trusts and estates"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceRegions": [
+        "New York County",
+        "Manhattan",
+        "New York City",
+        "New York"
+      ],
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "verificationState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicListingDestination": "estate-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "1bea0c115986a69ab51a34edcdd7b2aa585a37300cda0c316f42abfbd1de0345",
+      "generatedAt": "2026-07-24T20:00:00.000Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "firmId": "firm-meyerson-fox-conte",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "name": "Meyerson, Fox & Conte, P.A.",
+      "website": "https://www.lawfirmmfc.com/",
+      "phone": "201-802-9202",
+      "locations": [
+        "One Paragon Drive, Suite 240, Montvale, NJ 07645"
+      ],
+      "jurisdictions": [
+        "New Jersey"
+      ],
+      "practiceAreas": [
+        "Family law",
+        "Estate planning and administration",
+        "Elder law and guardianship",
+        "Civil and commercial litigation",
+        "Real estate and land use",
+        "Business law"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceRegions": [
+        "Bergen County",
+        "Montvale",
+        "Northern Metro New Jersey",
+        "New Jersey"
+      ],
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "verificationState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicListingDestination": "estate-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "3a21841b9c7353f42fd6ffee2018dd4a53ee6dbd78f26db947ce3b5cdcd869c0",
+      "generatedAt": "2026-07-24T20:00:00.000Z"
+    },
+    {
+      "recordVersion": "1.4.0",
+      "firmId": "firm-curtis-brinckerhoff-barrett",
+      "sourceRevision": 1,
+      "submittedRevision": 0,
+      "reviewStatus": "draft",
+      "name": "Curtis, Brinckerhoff & Barrett, P.C.",
+      "website": "https://www.cbbllc.com/",
+      "phone": "203-324-6777",
+      "locations": [
+        "666 Summer Street, Stamford, CT 06901"
+      ],
+      "jurisdictions": [
+        "Connecticut"
+      ],
+      "practiceAreas": [
+        "Civil and commercial litigation",
+        "Real estate and land use",
+        "Estate planning and probate",
+        "Family law",
+        "Business law",
+        "Tax law"
+      ],
+      "languages": [
+        "English"
+      ],
+      "serviceRegions": [
+        "Fairfield County",
+        "Stamford",
+        "NYC-connected Connecticut",
+        "Connecticut"
+      ],
+      "sourceOrigin": "public-source-seed",
+      "dataAuthority": "source-supported",
+      "claimState": "not claimed",
+      "verificationState": "not started",
+      "ownerApprovalState": "approved",
+      "membershipState": "none",
+      "portalPublicationState": "not distributed",
+      "publicListingDestination": "estate-law-aid",
+      "smarterJusticePublicProfile": false,
+      "paymentCreatesPublication": false,
+      "distributionAction": "UPSERT_PRIVATE",
+      "suppressionState": "NONE",
+      "recordFingerprint": "50d02c750e376facdb81d6eb931ec647fea3d9452119484d4cd6c61adfed91a6",
+      "generatedAt": "2026-07-24T20:00:00.000Z"
+    }
+  ],
+  "containsUserMatterData": false,
+  "containsCredentials": false,
+  "containsPaymentData": false,
+  "containsConfidentialData": false,
+  "automaticWrites": false,
+  "liveConnection": false,
+  "generatedAt": "2026-07-29T02:29:54.377Z"
+}

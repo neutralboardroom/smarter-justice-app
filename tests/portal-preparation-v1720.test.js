@@ -1,0 +1,14 @@
+const assert=require('assert');
+const fs=require('fs');
+const path=require('path');
+const root=path.join(__dirname,'..');
+const html=fs.readFileSync(path.join(root,'public','portal-preparation.html'),'utf8');
+const js=fs.readFileSync(path.join(root,'public','portal-preparation.js'),'utf8');
+for(const term of ['Portal Preparation Pack','Device only','does not calculate a legal deadline','Build preparation pack','Download text','Download JSON','Nothing you type here is sent']) assert(html.includes(term),`missing ${term}`);
+for(const term of ["fetch('/api/portals')",'URL.createObjectURL','navigator.clipboard','preparation pack']) assert(js.includes(term),`missing ${term}`);
+assert(!/localStorage|sessionStorage|sendBeacon|XMLHttpRequest|\/api\/(?!portals)/.test(js),'portal preparation must not persist or submit user content');
+const tools=fs.readFileSync(path.join(root,'public','free-tools.html'),'utf8');
+const portals=fs.readFileSync(path.join(root,'public','portals.html'),'utf8');
+const sitemap=fs.readFileSync(path.join(root,'public','sitemap.xml'),'utf8');
+assert(tools.includes('/portal-preparation.html'));assert(portals.includes('/portal-preparation.html'));assert(sitemap.includes('/portal-preparation.html'));
+console.log('v1.7.20 device-only Portal Preparation Pack boundaries, local exports, and public discovery links passed.');

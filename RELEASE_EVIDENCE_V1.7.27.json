@@ -1,0 +1,57 @@
+{
+  "version": "1.7.27",
+  "date": "2026-07-23",
+  "deployed": false,
+  "rollbackArtifact": "smarter-justice-v1.7.26.zip",
+  "activationGatesChanged": false,
+  "predeploymentAudit": {
+    "complete": true,
+    "baselineRegressionParts": 58,
+    "serverEnforcedSensitivePublicFormGating": true,
+    "truthfulSensitivePublicFormAvailability": true,
+    "directorySourceFreshnessFilter": true,
+    "professionalProgramCopyClarified": true,
+    "profileSourcesRechecked": true,
+    "nextVersionImprovementMetadataRefreshed": true
+  },
+  "revenue": {
+    "professionalPricesChanged": false,
+    "monthlyProfessionalPrice": 15,
+    "annualProfessionalPrice": 150,
+    "newPublicPriceImplemented": false,
+    "opportunitiesClassified": true,
+    "paidOrganicRanking": false,
+    "pingPostLeadSelling": false
+  },
+  "security": {
+    "ownerAndStaffPageShellsAuthenticated": true,
+    "sensitiveTrafficApproved": false,
+    "sensitivePublicFormStorageWhenClosed": false,
+    "confidentialUploadsEnabled": false
+  },
+  "profileGrowth": {
+    "leadMarket": "Manhattan",
+    "nextLeadMarket": "Brooklyn",
+    "newProfessionals": 12,
+    "newFirms": 2,
+    "newLinks": 12,
+    "publicDirectory": {
+      "professionals": 125,
+      "firms": 34,
+      "total": 159
+    },
+    "strictQualifying": {
+      "professionals": 124,
+      "firms": 32,
+      "total": 156
+    }
+  },
+  "testing": {
+    "expectedSuiteParts": 62,
+    "freshInstallCompleted": false,
+    "freshVulnerabilityCountClaimed": false
+  },
+  "production": {
+    "lastVerifiedVersion": "1.6.1"
+  }
+}

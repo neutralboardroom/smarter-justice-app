@@ -1,0 +1,11 @@
+'use strict';
+const assert=require('assert');const fs=require('fs');const path=require('path');
+const root=path.join(__dirname,'..');const html=fs.readFileSync(path.join(root,'public','whole-situation.html'),'utf8');const js=fs.readFileSync(path.join(root,'public','whole-situation.js'),'utf8');const tools=fs.readFileSync(path.join(root,'public','free-tools.html'),'utf8');
+for(const token of ['Whole Situation Map','Device-only connected-problem organizer','No account. No server save. No analytics. No AI transmission. No automatic cross-portal sharing.','legal, medical, financial, investment, insurance, tax, mortgage, or property advice','User-controlled handoff checklist'])assert(html.includes(token),token);
+for(const signal of ['housing','job-income','debt-scam','health-care','family-safety','benefits-disability','immigration','criminal-traffic','business','property','education','aging-estate'])assert(html.includes(`value="${signal}"`),signal);
+for(const pathName of ['Landlord-Tenant and Housing Law Aid','Bankruptcy and Debt Law Aid','CoveredNYC Health Coverage Help','Immigration Oasis','Criminal Law Aid','Business Launch Desk','Education and Special Education Law Aid','Estate Law Aid'])assert(js.includes(pathName),pathName);
+for(const bannedScope of ['Smarter Money','Smarter Health','Smarter Property','automatic cross-sector sharing'])assert(!js.includes(bannedScope),bannedScope);
+for(const banned of ['fetch(','XMLHttpRequest','WebSocket','localStorage','sessionStorage','navigator.sendBeacon'])assert(!js.includes(banned),`network/storage primitive present: ${banned}`);
+for(const token of ['why','reason','Download text','Download JSON','does not send it','deadline','legalPortalOnly'])assert((html+js).toLowerCase().includes(token.toLowerCase()),token);
+assert(tools.includes('/whole-situation.html'));assert(js.includes('SMARTER_JUSTICE_WHOLE_SITUATION_MAP_V1.7.30'));
+console.log('whole-situation-map-v1724.test.js passed');

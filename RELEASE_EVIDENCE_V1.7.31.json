@@ -1,0 +1,89 @@
+{
+  "version": "1.7.31",
+  "date": "2026-07-24",
+  "title": "Device-Only Communication & Evidence Log, Connected Preparation Journey, and Queens-Led Six-Region Profile Growth",
+  "deployed": false,
+  "productionVersion": "1.6.1",
+  "rollbackArtifact": "smarter-justice-v1.7.30.zip",
+  "rollbackSha256": "2293e9a6a19fcc1375cabadb5f9aa25a70c1eb3b11976accb628c7fc551927f4",
+  "activationGatesChanged": false,
+  "sourceArtifact": {
+    "name": "smarter-justice-v1.7.30.zip",
+    "sha256": "2293e9a6a19fcc1375cabadb5f9aa25a70c1eb3b11976accb628c7fc551927f4",
+    "sizeBytes": 2986216,
+    "zipEntries": 490,
+    "files": 479,
+    "explicitDirectories": 11
+  },
+  "implementation": {
+    "communicationEvidenceLog": true,
+    "recordsCalls": false,
+    "collectsEvidenceFiles": false,
+    "verifiesEvidence": false,
+    "calculatesLegalDeadlines": false,
+    "serverStorageOrTransmission": false,
+    "connectedPreparationJourney": true,
+    "allSixPhaseOneRegionsWorked": true,
+    "currentEnvironmentReview": true,
+    "continuousImprovementRecord": true
+  },
+  "profileGrowth": {
+    "newProfessionals": 36,
+    "newFirms": 6,
+    "newLinks": 36,
+    "regionsWorked": 6,
+    "regionalCounts": {
+      "Manhattan": 6,
+      "Brooklyn": 6,
+      "Queens": 6,
+      "The Bronx": 6,
+      "Northern Metro New Jersey": 6,
+      "NYC-connected Connecticut": 6
+    },
+    "publicDirectory": {
+      "professionals": 233,
+      "firms": 48,
+      "total": 281
+    },
+    "strictQualifying": {
+      "professionals": 232,
+      "firms": 46,
+      "total": 278
+    },
+    "nextLeadRegion": "The Bronx"
+  },
+  "gates": {
+    "sensitiveTrafficApproved": false,
+    "professionalPaidPilot": "paused",
+    "publicPaidHumanReview": "paused",
+    "professionalPayments": false,
+    "publicPayments": false,
+    "booking": false,
+    "reviews": false,
+    "confidentialUploads": false,
+    "unrestrictedRouting": false,
+    "automaticFiling": false,
+    "broadCrossPortalUserDataSharing": false,
+    "automaticCrossRepositorySynchronization": false
+  },
+  "testing": {
+    "suiteParts": 78,
+    "inheritedBaselineParts": 74,
+    "newRegressionParts": 4,
+    "workingTree": "passed",
+    "freshExtractionA": "passed independently",
+    "freshExtractionB": "passed independently",
+    "javascriptSyntaxChecks": 181,
+    "jsonParseChecks": 90,
+    "fileByteEquality": "passed across final working tree and both fresh extractions",
+    "postTestByteEquality": "passed; exact extracted artifacts unchanged by testing"
+  },
+  "knownLimitations": [
+    "Not deployed; last verified production remains v1.6.1.",
+    "Configured npm registry timed out; no fresh clean-install or vulnerability count is claimed.",
+    "External test-only pg and nodemailer compatibility modules are not packaged.",
+    "No physical-device or assistive-technology acceptance was available.",
+    "The Communication & Evidence Log is a user-entered local index, not a recording, evidence-preservation, authenticity, admissibility, reminder, or legal-advice service.",
+    "Professional-controlled profile sources are self-reported and independent credential verification remains pending."
+  ]
+}

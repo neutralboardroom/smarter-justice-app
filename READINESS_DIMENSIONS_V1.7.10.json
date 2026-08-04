@@ -1,0 +1,104 @@
+{
+  "schemaVersion": "1.0.0",
+  "project": "Smarter Justice",
+  "releaseVersion": "1.7.10",
+  "overallState": "exact-tested predeployment development package; not deployed or production accepted",
+  "dimensions": [
+    {
+      "id": "product",
+      "status": "exact artifact tested",
+      "evidence": "v1.7.10 truthful program status, explicit assistance choice, public minimization, service roles, correction visibility, and portal reconciliation are implemented and regression-tested.",
+      "remaining": "No production activation implied."
+    },
+    {
+      "id": "customerLanguage",
+      "status": "exact artifact tested",
+      "evidence": "Enrollment, assistance, saved-work, correction, and professional-status language is reconciled and regression-tested.",
+      "remaining": "Real-user cohort validation remains pending."
+    },
+    {
+      "id": "accessibility",
+      "status": "automated foundation passed",
+      "evidence": "Automated accessibility and responsive safeguards remain in the full regression suite.",
+      "remaining": "Physical assistive-technology and real-device acceptance remain pending."
+    },
+    {
+      "id": "mobile",
+      "status": "automated foundation passed",
+      "evidence": "Phone, tablet, touch-target, input-zoom, overflow, and action-stacking safeguards remain tested.",
+      "remaining": "Physical iPhone, Android, and tablet acceptance remain pending."
+    },
+    {
+      "id": "security",
+      "status": "code foundation passed",
+      "evidence": "Owner/professional authentication, MFA, sessions, CSRF, sensitive-route boundaries, and fail-closed gates remain tested.",
+      "remaining": "Production account, email, bootstrap-removal, and operational acceptance remain pending."
+    },
+    {
+      "id": "privacy",
+      "status": "code foundation passed",
+      "evidence": "Rules-only assistance is default; external AI requires affirmative choice; public provider details are removed; sensitive gates remain closed.",
+      "remaining": "Production privacy review and vendor configuration remain pending."
+    },
+    {
+      "id": "database",
+      "status": "external evidence required",
+      "evidence": "PostgreSQL, migrations, advisory locking, reconnect, and fail-closed foundations exist.",
+      "remaining": "Production durability, concurrency, backup, and restore proof remain pending."
+    },
+    {
+      "id": "email",
+      "status": "external evidence required",
+      "evidence": "Transactional email code foundations exist.",
+      "remaining": "SPF, DKIM, DMARC, sender identity, delivery, bounce, complaint, and reply evidence remain pending."
+    },
+    {
+      "id": "payments",
+      "status": "closed",
+      "evidence": "Stripe and billing lifecycle foundations exist, but public and professional charges remain fail-closed.",
+      "remaining": "Full provider-side test lifecycle, reconciliation, legal review, support, and owner activation remain pending."
+    },
+    {
+      "id": "legal",
+      "status": "external review required",
+      "evidence": "Advertising, profile, referral, sponsorship, engagement, terms, privacy, billing, and complaint boundaries are documented.",
+      "remaining": "Qualified legal and professional-responsibility review remains pending."
+    },
+    {
+      "id": "support",
+      "status": "named operations required",
+      "evidence": "Support and escalation workflow foundations exist.",
+      "remaining": "Named owner, backup, hours, service levels, refund authority, complaint handling, and exercised procedures remain pending."
+    },
+    {
+      "id": "professionalOperations",
+      "status": "pilot foundation only",
+      "evidence": "Account/profile preparation is separated from paid enrollment; service-role foundations and correction request paths exist.",
+      "remaining": "Real cohort, timing, email, support, seat lifecycle, and billing evidence remain pending."
+    },
+    {
+      "id": "deployment",
+      "status": "not deployed",
+      "evidence": "Controlled deployment instructions and rollback controls exist.",
+      "remaining": "Owner approval and exact production deployment remain pending."
+    },
+    {
+      "id": "liveVerification",
+      "status": "not verified",
+      "evidence": "The last verified production version remains v1.6.1.",
+      "remaining": "DNS, SSL, health, routes, protected pages, logs, monitoring, mobile, and accessibility checks are pending for v1.7.10."
+    },
+    {
+      "id": "recovery",
+      "status": "external exercise required",
+      "evidence": "Backup, restore, rollback, incident, and emergency-pause requirements are recorded.",
+      "remaining": "A production-equivalent recovery and rollback exercise remains pending."
+    }
+  ],
+  "summary": {
+    "totalDimensions": 15,
+    "exactOrAutomatedFoundation": 6,
+    "externalOrProductionEvidencePending": 8
+  },
+  "rule": "No single percentage or polished screen may be used as proof of operational readiness. Each dimension has separate evidence and approval."
+}

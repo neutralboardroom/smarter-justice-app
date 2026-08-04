@@ -1,0 +1,92 @@
+{
+  "schema_id": "SJP-READ-ONLY-PROVIDER-DISCOVERY-RECEIPT-2026-08-02-V1",
+  "receipt_id": "sj-provider-discovery-source-v1.7.71-local-only",
+  "observed_at": "2026-08-02T17:04:00-04:00",
+  "observation_scope": "LOCAL_SOURCE_AND_RELEASE_EVIDENCE_ONLY",
+  "product": {
+    "id": "smarter-justice-central",
+    "name": "Smarter Justice",
+    "version": "1.7.71",
+    "artifact_name": "smarter-justice-v1.7.71.zip",
+    "artifact_sha256": "d83a25d224f0cec197569204fb33ac19e32e6f3d307e57e48a265f53b052569c",
+    "artifact_size_bytes": 7894341,
+    "initial_cutover_track": true
+  },
+  "repository": {
+    "provider": "GITHUB",
+    "repository_identifier": null,
+    "repository_state": "UNKNOWN",
+    "default_branch": null,
+    "default_branch_state": "UNKNOWN",
+    "commit_sha": null,
+    "commit_state": "UNKNOWN",
+    "tree_sha": null,
+    "tree_state": "UNKNOWN"
+  },
+  "deployment": {
+    "provider": "RENDER",
+    "workspace_identifier": null,
+    "workspace_state": "UNKNOWN",
+    "service_identifier": null,
+    "service_state": "UNKNOWN",
+    "service_type": "web",
+    "auto_deploy_state": "UNKNOWN",
+    "deployment_mode": "UNSELECTED_PROVIDER_DISCOVERY_REQUIRED"
+  },
+  "domain": {
+    "canonical_origin": "https://smarterjustice.com",
+    "ownership_state": "UNKNOWN",
+    "dns_state": "UNKNOWN",
+    "tls_state": "UNKNOWN",
+    "redirect_state": "UNKNOWN"
+  },
+  "secret_presence": {
+    "DATABASE_URL": "UNKNOWN",
+    "SMTP_HOST": "UNKNOWN",
+    "SMTP_USER": "UNKNOWN",
+    "SMTP_PASS": "UNKNOWN",
+    "APP_BASE_URL": "UNKNOWN",
+    "OWNER_CONTROL_CENTER_TOKEN": "UNKNOWN"
+  },
+  "migration": {
+    "classification": "UNCLASSIFIED_BLOCKED",
+    "classification_state": "UNVERIFIED"
+  },
+  "rollback": {
+    "last_known_good": "1.6.1_VERSION_ONLY",
+    "last_known_good_state": "UNVERIFIED",
+    "rollback_candidate": "smarter-justice-v1.7.71.zip",
+    "rollback_candidate_state": "VERIFIED"
+  },
+  "discovery_state": "DISCOVERY_REQUIRED",
+  "risk_factors": [
+    {
+      "code": "PROVIDER_IDENTIFIERS_UNDISCOVERED",
+      "severity": 3
+    },
+    {
+      "code": "SECRET_PRESENCE_UNDISCOVERED",
+      "severity": 3
+    },
+    {
+      "code": "ROLLBACK_PRODUCTION_BINDING_UNVERIFIED",
+      "severity": 2
+    }
+  ],
+  "exact_blockers": [
+    "GitHub repository, commit and tree are not read-only discovered.",
+    "Render workspace and service are not read-only discovered.",
+    "Canonical domain, DNS and TLS provider states are not read-only discovered.",
+    "Required secret presence states are unknown; secret values must never be recorded."
+  ],
+  "evidence_references": [
+    "smarter-justice-v1.7.71.zip",
+    "deployment/portfolio-products.json",
+    "deployment/dns-tls-canonical-origin-matrix.json",
+    "deployment/external-service-activation-matrix.json"
+  ],
+  "next_executable_action": "Perform owner-authorized read-only GitHub, Render, domain and secret-presence discovery for this exact product; record identifiers and presence states only.",
+  "read_only": true,
+  "deployment_requested": false,
+  "secret_values_included": false
+}

@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Smarter Justice Detached Final Artifact Identity Receipt",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "schemaVersion",
+    "receiptId",
+    "receiptEpoch",
+    "receiptRevision",
+    "identityMode",
+    "issuedAt",
+    "sourcePackageVersion",
+    "artifact",
+    "launchState",
+    "deploymentAuthorized",
+    "scope"
+  ],
+  "properties": {
+    "schema": {
+      "const": "smarter-justice-detached-final-artifact-identity"
+    },
+    "schemaVersion": {
+      "const": "1.0.0"
+    },
+    "receiptId": {
+      "type": "string",
+      "pattern": "^SJFIR-[A-Z0-9-]{8,96}$"
+    },
+    "receiptEpoch": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "receiptRevision": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "identityMode": {
+      "const": "DETACHED_AFTER_IMMUTABLE_PACKAGING"
+    },
+    "issuedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "sourcePackageVersion": {
+      "const": "1.7.75"
+    },
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "version",
+        "filename",
+        "hashAlgorithm",
+        "sha256",
+        "sizeBytes"
+      ],
+      "properties": {
+        "version": {
+          "const": "1.7.75"
+        },
+        "filename": {
+          "const": "smarter-justice-v1.7.75.zip"
+        },
+        "hashAlgorithm": {
+          "const": "SHA-256"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "sizeBytes": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "launchState": {
+      "const": "NO_GO"
+    },
+    "deploymentAuthorized": {
+      "const": false
+    },
+    "scope": {
+      "const": "FINAL_ARCHIVE_IDENTITY_ONLY_NOT_DEPLOYMENT_OR_LIVE_ACCEPTANCE"
+    }
+  }
+}

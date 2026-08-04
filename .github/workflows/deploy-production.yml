@@ -1,0 +1,217 @@
+name: Smarter Justice production deploy
+
+on:
+  workflow_dispatch:
+    inputs:
+      target_sha:
+        description: Exact qualified 40-character commit SHA.
+        required: true
+        type: string
+      target_version:
+        description: Exact authorized application version.
+        required: true
+        default: '1.7.83'
+        type: string
+      authorization_id:
+        description: Current product-scoped owner authorization receipt ID.
+        required: true
+        type: string
+      migration_class:
+        description: Exact accepted migration class.
+        required: true
+        default: BACKWARD_COMPATIBLE_EXPAND
+        type: choice
+        options:
+          - BACKWARD_COMPATIBLE_EXPAND
+          - NO_MIGRATION
+          - STATEFUL_REVERSIBLE
+
+permissions:
+  contents: write
+  actions: read
+  checks: read
+
+concurrency:
+  group: smarter-justice-production
+  cancel-in-progress: false
+
+env:
+  PUBLIC_BASE_URL: ${{ vars.PUBLIC_BASE_URL || 'https://smarterjustice.com' }}
+  EXPECTED_VERSION: '1.7.83'
+  EXPECTED_MIGRATION_CLASS: BACKWARD_COMPATIBLE_EXPAND
+  VERIFIED_PREVIOUS_COMMIT: 2d6bb20ac2a92dd421113caa3f56aa7c6378f182
+  VERIFIED_PREVIOUS_VERSION: '1.6.1'
+
+jobs:
+  deploy-exact-main:
+    name: deploy-exact-main
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: Checkout main with release history
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Use Node 22
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+        with:
+          node-version: '22.x'
+          package-manager-cache: false
+      - name: Resolve exact authorized target
+        id: target
+        env:
+          TARGET_SHA: ${{ inputs.target_sha }}
+          TARGET_VERSION: ${{ inputs.target_version }}
+          AUTHORIZATION_ID: ${{ inputs.authorization_id }}
+          MIGRATION_CLASS: ${{ inputs.migration_class }}
+        run: |
+          set -euo pipefail
+          printf '%s' "$TARGET_SHA" | grep -Eq '^[0-9a-f]{40}$'
+          printf '%s' "$AUTHORIZATION_ID" | grep -Eq '^[A-Za-z0-9][A-Za-z0-9._:-]{7,127}$'
+          test "$TARGET_VERSION" = "$EXPECTED_VERSION"
+          test "$MIGRATION_CLASS" = "$EXPECTED_MIGRATION_CLASS"
+          git cat-file -e "$TARGET_SHA^{commit}"
+          git checkout --detach "$TARGET_SHA"
+          test "$(git rev-parse HEAD)" = "$TARGET_SHA"
+          test "$(node -p "require('./package.json').version")" = "$TARGET_VERSION"
+          test -z "$(git status --porcelain)"
+          echo "sha=$TARGET_SHA" >> "$GITHUB_OUTPUT"
+          echo "version=$TARGET_VERSION" >> "$GITHUB_OUTPUT"
+          echo "authorization_id=$AUTHORIZATION_ID" >> "$GITHUB_OUTPUT"
+          echo "migration_class=$MIGRATION_CLASS" >> "$GITHUB_OUTPUT"
+      - name: Require successful qualification gate for exact commit
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TARGET_SHA: ${{ steps.target.outputs.sha }}
+        run: |
+          set -euo pipefail
+          count="$(gh api "repos/$GITHUB_REPOSITORY/commits/$TARGET_SHA/check-runs" --jq '[.check_runs[] | select(.name == "qualification-gate" and .conclusion == "success")] | length')"
+          test "$count" -ge 1
+      - name: Capture previous live health
+        run: |
+          set +e
+          curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/health" > "$RUNNER_TEMP/previous-health.json"
+          set -e
+      - name: Confirm Render deploy hook
+        env:
+          RENDER_DEPLOY_HOOK_URL: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+        run: test -n "$RENDER_DEPLOY_HOOK_URL"
+      - name: Request exact-commit Render deployment
+        id: deploy
+        env:
+          RENDER_DEPLOY_HOOK_URL: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+          TARGET_SHA: ${{ steps.target.outputs.sha }}
+        run: |
+          set -euo pipefail
+          sep='?'; [[ "$RENDER_DEPLOY_HOOK_URL" == *'?'* ]] && sep='&'
+          curl --fail --silent --show-error --location --max-time 30 "${RENDER_DEPLOY_HOOK_URL}${sep}ref=${TARGET_SHA}" > "$RUNNER_TEMP/render-deploy-response.json"
+          python3 - <<'PY'
+          import pathlib, os
+          response=pathlib.Path(os.environ['RUNNER_TEMP'])/'render-deploy-response.json'
+          print(response.read_text(errors='replace')[:800])
+          PY
+      - name: Verify live version, liveness, homepage, and closed-sensitive defaults
+        id: smoke
+        env:
+          TARGET_VERSION: ${{ steps.target.outputs.version }}
+        run: |
+          set -euo pipefail
+          delay=10
+          for attempt in $(seq 1 18); do
+            echo "Live verification attempt $attempt"
+            if curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/health" > "$RUNNER_TEMP/health.json" \
+              && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/livez" > "$RUNNER_TEMP/livez.json" \
+              && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/" > "$RUNNER_TEMP/home.html" \
+              && HEALTH="$RUNNER_TEMP/health.json" HOME_HTML="$RUNNER_TEMP/home.html" TARGET_VERSION="$TARGET_VERSION" node - <<'NODE'
+          const fs=require('fs');
+          const health=JSON.parse(fs.readFileSync(process.env.HEALTH,'utf8'));
+          const home=fs.readFileSync(process.env.HOME_HTML,'utf8');
+          if(health.ok!==true||health.version!==process.env.TARGET_VERSION||health.app!=='Smarter Justice')process.exit(1);
+          if(health.sensitiveTrafficApproved!==false)process.exit(1);
+          if(!/Smarter Justice/i.test(home)||!/One clearer starting point/i.test(home))process.exit(1);
+          NODE
+            then
+              cp "$RUNNER_TEMP/health.json" "$RUNNER_TEMP/production-smoke-evidence.json"
+              exit 0
+            fi
+            sleep "$delay"
+            if [ "$delay" -lt 60 ]; then delay=$((delay * 2)); [ "$delay" -gt 60 ] && delay=60; fi
+          done
+          exit 1
+      - name: Restore verified previous commit after failed live smoke
+        if: failure() && steps.deploy.outcome == 'success'
+        env:
+          RENDER_DEPLOY_HOOK_URL: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+        run: |
+          set -euo pipefail
+          previous_version="$(node -e "const fs=require('fs');try{process.stdout.write(String(JSON.parse(fs.readFileSync(process.env.RUNNER_TEMP+'/previous-health.json')).version||''))}catch{}")"
+          test "$previous_version" = "$VERIFIED_PREVIOUS_VERSION"
+          sep='?'; [[ "$RENDER_DEPLOY_HOOK_URL" == *'?'* ]] && sep='&'
+          curl --fail --silent --show-error --location --max-time 30 "${RENDER_DEPLOY_HOOK_URL}${sep}ref=${VERIFIED_PREVIOUS_COMMIT}" > "$RUNNER_TEMP/render-rollback-response.json"
+          delay=10
+          for attempt in $(seq 1 18); do
+            live="$(curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/health" | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{try{process.stdout.write(String(JSON.parse(s).version||''))}catch{}})")" || true
+            test "$live" = "$VERIFIED_PREVIOUS_VERSION" && exit 0
+            sleep "$delay"
+            if [ "$delay" -lt 60 ]; then delay=$((delay * 2)); [ "$delay" -gt 60 ] && delay=60; fi
+          done
+          exit 1
+      - name: Build full archive and compact continuation
+        if: success()
+        env:
+          TARGET_SHA: ${{ steps.target.outputs.sha }}
+          VERSION: ${{ steps.target.outputs.version }}
+        run: |
+          set -euo pipefail
+          full="$RUNNER_TEMP/smarter-justice-v${VERSION}-FULL-SOURCE.zip"
+          git archive --format=zip --prefix="smarter-justice-v${VERSION}/" --output="$full" "$TARGET_SHA"
+          sha256sum "$full" > "$full.sha256"
+          FULL="$full" VERSION="$VERSION" TARGET_SHA="$TARGET_SHA" python3 - <<'PY'
+          import hashlib, os, pathlib, zipfile
+          root=pathlib.Path.cwd(); out=pathlib.Path(os.environ['RUNNER_TEMP'])/f"smarter-justice-v{os.environ['VERSION']}-COMPACT-CONTINUATION.zip"
+          full=pathlib.Path(os.environ['FULL']); target=os.environ['TARGET_SHA']
+          selected=['OWNER_RECEIPT.txt','FILE_INVENTORY_SHA256.txt','RELEASE_PAYLOAD_INVENTORY_SHA256.txt','DEPLOY_RENDER.md','NEXT_VERSION_IMPROVEMENT_LIST.md','deployment/current-production.json','deployment/last-known-good.json','deployment/migration-classification.json']
+          note=(f"Smarter Justice compact continuation\nVersion: {os.environ['VERSION']}\nQualified commit: {target}\nFull GitHub Release asset: {full.name}\nFull SHA-256: {hashlib.sha256(full.read_bytes()).hexdigest()}\n")
+          with zipfile.ZipFile(out,'w',zipfile.ZIP_DEFLATED,compresslevel=9) as z:
+            z.writestr('CONTINUATION.txt',note)
+            for rel in selected:
+              p=root/rel
+              if p.is_file(): z.write(p,rel)
+          pathlib.Path(str(out)+'.sha256').write_text(hashlib.sha256(out.read_bytes()).hexdigest()+'  '+out.name+'\n')
+          PY
+      - name: Create production-verified tag and GitHub Release
+        if: success()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TARGET_SHA: ${{ steps.target.outputs.sha }}
+          VERSION: ${{ steps.target.outputs.version }}
+        run: |
+          set -euo pipefail
+          tag="v$VERSION"
+          if gh release view "$tag" >/dev/null 2>&1; then echo "Release $tag already exists."; exit 1; fi
+          gh release create "$tag" \
+            "$RUNNER_TEMP/smarter-justice-v${VERSION}-FULL-SOURCE.zip" \
+            "$RUNNER_TEMP/smarter-justice-v${VERSION}-FULL-SOURCE.zip.sha256" \
+            "$RUNNER_TEMP/smarter-justice-v${VERSION}-COMPACT-CONTINUATION.zip" \
+            "$RUNNER_TEMP/smarter-justice-v${VERSION}-COMPACT-CONTINUATION.zip.sha256" \
+            "$RUNNER_TEMP/production-smoke-evidence.json" \
+            --target "$TARGET_SHA" \
+            --title "Smarter Justice v$VERSION" \
+            --notes "Production-qualified exact commit $TARGET_SHA. Migration class: ${{ steps.target.outputs.migration_class }}. Authorization: ${{ steps.target.outputs.authorization_id }}."
+      - name: Upload deployment evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: smarter-justice-production-evidence-${{ steps.target.outputs.sha }}
+          path: |
+            ${{ runner.temp }}/previous-health.json
+            ${{ runner.temp }}/render-deploy-response.json
+            ${{ runner.temp }}/render-rollback-response.json
+            ${{ runner.temp }}/health.json
+            ${{ runner.temp }}/livez.json
+            ${{ runner.temp }}/production-smoke-evidence.json
+            ${{ runner.temp }}/smarter-justice-v${{ steps.target.outputs.version }}-COMPACT-CONTINUATION.zip
+            ${{ runner.temp }}/smarter-justice-v${{ steps.target.outputs.version }}-COMPACT-CONTINUATION.zip.sha256
+          if-no-files-found: warn
+          retention-days: 14

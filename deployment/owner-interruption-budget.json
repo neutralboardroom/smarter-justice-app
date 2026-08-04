@@ -1,0 +1,17 @@
+{
+  "schema": "smarter-justice-owner-interruption-budget",
+  "version": "1.0.0",
+  "productId": "smarter-justice-central",
+  "ordinaryRoutineBudgetAfterOnboarding": 0,
+  "currentProtectedActionLimit": 1,
+  "currentState": "PROVIDER_CONNECTION_OR_TARGET_IDENTIFIERS_REQUIRED_BEFORE_REMOTE_DOCTOR",
+  "neverRequestInChat": [
+    "SECRET_VALUES",
+    "PASSWORDS",
+    "API_KEYS",
+    "DATABASE_URLS",
+    "WEBHOOK_SECRETS"
+  ],
+  "resumeAutomaticallyAfterVerifiedAction": true,
+  "releaseVersion": null
+}

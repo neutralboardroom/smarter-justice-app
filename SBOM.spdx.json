@@ -1,0 +1,302 @@
+{
+  "spdxVersion": "SPDX-2.3",
+  "dataLicense": "CC0-1.0",
+  "SPDXID": "SPDXRef-DOCUMENT",
+  "name": "Smarter Justice 1.7.83 dependency SBOM",
+  "documentNamespace": "https://smarterjustice.com/sbom/1.7.83/6ac5094effde3d1fe1472e29d1ffe900",
+  "creationInfo": {
+    "created": "2026-08-03T00:00:00.000Z",
+    "creators": [
+      "Tool: Smarter Justice generate-sbom.js"
+    ]
+  },
+  "packages": [
+    {
+      "SPDXID": "SPDXRef-Package-nodemailer-9.0.3",
+      "name": "nodemailer",
+      "versionInfo": "9.0.3",
+      "downloadLocation": "https://registry.npmjs.org/nodemailer/-/nodemailer-9.0.3.tgz",
+      "checksums": [
+        {
+          "algorithm": "SHA512",
+          "checksumValue": "n+YP+NKwR5zRWa60k3GiQ6Q3B4KXCoAw40dAKeCtYn020iNN74aWK2liXIC3ZEATeGql7we3tE3t8QwhY0eskw=="
+        }
+      ],
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-pg-8.22.0",
+      "name": "pg",
+      "versionInfo": "8.22.0",
+      "downloadLocation": "https://registry.npmjs.org/pg/-/pg-8.22.0.tgz",
+      "checksums": [
+        {
+          "algorithm": "SHA512",
+          "checksumValue": "8wih1vVIBMxoUM2oB4soJsD9tDnDpLv4OXBJ+EJzFsvycD+lfyIreC2gGHq78f8jbLLt+bvlPTFdFZfJkOuzAA=="
+        }
+      ],
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "MIT"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-pg-cloudflare-1.4.0",
+      "name": "pg-cloudflare",
+      "versionInfo": "1.4.0",
+      "downloadLocation": "https://registry.npmjs.org/pg-cloudflare/-/pg-cloudflare-1.4.0.tgz",
+      "checksums": [
+        {
+          "algorithm": "SHA512",
+          "checksumValue": "Vo7z/6rrQYxpNRylp4Tlob2elzbh+N/MOQbxFVWCxS7oEx6jF53GTJFxK2WWpKuBRkmiin4Mt+xofFDjx09R0A=="
+        }
+      ],
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "MIT"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-pg-connection-string-2.14.0",
+      "name": "pg-connection-string",
+      "versionInfo": "2.14.0",
+      "downloadLocation": "https://registry.npmjs.org/pg-connection-string/-/pg-connection-string-2.14.0.tgz",
+      "checksums": [
+        {
+          "algorithm": "SHA512",
+          "checksumValue": "XwWDGcLRGCXAR8F/AM5bG7Q+A3Wm2s6QeEjlOKZLlH3UYcguiqCWKyWXVag5TLTIjR7oOJUY8kcADaZgWPyLeg=="
+        }
+      ],
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "MIT"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-pg-int8-1.0.1",
+      "name": "pg-int8",
+      "versionInfo": "1.0.1",
+      "downloadLocation": "https://registry.npmjs.org/pg-int8/-/pg-int8-1.0.1.tgz",
+      "checksums": [
+        {
+          "algorithm": "SHA512",
+          "checksumValue": "WCtabS6t3c8SkpDBUlb1kjOs7l66xsGdKpIPZsg4wR+B3+u9UAum2odSsF9tnvxg80h4ZxLWMy4pRjOsFIqQpw=="
+        }
+      ],
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "ISC"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-pg-pool-3.14.0",
+      "name": "pg-pool",
+      "versionInfo": "3.14.0",
+      "downloadLocation": "https://registry.npmjs.org/pg-pool/-/pg-pool-3.14.0.tgz",
+      "checksums": [
+        {
+          "algorithm": "SHA512",
+          "checksumValue": "gKtPkFdQPU3DksooVLi9LsjZxrsBUZIpa+7aVx+LV5pNh0KzP4Zleud2po+ConrxbuXGBJ6Hfer6hdgpIBpBaw=="
+        }
+      ],
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "MIT"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-pg-protocol-1.15.0",
+      "name": "pg-protocol",
+      "versionInfo": "1.15.0",
+      "downloadLocation": "https://registry.npmjs.org/pg-protocol/-/pg-protocol-1.15.0.tgz",
+      "checksums": [
+        {
+          "algorithm": "SHA512",
+          "checksumValue": "cq9sECI5s0+uPUXjbz8ioyPJni6RzsRib0US67i5IoTZKw8fNeYlVE7u8F4dG7vEJJtc5wdD1K189lCCUwqWTQ=="
+        }
+      ],
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "MIT"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-pg-types-2.2.0",
+      "name": "pg-types",
+      "versionInfo": "2.2.0",
+      "downloadLocation": "https://registry.npmjs.org/pg-types/-/pg-types-2.2.0.tgz",
+      "checksums": [
+        {
+          "algorithm": "SHA512",
+          "checksumValue": "qTAAlrEsl8s4OiEQY69wDvcMIdQN6wdz5ojQiOy6YRMuynxenON0O5oCpJI6lshc6scgAY8qvJ2On/p+CXY0GA=="
+        }
+      ],
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "MIT"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-pgpass-1.0.5",
+      "name": "pgpass",
+      "versionInfo": "1.0.5",
+      "downloadLocation": "https://registry.npmjs.org/pgpass/-/pgpass-1.0.5.tgz",
+      "checksums": [
+        {
+          "algorithm": "SHA512",
+          "checksumValue": "FdW9r/jQZhSeohs1Z3sI1yxFQNFvMcnmfuj4WBMUTxOrAyLMaTcE1aAMBiTlbMNaXvBCQuVi0R7hd8udDSP7ug=="
+        }
+      ],
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "MIT"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-postgres-array-2.0.0",
+      "name": "postgres-array",
+      "versionInfo": "2.0.0",
+      "downloadLocation": "https://registry.npmjs.org/postgres-array/-/postgres-array-2.0.0.tgz",
+      "checksums": [
+        {
+          "algorithm": "SHA512",
+          "checksumValue": "VpZrUqU5A69eQyW2c5CA1jtLecCsN2U/bD6VilrFDWq5+5UIEVO7nazS3TEcHf1zuPYO/sqGvUvW62g86RXZuA=="
+        }
+      ],
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "MIT"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-postgres-bytea-1.0.1",
+      "name": "postgres-bytea",
+      "versionInfo": "1.0.1",
+      "downloadLocation": "https://registry.npmjs.org/postgres-bytea/-/postgres-bytea-1.0.1.tgz",
+      "checksums": [
+        {
+          "algorithm": "SHA512",
+          "checksumValue": "5+5HqXnsZPE65IJZSMkZtURARZelel2oXUEO8rH83VS/hxH5vv1uHquPg5wZs8yMAfdv971IU+kcPUczi7NVBQ=="
+        }
+      ],
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "MIT"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-postgres-date-1.0.7",
+      "name": "postgres-date",
+      "versionInfo": "1.0.7",
+      "downloadLocation": "https://registry.npmjs.org/postgres-date/-/postgres-date-1.0.7.tgz",
+      "checksums": [
+        {
+          "algorithm": "SHA512",
+          "checksumValue": "suDmjLVQg78nMK2UZ454hAG+OAW+HQPZ6n++TNDUX+L0+uUlLywnoxJKDou51Zm+zTCjrCl0Nq6J9C5hP9vK/Q=="
+        }
+      ],
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "MIT"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-postgres-interval-1.2.0",
+      "name": "postgres-interval",
+      "versionInfo": "1.2.0",
+      "downloadLocation": "https://registry.npmjs.org/postgres-interval/-/postgres-interval-1.2.0.tgz",
+      "checksums": [
+        {
+          "algorithm": "SHA512",
+          "checksumValue": "9ZhXKM/rw350N1ovuWHbGxnGh/SNJ4cnxHiM0rxE4VN41wsg8P8zWn9hv/buK00RP4WvlOyr/RBDiptyxVbkZQ=="
+        }
+      ],
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "MIT"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-split2-4.2.0",
+      "name": "split2",
+      "versionInfo": "4.2.0",
+      "downloadLocation": "https://registry.npmjs.org/split2/-/split2-4.2.0.tgz",
+      "checksums": [
+        {
+          "algorithm": "SHA512",
+          "checksumValue": "UcjcJOWknrNkF6PLX83qcHM6KHgVKNkV62Y8a5uYDVv9ydGQVwAHMKqHdJje1VTWpljG0WYpCDhrCdAOYH4TWg=="
+        }
+      ],
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "ISC"
+    },
+    {
+      "SPDXID": "SPDXRef-Package-xtend-4.0.2",
+      "name": "xtend",
+      "versionInfo": "4.0.2",
+      "downloadLocation": "https://registry.npmjs.org/xtend/-/xtend-4.0.2.tgz",
+      "checksums": [
+        {
+          "algorithm": "SHA512",
+          "checksumValue": "LKYU1iAXJXUgAXn9URjiu+MWhyUXHsvfp7mcuYm9dSUKK0/CjtrUwFAxD82/mCWbtLsGjFIad0wIsod4zrTAEQ=="
+        }
+      ],
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "MIT"
+    }
+  ],
+  "relationships": [
+    {
+      "spdxElementId": "SPDXRef-DOCUMENT",
+      "relationshipType": "DESCRIBES",
+      "relatedSpdxElement": "SPDXRef-Package-nodemailer-9.0.3"
+    },
+    {
+      "spdxElementId": "SPDXRef-DOCUMENT",
+      "relationshipType": "DESCRIBES",
+      "relatedSpdxElement": "SPDXRef-Package-pg-8.22.0"
+    },
+    {
+      "spdxElementId": "SPDXRef-DOCUMENT",
+      "relationshipType": "DESCRIBES",
+      "relatedSpdxElement": "SPDXRef-Package-pg-cloudflare-1.4.0"
+    },
+    {
+      "spdxElementId": "SPDXRef-DOCUMENT",
+      "relationshipType": "DESCRIBES",
+      "relatedSpdxElement": "SPDXRef-Package-pg-connection-string-2.14.0"
+    },
+    {
+      "spdxElementId": "SPDXRef-DOCUMENT",
+      "relationshipType": "DESCRIBES",
+      "relatedSpdxElement": "SPDXRef-Package-pg-int8-1.0.1"
+    },
+    {
+      "spdxElementId": "SPDXRef-DOCUMENT",
+      "relationshipType": "DESCRIBES",
+      "relatedSpdxElement": "SPDXRef-Package-pg-pool-3.14.0"
+    },
+    {
+      "spdxElementId": "SPDXRef-DOCUMENT",
+      "relationshipType": "DESCRIBES",
+      "relatedSpdxElement": "SPDXRef-Package-pg-protocol-1.15.0"
+    },
+    {
+      "spdxElementId": "SPDXRef-DOCUMENT",
+      "relationshipType": "DESCRIBES",
+      "relatedSpdxElement": "SPDXRef-Package-pg-types-2.2.0"
+    },
+    {
+      "spdxElementId": "SPDXRef-DOCUMENT",
+      "relationshipType": "DESCRIBES",
+      "relatedSpdxElement": "SPDXRef-Package-pgpass-1.0.5"
+    },
+    {
+      "spdxElementId": "SPDXRef-DOCUMENT",
+      "relationshipType": "DESCRIBES",
+      "relatedSpdxElement": "SPDXRef-Package-postgres-array-2.0.0"
+    },
+    {
+      "spdxElementId": "SPDXRef-DOCUMENT",
+      "relationshipType": "DESCRIBES",
+      "relatedSpdxElement": "SPDXRef-Package-postgres-bytea-1.0.1"
+    },
+    {
+      "spdxElementId": "SPDXRef-DOCUMENT",
+      "relationshipType": "DESCRIBES",
+      "relatedSpdxElement": "SPDXRef-Package-postgres-date-1.0.7"
+    },
+    {
+      "spdxElementId": "SPDXRef-DOCUMENT",
+      "relationshipType": "DESCRIBES",
+      "relatedSpdxElement": "SPDXRef-Package-postgres-interval-1.2.0"
+    },
+    {
+      "spdxElementId": "SPDXRef-DOCUMENT",
+      "relationshipType": "DESCRIBES",
+      "relatedSpdxElement": "SPDXRef-Package-split2-4.2.0"
+    },
+    {
+      "spdxElementId": "SPDXRef-DOCUMENT",
+      "relationshipType": "DESCRIBES",
+      "relatedSpdxElement": "SPDXRef-Package-xtend-4.0.2"
+    }
+  ]
+}

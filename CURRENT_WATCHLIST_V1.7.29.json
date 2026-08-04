@@ -1,0 +1,72 @@
+{
+  "version": "1.7.29",
+  "reviewDate": "2026-07-24",
+  "items": [
+    {
+      "id": "SJ-WATCH-001",
+      "area": "Node and Render runtime",
+      "source": "Node.js official release pages and Render Node-version documentation",
+      "sourceUrls": [
+        "https://nodejs.org/en/about/previous-releases",
+        "https://nodejs.org/en/download/archive/v22",
+        "https://render.com/docs/node-version"
+      ],
+      "currentFinding": "Node 22 remains LTS, but newer Node 22 patch releases and a newer Render default exist.",
+      "actionTrigger": "Before deployment or dependency refresh, test the exact artifact on the pinned approved Node 22 patch and update only with full regression and rollback evidence.",
+      "currentAction": "Keep package engine at 22.x and require explicit Render pinning; do not rely on platform defaults."
+    },
+    {
+      "id": "SJ-WATCH-002",
+      "area": "Dependency security",
+      "source": "npm official audit documentation",
+      "sourceUrls": [
+        "https://docs.npmjs.com/cli/v11/commands/npm-audit/",
+        "https://docs.npmjs.com/cli/commands/npm-ci/"
+      ],
+      "currentFinding": "npm audit depends on registry availability. The configured registry timed out during the controlled build window.",
+      "actionTrigger": "Approved registry becomes available.",
+      "currentAction": "Rerun clean npm ci and npm audit; no current vulnerability count is claimed."
+    },
+    {
+      "id": "SJ-WATCH-003",
+      "area": "Accessibility",
+      "source": "W3C WCAG 2.2 Recommendation and errata",
+      "sourceUrls": [
+        "https://www.w3.org/TR/WCAG22/",
+        "https://www.w3.org/WAI/WCAG22/errata/"
+      ],
+      "currentFinding": "WCAG 2.2 remains the current target standard; automated/source checks do not replace real-device and assistive-technology acceptance.",
+      "actionTrigger": "Before public paid launch or after material UI changes.",
+      "currentAction": "Retain the external iOS, Android, tablet, keyboard, screen-reader, high-contrast, and 400% zoom acceptance item."
+    },
+    {
+      "id": "SJ-WATCH-004",
+      "area": "Professional sources",
+      "source": "Professional-controlled public websites",
+      "sourceUrls": [
+        "https://www.abramslaw.com/offices/brooklyn/",
+        "https://scarincihollenbeck.com/location/little-falls",
+        "https://www.cohenandwolf.com/offices"
+      ],
+      "currentFinding": "The v1.7.29 profile batch is source-reviewed as of July 24, 2026.",
+      "actionTrigger": "Source freshness exceeds 365 days, correction/claim request arrives, firm roster changes, or a credential concern appears.",
+      "currentAction": "Revalidate rather than silently overwrite professional-confirmed data."
+    },
+    {
+      "id": "SJ-WATCH-005",
+      "area": "Cross-portal registry",
+      "source": "v1.7.28 verified cross-portal registry plus dedicated portal artifact records",
+      "currentFinding": "Several coordination snapshots may be older than the newest dedicated portal ZIPs.",
+      "actionTrigger": "Roger uploads a newer dedicated legal-portal artifact.",
+      "currentAction": "Verify exact artifact first, then append history, mark supersession, and evaluate inbound/outbound learning."
+    },
+    {
+      "id": "SJ-WATCH-006",
+      "area": "Legal-only scope",
+      "source": "Roger’s July 24, 2026 controlling scope correction",
+      "currentFinding": "Smarter Money, Smarter Health, and Smarter Property are out of scope. Legacy names remain only for compatibility/history.",
+      "actionTrigger": "Any route, import, export, copy, or roadmap suggests multi-sector coordination.",
+      "currentAction": "Reject out-of-scope records and preserve legal-only wording."
+    }
+  ]
+}

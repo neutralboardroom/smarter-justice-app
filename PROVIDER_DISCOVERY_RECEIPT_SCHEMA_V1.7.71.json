@@ -1,0 +1,62 @@
+{
+  "schema_id": "SJP-READ-ONLY-PROVIDER-DISCOVERY-RECEIPT-2026-08-02-V1",
+  "releaseVersion": "1.7.71",
+  "purpose": "Record product-scoped read-only provider discovery without secret values, deployment requests, or inferred readiness.",
+  "initialCutoverScope": [
+    "smarter-justice-central",
+    "divorce-law-aid",
+    "estate-law-aid",
+    "personal-injury-law-aid",
+    "domestic-violence-aid"
+  ],
+  "allowedDiscoveryStates": [
+    "DISCOVERY_REQUIRED",
+    "DISCOVERY_PARTIAL",
+    "DISCOVERY_COMPLETE",
+    "BLOCKED_WITH_EXACT_REASON"
+  ],
+  "allowedPresenceStates": [
+    "PRESENT",
+    "ABSENT",
+    "UNKNOWN",
+    "NOT_APPLICABLE"
+  ],
+  "allowedVerificationStates": [
+    "VERIFIED",
+    "UNVERIFIED",
+    "UNKNOWN",
+    "NOT_APPLICABLE"
+  ],
+  "allowedRiskSeverities": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "requiredSecretPresenceKeys": [
+    "DATABASE_URL",
+    "SMTP_HOST",
+    "SMTP_USER",
+    "SMTP_PASS",
+    "APP_BASE_URL",
+    "OWNER_CONTROL_CENTER_TOKEN"
+  ],
+  "maximumReceiptAgeHours": 24,
+  "canaryEligibilityRequirements": [
+    "valid exact product identity",
+    "DISCOVERY_COMPLETE",
+    "current receipt within maximum age",
+    "repository, commit, tree, service, domain and rollback verification",
+    "no severity-3 risk factor",
+    "no exact blocker"
+  ],
+  "invariants": {
+    "readOnly": true,
+    "secretValuesForbidden": true,
+    "deploymentRequestForbidden": true,
+    "missingReceiptInferenceForbidden": true,
+    "crossProductBlockingForbidden": true,
+    "cohortFreezeRequiresAllFiveExactCurrentReceipts": true,
+    "canarySelectionDoesNotAuthorizeDeployment": true
+  }
+}

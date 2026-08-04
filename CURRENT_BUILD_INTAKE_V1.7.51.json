@@ -1,0 +1,55 @@
+{
+  "release": "1.7.51",
+  "intakeDate": "2026-07-30",
+  "owner": "Roger Gillman",
+  "timezone": "America/New_York",
+  "sourceArtifact": {
+    "filename": "smarter-justice-v1.7.50 (1).zip",
+    "authoritativeReleaseFilename": "smarter-justice-v1.7.50.zip",
+    "sha256": "72d7b71cedd169cc6d42bdbb49ae1ba5083ef4acc90b196f21474087faee8eef",
+    "sizeBytes": 3089886,
+    "zipEntries": 1203,
+    "packagedFiles": 1193,
+    "explicitDirectories": 10,
+    "uncompressedBytes": 10603999,
+    "compressedBytes": 2915104,
+    "crc": "PASS",
+    "pathSafety": "PASS",
+    "duplicatePaths": 0,
+    "encryptedEntries": 0,
+    "symlinks": 0,
+    "rootLayout": "files at ZIP root"
+  },
+  "inventory": {
+    "file": "FILE_INVENTORY_SHA256.txt",
+    "records": 1192,
+    "sha256": "adc6a6e78aa247487da16fb7216fbf6d3d3adbf454733f87e178a093bee41b91",
+    "validation": "PASS_FROM_TWO_CLEAN_EXTRACTIONS"
+  },
+  "runtime": {
+    "node": "v22.16.0",
+    "npm": "10.9.2"
+  },
+  "baselineTests": {
+    "dependencyIndependentParts": 104,
+    "passedFromExtractionA": 104,
+    "passedFromExtractionB": 104,
+    "postgresqlDependentParts": 1,
+    "postgresqlTest": "BLOCKED_DEPENDENCY_UNAVAILABLE"
+  },
+  "externalBlockers": [
+    {
+      "id": "dependency-install",
+      "status": "BLOCKED",
+      "evidence": "configured registry returned 404 for xtend-4.0.2.tgz"
+    },
+    {
+      "id": "vulnerability-audit",
+      "status": "BLOCKED",
+      "evidence": "configured audit endpoint returned 404"
+    }
+  ],
+  "launchState": "NO_GO",
+  "untouchedSourcePreserved": true,
+  "secondUntouchedExtractionPreserved": true
+}

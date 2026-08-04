@@ -1,0 +1,90 @@
+name: Production qualification
+
+on:
+  workflow_dispatch:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: production-qualification-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  qualification:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout exact source
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - name: Use Node 22
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+        with:
+          node-version: '22.x'
+          package-manager-cache: false
+      - name: Export clean inventory-locked source
+        id: source
+        run: |
+          set -euo pipefail
+          source="$RUNNER_TEMP/smarter-justice-qualified-source"
+          rm -rf "$source"
+          mkdir -p "$source"
+          git archive --format=tar HEAD | tar -xf - -C "$source"
+          test "$(node -p "require('$source/package.json').version")" = "1.7.83"
+          echo "path=$source" >> "$GITHUB_OUTPUT"
+      - name: Install dependencies outside inventory-locked source
+        id: dependencies
+        env:
+          SOURCE: ${{ steps.source.outputs.path }}
+          npm_config_registry: https://registry.npmjs.org/
+          npm_config_audit: 'false'
+        run: |
+          set -euo pipefail
+          deps="$RUNNER_TEMP/smarter-justice-dependencies"
+          rm -rf "$deps"
+          mkdir -p "$deps"
+          cp "$SOURCE/package.json" "$SOURCE/package-lock.json" "$deps/"
+          npm ci --prefix "$deps" --no-audit
+          echo "node_path=$deps/node_modules" >> "$GITHUB_OUTPUT"
+      - name: Complete dependency-independent suite
+        working-directory: ${{ steps.source.outputs.path }}
+        env:
+          NODE_PATH: ${{ steps.dependencies.outputs.node_path }}
+        run: npm test
+      - name: Generate deterministic SBOM
+        working-directory: ${{ steps.source.outputs.path }}
+        env:
+          NODE_PATH: ${{ steps.dependencies.outputs.node_path }}
+        run: npm run sbom
+      - name: Validate deployment kit
+        working-directory: ${{ steps.source.outputs.path }}
+        env:
+          NODE_PATH: ${{ steps.dependencies.outputs.node_path }}
+        run: npm run deployment:validate
+      - name: Upload SBOM evidence
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: smarter-justice-sbom-${{ github.sha }}
+          path: ${{ steps.source.outputs.path }}/SBOM.spdx.json
+          if-no-files-found: error
+          retention-days: 14
+
+  qualification-gate:
+    if: ${{ always() }}
+    needs: [qualification]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Require qualification success
+        env:
+          RESULT: ${{ needs.qualification.result }}
+        run: |
+          test "$RESULT" = "success" || {
+            echo "Qualification did not succeed: $RESULT"
+            exit 1
+          }

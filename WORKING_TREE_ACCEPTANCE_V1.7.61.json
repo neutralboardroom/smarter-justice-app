@@ -1,0 +1,19 @@
+{
+  "schema": "smarter-justice-working-tree-acceptance",
+  "releaseVersion": "1.7.61",
+  "generatedAt": "2026-07-31T17:14:00-04:00",
+  "dependencyIndependentParts": 115,
+  "totalReadinessParts": 116,
+  "result": "PASS",
+  "runCount": 2,
+  "testLogSha256": "fff885cdbf303f31068fd8148cea31efc1ac3820acc1116cc23a2b36989a8675",
+  "identicalOutput": true,
+  "nodeVersion": "v22.16.0",
+  "npmVersion": "10.9.2",
+  "postgresqlDependentPart": {
+    "state": "BLOCKED",
+    "reason": "Configured-registry clean installation remains blocked; not run or claimed."
+  },
+  "launchState": "NO_GO",
+  "deploymentAuthorized": false
+}

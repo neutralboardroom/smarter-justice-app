@@ -1,0 +1,43 @@
+{
+  "schema": "smarter-justice-deployment-release-manifest",
+  "version": "1.0.0",
+  "productId": "smarter-justice-central",
+  "releaseVersion": "1.7.75",
+  "sourceArtifact": {
+    "filename": "smarter-justice-v1.7.73.zip",
+    "version": "1.7.73",
+    "sha256": "5ed64a1c13de1a536303b07a2277e234a822b9bc316b7ea97cf2547e90811898",
+    "sizeBytes": 8196348,
+    "entries": 2808,
+    "files": 2784,
+    "directories": 24,
+    "uncompressedBytes": 24514359,
+    "compressedBytes": 7772126,
+    "inventoryRecords": 2783,
+    "inventorySha256": "177c3f91ef3a65a73827b193055eb2f78f117c6bab20c2aaadb2a77faa2439e1",
+    "treeSha256": "177c3f91ef3a65a73827b193055eb2f78f117c6bab20c2aaadb2a77faa2439e1",
+    "packageJsonSha256": "aa748a9ea7ca97fed5c63c0693a224430b6c0cf5fb3b3c30ec13c4f7b3f50275",
+    "packageLockSha256": "62abde600ea9b6ca1711c683c2ee3f9d1db4bce22e27f5c005cba19ce98cafeb",
+    "dependencyIndependentParts": 127,
+    "totalReadinessParts": 128,
+    "testLogSha256": "2159c3e45c693c7662927331521547e797301f4f1764a5398c4bf11617cf1e52"
+  },
+  "candidateArtifact": {
+    "filename": "smarter-justice-v1.7.75-candidate-a.zip",
+    "sha256": "bfa384de8877a8627e513e2b5de1cc73888372a33899eaa21166c78adf333fa9",
+    "sizeBytes": 8374364,
+    "inventorySha256": "5b1ddd7f186c226203034a266b900bd9c8139c199773b3fa7419b9330f2cef61",
+    "state": "CANDIDATE_ACCEPTED_NONCIRCULAR"
+  },
+  "packId": "SJP-2026-08-02-C15-P37-D11-V13",
+  "dependencyIndependentParts": 129,
+  "totalReadinessParts": 130,
+  "deploymentAuthorized": false,
+  "productionDeployed": false,
+  "launchState": "NO_GO",
+  "releaseState": "CANDIDATE_ACCEPTED_FINAL_ARCHIVE_PENDING",
+  "recoveryLineage": {
+    "unavailableIntermediate": "smarter-justice-v1.7.74.zip",
+    "byteExactRecoveryClaimed": false
+  }
+}

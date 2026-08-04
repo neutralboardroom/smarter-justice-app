@@ -1,0 +1,42 @@
+{
+  "releaseVersion": "1.7.57",
+  "generatedAt": "2026-07-30",
+  "status": "PASS_SUBJECT_TO_DETACHED_FINAL_ARCHIVE_IDENTITY",
+  "filename": "smarter-justice-v1.7.57.zip",
+  "identityMode": "DETACHED_AFTER_PACKAGING",
+  "sha256": "DETACHED_FINAL_DELIVERY_RECEIPT",
+  "sizeBytes": "DETACHED_FINAL_DELIVERY_RECEIPT",
+  "candidateAcceptanceRecord": "CANDIDATE_ARTIFACT_ACCEPTANCE_V1.7.57.json",
+  "preSealExactArtifact": {
+    "filename": "smarter-justice-v1.7.57-final-a.zip",
+    "sha256": "246b033cfb25efb50b1481ef608de882311b5b6f88defda87df7104a8e05b557",
+    "sizeBytes": 4930833,
+    "entries": 1452,
+    "files": 1434,
+    "directories": 18,
+    "uncompressedBytes": 13751345,
+    "compressedBytes": 4718735,
+    "inventoryRecords": 1433,
+    "inventorySha256": "4d8b7048fe6d640f5a586ccc71d413f7e79c74c80839f1f881759b35b3a0abfb",
+    "extractedTreeSha256": "727414a1d01ac75864fd578fc04003a962080ed72017249b7b025cbc18fe69bc"
+  },
+  "preSealDeterministicDoubleBuild": true,
+  "preSealFreshExtractionRuns": 2,
+  "preSealDependencyIndependentCommandsPerRun": 111,
+  "preSealTestResult": "PASS",
+  "preSealIdenticalTestOutput": true,
+  "preSealTestLogSha256": "8adb4e8b3c6acd3a676d786e660ef1e7873c9726f8e21720d50c0ce96de08dfa",
+  "finalSealAcceptanceProcedure": [
+    "regenerate self-excluding inventory after embedding this record",
+    "build final ZIP twice and require byte identity",
+    "verify CRC, paths, duplicates, symlinks, encryption, inventory and source equality",
+    "extract final bytes into two independent clean directories",
+    "run all 111 dependency-independent commands concurrently from both exact extractions",
+    "require zero exits and byte-identical test output",
+    "record exact final SHA-256 and size in the detached delivery receipt"
+  ],
+  "postgresDependentCommands": 1,
+  "totalReadinessParts": 112,
+  "launchState": "NO_GO",
+  "deploymentAuthorized": false
+}

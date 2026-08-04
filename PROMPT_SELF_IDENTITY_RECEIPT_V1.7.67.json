@@ -1,0 +1,27 @@
+{
+  "schema": "smarter-justice-current-prompt-self-identity-receipt",
+  "releaseVersion": "1.7.67",
+  "generatedAt": "2026-08-01T12:54:00-04:00",
+  "currentPassLabel": "THIRTEENTH-PASS",
+  "prompt": {
+    "filename": "Smarter_Justice_Central_Master_Thirteenth_Pass_Current_Pack_Authority_Final_Continuation_and_No_Churn_Control_2026-08-01.txt",
+    "packagedPath": null,
+    "pass": "THIRTEENTH PASS",
+    "sha256": "2027379953b53b17eaafceb8aaf10871e0efc51282e0de095d42d2de0e253f4d",
+    "sizeBytes": 366579,
+    "lineCount": 7920,
+    "openingMarkerVerified": true,
+    "finalMarkerVerified": true,
+    "selfExcludingSha256": "dc8ad1db2aadb90ae4d77959562bd61fb6a4b3269f07d751b7682a5efa3a7f9b"
+  },
+  "requiredOpeningPrefix": "SMARTER JUSTICE CENTRAL MASTER\nTHIRTEENTH-PASS REUSABLE VERSION-NEUTRAL COMPLETE IMMEDIATE BUILD COMMAND",
+  "requiredEndingPrefix": "END OF SMARTER JUSTICE CENTRAL MASTER THIRTEENTH-PASS",
+  "exactParent": {
+    "pass": "TWELFTH PASS",
+    "sha256": "ade9cca7b5730906c3dd13c2c3616cded6027a81d44c4e415018d833bf4c4aff",
+    "sizeBytes": 358453,
+    "lineCount": 7783
+  },
+  "staleMarkerRegression": "PASS",
+  "state": "CURRENT_PROMPT_SELF_IDENTITY_MATCHED"
+}

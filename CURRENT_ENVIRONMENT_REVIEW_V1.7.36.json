@@ -1,0 +1,27 @@
+{
+  "version": "1.7.36",
+  "date": "2026-07-27",
+  "mode": "ARTIFACT_FOCUSED_RELIABILITY_PASS",
+  "externalResearchPerformed": false,
+  "reason": "No new change-sensitive legal, market-price, regulatory, or current product claim was introduced. The release corrects internal professional portal identity and locally tests data contracts.",
+  "reviewed": [
+    "exact v1.7.35 source",
+    "professional marketplace portal identifiers",
+    "current 25-record portal registry",
+    "professional portal handoffs",
+    "D2 contract boundaries",
+    "owner Professional Network surface",
+    "current release and handoff records"
+  ],
+  "actions": [
+    "Map only unambiguous historical identifiers.",
+    "Keep ambiguous assignments outside exports.",
+    "Validate every local handoff with a deterministic consumer fixture.",
+    "Retain zero live connections and zero writes.",
+    "Keep external environment research for a release introducing change-sensitive external claims."
+  ],
+  "limitations": [
+    "No live portal, Render, GitHub, Stripe, or Neutral Boardroom integration was inspected.",
+    "No graphical browser, physical-device, or assistive-technology field acceptance is claimed."
+  ]
+}

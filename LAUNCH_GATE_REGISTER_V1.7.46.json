@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "1.0.0",
+  "releaseVersion": "1.7.46",
+  "generatedAt": "2026-07-29T19:35:00-04:00",
+  "defaultState": "CLOSED",
+  "gates": [
+    {
+      "id": "public-starting-help",
+      "state": "CLOSED",
+      "reason": "External acceptance and owner approval pending."
+    },
+    {
+      "id": "free-profile-claiming",
+      "state": "CLOSED",
+      "reason": "Production database, SMTP, support, privacy, accessibility, rollback and owner approval pending."
+    },
+    {
+      "id": "free-basic-profile-editing",
+      "state": "CLOSED",
+      "reason": "Live profile control awaits the same production acceptance as claiming."
+    },
+    {
+      "id": "paid-membership",
+      "state": "CLOSED",
+      "reason": "Stripe lifecycle, pricing, terms, refunds, support and owner approval pending."
+    },
+    {
+      "id": "paid-sponsored-visibility",
+      "state": "CLOSED",
+      "reason": "Membership, attorney-advertising review, Sponsored disclosure acceptance, counsel review and owner approval pending."
+    },
+    {
+      "id": "case-opportunity-access",
+      "state": "CLOSED",
+      "reason": "Membership, fixed-fee counsel review, privacy, conflicts, support, opportunity routing and owner approval pending."
+    },
+    {
+      "id": "live-portal-imports",
+      "state": "CLOSED",
+      "reason": "D4 staging not completed."
+    },
+    {
+      "id": "automatic-portal-writes",
+      "state": "CLOSED",
+      "reason": "Not part of initial architecture."
+    },
+    {
+      "id": "portal-profile-production-activation",
+      "state": "CLOSED",
+      "reason": "Exact portal artifacts, canonical page/search/link evidence, D4 staging, import receipts, last-known-good, suppression, rollback, monitoring, support and owner approval are incomplete."
+    },
+    {
+      "id": "production-deployment",
+      "state": "CLOSED",
+      "reason": "Deployment not authorized and exact rollback not approved."
+    }
+  ],
+  "overallStatus": "NO_GO",
+  "readyLanes": 0,
+  "blockedLanes": 4,
+  "blockedChecks": 92,
+  "v1746Boundary": "Launch activation evidence is operational evidence only and cannot open a machine, owner, portal, payment, publication, or deployment gate."
+}

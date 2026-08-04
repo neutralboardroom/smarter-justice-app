@@ -1,0 +1,31 @@
+{
+  "schema": "smarter-justice-supply-chain-diagnostic",
+  "releaseVersion": "1.7.67",
+  "generatedAt": "2026-08-01T13:18:00-04:00",
+  "state": "BLOCKED_WITHOUT_WEAKENING",
+  "cleanInstall": {
+    "command": "npm ci --ignore-scripts --no-fund --no-audit",
+    "exitCode": 1,
+    "result": "BLOCKED_CONFIGURED_REGISTRY_HTTP_404_XTEND_4_0_2",
+    "privateRegistryHostRedacted": true
+  },
+  "vulnerabilityAudit": {
+    "command": "npm audit --package-lock-only --json",
+    "exitCode": 1,
+    "result": "BLOCKED_CONFIGURED_AUDIT_ENDPOINT_HTTP_404",
+    "privateRegistryHostRedacted": true
+  },
+  "sbom": {
+    "command": "npm run sbom",
+    "repeatabilityClass": "BYTE_DETERMINISTIC",
+    "runs": 2,
+    "sha256": "f7cf376938f19ca94dd622720d6e9b51bc61d69a8865a63ee74b35ae4c9f8ca6",
+    "identical": true,
+    "dependencyPackages": 15
+  },
+  "dependencyChangesMade": false,
+  "vendoringUsed": false,
+  "postgresAcceptanceClaimed": false,
+  "vulnerabilityAcceptanceClaimed": false,
+  "launchState": "NO_GO"
+}

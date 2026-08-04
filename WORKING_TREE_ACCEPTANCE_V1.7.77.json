@@ -1,0 +1,29 @@
+{
+  "schema": "smarter-justice-working-tree-acceptance",
+  "releaseVersion": "1.7.77",
+  "generatedAt": "2026-08-03T11:47:00-04:00",
+  "state": "PASS_TWO_IDENTICAL_RUNS_EXACT_CANDIDATE_PENDING",
+  "commandsPerRun": 133,
+  "runs": 2,
+  "testLogSha256": "b0c0743c4eb031ada699d50f328d648f712deb4e9f23136cc15d4c255c023976",
+  "identicalOutput": true,
+  "postgresDependentParts": 1,
+  "postgresAcceptanceClaimed": false,
+  "sourceHashes": {
+    "packageJsonSha256": "f181e25011fea7fe48aa883e0b8008466c9f7c386bb8c2c6ba5a75748a164ad3",
+    "packageLockSha256": "1e586daf999a080c30a96ec280aa3e0414d5ad44e6d4ca1387fa343cb5798d89",
+    "sbomSha256": "58c24b6b6b1ddff28a80823c7397377fea210b7582ddd3e8cc04d03605e3c445"
+  },
+  "materialImplementation": {
+    "productPlatform": [
+      "Device-only local handoff import inspector",
+      "Integrity, expiry and central compatibility guidance"
+    ],
+    "builderPromptSystem": [
+      "Release evidence coverage gate",
+      "Backlog, limitation, file and test preservation"
+    ]
+  },
+  "launchState": "NO_GO",
+  "deploymentAuthorized": false
+}

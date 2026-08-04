@@ -1,0 +1,75 @@
+{
+  "schema": "smarter-justice-reusable-master-command-intake",
+  "releaseVersion": "1.7.69",
+  "generatedAt": "2026-08-02T12:16:00-04:00",
+  "prompt": {
+    "pass": "FIFTEENTH PASS",
+    "filename": "Smarter_Justice_Central_Master_Fifteenth_Pass_Sunday_Launch_Day_Deployment_Orchestration_2026-08-02.txt",
+    "sha256": "5dad361bae18b25dc8193ce32ca4263a72b12ce90316d6b97dbd191ce2b74223",
+    "sizeBytes": 383921,
+    "lineCount": 8204,
+    "packagedPath": "governance/masters/Smarter_Justice_Central_Master_Fifteenth_Pass.identity.json",
+    "openingMarkerVerified": true,
+    "finalMarkerVerified": true,
+    "availability": "COMPLETE_FILE_LIBRARY_SOURCE_RESOLVED",
+    "packagedBytes": false
+  },
+  "integrityMarkers": {
+    "opening": "SMARTER JUSTICE CENTRAL MASTER / FIFTEENTH-PASS REUSABLE VERSION-NEUTRAL COMPLETE IMMEDIATE BUILD COMMAND",
+    "closing": "END OF SMARTER JUSTICE CENTRAL MASTER FIFTEENTH-PASS SUNDAY LAUNCH-DAY ORCHESTRATION",
+    "verified": true
+  },
+  "authorityUse": "CONTROLLING_BUILD_INTENT",
+  "implementationTruthSource": "smarter-justice-v1.7.68.zip",
+  "implementationTruthSha256": "a7cb9f15c98959e60736408d6d081022ddebbd2371d14c72c6724f8483310920",
+  "nextVersionDerived": "1.7.69",
+  "sameVersionReleasePrevented": true,
+  "historicalV1761LearningPreserved": true,
+  "newestV1761LearningRevalidated": true,
+  "fixedCurrentPortalIdentityInReusableMaster": false,
+  "durableRuleCount": 86,
+  "activeMasterPairReceipt": {
+    "filename": "Smarter_Justice_Eighth_Pass_Four_Portal_Twenty_Sixth_Pass_Master_Pair_Commit_Receipt_2026-07-31.txt",
+    "packagedPath": "governance/receipts/MASTER_PAIR_COMMIT_RECEIPT_E1_R0.txt",
+    "sha256": "4dd826cb0f9d89e41528b9732f250899cab45ce89766ae7fdfdb8a44d48d906e",
+    "sizeBytes": 5295,
+    "lineCount": 92,
+    "receiptId": "MPCR-2026-07-31-E1-R0-05F4296ED378",
+    "transactionId": "MPPT-2026-07-31-SJ8-FP26-304CB87BF174",
+    "pairEpoch": 1,
+    "pairRevision": 0,
+    "state": "MASTER PAIR COMMITTED — PROMPT COMPATIBILITY ONLY"
+  },
+  "currentPackId": "SJP-2026-08-02-C15-P37-D11-V13",
+  "currentPackState": "FOUR-FILE PACK FINALIZED — READY FOR SUNDAY DEPLOYMENT EXECUTION",
+  "canonicalPackCommitProven": false,
+  "portalFamilyMaster": {
+    "pass": "THIRTY-SEVENTH PASS",
+    "filename": "Legal_Micro_Portals_Master_Thirty_Seventh_Pass_Sunday_Launch_Day_Deployment_Orchestration_2026-08-02.txt",
+    "sha256": "9e158fb5e3eaca32861d067e026513ac179f0b416e6abe6f51d889faaf29a387",
+    "sizeBytes": 746617,
+    "lineCount": 15240,
+    "packagedPath": "governance/masters/Legal_Micro_Portals_Master_Thirty_Seventh_Pass.txt"
+  },
+  "packManifest": {
+    "filename": "Smarter_Justice_Coordinated_Four_File_Prompt_Pack_Manifest_Central_Fifteenth_Portal_Thirty_Seventh_Deployment_Eleventh_2026-08-02.txt",
+    "sha256": "df7cd874300349ad5054c0f7f2ef5f63e1fb5adb302117796b8eb2ffbea5cd40",
+    "sizeBytes": 6560,
+    "lineCount": 137,
+    "selfExcludingSha256": "de3b716b924a51cf9873a757bf0e03385f62b3fed9334728cc51d6c9b4e33916",
+    "packagedPath": "governance/receipts/Smarter_Justice_Coordinated_Four_File_Prompt_Pack_Manifest_C15_P37_D11.txt"
+  },
+  "deploymentMaster": {
+    "pass": "ELEVENTH PASS",
+    "filename": "Smarter_Justice_and_Legal_Micro_Portals_Deployment_Master_Eleventh_Pass_Sunday_Launch_Day_Batch_Authorization_and_Production_Stabilization_2026-08-02.txt",
+    "sha256": "3b35a35490fdf159d278c1d949dc2537da51b58c6fa079f387fb036d8c0843a7",
+    "sizeBytes": 246306,
+    "lineCount": 4308,
+    "packagedPath": "governance/masters/Smarter_Justice_and_Legal_Micro_Portals_Deployment_Master_Eleventh_Pass.txt",
+    "state": "ACTIVE — INCLUDED — EXACTLY BOUND"
+  },
+  "filename": "smarter-justice-v1.7.68.zip",
+  "version": "1.7.68",
+  "sha256": "a7cb9f15c98959e60736408d6d081022ddebbd2371d14c72c6724f8483310920",
+  "sizeBytes": 7084707
+}

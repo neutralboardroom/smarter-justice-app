@@ -1,0 +1,71 @@
+{
+  "version": "1.7.32",
+  "date": "2026-07-25",
+  "maturitySummary": "Material exact-release candidate focused on preparation quality, portfolio truth, dashboard contract discipline, and storage conservation while preserving closed commercial and sensitive gates.",
+  "baseline": {
+    "sourceArtifact": "smarter-justice-v1.7.31.zip",
+    "sourceSha256": "4c1f884cd21086687d5c1db3cc410f70af59ce061f4f4a8011570d461013fbee",
+    "testSuiteParts": 78,
+    "directory": {
+      "professionals": 233,
+      "firms": 48,
+      "publicTotal": 281,
+      "strictQualifyingProfessionals": 232,
+      "strictQualifyingFirms": 46,
+      "strictQualifyingTotal": 278
+    }
+  },
+  "implemented": [
+    {
+      "change": "Preparation Quality Check",
+      "benefit": "Completes the device-only preparation journey with visible, explainable organization findings.",
+      "result": "Implemented with deterministic rules, local reports, false-positive language, and no legal conclusion."
+    },
+    {
+      "change": "Portfolio truth registry",
+      "benefit": "Separates exact, owner-recorded, missing, stale, conflicted, superseded, maturity, health, and next-action states.",
+      "result": "Implemented with validation, stable IDs, owner decisions, and current totals."
+    },
+    {
+      "change": "Attention-first private Control Center",
+      "benefit": "Surfaces attention, blocked items, exact verification, owner decisions, and next actions before detailed legacy registries.",
+      "result": "Implemented without a new framework or centralized user-matter database."
+    },
+    {
+      "change": "Dashboard contracts and conformance",
+      "benefit": "Prevents visual similarity or matching fields from being called integration.",
+      "result": "Implemented D0-D5 states; highest current claim D2."
+    },
+    {
+      "change": "Storage conservation",
+      "benefit": "Reduces release residue without weakening exact truth or rollback.",
+      "result": "Removed 8 files and 1,775,362 uncompressed bytes."
+    },
+    {
+      "change": "Profile-quality restraint",
+      "benefit": "Avoids weakening the directory to satisfy a target count.",
+      "result": "Zero new profiles; exact v1.7.31 totals preserved."
+    }
+  ],
+  "preserved": [
+    "Classic bright professional visual system",
+    "Device-only public-tool boundaries",
+    "Legal-only Control Center scope",
+    "Dedicated portal authority",
+    "Closed payments, booking, reviews, uploads, routing, filing, external sensitive AI, and automatic synchronization"
+  ],
+  "risks": [
+    "Only Smarter Justice is exact-verified in this build registry",
+    "No deployment authorization",
+    "No physical-device or assistive-technology acceptance",
+    "No new profile source research",
+    "Clean dependency and vulnerability results depend on registry access"
+  ],
+  "highestValueNext": [
+    "Exact-verify dedicated portal artifacts",
+    "Real-browser accessibility acceptance",
+    "Production-equivalent owner authentication and storage acceptance",
+    "Bronx-led profile research when current sources can be reviewed",
+    "D3 producer-consumer adapter testing only when real adapters exist"
+  ]
+}

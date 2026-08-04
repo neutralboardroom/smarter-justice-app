@@ -1,0 +1,100 @@
+{
+  "schemaVersion": "1.0.0",
+  "project": "Smarter Justice",
+  "releaseVersion": "1.7.15",
+  "overallState": "exact-tested predeployment development package; not deployed or production accepted",
+  "dimensions": [
+    {
+      "id": "product",
+      "status": "exact artifact tested",
+      "evidence": "v1.7.15 package records, 69 practice areas, 74 catalog rows, 60 public HTML pages, 27 public directory records, 23 strict qualifying profiles, neutral multi-field search, and device-only comparison of up to three profiles.",
+      "remaining": "Real-device acceptance and every external P0 gate remain open."
+    },
+    {
+      "id": "customerLanguage",
+      "status": "exact artifact tested",
+      "evidence": "Customer-facing directory copy distinguishes business office, jurisdiction, documented services, profile status, source review, inquiry availability, and the deliberate absence of radius results in plain language.",
+      "remaining": "Real-user cohort validation remains pending."
+    },
+    {
+      "id": "accessibility",
+      "status": "automated foundation passed",
+      "evidence": "Automated checks cover native checkbox controls, live status, table headers, horizontal overflow, clear/download controls, and print treatment; real assistive-technology acceptance remains pending.",
+      "remaining": "Real screen-reader, keyboard-only, zoom, large-text, reduced-motion, and device acceptance remain required."
+    },
+    {
+      "id": "mobile",
+      "status": "automated foundation passed",
+      "evidence": "Responsive single-column fallbacks, wrapping source excerpts, mobile form grids, touch-target controls, and no-horizontal-overflow safeguards passed static/customer tests.",
+      "remaining": "Physical iPhone, Android, and tablet acceptance remain pending."
+    },
+    {
+      "id": "security",
+      "status": "code foundation passed",
+      "evidence": "Source and user text render via textContent; embedded instructions remain inert; no network/storage APIs were added; existing protected owner/staff routes and fail-closed production defaults remain tested.",
+      "remaining": "Production account, email, bootstrap-removal, and operational acceptance remain pending."
+    },
+    {
+      "id": "privacy",
+      "status": "code foundation passed",
+      "evidence": "The public shortlist stores only public profile identifiers in the page URL; no account save, private matter data, analytics, inquiry, or professional sharing is created.",
+      "remaining": "Persistent saving, reminders, cross-device continuity, AI, professional sharing, or sensitive uploads remain closed pending their separate gates."
+    },
+    {
+      "id": "database",
+      "status": "external evidence required",
+      "evidence": "PostgreSQL, migrations, advisory locking, reconnect, and fail-closed foundations exist.",
+      "remaining": "Production durability, concurrency, backup, and restore proof remain pending."
+    },
+    {
+      "id": "email",
+      "status": "external evidence required",
+      "evidence": "v1.7.11 adds audited communication categories and immutable essential-notice protection at the account layer.",
+      "remaining": "SPF, DKIM, DMARC, sender identity, provider enforcement, unsubscribe behavior, delivery, bounce, complaint, reply, and channel-choice evidence remain pending."
+    },
+    {
+      "id": "payments",
+      "status": "closed",
+      "evidence": "Stripe and billing lifecycle foundations exist, but public and professional charges remain fail-closed.",
+      "remaining": "Full provider-side test lifecycle, reconciliation, legal review, support, and owner activation remain pending."
+    },
+    {
+      "id": "legal",
+      "status": "external review required",
+      "evidence": "Advertising, profile, referral, sponsorship, engagement, terms, privacy, billing, and complaint boundaries are documented.",
+      "remaining": "Qualified legal and professional-responsibility review remains pending."
+    },
+    {
+      "id": "support",
+      "status": "named operations required",
+      "evidence": "Structured profile-operation requests now enter a governed owner-visible queue with public references, source URLs, status, notes, and audit history.",
+      "remaining": "Named owner and backup, identity/source review, requester communications, appeals, hours, response targets, complaint handling, and exercised procedures remain pending."
+    },
+    {
+      "id": "professionalOperations",
+      "status": "pilot foundation only",
+      "evidence": "v1.7.11 adds trackable profile requests, protected communication preferences, and direct setup next actions while paid enrollment remains paused.",
+      "remaining": "Real cohort, identity-review operations, request service levels, authenticated email, MFA acceptance, support, seat lifecycle, and billing evidence remain pending."
+    },
+    {
+      "id": "deployment",
+      "status": "not deployed",
+      "evidence": "v1.7.15 is packaged for exact-artifact testing only; deployment has not occurred.",
+      "remaining": "Owner approval and controlled exact v1.7.15 production deployment remain pending."
+    },
+    {
+      "id": "liveVerification",
+      "status": "not verified",
+      "evidence": "No v1.7.15 live deployment or canonical-domain verification has been performed.",
+      "remaining": "DNS, SSL, health, public routes including professional comparison, protected pages, logs, monitoring, mobile, and accessibility checks are pending for v1.7.15."
+    },
+    {
+      "id": "recovery",
+      "status": "external exercise required",
+      "evidence": "Backup, restore, rollback, incident, and emergency-pause requirements are recorded.",
+      "remaining": "A production-equivalent recovery and rollback exercise remains pending."
+    }
+  ],
+  "summary": "v1.7.15 materially improves neutral public professional comparison and search continuity using documented public facts only, without adding unsourced profiles or opening inquiry, booking, payment, sensitive-data, review, routing, or filing gates. It remains exact-artifact tested but not deployed.",
+  "rule": "No single percentage or polished screen may be used as proof of operational readiness. Each dimension has separate evidence and approval."
+}

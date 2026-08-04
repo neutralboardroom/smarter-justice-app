@@ -1,0 +1,39 @@
+{
+  "version": "1.7.32",
+  "date": "2026-07-25",
+  "program": "Phase One six-region professional-profile program",
+  "leadRegion": "The Bronx",
+  "nextLeadRegion": "The Bronx",
+  "releaseDecision": "NO_WEAK_PADDING",
+  "researchPerformedInThisBuild": false,
+  "reason": "No new current public-source batch was independently researched and verified during this build. The prompt permits fewer than 36 records and requires rejection of weak padding. Existing v1.7.31 records and totals are preserved unchanged.",
+  "actual": {
+    "newIndividualProfessionals": 0,
+    "newFirms": 0,
+    "newProfessionalFirmLinks": 0,
+    "regionsWorked": 0
+  },
+  "directoryBefore": {
+    "professionals": 233,
+    "firms": 48,
+    "publicTotal": 281,
+    "strictQualifyingProfessionals": 232,
+    "strictQualifyingFirms": 46,
+    "strictQualifyingTotal": 278
+  },
+  "directoryAfter": {
+    "professionals": 233,
+    "firms": 48,
+    "publicTotal": 281,
+    "strictQualifyingProfessionals": 232,
+    "strictQualifyingFirms": 46,
+    "strictQualifyingTotal": 278
+  },
+  "statusBoundaries": {
+    "allExistingUnclaimedProfilesRemainSeparateFromVerification": true,
+    "paymentDoesNotAffectOrganicOrder": true,
+    "noParticipationOrAvailabilityInferred": true,
+    "noInquiryEligibilityActivated": true
+  },
+  "nextReleaseTrigger": "Resume Bronx-led research only when current individual-level practice, office, contact, firm relationship, source date, and duplicate checks can be completed."
+}

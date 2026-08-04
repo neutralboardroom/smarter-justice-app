@@ -1,0 +1,60 @@
+{
+  "releaseVersion": "1.7.55",
+  "generatedAt": "2026-07-30",
+  "sourceArtifact": {
+    "filename": "smarter-justice-v1.7.54.zip",
+    "sha256": "761961a2545165e95c5e1581d4dbdb52218d055533921e03bbf546311e160f71",
+    "sizeBytes": 4667259,
+    "entries": 1340,
+    "files": 1322,
+    "directories": 18,
+    "uncompressedBytes": 12873793,
+    "compressedBytes": 4471873,
+    "inventoryRecords": 1321,
+    "inventorySha256": "65caaa08a52b1f04c03cf4dbcd0098876cbfb31785073f6c932ffae68de56071",
+    "packageJsonSha256": "ab3b087bedc3883fdb5d985e7d5b60194940a44ad14c48b8a3359b04d1119a0a",
+    "packageLockSha256": "ae22c56b733d2738aab637e30ff167b7d5b174a1f51c8f9a2662836406fe040f",
+    "sbomSha256": "4663b42a3e5d6f34b0fb961e1f09988cb04eef2adca45532fa494de98b3b072e",
+    "treeSha256": "113730a2908cc465eca2a0061781711ce3ee62a6e96ff9eddfb0b8d7ec07aee6",
+    "dependencyIndependentParts": 108,
+    "totalReadinessParts": 109,
+    "testLogSha256": "d2a0d07e98caa62683fca6a5ce8bb6d9adc28648f29d49702abc45ae6ed955d1",
+    "serialBaselineRuns": 2,
+    "serialBaselineResult": "PASS_IDENTICAL_OUTPUT"
+  },
+  "finding": "Exact v1.7.54 was independently verified and is the immediate source and rollback truth. Its candidate-era embedded self-identity remains historical; this release records the detached final identity without rewriting v1.7.54 history.",
+  "parallelBaselineFinding": {
+    "result": "ONE_OF_TWO_CONCURRENT_RUNS_FAILED_BEFORE_FIX",
+    "cause": "tests/smoke.test.js used fixed TCP port 3961",
+    "classification": "TEST_ISOLATION_DEFECT_NOT_PRODUCT_REGRESSION",
+    "serialRerun": "PASS_IDENTICAL_OUTPUT"
+  },
+  "portalTruth": {
+    "divorce-law-aid": {
+      "version": "0.26.0",
+      "filename": "divorce-law-aid-v0.26.0.zip",
+      "sha": "de8130b7b208b60c14c0876b655b1661a39c483da272f7453f98a01d31e3818b",
+      "size": 2885267
+    },
+    "estate-law-aid": {
+      "version": "1.1.54",
+      "filename": "estate-law-aid-v1.1.54.zip",
+      "sha": "bbb89f4029f95d7f6b49de00e8abad7ef69dd26c872fe501f23ec2566fd6b9b8",
+      "size": 10519805
+    },
+    "personal-injury-law-aid": {
+      "version": "0.47.0",
+      "filename": "personal-injury-law-aid-v0.47.0.zip",
+      "sha": "5e55e497ee359671a531b3bc2528013b2d48c483f77e679fe2907e877a5a794b",
+      "size": 3366440
+    },
+    "domestic-violence-aid": {
+      "version": "0.41.0",
+      "filename": "domestic-violence-aid-v0.41.0.zip",
+      "sha": "b50fba2135e2cb1be0e5f7f6e2a332568c77cefb355c778576ce3e5a7a950c39",
+      "size": 2209760
+    }
+  },
+  "launchState": "NO_GO",
+  "deploymentState": "NOT_DEPLOYED"
+}

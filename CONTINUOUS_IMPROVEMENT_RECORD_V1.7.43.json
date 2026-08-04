@@ -1,0 +1,42 @@
+{
+  "version": "1.7.43",
+  "date": "2026-07-28",
+  "releaseWarrant": "Material launch simplification: adds a truthful complimentary attorney-profile pilot, portal-first claim context, central create-profile execution, and a focused three-portal professional experience without opening payment or publication gates.",
+  "improvements": [
+    {
+      "id": "founding-profile-pilot",
+      "status": "completed-and-tested-locally",
+      "benefit": "Roger can invite a small attorney cohort to use central profile management without waiting for live billing."
+    },
+    {
+      "id": "payment-state-separation",
+      "status": "completed-and-tested-locally",
+      "benefit": "Complimentary access cannot impersonate paid membership or bypass professional review."
+    },
+    {
+      "id": "portal-first-claim-context",
+      "status": "completed-and-tested-locally",
+      "benefit": "Attorneys begin from the relevant specialty profile and continue safely in one central account."
+    },
+    {
+      "id": "three-portal-signup-simplification",
+      "status": "completed-and-tested-locally",
+      "benefit": "The launch interface presents only Divorce, Estate, and Personal Injury."
+    },
+    {
+      "id": "launch-focused-dashboard",
+      "status": "completed-and-tested-locally",
+      "benefit": "Professionals see profile, portal, verification, firm, support and security actions without marketplace clutter."
+    }
+  ],
+  "deferred": [
+    "production service verification",
+    "graphical and assistive acceptance",
+    "live payment lifecycle verification",
+    "deployment authorization",
+    "Immigration Oasis deployment verification",
+    "dedicated portal exact reconciliation"
+  ],
+  "ownerBenefit": "The attorney launch funnel is clearer, safer, and harder to misconfigure or underbill while every commercial gate remains explicit.",
+  "publicUserBenefit": "Professionals can create accounts and manage accurate profiles more easily without any implication that payment buys verification, ranking, or clients."
+}

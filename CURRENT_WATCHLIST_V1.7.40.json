@@ -1,0 +1,85 @@
+{
+  "version": "1.7.40",
+  "date": "2026-07-28",
+  "items": [
+    {
+      "id": "watch-central-profile-portal-adoption-v1740",
+      "priority": "P0",
+      "state": "D3_LOCAL_ONLY",
+      "nextAction": "Adopt the v1.3.0 read-only profile/firm handoff in one exact portal staging artifact, then roll the same tested adapter contract through the remaining portals."
+    },
+    {
+      "id": "watch-self-entry-publication-gates-v1740",
+      "priority": "P0",
+      "state": "FAIL_CLOSED",
+      "nextAction": "Keep self-created and owner-assisted profiles private until credential verification, owner approval, portal assignment approval, and destination-portal acceptance are complete. Payment alone never publishes."
+    },
+    {
+      "id": "watch-48-hour-launch",
+      "priority": "critical",
+      "state": "ACTIVE_CONTROLLED_LAUNCH_PREPARATION",
+      "nextAction": "Complete the three separate launch lanes, exact production preflight, staging verification, and explicit owner go/no-go decisions."
+    },
+    {
+      "id": "watch-immigration-deployment",
+      "priority": "critical",
+      "state": "BLOCKED_DEDICATED_CONTEXT",
+      "nextAction": "Complete or verify the full-plus-lean deployment in the dedicated Immigration Oasis context and return a nonconfidential exact handoff."
+    },
+    {
+      "id": "watch-v1738-deployment",
+      "priority": "high",
+      "state": "CLOSED_GATE",
+      "nextAction": "Do not deploy v1.7.40 without separate owner authorization and launch-lane go/no-go evidence."
+    },
+    {
+      "id": "watch-dedicated-artifacts",
+      "priority": "high",
+      "state": "OWNER_RECORDED",
+      "nextAction": "Independently verify the 24 dedicated owner-recorded records in their portal contexts; seven currently lack exact artifact identity."
+    },
+    {
+      "id": "watch-unresolved-professional-portal-assignments",
+      "priority": "high",
+      "state": "OWNER_REVIEW_REQUIRED",
+      "count": 14,
+      "nextAction": "Review individually; do not infer a destination."
+    },
+    {
+      "id": "watch-professional-portal-staging-adapter",
+      "priority": "medium",
+      "state": "D3_LOCAL_ONLY",
+      "nextAction": "Choose one portal for an owner-approved D4 staging adapter after exact artifact and data-boundary review."
+    },
+    {
+      "id": "watch-browser-accessibility",
+      "priority": "medium",
+      "state": "OPEN",
+      "nextAction": "Complete graphical browser, keyboard, zoom, mobile, tablet, and assistive-technology acceptance."
+    },
+    {
+      "id": "watch-npm-audit",
+      "priority": "medium",
+      "state": "RETRY_REQUIRED",
+      "nextAction": "Retry clean install and vulnerability audit against an available registry and advisory endpoint."
+    },
+    {
+      "id": "watch-professional-network-activation",
+      "priority": "medium",
+      "state": "CLOSED_GATE",
+      "nextAction": "Complete infrastructure, terms, support, ethics, monitoring, and rollback gates before activation."
+    },
+    {
+      "id": "watch-attorney-enrollment-field-acceptance-v1739",
+      "priority": "P0",
+      "status": "OPEN",
+      "title": "Complete real-browser, keyboard, zoom, screen-reader, and mobile acceptance for attorney signup, checkout, and profile management."
+    },
+    {
+      "id": "watch-live-stripe-membership-lifecycle-v1739",
+      "priority": "P0",
+      "status": "OPEN",
+      "title": "Verify production-like Stripe checkout, webhook, subscription lifecycle, cancellation, refund, and support handling before paid enrollment opens."
+    }
+  ]
+}

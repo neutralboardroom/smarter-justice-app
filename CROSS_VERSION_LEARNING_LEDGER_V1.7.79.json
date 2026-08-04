@@ -1,0 +1,49 @@
+{
+  "schema_id": "SJP-LMP-CROSS-VERSION-LEARNING-LEDGER-2026-08-03-V1",
+  "product": {
+    "name": "Smarter Justice",
+    "prior_version": "1.7.78",
+    "current_version": "1.7.79"
+  },
+  "prior_versions_reviewed": [
+    "1.7.77",
+    "1.7.78"
+  ],
+  "lessons": [
+    {
+      "lesson_id": "V14-1779-01",
+      "source_version_or_wave": "v1.7.78 detached release evidence",
+      "observation": "A noncircular candidate process can still leave the embedded owner receipt problem unsolved if the receipt tries to name the final ZIP.",
+      "what_worked_or_failed": "Detached final identity discipline worked; no V14 embedded owner receipt/payload inventory existed.",
+      "root_cause_or_enabling_factor": "The outer ZIP does not exist until after packaging, so its identity cannot be safely embedded.",
+      "test_or_evidence_that_revealed_it": "V14 release identity and owner receipt standard.",
+      "product_change_made": "Added a truthful embedded owner receipt and unified owner live-operations view.",
+      "builder_prompt_system_change_made": "Added separate payload inventory and final-delivery identity boundary validation.",
+      "future_candidate_selection_effect": "Prefer evidence architecture that can survive immutable packaging without self-reference.",
+      "future_testing_or_recovery_effect": "Fresh extraction must verify payload inventory and receipt while recomputing outer ZIP identity independently.",
+      "status": "APPLIED"
+    },
+    {
+      "lesson_id": "V14-1779-02",
+      "source_version_or_wave": "v1.7.78 owner operations records",
+      "observation": "Many individually truthful records still impose owner burden when external states are not normalized into one view.",
+      "what_worked_or_failed": "Specialized controls worked; cross-service status and the next owner action were fragmented.",
+      "root_cause_or_enabling_factor": "Each subsystem evolved its own state representation.",
+      "test_or_evidence_that_revealed_it": "Audit of AI, provider, deployment, domain, email, database, and billing owner records.",
+      "product_change_made": "Added one unified evidence-state register and owner endpoint.",
+      "builder_prompt_system_change_made": "Added strict allowed states and unsupported VERIFIED_LIVE rejection.",
+      "future_candidate_selection_effect": "Select future integrations that reduce owner effort while preserving evidence boundaries.",
+      "future_testing_or_recovery_effect": "Recovery must restore exact state vocabulary and never promote a dependency from source code alone.",
+      "status": "APPLIED"
+    }
+  ],
+  "unresolved_learning_questions": [
+    "Which exact GitHub repository and Render service are canonical?",
+    "Which live evidence adapters can be connected without exposing secrets or sensitive content?"
+  ],
+  "next_version_learning_priorities": [
+    "Repository/commit/deployment evidence binding",
+    "Automated state promotion receipts",
+    "Dark deployment and controlled smoke evidence"
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "schema_id": "SJP-LMP-CROSS-VERSION-LEARNING-LEDGER-2026-08-03-V1",
+  "product": {
+    "name": "Smarter Justice",
+    "prior_version": "1.7.77",
+    "current_version": "1.7.78"
+  },
+  "prior_versions_reviewed": [
+    "1.7.76",
+    "1.7.77"
+  ],
+  "lessons": [
+    {
+      "lesson_id": "AI-1778-01",
+      "source_version_or_wave": "v1.7.77 active AI helper",
+      "observation": "A feature can be optional and still violate launch architecture when it carries alternate vendors, broad case serialization and no registered-tool boundary.",
+      "what_worked_or_failed": "Rules fallback worked; direct multi-vendor transport and broad input failed the successor overlay.",
+      "root_cause_or_enabling_factor": "Provider helper predated the OpenAI-only central-gateway owner decision.",
+      "test_or_evidence_that_revealed_it": "Source audit of lib/aiProviders.js, .env.example and render.yaml.",
+      "product_change_made": "Replaced active transport with the OpenAI-only central registered-tool gateway and minimal input projection.",
+      "builder_prompt_system_change_made": "Added alternate-vendor, arbitrary-prompt, injection, schema, log-minimization and dark-state release checks.",
+      "future_candidate_selection_effect": "Prioritize shared high-leverage safety architecture before portal-specific AI surface expansion.",
+      "future_testing_or_recovery_effect": "Every provider/model/prompt/schema/source change must rerun affected registered-tool evaluations and preserve deterministic fallback.",
+      "status": "APPLIED"
+    },
+    {
+      "lesson_id": "AI-1778-02",
+      "source_version_or_wave": "Successor overlay V2",
+      "observation": "Code readiness, key presence, deployment, live smoke, portal compatibility and stabilization are distinct maturity states.",
+      "what_worked_or_failed": "Existing NO_GO discipline worked; no unified five-product AI truth record existed.",
+      "root_cause_or_enabling_factor": "AI state was represented only indirectly by environment variables and an optional provider status.",
+      "test_or_evidence_that_revealed_it": "Overlay sections 19, 24A and 24H plus control-center source audit.",
+      "product_change_made": "Added five-product capability matrix and protected AI Operations owner view.",
+      "builder_prompt_system_change_made": "Added exact maturity and live-smoke boundaries to the OpenAI launch validator and release records.",
+      "future_candidate_selection_effect": "Do not select broader AI use until central dark deployment and one portal canary are evidence-ready.",
+      "future_testing_or_recovery_effect": "Recovery must restore exact contract, registry, matrix and kill-switch defaults before any live activation.",
+      "status": "APPLIED"
+    }
+  ],
+  "unresolved_learning_questions": [
+    "Which exact OpenAI model snapshot is available and approved in the production project at live-smoke time?",
+    "Which exact Render service and GitHub repository identities will own the central gateway deployment?"
+  ],
+  "next_version_learning_priorities": [
+    "Controlled live smoke evidence without user data",
+    "Portal compatibility receipt automation",
+    "Cost and safety stabilization evidence",
+    "Non-AI launch readiness progress in parallel"
+  ]
+}

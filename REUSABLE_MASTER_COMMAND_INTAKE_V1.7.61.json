@@ -1,0 +1,27 @@
+{
+  "schema": "smarter-justice-reusable-master-command-intake",
+  "releaseVersion": "1.7.61",
+  "generatedAt": "2026-07-31T17:14:00-04:00",
+  "prompt": {
+    "filename": "Smarter_Justice_Reusable_Version_Neutral_Complete_Immediate_Build_Master_Command_Fourth_Pass_Version_Neutral_Portal_Authority_Discovery_No_Fixed_Micro_Portal_Versions_2026-07-31(1).txt",
+    "canonicalFilename": "Smarter_Justice_Reusable_Version_Neutral_Complete_Immediate_Build_Master_Command_Fourth_Pass_2026-07-31.txt",
+    "sha256": "06757bdcfd6b0fa557922569a5fe01a0e9b1e92862e8a3409a89789be3ef6668",
+    "sizeBytes": 184399,
+    "lineCount": 4937,
+    "openingMarkerVerified": true,
+    "finalMarkerVerified": true
+  },
+  "integrityMarkers": {
+    "opening": "SMARTER JUSTICE / FOURTH-PASS REFINED REUSABLE VERSION-NEUTRAL",
+    "closing": "END OF FOURTH-PASS REFINED SMARTER JUSTICE REUSABLE VERSION-NEUTRAL COMPLETE IMMEDIATE BUILD MASTER COMMAND",
+    "verified": true
+  },
+  "authorityUse": "CONTROLLING_BUILD_INTENT",
+  "implementationTruthSource": "smarter-justice-v1.7.60.zip",
+  "implementationTruthSha256": "832ec66ffda5acf0a2cb7f105cbf4c08d150b38d1582c30cea3599b3e1925e0f",
+  "nextVersionDerived": "1.7.61",
+  "sameVersionReleasePrevented": true,
+  "historicalV1758LearningPreserved": true,
+  "newestV1760LearningRevalidated": true,
+  "fixedCurrentPortalIdentityInReusableMaster": false
+}

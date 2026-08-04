@@ -1,0 +1,10 @@
+'use strict';
+const assert=require('assert');const fs=require('fs');const path=require('path');
+const evaluator=require('../public/preparation-quality-core.js');
+const fixtures=require('../data/preparationQualityFixturesV1732.json');
+assert.equal(typeof evaluator.evaluate,'function');assert.equal(fixtures.version,'1.7.32');assert.equal(fixtures.fixtures.length,6);
+for(const fixture of fixtures.fixtures){const report=evaluator.evaluate(fixture.packet,'2026-07-25T23:30:00-04:00');const titles=report.findings.map(x=>x.title);const kinds=report.findings.map(x=>x.kind);assert.equal(report.schemaVersion,'1.0.0',fixture.id);assert.equal(report.storageModel,'current-tab only; local download only when the user chooses',fixture.id);assert(report.boundaries.includes('No legal deadline calculation'),fixture.id);assert(report.boundaries.includes('No professional routing'),fixture.id);if(fixture.expect.minimumStrengths!=null)assert(report.summary.strengths>=fixture.expect.minimumStrengths,fixture.id);if(fixture.expect.minimumAttentionItems!=null)assert(report.summary.attentionItems>=fixture.expect.minimumAttentionItems,fixture.id);for(const title of fixture.expect.requiredTitles||[])assert(titles.includes(title),`${fixture.id}:${title}`);for(const title of fixture.expect.forbiddenTitles||[])assert(!titles.includes(title),`${fixture.id}:${title}`);for(const kind of fixture.expect.requiredKinds||[])assert(kinds.includes(kind),`${fixture.id}:${kind}`);}
+const html=fs.readFileSync(path.join(__dirname,'..','public','preparation-quality-check.html'),'utf8');const ui=fs.readFileSync(path.join(__dirname,'..','public','preparation-quality-check.js'),'utf8');const core=fs.readFileSync(path.join(__dirname,'..','public','preparation-quality-core.js'),'utf8');
+for(const token of ['preparation-quality-core.js','current browser tab','cannot determine truth','No server save','No external AI'])assert(html.includes(token),token);
+for(const forbidden of ['localStorage','sessionStorage','indexedDB','fetch(','XMLHttpRequest','WebSocket'])assert(!ui.includes(forbidden)&&!core.includes(forbidden),forbidden);
+console.log('preparation-quality-check-v1732.test.js passed');

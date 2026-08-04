@@ -1,0 +1,270 @@
+{
+  "schemaVersion": "1.0.0",
+  "release": {
+    "project": "Smarter Justice",
+    "version": "1.7.12",
+    "title": "Device-Only Document Review, Comparison, and Exact Source-Line Provenance",
+    "status": "exact artifact tested",
+    "artifactName": "smarter-justice-v1.7.12.zip",
+    "artifactSha256Location": "Smarter_Justice_v1.7.12_Exact_Artifact_Test_Record.json (external companion generated after final ZIP testing)",
+    "sourceBaseline": {
+      "artifact": "smarter-justice-v1.7.11.zip",
+      "sha256": "cb67dc574e152d9853a404c6f977255a04f3946c8a2db51c6e2dba4f8c5370d2",
+      "exactSizeBytes": 2247973,
+      "tests": "25-part regression passed before changes"
+    },
+    "rollbackArtifact": "smarter-justice-v1.7.11.zip",
+    "deployment": {
+      "deployed": false,
+      "liveVerified": false,
+      "lastVerifiedProductionVersion": "1.6.1",
+      "statement": "Code completion and exact-artifact testing do not change production status."
+    }
+  },
+  "completedImprovementItems": [],
+  "materiallyAdvancedImprovementItems": [
+    "SJ-NEXT-040"
+  ],
+  "carriedForwardLaunchGates": [
+    "SJ-NEXT-001",
+    "SJ-NEXT-002",
+    "SJ-NEXT-003",
+    "SJ-NEXT-004",
+    "SJ-NEXT-005",
+    "SJ-NEXT-006",
+    "SJ-NEXT-007",
+    "SJ-NEXT-008",
+    "SJ-NEXT-009",
+    "SJ-NEXT-032",
+    "SJ-NEXT-033",
+    "SJ-NEXT-034"
+  ],
+  "changes": [
+    {
+      "id": "V1712-DEVICE-ONLY-REVIEW",
+      "problem": "Public users could describe a notice and prepare form information but lacked a dedicated free way to organize exact document text without opening confidential storage or sending the content to Smarter Justice.",
+      "implementation": "Added a browser-tab-only text review workspace for supported local text files and pasted text. It reports one-based source lines, exact excerpts, document metrics, likely headings, stated dates, action language, amounts, reference identifiers, contact information, and instruction-like text.",
+      "preserved": "No document content is transmitted, saved, placed in analytics, sent to AI, shared with a professional, or represented as legal or professional advice. PDFs, scans, images, OCR, persistent storage, and confidential uploads remain unavailable.",
+      "tests": [
+        "tests/document-tools-v1712.test.js",
+        "tests/public-ux.test.js",
+        "tests/customer-facing-clarity.test.js",
+        "tests/customer-experience-v178.test.js"
+      ]
+    },
+    {
+      "id": "V1712-DEVICE-ONLY-COMPARISON",
+      "problem": "The general platform had no public, privacy-preserving way to compare two text versions with exact source references.",
+      "implementation": "Added neutral line-oriented comparison showing added, removed, changed, and optionally unchanged lines with Version A and Version B line numbers, plus a complete local text download.",
+      "preserved": "The tool does not characterize a change as favorable, unfavorable, legal, illegal, valid, enforceable, or complete, and it does not replace review of formatting, signatures, exhibits, attachments, tables, or the original documents.",
+      "tests": [
+        "tests/document-tools-v1712.test.js",
+        "tests/static-checks.test.js"
+      ]
+    },
+    {
+      "id": "V1712-PUBLIC-INTEGRATION-AND-PRIVACY",
+      "problem": "A new capability would be misleading or difficult to find without consistent public navigation, privacy language, limits, responsive behavior, and shared-capability records.",
+      "implementation": "Added homepage, notice-page, How It Works, privacy, footer, and sitemap integration; accessible error, focus, counter, clear, and download states; responsive layouts; and two proven capability-registry records for later evidence-based portal reuse.",
+      "preserved": "No shared capability is forced into another portal. Each portal must separately evaluate specialty fit, jurisdiction, safety, privacy, and regression requirements.",
+      "tests": [
+        "tests/static-checks.test.js",
+        "tests/public-ux.test.js",
+        "tests/customer-facing-clarity.test.js",
+        "tests/customer-experience-v178.test.js",
+        "tests/release-governance-v1712.test.js"
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "id": "TEST-V1712-DOCUMENT-TOOLS",
+      "path": "tests/document-tools-v1712.test.js",
+      "covers": [
+        "device-only text validation",
+        "one-based provenance",
+        "stated-date and action-language detection",
+        "embedded-instruction handling",
+        "neutral comparison",
+        "limits"
+      ]
+    },
+    {
+      "id": "TEST-V1712-GOVERNANCE",
+      "path": "tests/release-governance-v1712.test.js",
+      "covers": [
+        "version truth",
+        "capability registry",
+        "public route",
+        "device-only boundary",
+        "closed paid and sensitive gates"
+      ]
+    },
+    {
+      "id": "TEST-FULL-REGRESSION",
+      "path": "npm test",
+      "covers": [
+        "all 26 regression parts"
+      ]
+    },
+    {
+      "id": "TEST-FINAL-ZIP",
+      "path": "fresh extraction, clean install/audit, npm test, syntax/JSON, public links, ZIP safety, source equality, local health and fail-closed boundaries",
+      "covers": [
+        "distributed artifact"
+      ]
+    }
+  ],
+  "immutableStatusHistory": [
+    {
+      "at": "2026-07-21",
+      "actor": "build",
+      "event": "v1.7.9 exact baseline verified",
+      "status": "baseline verified",
+      "evidence": "9bec35277e8f08d16520959e2162b4c16b623aac8e89826638f2ec24556f2b87"
+    },
+    {
+      "at": "2026-07-21",
+      "actor": "build",
+      "event": "v1.7.10 evidence-backed scope selected",
+      "status": "scope controlled",
+      "evidence": "Audit findings and maintained list"
+    },
+    {
+      "at": "2026-07-21",
+      "actor": "build",
+      "event": "v1.7.10 code and records completed",
+      "status": "code complete",
+      "evidence": "Release changes and targeted tests"
+    },
+    {
+      "at": "2026-07-21",
+      "actor": "build",
+      "event": "v1.7.10 final ZIP tested",
+      "status": "exact artifact tested",
+      "evidence": "External exact-artifact record"
+    },
+    {
+      "at": "2026-07-21",
+      "actor": "build",
+      "event": "v1.7.10 exact baseline independently verified",
+      "status": "baseline verified",
+      "evidence": "aa375fba1bd6ad14425ff8d497b213d873e589e9a8964903e75dbef3fc36c4f6"
+    },
+    {
+      "at": "2026-07-21",
+      "actor": "build",
+      "event": "v1.7.11 evidence-backed scope selected",
+      "status": "scope controlled",
+      "evidence": "SJ-NEXT-016, SJ-NEXT-018, SJ-NEXT-020, and SJ-NEXT-039"
+    },
+    {
+      "at": "2026-07-21",
+      "actor": "build",
+      "event": "v1.7.11 code and records completed",
+      "status": "code complete",
+      "evidence": "Release changes and targeted tests"
+    },
+    {
+      "at": "2026-07-21",
+      "actor": "build",
+      "event": "v1.7.11 final ZIP tested",
+      "status": "exact artifact tested",
+      "evidence": "External exact-artifact record"
+    },
+    {
+      "at": "2026-07-21",
+      "actor": "build",
+      "event": "v1.7.11 exact baseline independently verified",
+      "status": "baseline verified",
+      "evidence": "cb67dc574e152d9853a404c6f977255a04f3946c8a2db51c6e2dba4f8c5370d2"
+    },
+    {
+      "at": "2026-07-21",
+      "actor": "build",
+      "event": "v1.7.12 evidence-backed scope selected",
+      "status": "scope controlled",
+      "evidence": "SJ-NEXT-040 and attached predeployment-audit directive"
+    },
+    {
+      "at": "2026-07-21",
+      "actor": "build",
+      "event": "v1.7.12 code and records completed",
+      "status": "code complete",
+      "evidence": "Device-only review, comparison, public integration, and targeted tests"
+    },
+    {
+      "at": "2026-07-21",
+      "actor": "build",
+      "event": "v1.7.12 final ZIP tested",
+      "status": "exact artifact tested",
+      "evidence": "External exact-artifact record"
+    }
+  ],
+  "privacySafeFunnelMeasurement": {
+    "runtimeCollectionStatus": "disabled pending privacy review and deployment configuration",
+    "allowedEvents": [
+      "homepage_audience_choice",
+      "public_start_opened",
+      "quick_start_selected",
+      "public_start_completed",
+      "starting_result_action_selected",
+      "focused_portal_details_viewed",
+      "professional_directory_viewed",
+      "professional_membership_viewed",
+      "professional_signup_started",
+      "professional_signup_completed",
+      "profile_claim_started",
+      "credential_step_completed",
+      "checkout_started",
+      "subscription_state_changed",
+      "support_requested"
+    ],
+    "allowedProperties": [
+      "event name",
+      "page or route identifier",
+      "coarse device class",
+      "coarse language",
+      "anonymous session identifier where legally approved",
+      "completion state",
+      "non-sensitive error category"
+    ],
+    "prohibitedProperties": [
+      "free-text legal description",
+      "document text",
+      "file name",
+      "person name",
+      "email",
+      "phone",
+      "street address",
+      "case number",
+      "notice number",
+      "medical information",
+      "immigration information",
+      "domestic-violence information",
+      "tax identifiers",
+      "payment-card data",
+      "professional-client communication"
+    ],
+    "rule": "No confidential description or document content may enter analytics. Consent, retention, access, deletion, and vendor settings require separate privacy approval."
+  },
+  "closedGates": [
+    "confidential production uploads",
+    "sensitive external AI without approved controls",
+    "professional membership applications and payments",
+    "public Human Review charges",
+    "public subscriptions",
+    "consultation booking",
+    "public reviews and ratings",
+    "unrestricted matching or routing",
+    "automatic filing",
+    "broad cross-portal sharing"
+  ],
+  "dependencyAdvisoryCheck": {
+    "status": "external advisory service unavailable",
+    "attempts": "multiple internal audit endpoint attempts returned HTTP 503; direct registry attempt returned EAI_AGAIN",
+    "dependencyRecordComparison": "all 15 resolved dependency records, versions, integrity values, and license fields are identical to the v1.7.11 exact-tested baseline dependency set",
+    "baselineEvidence": "v1.7.11 exact-artifact record reported 0 vulnerabilities for the same dependency set",
+    "currentClaim": "No fresh v1.7.12 npm-audit vulnerability count is claimed."
+  }
+}

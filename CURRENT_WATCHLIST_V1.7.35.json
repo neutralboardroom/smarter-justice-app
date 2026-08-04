@@ -1,0 +1,55 @@
+{
+  "version": "1.7.35",
+  "date": "2026-07-27",
+  "items": [
+    {
+      "id": "watch-immigration-deployment",
+      "priority": "critical",
+      "state": "WAITING_FOR_DEDICATED_HANDOFF",
+      "nextAction": "Complete or verify the owner-authorized Immigration Oasis deployment and return nonconfidential exact deployment truth."
+    },
+    {
+      "id": "watch-v1735-deployment",
+      "priority": "high",
+      "state": "CLOSED_GATE",
+      "nextAction": "Do not deploy v1.7.35 without separate owner authorization."
+    },
+    {
+      "id": "watch-dedicated-artifacts",
+      "priority": "high",
+      "state": "OWNER_RECORDED",
+      "nextAction": "Independently verify dedicated portal artifacts only in their portal contexts."
+    },
+    {
+      "id": "watch-missing-car-accident",
+      "priority": "high",
+      "state": "MISSING",
+      "nextAction": "Establish the first exact Car Accident Law Aid artifact when prioritized."
+    },
+    {
+      "id": "watch-browser-accessibility",
+      "priority": "medium",
+      "state": "OPEN",
+      "nextAction": "Complete graphical browser, keyboard, zoom, mobile, tablet, and assistive-technology acceptance when the environment permits."
+    },
+    {
+      "id": "watch-npm-audit",
+      "priority": "medium",
+      "state": "RETRY_REQUIRED",
+      "nextAction": "Retry clean npm installation and vulnerability audit against an available registry and advisory endpoint."
+    },
+    {
+      "id": "watch-neutral-boardroom-adapter",
+      "priority": "low",
+      "state": "D2_ONLY",
+      "nextAction": "Keep export-only until an independently tested producer-consumer adapter exists."
+    },
+    {
+      "id": "watch-professional-network-activation",
+      "status": "WATCH",
+      "topic": "Professional network activation",
+      "currentTruth": "Organization, office, seat, practice assignment, portal assignment, entitlement, billing-account, and 25 portal-contract foundations exist. Public checkout, live billing, inquiries, appointments, sponsorship, and automatic portal writes remain closed.",
+      "nextAction": "Complete production persistence, owner MFA, approved pricing, Stripe test evidence, legal and professional-responsibility review, support operations, and portal adapter tests before activation."
+    }
+  ]
+}

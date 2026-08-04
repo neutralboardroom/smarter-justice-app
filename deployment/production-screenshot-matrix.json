@@ -1,0 +1,37 @@
+{
+  "schema": "smarter-justice-production-screenshot-matrix",
+  "version": "1.0.0",
+  "productId": "smarter-justice-central",
+  "state": "NOT_STARTED_PRODUCTION_NOT_DEPLOYED",
+  "required": [
+    {
+      "viewport": "phone",
+      "routes": [
+        "/",
+        "/find-help.html",
+        "/professional-directory.html",
+        "/privacy.html",
+        "/support.html"
+      ]
+    },
+    {
+      "viewport": "desktop",
+      "routes": [
+        "/",
+        "/find-help.html",
+        "/professional-directory.html",
+        "/privacy.html",
+        "/support.html"
+      ]
+    }
+  ],
+  "reviewIncludes": [
+    "BRANDING",
+    "INTERNAL_LANGUAGE_LEAKAGE",
+    "ACCESSIBILITY",
+    "RESPONSIVE_LAYOUT",
+    "ERROR_STATES"
+  ],
+  "accepted": false,
+  "releaseVersion": null
+}

@@ -1,0 +1,26 @@
+{
+  "schema": "smarter-justice-release-scope",
+  "releaseVersion": "1.7.62",
+  "generatedAt": "2026-07-31T22:24:00-04:00",
+  "releaseType": "COMPLETE_CONNECTED_MATERIAL_RELEASE",
+  "selectedOutcomes": [
+    "durable rule implementation",
+    "evidence repeatability governance",
+    "current research lifecycle",
+    "public language and visual acceptance",
+    "English-first control correction"
+  ],
+  "preserved": [
+    "homepage design",
+    "Attorney Partner Tour",
+    "free core",
+    "$15 commercial terms",
+    "closed gates"
+  ],
+  "excluded": [
+    "portal repository edits",
+    "deployment",
+    "live services"
+  ],
+  "launchState": "NO_GO"
+}

@@ -1,0 +1,40 @@
+{
+  "releaseVersion": "1.7.60",
+  "generatedAt": "2026-07-31T16:19:00-04:00",
+  "baseline": {
+    "runs": 2,
+    "commandsPerRun": 113,
+    "result": "PASS",
+    "identicalOutput": true,
+    "testLogSha256": "30a26f564c97905a6f8bd527058f1b67bdaa402e06290f2a7a7c5aafe9c5f87e"
+  },
+  "workingTree": {
+    "runs": 2,
+    "mode": "CONCURRENT_INDEPENDENT_FROZEN_TREES",
+    "commandsPerRun": 114,
+    "status": "PASS_IDENTICAL_OUTPUT",
+    "identicalOutput": true,
+    "testLogSha256": "756b4cb4f36c381b63f11cec582645f12c9a0245d026294539f07fe5e05348f0"
+  },
+  "postgresqlDependent": {
+    "parts": 1,
+    "status": "BLOCKED_NOT_CLAIMED"
+  },
+  "totalReadinessParts": 115,
+  "candidate": {
+    "runs": 2,
+    "commandsPerRun": 114,
+    "status": "PASS_IDENTICAL_OUTPUT",
+    "identicalOutput": true,
+    "testLogSha256": "756b4cb4f36c381b63f11cec582645f12c9a0245d026294539f07fe5e05348f0",
+    "candidateSha256": "739f4e9127433fbad0ce8daa58b690a6b06c29a52e209d41f20251c68a81a535"
+  },
+  "sealedSource": {
+    "runs": 2,
+    "commandsPerRun": 114,
+    "status": "PASS_IDENTICAL_OUTPUT",
+    "identicalOutput": true,
+    "testLogSha256": "756b4cb4f36c381b63f11cec582645f12c9a0245d026294539f07fe5e05348f0",
+    "acceptedPresealArchiveSha256": "76808815dd3c13fb42fe80042e68562b7fa5670229ddf81866a9f9ff36658f1c"
+  }
+}

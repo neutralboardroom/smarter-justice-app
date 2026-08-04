@@ -1,0 +1,113 @@
+{
+  "schemaName": "smarter-justice-legal-network-action-center",
+  "schemaVersion": "1.0.0",
+  "releaseVersion": "1.7.36",
+  "generatedAt": "2026-07-27T15:30:00-04:00",
+  "scope": "Smarter Justice and its independent legal portals only",
+  "purpose": "Turn portfolio truth into a concise, deterministic, owner-controlled legal-network execution queue without automating portal changes.",
+  "tiers": [
+    "NOW",
+    "NEXT",
+    "WATCH",
+    "PRESERVE"
+  ],
+  "dispositionStates": [
+    "ACTIVE",
+    "ACCEPTED",
+    "DEFERRED",
+    "DISMISSED",
+    "COMPLETED"
+  ],
+  "rules": [
+    {
+      "ruleId": "SJ-ACT-001",
+      "version": "1.0.0",
+      "priority": 100,
+      "tier": "NOW",
+      "condition": "health == BLOCKED",
+      "title": "Resolve a blocked legal portal"
+    },
+    {
+      "ruleId": "SJ-ACT-002",
+      "version": "1.0.0",
+      "priority": 95,
+      "tier": "NOW",
+      "condition": "evidenceState == CONFLICT",
+      "title": "Resolve conflicting portal truth"
+    },
+    {
+      "ruleId": "SJ-ACT-003",
+      "version": "1.0.0",
+      "priority": 90,
+      "tier": "NOW",
+      "condition": "evidenceState == MISSING",
+      "title": "Establish the missing dedicated artifact"
+    },
+    {
+      "ruleId": "SJ-ACT-004",
+      "version": "1.0.0",
+      "priority": 110,
+      "tier": "NOW",
+      "condition": "owner-authorized deployment pending verification",
+      "title": "Complete or verify an authorized deployment"
+    },
+    {
+      "ruleId": "SJ-ACT-005",
+      "version": "1.0.0",
+      "priority": 75,
+      "tier": "NEXT",
+      "condition": "evidenceState == OWNER_RECORDED",
+      "title": "Verify the dedicated portal artifact"
+    },
+    {
+      "ruleId": "SJ-ACT-006",
+      "version": "1.0.0",
+      "priority": 70,
+      "tier": "NEXT",
+      "condition": "exact-tested development and deployment not confirmed",
+      "title": "Evaluate deployment readiness"
+    },
+    {
+      "ruleId": "SJ-ACT-007",
+      "version": "1.0.0",
+      "priority": 45,
+      "tier": "WATCH",
+      "condition": "reviewedAt older than freshness threshold",
+      "title": "Refresh stale portfolio metadata"
+    },
+    {
+      "ruleId": "SJ-ACT-008",
+      "version": "1.0.0",
+      "priority": 10,
+      "tier": "PRESERVE",
+      "condition": "closed owner gate",
+      "title": "Preserve closed high-risk gates"
+    },
+    {
+      "ruleId": "SJ-ACT-009",
+      "version": "1.0.0",
+      "priority": 80,
+      "tier": "NEXT",
+      "condition": "professional network practice or portal assignments await evidence review",
+      "title": "Review professional practice and portal assignments"
+    },
+    {
+      "ruleId": "SJ-ACT-010",
+      "version": "1.0.0",
+      "priority": 85,
+      "tier": "NEXT",
+      "condition": "unresolved legacy professional portal assignment exists",
+      "title": "Resolve a legacy professional portal assignment without unsafe inference"
+    }
+  ],
+  "boundaries": [
+    "No automatic deployment or portal mutation.",
+    "No user-matter or confidential data.",
+    "A recommendation does not equal an owner decision.",
+    "Dedicated portal artifacts remain authoritative.",
+    "Owner disposition resurfaces when underlying evidence changes.",
+    "Professional payment never establishes verification, practice evidence, portal placement, organic rank, inquiry eligibility, or appointment eligibility.",
+    "Professional-network portal contracts are export-only and do not mutate dedicated portals.",
+    "Canonical mapping is allowed only for unambiguous aliases; unresolved legacy assignments remain outside portal exports."
+  ]
+}

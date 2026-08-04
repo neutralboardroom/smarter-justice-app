@@ -1,0 +1,121 @@
+{
+  "schema": "smarter-justice-version-neutral-portal-authority-discovery",
+  "schemaVersion": "1.0.0",
+  "releaseVersion": "1.7.61",
+  "generatedAt": "2026-07-31T17:14:00-04:00",
+  "controllingMasterPrompt": {
+    "filename": "Smarter_Justice_Reusable_Version_Neutral_Complete_Immediate_Build_Master_Command_Fourth_Pass_Version_Neutral_Portal_Authority_Discovery_No_Fixed_Micro_Portal_Versions_2026-07-31(1).txt",
+    "canonicalFilename": "Smarter_Justice_Reusable_Version_Neutral_Complete_Immediate_Build_Master_Command_Fourth_Pass_2026-07-31.txt",
+    "sha256": "06757bdcfd6b0fa557922569a5fe01a0e9b1e92862e8a3409a89789be3ef6668",
+    "sizeBytes": 184399,
+    "lineCount": 4937,
+    "openingMarkerVerified": true,
+    "finalMarkerVerified": true
+  },
+  "policy": {
+    "fixedCurrentPortalVersionsInReusableMasterProhibited": true,
+    "exactZipRequestedOnlyWhenMaterial": true,
+    "ordinaryCoordinationMayUseOwnerOrHandoffRecordedIdentityWithinScope": true,
+    "d4D5DeploymentLiveClaimsRequireProductSpecificEvidence": true,
+    "historicalPortalIdentityPreservedOutsideReusableMaster": true
+  },
+  "authoritySourceOrder": [
+    "newest exact completed portal artifact in dedicated builder context",
+    "dedicated portal continuation or detached release receipt",
+    "canonical five-platform launch-register row plus product-local mirror receipt",
+    "current owner-recorded identity or supersession statement",
+    "historical records"
+  ],
+  "canonicalRecord": "INITIAL_PORTAL_AUTHORITY_V1.7.61.json",
+  "currentnessReceipt": "INITIAL_PORTAL_CURRENTNESS_RECEIPT_V1.7.61.json",
+  "portals": [
+    {
+      "order": 1,
+      "portalId": "divorce-law-aid",
+      "name": "Divorce Law Aid",
+      "domain": "divorcelawaid.com",
+      "version": "0.33.0",
+      "artifactFilename": "divorce-law-aid-v0.33.0.zip",
+      "ownerRecordedSha256": "6a28fa9328f66cb8b36c1cbf9f849ceca8afcb0eb67c3e503ad5537598ba5f8f",
+      "ownerRecordedSizeBytes": 3682855,
+      "identityCompleteness": "VERSION_FILENAME_SHA_SIZE",
+      "evidenceState": "OWNER_RECORDED",
+      "evidenceSource": "current dedicated portal release receipt in owner conversation",
+      "supersededOwnerRecordedVersion": "0.32.0",
+      "independentlyVerifiedInThisBuild": false,
+      "stagingState": "NOT_STAGED",
+      "deploymentState": "NOT_CONFIRMED",
+      "reviewedAt": "2026-07-31",
+      "safetyClass": "STANDARD_LEGAL_PORTAL"
+    },
+    {
+      "order": 2,
+      "portalId": "estate-law-aid",
+      "name": "Estate Law Aid",
+      "domain": "estatelawaid.com",
+      "version": "1.1.61",
+      "artifactFilename": "estate-law-aid-v1.1.61.zip",
+      "ownerRecordedSha256": "02e8cd97b90ad28de01ae3cdf273a88ab4fae9323996f811b528adc207849ff9",
+      "ownerRecordedSizeBytes": 15718063,
+      "identityCompleteness": "VERSION_FILENAME_SHA_SIZE",
+      "evidenceState": "OWNER_RECORDED",
+      "evidenceSource": "current dedicated portal release receipt in owner conversation",
+      "supersededOwnerRecordedVersion": "1.1.60",
+      "independentlyVerifiedInThisBuild": false,
+      "stagingState": "NOT_STAGED",
+      "deploymentState": "NOT_CONFIRMED",
+      "reviewedAt": "2026-07-31",
+      "safetyClass": "STANDARD_LEGAL_PORTAL"
+    },
+    {
+      "order": 3,
+      "portalId": "personal-injury-law-aid",
+      "name": "Personal Injury Law Aid",
+      "domain": "personalinjurylawaid.com",
+      "version": "0.55.0",
+      "artifactFilename": "personal-injury-law-aid-v0.55.0.zip",
+      "ownerRecordedSha256": "88b8e23d6c5d820c013ae623da0f050c41266aecea71ca793924272091a1439c",
+      "ownerRecordedSizeBytes": 4594888,
+      "identityCompleteness": "VERSION_FILENAME_SHA_SIZE",
+      "evidenceState": "OWNER_RECORDED",
+      "evidenceSource": "current dedicated portal release receipt in owner conversation",
+      "supersededOwnerRecordedVersion": "0.54.0",
+      "independentlyVerifiedInThisBuild": false,
+      "stagingState": "NOT_STAGED",
+      "deploymentState": "NOT_CONFIRMED",
+      "reviewedAt": "2026-07-31",
+      "safetyClass": "STANDARD_LEGAL_PORTAL"
+    },
+    {
+      "order": 4,
+      "portalId": "domestic-violence-aid",
+      "name": "Domestic Violence Aid",
+      "domain": "domesticviolenceaid.com",
+      "version": "0.49.0",
+      "artifactFilename": "domestic-violence-aid-v0.49.0.zip",
+      "ownerRecordedSha256": null,
+      "ownerRecordedSizeBytes": null,
+      "identityCompleteness": "VERSION_AND_FILENAME_ONLY",
+      "evidenceState": "OWNER_RECORDED_VERSION_ONLY",
+      "evidenceSource": "current dedicated portal supersession record in owner conversation; detached full identity not present in this build context",
+      "supersededOwnerRecordedVersion": "0.48.0",
+      "independentlyVerifiedInThisBuild": false,
+      "stagingState": "NOT_STAGED",
+      "deploymentState": "NOT_CONFIRMED",
+      "reviewedAt": "2026-07-31",
+      "safetyClass": "SURVIVOR_SAFETY_SEPARATE_ACCEPTANCE",
+      "nextAction": "Obtain the product-local detached release receipt only when exact identity or D4/safety acceptance is materially required."
+    }
+  ],
+  "unresolvedIdentityFields": [
+    {
+      "portalId": "domestic-violence-aid",
+      "fields": [
+        "sha256",
+        "sizeBytes"
+      ],
+      "effect": "Does not block central metadata reconciliation; blocks exact identity, D4, safety or rollback claim until product-local receipt is supplied."
+    }
+  ],
+  "result": "PASS_VERSION_NEUTRAL_DISCOVERY"
+}

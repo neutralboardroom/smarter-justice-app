@@ -1,0 +1,37 @@
+{
+  "schema_id": "SJP-V14-EVIDENCE-BATCH-WORKSPACE-CONTRACT-2026-08-03-V1",
+  "release_version": "1.7.83",
+  "governing_packet": {
+    "id": "SJP-LMP-UNIVERSAL-ONE-STEP-2026-08-03-V14-ALL-CHAT-MODES",
+    "sha256": "fce42ce0927748f94189692ef5b3bf8e0fe9f8d12273287f03a68eb7bccdad6f"
+  },
+  "exact_source_artifact": {
+    "filename": "smarter-justice-v1.7.82.zip",
+    "version": "1.7.82",
+    "sha256": "61fea278a69055915e9b4b916e4b64ec514614f1746cacf659a6931ccd0228b1"
+  },
+  "batch_schema_id": "SJP-V14-LIVE-EVIDENCE-BATCH-2026-08-03-V1",
+  "maximum_batch_bytes": 262144,
+  "maximum_receipts": 32,
+  "accepted_environment_modes": [
+    "single-environment"
+  ],
+  "conflict_policy": {
+    "duplicate_receipt_id": "REJECT",
+    "duplicate_receipt_digest": "REJECT_REPLAY",
+    "multiple_receipts_for_component": "REJECT_UNLESS_BYTE_IDENTICAL_THEN_REPLAY",
+    "mixed_environment": "REJECT",
+    "source_or_release_identity_mismatch": "REJECT",
+    "promotion_above_component_maximum": "REJECT",
+    "partial_or_invalid_batch": "NO_TRANSACTION_PREVIEW"
+  },
+  "transaction_boundary": {
+    "preview_only": true,
+    "persistent_storage": false,
+    "register_mutation": false,
+    "external_calls": false,
+    "owner_go_inferred": false,
+    "deployment_authorized": false,
+    "launch_state": "NO_GO"
+  }
+}

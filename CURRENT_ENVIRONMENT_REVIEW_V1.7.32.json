@@ -1,0 +1,50 @@
+{
+  "version": "1.7.32",
+  "date": "2026-07-25",
+  "scope": "Source and implementation facts established inside the v1.7.31 artifact and this v1.7.32 build. No external legal-source refresh is claimed.",
+  "items": [
+    {
+      "area": "Preparation quality review",
+      "finding": "The v1.7.31 preparation journey lacked a final deterministic visible-gap review.",
+      "action": "Implemented a current-tab Preparation Quality Check with no score or legal conclusion."
+    },
+    {
+      "area": "Portfolio truth",
+      "finding": "Current-facing Control Center records overlapped and contained stale owner-recorded versions.",
+      "action": "Added a versioned portfolio-truth record with stable IDs and explicit evidence states."
+    },
+    {
+      "area": "Dashboard interoperability",
+      "finding": "Matching pages and JSON fields did not prove integration.",
+      "action": "Added producer-consumer contracts and limited claims to D2 contract-tested."
+    },
+    {
+      "area": "Storage conservation",
+      "finding": "Four unreferenced historical JPEGs and four duplicate full prompt copies were present.",
+      "action": "Removed 1,775,362 uncompressed bytes while preserving provenance and tests."
+    },
+    {
+      "area": "Professional profiles",
+      "finding": "The proposed 36-record batch was not independently researched in this build.",
+      "action": "Added zero records and preserved exact v1.7.31 totals."
+    },
+    {
+      "area": "Node.js runtime",
+      "finding": "Node v22.16.0 and npm 10.9.2 remain the exact-tested target.",
+      "action": "Preserved Node 22.x and npm 10.x requirements."
+    },
+    {
+      "area": "Dependencies",
+      "finding": "Clean npm installation remains subject to registry availability.",
+      "action": "Retry during exact-artifact testing; do not package test-only compatibility modules."
+    }
+  ],
+  "rejectedTrends": [
+    "A giant centralized dashboard",
+    "Automatic cross-portal synchronization",
+    "A universal public-user matter database",
+    "Cosmetic redesign without user benefit",
+    "Profile-count padding",
+    "A numerical preparation or case-strength score"
+  ]
+}

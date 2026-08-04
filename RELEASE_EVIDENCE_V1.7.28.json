@@ -1,0 +1,75 @@
+{
+  "version": "1.7.28",
+  "date": "2026-07-24",
+  "deployed": false,
+  "rollbackArtifact": "smarter-justice-v1.7.27.zip",
+  "activationGatesChanged": false,
+  "title": "Cross-Portal Learning and Adaptation System",
+  "sourceArtifact": {
+    "name": "smarter-justice-v1.7.27.zip",
+    "sha256": "3a627d1c5775b79e309605c1d74582d995314e8229805e9b6a954283eb985b46",
+    "sizeBytes": 2894831,
+    "files": 428
+  },
+  "implementation": {
+    "registryVersion": "2.0.0",
+    "learningSystemVersion": "1.0.0",
+    "sourceArtifacts": 6,
+    "learningRecords": 12,
+    "adoptionDecisions": 20,
+    "portableFiles": [
+      "CROSS_PORTAL_CAPABILITY_REGISTRY_V1.7.28.json",
+      "PORTAL_CAPABILITY_ADOPTION_STATUS_V1.7.28.json",
+      "SMARTER_ECOSYSTEM_CONTROL_CENTER_LEARNING_HANDOFF_V1.7.28.json",
+      "CROSS_PORTAL_LEARNING_AND_ADAPTATION_STANDARD_V1.7.28.md",
+      "CROSS_PORTAL_LEARNING_V1.7.28.md"
+    ],
+    "protectedOwnerEndpoints": [
+      "/api/owner/cross-portal-learning",
+      "/api/owner/cross-portal-learning/export"
+    ],
+    "continuationPromptContract": true,
+    "automaticCrossRepositorySynchronization": false,
+    "confidentialUserDataCentralized": false
+  },
+  "profiles": {
+    "newProfessionals": 0,
+    "newFirms": 0,
+    "newLinks": 0,
+    "reason": "Architecture-focused registry release; no unrelated profile batch added. Resume the active rotation with Brooklyn leading.",
+    "professionals": 125,
+    "firms": 34,
+    "publicRecords": 159,
+    "strictQualifying": 156,
+    "nextLeadMarket": "Brooklyn"
+  },
+  "gates": {
+    "sensitiveTrafficApproved": false,
+    "professionalPaidPilot": "paused",
+    "publicPaidHumanReview": "paused",
+    "payments": false,
+    "booking": false,
+    "reviews": false,
+    "confidentialUploads": false,
+    "routing": false,
+    "broadCrossSectorSharing": false,
+    "filing": false
+  },
+  "testing": {
+    "suiteParts": 65,
+    "workingTree": "passed",
+    "freshExtraction": "passed independently from two fresh extractions",
+    "npmVulnerabilityCount": null,
+    "javascriptSyntaxChecks": 160,
+    "jsonParseChecks": 72,
+    "npmRegistry": "configured internal registry timed out during controlled npm ping",
+    "testCompatibilityModules": "temporary external pg and nodemailer modules through NODE_PATH; not packaged",
+    "postTestByteEquality": true,
+    "twoExtractionEquality": true
+  },
+  "knownLimitations": [
+    "Standalone Smarter Ecosystem Control Center v0.1.0 does not yet provide authenticated append-only synchronization for this registry.",
+    "The registry contains verified snapshots only; every target portal must inspect its newest ZIP before claiming adoption.",
+    "No production deployment or activation gate is changed by this release."
+  ]
+}

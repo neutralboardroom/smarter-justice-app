@@ -1,0 +1,57 @@
+{
+  "schema": "smarter-justice-launch-day-state-machine",
+  "releaseVersion": "1.7.73",
+  "generatedAt": "2026-08-02T17:04:00-04:00",
+  "allowedStates": [
+    "PREFLIGHT_REQUIRED",
+    "PROTECTED_OWNER_ACTION_REQUIRED",
+    "QUALIFICATION_REQUIRED",
+    "QUALIFIED_NOT_AUTHORIZED",
+    "AUTHORIZED_NOT_STARTED",
+    "DEPLOY_QUEUED",
+    "DEPLOY_BUILDING",
+    "DEPLOY_HEALTH_EVALUATION",
+    "DEPLOY_FAILED_PRE_CUTOVER",
+    "PRODUCTION_CUTOVER",
+    "POST_DEPLOY_SMOKE_REQUIRED",
+    "POST_DEPLOY_SCREENSHOT_REQUIRED",
+    "PRODUCTION_DEPLOYED_POST_DEPLOY_VERIFIED",
+    "STABILIZATION_WATCH",
+    "LIVE_ACCEPTED",
+    "ROLLED_BACK",
+    "BLOCKED_WITH_SAFE_FALLBACK"
+  ],
+  "products": [
+    {
+      "productId": "smarter-justice-central",
+      "state": "PREFLIGHT_REQUIRED",
+      "evidence": "LOCAL_CONTRACT_ONLY",
+      "nextAction": "Resolve exact repository, commit/tree, provider service, domain, migration and rollback evidence."
+    },
+    {
+      "productId": "divorce-law-aid",
+      "state": "PREFLIGHT_REQUIRED",
+      "evidence": "LOCAL_CONTRACT_ONLY",
+      "nextAction": "Resolve exact repository, commit/tree, provider service, domain, migration and rollback evidence."
+    },
+    {
+      "productId": "estate-law-aid",
+      "state": "PREFLIGHT_REQUIRED",
+      "evidence": "LOCAL_CONTRACT_ONLY",
+      "nextAction": "Resolve exact repository, commit/tree, provider service, domain, migration and rollback evidence."
+    },
+    {
+      "productId": "personal-injury-law-aid",
+      "state": "PREFLIGHT_REQUIRED",
+      "evidence": "LOCAL_CONTRACT_ONLY",
+      "nextAction": "Resolve exact repository, commit/tree, provider service, domain, migration and rollback evidence."
+    },
+    {
+      "productId": "domestic-violence-aid",
+      "state": "PREFLIGHT_REQUIRED",
+      "evidence": "LOCAL_CONTRACT_ONLY",
+      "nextAction": "Resolve exact repository, commit/tree, provider service, domain, migration and rollback evidence."
+    }
+  ],
+  "deploymentStarted": false
+}

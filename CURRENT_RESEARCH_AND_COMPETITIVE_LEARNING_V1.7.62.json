@@ -1,0 +1,133 @@
+{
+  "schema": "smarter-justice-current-research-competitive-learning",
+  "schemaVersion": "1.0.0",
+  "releaseVersion": "1.7.62",
+  "generatedAt": "2026-07-31T22:24:00-04:00",
+  "researchDate": "2026-07-31",
+  "scope": [
+    "accessibility",
+    "AI risk and prompt injection",
+    "New York official self-help and forms",
+    "attorney profile claiming",
+    "commercial disclosure"
+  ],
+  "sourceHierarchyApplied": true,
+  "lawfulUseBoundary": "Public ideas and patterns only; no protected code, text, data, branding, trade dress, access-control bypass or confidential material copied.",
+  "sources": [
+    {
+      "sourceId": "RES-W3C-WCAG22",
+      "publisher": "W3C Web Accessibility Initiative",
+      "title": "WCAG 2.2 and WCAG 2 Overview",
+      "url": "https://www.w3.org/TR/WCAG22/",
+      "retrievedAt": "2026-07-31T22:24:00-04:00",
+      "sourceClass": "OFFICIAL_STANDARD",
+      "currentness": "W3C Recommendation 12 December 2024; overview updated May 2026",
+      "learning": "Use WCAG 2.2 as the current accessibility reference; preserve keyboard, focus visibility, target size, consistent help, accessible authentication and predictable error recovery.",
+      "disposition": "ADAPT FOR SMARTER JUSTICE",
+      "implementation": "No visual churn; preserve strong system and add complete inventory/acceptance coverage."
+    },
+    {
+      "sourceId": "RES-NIST-AIRMF",
+      "publisher": "NIST",
+      "title": "AI Risk Management Framework and Generative AI Profile",
+      "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+      "retrievedAt": "2026-07-31T22:24:00-04:00",
+      "sourceClass": "OFFICIAL_GOVERNMENT_GUIDANCE",
+      "currentness": "AI RMF page current in July 2026; AI RMF 1.0 revision noted and GenAI Profile published July 2024",
+      "learning": "Keep AI risk governance, human oversight, source verification, fallback, monitoring, incident and revocation controls versioned and revalidated.",
+      "disposition": "ADAPT FOR SMARTER JUSTICE",
+      "implementation": "AI remains assistive and not sole evidence; Tier A remains non-AI-capable."
+    },
+    {
+      "sourceId": "RES-OWASP-LLM",
+      "publisher": "OWASP",
+      "title": "LLM Prompt Injection Prevention Cheat Sheet",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/LLM_Prompt_Injection_Prevention_Cheat_Sheet.html",
+      "retrievedAt": "2026-07-31T22:24:00-04:00",
+      "sourceClass": "PRIMARY_SECURITY_GUIDANCE",
+      "currentness": "retrieved July 31 2026",
+      "learning": "Separate instructions from untrusted data, validate inputs and outputs, apply least privilege, monitoring, human controls and remote-content sanitization.",
+      "disposition": "ADAPT FOR SMARTER JUSTICE",
+      "implementation": "Preserve untrusted-content boundary and no tool/action authority from imported text."
+    },
+    {
+      "sourceId": "RES-NYCOURTS-COURTHELP",
+      "publisher": "New York State Unified Court System",
+      "title": "CourtHelp",
+      "url": "https://www.nycourts.gov/help/courthelp",
+      "retrievedAt": "2026-07-31T22:24:00-04:00",
+      "sourceClass": "OFFICIAL_COURT_SOURCE",
+      "currentness": "retrieved July 31 2026",
+      "learning": "Route self-represented users to official court information and free language-access resources; distinguish information and preparation from representation.",
+      "disposition": "ADAPT FOR SMARTER JUSTICE",
+      "implementation": "Preserve official-resource routing and no-lawyer boundary."
+    },
+    {
+      "sourceId": "RES-NYCOURTS-DIY",
+      "publisher": "New York State Unified Court System",
+      "title": "DIY Forms",
+      "url": "https://www.nycourts.gov/help/diy-forms",
+      "retrievedAt": "2026-07-31T22:24:00-04:00",
+      "sourceClass": "OFFICIAL_COURT_SOURCE",
+      "currentness": "retrieved July 31 2026",
+      "learning": "Guided answers may prepare a form or information sheet, but preparation must remain distinct from filing and court acceptance.",
+      "disposition": "ADAPT FOR SMARTER JUSTICE",
+      "implementation": "Preserve form-state separation and official-source currentness."
+    },
+    {
+      "sourceId": "RES-JUSTIA-PROFILES",
+      "publisher": "Justia",
+      "title": "Lawyer Directory profile claiming FAQ",
+      "url": "https://lawyers.justia.com/faq",
+      "retrievedAt": "2026-07-31T22:24:00-04:00",
+      "sourceClass": "CURRENT_PUBLIC_COMPETITOR_PRODUCT",
+      "currentness": "retrieved July 31 2026",
+      "learning": "Free complete profile claiming and firm-authorized multi-profile control are understandable public patterns; paid placement should remain separately labeled.",
+      "disposition": "LAWFULLY ADAPT PUBLIC IDEA",
+      "implementation": "Already aligned: free factual control, separate paid membership and no hidden organic ranking."
+    },
+    {
+      "sourceId": "RES-AVVO-PROFILES",
+      "publisher": "Avvo",
+      "title": "Attorney profile source and claim support",
+      "url": "https://support.avvo.com/hc/en-us/articles/208463046-How-does-Avvo-get-information-about-lawyers",
+      "retrievedAt": "2026-07-31T22:24:00-04:00",
+      "sourceClass": "CURRENT_PUBLIC_COMPETITOR_PRODUCT",
+      "currentness": "retrieved July 31 2026",
+      "learning": "Source-derived profiles need visible correction and free claim/update paths; source collection does not eliminate correction risk.",
+      "disposition": "LAWFULLY ADAPT PUBLIC IDEA",
+      "implementation": "Preserve source dates, claim, correction, suppression and removal."
+    },
+    {
+      "sourceId": "RES-LEGALZOOM-PLANS",
+      "publisher": "LegalZoom",
+      "title": "Public attorney-plan and contract pages",
+      "url": "https://www.legalzoom.com/legal/product-service-terms/legal-plan-contract",
+      "retrievedAt": "2026-07-31T22:24:00-04:00",
+      "sourceClass": "CURRENT_PUBLIC_ADJACENT_PRODUCT",
+      "currentness": "retrieved July 31 2026",
+      "learning": "Recurring plans need clear price, renewal, scope and separate attorney-engagement boundaries.",
+      "disposition": "LAWFULLY ADAPT DISCLOSURE PATTERN",
+      "implementation": "Preserve monthly-only $15 manifest and closed checkout until exact acceptance; do not copy text, branding or trade dress."
+    }
+  ],
+  "implementedInnovations": [
+    "complete durable-rule coverage",
+    "evidence repeatability classification",
+    "every-surface public-language inventory",
+    "English-first control correction"
+  ],
+  "preservedAfterResearch": [
+    "homepage layout and visual identity",
+    "free factual profile control",
+    "paid/organic separation",
+    "official-resource routing",
+    "non-AI Tier A fallback"
+  ],
+  "revalidationTriggers": [
+    "material law or standard change",
+    "provider or competitor product change",
+    "new owner decision",
+    "later material release"
+  ]
+}

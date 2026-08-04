@@ -1,0 +1,27 @@
+{
+  "example": true,
+  "liveEvidence": false,
+  "releaseVersion": "1.7.47",
+  "contractVersion": "1.4.0",
+  "portalId": "estate-law-aid",
+  "batchId": "example-estate-law-aid-batch",
+  "action": "UPSERT_PRIVATE",
+  "records": [
+    {
+      "professionalId": "example-professional",
+      "centralRevision": 1,
+      "portalProfileRevision": 1,
+      "portalSpecificProfileState": "approved",
+      "portalSpecificProfile": {
+        "specialtyBiography": "Illustrative approved text only",
+        "practiceAreas": [],
+        "matterTypes": [],
+        "serviceAreas": [],
+        "languages": [
+          "English"
+        ]
+      }
+    }
+  ],
+  "prohibitedDataIncluded": false
+}

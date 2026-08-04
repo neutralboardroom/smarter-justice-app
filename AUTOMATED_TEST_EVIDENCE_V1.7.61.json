@@ -1,0 +1,27 @@
+{
+  "schema": "smarter-justice-source-acceptance",
+  "releaseVersion": "1.7.61",
+  "generatedAt": "2026-07-31T17:14:00-04:00",
+  "acceptedTreeStage": "FROZEN_SOURCE_BEFORE_SOURCE_ACCEPTANCE_RECORD",
+  "inventoryRecords": 1625,
+  "inventorySha256": "8fb54423297b09e6d47980781a1d8d99aa91bc2ede76cbd5da79a1e79c90645e",
+  "treeSha256": "8fb54423297b09e6d47980781a1d8d99aa91bc2ede76cbd5da79a1e79c90645e",
+  "independentTrees": 2,
+  "dependencyIndependentPartsPerTree": 115,
+  "totalReadinessParts": 116,
+  "results": [
+    "PASS",
+    "PASS"
+  ],
+  "identicalOutput": true,
+  "testLogSha256": "fff885cdbf303f31068fd8148cea31efc1ac3820acc1116cc23a2b36989a8675",
+  "nodeVersion": "v22.16.0",
+  "npmVersion": "10.9.2",
+  "supplyChain": {
+    "cleanInstall": "BLOCKED_HTTP_404",
+    "freshAudit": "BLOCKED_HTTP_404",
+    "postgresqlAcceptance": "BLOCKED_NOT_CLAIMED"
+  },
+  "launchState": "NO_GO",
+  "deploymentAuthorized": false
+}

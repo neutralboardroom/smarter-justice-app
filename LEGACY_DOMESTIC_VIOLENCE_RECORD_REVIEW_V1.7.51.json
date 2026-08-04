@@ -1,0 +1,39 @@
+{
+  "release": "1.7.51",
+  "status": "REVIEW_REQUIRED",
+  "automaticConversion": false,
+  "automaticMerge": false,
+  "automaticAssignment": false,
+  "automaticPublication": false,
+  "termsRequiringReview": [
+    "domestic violence",
+    "domestic-violence-safety-support",
+    "Stop Sign Project",
+    "survivor support",
+    "victim services",
+    "shelter",
+    "advocate",
+    "agency",
+    "nonprofit",
+    "safety support"
+  ],
+  "requiredFields": [
+    "exact profile class",
+    "person versus organization",
+    "attorney status and specialty",
+    "firm or organization authority",
+    "lawful source and date",
+    "public-safe contact",
+    "confidential-location review",
+    "service area",
+    "emergency status",
+    "currentness",
+    "correction and removal",
+    "publication eligibility",
+    "Domestic Violence Aid relationship",
+    "Stop Sign Project relationship"
+  ],
+  "unresolvedDisposition": "PRIVATE_OR_SUPPRESSED_PENDING_REVIEW",
+  "acceptedPublicProfilesAdded": 0,
+  "zeroAdditionReason": "No live source ingestion or exact organization-authority acceptance was authorized in this release."
+}

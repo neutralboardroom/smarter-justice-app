@@ -1,0 +1,48 @@
+{
+  "schema_id": "SJP-PRODUCT-LAUNCH-READINESS-RECEIPT-2026-08-02-V1",
+  "receipt_id": "SJP-READINESS-SMARTER-JUSTICE-SOURCE-1.7.69-20260802T154400-0400",
+  "generated_for_release": "1.7.70",
+  "product": {
+    "id": "smarter-justice-central",
+    "name": "Smarter Justice central",
+    "version": "1.7.69",
+    "artifact_name": "smarter-justice-v1.7.69.zip",
+    "artifact_sha256": "4cc6525951eb4975826f32567d792fe0e95e9ffe22041a7882553947d59b1f79",
+    "artifact_size_bytes": 7609584,
+    "initial_cutover_track": true,
+    "build_and_readiness_track": true
+  },
+  "readiness_state": "EXACT_RELEASE_ACCEPTED",
+  "gates": {
+    "product_quality": "ACCEPTED",
+    "practice_specific_legal_and_safety": "NOT_APPLICABLE",
+    "current_authoritative_sources": "ACCEPTED",
+    "profile_growth_and_enrichment": "READY_FOR_REVIEW",
+    "smarter_justice_compatibility": "ACCEPTED",
+    "tests_and_exact_release": "ACCEPTED",
+    "repository_and_workflow": "PENDING_EXTERNAL_ACCEPTANCE",
+    "deployment_contract": "ACCEPTED",
+    "provider_service": "BLOCKED_WITH_EXACT_REASON",
+    "domain_dns_tls": "BLOCKED_WITH_EXACT_REASON",
+    "migration": "READY_FOR_REVIEW",
+    "health_and_smoke": "READY_FOR_REVIEW",
+    "monitoring_support_incident": "BLOCKED_WITH_EXACT_REASON",
+    "stabilization_and_rollback": "BLOCKED_WITH_EXACT_REASON"
+  },
+  "exact_blockers": [
+    "The exact GitHub repository, commit/tree, Render workspace/service, canonical production domain and provider secret-presence states have not been independently bound.",
+    "Production PostgreSQL, authenticated SMTP, MFA, monitoring, backup, restore, live smoke, screenshot and stabilization acceptance remain incomplete.",
+    "No production deployment is authorized or claimed."
+  ],
+  "builder_controlled_work_remaining": [],
+  "protected_owner_actions": [
+    "Authorize exact product-scoped production action only after read-only provider discovery and qualification evidence are complete."
+  ],
+  "next_executable_action": "Run read-only provider discovery and bind the exact repository, commit/tree, service and canonical-domain states without exposing secret values.",
+  "evidence_files": [
+    "SOURCE_ACCEPTANCE_V1.7.69.json",
+    "FINAL_ARTIFACT_ACCEPTANCE_V1.7.69.json",
+    "DEPLOYMENT_READINESS_V1.7.69.json",
+    "LAUNCH_DAY_ORCHESTRATION_V1.7.69.json"
+  ]
+}

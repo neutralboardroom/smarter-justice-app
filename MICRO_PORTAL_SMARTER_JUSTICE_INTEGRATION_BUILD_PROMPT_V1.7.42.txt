@@ -1,0 +1,125 @@
+CONTROLLING SMARTER JUSTICE MASTER RULES PACK: v1.7.0 / SHA-256 2fed25ffb37bccd63e4ab00efcdf4b65e2a21fb4732e9830b0fc75a146083580 / packaged file SMARTER_JUSTICE_MASTER_RULES_AND_SUGGESTIONS_PACK.md. Read and preserve it before implementation.
+
+SMARTER JUSTICE — LEGAL MICRO-PORTAL PROFESSIONAL INTEGRATION BUILD PROMPT
+Version 1.7.41
+Contract version 1.4.0
+Date context: July 28, 2026, America/New_York
+
+PURPOSE
+
+Implement the Smarter Justice professional-account integration in this portal only. Do not modify another portal, Smarter Justice, Neutral Boardroom, or an unrelated repository.
+
+The portal must remain the public specialty-profile and directory surface for its own legal subject. Smarter Justice must remain the only professional account, authentication, firm, office, seat, billing, membership, verification, support, and shared-profile-management authority.
+
+This is an initial-launch integration. Keep it simple, reliable, reversible, accessible, and fail-closed. Do not add optional features merely because they are possible.
+
+AUTHORITATIVE INPUTS
+
+1. Use the newest exact verified ZIP for this portal as implementation truth.
+2. Use Smarter Justice v1.7.41 integration materials:
+   - MICRO_PORTAL_PROFESSIONAL_INTEGRATION_KIT_V1.1.0.md
+   - PORTAL_PROFESSIONAL_INTEGRATION_STANDARD.md
+   - schemas/micro-portal-professional-handoff-v1.4.0.schema.json
+   - examples/micro-portal-professional-consumer.js
+   - MICRO_PORTAL_INTEGRATION_ROLLOUT_V1.7.41.json
+3. Resolve this portal’s exact canonical portalId from the rollout file and repository evidence. Do not invent or broaden the portal ID.
+4. Preserve the portal’s exact brand, specialty boundaries, working public tools, profile evidence rules, deployment history, and rollback.
+
+CONTROLLING ARCHITECTURE
+
+- One attorney or firm has one central Smarter Justice account.
+- The attorney or firm pays only through Smarter Justice.
+- The attorney or firm manages shared identity, contact, firm, office, seat, credential, billing, and support information through Smarter Justice.
+- This portal displays only its approved specialty-specific public projection.
+- This portal must not create a second login, password system, membership, checkout, subscription, billing portal, general professional editor, credential-verification authority, or shared firm account.
+- Payment never creates verification, portal eligibility, publication, ranking, inquiries, appointments, clients, revenue, or outcomes.
+- Corrections, disputes, suppression, and removal remain independent of payment.
+- No user legal matter, confidential upload, credential secret, payment data, password, session, MFA secret, or private support record may enter the professional handoff.
+- No automatic write-back to Smarter Justice is allowed.
+
+REQUIRED INITIAL-LAUNCH WORK
+
+1. Add clear professional entry points where appropriate:
+   - Claim an existing profile.
+   - Create a profile when no listing exists.
+   - Manage profile.
+   - Manage membership or billing.
+
+2. Build those links from the configured Smarter Justice base URL and this portal’s canonical portalId. Preserve an existing professionalId when the user starts from a specific profile.
+
+3. Add a read-only v1.4.0 handoff consumer. Before accepting a handoff:
+   - validate the complete schema;
+   - validate the stable handoff SHA-256 digest;
+   - require destinationPortalId to equal this portal’s configured portalId exactly;
+   - validate every record fingerprint;
+   - reject prohibited fields;
+   - reject stale or non-monotonic source revisions;
+   - require public records to have exact source-revision approval;
+   - require publicationEligible true before public rendering;
+   - honor UPSERT_PRIVATE, UPSERT_PUBLIC, and SUPPRESS exactly.
+
+4. Store a local read-only projection keyed by immutable Smarter Justice professionalId and firmId. Preserve:
+   - last applied sourceRevision;
+   - recordFingerprint;
+   - distribution action;
+   - suppression state;
+   - import time and source handoff digest;
+   - prior value or rollback reference.
+
+5. Render only portal-specific public profiles. The portal may add local presentation and specialty fields, but it must not overwrite or impersonate the central shared record.
+
+6. Add an import receipt with counts for received, public, private, suppressed, unchanged, rejected, and failed records. Do not convert missing information into zero or success.
+
+7. Preserve safe empty states. A valid handoff may contain zero public profiles.
+
+8. Add a reversible rollback path to the prior local projection.
+
+PUBLIC EXPERIENCE
+
+- Keep the portal’s specialty brand primary.
+- Explain that profile account management and membership are handled securely through Smarter Justice.
+- Do not expose internal adapter, queue, evidence-state, source-schema, or deployment terminology on ordinary public pages.
+- Do not imply that a listed professional is available, endorsed, participating, paid, verified, or accepting matters unless the exact public state supports the statement.
+- Maintain bright-white, professional, accessible family design and the portal’s own restrained accent.
+- Do not add decorative non-link pills or ovals.
+
+REQUIRED TESTS
+
+Add regression tests proving at minimum:
+
+1. The configured portalId is canonical and exact.
+2. Claim, create, manage, and billing links point to Smarter Justice and preserve portal context.
+3. No portal login, password reset, checkout, subscription, or shared general profile editor is introduced.
+4. A valid v1.4.0 handoff imports idempotently.
+5. A mismatched destination portal is rejected.
+6. An invalid handoff digest or record fingerprint is rejected.
+7. An older sourceRevision cannot overwrite a newer local revision.
+8. UPSERT_PRIVATE never renders publicly.
+9. UPSERT_PUBLIC renders only when publicationEligible is true and exact approval revisions match.
+10. SUPPRESS removes public rendering while preserving audit and rollback evidence.
+11. Prohibited confidential, payment, credential-secret, account-secret, and user-matter fields are rejected.
+12. Duplicate records are not created when the same handoff is replayed.
+13. A later approved revision replaces the earlier projection without duplicating the profile.
+14. A valid empty handoff produces a useful empty state rather than an error.
+15. Existing portal tests, accessibility checks, responsive checks, links, and release integrity still pass.
+
+RELEASE METHOD
+
+- Audit the exact portal artifact before changing source.
+- Preserve an untouched baseline and rollback artifact.
+- Make no unrelated redesign or feature changes.
+- Update the portal’s continuation prompt, release evidence, integration status, limitations, and Next Version Improvement List.
+- Package one authoritative ZIP.
+- Test the exact packaged ZIP after at least two fresh extractions.
+- Report exact filename, version, SHA-256, size, entries, inventory, tests, limitations, and rollback.
+- Do not deploy, open live profile imports, activate payments, or authorize automatic writes without separate explicit owner approval and complete evidence.
+
+COMPLETION STANDARD
+
+The integration is complete for the current portal only when it can safely display a read-only, portal-specific projection from Smarter Justice without creating duplicate accounts, duplicate billing, duplicate profiles, stale overwrites, unsupported publication, confidential-data transfer, or automatic cross-repository writes.
+
+V1.7.42 CONTROLLING PILOT ORDER
+1. Divorce Law Aid
+2. Estate Law Aid
+3. Personal Injury Law Aid, including vehicle accidents
+Workers’ Compensation Law Aid remains separate. Car Accident Law Aid is preserved as a dormant compatibility asset and is not separately launched or automatically merged.

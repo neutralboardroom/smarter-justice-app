@@ -1,0 +1,41 @@
+{
+  "schema": "smarter-justice-release-scope",
+  "releaseVersion": "1.7.73",
+  "releaseType": "COMPLETE_CONNECTED_MATERIAL_RELEASE",
+  "generatedAt": "2026-08-02T17:04:00-04:00",
+  "selectedBase": {
+    "filename": "smarter-justice-v1.7.72.zip",
+    "version": "1.7.72",
+    "sha256": "db2b08c866c826abfc5d2a4b920419bacacbe6185f6f3d883cdec7c4af31c678",
+    "sizeBytes": 8044070,
+    "entries": 2692,
+    "files": 2668,
+    "directories": 24,
+    "uncompressedBytes": 24006831,
+    "compressedBytes": 7638398,
+    "inventoryRecords": 2667,
+    "inventorySha256": "aeeb72104b0d085e45e9ae87b8059c15327a0943e2635c4e37ddd52a29f12fdd",
+    "packageJsonSha256": "3ec613fd28256eba44e346f3ae940cfeb6ba27551cd1ec734d340027a0bc3a92",
+    "packageLockSha256": "4acb5217fa1dace8bf7b23a0e0dfcfa4707716f713b70777428ed76f88d6d40c",
+    "sbomSha256": "9474999c994c8cd4f34674f92661e87c340c25024a76f817da4a9722b07fe5b4",
+    "dependencyIndependentParts": 126,
+    "totalReadinessParts": 127,
+    "testLogSha256": "a28a092315a937e8e8b003dc3dfe541769c03971b5b2a4b51cb5eec16669b502",
+    "evidenceState": "CURRENT_CHAT_REPRODUCED",
+    "lockfileSha256": "4acb5217fa1dace8bf7b23a0e0dfcfa4707716f713b70777428ed76f88d6d40c",
+    "treeSha256": "aeeb72104b0d085e45e9ae87b8059c15327a0943e2635c4e37ddd52a29f12fdd",
+    "concurrentBaselineRuns": 2,
+    "concurrentBaselineResult": "PASS_IDENTICAL_OUTPUT"
+  },
+  "materialChanges": [
+    "Added exact-artifact-bound provider-discovery authorization requests.",
+    "Required owner authorization and an eight-hour maximum read-only authorization window.",
+    "Bound discovery receipts to request IDs, deterministic request digests, and exact product artifact identity.",
+    "Rejected stale, expired, tampered, secret-bearing, write-bearing, deployment-bearing, and identity-mismatched receipts.",
+    "Kept four portal requests blocked until their exact current artifacts are supplied and freshly verified.",
+    "Added protected read-only owner visibility without reading provider metadata or authorizing production."
+  ],
+  "publicVisualChange": "NONE_PUBLIC_EXPERIENCE_PRESERVED_OWNER_ONLY_CURRENT_RELEASE_FILENAME_UPDATED",
+  "liveGatesOpened": false,
+  "launchState": "NO_GO"
+}

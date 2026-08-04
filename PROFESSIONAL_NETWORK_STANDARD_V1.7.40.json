@@ -1,0 +1,50 @@
+{
+  "schemaName": "smarter-justice-professional-network-standard",
+  "schemaVersion": "1.3.0",
+  "standardVersion": "1.3.0",
+  "portalContractVersion": "1.3.0",
+  "releaseVersion": "1.7.40",
+  "generatedAt": "2026-07-28T17:45:00-04:00",
+  "scope": "One private Smarter Justice professional account, firm, seat, billing, and profile-management layer distributing approved specialty records to independent legal micro-portals.",
+  "counts": {
+    "organizations": 48,
+    "offices": 50,
+    "seats": 233,
+    "practiceAssignments": 880,
+    "canonicalPortalAssignments": 678,
+    "unresolvedLegacyPortalAssignments": 14,
+    "billingAccounts": 48,
+    "entitlementRecords": 233,
+    "portalContracts": 25,
+    "d3AdapterFixtures": 25
+  },
+  "rules": [
+    "One private Smarter Justice professional account across qualifying legal portals.",
+    "Attorneys may claim an existing record or create a private profile from scratch; owner-assisted entry is also supported.",
+    "One firm organization account manages offices, professional seats, central billing, and permissions.",
+    "Public professional and firm profiles belong on the relevant focused legal micro-portals, not in a duplicate Smarter Justice directory.",
+    "Individual evidence, credential verification, owner approval, and portal assignment approval are required before portal publication.",
+    "Payment never buys verification, specialty evidence, portal approval, publication, ranking, inquiries, clients, or outcomes.",
+    "Corrections, disputes, suppression, and removal never require payment.",
+    "Portal exports are versioned, read-only, nonconfidential, and contain no user matters, credentials, payment data, or automatic write instructions.",
+    "Dedicated portals remain authoritative for specialty rendering, safeguards, deployment, and public user experience."
+  ],
+  "gates": {
+    "publicCheckout": false,
+    "liveBilling": false,
+    "publicInquiries": false,
+    "appointmentBooking": false,
+    "sponsoredPlacement": false,
+    "automaticPortalWrites": false,
+    "productionPortalAdapters": false,
+    "deployment": false
+  },
+  "foundations": {
+    "professionalSelfEntry": true,
+    "ownerAssistedEntry": true,
+    "privateCentralProfileWorkspace": true,
+    "portalProfileAndFirmPayloads": true,
+    "smarterJusticePublicDirectory": false,
+    "paymentCreatesPublication": false
+  }
+}

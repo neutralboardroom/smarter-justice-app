@@ -1,0 +1,9 @@
+'use strict';
+const assert=require('assert');const fs=require('fs');const path=require('path');const root=path.join(__dirname,'..');const pkg=require('../package.json');
+assert.equal(pkg.version,'1.7.83');assert.equal(pkg.scripts.test.split(' && ').length,145);assert.equal(require('../server-version-helper').version,'1.7.83');
+for(const f of ['AUDIT_REPORT_V1.7.29.md','CHANGE_MAP_V1.7.29.md','NO_CHANGE_LEDGER_V1.7.29.md','CONTINUATION_PROMPT_V1.7.29.md','RELEASE_EVIDENCE_V1.7.29.json','PROFILE_GROWTH_REPORT_V1.7.29.json','CURRENT_WATCHLIST_V1.7.29.json','CROSS_PORTAL_REGISTRY_CONTROLS_V1.7.29.json','LEGAL_PORTAL_CONTROL_CENTER_V1.7.29.json','PORTAL_RELEASE_SNAPSHOT_V1.7.29.json'])assert(fs.existsSync(path.join(root,f)),f);
+const evidence=require('../RELEASE_EVIDENCE_V1.7.29.json');assert.equal(evidence.version,'1.7.29');assert.equal(evidence.deployed,false);assert.equal(evidence.activationGatesChanged,false);assert.equal(evidence.profileGrowth.newProfessionals,36);assert.equal(evidence.profileGrowth.newFirms,1);assert.equal(evidence.profileGrowth.newLinks,36);assert.equal(evidence.profileGrowth.publicDirectory.total,196);assert.equal(evidence.profileGrowth.strictQualifying.total,193);
+const manifest=require('../portal-manifest.json');assert.equal(manifest.currentDevelopmentVersion,'1.7.83');assert.equal(manifest.testSuiteParts,146);assert.equal(manifest.capabilities.sixRegionPhaseOneProfileGrowthV1729,true);assert.equal(manifest.capabilities.legalPortalOnlyControlCenterV1729,true);assert.equal(manifest.capabilities.automaticCrossRepositorySynchronization,false);
+const sbom=require('../SBOM.spdx.json');assert(sbom.name.includes('1.7.83'));assert(sbom.documentNamespace.includes('/1.7.83/'));assert.equal(sbom.packages.length,15);
+const next=require('../NEXT_VERSION_IMPROVEMENT_LIST.json');assert.equal(next.releaseVersion,'1.7.83');assert(next.baselineArtifact.includes('v1.7.82.zip'));
+console.log('release-governance-v1729.test.js passed');

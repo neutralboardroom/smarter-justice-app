@@ -1,0 +1,26 @@
+{
+  "release": "1.7.54",
+  "generatedAt": "2026-07-30",
+  "decisions": [
+    {
+      "idea": "Conflict-safe field ownership and correction packets",
+      "decision": "ADOPT",
+      "reason": "Prevents central/portal last-write-wins and preserves rollback evidence."
+    },
+    {
+      "idea": "Transactional notification envelope",
+      "decision": "ADOPT",
+      "reason": "Reduces sensitive data exposure and separates delivery from workflow state."
+    },
+    {
+      "idea": "Increment portal contract version",
+      "decision": "REJECT_FOR_CURRENT_RELEASE",
+      "reason": "No exported payload shape change was required and exact portal staging is unavailable."
+    },
+    {
+      "idea": "Add a new external dependency",
+      "decision": "REJECT",
+      "reason": "Current architecture can implement the controls without increasing supply-chain risk."
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "version": "1.7.25",
+  "releaseDate": "2026-07-22",
+  "leadMarket": "Northern Metro New Jersey",
+  "nextLeadMarket": "Brooklyn",
+  "target": {"newIndividualProfessionals": 12,"newFirms": 2,"newProfessionalFirmLinks": 12,"markets": {"Northern Metro New Jersey": 8,"Manhattan": 2,"Brooklyn": 2}},
+  "actual": {"newIndividualProfessionals": 12,"newFirms": 2,"newProfessionalFirmLinks": 12,"markets": {"Northern Metro New Jersey": 8,"Manhattan": 2,"Brooklyn": 2}},
+  "startingDirectory": {"publicProfessionals": 89,"publicFirms": 28,"publicTotal": 117,"qualifyingProfessionals": 88,"qualifyingFirms": 26,"qualifyingTotal": 114},
+  "finalDirectory": {"publicProfessionals": 101,"publicFirms": 30,"publicTotal": 131,"qualifyingProfessionals": 100,"qualifyingFirms": 28,"qualifyingTotal": 128},
+  "safeguards": {"claimStatus": "not claimed","verificationStatus": "not started","participating": false,"paid": false,"availability": "not configured","inquiryEligible": false,"paidStatusAffectsOrganicOrder": false},
+  "sourceApproach": "Professional- and firm-controlled public business pages were summarized conservatively. Independent credential verification remains pending. Testimonials, rankings, awards, case results, and outcome claims were not copied."
+}

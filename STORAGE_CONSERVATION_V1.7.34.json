@@ -1,0 +1,27 @@
+{
+  "version": "1.7.34",
+  "date": "2026-07-27",
+  "policy": "Preserve exact source, tests, current truth, rollback, provenance, and continuation while removing only proven-unnecessary unreferenced historical prompt duplication.",
+  "removedFiles": [
+    {
+      "path": "CONTINUATION_PROMPT_V1.7.11.md",
+      "bytes": 125438,
+      "reason": "Unreferenced oversized historical continuation prompt superseded by current continuation and not required by regression, rollback, or current release records."
+    }
+  ],
+  "removedBytes": 125438,
+  "removedFileCount": 1,
+  "retained": [
+    "Current legal-network source, public tools, schemas, tests, package lock, SBOM, deployment and rollback records",
+    "Historical release evidence required for regression and provenance",
+    "v1.7.33 rollback records and continuation prompt",
+    "One current continuation prompt after v1.7.34",
+    "Current action-center, portal-truth, dashboard-contract, and Neutral Boardroom handoff records",
+    "No dedicated portal ZIPs, user-matter data, credentials, or external test modules"
+  ],
+  "minimumNextChatWorkingSet": [
+    "smarter-justice-v1.7.34.zip",
+    "CONTINUATION_PROMPT_V1.7.34.md"
+  ],
+  "safeCleanupRule": "Do not remove the exact v1.7.33 rollback artifact or its current continuation record until v1.7.34 is safely downloaded, independently verified, and superseded by a later exact release."
+}

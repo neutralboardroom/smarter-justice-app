@@ -1,0 +1,20 @@
+{
+  "schema": "smarter-justice-canary-wave-plan",
+  "releaseVersion": "1.7.73",
+  "generatedAt": "2026-08-02T17:04:00-04:00",
+  "state": "CANARY_NOT_SELECTABLE_UNTIL_ALL_PRODUCT_PREFLIGHT_COMPLETE",
+  "wave0": [
+    "READ_ONLY_PREFLIGHT_ALL_FIVE_PRODUCTS"
+  ],
+  "wave1": [],
+  "wave2": [],
+  "wave3": [
+    "smarter-justice-central_AFTER_VERIFIED_PORTAL_URLS_WHEN_DEPENDENT"
+  ],
+  "wave4": [
+    "FIVE_PRODUCT_CROSS_SITE_ACCEPTANCE"
+  ],
+  "selectionPolicy": "LOWEST_RISK_FROM_DEPLOYMENT_DOCTOR_EVIDENCE_ONLY",
+  "parallelizationAllowed": false,
+  "stopCondition": "P0_STOPS_AFFECTED_PRODUCT_AND_DEPENDENT_WAVES_ONLY"
+}

@@ -1,0 +1,116 @@
+{
+  "schema_id": "SJP-LMP-PRODUCT-AND-PROMPT-DUAL-IMPROVEMENT-REPORT-2026-08-03-V1",
+  "product": {
+    "name": "Smarter Justice",
+    "version": "1.7.79",
+    "artifact_sha256": "DETACHED_FINAL_NOT_YET_BUILT"
+  },
+  "release_classification": "ORDINARY_MATERIAL_DUAL_TRACK_RELEASE",
+  "independently_discovered_opportunities": [
+    "Unify fragmented external-dependency truth without inventing live state.",
+    "Correct the embedded receipt self-reference problem and bind the exact artifact before edits."
+  ],
+  "creative_new_capability_candidates": [
+    "Unified live-operations register",
+    "V14 release identity validator",
+    "Evidence-driven state promotion connectors"
+  ],
+  "product_platform_improvements": [
+    {
+      "category": "PRODUCT_PLATFORM",
+      "problem": "Billing, AI, database, email, repository, deployment, domain, health, and safety states were visible through separate records and could not be reviewed in one exact vocabulary.",
+      "implementation": "Added a protected owner-only unified live-operations register and API that classifies every dependency using the V14 state vocabulary, rejects unsupported VERIFIED_LIVE claims, separates five artifact/deployment identities, preserves closed safety gates, and supplies one exact protected owner action.",
+      "before_state": "Multiple valid owner views existed, but no single evidence-bound cross-service state register or one-action summary existed.",
+      "after_state": "One machine-readable and owner-readable central register shows contract-ready, owner-action-ready, blocked, and closed-by-design states without sensitive content or false live claims.",
+      "affected_files_records_or_systems": [
+        "lib/unifiedLiveOperations.js",
+        "V14_UNIFIED_LIVE_OPERATIONS_REGISTER_V1.7.79.json",
+        "server.js",
+        "tests/unified-live-operations-v1779.test.js"
+      ],
+      "tests_and_acceptance_evidence": [
+        "tests/unified-live-operations-v1779.test.js",
+        "tests/v14-release-governance-v1779.test.js"
+      ],
+      "benefit": "Roger can see the exact next protected action and all remaining live blockers in one place while public non-AI functionality stays independent.",
+      "limitations": [
+        "No exact repository, commit, Render deployment, provider secret, DNS/TLS, live smoke, portal compatibility, or stabilization evidence is available."
+      ]
+    }
+  ],
+  "builder_prompt_system_improvements": [
+    {
+      "category": "BUILDER_PROMPT_SYSTEM",
+      "problem": "The prior release discipline did not encode V14 mode selection, exact pre-edit binding, or a final embedded owner receipt that avoids direct and indirect ZIP self-reference.",
+      "implementation": "Added the Mode B artifact-binding receipt, exact V14 packet preservation evidence, five-identity release contract, embedded OWNER_RECEIPT, separate payload inventory with explicit exclusions, and a validator that rejects outer-ZIP identity fields, stale or unsafe inventory entries, unsupported live states, and weakened closed gates.",
+      "before_state": "Noncircular candidate/final separation existed, but no V14 owner receipt/payload inventory standard or exact mode-binding receipt existed.",
+      "after_state": "Every packaged release can carry a truthful owner receipt and payload inventory while the final outer ZIP SHA-256 and size remain detached and reported after packaging.",
+      "affected_files_or_artifacts": [
+        "ARTIFACT_BINDING_AND_MODE_RECEIPT.json",
+        "V14_RELEASE_IDENTITY_AND_RECEIPT_CONTRACT_V1.7.79.json",
+        "V14_MATERIAL_SCOPE_AND_MODE_V1.7.79.json",
+        "OWNER_RECEIPT.txt",
+        "RELEASE_PAYLOAD_INVENTORY_SHA256.txt",
+        "lib/v14ReleaseGovernance.js"
+      ],
+      "tests_and_acceptance_evidence": [
+        "tests/v14-release-governance-v1779.test.js",
+        "tests/unified-live-operations-v1779.test.js"
+      ],
+      "future_build_benefit": "Future chats can establish the exact base and mode before edits, preserve completed work, and deliver receipts that never claim to contain their own final ZIP identity.",
+      "limitations": [
+        "The final outer ZIP identity cannot be embedded and must be reported only after immutable packaging."
+      ]
+    }
+  ],
+  "accepted_innovation_waves": [
+    "Unified live-operations truth",
+    "V14 exact binding and non-self-referential release receipts"
+  ],
+  "reverted_or_rejected_innovation_waves": [
+    "No external state was promoted from local code or mocks.",
+    "No duplicate product re-upload, recursive V13 execution, live key action, deployment, or version-only packet migration was accepted."
+  ],
+  "lessons_carried_forward": [
+    "Exact artifact access must be proven before edits.",
+    "Source, payload, commit, deployment, and delivery identities are not interchangeable.",
+    "One owner action is more useful than a list of unranked external blockers."
+  ],
+  "prior_limitations_reviewed": [
+    {
+      "id": "live-provider-and-deployment",
+      "source": "v1.7.78",
+      "disposition": "Preserved as explicit owner-ready or blocked dependency states.",
+      "evidence": "V14_UNIFIED_LIVE_OPERATIONS_REGISTER_V1.7.79.json"
+    },
+    {
+      "id": "portal-compatibility",
+      "source": "v1.7.78",
+      "disposition": "Preserved; no exact portal compatibility receipt is invented.",
+      "evidence": "OWNER_RECEIPT.txt"
+    },
+    {
+      "id": "sensitive-document-ai",
+      "source": "v1.7.78",
+      "disposition": "Remains CLOSED_BY_DESIGN.",
+      "evidence": "V14_UNIFIED_LIVE_OPERATIONS_REGISTER_V1.7.79.json"
+    }
+  ],
+  "deferred_opportunities_with_exact_reasons": [
+    "GitHub/Render binding requires exact connected identities.",
+    "OpenAI live smoke requires dark deployment and protected key entry.",
+    "PostgreSQL acceptance requires an accepted PostgreSQL environment.",
+    "Portal compatibility requires exact current portal artifacts."
+  ],
+  "next_innovation_opportunities": [
+    "Connect exact GitHub and Render evidence to the unified register.",
+    "Automate evidence-based state promotion without secret or content logging.",
+    "Complete dark deployment, controlled OpenAI smoke, and Estate canary after all prerequisites pass."
+  ],
+  "dual_track_gate": {
+    "product_platform_track_passed": true,
+    "builder_prompt_system_track_passed": true,
+    "ordinary_material_release_authorized": true
+  },
+  "hard_constraints_preserved": true
+}

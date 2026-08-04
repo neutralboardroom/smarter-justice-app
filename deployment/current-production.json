@@ -1,0 +1,13 @@
+{
+  "schema": "smarter-justice-current-production",
+  "version": "1.0.0",
+  "productId": "smarter-justice-central",
+  "lastVerifiedVersion": "1.6.1",
+  "deploymentState": "NOT_DEPLOYED_BY_V1.7.73_BUILD",
+  "postDeploymentVerification": "NOT_STARTED",
+  "continuedLiveAcceptance": "NOT_ACCEPTED",
+  "exactCommit": "UNBOUND",
+  "renderDeployId": "UNBOUND",
+  "canonicalDomainVerification": "UNCLAIMED",
+  "releaseVersion": null
+}

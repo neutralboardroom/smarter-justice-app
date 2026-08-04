@@ -1,0 +1,61 @@
+{
+  "schema_id": "SJP-LMP-CONTINUOUS-SELF-IMPROVEMENT-AND-INNOVATION-PLAN-2026-08-03-V1",
+  "product": {
+    "name": "Smarter Justice",
+    "starting_version": "1.7.78",
+    "starting_artifact_sha256": "1c09bc5fa955e6ae81db6c027ae6424ac8d60324ef4de1b875b1009dc4a1f634",
+    "target_version": "1.7.79"
+  },
+  "core_owner_mission_sha256": "1e4efe3dd80a4c3ed6d03aabd1414c60fb91d747b463405c52bf8a0902556d0b",
+  "governing_packet": {
+    "id": "SJP-LMP-UNIVERSAL-ONE-STEP-2026-08-03-V14-ALL-CHAT-MODES",
+    "sha256": "fce42ce0927748f94189692ef5b3bf8e0fe9f8d12273287f03a68eb7bccdad6f"
+  },
+  "independent_opportunity_discovery": {
+    "exact_artifact_findings": [
+      "v1.7.78 had exact candidate/final separation but no V14 mode-binding receipt and no embedded owner receipt designed to avoid final-ZIP self-reference.",
+      "External launch dependencies were spread across multiple owner views without one exact evidence-state register."
+    ],
+    "public_user_journey_findings": [
+      "Public deterministic and AI-disabled paths already worked and required no new public surface for this release."
+    ],
+    "professional_staff_owner_findings": [
+      "Roger lacked one concise owner view that separated contract-ready, owner-action-ready, blocked, and closed-by-design states across billing, AI, database, email, GitHub, Render, domains, and deployment."
+    ],
+    "builder_prompt_system_findings": [
+      "The build system did not require V14 operating-mode selection, exact artifact binding before edits, or an embedded non-self-referential payload receipt/inventory."
+    ]
+  },
+  "creative_new_capability_candidates": [
+    "Unified owner-only live-operations register with exact state vocabulary.",
+    "Automated V14 artifact-binding and non-self-referential release receipt validator.",
+    "Future live evidence connectors that can promote individual dependencies only from exact provider evidence."
+  ],
+  "product_platform_track": {
+    "selected": [
+      "Unified live-operations owner register",
+      "One exact owner action selected from evidence states",
+      "Protected owner API and control-center integration"
+    ],
+    "deferred": [
+      "No external dependency can be promoted without current provider, repository, deployment, DNS/TLS, or smoke evidence."
+    ]
+  },
+  "builder_prompt_system_track": {
+    "selected": [
+      "V14 Mode B binding receipt",
+      "Identity-boundary contract",
+      "Embedded owner receipt and release-payload inventory",
+      "V14 release-governance tests"
+    ],
+    "deferred": [
+      "Final outer ZIP identity is necessarily computed and reported only after immutable packaging."
+    ]
+  },
+  "protected_owner_decisions_required": [
+    "Connect or identify the exact canonical GitHub repository and approved Smarter Justice Render service.",
+    "Enter the OpenAI key only later, after exact dark deployment binding and one protected action."
+  ],
+  "strongest_justified_set_selected": true,
+  "hard_constraints_preserved": true
+}

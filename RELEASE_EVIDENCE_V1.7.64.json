@@ -1,0 +1,78 @@
+{
+  "schema": "smarter-justice-release-evidence",
+  "releaseVersion": "1.7.64",
+  "generatedAt": "2026-07-31T23:59:45-04:00",
+  "status": "PRESEAL_FINAL_SOURCE_ACCEPTED_DETACHED_IMMUTABLE_ARCHIVE_PENDING",
+  "sourceArtifact": {
+    "filename": "smarter-justice-v1.7.63.zip",
+    "version": "1.7.63",
+    "sha256": "54e22e82f78c09cebff0343080d3fc46841117ec4faa0739fc31d72b3d34d408",
+    "sizeBytes": 5682101,
+    "entries": 1782,
+    "files": 1764,
+    "directories": 18,
+    "uncompressedBytes": 16233707,
+    "compressedBytes": 5419833,
+    "inventoryRecords": 1763,
+    "inventorySha256": "0ae7ab5c89b75646dbeb74ec007483315e3fa97331aa09d58767eb88ce4361ec",
+    "packageJsonSha256": "d7f6f3ee2bf0f85c1659cf98963b1911d71890ccd2983806d5b06d8c642c7c29",
+    "packageLockSha256": "a8074d535b148b975e6623aba8a88aef86eece3d1b56a471795ea304f8bbd489",
+    "lockfileSha256": "a8074d535b148b975e6623aba8a88aef86eece3d1b56a471795ea304f8bbd489",
+    "sbomSha256": "047313cf14c96f58c9fbb5a90f14b28113fe7282f8c42146a5d864ee1afd8b9d",
+    "treeSha256": "0ae7ab5c89b75646dbeb74ec007483315e3fa97331aa09d58767eb88ce4361ec",
+    "dependencyIndependentParts": 117,
+    "totalReadinessParts": 118,
+    "testLogSha256": "383eed1a10769c543acfdd963ee42042ccee16e2ebbddbe9882482443b09bb62",
+    "concurrentBaselineRuns": 2,
+    "concurrentBaselineResult": "PASS_IDENTICAL_OUTPUT",
+    "evidenceState": "CURRENT_CHAT_REPRODUCED"
+  },
+  "testModel": {
+    "dependencyIndependentParts": 118,
+    "postgresDependentParts": 1,
+    "totalReadinessParts": 119
+  },
+  "exactArtifact": {
+    "filename": "smarter-justice-v1.7.64.zip",
+    "identityMode": "DETACHED_AFTER_PACKAGING",
+    "sha256": "DETACHED_FINAL_DELIVERY_RECEIPT",
+    "sizeBytes": 0
+  },
+  "launchState": "NO_GO",
+  "deploymentAuthorized": false,
+  "durableRules": "DURABLE_RULE_COVERAGE_MATRIX_V1.7.64.json",
+  "reproducibility": "GENERATED_EVIDENCE_REPRODUCIBILITY_MANIFEST_V1.7.64.json",
+  "research": "CURRENT_RESEARCH_AND_COMPETITIVE_LEARNING_V1.7.64.json",
+  "publicLanguageVisual": "PUBLIC_LANGUAGE_AND_VISUAL_SYSTEM_ACCEPTANCE_V1.7.64.json",
+  "sourceTestLogSha256": "541a63c6191ddf9a339d0069a355ca2fd6e0297f484d1f7c7e9cf39274a9e2ba",
+  "sbomCurrentSha256": "ef4fa5d7fa61123ad5c09d73db85e506abb0f45d8d4d4e4173462afe3cbce7b0",
+  "sourceAcceptance": {
+    "trees": 2,
+    "commandsPerTree": 118,
+    "concurrent": true,
+    "identicalOutput": true,
+    "testLogSha256": "541a63c6191ddf9a339d0069a355ca2fd6e0297f484d1f7c7e9cf39274a9e2ba",
+    "sbomSha256": "ef4fa5d7fa61123ad5c09d73db85e506abb0f45d8d4d4e4173462afe3cbce7b0"
+  },
+  "candidateAcceptance": {
+    "sha256": "a53ae49531d628fc230621dbfd5116c724f7045a4652d685f3e4abc97408550e",
+    "sizeBytes": 5789832,
+    "deterministicBuilds": 2,
+    "freshExtractions": 2,
+    "commandsPerExtraction": 118,
+    "testLogSha256": "541a63c6191ddf9a339d0069a355ca2fd6e0297f484d1f7c7e9cf39274a9e2ba",
+    "inventoryRecords": 1838,
+    "inventorySha256": "58ea8a4b7ca45bc4cb47a0508e9ee91f81c813d0627d0d8b7fca260b81868681"
+  },
+  "presealAcceptance": {
+    "sha256": "2ab452c7e6f31a2613be5a000de717bf6c381b2480822c00553ee582e57aea37",
+    "sizeBytes": 5790507,
+    "deterministicBuilds": 2,
+    "freshExtractions": 2,
+    "commandsPerExtraction": 118,
+    "testLogSha256": "541a63c6191ddf9a339d0069a355ca2fd6e0297f484d1f7c7e9cf39274a9e2ba",
+    "inventoryRecords": 1838,
+    "inventorySha256": "2b092e1b599abd0c57c2c6a737c4b2901c1f288566dc5698f5df523382b3f0cf"
+  },
+  "masterPairGovernance": "CANONICAL_ACTIVE_MASTER_PAIR_V1.7.64.json"
+}

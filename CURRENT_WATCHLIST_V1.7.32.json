@@ -1,0 +1,48 @@
+{
+  "version": "1.7.32",
+  "date": "2026-07-25",
+  "items": [
+    {
+      "area": "Dedicated portal artifacts",
+      "reason": "Twenty-three current portal identities remain owner-recorded rather than exact-verified in this umbrella build.",
+      "trigger": "A dedicated portal ZIP is uploaded or a current implementation claim is needed.",
+      "action": "Verify checksum, size, structure, version, deployment truth, and continuation prompt before supersession."
+    },
+    {
+      "area": "ContractCreator version conflict",
+      "reason": "Owner-recorded v0.28.0 conflicts with a historical v0.29.0 record.",
+      "trigger": "The dedicated ContractCreator artifact is available.",
+      "action": "Verify and record the controlling exact artifact; preserve conflict history."
+    },
+    {
+      "area": "Production deployment",
+      "reason": "v1.7.32 is not authorized for deployment.",
+      "trigger": "Roger gives separate explicit deployment approval.",
+      "action": "Run production-equivalent persistence, authentication, email, backup, accessibility, and rollback acceptance."
+    },
+    {
+      "area": "Dashboard interoperability",
+      "reason": "Highest supported claim is D2 contract-tested.",
+      "trigger": "Producer and consumer adapters exist.",
+      "action": "Run permission, stale-data, malformed-data, data-minimization, and partial-failure integration tests before D3."
+    },
+    {
+      "area": "Profile growth",
+      "reason": "No v1.7.32 profile batch was researched.",
+      "trigger": "Bronx-led research time and current public sources are available.",
+      "action": "Research all six regions without numeric padding."
+    },
+    {
+      "area": "Dependency audit",
+      "reason": "Current vulnerability status can change.",
+      "trigger": "Registry access is available.",
+      "action": "Run npm ci and npm audit against the exact artifact and record results."
+    },
+    {
+      "area": "Real-device accessibility",
+      "reason": "Source checks do not prove assistive-technology or physical-device acceptance.",
+      "trigger": "A real-browser/device test environment is available.",
+      "action": "Test keyboard, screen reader, zoom, forced colors, reflow, mobile, tablet, print, and downloads."
+    }
+  ]
+}

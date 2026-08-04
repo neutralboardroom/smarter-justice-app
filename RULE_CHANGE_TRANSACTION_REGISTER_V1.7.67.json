@@ -1,0 +1,25 @@
+{
+  "schema": "smarter-justice-rule-change-transaction-register",
+  "schemaVersion": "2.0.0",
+  "releaseVersion": "1.7.67",
+  "generatedAt": "2026-08-01T12:54:00-04:00",
+  "appendOnly": true,
+  "currentBaselineId": "DRB-2026-08-01-DUR001-DUR074-V11",
+  "transactions": [
+    {
+      "transactionId": "DRC-2026-08-01-DUR072-DUR074-PACK-STABILITY-C6D6C7C95D3E",
+      "type": "ADD_AND_CLARIFY",
+      "parentBaselineId": "DRB-2026-08-01-DUR001-DUR071-V10",
+      "successorBaselineId": "DRB-2026-08-01-DUR001-DUR074-V11",
+      "affectedRuleIds": [
+        "DUR-072",
+        "DUR-073",
+        "DUR-074"
+      ],
+      "authority": "Roger approved coordinated prompt pack",
+      "result": "ACCEPTED_PACK_GOVERNANCE_BASELINE"
+    }
+  ],
+  "tombstones": [],
+  "forkMergeConflicts": []
+}

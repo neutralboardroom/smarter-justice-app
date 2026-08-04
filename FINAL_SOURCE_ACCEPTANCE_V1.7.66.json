@@ -1,0 +1,29 @@
+{
+  "schema": "smarter-justice-final-source-acceptance",
+  "releaseVersion": "1.7.66",
+  "generatedAt": "2026-08-01T01:05:00-04:00",
+  "state": "PRESEAL_FINAL_SOURCE_ACCEPTED_NONCIRCULAR",
+  "presealArtifact": {
+    "sha256": "adcbe90f76774467a7303f23631945374d4f1702bce989e3111e327452935589",
+    "sizeBytes": 6025124,
+    "entries": 2027,
+    "files": 2009,
+    "directories": 18,
+    "uncompressedBytes": 17418657,
+    "compressedBytes": 5724742,
+    "inventoryRecords": 2008,
+    "inventorySha256": "2c29aacd154aacb3098c8777a172e75d6c3235b58b0baf36bc9aca970e2a9215",
+    "deterministicBuilds": 2,
+    "freshExtractions": 2,
+    "commandsPerExtraction": 120,
+    "testLogSha256": "309d2fb31d76665877edaf515d44adbe697665b6c61161fe5d935bb90613e068",
+    "identicalOutput": true,
+    "crc": "PASS",
+    "safePaths": "PASS",
+    "sourceEquality": "PASS"
+  },
+  "acceptanceBoundary": "This record proves the exact preseal source and acceptance process, not the yet-uncreated immutable final archive identity.",
+  "finalBuildRequirement": "Build the unchanged source twice, require byte-identical final ZIPs, then perform two independent exact extractions and all 120 commands.",
+  "launchState": "NO_GO",
+  "deploymentAuthorized": false
+}

@@ -1,0 +1,145 @@
+{
+  "schemaVersion": "1.0.0",
+  "releaseVersion": "1.7.43",
+  "generatedAt": "2026-07-28T23:45:00-04:00",
+  "deploymentAuthorized": false,
+  "authority": "Roger through Smarter Justice",
+  "decisions": [
+    {
+      "id": "decision-self-contained-smarter-justice",
+      "date": "2026-07-28",
+      "decision": "Smarter Justice is the active and self-contained operating and governance system for the legal portfolio. Roger is the final owner authority.",
+      "scope": "Initial live-attorney launch and legal portfolio operations",
+      "rationale": "Neutral Boardroom will not be launched or used as an operational dependency.",
+      "status": "IMPLEMENTED",
+      "supersedes": [
+        "decision-neutral-boardroom-top-layer"
+      ],
+      "effectiveVersion": "1.7.43",
+      "ownerIdentity": "Roger",
+      "implementationComplete": true
+    },
+    {
+      "id": "decision-neutral-boardroom-dormant",
+      "date": "2026-07-28",
+      "decision": "Neutral Boardroom is dormant, noncritical, disabled from automatic transmission and retained only as an optional future non-confidential export boundary.",
+      "scope": "All launch-critical Smarter Justice operations",
+      "rationale": "The legal portfolio must remain operable when Neutral Boardroom is completely unavailable.",
+      "status": "IMPLEMENTED",
+      "supersedes": [],
+      "effectiveVersion": "1.7.43",
+      "ownerIdentity": "Roger",
+      "implementationComplete": true
+    },
+    {
+      "id": "decision-pilot-order-divorce-estate-pi",
+      "date": "2026-07-28",
+      "decision": "Pilot order is Divorce Law Aid first, Estate Law Aid second, and Personal Injury Law Aid third.",
+      "scope": "Initial portal integration and New York attorney outreach",
+      "rationale": "Use simple, polished portal experiences to prove the central account and read-only distribution model.",
+      "status": "IMPLEMENTED",
+      "supersedes": [
+        "immigration-first rollout"
+      ],
+      "effectiveVersion": "1.7.43",
+      "ownerIdentity": "Roger",
+      "implementationComplete": true
+    },
+    {
+      "id": "decision-personal-injury-includes-vehicle-accidents",
+      "date": "2026-07-28",
+      "decision": "Personal Injury Law Aid covers vehicle accidents and other personal-injury categories for the pilot.",
+      "scope": "Personal Injury pilot discovery, profile participation and integration materials",
+      "rationale": "Keep the launch understandable and avoid a separate competing vehicle-accident pilot.",
+      "status": "IMPLEMENTED",
+      "supersedes": [],
+      "effectiveVersion": "1.7.43",
+      "ownerIdentity": "Roger",
+      "implementationComplete": true
+    },
+    {
+      "id": "decision-workers-comp-separate",
+      "date": "2026-07-28",
+      "decision": "Workers’ Compensation Law Aid remains a separate portal and is not consolidated into Personal Injury Law Aid.",
+      "scope": "Portal boundaries and routing",
+      "rationale": "Workers’ compensation has a distinct benefit system and operational workflow.",
+      "status": "IMPLEMENTED",
+      "supersedes": [],
+      "effectiveVersion": "1.7.43",
+      "ownerIdentity": "Roger",
+      "implementationComplete": true
+    },
+    {
+      "id": "decision-live-gates-closed-v1742",
+      "date": "2026-07-28",
+      "decision": "Deployment, live billing, public commercial gates, live portal imports and automatic portal writes remain closed.",
+      "scope": "v1.7.43 development release",
+      "rationale": "External production acceptance and exact rollback approval remain incomplete.",
+      "status": "IMPLEMENTED",
+      "supersedes": [],
+      "effectiveVersion": "1.7.43",
+      "ownerIdentity": "Roger",
+      "implementationComplete": true
+    },
+    {
+      "id": "decision-rollback-artifact-required",
+      "date": "2026-07-28",
+      "decision": "One exact rollback artifact must be explicitly approved before deployment; v1.7.43 does not guess among historical rollback references.",
+      "scope": "Deployment authorization",
+      "rationale": "Rollback identity is unresolved in the v1.7.41 baseline.",
+      "status": "PENDING_IMPLEMENTATION",
+      "supersedes": [],
+      "effectiveVersion": "future owner approval",
+      "ownerIdentity": "Roger",
+      "implementationComplete": false
+    },
+    {
+      "id": "decision-portal-first-claim-central-execution",
+      "date": "2026-07-28",
+      "decision": "Attorneys discover and claim an existing public specialty profile on its micro-portal, then complete account, email verification, claim review, profile management, firm, support and billing actions centrally in Smarter Justice.",
+      "scope": "Initial professional enrollment",
+      "rationale": "Preserves specialty context while preventing duplicate accounts and conflicting central profiles.",
+      "status": "IMPLEMENTED",
+      "supersedes": [],
+      "effectiveVersion": "1.7.43",
+      "ownerIdentity": "Roger",
+      "implementationComplete": true
+    },
+    {
+      "id": "decision-central-create-profile",
+      "date": "2026-07-28",
+      "decision": "An attorney without a seeded profile may start Create Profile from a participating portal or Smarter Justice, but the account and private draft are always created centrally.",
+      "scope": "Private professional profile creation",
+      "rationale": "One central profile can later support multiple independently approved portal projections.",
+      "status": "IMPLEMENTED",
+      "supersedes": [],
+      "effectiveVersion": "1.7.43",
+      "ownerIdentity": "Roger",
+      "implementationComplete": true
+    },
+    {
+      "id": "decision-founding-profile-pilot",
+      "date": "2026-07-28",
+      "decision": "Roger may issue owner-approved, time-bounded complimentary Founding Profile Pilot invitations for the three initial portals.",
+      "scope": "In-person attorney demonstrations and controlled onboarding",
+      "rationale": "The profile system can be demonstrated without falsely treating an attorney as paid or bypassing independent review gates.",
+      "status": "IMPLEMENTED",
+      "supersedes": [],
+      "effectiveVersion": "1.7.43",
+      "ownerIdentity": "Roger",
+      "implementationComplete": true
+    },
+    {
+      "id": "decision-profile-pilot-separation",
+      "date": "2026-07-28",
+      "decision": "Founding Profile Pilot access is not a paid membership and does not verify identity, credentials, practice evidence, portal eligibility, publication, availability, ranking or endorsement.",
+      "scope": "Entitlements and public truth",
+      "rationale": "A complimentary demonstration entitlement must never impersonate payment or professional approval.",
+      "status": "IMPLEMENTED",
+      "supersedes": [],
+      "effectiveVersion": "1.7.43",
+      "ownerIdentity": "Roger",
+      "implementationComplete": true
+    }
+  ]
+}

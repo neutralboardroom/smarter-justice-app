@@ -1,0 +1,63 @@
+{
+  "schema_id": "SJP-LMP-CONTINUOUS-SELF-IMPROVEMENT-AND-INNOVATION-PLAN-2026-08-03-V1",
+  "product": {
+    "name": "Smarter Justice",
+    "current_exact_source": "smarter-justice-v1.7.82.zip",
+    "current_exact_source_sha256": "61fea278a69055915e9b4b916e4b64ec514614f1746cacf659a6931ccd0228b1",
+    "target_version": "1.7.83",
+    "starting_version": "1.7.82",
+    "starting_artifact_sha256": "61fea278a69055915e9b4b916e4b64ec514614f1746cacf659a6931ccd0228b1"
+  },
+  "core_owner_mission_sha256": "1e4efe3dd80a4c3ed6d03aabd1414c60fb91d747b463405c52bf8a0902556d0b",
+  "governing_packet": {
+    "id": "SJP-LMP-UNIVERSAL-ONE-STEP-2026-08-03-V14-ALL-CHAT-MODES",
+    "sha256": "fce42ce0927748f94189692ef5b3bf8e0fe9f8d12273287f03a68eb7bccdad6f"
+  },
+  "independent_opportunity_discovery": {
+    "exact_artifact_findings": [
+      "v1.7.82 identifies the first evidence gap but leaves Roger to translate it into provider-specific nonsecret fields and pass criteria.",
+      "v1.7.82 manifests every command but does not dynamically cross-bind the manifest, working receipt, package identities, both inventories, owner receipt, and detached-final boundary in one check."
+    ],
+    "public_user_journey_findings": [
+      "Public deterministic and AI-disabled paths remain unchanged and available."
+    ],
+    "professional_staff_owner_findings": [
+      "Roger needs one exact first-gap packet that can be downloaded and completed without exposing credentials."
+    ],
+    "builder_prompt_system_findings": [
+      "Acceptance evidence must be cross-checked dynamically without persisting inventory hashes inside the payload."
+    ]
+  },
+  "creative_new_capability_candidates": [
+    "Nonsecret first-gap evidence collection packet",
+    "Provider-specific required field and check allowlists",
+    "Dynamic non-persisted acceptance evidence bundle",
+    "Inventory and detached-final self-reference rejection"
+  ],
+  "product_platform_track": {
+    "selected": [
+      "First-gap-only owner evidence collection packet",
+      "JSON and text outputs with eight-hour maximum validity",
+      "Nonsecret field allowlists, forbidden-input list, dependency receipts, and exact verification criteria"
+    ],
+    "deferred": [
+      "No provider calls, credential collection, receipt persistence, state application, deployment, or production activation."
+    ]
+  },
+  "builder_prompt_system_track": {
+    "selected": [
+      "Dynamic cross-check of 145-command manifest and working receipt",
+      "Package/lock/SBOM, V14 payload inventory, legacy inventory, owner receipt, and exact source/packet binding validation",
+      "Non-persisted bundle digest and detached-final boundary enforcement"
+    ],
+    "deferred": [
+      "PostgreSQL acceptance remains separately gated; final ZIP identity remains detached."
+    ]
+  },
+  "protected_owner_decisions_required": [
+    "Connect or identify the exact canonical GitHub repository and approved Smarter Justice Render service.",
+    "Enter the OpenAI key only later after exact dark deployment binding."
+  ],
+  "strongest_justified_set_selected": true,
+  "hard_constraints_preserved": true
+}

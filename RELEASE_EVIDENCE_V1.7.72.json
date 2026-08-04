@@ -1,0 +1,99 @@
+{
+  "schema": "smarter-justice-release-evidence",
+  "releaseVersion": "1.7.72",
+  "generatedAt": "2026-08-02T17:21:31-04:00",
+  "status": "PREFINAL_CANDIDATE_ACCEPTED_FINAL_DETERMINISTIC_ARCHIVE_PENDING",
+  "sourceArtifact": {
+    "filename": "smarter-justice-v1.7.71.zip",
+    "version": "1.7.71",
+    "sha256": "d83a25d224f0cec197569204fb33ac19e32e6f3d307e57e48a265f53b052569c",
+    "sizeBytes": 7894341,
+    "entries": 2579,
+    "files": 2555,
+    "directories": 24,
+    "uncompressedBytes": 23506134,
+    "compressedBytes": 7506607,
+    "inventoryRecords": 2554,
+    "inventorySha256": "ea934080b3313005256115b0922909598488e7897a29fd69570fb6bb742a33a6",
+    "treeSha256": "ea934080b3313005256115b0922909598488e7897a29fd69570fb6bb742a33a6",
+    "packageJsonSha256": "836d84976c90d1d4bbab6daf807624498b9d79548b351ccc3730346a99fe249f",
+    "packageLockSha256": "cd2e8d59d3c4354eb38b3c65097ab3ccef49ae7b5b0c9ed1319fe6c5fbe65f47",
+    "sbomSha256": "b245179ecf11656f43b875bff3c76a1c0eb306bb595135bfbd8c1bedbba340bf",
+    "dependencyIndependentParts": 125,
+    "totalReadinessParts": 126,
+    "testLogSha256": "6ae9fccfc8b7717d7646a44ad6d190678df8a2f40ac8786e6a01c18cfe171180",
+    "evidenceState": "CURRENT_CHAT_REPRODUCED"
+  },
+  "testModel": {
+    "dependencyIndependentParts": 126,
+    "postgresDependentParts": 1,
+    "totalReadinessParts": 127
+  },
+  "exactArtifact": {
+    "filename": "smarter-justice-v1.7.72.zip",
+    "identityMode": "DETACHED_AFTER_PACKAGING",
+    "sha256": "DETACHED_FINAL_DELIVERY_REPORT",
+    "sizeBytes": "DETACHED_FINAL_DELIVERY_REPORT"
+  },
+  "workingTreeAcceptance": {
+    "runs": 2,
+    "commandsPerRun": 126,
+    "testLogSha256": "a28a092315a937e8e8b003dc3dfe541769c03971b5b2a4b51cb5eec16669b502",
+    "state": "PASS"
+  },
+  "candidateAcceptance": {
+    "filename": "smarter-justice-v1.7.72-candidate-a.zip",
+    "sha256": "840a96650573ab60c84f040ecaaeef8267cade3bb2441ce408656c8373cb32b2",
+    "sizeBytes": 8042560,
+    "entries": 2692,
+    "files": 2668,
+    "directories": 24,
+    "uncompressedBytes": 24004065,
+    "compressedBytes": 7636888,
+    "inventoryRecords": 2667,
+    "inventorySha256": "f070880fd01ed3e7f3326c880b962a6d1e06fe45b8ad255a4fda26e026d84fe8",
+    "deterministicBuilds": 2,
+    "byteIdenticalBuilds": true,
+    "freshExtractions": 2,
+    "commandsPerExtraction": 126,
+    "testLogSha256": "a28a092315a937e8e8b003dc3dfe541769c03971b5b2a4b51cb5eec16669b502",
+    "identicalOutput": true,
+    "crc": "PASS",
+    "safePaths": "PASS",
+    "duplicatePaths": "PASS",
+    "symlinks": [],
+    "encryption": [],
+    "sourceEquality": "PASS",
+    "state": "CANDIDATE_ACCEPTED_NONCIRCULAR"
+  },
+  "finalAcceptance": {
+    "state": "PENDING_IMMUTABLE_FINAL_ACCEPTANCE"
+  },
+  "materialImplementation": {
+    "artifactBoundProviderDiscoveryAuthorization": true,
+    "ownerAuthorizationRequired": true,
+    "leastPrivilegeReadOnlyScopes": true,
+    "maximumAuthorizationWindowHours": 8,
+    "exactArtifactCurrentnessRequiredBeforeAuthorization": true,
+    "authorizationRequestDigestReceiptBinding": true,
+    "receiptStalenessAndTamperInvalidation": true,
+    "portalRequestsBlockedWithoutFreshExactArtifacts": 4,
+    "independentPortfolioReadinessAggregatePreserved": true,
+    "exactFiveProductCohortPreserved": true,
+    "providerMetadataRead": false,
+    "secretValuesReadOrStored": false,
+    "deploymentAuthorizedByReadiness": false,
+    "ownerReadOnlyProviderDiscoveryPlanEndpoint": true
+  },
+  "providerDiscovery": {
+    "authorizedRequests": 0,
+    "completedDiscoveries": 0,
+    "cohortFreezeEligible": false,
+    "cohortFrozen": false,
+    "recommendedCanaryProductId": null
+  },
+  "launchState": "NO_GO",
+  "deploymentAuthorized": false,
+  "productionRequestSent": false,
+  "postgresAcceptanceClaimed": false
+}

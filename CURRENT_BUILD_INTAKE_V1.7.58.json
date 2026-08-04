@@ -1,0 +1,30 @@
+{
+  "releaseVersion": "1.7.58",
+  "generatedAt": "2026-07-30",
+  "exactSource": {
+    "filename": "smarter-justice-v1.7.57.zip",
+    "sha256": "dbd031c6b35bf1dd107759852c145183316a4005e2604bbd4f106ffda9a0afde",
+    "sizeBytes": 4931830,
+    "entries": 1452,
+    "files": 1434,
+    "directories": 18,
+    "uncompressedBytes": 13754000,
+    "compressedBytes": 4719732,
+    "inventoryRecords": 1433,
+    "inventorySha256": "a85bc4d303cc079aab6aaf2974b0cab31033c3cdc2fd36fef97fcbaf81e1840e",
+    "packageJsonSha256": "835af3abe3867c01bd6c671c543d3b575fab7ab437c00702e07a4e1176b39612",
+    "packageLockSha256": "8cbe08472bfe9ab2c43b3f671fd4ff3e2939245f8a8461f090c6b02864a3bbb7",
+    "lockfileSha256": "8cbe08472bfe9ab2c43b3f671fd4ff3e2939245f8a8461f090c6b02864a3bbb7",
+    "sbomSha256": "9805143d2029176ae50bd87ff5cce3d5323b52e35dc0f0cdbef623dc5c6ee359",
+    "treeSha256": "e91860f5c82f4c32c86a7f3a60066bca4d3b48f360d693219523b769f82b9706",
+    "dependencyIndependentParts": 111,
+    "totalReadinessParts": 112,
+    "testLogSha256": "8adb4e8b3c6acd3a676d786e660ef1e7873c9726f8e21720d50c0ce96de08dfa",
+    "concurrentBaselineRuns": 2,
+    "concurrentBaselineResult": "PASS_IDENTICAL_OUTPUT"
+  },
+  "requestedMission": "Second-pass refined complete immediate-build handoff with stale v1.7.53/v1.7.54 references overridden by the newest exact authoritative base.",
+  "expectedNextVersion": "1.7.58",
+  "baseSelectionReason": "Roger supplied and previously exact-accepted v1.7.57; the uploaded prompt explicitly yields to a newer exact artifact.",
+  "launchState": "NO_GO"
+}

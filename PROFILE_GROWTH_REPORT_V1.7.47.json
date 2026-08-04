@@ -1,0 +1,22 @@
+{
+  "releaseVersion": "1.7.47",
+  "newProfessionals": 0,
+  "updatedProfessionals": 0,
+  "totalProfessionals": 233,
+  "publicDirectory": {
+    "total": 281
+  },
+  "note": "No production profile-growth batch was run and no public professional or firm facts were added or changed.",
+  "generatedAt": "2026-07-29T15:54:00-04:00",
+  "newFirms": 0,
+  "summary": "v1.7.47 adds an owner-only, source-supported profile-candidate intake workflow and free-profile launch cohort operations. Test fixtures prove private candidate creation, duplicate handling and provenance; they are not production profile counts.",
+  "sourceFactChanges": false,
+  "livePublication": false,
+  "v1747Change": {
+    "newProductionProfessionals": 0,
+    "publicProfileFactsChanged": false,
+    "productionBatchesCommitted": 0,
+    "testFixtureCandidatesCreated": 2,
+    "note": "Fixture-only test records are created in temporary test storage and are not packaged production data."
+  }
+}

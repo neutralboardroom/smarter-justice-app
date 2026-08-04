@@ -1,0 +1,53 @@
+{
+  "release": "1.7.52",
+  "generatedAt": "2026-07-30",
+  "selectedTheme": "PROFESSIONAL_TRUST_ATTORNEY_OUTREACH_AND_PORTFOLIO_CLARITY",
+  "findings": [
+    {
+      "id": "tour",
+      "problem": "No canonical public attorney demonstration journey or stable post-meeting continuation route.",
+      "user": "Attorney prospect and owner presenter",
+      "decision": "IMPLEMENT",
+      "benefit": "A coherent 15-second, 2-minute and 10-minute story without private data or live-gate claims.",
+      "acceptance": "Four practice variants, synthetic profile, safe tool handoff, stable return path, mobile and keyboard evidence."
+    },
+    {
+      "id": "readiness",
+      "problem": "Owner readiness evidence was distributed across multiple launch records.",
+      "user": "Owner and launch staff",
+      "decision": "IMPLEMENT",
+      "benefit": "Focused outreach readiness with blockers and evidence, without replacing existing control systems.",
+      "acceptance": "Owner-only authenticated view and API payload."
+    },
+    {
+      "id": "document-help",
+      "problem": "Cross-portal document-help capabilities lacked one current coordination taxonomy.",
+      "user": "Public users, portal builders and attorneys",
+      "decision": "IMPLEMENT",
+      "benefit": "Clear capability boundaries, official-source currentness and closed confidential upload/AI/e-filing gates.",
+      "acceptance": "Versioned matrix and shared standard without duplicating portal tools."
+    },
+    {
+      "id": "booth-public-claims",
+      "problem": "Justice Booth value language could outrun evidence.",
+      "user": "Attorney prospects and public users",
+      "decision": "IMPLEMENT_TRUTH_MODEL_ONLY",
+      "benefit": "Prevents planned or unverified activity from being described as active.",
+      "acceptance": "Allowed states, empty current records and public claims disabled."
+    },
+    {
+      "id": "comparative-cost-copy",
+      "problem": "Public lead-cost comparison requires current evidence and owner-approved wording.",
+      "user": "Attorney prospects",
+      "decision": "DEFER",
+      "reason": "No current authoritative market evidence or final public-copy approval in the artifact."
+    },
+    {
+      "id": "portal-visual-redesign",
+      "problem": "Specialty portal visuals may need improvements.",
+      "user": "Portal visitors",
+      "decision": "PORTAL_BUILD",
+      "reason": "Separate repositories and exact artifacts are authoritative."
+    }
+  ]
+}

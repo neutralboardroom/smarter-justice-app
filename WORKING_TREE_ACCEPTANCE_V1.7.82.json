@@ -1,0 +1,28 @@
+{
+  "schema": "smarter-justice-working-tree-acceptance",
+  "releaseVersion": "1.7.82",
+  "generatedAt": "2026-08-03T19:28:00-04:00",
+  "state": "FINALIZED_WORKING_TREE_ACCEPTED",
+  "commandsPerRun": 143,
+  "runs": 2,
+  "testLogSha256": "75ac27c328cacc1f39f3d92b675c27325662b9bc5a54f2de00556b9fe4306c11",
+  "identicalOutput": true,
+  "postgresDependentParts": 1,
+  "postgresAcceptanceClaimed": false,
+  "sourceHashes": {
+    "packageJsonSha256": "db426c566ea41c9be7a899718bbbe904a624922071e5f04ddc4b3b849c141a67",
+    "packageLockSha256": "0e7bd658a2618f69848bf11a8286769d560693a08096543248ec41126298bd68",
+    "sbomSha256": "a5fa82094de6453a319371c6c38ce59ce310cd66ef67bac2d73b43efcb37e449"
+  },
+  "materialImplementation": {
+    "productPlatform": [
+      "Dependency-aware V14 evidence readiness and gap planner with one exact owner action and no state mutation"
+    ],
+    "builderPromptSystem": [
+      "Canonical segmented 143-command acceptance manifest and stable per-command runner"
+    ]
+  },
+  "launchState": "NO_GO",
+  "deploymentAuthorized": false,
+  "acceptanceManifestSha256": "a50d77251321e063b6a572421fc741f0f03c9c319091e1b47503891bf5f4f4b7"
+}

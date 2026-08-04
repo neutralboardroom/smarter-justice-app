@@ -1,0 +1,64 @@
+{
+  "schema": "smarter-justice-artifact-registry",
+  "releaseVersion": "1.7.78",
+  "generatedAt": "2026-08-03T12:19:00-04:00",
+  "singleCurrentRegistry": true,
+  "artifacts": [
+    {
+      "role": "SOURCE_AND_ROLLBACK",
+      "filename": "smarter-justice-v1.7.77.zip",
+      "sha256": "0df3fc34a27eccbd0f209d5479106d8f491549361e18d075b107ed87553b1ccf",
+      "sizeBytes": 8459920,
+      "state": "EXACT_ACCEPTED"
+    },
+    {
+      "role": "ACCEPTED_PREFINAL_CANDIDATE",
+      "filename": "smarter-justice-v1.7.78-candidate-a.zip",
+      "sha256": "623b3081b1a6c5316b6c37dc2837d0b747389416941192cd0e932a829d3a3489",
+      "sizeBytes": 8503453,
+      "entries": 3010,
+      "files": 2986,
+      "directories": 24,
+      "uncompressedBytes": 25483479,
+      "compressedBytes": 8047383,
+      "inventoryRecords": 2985,
+      "inventorySha256": "e0436ee65d2df5183ed083cdad6043908e7d07db4f0fa091598c96cfdca8de7b",
+      "testLogSha256": "da346ac79ed36e791091d0f6dcf355620d5e3ee875b58945475554a1a035cd58",
+      "state": "CANDIDATE_ACCEPTED_NONCIRCULAR"
+    },
+    {
+      "role": "FINAL_ARCHIVE_IDENTITY_DETACHED",
+      "filename": "smarter-justice-v1.7.78.zip",
+      "sha256": null,
+      "sizeBytes": null,
+      "state": "FINAL_SOURCE_SEALED_DETACHED_IDENTITY_PENDING",
+      "identityBoundary": "Final archive identity is recorded only after immutable packaging."
+    }
+  ],
+  "portalArtifacts": [],
+  "deployment": {
+    "authorized": false,
+    "productionRequestSent": false,
+    "deployed": false
+  },
+  "closedGates": [
+    "OpenAI protected key",
+    "controlled live API smoke",
+    "portal compatibility receipts",
+    "portal AI activation",
+    "deployment",
+    "production"
+  ],
+  "currentSmarterJustice": {
+    "version": "1.7.78",
+    "identityState": "CANDIDATE_ACCEPTED_FINAL_SOURCE_SEALED",
+    "candidateArtifact": "smarter-justice-v1.7.78-candidate-a.zip",
+    "candidateSha256": "623b3081b1a6c5316b6c37dc2837d0b747389416941192cd0e932a829d3a3489",
+    "candidateSizeBytes": 8503453,
+    "dependencyIndependentParts": 135,
+    "totalReadinessParts": 136,
+    "testLogSha256": "da346ac79ed36e791091d0f6dcf355620d5e3ee875b58945475554a1a035cd58"
+  },
+  "launchState": "NO_GO",
+  "deploymentAuthorized": false
+}

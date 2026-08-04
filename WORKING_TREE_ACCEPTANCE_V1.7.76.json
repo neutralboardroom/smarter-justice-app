@@ -1,0 +1,40 @@
+{
+  "schema": "smarter-justice-working-tree-acceptance",
+  "releaseVersion": "1.7.76",
+  "generatedAt": "2026-08-03T11:55:00-04:00",
+  "state": "PASS_TWO_IDENTICAL_RUNS_EXACT_CANDIDATE_PENDING",
+  "commandsPerRun": 131,
+  "runs": 2,
+  "testLogSha256": "c158da88c843de14cc43a1a8a8ca1056bf813bf41478f98a105a3aa455253bec",
+  "identicalOutput": true,
+  "postgresDependentParts": 1,
+  "postgresAcceptanceClaimed": false,
+  "sourceHashes": {
+    "packageJsonSha256": "42009d60213f70b660bb341cec29138f5ec02210d0fe9f4c9158560481ab4303",
+    "packageLockSha256": "ba5a8e4eb357b9a1f698d071260fb24f3306747a51ddd7ca24b3b28bc80833f3",
+    "sbomSha256": "a879f413310c0ea94f2d3574ee78448d9de5241696030717ecb36408cb6c72d1"
+  },
+  "materialImplementation": {
+    "deviceOnlyJourneyHandoffPlanner": true,
+    "fixedChoiceOnly": true,
+    "explicitConsentRequired": true,
+    "localJsonAndTextExport": true,
+    "networkPrimitivesPresent": false,
+    "serverTransmission": false,
+    "serverStorage": false,
+    "automaticSynchronization": false,
+    "narrativeFactsCollected": false,
+    "namesContactDetailsOrDocumentsCollected": false,
+    "maximumPlanLifetimeMinutes": 60,
+    "v12DualTrackReleaseGate": true,
+    "productTrackRequired": true,
+    "builderPromptTrackRequired": true,
+    "crossVersionLearningRequired": true,
+    "beforeAfterDeltaRequired": true,
+    "affectedFileAndTestEvidenceRequired": true,
+    "deploymentAuthorized": false,
+    "productionRequestSent": false
+  },
+  "launchState": "NO_GO",
+  "deploymentAuthorized": false
+}

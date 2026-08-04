@@ -1,0 +1,26 @@
+{
+  "releaseVersion": "1.7.60",
+  "generatedAt": "2026-07-31T16:19:00-04:00",
+  "status": "SEALED_SOURCE_ACCEPTED_DETACHED_FINAL_IDENTITY_PENDING",
+  "ownerApi": "/api/owner/reusable-build-governance",
+  "protected": true,
+  "validationModule": "lib/reusableBuildGovernance.js",
+  "records": [
+    "REUSABLE_MASTER_COMMAND_INTAKE_V1.7.60.json",
+    "NO_LOSS_REQUIREMENT_DISPOSITION_V1.7.60.json",
+    "LAUNCH_CAPABILITY_MATRIX_V1.7.60.json",
+    "OWNER_ACTION_QUEUE_V1.7.60.json",
+    "LEARNING_LINEAGE_AND_PROPAGATION_REGISTER_V1.7.60.json",
+    "CENTRAL_COMMERCIAL_ARCHITECTURE_V1.7.60.json",
+    "MATTER_PATH_AND_AI_BOUNDARY_V1.7.60.json",
+    "TAMPER_EVIDENT_EVIDENCE_MANIFEST_V1.7.60.json",
+    "CONTINUATION_SNAPSHOT_V1.7.60.json"
+  ],
+  "launchState": "NO_GO",
+  "workingTreeTestRuns": 2,
+  "workingTreeCommandsPerRun": 113,
+  "workingTreeTestLogSha256": "30a26f564c97905a6f8bd527058f1b67bdaa402e06290f2a7a7c5aafe9c5f87e",
+  "candidateSha256": "b164bafe841ddff5fd09d390fc9eb993d3079c8affa3c2267c87128f703616a5",
+  "candidateTestLogSha256": "30a26f564c97905a6f8bd527058f1b67bdaa402e06290f2a7a7c5aafe9c5f87e",
+  "sealedSourceTestLogSha256": "30a26f564c97905a6f8bd527058f1b67bdaa402e06290f2a7a7c5aafe9c5f87e"
+}

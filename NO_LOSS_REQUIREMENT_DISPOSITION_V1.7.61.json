@@ -1,0 +1,45 @@
+{
+  "schema": "smarter-justice-no-loss-requirement-disposition",
+  "releaseVersion": "1.7.61",
+  "generatedAt": "2026-07-31T17:14:00-04:00",
+  "controllingPromptSha256": "06757bdcfd6b0fa557922569a5fe01a0e9b1e92862e8a3409a89789be3ef6668",
+  "requirements": [
+    {
+      "id": "fourth-pass-master",
+      "disposition": "REVALIDATED AGAINST NEWEST ARTIFACT"
+    },
+    {
+      "id": "version-neutral-portal-authority",
+      "disposition": "STRENGTHENED"
+    },
+    {
+      "id": "binding-15-commercial",
+      "disposition": "STRENGTHENED"
+    },
+    {
+      "id": "public-freemium-floor",
+      "disposition": "STRENGTHENED"
+    },
+    {
+      "id": "monday-owner-collaboration",
+      "disposition": "PRESERVED"
+    },
+    {
+      "id": "dual-master-repository-boundary",
+      "disposition": "PRESERVED"
+    },
+    {
+      "id": "domestic-violence-safety",
+      "disposition": "PRESERVED"
+    },
+    {
+      "id": "exact-release-and-rollback",
+      "disposition": "PRESERVED"
+    },
+    {
+      "id": "public-pages-and-attorney-tour",
+      "disposition": "CLARIFIED"
+    }
+  ],
+  "noRequirementSilentlyOmitted": true
+}

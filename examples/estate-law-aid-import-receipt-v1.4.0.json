@@ -1,0 +1,23 @@
+{
+  "receiptVersion": "1.0.0",
+  "environment": "LOCAL_FIXTURE_ONLY",
+  "portalId": "estate-law-aid",
+  "batchId": "fixture-8099ebca512c0fa7",
+  "schemaVersion": "1.4.0",
+  "digest": "8099ebca512c0fa79d24821407845b5400c83bf6c2ca945807400d6c9d34a0b1",
+  "receivedAt": "2026-07-28T00:00:00-04:00",
+  "processedAt": "2026-07-28T00:00:00-04:00",
+  "upsertPrivateCount": 32,
+  "upsertPublicCount": 0,
+  "suppressionCount": 0,
+  "rejectedCount": 0,
+  "conflictCount": 0,
+  "lastKnownGood": true,
+  "adapterVersion": "1.1.0",
+  "operator": "local-fixture-generator",
+  "result": "LOCAL_VALIDATION_PASS_NOT_IMPORTED",
+  "errorSummary": "",
+  "rollbackAvailable": true,
+  "liveConnection": false,
+  "automaticWrites": false
+}

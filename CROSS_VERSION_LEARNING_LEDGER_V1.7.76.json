@@ -1,0 +1,47 @@
+{
+  "schema_id": "SJP-LMP-CROSS-VERSION-LEARNING-LEDGER-2026-08-03-V1",
+  "product": {
+    "name": "Smarter Justice",
+    "current_version": "1.7.76",
+    "current_artifact_sha256": "DETACHED_FINAL_NOT_YET_BUILT"
+  },
+  "prior_versions_reviewed": [
+    "1.7.73",
+    "1.7.75"
+  ],
+  "lessons": [
+    {
+      "lesson_id": "SJ-LEARN-1776-001",
+      "source_version_or_wave": "1.7.75 structured workflow governance",
+      "observation": "The consent orchestrator was intentionally limited to a schema and validator.",
+      "what_worked_or_failed": "The fail-closed boundary worked, but the capability provided no direct public action.",
+      "root_cause_or_enabling_factor": "V11 correctly prioritized architecture safety before runtime behavior.",
+      "test_or_evidence_that_revealed_it": "STRUCTURED_WORKFLOW_GOVERNANCE_V1.7.75.json and tests/structured-workflow-governance-v1775.test.js",
+      "product_change_made": "Added a fixed-choice, device-only handoff planner that keeps runtime transfer disabled.",
+      "builder_prompt_system_change_made": "Added a maturity progression rule requiring exact before/after capability classification.",
+      "future_candidate_selection_effect": "Prefer the next safe maturity slice over either indefinite schema-only status or premature server activation.",
+      "future_testing_or_recovery_effect": "Test both user utility and preserved closed boundaries.",
+      "status": "ACTIVE"
+    },
+    {
+      "lesson_id": "SJ-LEARN-1776-002",
+      "source_version_or_wave": "V12 owner mission",
+      "observation": "Dual progress can be asserted in prose without being enforced.",
+      "what_worked_or_failed": "Templates clarify intent, but an ordinary release still needs an executable gate.",
+      "root_cause_or_enabling_factor": "No product-specific validator linked both tracks to tests and artifacts.",
+      "test_or_evidence_that_revealed_it": "V12 files 22 through 25",
+      "product_change_made": "Exposed the dual-track result in the protected owner control center.",
+      "builder_prompt_system_change_made": "Added a deterministic fail-closed validator for both tracks and learning evidence.",
+      "future_candidate_selection_effect": "Reject single-track ordinary release candidates before packaging.",
+      "future_testing_or_recovery_effect": "Recovery releases must show whether both tracks advanced or document a permitted non-ordinary classification.",
+      "status": "ACTIVE"
+    }
+  ],
+  "unresolved_learning_questions": [
+    "Which portal will first independently accept a local import adapter for the handoff plan?"
+  ],
+  "next_version_learning_priorities": [
+    "Measure public comprehension without collecting plan contents.",
+    "Evaluate accessible QR export without enabling tracking or automatic transfer."
+  ]
+}

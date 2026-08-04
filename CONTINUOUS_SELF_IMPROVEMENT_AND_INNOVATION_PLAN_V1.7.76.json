@@ -1,0 +1,103 @@
+{
+  "schema_id": "SJP-LMP-CONTINUOUS-SELF-IMPROVEMENT-AND-INNOVATION-PLAN-2026-08-03-V1",
+  "product": {
+    "name": "Smarter Justice",
+    "starting_version": "1.7.75",
+    "starting_artifact_sha256": "8995ae6c794d5fa454eb5d62b41fd0a4290af853eac46b0400535de951fd5459",
+    "target_version": "1.7.76"
+  },
+  "core_owner_mission_sha256": "1e4efe3dd80a4c3ed6d03aabd1414c60fb91d747b463405c52bf8a0902556d0b",
+  "governing_packet": {
+    "id": "SJP-LMP-UNIVERSAL-ONE-STEP-2026-08-03-V12-CONTINUOUS-SELF-IMPROVEMENT",
+    "sha256": "37d90cab818b71613c388bf195b08d129eb569dd183de5358f32dd335975a1d5"
+  },
+  "independent_opportunity_discovery": {
+    "exact_artifact_findings": [
+      "The V11 consent orchestrator was D1 schema-and-validator only; public users could not create a usable consent-minimized handoff."
+    ],
+    "public_user_journey_findings": [
+      "Portal preparation existed, but continuity into another product required manual re-entry with no minimal fixed-choice handoff receipt."
+    ],
+    "professional_staff_owner_findings": [
+      "Owner visibility showed capability maturity but not whether ordinary releases improved both owner-mandated tracks."
+    ],
+    "source_currentness_findings": [],
+    "defects_and_friction": [
+      "A schema-only orchestration capability could be mistaken for user value without a usable local workflow."
+    ],
+    "missing_capabilities": [
+      "Device-only handoff pack builder",
+      "Deterministic dual-track release gate"
+    ],
+    "accessibility_privacy_security_data_findings": [
+      "Fixed selections can provide continuity without narrative, contact, document, health, financial, or authentication data."
+    ],
+    "deployment_and_operations_findings": [
+      "No provider or deployment access is required for either improvement."
+    ],
+    "prior_release_and_deferral_findings": [
+      "v1.7.75 explicitly deferred runtime transfer and selected only a D1 consent schema; V12 requires both product and builder-system progress."
+    ],
+    "relevant_external_developments_when_used": []
+  },
+  "creative_new_capability_candidates": [
+    {
+      "id": "DEVICE_ONLY_JOURNEY_HANDOFF_PLANNER",
+      "selected": true,
+      "reason": "Converts the accepted consent contract into user value while preserving no-transfer architecture."
+    },
+    {
+      "id": "DUAL_TRACK_RELEASE_GATE",
+      "selected": true,
+      "reason": "Makes V12's owner mission mechanically testable for every ordinary release."
+    },
+    {
+      "id": "SERVER_SIDE_HANDOFF_STORAGE",
+      "selected": false,
+      "reason": "Would require separate privacy, security, retention, identity, and owner authorization evidence."
+    }
+  ],
+  "product_platform_track": {
+    "primary_objective": "Create a usable device-only journey continuity workflow without transmitting or storing user information.",
+    "connected_objectives": [
+      "Fixed-choice data minimization",
+      "Explicit consent receipt",
+      "Local JSON and text export",
+      "Accessible public explanation",
+      "No automatic transfer"
+    ],
+    "candidate_waves": [
+      "Contract and deterministic validator",
+      "Public planner and local downloads",
+      "Owner maturity visibility"
+    ],
+    "acceptance_evidence": [
+      "tests/journey-handoff-planner-v1776.test.js"
+    ]
+  },
+  "builder_prompt_system_track": {
+    "prompt_and_continuation_findings": [
+      "Prior release evidence did not mechanically fail a release when only the product or builder track improved."
+    ],
+    "schema_and_test_findings": [
+      "V12 templates require product and prompt improvement reports and cross-version learning, but product-level validation was absent."
+    ],
+    "automation_and_recovery_findings": [
+      "A deterministic gate can validate both tracks without provider access."
+    ],
+    "evidence_and_reporting_findings": [
+      "The gate must link each track to affected files, tests, benefits, limitations, and carried-forward lessons."
+    ],
+    "candidate_waves": [
+      "Dual-track schema and validator",
+      "Cross-version learning ledger",
+      "Protected owner view and release test"
+    ],
+    "acceptance_evidence": [
+      "tests/continuous-improvement-dual-track-v1776.test.js"
+    ]
+  },
+  "protected_owner_decisions_required": [],
+  "strongest_justified_set_selected": true,
+  "hard_constraints_preserved": true
+}

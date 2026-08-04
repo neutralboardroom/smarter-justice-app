@@ -1,0 +1,50 @@
+{
+  "schemaVersion": "1.0.0",
+  "releaseVersion": "1.7.44",
+  "generatedAt": "2026-07-29T13:26:00-04:00",
+  "finalOwner": "Roger",
+  "decisions": [
+    {
+      "id": "free-basic-profile-control",
+      "status": "IMPLEMENTED",
+      "decision": "Attorneys and firms may claim, verify, correct and edit basic profiles without payment.",
+      "effectiveVersion": "1.7.44"
+    },
+    {
+      "id": "paid-growth",
+      "status": "IMPLEMENTED_FOUNDATION_GATES_CLOSED",
+      "decision": "Optional paid products may add clearly labeled sponsored visibility, enhanced prominence, lead eligibility and access to case or attorney-review opportunities.",
+      "effectiveVersion": "1.7.44"
+    },
+    {
+      "id": "fixed-fee-only",
+      "status": "IMPLEMENTED",
+      "decision": "Opportunity charges must be fixed disclosed subscription, advertising, platform or access charges; no percentage of legal fees or outcome-contingent charge.",
+      "effectiveVersion": "1.7.44"
+    },
+    {
+      "id": "payment-boundaries",
+      "status": "IMPLEMENTED",
+      "decision": "Payment never verifies identity or credentials, proves specialty relevance, buys organic rank or endorsement, or guarantees work or results.",
+      "effectiveVersion": "1.7.44"
+    },
+    {
+      "id": "complimentary-pilot",
+      "status": "SUPERSEDED",
+      "decision": "The v1.7.43 complimentary Founding Profile Pilot is no longer an active launch model.",
+      "effectiveVersion": "1.7.44"
+    },
+    {
+      "id": "three-portals",
+      "status": "IMPLEMENTED",
+      "decision": "Initial portals remain Divorce, Estate, and Personal Injury; Personal Injury includes vehicle accidents; Workers Compensation remains separate.",
+      "effectiveVersion": "1.7.44"
+    },
+    {
+      "id": "live-gates",
+      "status": "IMPLEMENTED",
+      "decision": "Live payments, sponsored placement, case opportunities, portal imports, automatic writes and deployment remain closed.",
+      "effectiveVersion": "1.7.44"
+    }
+  ]
+}

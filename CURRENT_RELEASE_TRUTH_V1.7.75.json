@@ -1,0 +1,138 @@
+{
+  "schema": "smarter-justice-current-release-truth",
+  "schemaVersion": "1.2.0",
+  "releaseVersion": "1.7.75",
+  "generatedAt": "2026-08-03T10:20:00-04:00",
+  "selectedBase": {
+    "filename": "smarter-justice-v1.7.73.zip",
+    "version": "1.7.73",
+    "sha256": "5ed64a1c13de1a536303b07a2277e234a822b9bc316b7ea97cf2547e90811898",
+    "sizeBytes": 8196348,
+    "entries": 2808,
+    "files": 2784,
+    "directories": 24,
+    "uncompressedBytes": 24514359,
+    "compressedBytes": 7772126,
+    "inventoryRecords": 2783,
+    "inventorySha256": "177c3f91ef3a65a73827b193055eb2f78f117c6bab20c2aaadb2a77faa2439e1",
+    "treeSha256": "177c3f91ef3a65a73827b193055eb2f78f117c6bab20c2aaadb2a77faa2439e1",
+    "packageJsonSha256": "aa748a9ea7ca97fed5c63c0693a224430b6c0cf5fb3b3c30ec13c4f7b3f50275",
+    "packageLockSha256": "62abde600ea9b6ca1711c683c2ee3f9d1db4bce22e27f5c005cba19ce98cafeb",
+    "dependencyIndependentParts": 127,
+    "totalReadinessParts": 128,
+    "testLogSha256": "2159c3e45c693c7662927331521547e797301f4f1764a5398c4bf11617cf1e52"
+  },
+  "rollbackArtifact": {
+    "filename": "smarter-justice-v1.7.73.zip",
+    "version": "1.7.73",
+    "sha256": "5ed64a1c13de1a536303b07a2277e234a822b9bc316b7ea97cf2547e90811898",
+    "sizeBytes": 8196348,
+    "entries": 2808,
+    "files": 2784,
+    "directories": 24,
+    "uncompressedBytes": 24514359,
+    "compressedBytes": 7772126,
+    "inventoryRecords": 2783,
+    "inventorySha256": "177c3f91ef3a65a73827b193055eb2f78f117c6bab20c2aaadb2a77faa2439e1",
+    "treeSha256": "177c3f91ef3a65a73827b193055eb2f78f117c6bab20c2aaadb2a77faa2439e1",
+    "packageJsonSha256": "aa748a9ea7ca97fed5c63c0693a224430b6c0cf5fb3b3c30ec13c4f7b3f50275",
+    "packageLockSha256": "62abde600ea9b6ca1711c683c2ee3f9d1db4bce22e27f5c005cba19ce98cafeb",
+    "dependencyIndependentParts": 127,
+    "totalReadinessParts": 128,
+    "testLogSha256": "2159c3e45c693c7662927331521547e797301f4f1764a5398c4bf11617cf1e52"
+  },
+  "sourcePackage": {
+    "filename": "smarter-justice-v1.7.75.zip",
+    "version": "1.7.75",
+    "dependencyIndependentParts": 129,
+    "totalReadinessParts": 130,
+    "identityState": "CANDIDATE_ACCEPTED_NONCIRCULAR_FINAL_SOURCE_SEALED",
+    "packageJsonSha256": "8b76f471653289169a429cbb651ee143f25c4b23ed98d51a4d6371a3d3331d12",
+    "packageLockSha256": "7b08a04014874fee4ee02f3b55edb8bcac57dc5765b59e82627ab1d79fdd1dba",
+    "sbomSha256": "782a1694e11e4e2bb77bc609d162b9cbcd8b01235118b74aff611632d09c52af"
+  },
+  "finalArchive": {
+    "filename": "smarter-justice-v1.7.75.zip",
+    "version": "1.7.75",
+    "identityState": "DETACHED_AFTER_IMMUTABLE_PACKAGING",
+    "sha256": null,
+    "sizeBytes": null
+  },
+  "activeMasterPair": {
+    "receiptId": "MPCR-2026-07-31-E1-R0-05F4296ED378",
+    "transactionId": "MPPT-2026-07-31-SJ8-FP26-304CB87BF174",
+    "pairEpoch": 1,
+    "pairRevision": 0,
+    "receiptSha256": "4dd826cb0f9d89e41528b9732f250899cab45ce89766ae7fdfdb8a44d48d906e",
+    "centralMasterSha256": "89f49e1433d05a937a31c2144e42e408a94c4502d8c388ad5f3a6eae7ad5aa68",
+    "portalFamilyMasterSha256": "fd9e66a351067b6c02891c9474a4bc52edcbde552ae5706738d00930e6d4573f",
+    "baselineId": "DRB-2026-07-31-DUR001-DUR043-V2",
+    "semanticCapsuleSha256": "3d5f7cc4b33980148510834f6b23f902fb5416dbdc9398f106a3b14e81713bf8"
+  },
+  "portalAuthority": {
+    "record": "INITIAL_PORTAL_AUTHORITY_V1.7.75.json",
+    "evidenceBoundary": "OWNER_RECORDED_OR_HANDOFF_RECORDED_NOT_CURRENT_CHAT_PORTAL_INSPECTION",
+    "liveConnectionsOpened": false,
+    "automaticWritesOpened": false
+  },
+  "ownerLaunchActionPacket": {
+    "record": "OWNER_LAUNCH_ACTION_PACKET_V1.7.75.json",
+    "state": "PRIVATE_VALIDATED_NONSECRET_EXECUTION_PACKET",
+    "readyNowCount": 4
+  },
+  "production": {
+    "lastVerifiedVersion": "1.6.1",
+    "deploymentAuthorized": false,
+    "deploymentState": "NOT_DEPLOYED",
+    "deployed": false
+  },
+  "launchState": "NO_GO",
+  "deploymentAuthorized": false,
+  "publicDisplay": {
+    "currentVersion": "1.7.75",
+    "sourceAndRollback": "smarter-justice-v1.7.73.zip",
+    "finalIdentity": "Detached receipt required after immutable packaging",
+    "promptPack": "V11 structured-workflow governance packet accepted locally; canonical deployment, owner authorization, and live acceptance remain separate.",
+    "launch": "NO_GO",
+    "deployment": "Not authorized",
+    "sourceVersion": "1.7.73"
+  },
+  "validationState": "FINAL_SOURCE_SEALED_DETACHED_FINAL_IDENTITY_PENDING",
+  "currentPromptPack": {
+    "packId": "SJP-2026-08-02-C15-P37-D11-V13",
+    "state": "FOUR-FILE PACK FINALIZED \u2014 READY FOR SUNDAY DEPLOYMENT EXECUTION",
+    "canonicalCommitProven": false,
+    "baselineId": "DRB-2026-08-02-DUR001-DUR086-V13",
+    "ruleCount": 86,
+    "deploymentFile4State": "ACTIVE \u2014 INCLUDED \u2014 EXACTLY BOUND"
+  },
+  "candidateArtifact": {
+    "filename": "smarter-justice-v1.7.75-candidate-a.zip",
+    "sha256": "bfa384de8877a8627e513e2b5de1cc73888372a33899eaa21166c78adf333fa9",
+    "sizeBytes": 8374364,
+    "state": "CANDIDATE_ACCEPTED_NONCIRCULAR"
+  },
+  "deploymentReadiness": {
+    "record": "DEPLOYMENT_READINESS_V1.7.75.json",
+    "state": "LOCAL_LAUNCH_DAY_ORCHESTRATION_ACCEPTED_ALL_PRODUCT_PREFLIGHT_PENDING"
+  },
+  "packId": "SJP-2026-08-02-C15-P37-D11-V13",
+  "durableRuleBaseline": "DRB-2026-08-02-DUR001-DUR086-V13",
+  "presealArtifact": {
+    "candidateSha256": "bfa384de8877a8627e513e2b5de1cc73888372a33899eaa21166c78adf333fa9",
+    "candidateSizeBytes": 8374364,
+    "state": "CANDIDATE_ACCEPTED_NONCIRCULAR"
+  },
+  "recoveryLineage": {
+    "record": "RECOVERY_LINEAGE_RECEIPT_V1.7.75.json",
+    "exactBase": "smarter-justice-v1.7.73.zip",
+    "unavailableIntermediate": "smarter-justice-v1.7.74.zip",
+    "byteExactIntermediateRecoveryClaimed": false
+  },
+  "v11Governance": {
+    "packetSha256": "5fc583752204994082de559b0b240aa78272ef2d92d6b5ebcba11f9ff38c15cc",
+    "structuredWorkflowRecord": "STRUCTURED_WORKFLOW_GOVERNANCE_V1.7.75.json",
+    "architectureConsentReceipt": "SMARTER_NETWORK_ARCHITECTURE_AND_CONSENT_COMPATIBILITY_RECEIPT_V1.7.75.json",
+    "durableRuleApplicabilityLedger": "DURABLE_RULE_APPLICABILITY_LEDGER_V1.7.75.json"
+  }
+}

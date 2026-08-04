@@ -1,0 +1,47 @@
+{
+  "version": "1.7.36",
+  "date": "2026-07-27",
+  "theme": "Canonical professional portal identity and D3 local adapter verification",
+  "sourceBase": "smarter-justice-v1.7.35.zip",
+  "releaseWarrant": {
+    "material": true,
+    "coherent": true,
+    "safe": true,
+    "completeSubjectToExactArtifactGate": true
+  },
+  "improvements": [
+    {
+      "id": "v1736-canonical-portal-identifiers",
+      "decision": "IMPROVE_NOW",
+      "problem": "Professional assignments used historical identifiers that did not match current portal contracts.",
+      "result": "Mapped only unambiguous aliases and generated 678 canonical assignments."
+    },
+    {
+      "id": "v1736-ambiguous-legacy-assignments",
+      "decision": "PRESERVE_FOR_REVIEW",
+      "problem": "Mixed or safety-oriented legacy identifiers could not be mapped safely.",
+      "result": "Kept 14 assignments outside portal exports with explicit reasons and next actions."
+    },
+    {
+      "id": "v1736-adapter-tests",
+      "decision": "IMPROVE_NOW",
+      "problem": "D2 contracts did not prove local consumer behavior.",
+      "result": "Added 25 D3 local read-only adapter fixtures, including valid empty-state tests."
+    },
+    {
+      "id": "v1736-live-adapters",
+      "decision": "DEFER",
+      "problem": "Live producer-consumer connections lack staging authorization and operational controls.",
+      "result": "No live connection or automatic write was added."
+    },
+    {
+      "id": "v1736-profile-growth",
+      "decision": "DEFER",
+      "problem": "No independently researched clean current source batch was available in this artifact-focused release.",
+      "result": "Added zero profiles and preserved exact totals."
+    }
+  ],
+  "ownerBenefit": "The owner can see which professional assignments reach each current legal portal, which legacy records remain unresolved, and whether every local adapter fixture passes without opening a live connection.",
+  "portalBenefit": "Dedicated portals receive a versioned, validated, canonical, nonconfidential handoff shape that can later support a controlled staging adapter.",
+  "publicUserBenefit": "Professional placement remains evidence-based, payment-independent, and protected from unsafe category inference."
+}

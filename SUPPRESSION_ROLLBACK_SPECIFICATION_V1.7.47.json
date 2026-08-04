@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1.0.0",
+  "releaseVersion": "1.7.47",
+  "suppression": [
+    "central approval",
+    "versioned SUPPRESS action",
+    "portal receipt",
+    "public absence verification"
+  ],
+  "rollback": [
+    "exact prior batch",
+    "exact digest",
+    "last-known-good state",
+    "owner approval",
+    "audit record",
+    "post-rollback verification"
+  ],
+  "status": "SPECIFICATION_ONLY_NO_LIVE_ROLLBACK_APPROVAL"
+}

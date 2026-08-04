@@ -1,0 +1,55 @@
+{
+  "schema": "smarter-justice-generated-evidence-reproducibility-manifest",
+  "releaseVersion": "1.7.75",
+  "generatedAt": "2026-08-03T10:20:00-04:00",
+  "sourceArtifact": {
+    "filename": "smarter-justice-v1.7.73.zip",
+    "version": "1.7.73",
+    "sha256": "5ed64a1c13de1a536303b07a2277e234a822b9bc316b7ea97cf2547e90811898",
+    "sizeBytes": 8196348,
+    "entries": 2808,
+    "files": 2784,
+    "directories": 24,
+    "uncompressedBytes": 24514359,
+    "compressedBytes": 7772126,
+    "inventoryRecords": 2783,
+    "inventorySha256": "177c3f91ef3a65a73827b193055eb2f78f117c6bab20c2aaadb2a77faa2439e1",
+    "packageJsonSha256": "aa748a9ea7ca97fed5c63c0693a224430b6c0cf5fb3b3c30ec13c4f7b3f50275",
+    "packageLockSha256": "62abde600ea9b6ca1711c683c2ee3f9d1db4bce22e27f5c005cba19ce98cafeb",
+    "sbomSha256": "782a1694e11e4e2bb77bc609d162b9cbcd8b01235118b74aff611632d09c52af",
+    "dependencyIndependentParts": 127,
+    "totalReadinessParts": 128,
+    "testLogSha256": "c290f5b1770cd15f39a476a073e4746ea80a9b118f6cc3fafd10a611c76fc5c5"
+  },
+  "generatorState": "PREFINAL_PASS_IDENTICAL_CANDIDATE_PENDING",
+  "generators": [
+    {
+      "generator": "SBOM.spdx.json",
+      "state": "PASS_IDENTICAL",
+      "observedRuns": 2,
+      "outputSha256": "782a1694e11e4e2bb77bc609d162b9cbcd8b01235118b74aff611632d09c52af"
+    },
+    {
+      "generator": "full dependency-independent test suite",
+      "state": "PASS_IDENTICAL",
+      "observedRuns": 2,
+      "outputSha256": "c290f5b1770cd15f39a476a073e4746ea80a9b118f6cc3fafd10a611c76fc5c5"
+    }
+  ],
+  "candidateAcceptanceState": "CANDIDATE_ACCEPTED_NONCIRCULAR",
+  "acceptedCandidate": {
+    "sha256": "bfa384de8877a8627e513e2b5de1cc73888372a33899eaa21166c78adf333fa9",
+    "sizeBytes": 8374364,
+    "inventorySha256": "5b1ddd7f186c226203034a266b900bd9c8139c199773b3fa7419b9330f2cef61",
+    "testLogSha256": "c290f5b1770cd15f39a476a073e4746ea80a9b118f6cc3fafd10a611c76fc5c5",
+    "state": "CANDIDATE_ACCEPTED_NONCIRCULAR"
+  },
+  "recoveryLineage": {
+    "exactSource": "smarter-justice-v1.7.73.zip",
+    "unavailableIntermediate": "smarter-justice-v1.7.74.zip",
+    "unavailableIntermediateReportedSha256": "f6310488038c2a2cffc233ee05a44f86f080553c918888b3a7c4d74350b67ae6",
+    "byteExactRecoveryClaimed": false
+  },
+  "launchState": "NO_GO",
+  "deploymentAuthorized": false
+}

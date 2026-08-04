@@ -1,0 +1,32 @@
+{
+  "schema": "smarter-justice-working-tree-acceptance",
+  "releaseVersion": "1.7.78",
+  "generatedAt": "2026-08-03T12:19:00-04:00",
+  "state": "PASS_TWO_IDENTICAL_RUNS_EXACT_CANDIDATE_PENDING",
+  "commandsPerRun": 135,
+  "runs": 2,
+  "testLogSha256": "da346ac79ed36e791091d0f6dcf355620d5e3ee875b58945475554a1a035cd58",
+  "identicalOutput": true,
+  "postgresDependentParts": 1,
+  "postgresAcceptanceClaimed": false,
+  "sourceHashes": {
+    "packageJsonSha256": "a5b18758ea301db10bbb826959ec2a531de55bb7bc3de419eef5ae794b9b8a37",
+    "packageLockSha256": "f3fced9c44334858328ed25783b6114fafd6060654cc549fe02afe6e8bb80fb7",
+    "sbomSha256": "6b0997aebc62a510b55f5c286d16bb410d5444a26a31ca18f03998e500a9e8b9"
+  },
+  "materialImplementation": {
+    "productPlatform": [
+      "OpenAI-only central registered-tool gateway",
+      "Five-product AI maturity matrix and protected AI Operations view",
+      "Tool-specific transparency, injection isolation, strict structured output validation and deterministic fallback"
+    ],
+    "builderPromptSystem": [
+      "Exact successor-overlay checkpoint and OpenAI launch governance validator",
+      "Mock/synthetic gateway, injection, privacy, cost, feature-flag and degraded-mode regression tests"
+    ]
+  },
+  "launchState": "NO_GO",
+  "deploymentAuthorized": false,
+  "liveOpenAiSmokePassed": false,
+  "openAiKeyConfigured": false
+}

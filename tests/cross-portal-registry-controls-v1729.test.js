@@ -1,0 +1,15 @@
+'use strict';
+const assert=require('assert');const fs=require('fs');const path=require('path');
+const registry=require('../data/crossPortalLearningV1728').buildLearningSystem();
+const controls=require('../lib/crossPortalRegistryControls');
+const result=controls.buildControls(registry);
+assert.equal(result.generatedForRelease,'1.7.41');assert.equal(result.scope,'Smarter Justice and its separate legal micro-portals only');assert.equal(result.automaticCrossRepositorySynchronization,false);
+assert.equal(result.currentSmarterJusticeArtifact.sha256,'b363bf4a41422646f7561d67b387039b39dcbc55343c950e16d8493dd72ffcb1');
+assert(result.artifactHistory.some(x=>x.portalId==='general-smarter-justice-start'&&x.version==='1.7.34')); 
+const old=result.artifactHistory.find(x=>x.portalId==='general-smarter-justice-start'&&x.version==='1.7.27');assert(old&&old.supersededBy&&old.supersededBy.version==='1.7.34');
+assert.equal(result.summary.invalidIdentityRecords,0);assert(result.staleRecords.length>=4);assert(result.conflictRecords.some(x=>x.portalId==='smarter-ecosystem-control-center'));
+assert.equal(controls.validateImport({artifactHistory:[result.currentSmarterJusticeArtifact]}).accepted,true);
+assert.equal(controls.validateImport({clientMatter:{password:'x'}}).accepted,false);
+assert.equal(controls.validateImport({artifactHistory:[{portalId:'smarter-health',version:'1',artifactName:'x.zip',sha256:'0'.repeat(64),sizeBytes:1}]}).accepted,false);
+const server=fs.readFileSync(path.join(__dirname,'..','server.js'),'utf8');assert(server.includes('/api/owner/cross-portal-registry-controls'));assert(server.includes('/api/owner/cross-portal-registry-controls/validate-import'));
+console.log('cross-portal-registry-controls-v1729.test.js passed');

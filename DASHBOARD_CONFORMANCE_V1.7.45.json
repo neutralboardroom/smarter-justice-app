@@ -1,0 +1,99 @@
+{
+  "version": "1.7.45",
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-07-29T14:30:00-04:00",
+  "highestClaim": "D3_INTEGRATION_TESTED_LOCAL_ONLY",
+  "states": [
+    "D0_CONCEPT_ONLY",
+    "D1_FIXTURE_RENDERED",
+    "D2_CONTRACT_TESTED",
+    "D3_INTEGRATION_TESTED",
+    "D4_STAGING_VERIFIED",
+    "D5_PRODUCTION_VERIFIED"
+  ],
+  "runs": [
+    {
+      "conformanceRunId": "conformance:central-profile-distribution:v1.7.45",
+      "surfaceId": "surface:professional-accounts-and-portal-handoffs",
+      "state": "D3_INTEGRATION_TESTED",
+      "passed": [
+        "professional self-entry without a prebuilt listing",
+        "owner-assisted account-linked entry",
+        "private firm workspace creation",
+        "canonical portal selection",
+        "v1.4.0 assignment/profile/firm handoff validation",
+        "general Smarter Justice public profile payload excluded",
+        "payment does not create publication",
+        "no user matter, credential secret, payment data, confidential data, live connection, or automatic write"
+      ],
+      "notProven": [
+        "dedicated micro-portal staging adoption",
+        "production profile publication",
+        "live payment lifecycle",
+        "production deployment"
+      ]
+    },
+    {
+      "conformanceRunId": "conformance:professional-portal-adapters:v1.7.36",
+      "surfaceId": "surface:professional-portal-adapter-lab",
+      "state": "D3_INTEGRATION_TESTED",
+      "passed": [
+        "25 producer-consumer fixtures",
+        "14 populated fixtures",
+        "11 valid empty fixtures",
+        "678 canonical assignments",
+        "14 unresolved assignments excluded",
+        "required fields",
+        "allowed fields",
+        "prohibited key scan",
+        "duplicate assignment detection",
+        "portal ID match",
+        "closed appointment gate",
+        "no write",
+        "no live connection",
+        "deterministic fingerprints"
+      ],
+      "notProven": [
+        "dedicated portal staging adapter",
+        "production connection",
+        "portal write",
+        "live monitoring"
+      ]
+    },
+    {
+      "conformanceRunId": "conformance:portfolio-truth:v1.7.36",
+      "surfaceId": "surface:portfolio-control-center",
+      "state": "D2_CONTRACT_TESTED",
+      "passed": [
+        "stable identifiers",
+        "evidence states",
+        "owner-only route",
+        "legal-only scope"
+      ],
+      "notProven": [
+        "live portal producer integration",
+        "production monitoring"
+      ]
+    },
+    {
+      "conformanceRunId": "conformance:integrated-legal-portal-standard:v1.7.45",
+      "surfaceId": "surface:portal-governance-and-handoffs",
+      "state": "D2_CONTRACT_TESTED",
+      "passed": [
+        "canonical standard file",
+        "Master Rules Pack inheritance",
+        "continuation prompt standard",
+        "build program standard",
+        "professional handoff standard envelope",
+        "complete improvement-list carry-forward",
+        "current authority ledger refresh"
+      ],
+      "notProven": [
+        "dedicated portal implementation",
+        "dedicated portal graphical acceptance",
+        "dedicated portal deployment"
+      ]
+    }
+  ],
+  "claimBoundary": "D3 proves local central-account creation and read-only profile/firm distribution contracts only. Dedicated portal staging, production publication, payment activation, live connectivity, and deployment remain unverified."
+}

@@ -1,0 +1,70 @@
+{
+  "schema_id": "SJP-LMP-V14-ARTIFACT-BINDING-AND-MODE-RECEIPT",
+  "generated_at": "2026-08-03T19:45:00-04:00",
+  "selected_operating_mode": "MODE_B_EXISTING_CHAT_PACKET_ONLY",
+  "product_role": "SMARTER_JUSTICE_CENTRAL",
+  "candidate_artifacts": [
+    {
+      "filename": "smarter-justice-v1.7.82.zip",
+      "sha256": "61fea278a69055915e9b4b916e4b64ec514614f1746cacf659a6931ccd0228b1",
+      "size_bytes": 8829574,
+      "archive_integrity": "PASS_CRC_SAFE_PATHS_DUPLICATE_FREE_NO_SYMLINKS_NO_ENCRYPTION",
+      "version": "1.7.82",
+      "package_or_repository_root": "ZIP_ROOT",
+      "inventory": {
+        "path": "FILE_INVENTORY_SHA256.txt",
+        "sha256": "c41f6f11f4845894431c95f58fef6762eb272d8d7da460bc5678e48575079044",
+        "record_count": 3110,
+        "scope": "SELF_EXCLUDING_EXISTING_PRODUCT_INVENTORY"
+      },
+      "completion_state": "COMPLETED_EXACT_TESTED_FINAL_ARTIFACT",
+      "predecessor_and_succession_evidence": "CURRENT_RELEASE_TRUTH_V1.7.82.json and embedded V14 acceptance records",
+      "selected_authoritative_base": true,
+      "selection_reason": "Exact latest completed artifact accessible in the existing chat; detached outer identity, archive integrity, version, contents, V14 payload inventory, and legacy inventory all validate."
+    }
+  ],
+  "selected_authoritative_base": {
+    "filename": "smarter-justice-v1.7.82.zip",
+    "sha256": "61fea278a69055915e9b4b916e4b64ec514614f1746cacf659a6931ccd0228b1",
+    "version": "1.7.82"
+  },
+  "governing_packet": {
+    "filename": "UNIVERSAL_SMARTER_JUSTICE_AND_ALL_LEGAL_MICRO_PORTALS__ONE_STEP_BUILDER__REFINED_V14__ALL_CHAT_MODES_EXACT_ARTIFACT_BINDING_NON_SELF_REFERENTIAL_RELEASE_RECEIPTS__UNIFIED_LIVE_OPERATIONS__2026-08-03.zip",
+    "packet_id": "SJP-LMP-UNIVERSAL-ONE-STEP-2026-08-03-V14-ALL-CHAT-MODES",
+    "sha256": "fce42ce0927748f94189692ef5b3bf8e0fe9f8d12273287f03a68eb7bccdad6f",
+    "size_bytes": 4835766,
+    "member_count": 70,
+    "validation": "PASS_SHA256SUMS_MANIFEST_CRC_SAFE_PATHS_DUPLICATE_FREE_NO_SYMLINKS_NO_ENCRYPTION"
+  },
+  "accessible_prior_packet_identities": [
+    {
+      "packet_id": "SJP-LMP-UNIVERSAL-ONE-STEP-2026-08-03-V13-UNIFIED-LIVE-LAUNCH",
+      "sha256": "d128a5275545a26f0c4535168e2a2be714dc0db5a56d89fba44616ef496f5303",
+      "state": "PRESERVED_BYTE_FOR_BYTE_INSIDE_V14_NOT_RECURSIVELY_EXECUTED"
+    },
+    {
+      "packet_id": "SJP-LMP-UNIVERSAL-ONE-STEP-2026-08-03-V12-CONTINUOUS-SELF-IMPROVEMENT",
+      "sha256": "37d90cab818b71613c388bf195b08d129eb569dd183de5358f32dd335975a1d5",
+      "state": "PRESERVED_SUBSTANTIVE_AUTHORITY_INSIDE_V14"
+    }
+  ],
+  "current_checkpoint": "EXACT_V1.7.82_FRESH_EXTRACTION_PRE_EDIT",
+  "external_dependency_states": {
+    "neutral_boardroom_billing": "CONTRACT_READY_NOT_CONNECTED",
+    "openai_central_gateway": "CONTRACT_READY_NOT_CONNECTED",
+    "email": "OWNER_ACTION_READY",
+    "database": "OWNER_ACTION_READY",
+    "github": "OWNER_ACTION_READY",
+    "render": "OWNER_ACTION_READY",
+    "domain_dns_tls": "OWNER_ACTION_READY",
+    "production_deployment": "BLOCKED"
+  },
+  "unknown_unavailable_stale_or_owner_reported_facts": [
+    "No exact Git commit identity is accessible in this build workspace.",
+    "No Render deployment identity, production URL verification, DNS/TLS verification, provider secret state, controlled live OpenAI smoke, or stabilization evidence is accessible.",
+    "No external dependency is promoted to VERIFIED_LIVE from local code, mocks, configuration, or owner-reported prose."
+  ],
+  "editing_authorized_after_binding": true,
+  "deployment_authorized": false,
+  "launch_state": "NO_GO"
+}

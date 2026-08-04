@@ -1,0 +1,92 @@
+{
+  "version": "1.7.30",
+  "date": "2026-07-24",
+  "title": "Device-Only Date Organizer, Public Legal-Scope Correction, and All-Six-Region Profile Growth",
+  "deployed": false,
+  "productionVersion": "1.6.1",
+  "rollbackArtifact": "smarter-justice-v1.7.29.zip",
+  "rollbackSha256": "8d87103037bcfa7dfbaab38868d2ecc07194c1cae5eb1e42bf0b230db51c6986",
+  "activationGatesChanged": false,
+  "sourceArtifact": {
+    "name": "smarter-justice-v1.7.29.zip",
+    "sha256": "8d87103037bcfa7dfbaab38868d2ecc07194c1cae5eb1e42bf0b230db51c6986",
+    "sizeBytes": 2953868,
+    "zipEntries": 473,
+    "files": 462,
+    "explicitDirectories": 11
+  },
+  "implementation": {
+    "dateDeadlineOrganizer": true,
+    "calculatesLegalDeadlines": false,
+    "serverStorageOrTransmission": false,
+    "wholeSituationMapLegalPortalOnly": true,
+    "allSixPhaseOneRegionsWorked": true,
+    "currentEnvironmentReview": true,
+    "continuousImprovementRecord": true
+  },
+  "profileGrowth": {
+    "newProfessionals": 36,
+    "newFirms": 7,
+    "newLinks": 36,
+    "regionsWorked": 6,
+    "regionalCounts": {
+      "Manhattan": 6,
+      "Brooklyn": 6,
+      "Queens": 6,
+      "The Bronx": 6,
+      "Northern Metro New Jersey": 6,
+      "NYC-connected Connecticut": 6
+    },
+    "publicDirectory": {
+      "professionals": 197,
+      "firms": 42,
+      "total": 239
+    },
+    "strictQualifying": {
+      "professionals": 196,
+      "firms": 40,
+      "total": 236
+    },
+    "nextLeadRegion": "Queens"
+  },
+  "gates": {
+    "sensitiveTrafficApproved": false,
+    "professionalPaidPilot": "paused",
+    "publicPaidHumanReview": "paused",
+    "professionalPayments": false,
+    "publicPayments": false,
+    "booking": false,
+    "reviews": false,
+    "confidentialUploads": false,
+    "unrestrictedRouting": false,
+    "automaticFiling": false,
+    "broadCrossPortalUserDataSharing": false,
+    "automaticCrossRepositorySynchronization": false
+  },
+  "testing": {
+    "suiteParts": 74,
+    "inheritedBaselineParts": 70,
+    "newRegressionParts": 4,
+    "workingTree": "passed",
+    "freshExtractionA": "passed independently",
+    "freshExtractionB": "passed independently",
+    "javascriptSyntaxChecks": 175,
+    "jsonParseChecks": 84,
+    "npmRegistry": "configured registry timed out during clean npm ci/audit attempt; no successful install or audit result",
+    "npmVulnerabilityCount": null,
+    "testCompatibilityModules": "temporary external pg and nodemailer modules through NODE_PATH; not packaged",
+    "postTestByteEquality": true,
+    "twoExtractionEquality": true,
+    "zipCrc": true,
+    "archiveSafety": true,
+    "secretScan": true,
+    "manualHealthAndBoundaryCheck": "passed through the complete smoke, protected-route, sensitive-form, storage, security-boundary, and legal-scope regression suite"
+  },
+  "knownLimitations": [
+    "No production deployment or live acceptance was performed.",
+    "Clean npm install and vulnerability audit remain unverified because the configured registry timed out.",
+    "Real-device, browser, screen-reader, high-contrast, and 400% zoom acceptance remains external.",
+    "Professional-controlled profile sources remain self-reported until independent credential and firm-authority review.",
+    "Dedicated legal-portal snapshots must be refreshed only after their newest ZIPs are uploaded and independently verified."
+  ]
+}

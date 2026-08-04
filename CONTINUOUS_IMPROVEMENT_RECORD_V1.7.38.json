@@ -1,0 +1,29 @@
+{
+  "version": "1.7.38",
+  "date": "2026-07-27",
+  "releaseWarrant": {
+    "material": true,
+    "coherent": true,
+    "safe": true,
+    "subject": "48-hour controlled public and founding-attorney launch readiness"
+  },
+  "improvements": [
+    "three fail-closed launch lanes",
+    "public current-availability page and API",
+    "private launch command center",
+    "production preflight CLI",
+    "launch environment contract",
+    "48-hour launch runbook",
+    "94th regression test"
+  ],
+  "deferred": [
+    "production service verification",
+    "graphical and assistive acceptance",
+    "live payment lifecycle verification",
+    "deployment authorization",
+    "Immigration Oasis deployment verification",
+    "dedicated portal exact reconciliation"
+  ],
+  "ownerBenefit": "Current legal-network truth, standards, and unfinished work no longer depend on stale snapshots or implicit prompt memory.",
+  "publicUserBenefit": "Future portal growth and design work is explicitly tied to individual evidence, complete product quality, accessibility, and truthful release claims."
+}

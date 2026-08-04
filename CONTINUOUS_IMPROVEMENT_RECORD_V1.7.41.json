@@ -1,0 +1,47 @@
+{
+  "version": "1.7.41",
+  "date": "2026-07-28",
+  "releaseWarrant": "Material central-account and cross-portal distribution foundation: eliminates the requirement for a prebuilt claimable profile while preventing duplicate public profiles and payment-based publication.",
+  "improvements": [
+    {
+      "id": "central-private-profile-workspace",
+      "status": "completed-and-tested",
+      "benefit": "Attorneys can enter and maintain authoritative information once."
+    },
+    {
+      "id": "self-entry-without-prebuilt-listing",
+      "status": "completed-and-tested",
+      "benefit": "An attorney can build a private profile even when Smarter Justice has not seeded one."
+    },
+    {
+      "id": "owner-assisted-entry",
+      "status": "completed-and-tested",
+      "benefit": "Roger can manually create and link a private professional or firm workspace to an existing account."
+    },
+    {
+      "id": "portal-profile-firm-handoff-v130",
+      "status": "completed-and-tested",
+      "benefit": "Focused portals can consume controlled read-only profile and firm payloads under one contract."
+    },
+    {
+      "id": "duplicate-smarter-justice-directory-disabled",
+      "status": "completed-and-tested",
+      "benefit": "Public specialty profiles remain on focused portals rather than being duplicated centrally."
+    },
+    {
+      "id": "payment-publication-separation",
+      "status": "completed-and-tested",
+      "benefit": "Membership payment cannot bypass credential, evidence, assignment, or publication review."
+    }
+  ],
+  "deferred": [
+    "production service verification",
+    "graphical and assistive acceptance",
+    "live payment lifecycle verification",
+    "deployment authorization",
+    "Immigration Oasis deployment verification",
+    "dedicated portal exact reconciliation"
+  ],
+  "ownerBenefit": "The attorney launch funnel is clearer, safer, and harder to misconfigure or underbill while every commercial gate remains explicit.",
+  "publicUserBenefit": "Professionals can create accounts and manage accurate profiles more easily without any implication that payment buys verification, ranking, or clients."
+}

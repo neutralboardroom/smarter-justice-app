@@ -1,0 +1,31 @@
+{
+  "schema": "smarter-justice-rollback-record",
+  "releaseVersion": "1.7.66",
+  "generatedAt": "2026-08-01T01:05:00-04:00",
+  "rollbackArtifact": {
+    "filename": "smarter-justice-v1.7.65.zip",
+    "version": "1.7.65",
+    "sha256": "91cbdb0a9c858ba7812b8683f6060b68b2f139a722001ca0609db98699b7b879",
+    "sizeBytes": 5905756,
+    "entries": 1941,
+    "files": 1923,
+    "directories": 18,
+    "uncompressedBytes": 17011260,
+    "compressedBytes": 5618780,
+    "inventoryRecords": 1922,
+    "inventorySha256": "01a591623699e9f6ca6744bb8f8dfbf28a0308aad9e88ee4c5eccab93e635666",
+    "packageJsonSha256": "e720ba92837a8e08e139c745d23ee72756658c1b139aebdb06aba5eb4dcec01b",
+    "packageLockSha256": "62a09c062b68c0c0b1388f14fd5dd32e6947b200bb364f1c7f21e27cc36ea97b",
+    "sbomSha256": "b1563e75dd60ba955ddd31b6eb7d9717ee72ac4216992b82d0d7814b7283c827",
+    "dependencyIndependentParts": 119,
+    "totalReadinessParts": 120,
+    "testLogSha256": "117bd79c2e1abd118cb38fef573a465bd18e04c816292a1196a0364cae0768a6",
+    "evidenceState": "CURRENT_CHAT_REPRODUCED",
+    "lockfileSha256": "62a09c062b68c0c0b1388f14fd5dd32e6947b200bb364f1c7f21e27cc36ea97b",
+    "treeSha256": "01a591623699e9f6ca6744bb8f8dfbf28a0308aad9e88ee4c5eccab93e635666",
+    "concurrentBaselineRuns": 2,
+    "concurrentBaselineResult": "PASS_IDENTICAL_OUTPUT"
+  },
+  "restoreScope": "Restore exact v1.7.65 and preserve suppression, current portal authority, owner-action receipts and closed gates. Rollback is not deployment or live acceptance.",
+  "launchState": "NO_GO"
+}

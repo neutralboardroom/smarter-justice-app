@@ -1,0 +1,24 @@
+{
+  "releaseVersion": "1.7.56",
+  "generatedAt": "2026-07-30",
+  "decisions": [
+    {
+      "idea": "Conflict-detecting current four-portal receipt",
+      "problem": "Owner-recorded portal identities were duplicated across several current Control Center surfaces and could drift between releases.",
+      "user": "Roger and future release operators",
+      "evidence": "v1.7.55 was current for Smarter Justice while Estate, Personal Injury and Domestic Violence had newer authoritative artifacts in their dedicated build contexts.",
+      "expectedBenefit": "One deterministic validation exposes any version, filename, hash, size or evidence-state disagreement before release.",
+      "decision": "IMPLEMENT",
+      "acceptanceTest": "The new currentness module validates all four portal identities across the current truth, artifact registry, evidence-state register, release snapshot and operating-system seed."
+    },
+    {
+      "idea": "Restyle or expand the public Attorney Partner Tour",
+      "problem": "No material public presentation defect was found.",
+      "user": "attorneys and Roger",
+      "evidence": "The complete baseline passed and the high-value public route hashes remain unchanged.",
+      "expectedBenefit": "None sufficient to justify visual churn.",
+      "decision": "REJECT",
+      "reason": "No changes for the sake of changes."
+    }
+  ]
+}

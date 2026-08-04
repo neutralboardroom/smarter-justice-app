@@ -1,0 +1,41 @@
+{
+  "schema": "smarter-justice-final-artifact-acceptance",
+  "releaseVersion": "1.7.66",
+  "generatedAt": "2026-08-01T01:05:00-04:00",
+  "status": "PRESEAL_SOURCE_ACCEPTED_IMMUTABLE_FINAL_IDENTITY_DETACHED",
+  "identityMode": "NON_SELF_REFERENTIAL_PRESEAL_ACCEPTANCE_PLUS_DETACHED_FINAL_DELIVERY_RECEIPT",
+  "detachedFinalArchiveRequired": true,
+  "presealAcceptance": {
+    "sha256": "adcbe90f76774467a7303f23631945374d4f1702bce989e3111e327452935589",
+    "sizeBytes": 6025124,
+    "entries": 2027,
+    "files": 2009,
+    "directories": 18,
+    "uncompressedBytes": 17418657,
+    "compressedBytes": 5724742,
+    "inventoryRecords": 2008,
+    "inventorySha256": "2c29aacd154aacb3098c8777a172e75d6c3235b58b0baf36bc9aca970e2a9215",
+    "deterministicBuilds": 2,
+    "freshExtractions": 2,
+    "commandsPerExtraction": 120,
+    "testLogSha256": "309d2fb31d76665877edaf515d44adbe697665b6c61161fe5d935bb90613e068",
+    "identicalOutput": true,
+    "crc": "PASS",
+    "safePaths": "PASS",
+    "sourceEquality": "PASS"
+  },
+  "finalAcceptanceRequirements": {
+    "deterministicBuilds": 2,
+    "freshExtractions": 2,
+    "commandsPerExtraction": 120,
+    "crc": "PASS",
+    "safePaths": "PASS",
+    "inventoryAndSourceEquality": "PASS",
+    "identicalOutputRequired": true
+  },
+  "commandsPerRun": 120,
+  "totalReadinessParts": 121,
+  "launchState": "NO_GO",
+  "deploymentAuthorized": false,
+  "selfReferenceBoundary": "The final ZIP SHA-256 and size are issued only after immutable packaging in a detached receipt."
+}

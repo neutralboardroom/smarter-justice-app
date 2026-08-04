@@ -1,0 +1,52 @@
+{
+  "schema": "smarter-justice-newest-artifact-learning",
+  "releaseVersion": "1.7.67",
+  "generatedAt": "2026-08-01T12:54:00-04:00",
+  "source": {
+    "artifact": "smarter-justice-v1.7.66.zip",
+    "filename": "smarter-justice-v1.7.66.zip",
+    "version": "1.7.66",
+    "sha256": "7f3846b38705f86ba660b70e102bdd00007e5d81027df2fbb05a136cefb516bc",
+    "sizeBytes": 6026452,
+    "entries": 2027,
+    "files": 2009,
+    "directories": 18,
+    "uncompressedBytes": 17422574,
+    "compressedBytes": 5726070,
+    "inventoryRecords": 2008,
+    "inventorySha256": "d8011921ba219d0025da1eda07f508e14ba2be02f3430decc427fa168589c792",
+    "packageJsonSha256": "5d7ce8cf952db26210c7e94b3661344344d1b9194f54a7e8a98853345f287842",
+    "packageLockSha256": "c34e4ec2994716d2767fb7a6c29a1a1784b026314c0d7e11bd960f78f96a836c",
+    "lockfileSha256": "c34e4ec2994716d2767fb7a6c29a1a1784b026314c0d7e11bd960f78f96a836c",
+    "sbomSha256": "ee19051aa4d32415fc5ae538b53fe48ee900753076fbc3ddbc0569dfa1e86234",
+    "treeSha256": "d8011921ba219d0025da1eda07f508e14ba2be02f3430decc427fa168589c792",
+    "dependencyIndependentParts": 120,
+    "totalReadinessParts": 121,
+    "testLogSha256": "309d2fb31d76665877edaf515d44adbe697665b6c61161fe5d935bb90613e068",
+    "evidenceState": "CURRENT_CHAT_REPRODUCED",
+    "concurrentBaselineRuns": 2,
+    "concurrentBaselineResult": "PASS_IDENTICAL_OUTPUT"
+  },
+  "positiveLearning": [
+    "version-neutral portal authority",
+    "binding monthly $15 commercial manifest",
+    "one payer per seat",
+    "public freemium floor",
+    "Matter Path deterministic fallback",
+    "closed-gate truth",
+    "parallel-safe exact-extraction tests"
+  ],
+  "gapsImplemented": [
+    "coordinated prompt pack authority and no-churn controls",
+    "DUR-001 through DUR-074 baseline and coverage",
+    "central OCA professional identity and evidence registry contracts",
+    "targeted directory recheck and state-separation gates",
+    "portal candidate packet and receipt loop",
+    "business-contact privacy and good-standing/discipline truth",
+    "exact-final continuation matching and staleness invalidation"
+  ],
+  "portalLearningBoundary": "Owner/handoff-recorded metadata only; no current-chat portal ZIP inspection, D4, D5, deployment or live acceptance claimed.",
+  "launchState": "NO_GO",
+  "activeMasterPairReceipt": "MPCR-2026-07-31-E1-R0-05F4296ED378",
+  "currentPackId": "SJP-2026-08-01-C13-P35-V11"
+}

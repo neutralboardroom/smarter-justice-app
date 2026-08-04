@@ -1,0 +1,59 @@
+{
+  "schema": "smarter-justice-newest-artifact-learning-applied",
+  "schemaVersion": "1.0.0",
+  "releaseVersion": "1.7.60",
+  "generatedAt": "2026-07-31T16:19:00-04:00",
+  "source": {
+    "product": "Smarter Justice",
+    "artifact": "smarter-justice-v1.7.59.zip",
+    "version": "1.7.59",
+    "sha256": "f08909fbf879e9005d47b7361f089decc946d78c21c6118471b4be1fb77f9bb0",
+    "evidenceState": "CURRENT_CHAT_REPRODUCED"
+  },
+  "revalidation": [
+    {
+      "learning": "reusable master command integrity and no-loss traceability",
+      "state": "REVALIDATED AND IMPROVED",
+      "targetDisposition": "ADOPT AS VERIFIED"
+    },
+    {
+      "learning": "capability-specific launch tiers and path-scoped maturity",
+      "state": "REVALIDATED UNCHANGED",
+      "targetDisposition": "ADOPT AS VERIFIED"
+    },
+    {
+      "learning": "active owner action queue with no-secret requests",
+      "state": "REVALIDATED AND IMPROVED",
+      "targetDisposition": "ADOPT AS VERIFIED"
+    },
+    {
+      "learning": "central account/Stripe/subscription nonduplication",
+      "state": "REVALIDATED UNCHANGED",
+      "targetDisposition": "ADOPT AS VERIFIED"
+    },
+    {
+      "learning": "Matter Path deterministic fallback and external-AI boundary",
+      "state": "REVALIDATED UNCHANGED",
+      "targetDisposition": "ADOPT AS VERIFIED"
+    },
+    {
+      "learning": "exact current portal authority remains owner-recorded until portal inspection",
+      "state": "REVALIDATED AND IMPROVED",
+      "targetDisposition": "ADAPT FOR SMARTER JUSTICE"
+    }
+  ],
+  "negativeLearning": [
+    "Do not treat a received owner confirmation as verified acceptance.",
+    "Do not let a reusable prompt keep v1.7.58 as the current implementation learning after a newer exact artifact exists.",
+    "Do not copy D4, deployment or live acceptance across portal versions or integration boundaries."
+  ],
+  "targetImplementations": [
+    "OWNER_ACTION_READINESS_V1.7.60.json",
+    "INITIAL_PORTAL_AUTHORITY_V1.7.60.json",
+    "LAUNCH_CAPABILITY_MATRIX_V1.7.60.json",
+    "CONTINUATION_PROMPT_V1.7.60.md",
+    "tests/reusable-master-governance-v1760.test.js"
+  ],
+  "propagationEligibility": "TARGET_ACCEPTANCE_PENDING_EXACT_FINAL_ARTIFACT",
+  "rollback": "smarter-justice-v1.7.59.zip"
+}

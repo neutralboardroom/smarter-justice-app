@@ -1,0 +1,101 @@
+{
+  "version": "1.7.29",
+  "date": "2026-07-24",
+  "program": "Phase One six-region professional-profile program",
+  "leadRegion": "Brooklyn",
+  "nextLeadRegion": "Manhattan",
+  "target": {
+    "newIndividualProfessionals": 36,
+    "newFirms": 1,
+    "newProfessionalFirmLinks": 36,
+    "minimumRegionsWorked": 3
+  },
+  "candidateReview": {
+    "reviewed": 44,
+    "qualified": 36,
+    "duplicates": 5,
+    "deferred": 3,
+    "approximateYieldPercent": 82
+  },
+  "additions": {
+    "individualProfessionals": 36,
+    "firms": 1,
+    "professionalFirmLinks": 36,
+    "regions": [
+      {
+        "region": "Brooklyn",
+        "county": "Kings County",
+        "professionals": 12,
+        "firms": 0,
+        "primarySource": "Abrams Fensterman Brooklyn office and attorney pages",
+        "sourceUrls": [
+          "https://www.abramslaw.com/offices/brooklyn/",
+          "https://www.abramslaw.com/attorneys/",
+          "https://www.abramslaw.com/practice-areas/insurance-defense/"
+        ]
+      },
+      {
+        "region": "Northern Metro New Jersey",
+        "county": "Passaic County",
+        "professionals": 12,
+        "firms": 0,
+        "primarySource": "Scarinci Hollenbeck Little Falls office, attorney, and practice pages",
+        "sourceUrls": [
+          "https://scarincihollenbeck.com/location/little-falls",
+          "https://scarincihollenbeck.com/attorneys",
+          "https://scarincihollenbeck.com/practices/public-law",
+          "https://scarincihollenbeck.com/practices/education-law",
+          "https://scarincihollenbeck.com/practices/public-employment-law"
+        ]
+      },
+      {
+        "region": "NYC-connected Connecticut",
+        "county": "Fairfield County",
+        "professionals": 12,
+        "firms": 1,
+        "primarySource": "Cohen and Wolf office, attorney, and practice pages",
+        "sourceUrls": [
+          "https://www.cohenandwolf.com/offices",
+          "https://www.cohenandwolf.com/team-attorneys",
+          "https://www.cohenandwolf.com/practices-litigation-dispute-resolution",
+          "https://www.cohenandwolf.com/practices-criminal-defense"
+        ]
+      }
+    ]
+  },
+  "directoryBefore": {
+    "professionals": 125,
+    "firms": 34,
+    "publicTotal": 159,
+    "strictQualifyingTotal": 156
+  },
+  "directoryAfter": {
+    "professionals": 161,
+    "firms": 35,
+    "publicTotal": 196,
+    "strictQualifyingProfessionals": 160,
+    "strictQualifyingFirms": 33,
+    "strictQualifyingTotal": 193
+  },
+  "statusBoundaries": {
+    "claimStatus": "not claimed",
+    "verificationStatus": "not started",
+    "participation": false,
+    "membership": false,
+    "sponsorship": false,
+    "availability": "not configured",
+    "inquiryEligibility": false,
+    "independentCredentialVerification": false,
+    "paidOrganicOrdering": false
+  },
+  "sourcePolicy": [
+    "Professional-controlled pages are labeled self-reported public sources, not independent credential verification.",
+    "No copied headshots, testimonials, rankings, awards, case results, verdicts, outcome claims, or promotional superlatives.",
+    "Every record has source URLs, review date, correction/removal path, claim readiness, structured geography, practice evidence, and a public contact route."
+  ],
+  "limitations": [
+    "Three candidates were deferred because public material did not support a sufficiently specific individual-level practice summary.",
+    "Five candidates were excluded as inherited duplicates.",
+    "Independent credential and firm-authority review remains required before verification or profile control."
+  ]
+}

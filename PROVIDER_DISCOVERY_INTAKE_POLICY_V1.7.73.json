@@ -1,0 +1,49 @@
+{
+  "schema": "smarter-justice-provider-discovery-intake-policy",
+  "releaseVersion": "1.7.73",
+  "generatedAt": "2026-08-02T17:04:00-04:00",
+  "authorizationWindowHours": 8,
+  "requestMustBeAuthorizedState": "AUTHORIZED_READ_ONLY",
+  "receiptObservationScope": "OWNER_AUTHORIZED_READ_ONLY_DISCOVERY",
+  "requiredReceiptExtensions": [
+    "authorization_request_id",
+    "authorization_request_digest"
+  ],
+  "exactIdentityMustMatch": [
+    "product.id",
+    "product.version",
+    "product.artifact_name",
+    "product.artifact_sha256",
+    "product.artifact_size_bytes"
+  ],
+  "invalidationTriggers": [
+    "ARTIFACT_FILENAME_CHANGE",
+    "ARTIFACT_VERSION_CHANGE",
+    "ARTIFACT_SHA256_CHANGE",
+    "ARTIFACT_SIZE_CHANGE",
+    "AUTHORIZATION_REQUEST_DIGEST_CHANGE",
+    "AUTHORIZATION_SCOPE_CHANGE",
+    "AUTHORIZATION_EXPIRED",
+    "AUTHORIZATION_REVOKED",
+    "RECEIPT_OBSERVED_BEFORE_AUTHORIZATION",
+    "RECEIPT_OBSERVED_AFTER_EXPIRATION",
+    "SECRET_VALUE_INCLUDED",
+    "WRITE_OR_DEPLOYMENT_ACTION_REQUESTED",
+    "PRODUCT_ID_MISMATCH",
+    "DUPLICATE_RECEIPT_FOR_PRODUCT",
+    "PROVIDER_IDENTIFIER_CHANGE",
+    "DOMAIN_OR_DNS_OR_TLS_CHANGE",
+    "ROLLBACK_BINDING_CHANGE"
+  ],
+  "receiptAcceptanceDoesNot": [
+    "freeze the cohort",
+    "select or authorize a canary",
+    "authorize deployment",
+    "request production",
+    "infer a missing product receipt",
+    "block an unrelated product"
+  ],
+  "secretValuesIncluded": false,
+  "deploymentAuthorized": false,
+  "productionRequestSent": false
+}

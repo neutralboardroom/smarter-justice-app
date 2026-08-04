@@ -1,0 +1,17 @@
+{
+  "schema": "smarter-justice-continuation-staleness-invalidation-receipt",
+  "schemaVersion": "1.0.0",
+  "releaseVersion": "1.7.75",
+  "generatedAt": "2026-08-02T17:04:00-04:00",
+  "supersededContinuation": "CONTINUATION_PROMPT_V1.7.66.md",
+  "currentContinuation": "CONTINUATION_PROMPT_V1.7.75.md",
+  "invalidationTriggers": [
+    "MATERIAL_SOURCE_CHANGE",
+    "ARTIFACT_CHANGE",
+    "PACK_CHANGE",
+    "TEST_COUNT_CHANGE",
+    "GATE_CHANGE",
+    "OWNER_ACTION_CHANGE"
+  ],
+  "state": "PRIOR_CONTINUATION_HISTORICAL_CURRENT_CONTINUATION_PENDING_EXACT_FINAL_DELIVERY"
+}

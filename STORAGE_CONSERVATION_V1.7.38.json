@@ -1,0 +1,22 @@
+{
+  "version": "1.7.38",
+  "date": "2026-07-27",
+  "removedFileCount": 0,
+  "removedUncompressedBytes": 0,
+  "addedMaterial": [
+    "launch command center and three-lane gate model",
+    "public launch-status surface",
+    "48-hour runbook and environment contract",
+    "production preflight script",
+    "94th regression test",
+    "current release evidence"
+  ],
+  "retainedReason": "Historical release evidence remains intentionally preserved; no inherited file could be removed safely without risking audit or rollback context.",
+  "packagingRules": [
+    "exclude node_modules",
+    "exclude credentials and secret environment files",
+    "exclude runtime logs and database data",
+    "exclude test-only compatibility modules",
+    "include one self-excluding inventory"
+  ]
+}

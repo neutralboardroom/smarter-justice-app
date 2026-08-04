@@ -1,0 +1,132 @@
+{
+  "schema": "smarter-justice-generated-evidence-reproducibility-manifest",
+  "schemaVersion": "1.0.0",
+  "releaseVersion": "1.7.64",
+  "generatedAt": "2026-07-31T23:59:45-04:00",
+  "allowedClasses": [
+    "BYTE-DETERMINISTIC",
+    "CANONICALLY EQUIVALENT",
+    "SEMANTICALLY BOUNDED STOCHASTIC",
+    "EXTERNAL-STATE DEPENDENT",
+    "HUMAN-JUDGMENT DEPENDENT",
+    "NOT ACCEPTABLE AS SOLE EVIDENCE"
+  ],
+  "stateChangingIdempotencySeparatedFromEvidenceRepeatability": true,
+  "rerunUntilPassProhibited": true,
+  "generators": [
+    {
+      "generatorId": "GEN-NPM-TEST",
+      "name": "Complete dependency-independent test chain",
+      "repeatabilityClass": "BYTE-DETERMINISTIC",
+      "command": "npm test",
+      "inputBoundary": {
+        "sourceArtifact": "smarter-justice-v1.7.63.zip",
+        "runtime": "Node v22.16.0",
+        "timezone": "America/New_York",
+        "parallelTrees": 2
+      },
+      "comparison": "complete stdout/stderr byte hash",
+      "requiredRuns": 2,
+      "acceptanceInvariant": "exit 0 and identical output hash",
+      "state": "PASS_IDENTICAL_INDEPENDENT_FROZEN_SOURCE_TREES",
+      "observedOutputSha256": "541a63c6191ddf9a339d0069a355ca2fd6e0297f484d1f7c7e9cf39274a9e2ba",
+      "observedRuns": 2
+    },
+    {
+      "generatorId": "GEN-SBOM",
+      "name": "SPDX SBOM generator",
+      "repeatabilityClass": "BYTE-DETERMINISTIC",
+      "command": "node scripts/generate-sbom.js",
+      "inputBoundary": {
+        "packageJson": "package.json",
+        "lockfile": "package-lock.json",
+        "createdAtRule": "portal-manifest lastExactArtifactTestDate at 00:00:00Z"
+      },
+      "comparison": "SHA-256",
+      "requiredRuns": 2,
+      "state": "PASS_IDENTICAL",
+      "observedOutputSha256": "ef4fa5d7fa61123ad5c09d73db85e506abb0f45d8d4d4e4173462afe3cbce7b0",
+      "observedRuns": 2
+    },
+    {
+      "generatorId": "GEN-INVENTORY",
+      "name": "Self-excluding file inventory",
+      "repeatabilityClass": "BYTE-DETERMINISTIC",
+      "command": "release inventory generator",
+      "inputBoundary": {
+        "tree": "frozen source excluding FILE_INVENTORY_SHA256.txt"
+      },
+      "comparison": "record bytes and SHA-256",
+      "requiredRuns": 2,
+      "state": "PASS_PRESEAL_IDENTICAL_FINAL_REGENERATION_PENDING",
+      "observedRuns": 2,
+      "candidateOutputSha256": "58ea8a4b7ca45bc4cb47a0508e9ee91f81c813d0627d0d8b7fca260b81868681",
+      "presealOutputSha256": "2b092e1b599abd0c57c2c6a737c4b2901c1f288566dc5698f5df523382b3f0cf"
+    },
+    {
+      "generatorId": "GEN-ZIP",
+      "name": "Deterministic release ZIP",
+      "repeatabilityClass": "BYTE-DETERMINISTIC",
+      "command": "deterministic ZIP builder",
+      "inputBoundary": {
+        "frozenTree": "1.7.64",
+        "timestamp": "fixed release timestamp",
+        "ordering": "UTF-8 path sort",
+        "compression": "deflate level 9"
+      },
+      "comparison": "archive SHA-256 and bytes",
+      "requiredRuns": 2,
+      "state": "PRESEAL_PASS_BYTE_IDENTICAL_IMMUTABLE_FINAL_PENDING",
+      "observedBuilds": 2,
+      "candidateSha256": "a53ae49531d628fc230621dbfd5116c724f7045a4652d685f3e4abc97408550e",
+      "candidateSizeBytes": 5789832,
+      "presealSha256": "2ab452c7e6f31a2613be5a000de717bf6c381b2480822c00553ee582e57aea37",
+      "presealSizeBytes": 5790507,
+      "presealBuilds": 2,
+      "presealFreshExtractions": 2
+    },
+    {
+      "generatorId": "GEN-RESEARCH",
+      "name": "Current internet research record",
+      "repeatabilityClass": "EXTERNAL-STATE DEPENDENT",
+      "command": "current targeted web research",
+      "inputBoundary": {
+        "retrievalDate": "2026-07-31",
+        "sources": "identified URLs and official/product pages"
+      },
+      "comparison": "source identifiers, retrieval dates, claims and target dispositions",
+      "requiredRuns": 1,
+      "state": "CURRENT_RESEARCH_BOUND_TO_DATE"
+    },
+    {
+      "generatorId": "GEN-VISUAL-HUMAN",
+      "name": "First-seconds and visual-system human acceptance",
+      "repeatabilityClass": "HUMAN-JUDGMENT DEPENDENT",
+      "command": "structured human review",
+      "inputBoundary": {
+        "routes": [
+          "/",
+          "/pricing.html",
+          "/attorney-partner-tour.html"
+        ],
+        "criteria": "first seconds, hierarchy, controls, responsive and accessibility foundations"
+      },
+      "comparison": "reviewer criteria and receipt",
+      "requiredRuns": 1,
+      "state": "SOURCE_LEVEL_STRUCTURED_REVIEW_COMPLETE_REAL_DEVICE_GATE_OPEN"
+    },
+    {
+      "generatorId": "GEN-AI-OUTPUT",
+      "name": "AI-assisted research or drafting output",
+      "repeatabilityClass": "NOT ACCEPTABLE AS SOLE EVIDENCE",
+      "command": "AI-assisted workflow when used",
+      "inputBoundary": {
+        "instructionsDataSeparated": true,
+        "sourceVerificationRequired": true
+      },
+      "comparison": "structured invariants plus independent source or human verification",
+      "requiredRuns": 2,
+      "state": "ASSISTIVE_ONLY"
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "schema": "smarter-justice-launch-capability-matrix",
+  "schemaVersion": "1.0.0",
+  "releaseVersion": "1.7.59",
+  "generatedAt": "2026-07-31T15:53:00-04:00",
+  "overallState": "NO_GO",
+  "tiers": [
+    {
+      "tier": "A",
+      "scope": "Public information, device-local tools, directory, attorney demonstration, support, hosting and rollback",
+      "state": "LOCALLY ACCEPTED — exact package and named local environment only",
+      "evidence": [
+        "112-command v1.7.58 baseline reproduced twice",
+        "public surfaces preserved by hash",
+        "v1.7.59 source suite required before final acceptance"
+      ],
+      "blockers": [
+        "real-device and assistive-technology acceptance",
+        "QR/print/domain routing",
+        "production hosting/TLS/monitoring",
+        "owner live-operation receipt"
+      ]
+    },
+    {
+      "tier": "B",
+      "scope": "Professional account, claim, verification, firm/office/seat authority, management, support, suppression and portal D4 staging",
+      "state": "D4 STAGING PREPARATION",
+      "evidence": [
+        "central lifecycle foundations locally tested",
+        "canonical four-portal authority current"
+      ],
+      "blockers": [
+        "exact paired portal artifacts",
+        "named staging",
+        "real auth/email/database",
+        "path-scoped D4 acceptance"
+      ]
+    },
+    {
+      "tier": "C",
+      "scope": "Owner-approved paid professional membership pilot",
+      "state": "OWNER ACTION PREPARATION",
+      "evidence": [
+        "central single-account/Stripe/subscription/entitlement model documented",
+        "billing gate remains closed"
+      ],
+      "blockers": [
+        "exact pricing and terms",
+        "Stripe sandbox",
+        "signed webhooks",
+        "reconciliation/refunds/chargebacks",
+        "legal and owner approval"
+      ]
+    },
+    {
+      "tier": "D",
+      "scope": "Professional opportunities, review requests, leads or referrals",
+      "state": "BLOCKED",
+      "evidence": [
+        "neutral eligibility and consent/conflict foundations exist",
+        "delivery remains zero and closed"
+      ],
+      "blockers": [
+        "Tier C threshold where required",
+        "eligibility/capacity/fairness acceptance",
+        "support and complaints",
+        "owner approval"
+      ]
+    },
+    {
+      "tier": "E",
+      "scope": "Sensitive documents, server storage, OCR, external AI, e-signature or filing",
+      "state": "BLOCKED",
+      "evidence": [
+        "device-local tools and deterministic fallback remain available",
+        "external AI and confidential upload gates remain closed"
+      ],
+      "blockers": [
+        "secure storage/scanning",
+        "provider/privacy/legal review",
+        "human review",
+        "incident/deletion/rollback acceptance",
+        "owner approval"
+      ]
+    }
+  ],
+  "deployment": {
+    "authorized": false,
+    "state": "NOT_DEPLOYED",
+    "lastVerifiedProduction": "1.6.1"
+  },
+  "livePortalConnections": 0,
+  "automaticPortalWrites": 0
+}

@@ -1,0 +1,85 @@
+{
+  "schema": "smarter-justice-openai-launch-owner-receipt",
+  "releaseVersion": "1.7.82",
+  "generatedAt": "2026-08-03T12:19:00-04:00",
+  "launchBatchId": "SJP-OPENAI-LIVE-2026-08-03-BATCH-02",
+  "status": "NO_GO",
+  "productAndVersion": "Smarter Justice central v1.7.82",
+  "artifactSha256": "DETACHED_FINAL_REPORTED_AFTER_PACKAGING",
+  "repository": null,
+  "commit": null,
+  "deployment": null,
+  "canonicalUrl": null,
+  "productPlatformAiImprovements": [
+    "OpenAI-only central registered-tool gateway",
+    "Five-product capability matrix",
+    "Owner AI Operations view",
+    "User transparency and deterministic non-AI fallback"
+  ],
+  "builderPromptSystemImprovements": [
+    "Overlay identity checkpoint",
+    "OpenAI-only governance validator",
+    "Mock/synthetic injection, privacy, cost, feature-flag and degraded-mode tests"
+  ],
+  "productAwareRole": "SMARTER_JUSTICE_CENTRAL",
+  "vendorState": "OPENAI_ONLY_DISABLED_DARK",
+  "gatewayContract": {
+    "version": "sj-ai-gateway-v1.0.0",
+    "record": "AI_GATEWAY_CONTRACT_V1.7.82.json"
+  },
+  "modelConfiguration": {
+    "record": "AI_MODEL_CONFIGURATION_V1.7.82.json",
+    "state": "MOCK_AND_SYNTHETIC_ACCEPTED_LIVE_SMOKE_PENDING"
+  },
+  "promptToolRegistry": "AI_TOOL_AND_PROMPT_REGISTRY_V1.7.82.json",
+  "sourceGroundingState": "REGISTERED_TOOL_SOURCE_CONTRACTS_DEFINED_LIVE_SOURCE_CURRENTNESS_NOT_PROVEN",
+  "privacyDataMinimization": "STRUCTURED_MINIMAL_FIELDS_STORE_FALSE_METADATA_ONLY_LOGS",
+  "sensitiveDocumentDomesticViolenceRestrictions": "DOCUMENT_AI_CLOSED_BY_DESIGN; DOMESTIC_VIOLENCE_TOOL_CLOSED_BY_DESIGN",
+  "keyLocationState": "OPENAI_API_KEY expected only in protected central service secret store; key absent and never embedded",
+  "noKeyInPortalEvidence": "Central contract and tests prohibit portal/browser/repository keys; exact portal artifact receipts remain pending",
+  "rateLimitsHardStopState": "APPLICATION_LIMITS_AND_HARD_STOP_IMPLEMENTED_DEFAULT_CLOSED",
+  "featureFlagsKillSwitch": "GLOBAL_PORTAL_TOOL_FLAGS_AND_KILL_SWITCH_IMPLEMENTED_DEFAULT_DISABLED",
+  "evaluationResults": {
+    "dependencyIndependentCommands": 135,
+    "workingTreeRuns": 2,
+    "testLogSha256": "da346ac79ed36e791091d0f6dcf355620d5e3ee875b58945475554a1a035cd58",
+    "liveSmokePassed": false
+  },
+  "controlledLiveSmokeEvidence": "NOT_RUN_NO_KEY_NO_DEPLOYMENT",
+  "deterministicFallbackState": "IMPLEMENTED",
+  "degradedModeState": "IMPLEMENTED_DEFAULT_NON_AI_CONTINUES",
+  "monitoringStabilizationState": "METADATA_ONLY_OPERATIONS_VIEW_IMPLEMENTED; LIVE_STABILIZATION_NOT_STARTED",
+  "portalCompatibilityReceipts": [],
+  "exactBlockers": [
+    "Protected OpenAI project/service-account key absent",
+    "Central service not deployed dark from exact artifact",
+    "Controlled live central smoke not run",
+    "Four portal adapters and exact compatibility receipts absent",
+    "Stabilization not started"
+  ],
+  "oneExactOwnerAction": "Connect or identify the exact canonical GitHub repository and approved Smarter Justice Render service before protected key entry.",
+  "rollback": "smarter-justice-v1.7.78.zip sha256 1c09bc5fa955e6ae81db6c027ae6424ac8d60324ef4de1b875b1009dc4a1f634",
+  "nextAiAndNonAiOpportunities": [
+    "Controlled live gateway smoke after protected key setup",
+    "Estate Law Aid exact canary adapter and compatibility receipt",
+    "GitHub-to-Render dark AI release automation",
+    "Continue non-AI launch readiness and profile operations independently"
+  ],
+  "successorOverlayCheckpoint": "OPENAI_LAUNCH_OVERLAY_CHECKPOINT_V1.7.82.json; prior v1.7.77 V12 work preserved",
+  "fiveProductCapabilityMatrix": "FIVE_PRODUCT_AI_CAPABILITY_MATRIX_V1.7.82.json",
+  "perToolMaturityFeatureFlags": "TESTED_OR_CLOSED_BY_DESIGN; ALL PUBLIC FLAGS DISABLED",
+  "userTransparencyNonAiChoice": "Tool-specific disclosure and non-AI path implemented",
+  "promptInjectionExfiltrationEvaluation": "DIRECT_INDIRECT_ENCODED_AND_SECRET_EXTRACTION_SYNTHETIC_TESTS_IMPLEMENTED",
+  "portalAccountDataIsolation": "SERVER_IDENTITY_REGISTERED_TOOL_AND_PER_PORTAL_POLICY_REQUIRED; LIVE CREDENTIAL EVIDENCE PENDING",
+  "keyLifecycleIncidentReadiness": "MASKED LIFECYCLE AND ROTATION REQUIREMENTS DEFINED; NO KEY EXISTS",
+  "githubRenderAutomatedAiReleaseState": "NOT_LIVE; VERSIONED ARTIFACTS AND DARK-DEFAULT CONTROLS PREPARED",
+  "changeControlState": "MODEL_PROMPT_SCHEMA_SOURCE IDENTITIES VERSIONED; LIVE COMPARISON PENDING",
+  "centralAiOperationsCenterState": "PROTECTED READ-ONLY VIEW IMPLEMENTED; LIVE METRICS ABSENT",
+  "exactOwnerWorkloadRemaining": "One protected key entry after dark deployment, followed by automatic verification; deployment access and portal compatibility work remain separate.",
+  "acceptedCandidate": {
+    "filename": "smarter-justice-v1.7.82-candidate-a.zip",
+    "sha256": null,
+    "sizeBytes": null,
+    "state": "CANDIDATE_NOT_YET_BUILT"
+  }
+}

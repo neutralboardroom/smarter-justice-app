@@ -1,0 +1,63 @@
+{
+  "schema_id": "SJP-LMP-CONTINUOUS-SELF-IMPROVEMENT-AND-INNOVATION-PLAN-2026-08-03-V1",
+  "product": {
+    "name": "Smarter Justice",
+    "starting_version": "1.7.77",
+    "starting_artifact_sha256": "0df3fc34a27eccbd0f209d5479106d8f491549361e18d075b107ed87553b1ccf",
+    "target_version": "1.7.78"
+  },
+  "core_owner_mission_sha256": "1e4efe3dd80a4c3ed6d03aabd1414c60fb91d747b463405c52bf8a0902556d0b",
+  "governing_packet": {
+    "id": "SJP-LMP-UNIVERSAL-ONE-STEP-2026-08-03-V12-CONTINUOUS-SELF-IMPROVEMENT",
+    "sha256": "37d90cab818b71613c388bf195b08d129eb569dd183de5358f32dd335975a1d5"
+  },
+  "independent_opportunity_discovery": {
+    "exact_artifact_findings": [
+      "The active AI helper was a direct multi-vendor client with alternate vendor secrets and a browser-adjacent public workflow instead of the required central registered-tool gateway.",
+      "No exact machine-readable five-product AI maturity matrix, model configuration, tool/prompt registry, or owner AI Operations receipt existed."
+    ],
+    "public_user_journey_findings": [
+      "Optional AI choice lacked the full tool-specific no-attorney-client-relationship, no-privilege, requested-fields-only, review-and-correct, provider-retention, and non-AI fallback disclosure required by the successor overlay."
+    ],
+    "professional_staff_owner_findings": [
+      "Roger had no single protected view of key presence, kill-switch state, model/contract identity, five-product capability state, live-smoke blocker, or one exact owner action."
+    ],
+    "builder_prompt_system_findings": [
+      "The release gate did not verify OpenAI-only active configuration, overlay identity, registered-tool-only routing, prompt-injection isolation, no-content logging, or the detached live-smoke boundary."
+    ]
+  },
+  "creative_new_capability_candidates": [
+    "One OpenAI-only central registered-tool gateway with server-derived portal identity and strict structured output.",
+    "A five-product AI capability matrix and owner AI Operations view that remain truthful while dark.",
+    "An overlay-specific governance validator that rejects reintroduction of alternate vendors or arbitrary prompts."
+  ],
+  "product_platform_track": {
+    "selected": [
+      "OpenAI-only central gateway",
+      "Five-product capability matrix",
+      "Tool-specific user transparency",
+      "Deterministic fallback and dark launch controls"
+    ],
+    "deferred": [
+      "Live OpenAI smoke, key creation, billing, deployment and portal adapters require protected owner/provider/environment actions."
+    ]
+  },
+  "builder_prompt_system_track": {
+    "selected": [
+      "Exact overlay checkpoint",
+      "Machine-readable gateway/model/tool registries",
+      "OpenAI launch governance validator",
+      "Mock and synthetic evaluation tests"
+    ],
+    "deferred": [
+      "Automated GitHub-to-Render release activation requires repository and deployment authority not present in this workspace."
+    ]
+  },
+  "protected_owner_decisions_required": [
+    "Create or select the approved OpenAI production project and service-account key.",
+    "Enter the key only into the protected Smarter Justice central Render secret field.",
+    "Authorize deployment and controlled live smoke only after nonsecret gates pass."
+  ],
+  "strongest_justified_set_selected": true,
+  "hard_constraints_preserved": true
+}

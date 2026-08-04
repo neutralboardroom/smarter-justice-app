@@ -1,0 +1,14 @@
+{
+  "schema": "smarter-justice-external-master-authority-pointer",
+  "releaseVersion": "1.7.69",
+  "verifiedAt": "2026-08-02T12:16:00-04:00",
+  "filename": "Smarter_Justice_Central_Master_Fifteenth_Pass_Sunday_Launch_Day_Deployment_Orchestration_2026-08-02.txt",
+  "sha256": "5dad361bae18b25dc8193ce32ca4263a72b12ce90316d6b97dbd191ce2b74223",
+  "sizeBytes": 383921,
+  "lineCount": 8204,
+  "availability": "COMPLETE_FILE_LIBRARY_SOURCE_RESOLVED",
+  "packagedBytes": false,
+  "reason": "The exact central master was resolved from the owner File Library; the current-chat uploaded set did not include its bytes. This pointer does not claim embedded-byte equality.",
+  "authorityState": "EXACT_EXTERNAL_AUTHORITY_VERIFIED_FOR_BUILD",
+  "productImplementationEffect": "SCOPED_V1.7.69_ONLY"
+}

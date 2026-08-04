@@ -1,0 +1,55 @@
+{
+  "releaseVersion": "1.7.54",
+  "generatedAt": "2026-07-30",
+  "status": "CANDIDATE_ACCEPTED_FINAL_ARCHIVE_PENDING",
+  "identityBoundary": "The final ZIP SHA-256 and size are detached because an archive cannot contain its own final hash.",
+  "exactSource": {
+    "artifact": "smarter-justice-v1.7.53.zip",
+    "sha256": "f6c881faf1f72de44d062b15d3d7701574663a2b22a9d9273a6930580a359cac",
+    "sizeBytes": 4570546,
+    "accepted": true
+  },
+  "sourceSuite": {
+    "parts": 108,
+    "runs": 2,
+    "result": "PASS",
+    "evidence": "AUTOMATED_TEST_EVIDENCE_V1.7.54.json"
+  },
+  "totalReadinessParts": 109,
+  "postgresqlPart": "BLOCKED_NOT_ACCEPTED",
+  "evidenceFiles": [
+    "BASELINE_RECORD_V1.7.54.md",
+    "BASELINE_AND_PORTFOLIO_TRUTH_RECONCILIATION_V1.7.54.json",
+    "RELEASE_SCOPE_RECORD_V1.7.54.json",
+    "AUDIT_REPORT_V1.7.54.md",
+    "CHANGE_MAP_V1.7.54.md",
+    "NO_CHANGE_LEDGER_V1.7.54.md",
+    "INNOVATION_DECISION_RECORD_V1.7.54.json",
+    "PROFESSIONAL_LIFECYCLE_GOVERNANCE_ACCEPTANCE_V1.7.54.json",
+    "FIELD_OWNERSHIP_AND_PROJECTION_MATRIX_V1.7.54.json",
+    "AUTOMATED_TEST_EVIDENCE_V1.7.54.json",
+    "SUPPLY_CHAIN_DIAGNOSTIC_V1.7.54.json",
+    "RELEASE_EVIDENCE_V1.7.54.json",
+    "RELEASE_NOTES_V1.7.54.md",
+    "ROLLBACK_RECORD_V1.7.54.json",
+    "NEXT_VERSION_IMPROVEMENT_LIST.json",
+    "CONTINUATION_PROMPT_V1.7.54.md",
+    "CANDIDATE_ARTIFACT_ACCEPTANCE_V1.7.54.json"
+  ],
+  "candidateArtifactAcceptance": "PASSED_EXACT",
+  "candidateEvidenceFile": "CANDIDATE_ARTIFACT_ACCEPTANCE_V1.7.54.json",
+  "finalArtifactAcceptance": "DETACHED_DELIVERY_RECEIPT_REQUIRED",
+  "deterministicDoubleBuildRequired": true,
+  "independentFinalFreshExtractionsRequired": 2,
+  "launchState": "NO_GO",
+  "deploymentState": "NOT_DEPLOYED",
+  "releaseGateOpened": false,
+  "candidateArtifact": {
+    "sha256": "3f30b524469e1302a758f3389ce429812b5bdc8c75d979fa9784b347c7427a84",
+    "sizeBytes": 4665612,
+    "entries": 1339,
+    "files": 1321,
+    "directories": 18,
+    "inventorySha256": "fcb21e94c260f9a432bd95eac5e4fb999ace8d1910da3432e50e2f001929dbfe"
+  }
+}

@@ -1,0 +1,4 @@
+'use strict';
+const assert=require('assert');const fs=require('fs');const path=require('path');
+const html=fs.readFileSync(path.join(__dirname,'..','public','help-options.html'),'utf8');const js=fs.readFileSync(path.join(__dirname,'..','public','help-options.js'),'utf8');const tools=fs.readFileSync(path.join(__dirname,'..','public','free-tools.html'),'utf8');
+for(const term of ['Self-help','legal aid','Limited-scope','consultation','full representation','does not choose a lawyer','does not calculate a deadline'])assert(html.toLowerCase().includes(term.toLowerCase()),term);for(const term of ['No lawyer match or recommendation','No lead, upload, save, analytics, or transmission','smarter-justice-help-options.json','smarter-justice-help-options.txt'])assert(js.includes(term),term);assert(tools.includes('/help-options.html'));assert(!js.includes('fetch('));assert(!js.includes('localStorage'));console.log('help-options-navigator-v1723.test.js passed');

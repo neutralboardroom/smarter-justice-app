@@ -1,0 +1,30 @@
+{
+  "schema": "smarter-justice-newest-artifact-learning",
+  "releaseVersion": "1.7.62",
+  "generatedAt": "2026-07-31T22:24:00-04:00",
+  "source": {
+    "artifact": "smarter-justice-v1.7.61.zip",
+    "sha256": "a8ef3578f4a899e69dfe5388082ba556b6f1facb7b63e6c31f1d3e84e7ae391e",
+    "evidenceState": "CURRENT_CHAT_REPRODUCED",
+    "dependencyIndependentParts": 115,
+    "testLogSha256": "fff885cdbf303f31068fd8148cea31efc1ac3820acc1116cc23a2b36989a8675"
+  },
+  "positiveLearning": [
+    "version-neutral portal authority",
+    "binding monthly $15 commercial manifest",
+    "one payer per seat",
+    "public freemium floor",
+    "Matter Path deterministic fallback",
+    "closed-gate truth",
+    "parallel-safe exact-extraction tests"
+  ],
+  "gapsImplemented": [
+    "stable DUR-001 through DUR-041 ledger and semantic coverage",
+    "generated-evidence repeatability classes and non-idempotent outcome controls",
+    "current targeted internet research lifecycle",
+    "complete public-language and first-seconds visual acceptance",
+    "removal of unfinished visible language control"
+  ],
+  "portalLearningBoundary": "Owner/handoff-recorded metadata only; no current-chat portal ZIP inspection, D4, D5, deployment or live acceptance claimed.",
+  "launchState": "NO_GO"
+}

@@ -1,0 +1,3 @@
+# No-Change Ledger v1.7.27
+
+Preserved without unnecessary redesign: approved bright visual identity, public navigation, free starting-point and device-only tools, neutral directory ordering, profile claim/correction/removal workflows, approved professional pricing, annual savings, firm volume-discount foundation, public and professional dashboard foundations, portal and cross-sector boundaries, Smarter Ecosystem coordination, Justice Truck relationship, authentication and authorization controls, storage fail-closed behavior, and all closed sensitive, payment, review, booking, upload, routing, reporting, sharing, and filing gates.

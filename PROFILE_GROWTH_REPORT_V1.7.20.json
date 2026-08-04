@@ -1,0 +1,74 @@
+{
+  "schemaVersion": "1.0.0",
+  "project": "Smarter Justice",
+  "releaseVersion": "1.7.20",
+  "preparedDate": "2026-07-22",
+  "leadMarket": "Manhattan",
+  "nextLeadMarket": "Northern Metro New Jersey",
+  "targets": {
+    "individualProfessionals": 17,
+    "firms": 1,
+    "professionalFirmLinks": 17,
+    "markets": {
+      "Manhattan": 8,
+      "Brooklyn": 5,
+      "Northern Metro New Jersey": 4
+    }
+  },
+  "actual": {
+    "newIndividualProfessionals": 17,
+    "newFirms": 1,
+    "updatedFirms": 0,
+    "newProfessionalFirmLinks": 17,
+    "markets": {
+      "Manhattan": 8,
+      "Brooklyn": 5,
+      "Northern Metro New Jersey": 4
+    }
+  },
+  "finalDirectory": {
+    "publicProfessionals": 53,
+    "publicFirms": 22,
+    "publicTotal": 75,
+    "qualifyingProfessionals": 52,
+    "qualifyingFirms": 20,
+    "qualifyingTotal": 72
+  },
+  "marketDetails": [
+    {
+      "market": "Manhattan",
+      "county": "New York County",
+      "individualProfessionalsAdded": 8,
+      "firmsAdded": 1,
+      "firmsUpdated": 0
+    },
+    {
+      "market": "Brooklyn",
+      "county": "Kings County",
+      "individualProfessionalsAdded": 5,
+      "firmsAdded": 0,
+      "firmsUpdated": 0
+    },
+    {
+      "market": "Northern Metro New Jersey",
+      "county": "Hudson County",
+      "individualProfessionalsAdded": 4,
+      "firmsAdded": 0,
+      "firmsUpdated": 0
+    }
+  ],
+  "statusCounts": {
+    "publishedUnclaimedNewProfiles": 18,
+    "claimedNewProfiles": 0,
+    "credentialVerifiedNewProfiles": 0,
+    "inquiryEligibleNewProfiles": 0,
+    "paidNewProfiles": 0
+  },
+  "sourcePolicy": "Current professional-controlled firm and individual profile pages were used for public identity, role, business office, and conservatively summarized practice facts. Credential status remains unverified until an independent official licensing review. No testimonials, rankings, badges, case outcomes, ratings, or inferred specialties are copied.",
+  "excludedOrDeferred": [
+    "No new profile outside Manhattan, Brooklyn, or Hudson County.",
+    "Profiles without current individual-level role and practice evidence or a published business office were deferred.",
+    "Radius search remains closed until verified coordinates and distance rules exist.",
+    "Professional outreach, credential approval, claim approval, paid participation, and inquiry eligibility remain separate closed workflows."
+  ]
+}

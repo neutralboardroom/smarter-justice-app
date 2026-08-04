@@ -1,0 +1,47 @@
+{
+  "schema_id": "SJP-LMP-CROSS-VERSION-LEARNING-LEDGER-2026-08-03-V1",
+  "product": {
+    "name": "Smarter Justice",
+    "prior_version": "1.7.82",
+    "current_version": "1.7.83"
+  },
+  "prior_versions_reviewed": [
+    "1.7.81",
+    "1.7.82"
+  ],
+  "lessons": [
+    {
+      "lesson_id": "V14-1783-01",
+      "source_version_or_wave": "v1.7.82 evidence readiness planner",
+      "observation": "A prioritized gap is not yet an owner-executable evidence collection specification.",
+      "what_worked_or_failed": "Dependency ordering and one exact action worked; field-level nonsecret boundaries and checklists were absent.",
+      "root_cause_or_enabling_factor": "The planner optimized sequencing rather than collection ergonomics.",
+      "product_change_made": "Added a deterministic provider-specific first-gap evidence collection packet in JSON and text.",
+      "builder_prompt_system_change_made": "Required source/packet binding, expiry, digest, forbidden inputs, and closed boundaries in the packet contract and tests.",
+      "test_or_evidence_that_revealed_it": "V14_EVIDENCE_READINESS_PLANNER_CONTRACT_V1.7.82.json and NEXT_VERSION_IMPROVEMENT_LIST.json",
+      "future_candidate_selection_effect": "Prefer improvements that convert owner-readable gaps into one safely executable nonsecret action.",
+      "future_testing_or_recovery_effect": "Test field allowlists, secret-pattern rejection, deterministic digest, expiry, and owner-only routes."
+    },
+    {
+      "lesson_id": "V14-1783-02",
+      "source_version_or_wave": "v1.7.82 canonical segmented acceptance",
+      "observation": "A canonical command manifest does not by itself prove package identities, inventories, owner receipt, and working acceptance all describe the same source state.",
+      "what_worked_or_failed": "Per-command attribution worked; cross-receipt reconciliation still required multiple manual checks.",
+      "root_cause_or_enabling_factor": "Persisting a bundle with live inventory hashes would risk self-reference, so a dynamic validation boundary was needed.",
+      "product_change_made": "No public product behavior changed; closed live gates were preserved.",
+      "builder_prompt_system_change_made": "Added a dynamic non-persisted acceptance evidence bundle and check script.",
+      "test_or_evidence_that_revealed_it": "ACCEPTANCE_SUITE_MANIFEST_V1.7.82.json, WORKING_TREE_ACCEPTANCE_V1.7.82.json, and V14 receipt automation",
+      "future_candidate_selection_effect": "Prefer dynamic cross-binding when persisted evidence would become circular.",
+      "future_testing_or_recovery_effect": "Reject missing/duplicate/reordered commands, hash drift, inventory drift, stale source/packet identity, and embedded final ZIP identity."
+    }
+  ],
+  "unresolved_learning_questions": [
+    "Which exact GitHub repository and Render service are canonical?",
+    "Which external nonsecret receipt should be collected first after those identities are known?"
+  ],
+  "next_version_learning_priorities": [
+    "Read-only provider adapters",
+    "Audited evidence application authorization after exact live receipts",
+    "Real-device accessibility acceptance"
+  ]
+}

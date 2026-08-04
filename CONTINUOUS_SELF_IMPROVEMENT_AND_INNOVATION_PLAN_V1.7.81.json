@@ -1,0 +1,61 @@
+{
+  "schema_id": "SJP-LMP-CONTINUOUS-SELF-IMPROVEMENT-AND-INNOVATION-PLAN-2026-08-03-V1",
+  "product": {
+    "name": "Smarter Justice",
+    "starting_version": "1.7.80",
+    "starting_artifact_sha256": "afee85cdab7ec902e5a2965d39c937c046c43d0a3ef6a319fa4bb03e1ddc1b8c",
+    "target_version": "1.7.81"
+  },
+  "core_owner_mission_sha256": "1e4efe3dd80a4c3ed6d03aabd1414c60fb91d747b463405c52bf8a0902556d0b",
+  "governing_packet": {
+    "id": "SJP-LMP-UNIVERSAL-ONE-STEP-2026-08-03-V14-ALL-CHAT-MODES",
+    "sha256": "fce42ce0927748f94189692ef5b3bf8e0fe9f8d12273287f03a68eb7bccdad6f"
+  },
+  "independent_opportunity_discovery": {
+    "exact_artifact_findings": [
+      "v1.7.80 validated one exact nonsecret receipt at a time but could not reconcile a multi-component evidence batch or detect cross-receipt replay and component conflicts.",
+      "v1.7.80 designed post-package final identity reporting but did not provide a deterministic detached receipt generator and fail-closed cross-receipt comparison tool."
+    ],
+    "public_user_journey_findings": [
+      "Public deterministic and AI-disabled paths already worked and required no new public surface for this release."
+    ],
+    "professional_staff_owner_findings": [
+      "Roger needs one batch preview showing all proposed dependency promotions, conflicts, blockers, and exact evidence identities without mutating the live register."
+    ],
+    "builder_prompt_system_findings": [
+      "The immutable final ZIP identity must be generated outside the archive and compared against accepted candidate, source, inventories, package hashes, and test evidence without circular embedding."
+    ]
+  },
+  "creative_new_capability_candidates": [
+    "Batch live-evidence reconciliation workspace",
+    "All-or-nothing promotion transaction preview",
+    "Detached final delivery receipt generator",
+    "Fail-closed cross-receipt comparison"
+  ],
+  "product_platform_track": {
+    "selected": [
+      "Owner-only batch evidence intake",
+      "Duplicate, replay, component-conflict, environment and identity mismatch rejection",
+      "Deterministic all-or-nothing promotion transaction preview with no persistence or register mutation"
+    ],
+    "deferred": [
+      "No external adapter, state application, provider access, write, activation, deployment, or owner GO is enabled."
+    ]
+  },
+  "builder_prompt_system_track": {
+    "selected": [
+      "Post-package detached delivery receipt generator",
+      "Deterministic twin final archive comparison",
+      "Seventeen-field cross-receipt verification against embedded candidate/source/inventory/test evidence"
+    ],
+    "deferred": [
+      "The detached receipt is generated only after immutable final packaging and remains outside the final ZIP."
+    ]
+  },
+  "protected_owner_decisions_required": [
+    "Connect or identify the exact canonical GitHub repository and approved Smarter Justice Render service.",
+    "Enter the OpenAI key only later after exact dark deployment binding."
+  ],
+  "strongest_justified_set_selected": true,
+  "hard_constraints_preserved": true
+}

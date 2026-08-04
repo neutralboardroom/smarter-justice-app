@@ -1,0 +1,104 @@
+{
+  "release": "1.7.61",
+  "generatedAt": "2026-07-31T17:14:00-04:00",
+  "status": "SEALED_SOURCE_ACCEPTED_DETACHED_FINAL_IDENTITY_PENDING",
+  "sourceBaseline": {
+    "filename": "smarter-justice-v1.7.60.zip",
+    "version": "1.7.60",
+    "sha256": "832ec66ffda5acf0a2cb7f105cbf4c08d150b38d1582c30cea3599b3e1925e0f",
+    "sizeBytes": 5263896,
+    "entries": 1593,
+    "files": 1575,
+    "directories": 18,
+    "uncompressedBytes": 14835610,
+    "compressedBytes": 5030518,
+    "inventoryRecords": 1574,
+    "inventorySha256": "91cf1c3e0b5ce592e716e22f802ce6414d2730a87c49c74ca13e65c9a1b1417e",
+    "packageJsonSha256": "fc87ec5cf1b64149f4e6938d1e974cd703d24bd8bbfe3d0dbc4ebb283e3a5965",
+    "packageLockSha256": "b812fdcdccc58aa9b547979ce9aae9aeb76ade2b3bc10d151b122bda4235d10e",
+    "lockfileSha256": "b812fdcdccc58aa9b547979ce9aae9aeb76ade2b3bc10d151b122bda4235d10e",
+    "sbomSha256": "bd321a506703e9a87e04e5406a47424b9dac0ad738da0a12f8a0b539a4b34c32",
+    "treeSha256": "91cf1c3e0b5ce592e716e22f802ce6414d2730a87c49c74ca13e65c9a1b1417e",
+    "dependencyIndependentParts": 114,
+    "totalReadinessParts": 115,
+    "testLogSha256": "756b4cb4f36c381b63f11cec582645f12c9a0245d026294539f07fe5e05348f0",
+    "concurrentBaselineRuns": 2,
+    "concurrentBaselineResult": "PASS_IDENTICAL_OUTPUT",
+    "evidenceState": "CURRENT_CHAT_REPRODUCED"
+  },
+  "scope": [
+    "exact v1.7.60 source and rollback reconciliation",
+    "fourth-pass reusable master intake",
+    "version-neutral portal authority discovery",
+    "binding monthly $15 commercial terms and one-payer-per-seat controls",
+    "public freemium floor and non-AI fallback",
+    "Monday owner-action gate reduction",
+    "continuation and prompt-regression protection"
+  ],
+  "testModel": {
+    "dependencyIndependentParts": 115,
+    "postgresDependentParts": 1,
+    "totalReadinessParts": 116
+  },
+  "exactArtifact": {
+    "filename": "smarter-justice-v1.7.61.zip",
+    "identityMode": "DETACHED_AFTER_PACKAGING",
+    "sha256": "DETACHED_FINAL_DELIVERY_RECEIPT",
+    "sizeBytes": 0
+  },
+  "launchState": "NO_GO",
+  "deploymentAuthorized": false,
+  "closedGates": [
+    "live portal connections",
+    "automatic cross-repository writes",
+    "payments",
+    "subscriptions",
+    "professional opportunities",
+    "appointments",
+    "reviews",
+    "confidential uploads",
+    "sensitive external AI",
+    "filing",
+    "deployment",
+    "launch GO"
+  ],
+  "authenticBlockers": [
+    "configured registry/audit 404",
+    "PostgreSQL-dependent acceptance",
+    "exact four-portal D4 staging",
+    "Domestic Violence resource/safety review",
+    "real-device/assistive-technology acceptance",
+    "production services",
+    "Stripe test/live acceptance",
+    "qualified legal/privacy/support/incident review",
+    "Roger explicit GO"
+  ],
+  "workingTreeAcceptance": {
+    "dependencyIndependentParts": 115,
+    "result": "PASS",
+    "testLogSha256": "fff885cdbf303f31068fd8148cea31efc1ac3820acc1116cc23a2b36989a8675"
+  },
+  "supplyChainDiagnostic": "SUPPLY_CHAIN_DIAGNOSTIC_V1.7.61.json",
+  "sourceAcceptance": {
+    "record": "AUTOMATED_TEST_EVIDENCE_V1.7.61.json",
+    "independentTrees": 2,
+    "dependencyIndependentParts": 115,
+    "result": "PASS_IDENTICAL_OUTPUT",
+    "testLogSha256": "fff885cdbf303f31068fd8148cea31efc1ac3820acc1116cc23a2b36989a8675",
+    "preEvidenceInventorySha256": "8fb54423297b09e6d47980781a1d8d99aa91bc2ede76cbd5da79a1e79c90645e"
+  },
+  "candidateAcceptance": {
+    "record": "CANDIDATE_ARTIFACT_ACCEPTANCE_V1.7.61.json",
+    "sha256": "38e1674cc95405c9e3de224a7fd5e883625e894c5198674e3f8d56848d62b895",
+    "deterministicBuilds": 2,
+    "independentExtractions": 2,
+    "dependencyIndependentParts": 115,
+    "result": "PASS_IDENTICAL_OUTPUT"
+  },
+  "finalAcceptance": {
+    "record": "FINAL_ARTIFACT_ACCEPTANCE_V1.7.61.json",
+    "status": "SEALED_SOURCE_ACCEPTED_DETACHED_FINAL_ARCHIVE_IDENTITY_PENDING",
+    "acceptedPresealArchiveSha256": "dac07c0695d5f9d15ef445b094e0ddefe1090ec4b89671f1451f888ba301de4b",
+    "testLogSha256": "fff885cdbf303f31068fd8148cea31efc1ac3820acc1116cc23a2b36989a8675"
+  }
+}

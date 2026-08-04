@@ -1,0 +1,42 @@
+{
+  "schemaName": "smarter-justice-professional-network-standard",
+  "schemaVersion": "1.2.0",
+  "standardVersion": "1.2.0",
+  "portalContractVersion": "1.2.0",
+  "releaseVersion": "1.7.39",
+  "generatedAt": "2026-07-28T17:45:00-04:00",
+  "scope": "One Smarter Justice professional identity and firm organization layer across independent legal portals.",
+  "counts": {
+    "organizations": 48,
+    "offices": 50,
+    "seats": 233,
+    "practiceAssignments": 880,
+    "canonicalPortalAssignments": 678,
+    "unresolvedLegacyPortalAssignments": 14,
+    "billingAccounts": 48,
+    "entitlementRecords": 233,
+    "portalContracts": 25,
+    "d3AdapterFixtures": 25
+  },
+  "rules": [
+    "One professional account across qualifying legal portals.",
+    "One firm organization account with offices and professional seats.",
+    "Individual evidence before specialty or portal assignment.",
+    "Payment never buys verification, placement, ranking, inquiries, clients, or outcomes.",
+    "Corrections, disputes, suppression, and removal never require payment.",
+    "Canonical mapping occurs only when unambiguous.",
+    "Portal exports are read-only and nonconfidential.",
+    "Dedicated portals remain authoritative for specialty rendering, evidence, safeguards, deployment, and user data.",
+    "Every portal handoff carries the mandatory integrated legal-portal standard identity and release-conformance envelope without claiming portal implementation."
+  ],
+  "gates": {
+    "publicCheckout": false,
+    "liveBilling": false,
+    "publicInquiries": false,
+    "appointmentBooking": false,
+    "sponsoredPlacement": false,
+    "automaticPortalWrites": false,
+    "productionPortalAdapters": false,
+    "deployment": false
+  }
+}

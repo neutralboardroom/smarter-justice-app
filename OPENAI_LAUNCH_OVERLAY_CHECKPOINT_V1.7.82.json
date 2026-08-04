@@ -1,0 +1,22 @@
+{
+  "schema": "smarter-justice-openai-launch-overlay-checkpoint",
+  "releaseVersion": "1.7.82",
+  "launchBatchId": "SJP-OPENAI-LIVE-2026-08-03-BATCH-02",
+  "supersedesBatchId": "SJP-OPENAI-LIVE-2026-08-03-BATCH-01",
+  "overlayFilename": "ALL_FIVE_BUILDERS__OPENAI_ONLY_CENTRAL_AI_GATEWAY_AND_FULL_TOOL_FUNCTIONALITY_LAUNCH_OVERLAY__V2__USER_TRANSPARENCY_INJECTION_ISOLATION_AUTOMATED_RELEASES_AND_AI_OPERATIONS__2026-08-03.txt",
+  "overlaySha256": "a1d63886e22188304cff36df8ed5754169546c24fe094a4563c6c4184a6e63f4",
+  "overlaySizeBytes": 41884,
+  "overlayLines": 1324,
+  "effectiveTime": "2026-08-03T12:11:00-04:00",
+  "preservedSource": {
+    "filename": "smarter-justice-v1.7.81.zip",
+    "sha256": "34c1928567993f40ead33fe5335a479e7e3e735f0e3911b3835952668f393d86",
+    "version": "1.7.81"
+  },
+  "preservedAcceptedWork": true,
+  "restartedFromOlderArtifact": false,
+  "productionAccessUsed": false,
+  "providerSecretUsed": false,
+  "deploymentAuthorized": false,
+  "launchState": "NO_GO"
+}

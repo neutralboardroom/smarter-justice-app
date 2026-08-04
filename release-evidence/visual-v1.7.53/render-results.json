@@ -1,0 +1,121 @@
+{
+  "generatedAt": "2026-07-30",
+  "method": "Playwright Chromium page.set_content deterministic exact-candidate render harness",
+  "results": [
+    {
+      "name": "tour-desktop-presenter-estate-step1.png",
+      "kind": "tour",
+      "practice": "estate",
+      "mode": "presenter",
+      "step": 1,
+      "width": 1440,
+      "height": 1000,
+      "full": false,
+      "media": "screen",
+      "scroll": null,
+      "file": "release-evidence/visual-v1.7.53/tour-desktop-presenter-estate-step1.png",
+      "bytes": 164939,
+      "dimensions": {
+        "scrollWidth": 1440,
+        "clientWidth": 1440,
+        "scrollHeight": 2113,
+        "clientHeight": 1000,
+        "title": "Attorney Partner Tour | Smarter Justice"
+      },
+      "horizontalOverflow": false,
+      "consoleErrors": []
+    },
+    {
+      "name": "tour-laptop-full-estate.png",
+      "kind": "tour",
+      "practice": "estate",
+      "mode": "self-guided",
+      "step": 1,
+      "width": 1280,
+      "height": 900,
+      "full": false,
+      "media": "screen",
+      "scroll": null,
+      "file": "release-evidence/visual-v1.7.53/tour-laptop-full-estate.png",
+      "bytes": 155383,
+      "dimensions": {
+        "scrollWidth": 1280,
+        "clientWidth": 1280,
+        "scrollHeight": 6176,
+        "clientHeight": 900,
+        "title": "Attorney Partner Tour | Smarter Justice"
+      },
+      "horizontalOverflow": false,
+      "consoleErrors": []
+    },
+    {
+      "name": "tour-tablet-presenter-estate-step3.png",
+      "kind": "tour",
+      "practice": "estate",
+      "mode": "presenter",
+      "step": 3,
+      "width": 820,
+      "height": 1180,
+      "full": false,
+      "media": "screen",
+      "scroll": "#tour-story",
+      "file": "release-evidence/visual-v1.7.53/tour-tablet-presenter-estate-step3.png",
+      "bytes": 143047,
+      "dimensions": {
+        "scrollWidth": 820,
+        "clientWidth": 820,
+        "scrollHeight": 3098,
+        "clientHeight": 1180,
+        "title": "Attorney Partner Tour | Smarter Justice"
+      },
+      "horizontalOverflow": false,
+      "consoleErrors": []
+    },
+    {
+      "name": "tour-phone-presenter-estate-step7.png",
+      "kind": "tour",
+      "practice": "estate",
+      "mode": "presenter",
+      "step": 7,
+      "width": 390,
+      "height": 844,
+      "full": false,
+      "media": "screen",
+      "scroll": "#tour-continue",
+      "file": "release-evidence/visual-v1.7.53/tour-phone-presenter-estate-step7.png",
+      "bytes": 48308,
+      "dimensions": {
+        "scrollWidth": 390,
+        "clientWidth": 390,
+        "scrollHeight": 4041,
+        "clientHeight": 844,
+        "title": "Attorney Partner Tour | Smarter Justice"
+      },
+      "horizontalOverflow": false,
+      "consoleErrors": []
+    },
+    {
+      "name": "follow-up-card-print-estate.png",
+      "kind": "follow",
+      "practice": "estate",
+      "mode": "self-guided",
+      "step": 1,
+      "width": 1200,
+      "height": 1600,
+      "full": true,
+      "media": "print",
+      "scroll": null,
+      "file": "release-evidence/visual-v1.7.53/follow-up-card-print-estate.png",
+      "bytes": 127718,
+      "dimensions": {
+        "scrollWidth": 1200,
+        "clientWidth": 1200,
+        "scrollHeight": 1600,
+        "clientHeight": 1600,
+        "title": "Estate planning and probate Attorney Tour Follow-Up | Smarter Justice"
+      },
+      "horizontalOverflow": false,
+      "consoleErrors": []
+    }
+  ]
+}

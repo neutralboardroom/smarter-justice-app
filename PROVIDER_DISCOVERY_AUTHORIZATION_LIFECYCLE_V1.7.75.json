@@ -1,0 +1,23 @@
+{
+  "schema": "smarter-justice-provider-discovery-authorization-lifecycle",
+  "releaseVersion": "1.7.75",
+  "lifecycle_id": "SJP-PROVIDER-DISCOVERY-LIFECYCLE-V1775-RECOVERY",
+  "request_reference": {
+    "request_id": "provider-discovery-smarter-justice-v1.7.73-recovery-draft",
+    "product_id": "smarter-justice-central",
+    "artifact_name": "smarter-justice-v1.7.73.zip",
+    "artifact_sha256": "5ed64a1c13de1a536303b07a2277e234a822b9bc316b7ea97cf2547e90811898"
+  },
+  "events": [],
+  "current_state": "OWNER_DECISION_REQUIRED",
+  "execution_envelope_issued": false,
+  "execution_receipt_accepted": false,
+  "provider_metadata_read": false,
+  "secret_values_read": false,
+  "writes_performed": false,
+  "deployment_authorized": false,
+  "production_request_sent": false,
+  "cohort_frozen": false,
+  "canary_selected": false,
+  "recovery_note": "The v1.7.74 final bytes are unavailable; this lifecycle is rebuilt from exact v1.7.73 plus supported v1.7.74 release evidence without a byte-identical recovery claim."
+}

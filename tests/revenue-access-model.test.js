@@ -1,0 +1,20 @@
+const assert=require('assert');
+const fs=require('fs');
+const os=require('os');
+const path=require('path');
+process.env.NODE_ENV='test';
+process.env.SMARTER_JUSTICE_STORAGE_DIR=fs.mkdtempSync(path.join(os.tmpdir(),'sj-revenue-model-'));
+const store=require('../lib/store');
+const model=require('../lib/revenueAccessModel');
+(async()=>{
+  await store.init();store.writeJson('revenueAccessModel.json',null);
+  const publicView=model.publicView();assert.strictEqual(publicView.standardVersion,'1.0.0');assert(publicView.publicPlans.some(x=>x.id==='public-free'&&x.monthlyPriceCents===0));assert(publicView.publicPlans.some(x=>x.id==='public-supporter-5'&&!x.activeForBilling));assert(publicView.humanReviewServices.every(x=>x.status!=='active'));
+  const bad=await model.updatePublicPlan('public-supporter-5',{status:'future option — not active',activeForBilling:true,monthlyPriceCents:500});assert(bad.error);
+  const planned=await model.updatePublicPlan('public-supporter-5',{status:'future option — not active',activeForBilling:false,monthlyPriceCents:500,fairUse:'Reasonable personal use.'});assert.strictEqual(planned.plan.activeForBilling,false);
+  const reviewBad=await model.updateHumanReviewService('starting-file-completeness-review',{status:'active',priceCents:null});assert(reviewBad.error);
+  const adoption=await model.updatePortalAdoption('justice-tax-solutions',{adoptionStatus:'adapted',freeAiStartingHelp:true,humanReviewStatus:'planned',notes:'Tax-specific staffing and scope required.'});assert.strictEqual(adoption.adoption.adoptionStatus,'adapted');
+  const owner=model.ownerView();assert(owner.summary.publicPlans>=3);assert(owner.portalAdoptions.length>=7);assert(model.exportMarkdown().includes('Shared Revenue and Access Model'));
+  const pricing=fs.readFileSync(path.join(__dirname,'..','public','pricing.html'),'utf8');assert(pricing.includes('Optional human help'));assert(pricing.includes('Published only when ready'));assert(!pricing.includes('$5<span>/month'));assert(!pricing.includes('$10<span>/month')); assert(pricing.includes('Meaningful guided starting help stays free'));
+  const standard=fs.readFileSync(path.join(__dirname,'..','SHARED_REVENUE_AND_ACCESS_STANDARD.md'),'utf8');assert(standard.includes('Meaningful guided public starting help'));
+  console.log('revenue-access-model.test.js passed');
+})().catch(err=>{console.error(err);process.exit(1);});

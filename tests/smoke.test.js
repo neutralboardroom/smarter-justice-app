@@ -5,8 +5,8 @@ const path = require('path');
 const fs = require('fs');
 const os = require('os');
 
-const port = 3961;
-const base = `http://127.0.0.1:${port}`;
+const port = 0;
+let base = '';
 const tempStorage = fs.mkdtempSync(path.join(os.tmpdir(), 'smarter-justice-smoke-'));
 const server = spawn(process.execPath, ['server.js'], {
   cwd: path.join(__dirname, '..'),
@@ -16,7 +16,6 @@ const server = spawn(process.execPath, ['server.js'], {
     PORT: String(port),
     ADMIN_TOKEN: 'test-token',
     OWNER_CONTROL_CENTER_TOKEN: 'owner-test-token-unique-1234567890',
-    APP_BASE_URL: base,
     SMARTER_JUSTICE_STORAGE_DIR: tempStorage,
     STRIPE_WEBHOOK_SECRET: 'whsec_test_secret',
     OWNER_NOTIFICATION_EMAIL: ''
@@ -42,76 +41,33 @@ async function fetchJson(url, opts){
 (async () => {
   try {
     for (let i=0;i<40;i++){
-      if(log.includes('listening')) break;
+      const match=log.match(/listening on (\d+)/);
+      if(match){base=`http://127.0.0.1:${match[1]}`;break;}
       if(server.exitCode !== null) throw new Error(`Server exited early: ${log}`);
       await wait(100);
     }
 
+    assert(base,`Server did not report its isolated port: ${log}`);
     const health = await fetchJson(`${base}/health`);
     assert.equal(health.ok, true);
-    assert.equal(health.version, '1.6.1');
-    assert.equal(Object.prototype.hasOwnProperty.call(health,'ownerNotificationConfigured'), false, 'public health must not expose notification configuration state');
-    assert(!Object.prototype.hasOwnProperty.call(health, 'ownerEmail'), 'health must not expose owner email');
-    assert.equal(health.features.formReadinessLevels, true);
-    assert.equal(health.features.firstFormDraftStarterPackage, true);
-    assert.equal(health.features.secureContinuationTokens, true);
-    assert.equal(health.features.userCaseAccessRequiresContinuationToken, true);
-    assert.equal(health.features.liveChatReady, false);
-    assert.equal(health.features.contactSupportFallback, true);
-    assert.equal(health.features.liveChatPublicConfigEndpoint, true);
-    assert.equal(health.features.optionalPostgresPersistence, true);
-    assert.equal(health.features.guidedHomepageStepFlow, true);
-    assert.equal(health.features.focusedPracticeLandingPages, 15);
-    assert.equal(health.features.conversionReadyPricingPage, true);
-    assert.equal(health.features.umbrellaPortalRouter, true);
-    assert(health.features.portalCount >= 10);
-    assert.equal(health.features.microPortalGateway, true);
-    assert.equal(health.features.privateOwnerControlCenterFoundation, true);
-    assert.equal(health.features.portalPortfolioTracking, true);
-    assert.equal(health.features.portalPromptGenerator, true);
-    assert.equal(health.features.masterCoordinationPromptGenerator, true);
-    assert.equal(health.features.portfolioManifestExport, true);
-    assert.equal(health.features.controlCenterOwnerRoleSeparatedFromStaffAdmin, true);
-    assert.equal(health.features.sharedPlatformStandardVersion, '1.3.3');
-    assert.equal(health.features.immigrationOasisSeparatePortalCard, true);
-    assert.equal(health.features.communityPartnerPrivateAccessKeys, true);
-    assert.equal(health.features.communityPartnerAnonymizedReporting, true);
-    assert.equal(health.features.adminCredentialsExcludedFromUrlsByDefault, true);
-    assert.equal(health.features.configuredPortalUrlValidation, true);
-    assert.equal(health.features.aiProviderLayerFoundation, true);
-    assert.equal(health.features.aiProviderFallbackWithoutKeys, true);
-    assert.equal(health.features.matterPathEngine, true);
-    assert.equal(health.features.matterPathStageDetection, true);
-    assert.equal(health.features.correctNextPathScreen, true);
-    assert.equal(health.features.dashboardStageTimeline, true);
-    assert.equal(health.features.staffWhyPathChosen, true);
-    assert.equal(health.features.reviewReadyFormDrafts, true);
-    assert.equal(health.features.verifiedFieldMappingFoundation, true);
-    assert(health.features.reviewReadyDraftPathCount >= 9);
-    assert.equal(health.features.reviewReadyDraftUserMissingDetailUpdates, true);
-    assert.equal(health.features.reviewReadyDraftStaffFieldOverrides, true);
-    assert.equal(health.features.reviewReadyDraftApprovalGate, true);
-    assert.equal(health.features.expandedTaxReviewDraftPaths, true);
-    assert(health.features.matterPathCount >= 15);
-    assert.equal(health.features.uploadNoticePrimaryCta, true);
-    assert.equal(health.features.practiceSpecificSmartQuestions, true);
-    assert.equal(health.features.noticeUploadEntryPage, true);
-    assert.equal(health.features.stripeCheckoutFoundation, true);
-    assert.equal(health.features.stripeWebhookFoundation, true);
-    assert.equal(health.features.requestMoreInformationWorkflow, true);
-    assert.equal(health.features.launchReadinessChecklist, true);
-    assert.equal(health.features.reviewPackageDownload, true);
-    assert.equal(health.features.verifiedFormPathRegistry, true);
-    assert.equal(health.features.adminAuditLogFoundation, true);
-    assert.equal(health.features.humanReviewSeparateFromAttorneyReview, true);
-    assert.equal(health.features.taxAttorneyReviewOption, true);
-    assert.equal(health.features.offerInCompromiseIncluded, true);
-    assert.equal(health.features.adminTokenRequiredNoDefault, true);
-    assert.equal(health.features.ownerControlCenterTokenRequiredNoDefault, true);
-    assert.equal(health.operationalReadiness.detailedReadinessRequiresAuthentication, true);
-    assert.equal(Object.prototype.hasOwnProperty.call(health,'credentials'), false, 'public health must not expose internal configuration details');
-    assert.equal(JSON.stringify(health).includes('storageDir'), false, 'public health must not expose storage paths');
-    assert(health.features.practiceAreas >= 40);
+    assert.equal(health.version, '1.7.83');
+    assert.deepEqual(Object.keys(health).sort(), ['app','ok','portalCount','practiceAreas','sensitiveTrafficApproved','timestamp','version'].sort(), 'public health must use the explicit minimal allowlist');
+    assert.equal(health.practiceAreas,69);
+    assert(health.portalCount >= 10);
+    assert.equal(health.sensitiveTrafficApproved,false);
+    const healthPayload=JSON.stringify(health);
+    for(const forbidden of ['features','operationalReadiness','credentials','provider','model','storageDir','ownerEmail']) assert(!healthPayload.includes(forbidden),`public health leaked ${forbidden}`);
+
+    const routingConfig = await fetchJson(`${base}/api/public-config`);
+    assert.equal(routingConfig.publicStoryRouting.available,true);
+    assert.equal(routingConfig.publicStoryRouting.saved,false);
+    assert.equal(routingConfig.assistance.defaultMode,'rules-only');
+    assert.equal(routingConfig.assistance.aiChoiceRequired,true);
+    assert(!Object.prototype.hasOwnProperty.call(routingConfig.assistance,'providers'));
+    const storyRoute = await fetchJson(`${base}/api/public/story-route`, {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({question:'My landlord sent an eviction notice and I also lost my job and health coverage.'})});
+    assert.equal(storyRoute.saved,false);
+    assert(storyRoute.primaryPortal && storyRoute.primaryPortal.slug);
+    assert(!storyRoute.continuationLink && !storyRoute.case, 'story routing must not create a saved case');
 
     const publicConfig = await fetchJson(`${base}/api/public-config`);
     assert.equal(publicConfig.liveChat.configured, false);
@@ -119,15 +75,27 @@ async function fetchJson(url, opts){
     assert.equal(publicConfig.liveChat.widgetId, '');
 
     const home = await fetch(`${base}/`).then(r=>r.text());
-    assert(/Start free/i.test(home));
-    assert(/one trusted starting point/i.test(home));
+    assert(/Professional Membership/i.test(home));
+    assert(/Tell us what happened/i.test(home));
     assert(/maxlength="2500"/.test(home));
+
+    assert(/Growing Smarter Justice portal network/i.test(home));
+    const domainNetwork = await fetchJson(`${base}/api/public/domain-network`);
+    assert(domainNetwork.ok && domainNetwork.domains.length >= 10);
+    assert(domainNetwork.domains.some(x=>x.domain==='employmentlawaid.com'));
+    assert(domainNetwork.domains.every(x=>x.ownershipStatus==='owned'));
+    assert(!domainNetwork.domains.some(x=>x.domain==='workerscompensationlawaid.com'));
+    const ownerDomainNetwork = await fetchJson(`${base}/api/owner/domain-registry`,{headers:{'X-Owner-Control-Token':'owner-test-token-unique-1234567890'}});
+    assert(ownerDomainNetwork.ok && ownerDomainNetwork.domains.some(x=>x.ownershipStatus==='purchase planned'));
+    const domainUpdate = await fetchJson(`${base}/api/owner/domain-registry`,{method:'POST',headers:{'Content-Type':'application/json','X-Owner-Control-Token':'owner-test-token-unique-1234567890'},body:JSON.stringify({id:'DOMAIN-EMPLOYMENT-001',brandName:'Employment Law Aid',domain:'employmentlawaid.com',ownershipStatus:'owned',portalStatus:'in development',dnsStatus:'pending verification',sslStatus:'not requested',deploymentStatus:'development package',canonicalStatus:'planned',professionalParticipationStatus:'applications only',publicVisible:true,sortOrder:11})});
+    assert(domainUpdate.ok && domainUpdate.changedFields.includes('dnsStatus'));
 
     const portals = await fetchJson(`${base}/api/portals`);
     assert(portals.ok && portals.portals.some(p => p.slug === 'immigration-oasis' && /separate/i.test(p.disclosure)));
     assert(portals.portals.every(p => p.availabilityMessage));
-    const contractPortal = portals.portals.find(p => p.slug === 'contract-creator');
-    assert(contractPortal && contractPortal.publicUrl === '', 'planned ContractCreator portal should not appear live');
+    assert(!/pilot|in development|starting preview|routing preview/i.test(JSON.stringify(portals.statuses)), 'public portal status choices must use customer language');
+    assert(!portals.portals.some(p => p.slug === 'contract-creator'), 'legacy ContractCreator route must not be presented as an official public portal');
+    assert(portals.portals.some(p => p.slug === 'business-launch-desk' && /Business and Contract Law/.test(p.name)), 'Business and Contract Law must replace the unowned ContractCreator brand');
     const portalDetail = await fetchJson(`${base}/api/portals/justice-tax-solutions`);
     assert(portalDetail.ok && /Tax/.test(portalDetail.portal.name));
     const portalRec = await fetchJson(`${base}/api/portal-recommendation?practice=taxes`);
@@ -143,7 +111,21 @@ async function fetchJson(url, opts){
     assert(schema.ok && /Tax preparation/.test(schema.schema.title));
     assert(schema.matterPath && schema.matterPath.stages.length >= 3);
     const aiStatus = await fetchJson(`${base}/api/ai-status`);
-    assert(aiStatus.ok && aiStatus.fallbackWithoutKeys === true);
+    assert(aiStatus.ok);
+    assert.equal(aiStatus.available,false);
+    assert.equal(aiStatus.defaultMode,'rules-only');
+    assert.equal(aiStatus.choiceRequired,true);
+    assert.equal(aiStatus.noAiOptionAvailable,true);
+    for(const forbidden of ['providers','providerOrder','configuredProviders','models','fallbackWithoutKeys']) assert(!Object.prototype.hasOwnProperty.call(aiStatus,forbidden),`public AI status leaked ${forbidden}`);
+    const ownerAiDenied=await fetchResult(`${base}/api/owner/ai-status`);
+    assert.equal(ownerAiDenied.response.status,403);
+    const ownerAi=await fetchJson(`${base}/api/owner/ai-status`,{headers:{'X-Owner-Control-Token':'owner-test-token-unique-1234567890'}});
+    assert(Array.isArray(ownerAi.providers) && ownerAi.explicitUserChoiceRequired===true);
+    const programStatus=await fetchJson(`${base}/api/professional-program-status`);
+    assert.equal(programStatus.applicationsOpen,false);
+    assert.equal(programStatus.paymentOpen,false);
+    assert.equal(programStatus.accountPreparationAvailable,true);
+    assert.equal(programStatus.profileClaimPreparationAvailable,true);
     const matterPaths = await fetchJson(`${base}/api/matter-paths`);
     assert(matterPaths.ok && matterPaths.matterPaths.taxes);
 
@@ -167,7 +149,7 @@ async function fetchJson(url, opts){
         deadlineDate:'2026-07-15', dateReceived:'2026-06-18', amountInvolved:'12000',
         question:'I received an IRS notice and need help with an offer in compromise, lien, and deadline next month.',
         fullName:'Test User', email:'test@example.com', consentToContact:true, referralCode:partner.partner.code,
-        attachments:[{name:'irs-notice.pdf', mimeType:'application/pdf', dataBase64: Buffer.from('test pdf placeholder').toString('base64')}]
+        attachments:[{name:'irs-notice.pdf', mimeType:'application/pdf', dataBase64: Buffer.from('%PDF-1.4\n% Smarter Justice test PDF\n%%EOF').toString('base64')}]
       })
     });
     assert(submitted.ok);
@@ -179,7 +161,12 @@ async function fetchJson(url, opts){
     assert(submitted.case.analysis.formReadiness);
     assert(submitted.case.analysis.matterPath);
     assert(submitted.case.correctNextPath);
-    assert(submitted.case.analysis.aiReview && submitted.case.analysis.aiReview.mode === 'rules-fallback');
+    assert(submitted.case.analysis.aiReview);
+    assert.equal(submitted.case.aiPreference,'rules-only');
+    assert.equal(submitted.case.externalAiUsed,false);
+    assert.equal(submitted.case.analysis.aiReview.externalAiUsed,false);
+    assert.equal(submitted.case.analysis.aiReview.assistanceLabel,'Guided rules-based organization');
+    for(const forbidden of ['provider','usedModel','configuredProviders','mode','aiProviderMode']) assert(!JSON.stringify(submitted.case).includes(`\"${forbidden}\"`),`public saved work leaked ${forbidden}`);
     assert(submitted.case.recommendedPortal && submitted.case.recommendedPortal.slug === 'justice-tax-solutions');
     assert(submitted.case.portalRouting && /Justice Tax Solutions/.test(submitted.case.portalRouting.recommendedPortalName));
     assert((submitted.case.verifiedFormPaths || []).some(p => p.id === 'tax-resolution-oic-starter'));
@@ -198,12 +185,20 @@ async function fetchJson(url, opts){
     assert.equal(internalIdDenied.response.status, 404, 'internal case IDs must not grant user access');
     const loaded = await fetchJson(`${base}/api/cases/${encodeURIComponent(submitted.case.id)}`);
     assert.equal(loaded.case.id, submitted.case.id);
+    const aiRequested=await fetchJson(`${base}/api/cases/${encodeURIComponent(submitted.case.id)}/assistance-preference`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({aiPreference:'ai-assisted'})});
+    assert.equal(aiRequested.case.aiPreference,'ai-assisted');
+    assert.equal(aiRequested.case.externalAiUsed,false,'no configured provider should be used in this test');
+    assert(/rules-based/i.test(aiRequested.case.assistanceMode));
+    for(const forbidden of ['provider','usedModel','configuredProviders','providerOrder','aiProviderMode']) assert(!JSON.stringify(aiRequested.case).includes(`\"${forbidden}\"`),`AI-request fallback leaked ${forbidden}`);
+    const rulesRestored=await fetchJson(`${base}/api/cases/${encodeURIComponent(submitted.case.id)}/assistance-preference`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({aiPreference:'rules-only'})});
+    assert.equal(rulesRestored.case.aiPreference,'rules-only');
+    assert.equal(rulesRestored.case.externalAiUsed,false);
     const pkg = await fetch(`${base}/api/cases/${encodeURIComponent(submitted.case.id)}/review-package`).then(r=>r.text());
-    assert(/organized file summary/i.test(pkg));
+    assert(/saved work summary/i.test(pkg));
     assert(/Suggested next step/i.test(pkg));
     assert(!/<strong>Mode:<\/strong>|rules-fallback/.test(pkg), 'customer summary should not expose provider mode');
     const draftPkg = await fetch(`${base}/api/cases/${encodeURIComponent(submitted.case.id)}/draft-package`).then(r=>r.text());
-    assert(/form-preparation starter file/i.test(draftPkg));
+    assert(/form information worksheet/i.test(draftPkg));
     const reviewReadyDraft = await fetch(`${base}/api/cases/${encodeURIComponent(submitted.case.id)}/review-ready-draft`).then(r=>r.text());
     assert(/Form draft for review/i.test(reviewReadyDraft));
     assert(!/field-mapped|draft engine/i.test(reviewReadyDraft));
@@ -218,11 +213,15 @@ async function fetchJson(url, opts){
     });
     assert(detailUpdate.ok && detailUpdate.reviewReadyDraft.mappedFields.length >= 5);
 
-    const checkout = await fetchJson(`${base}/api/checkout`, {
+    const paidCatalog = await fetchJson(`${base}/api/public/paid-services`);
+    assert(paidCatalog.ok && paidCatalog.services.length >= 4);
+    assert(paidCatalog.services.every(service => service.available === false));
+    const checkoutAttempt = await fetchResult(`${base}/api/checkout`, {
       method:'POST', headers:{'Content-Type':'application/json'},
-      body: JSON.stringify({ caseId: submitted.case.id, serviceType:'tax_review' })
+      body: JSON.stringify({ caseId: submitted.case.id, email:'test@example.com', serviceType:'starter_review', acknowledgments:{scopeUnderstood:true,notProfessionalAdvice:true,feesSeparate:true,refundPolicyAccepted:true,electronicCommunicationsAccepted:true} })
     });
-    assert(checkout.ok && checkout.stripeConfigured === false);
+    assert.equal(checkoutAttempt.response.status,409,'public Human Review Specialist checkout must fail closed before approval');
+    assert.equal(checkoutAttempt.data.ok,false);
 
     const launchQueryDenied = await fetchResult(`${base}/api/launch-readiness?token=test-token`);
     assert.equal(launchQueryDenied.response.status, 403, 'admin query tokens should be denied by default');
@@ -269,8 +268,12 @@ async function fetchJson(url, opts){
     const oldAdminNamespace = await fetchResult(`${base}/api/admin/control-center`, { headers:{'X-Admin-Token':'test-token'} });
     assert.equal(oldAdminNamespace.response.status, 404, 'old shared admin/owner Control Center namespace should be removed');
     const control = await fetchJson(`${base}/api/owner/control-center`, { headers:{'X-Owner-Control-Token':ownerToken} });
+    const publicPaidOwner = await fetchJson(`${base}/api/owner/public-paid-services`, { headers:{'X-Owner-Control-Token':ownerToken} });
+    assert(publicPaidOwner.ok && publicPaidOwner.catalogReadiness.length >= 4);
+    assert.equal(publicPaidOwner.controls.liveChargesAllowed,false);
+    assert(publicPaidOwner.catalogReadiness.every(row => row.available === false));
     assert(control.ok && control.portals.length >= 10);
-    assert.equal(control.summary.sharedStandardVersion, '1.3.3');
+    assert.equal(control.summary.sharedStandardVersion, '1.4.0');
     assert(control.summary.highPriority >= 1);
     assert(/strong defaults/i.test(control.governance.deviationPolicy.principle));
     const taxPortal = control.portals.find(p => p.slug === 'justice-tax-solutions');
@@ -333,11 +336,12 @@ async function fetchJson(url, opts){
     assert(/Current portfolio snapshot/.test(masterPrompt.prompt));
     const portalManifest = await fetchJson(`${base}/api/owner/control-center/manifests/justice-tax-solutions`, { headers:{'X-Owner-Control-Token':ownerToken} });
     assert.equal(portalManifest.manifest.portalId,'justice-tax-solutions');
-    assert.equal(portalManifest.manifest.latestZipName,'justice-tax-solutions-v0.2.0.zip');
+    assert.equal(portalManifest.manifest.latestZipName,'justice-tax-solutions-v0.1.121.zip');
+    assert.equal(portalManifest.manifest.latestDevelopmentVersion,'0.1.121');
     assert(portalManifest.manifest.portalSpecificRequirements.some(x=>/CPA/.test(x)));
     const portfolioExport = await fetchJson(`${base}/api/owner/control-center/export`, { headers:{'X-Owner-Control-Token':ownerToken} });
-    assert.equal(portfolioExport.exportVersion,'1.0.0');
-    assert(portfolioExport.portals.some(p=>p.slug==='justice-tax-solutions' && p.latestDevelopmentVersion==='0.2.0'));
+    assert.equal(portfolioExport.exportVersion,'1.4.0');
+    assert(portfolioExport.portals.some(p=>p.slug==='justice-tax-solutions' && p.latestDevelopmentVersion==='0.1.121' && p.artifactEvidenceState==='OWNER_RECORDED'));
 
     const adminQueryDenied = await fetchResult(`${base}/api/admin/cases?token=test-token`);
     assert.equal(adminQueryDenied.response.status, 403, 'admin case query token should be denied by default');

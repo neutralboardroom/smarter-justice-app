@@ -1,0 +1,385 @@
+{
+  "schema_id": "SJP-DEVICE-ONLY-JOURNEY-HANDOFF-PLANNER-2026-08-03-V2",
+  "releaseVersion": "1.7.77",
+  "execution_mode": "DEVICE_ONLY_CREATE_EXPORT_IMPORT_INSPECT",
+  "source_product": {
+    "id": "smarter-justice-central",
+    "name": "Smarter Justice"
+  },
+  "destinations": [
+    {
+      "id": "divorce-law-aid",
+      "name": "Divorce Law Aid"
+    },
+    {
+      "id": "estate-law-aid",
+      "name": "Estate Law Aid"
+    },
+    {
+      "id": "personal-injury-law-aid",
+      "name": "Personal Injury Law Aid"
+    },
+    {
+      "id": "domestic-violence-aid",
+      "name": "Domestic Violence Aid"
+    },
+    {
+      "id": "employment-law-aid",
+      "name": "Employment Law Aid"
+    },
+    {
+      "id": "consumer-protection-law-aid",
+      "name": "Consumer Protection, Fraud & Scam Law Aid"
+    },
+    {
+      "id": "bankruptcy-debt-law-aid",
+      "name": "Bankruptcy & Debt Law Aid"
+    },
+    {
+      "id": "civil-rights-law-aid",
+      "name": "Civil Rights & Police Misconduct Law Aid"
+    },
+    {
+      "id": "medical-malpractice-law-aid",
+      "name": "Medical Malpractice Law Aid"
+    },
+    {
+      "id": "trademark-patent-ip-law-aid",
+      "name": "Trademark, Patent & IP Law Aid"
+    },
+    {
+      "id": "contract-creator",
+      "name": "ContractCreator"
+    },
+    {
+      "id": "justice-tax-solutions",
+      "name": "Justice Tax Solutions"
+    }
+  ],
+  "matter_categories": [
+    "family",
+    "estate-probate",
+    "injury",
+    "safety",
+    "employment",
+    "consumer",
+    "debt-bankruptcy",
+    "civil-rights",
+    "medical-malpractice",
+    "intellectual-property",
+    "contracts",
+    "tax"
+  ],
+  "journey_steps": [
+    "understand-options",
+    "prepare-records",
+    "prepare-questions",
+    "review-official-sources",
+    "compare-help-paths",
+    "contact-a-professional"
+  ],
+  "preferred_languages": [
+    "not-specified",
+    "English",
+    "Spanish"
+  ],
+  "access_preferences": [
+    "not-specified",
+    "plain-language",
+    "large-text",
+    "screen-reader-friendly",
+    "remote-help",
+    "in-person-help"
+  ],
+  "allowed_data_categories": [
+    "user_selected_matter_category",
+    "user_selected_journey_step",
+    "user_selected_language",
+    "user_selected_access_preference"
+  ],
+  "prohibited_input_fields": [
+    "name",
+    "email",
+    "phone",
+    "address",
+    "legal_narrative",
+    "facts",
+    "notes",
+    "document_text",
+    "health_record",
+    "financial_account",
+    "authentication_secret",
+    "client_confidential_material"
+  ],
+  "maximum_expiry_minutes": 60,
+  "invariants": {
+    "explicit_user_choice_required": true,
+    "fixed_choices_only": true,
+    "free_text_absent": true,
+    "server_transmission_absent": true,
+    "server_storage_absent": true,
+    "automatic_sync_absent": true,
+    "automatic_destination_open_absent": true,
+    "universal_sensitive_database_absent": true,
+    "revocable_by_local_deletion": true,
+    "import_is_local_only": true,
+    "unknown_fields_rejected": true,
+    "oversize_files_rejected": true,
+    "expired_packs_rejected": true,
+    "destination_compatibility_is_central_guidance_only": true,
+    "portal_import_acceptance_not_claimed": true,
+    "local_persistence_absent": true
+  },
+  "runtime_effect": {
+    "cross_product_transfer_enabled": false,
+    "server_endpoint_accepting_plan": false,
+    "new_sensitive_storage": false,
+    "deployment_authorized": false,
+    "production_request_sent": false,
+    "local_import_inspection_enabled": true,
+    "destination_portal_import_enabled": false,
+    "automatic_destination_open_enabled": false,
+    "local_persistent_storage_enabled": false
+  },
+  "maximum_import_bytes": 16384,
+  "supported_plan_schemas": [
+    "SJP-DEVICE-ONLY-JOURNEY-HANDOFF-PLAN-V1"
+  ],
+  "allowed_plan_fields": [
+    "schema_id",
+    "plan_id",
+    "source_product",
+    "destination_product",
+    "purpose",
+    "selections",
+    "data_categories",
+    "explicit_user_choice",
+    "consent_receipt_id",
+    "created_at",
+    "expires_at",
+    "automatic_sync",
+    "server_transmission",
+    "server_storage",
+    "integrity_sha256"
+  ],
+  "allowed_selection_fields": [
+    "matter_category",
+    "journey_step",
+    "preferred_language",
+    "access_preference"
+  ],
+  "destination_compatibility": [
+    {
+      "destination_product": "divorce-law-aid",
+      "destination_name": "Divorce Law Aid",
+      "centrally_supported_matter_categories": [
+        "family"
+      ],
+      "centrally_supported_journey_steps": [
+        "understand-options",
+        "prepare-records",
+        "prepare-questions",
+        "review-official-sources",
+        "compare-help-paths",
+        "contact-a-professional"
+      ],
+      "status": "CENTRAL_PREPARATION_COMPATIBILITY_ONLY",
+      "portal_import_acceptance": false
+    },
+    {
+      "destination_product": "estate-law-aid",
+      "destination_name": "Estate Law Aid",
+      "centrally_supported_matter_categories": [
+        "estate-probate"
+      ],
+      "centrally_supported_journey_steps": [
+        "understand-options",
+        "prepare-records",
+        "prepare-questions",
+        "review-official-sources",
+        "compare-help-paths",
+        "contact-a-professional"
+      ],
+      "status": "CENTRAL_PREPARATION_COMPATIBILITY_ONLY",
+      "portal_import_acceptance": false
+    },
+    {
+      "destination_product": "personal-injury-law-aid",
+      "destination_name": "Personal Injury Law Aid",
+      "centrally_supported_matter_categories": [
+        "injury"
+      ],
+      "centrally_supported_journey_steps": [
+        "understand-options",
+        "prepare-records",
+        "prepare-questions",
+        "review-official-sources",
+        "compare-help-paths",
+        "contact-a-professional"
+      ],
+      "status": "CENTRAL_PREPARATION_COMPATIBILITY_ONLY",
+      "portal_import_acceptance": false
+    },
+    {
+      "destination_product": "domestic-violence-aid",
+      "destination_name": "Domestic Violence Aid",
+      "centrally_supported_matter_categories": [
+        "safety",
+        "family"
+      ],
+      "centrally_supported_journey_steps": [
+        "understand-options",
+        "prepare-records",
+        "prepare-questions",
+        "review-official-sources",
+        "compare-help-paths",
+        "contact-a-professional"
+      ],
+      "status": "CENTRAL_PREPARATION_COMPATIBILITY_ONLY",
+      "portal_import_acceptance": false
+    },
+    {
+      "destination_product": "employment-law-aid",
+      "destination_name": "Employment Law Aid",
+      "centrally_supported_matter_categories": [
+        "employment"
+      ],
+      "centrally_supported_journey_steps": [
+        "understand-options",
+        "prepare-records",
+        "prepare-questions",
+        "review-official-sources",
+        "compare-help-paths",
+        "contact-a-professional"
+      ],
+      "status": "CENTRAL_PREPARATION_COMPATIBILITY_ONLY",
+      "portal_import_acceptance": false
+    },
+    {
+      "destination_product": "consumer-protection-law-aid",
+      "destination_name": "Consumer Protection, Fraud & Scam Law Aid",
+      "centrally_supported_matter_categories": [
+        "consumer"
+      ],
+      "centrally_supported_journey_steps": [
+        "understand-options",
+        "prepare-records",
+        "prepare-questions",
+        "review-official-sources",
+        "compare-help-paths",
+        "contact-a-professional"
+      ],
+      "status": "CENTRAL_PREPARATION_COMPATIBILITY_ONLY",
+      "portal_import_acceptance": false
+    },
+    {
+      "destination_product": "bankruptcy-debt-law-aid",
+      "destination_name": "Bankruptcy & Debt Law Aid",
+      "centrally_supported_matter_categories": [
+        "debt-bankruptcy"
+      ],
+      "centrally_supported_journey_steps": [
+        "understand-options",
+        "prepare-records",
+        "prepare-questions",
+        "review-official-sources",
+        "compare-help-paths",
+        "contact-a-professional"
+      ],
+      "status": "CENTRAL_PREPARATION_COMPATIBILITY_ONLY",
+      "portal_import_acceptance": false
+    },
+    {
+      "destination_product": "civil-rights-law-aid",
+      "destination_name": "Civil Rights & Police Misconduct Law Aid",
+      "centrally_supported_matter_categories": [
+        "civil-rights"
+      ],
+      "centrally_supported_journey_steps": [
+        "understand-options",
+        "prepare-records",
+        "prepare-questions",
+        "review-official-sources",
+        "compare-help-paths",
+        "contact-a-professional"
+      ],
+      "status": "CENTRAL_PREPARATION_COMPATIBILITY_ONLY",
+      "portal_import_acceptance": false
+    },
+    {
+      "destination_product": "medical-malpractice-law-aid",
+      "destination_name": "Medical Malpractice Law Aid",
+      "centrally_supported_matter_categories": [
+        "medical-malpractice",
+        "injury"
+      ],
+      "centrally_supported_journey_steps": [
+        "understand-options",
+        "prepare-records",
+        "prepare-questions",
+        "review-official-sources",
+        "compare-help-paths",
+        "contact-a-professional"
+      ],
+      "status": "CENTRAL_PREPARATION_COMPATIBILITY_ONLY",
+      "portal_import_acceptance": false
+    },
+    {
+      "destination_product": "trademark-patent-ip-law-aid",
+      "destination_name": "Trademark, Patent & IP Law Aid",
+      "centrally_supported_matter_categories": [
+        "intellectual-property"
+      ],
+      "centrally_supported_journey_steps": [
+        "understand-options",
+        "prepare-records",
+        "prepare-questions",
+        "review-official-sources",
+        "compare-help-paths",
+        "contact-a-professional"
+      ],
+      "status": "CENTRAL_PREPARATION_COMPATIBILITY_ONLY",
+      "portal_import_acceptance": false
+    },
+    {
+      "destination_product": "contract-creator",
+      "destination_name": "ContractCreator",
+      "centrally_supported_matter_categories": [
+        "contracts"
+      ],
+      "centrally_supported_journey_steps": [
+        "understand-options",
+        "prepare-records",
+        "prepare-questions",
+        "review-official-sources",
+        "compare-help-paths",
+        "contact-a-professional"
+      ],
+      "status": "CENTRAL_PREPARATION_COMPATIBILITY_ONLY",
+      "portal_import_acceptance": false
+    },
+    {
+      "destination_product": "justice-tax-solutions",
+      "destination_name": "Justice Tax Solutions",
+      "centrally_supported_matter_categories": [
+        "tax"
+      ],
+      "centrally_supported_journey_steps": [
+        "understand-options",
+        "prepare-records",
+        "prepare-questions",
+        "review-official-sources",
+        "compare-help-paths",
+        "contact-a-professional"
+      ],
+      "status": "CENTRAL_PREPARATION_COMPATIBILITY_ONLY",
+      "portal_import_acceptance": false
+    }
+  ],
+  "inspection_states": [
+    "VALID_LOCAL_PACK",
+    "EXPIRED_LOCAL_PACK",
+    "DESTINATION_CATEGORY_MISMATCH",
+    "INVALID_LOCAL_PACK"
+  ]
+}

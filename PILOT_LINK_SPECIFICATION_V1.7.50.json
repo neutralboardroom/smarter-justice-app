@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "1.0.0",
+  "releaseVersion": "1.7.50",
+  "generatedAt": "2026-07-29T14:30:00-04:00",
+  "deploymentAuthorized": false,
+  "contractVersion": "1.4.0",
+  "links": [
+    {
+      "pilotOrder": 1,
+      "portalId": "divorce-law-aid",
+      "claimUrl": "https://smarterjustice.com/professional-signup.html?portal=divorce-law-aid&mode=claim",
+      "createUrl": "https://smarterjustice.com/professional-signup.html?portal=divorce-law-aid&mode=create",
+      "manageUrl": "https://smarterjustice.com/professional-dashboard.html?portal=divorce-law-aid",
+      "billingUrl": "https://smarterjustice.com/professional-dashboard.html#professional-billing",
+      "handoffEndpoint": "/api/owner/professional-network/portal-handoffs/divorce-law-aid",
+      "allowedReturnHosts": [
+        "smarterjustice.com",
+        "www.smarterjustice.com"
+      ],
+      "automaticWrites": false,
+      "liveConnection": false
+    },
+    {
+      "pilotOrder": 2,
+      "portalId": "estate-law-aid",
+      "claimUrl": "https://smarterjustice.com/professional-signup.html?portal=estate-law-aid&mode=claim",
+      "createUrl": "https://smarterjustice.com/professional-signup.html?portal=estate-law-aid&mode=create",
+      "manageUrl": "https://smarterjustice.com/professional-dashboard.html?portal=estate-law-aid",
+      "billingUrl": "https://smarterjustice.com/professional-dashboard.html#professional-billing",
+      "handoffEndpoint": "/api/owner/professional-network/portal-handoffs/estate-law-aid",
+      "allowedReturnHosts": [
+        "smarterjustice.com",
+        "www.smarterjustice.com"
+      ],
+      "automaticWrites": false,
+      "liveConnection": false
+    },
+    {
+      "pilotOrder": 3,
+      "portalId": "personal-injury-law-aid",
+      "claimUrl": "https://smarterjustice.com/professional-signup.html?portal=personal-injury-law-aid&mode=claim",
+      "createUrl": "https://smarterjustice.com/professional-signup.html?portal=personal-injury-law-aid&mode=create",
+      "manageUrl": "https://smarterjustice.com/professional-dashboard.html?portal=personal-injury-law-aid",
+      "billingUrl": "https://smarterjustice.com/professional-dashboard.html#professional-billing",
+      "handoffEndpoint": "/api/owner/professional-network/portal-handoffs/personal-injury-law-aid",
+      "allowedReturnHosts": [
+        "smarterjustice.com",
+        "www.smarterjustice.com"
+      ],
+      "automaticWrites": false,
+      "liveConnection": false
+    }
+  ],
+  "rules": [
+    "Portal ID and return destinations must be allowlisted.",
+    "No duplicate portal login, account, billing, or general core-profile editor.",
+    "Unknown or tampered portal IDs fail closed.",
+    "Links do not establish publication, membership, eligibility, ranking, inquiries, appointments, or attorney acceptance."
+  ]
+}

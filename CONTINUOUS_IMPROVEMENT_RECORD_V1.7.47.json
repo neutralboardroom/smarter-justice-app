@@ -1,0 +1,29 @@
+{
+  "releaseVersion": "1.7.47",
+  "generatedAt": "2026-07-29T15:54:00-04:00",
+  "materialOpportunity": "Make the first real-attorney cohort and lawful profile-growth workflow operable without relying on paid enrollment or automatic trust decisions.",
+  "implemented": [
+    "Free-profile-first cohort plan and contact queue",
+    "Consented campaign/QR attorney follow-up",
+    "Source-supported CSV profile-candidate preview",
+    "Duplicate and missing-fact review",
+    "Private unclaimed candidate commit with provenance",
+    "Portal suggestions without automatic specialty approval"
+  ],
+  "sharedLearning": [
+    "Free basic profile control should be the first attorney acquisition offer; paid growth remains optional and separately gated.",
+    "Source provenance and supported-field declarations should be captured before profile candidates are created.",
+    "Fast profile growth must not collapse identity, credential, specialty, publication, ranking or payment states.",
+    "Workers’ Compensation and Medical Malpractice must not be silently absorbed into Personal Injury.",
+    "Public attorney outreach should collect professional contact data only, not client stories or confidential matter facts."
+  ],
+  "nextValidation": [
+    "Small real-attorney cohort rehearsal",
+    "Lawful source authorization and batch review rehearsal",
+    "Public user route rehearsal",
+    "Exact portal D4 staging",
+    "Support and incident drill",
+    "Rollback and restore drill",
+    "Device and accessibility acceptance"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "version": "1.7.49",
+  "date": "2026-07-29",
+  "removedFileCount": 0,
+  "removedUncompressedBytes": 0,
+  "addedMaterial": [
+    "personalized attorney invitation lifecycle",
+    "hash-only token storage and one-time raw link display",
+    "invitation expiry and revocation",
+    "recognized launch campaigns",
+    "privacy-minimized aggregate launch funnel",
+    "owner campaign metrics and CSV export",
+    "raw-token browser URL removal",
+    "103 dependency-independent test parts plus one PostgreSQL-dependent part",
+    "complete v1.7.49 evidence and continuation records"
+  ],
+  "retainedReason": "Historical release evidence remains intentionally preserved; no inherited file was removed without proof that audit, rollback, or source context would remain complete.",
+  "packagingRules": [
+    "exclude node_modules",
+    "exclude credentials and secret environment files",
+    "exclude runtime logs and database data",
+    "exclude temporary test storage",
+    "include one self-excluding inventory"
+  ]
+}

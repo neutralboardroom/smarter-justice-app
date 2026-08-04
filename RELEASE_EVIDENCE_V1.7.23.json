@@ -1,0 +1,65 @@
+{
+  "version": "1.7.23",
+  "releaseDate": "2026-07-22",
+  "deployed": false,
+  "productionVersion": "1.6.1",
+  "activationGatesChanged": false,
+  "competitorResearch": {
+    "completed": true,
+    "report": "COMPETITIVE_LANDSCAPE_V1.7.23.json",
+    "competitorGroupsReviewed": 7,
+    "approvedAdaptation": "device-only Legal Help Options Navigator",
+    "rejectedPaidRanking": true,
+    "rejectedAutomaticLeadCreation": true
+  },
+  "publicTool": {
+    "legalHelpOptionsNavigator": true,
+    "deviceOnly": true,
+    "legalAdvice": false,
+    "deadlineCalculation": false,
+    "lawyerMatching": false,
+    "leadCreation": false,
+    "transmission": false,
+    "localTextAndJsonExports": true
+  },
+  "profileGrowth": {
+    "leadMarket": "Brooklyn",
+    "nextLeadMarket": "Manhattan",
+    "newProfessionals": 12,
+    "newFirms": 2,
+    "newProfessionalFirmLinks": 12,
+    "publicDirectory": {
+      "professionals": 77,
+      "firms": 26,
+      "total": 103
+    },
+    "strictQualifying": {
+      "professionals": 76,
+      "firms": 24,
+      "total": 100
+    }
+  },
+  "closedGates": {
+    "sensitiveTraffic": true,
+    "professionalPaidPilot": true,
+    "publicPaidHumanReview": true,
+    "payments": true,
+    "booking": true,
+    "publicReviews": true,
+    "confidentialUploads": true,
+    "professionalRouting": true,
+    "broadCrossSectorSharing": true,
+    "automaticFiling": true
+  },
+  "testSuiteParts": 46,
+  "exactArtifactTested": true,
+  "testing": {
+    "workingTreeRegressionParts": 46,
+    "workingTreeRegressionPassed": true,
+    "dependencyInstallAttempted": true,
+    "configuredNpmMirrorCompleted": false,
+    "temporaryExternalTestModulesUsed": true,
+    "temporaryModulesIncludedInArtifact": false,
+    "freshVulnerabilityCountClaimed": false
+  }
+}

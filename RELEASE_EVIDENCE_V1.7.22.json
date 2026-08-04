@@ -1,0 +1,62 @@
+{
+  "version": "1.7.22",
+  "status": "exact-artifact release candidate",
+  "deployed": false,
+  "productionLastVerifiedVersion": "1.6.1",
+  "activationGatesChanged": false,
+  "sensitiveTrafficApproved": false,
+  "professionalPaidPilot": "paused",
+  "publicPaidHumanReview": "paused",
+  "primaryChange": "Private cross-sector operating workspace, standalone Smarter Ecosystem Control Center v0.1.0 starter, and Northern Metro New Jersey-led professional profile growth",
+  "standaloneCommandCenterBuilt": true,
+  "standaloneCommandCenter": {
+    "workingName": "Smarter Ecosystem Control Center",
+    "version": "0.1.0",
+    "artifactName": "smarter-ecosystem-control-center-v0.1.0.zip",
+    "sha256": "7ed812580a9ea63bd9ebe6c4c82c722c1ab0628241c5e4536f685dabd96e3879",
+    "sizeBytes": 16485,
+    "exactArtifactTested": true,
+    "deployed": false,
+    "visibility": "private owner/staff only",
+    "confidentialPublicUserDataCentralized": false
+  },
+  "ecosystemWorkspace": {
+    "sectorCount": 4,
+    "editableMetadataOnly": true,
+    "exactArtifactMetadataImmutable": true,
+    "portableMigrationExport": true,
+    "confidentialPublicUserDataExcluded": true
+  },
+  "profileGrowth": {
+    "leadMarket": "Northern Metro New Jersey",
+    "nextLeadMarket": "Brooklyn",
+    "newIndividualProfessionals": 12,
+    "newFirms": 2,
+    "newProfessionalFirmLinks": 12,
+    "marketSplit": {
+      "Northern Metro New Jersey": 8,
+      "Manhattan": 2,
+      "Brooklyn": 2
+    },
+    "publicDirectory": {
+      "professionals": 65,
+      "firms": 24,
+      "total": 89
+    },
+    "strictQualifying": {
+      "professionals": 64,
+      "firms": 22,
+      "total": 86
+    }
+  },
+  "testSuiteParts": 42,
+  "exactArtifactTestPending": false,
+  "dependencyVerification": {
+    "cleanInstallAttempted": true,
+    "registry": "configured internal npm mirror",
+    "result": "registry ping and npm ci did not complete within the controlled verification window",
+    "testMethod": "temporary external test-only pg and nodemailer compatibility modules supplied through NODE_PATH",
+    "modulesIncludedInArtifact": false,
+    "freshVulnerabilityCountClaimed": false
+  }
+}

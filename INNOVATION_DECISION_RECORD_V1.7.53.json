@@ -1,0 +1,48 @@
+{
+  "release": "1.7.53",
+  "generatedAt": "2026-07-30",
+  "decisions": [
+    {
+      "idea": "Explicit presenter mode",
+      "problem": "The tour claimed guided use but lacked a one-step-at-a-time field presentation control.",
+      "user": "Roger and attorneys",
+      "evidence": "v1.7.52 tour structure and owner mission",
+      "expectedBenefit": "More reliable short in-office demonstration with less scrolling and clearer pacing.",
+      "scope": "Public tour only",
+      "risk": "Hidden content or keyboard confusion",
+      "dependency": "None",
+      "decision": "IMPLEMENT",
+      "reason": "Material field-use benefit with complete local implementation and fallback.",
+      "acceptanceTest": "Mode, progress, previous/next, direct navigation, keyboard and self-guided regression tests.",
+      "reusableLesson": "Separate presenter and self-guided modes when one public narrative must support both guided and independent review."
+    },
+    {
+      "idea": "Practice-specific QR and print handoff",
+      "problem": "A generic copied link is less useful during walk-in attorney outreach.",
+      "user": "Roger and attorneys",
+      "evidence": "Owner outreach objective and v1.7.52 continuation gap",
+      "expectedBenefit": "Immediate scan-and-return path without manual typing or invasive tracking.",
+      "scope": "Public static assets, short routes and print card",
+      "risk": "Stale production routing or accidental tracking",
+      "dependency": "Production domain routing must be verified before printed distribution",
+      "decision": "IMPLEMENT",
+      "reason": "High-value, low-dependency and privacy-minimized.",
+      "acceptanceTest": "Fixed routes, recorded QR digests, no personal/matter/campaign data in QR destinations, print rendering.",
+      "reusableLesson": "Use fixed short paths and static QR assets for durable handoffs; keep attribution separate and optional."
+    },
+    {
+      "idea": "Real-time portal availability probing",
+      "problem": "Could make tour destinations look current.",
+      "user": "Presenter",
+      "evidence": "No exact staging or monitoring contract exists",
+      "expectedBenefit": "Potentially fresher status",
+      "scope": "External network dependency",
+      "risk": "Misleading availability and demo failure",
+      "dependency": "Accepted staging and monitoring",
+      "decision": "DEFER",
+      "reason": "Current labeled fallback is safer and more truthful.",
+      "acceptanceTest": "Exact staging and monitored availability contract.",
+      "reusableLesson": "Do not trade deterministic demonstrations for unverified network probing."
+    }
+  ]
+}

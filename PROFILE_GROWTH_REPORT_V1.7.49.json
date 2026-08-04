@@ -1,0 +1,23 @@
+{
+  "releaseVersion": "1.7.49",
+  "newProfessionals": 0,
+  "updatedProfessionals": 0,
+  "newFirms": 0,
+  "totalProfessionals": 233,
+  "publicDirectory": {
+    "total": 281
+  },
+  "generatedAt": "2026-07-29T16:47:00-04:00",
+  "sourceFactChanges": false,
+  "livePublication": false,
+  "note": "No production profile-growth batch was run and no public professional or firm facts were added or changed.",
+  "summary": "v1.7.49 improves launch safety, service-status truth and monitoring readiness. It refreshes only owner-recorded artifact coordination metadata for Estate Law Aid and Personal Injury Law Aid.",
+  "v1749Change": {
+    "newProductionProfessionals": 0,
+    "publicProfileFactsChanged": false,
+    "productionBatchesCommitted": 0,
+    "ownerRecordedPortalArtifactMetadataRefreshed": true,
+    "independentPortalArtifactVerification": false,
+    "note": "The refreshed portal identities remain owner-recorded coordination metadata until each exact ZIP is independently verified in its dedicated builder context."
+  }
+}

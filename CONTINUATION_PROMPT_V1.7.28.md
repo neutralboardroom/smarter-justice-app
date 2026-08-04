@@ -1,0 +1,3 @@
+# Smarter Justice v1.7.28 Continuation Record
+
+Continue only from the exact `smarter-justice-v1.7.28.zip` artifact after verifying its identity and extracting it safely. v1.7.28 establishes the controlling cross-portal learning and adaptation system. Every future Smarter Justice and dedicated portal continuation prompt must contain a complete Cross-Portal Learning and Adaptation section, use actual portal ZIPs as implementation truth, preserve exact source artifact evidence, classify every transfer, and update portable snapshots after each real ZIP audit. The standalone Control Center remains a metadata-only starter and does not yet synchronize the registry automatically. Brooklyn remains the next professional-profile lead market. All activation gates remain closed.

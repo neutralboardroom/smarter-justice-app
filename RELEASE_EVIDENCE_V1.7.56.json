@@ -1,0 +1,120 @@
+{
+  "release": "1.7.56",
+  "generatedAt": "2026-07-30",
+  "status": "FINAL_SOURCE_SEALED_DETACHED_ARCHIVE_ACCEPTANCE_REQUIRED",
+  "sourceBaseline": {
+    "filename": "smarter-justice-v1.7.55.zip",
+    "sha256": "db2ecee8a06bac2139224a0115f551f4b895ca18658888df70256c6931a7b14e",
+    "sizeBytes": 4753972,
+    "entries": 1374,
+    "files": 1356,
+    "directories": 18,
+    "uncompressedBytes": 13162805,
+    "compressedBytes": 4553558,
+    "inventoryRecords": 1355,
+    "inventorySha256": "725a91d29f6de6ed3ca1607cba8c0149bbd345137776a74c77378cae8c3a7d56",
+    "packageJsonSha256": "471780a896f8798b5fe2afcd14aa5b0054f5fd4a0ce611e6a13697e25fb91717",
+    "packageLockSha256": "2280da91ed59b29755de17eff0329527f09d81740e9c70a0d7227e99798d6f03",
+    "sbomSha256": "86b7ef95500081730cc6e337365ce01264ad86bef36b28cde5b751f2cb95d118",
+    "treeSha256": "1dc2c4e9dd3586f268a53d85afc41d5f4469aff9392f42df9dbd4c20e27ab952",
+    "dependencyIndependentParts": 109,
+    "totalReadinessParts": 110,
+    "testLogSha256": "13fc73a7ade3561e2760cdee704e012f8696ec8e6569bff77866f740912b039c",
+    "concurrentBaselineRuns": 2,
+    "concurrentBaselineResult": "PASS_IDENTICAL_OUTPUT"
+  },
+  "scope": [
+    "record exact accepted v1.7.55 as source and immediate rollback",
+    "refresh the four initial portal owner-recorded exact identities",
+    "add one machine-validated currentness receipt across the Control Center truth surfaces",
+    "surface currentness validation in the owner portfolio-truth API",
+    "preserve strong public and Attorney Partner Tour surfaces without visual churn",
+    "keep every live, commercial, sensitive, portal and deployment gate closed"
+  ],
+  "sourceAcceptance": {
+    "runs": 2,
+    "mode": "CONCURRENT_INDEPENDENT_TREES",
+    "commandPartsPerRun": 109,
+    "result": "PASS",
+    "identicalOutput": true,
+    "testLogSha256": "13fc73a7ade3561e2760cdee704e012f8696ec8e6569bff77866f740912b039c"
+  },
+  "testModel": {
+    "dependencyIndependentParts": 110,
+    "postgresDependentParts": 1,
+    "totalReadinessParts": 111
+  },
+  "preservationEvidence": "PUBLIC_SURFACE_PRESERVATION_ACCEPTANCE_V1.7.56.json",
+  "candidateAcceptance": "CANDIDATE_ARTIFACT_ACCEPTANCE_V1.7.56.json",
+  "exactArtifact": {
+    "filename": "smarter-justice-v1.7.56.zip",
+    "identityMode": "DETACHED_AFTER_PACKAGING",
+    "sha256": "DETACHED_FINAL_DELIVERY_RECEIPT",
+    "sizeBytes": 0
+  },
+  "launchState": "NO_GO",
+  "deploymentAuthorized": false,
+  "closedGates": [
+    "payments",
+    "subscriptions",
+    "booking",
+    "reviews",
+    "confidential uploads",
+    "sensitive external AI",
+    "automatic filing",
+    "unrestricted professional routing",
+    "automatic cross-repository synchronization",
+    "automatic public-user matter transfer",
+    "live portal connections",
+    "professional opportunities",
+    "appointments"
+  ],
+  "authenticBlockers": [
+    "configured registry 404 for xtend-4.0.2.tgz",
+    "configured audit endpoint 404",
+    "PostgreSQL-dependent acceptance",
+    "exact four-portal D4 staging",
+    "real-device and assistive-technology acceptance",
+    "production services and operations review",
+    "Roger explicit GO"
+  ],
+  "workingTreeAcceptance": {
+    "commandParts": 110,
+    "runs": 1,
+    "result": "PASS",
+    "testLogSha256": "60beb21f8a8b4b9e82e48e6eef68f0934867f120405f78ac163c00b363f61d2a",
+    "packageJsonSha256": "cf95650d7e5bc9059285f719f6184580f0f77fac4d36cdfdb16218b2a8237b2b",
+    "packageLockSha256": "b88561eed83a3c684667a8b598834f4a0e64519dece98d6a44d76318f7037b71",
+    "sbomSha256": "016efba39226f944e436ade0498ca3e84678f4d914c204568fea993f0f521d36"
+  },
+  "candidateArtifactAcceptance": {
+    "result": "PASS",
+    "sha256": "a8e2cffd8e9f68ac2defe7bde1fde0aa6185c85b27d8dffe5a0cba3f1bb6edea",
+    "sizeBytes": 4838567,
+    "deterministicDoubleBuild": true,
+    "freshExtractionRuns": 2,
+    "commandsPerRun": 110,
+    "identicalTestOutput": true,
+    "testLogSha256": "60beb21f8a8b4b9e82e48e6eef68f0934867f120405f78ac163c00b363f61d2a"
+  },
+  "preSealFinalAcceptance": {
+    "result": "PASS",
+    "artifact": {
+      "filename": "smarter-justice-v1.7.56-final-a.zip",
+      "sha256": "29410ffd1f702f51317db7d1099610f564889b0d0e2d7537be7df48eb1862ef8",
+      "sizeBytes": 4839714,
+      "entries": 1411,
+      "files": 1393,
+      "directories": 18,
+      "uncompressedBytes": 13451001,
+      "compressedBytes": 4633770,
+      "inventoryRecords": 1392,
+      "inventorySha256": "3afb1805cf531907db373d5ddef201193821b421440cdd5fadd133057de55361",
+      "extractedTreeSha256": "4382f5a76a6e31fce781b6c87d5a00af0dde4fd26d0d00a93451506c1ae5458d"
+    },
+    "freshExtractionRuns": 2,
+    "commandsPerRun": 110,
+    "identicalTestOutput": true,
+    "testLogSha256": "60beb21f8a8b4b9e82e48e6eef68f0934867f120405f78ac163c00b363f61d2a"
+  }
+}

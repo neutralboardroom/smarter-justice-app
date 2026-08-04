@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "1.0.0",
+  "releaseVersion": "1.7.43",
+  "generatedAt": "2026-07-28T23:45:00-04:00",
+  "deploymentAuthorized": false,
+  "status": "NO_GO",
+  "items": [
+    {
+      "priority": "P0",
+      "item": "Accept Founding Profile Pilot email, owner, support, browser, mobile and portal-return journey",
+      "status": "IMPLEMENTED_LOCAL_EXTERNAL_ACCEPTANCE_PENDING"
+    },
+    {
+      "priority": "P0",
+      "item": "Approve one exact rollback artifact",
+      "status": "BLOCKED_OWNER_DECISION"
+    },
+    {
+      "priority": "P0",
+      "item": "Legitimate clean install and vulnerability audit",
+      "status": "BLOCKED_REGISTRY"
+    },
+    {
+      "priority": "P0",
+      "item": "Production-like PostgreSQL, migrations, restart persistence and transactions",
+      "status": "NOT_VERIFIED"
+    },
+    {
+      "priority": "P0",
+      "item": "SMTP verification and recovery lifecycle",
+      "status": "NOT_VERIFIED"
+    },
+    {
+      "priority": "P0",
+      "item": "Stripe subscription lifecycle and support policy acceptance",
+      "status": "NOT_VERIFIED"
+    },
+    {
+      "priority": "P0",
+      "item": "Divorce, Estate and Personal Injury exact portal verification and D4 staging",
+      "status": "NOT_STARTED"
+    },
+    {
+      "priority": "P0",
+      "item": "Browser, mobile, keyboard, zoom and screen-reader acceptance",
+      "status": "NOT_COMPLETED"
+    },
+    {
+      "priority": "P0",
+      "item": "Monitoring, incident, backup and restore acceptance",
+      "status": "NOT_COMPLETED"
+    },
+    {
+      "priority": "P1",
+      "item": "Resolve 14 ambiguous legacy professional assignments",
+      "status": "OPEN"
+    },
+    {
+      "priority": "P1",
+      "item": "Narrow temporary Smarter Justice directory to claim/migration use and verify sitemap/navigation truth",
+      "status": "IMPLEMENTED_PARTIAL"
+    },
+    {
+      "priority": "P2",
+      "item": "Immigration Oasis and additional portal rollout after three pilots",
+      "status": "DEFERRED"
+    }
+  ]
+}

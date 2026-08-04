@@ -1,0 +1,39 @@
+{
+  "version": "1.7.34",
+  "date": "2026-07-27",
+  "program": "Phase One six-region professional-profile program",
+  "leadRegion": "The Bronx",
+  "nextLeadRegion": "The Bronx",
+  "releaseDecision": "NO_WEAK_PADDING",
+  "researchPerformedInThisBuild": false,
+  "reason": "This owner-operations release unified current legal-network truth and added the Action Center. No current public-source profile batch was independently researched; deployment and launch priorities controlled.",
+  "actual": {
+    "newIndividualProfessionals": 0,
+    "newFirms": 0,
+    "newProfessionalFirmLinks": 0,
+    "regionsWorked": 0
+  },
+  "directoryBefore": {
+    "professionals": 233,
+    "firms": 48,
+    "publicTotal": 281,
+    "strictQualifyingProfessionals": 232,
+    "strictQualifyingFirms": 46,
+    "strictQualifyingTotal": 278
+  },
+  "directoryAfter": {
+    "professionals": 233,
+    "firms": 48,
+    "publicTotal": 281,
+    "strictQualifyingProfessionals": 232,
+    "strictQualifyingFirms": 46,
+    "strictQualifyingTotal": 278
+  },
+  "statusBoundaries": {
+    "allExistingUnclaimedProfilesRemainSeparateFromVerification": true,
+    "paymentDoesNotAffectOrganicOrder": true,
+    "noParticipationOrAvailabilityInferred": true,
+    "noInquiryEligibilityActivated": true
+  },
+  "nextReleaseTrigger": "Resume Bronx-led research when current individual-level practice, office, contact, firm relationship, source date, and duplicate checks can be completed without displacing deployment and launch priorities."
+}

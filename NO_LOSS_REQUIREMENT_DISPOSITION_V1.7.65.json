@@ -1,0 +1,65 @@
+{
+  "schema": "smarter-justice-no-loss-requirement-disposition",
+  "releaseVersion": "1.7.65",
+  "generatedAt": "2026-07-31T23:58:00-04:00",
+  "controllingPrompt": {
+    "filename": "Smarter_Justice_Reusable_Version_Neutral_Complete_Immediate_Build_Master_Command_Fifth_Pass_Durable_Rules_Public_Language_First_Impression_Non_Idempotent_Evidence_Current_Research_v1.7.61_Learning_2026-07-31(1).txt",
+    "canonicalFilename": "Smarter_Justice_Reusable_Version_Neutral_Complete_Immediate_Build_Master_Command_Fifth_Pass_2026-07-31.txt",
+    "sha256": "055f3484f870d2965e676292ef4b43c0d689b5b146ba04e8ffce48983d255945",
+    "sizeBytes": 243239,
+    "lineCount": 5903,
+    "openingMarkerVerified": true,
+    "finalMarkerVerified": true
+  },
+  "dispositions": [
+    {
+      "requirement": "all v1.7.61 working capabilities",
+      "disposition": "PRESERVED",
+      "evidence": "full regression suite plus public-surface audit"
+    },
+    {
+      "requirement": "DUR-001 through DUR-041",
+      "disposition": "IMPLEMENTED",
+      "evidence": "DURABLE_RULE_COVERAGE_MATRIX_V1.7.65.json"
+    },
+    {
+      "requirement": "visible Spanish toggle while English-only release is active",
+      "disposition": "CORRECTED AS STALE",
+      "evidence": "PUBLIC_LANGUAGE_AND_VISUAL_SYSTEM_ACCEPTANCE_V1.7.65.json"
+    },
+    {
+      "requirement": "public homepage and visual system",
+      "disposition": "PRESERVED",
+      "evidence": "no evidence-supported redesign required"
+    },
+    {
+      "requirement": "external production and live gates",
+      "disposition": "DEFERRED WITH GENUINE DEPENDENCY",
+      "evidence": "LAUNCH_CAPABILITY_MATRIX_V1.7.65.json"
+    }
+  ],
+  "silentOmissions": 0,
+  "weakenedMandatoryRules": 0,
+  "items": [
+    {
+      "requirement": "Canonical active master-pair runtime discovery and detached receipt binding",
+      "disposition": "IMPLEMENTED",
+      "evidence": "CANONICAL_ACTIVE_MASTER_PAIR_V1.7.65.json"
+    },
+    {
+      "requirement": "Pair epoch/revision replay and split-brain protection",
+      "disposition": "IMPLEMENTED",
+      "evidence": "MASTER_PAIR_REPLAY_AND_SPLIT_BRAIN_ACCEPTANCE_V1.7.65.json"
+    },
+    {
+      "requirement": "DUR-001 through DUR-043 closed inheritance",
+      "disposition": "IMPLEMENTED",
+      "evidence": "DURABLE_RULE_BASELINE_MANIFEST_V1.7.65.json"
+    },
+    {
+      "requirement": "Public experience preservation without cosmetic churn",
+      "disposition": "PRESERVED",
+      "evidence": "PUBLIC_LANGUAGE_AND_VISUAL_SYSTEM_ACCEPTANCE_V1.7.65.json"
+    }
+  ]
+}

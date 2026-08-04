@@ -1,19 +1,26 @@
+# Existing-service reference. Validate against the Render workspace before creating or syncing a Blueprint.
+# The plan is intentionally omitted so Render retains the current instance type for the existing service.
 services:
   - type: web
-    name: smarter-justice-v1
-    env: node
-    plan: free
+    name: smarter-justice-app
+    runtime: node
     buildCommand: npm ci --omit=dev
+    preDeployCommand: npm run migrate
     startCommand: npm start
-    healthCheckPath: /health
-    autoDeploy: true
+    numInstances: 1
+    healthCheckPath: /livez
+    region: oregon
+    branch: main
+    domains:
+      - smarterjustice.com
+    autoDeployTrigger: off
     envVars:
       - key: NODE_VERSION
         value: 22
       - key: OWNER_NOTIFICATION_EMAIL
         sync: false
       - key: OWNER_ACCOUNT_NAME
-        value: "Smarter Justice Owner"
+        sync: false
       - key: OWNER_ACCOUNT_EMAIL
         sync: false
       - key: OWNER_ACCOUNT_PASSWORD
@@ -34,10 +41,24 @@ services:
         value: "false"
       - key: STAFF_SIGNUP_CODE
         sync: false
-      - key: SESSION_SECRET
-        sync: false
+      - key: STAFF_SESSION_HOURS
+        value: "8"
       - key: PROFESSIONAL_SESSION_DAYS
         value: "14"
+      - key: CONTINUATION_TOKEN_DAYS
+        value: "180"
+      - key: TRUST_PROXY
+        value: "true"
+      - key: SENSITIVE_TRAFFIC_APPROVED
+        value: "false"
+      - key: PROFESSIONAL_PILOT_ACTIVATION_APPROVED
+        value: "false"
+      - key: PUBLIC_PAID_SERVICES_ENABLED
+        value: "false"
+      - key: STOP_SIGN_PROJECT_DESTINATION_VERIFIED
+        value: "false"
+      - key: AI_REVIEW_ENABLED
+        value: "false"
       - key: DATABASE_URL
         sync: false
       - key: PG_CONNECT_TIMEOUT_MS
@@ -78,19 +99,28 @@ services:
         sync: false
       - key: STRIPE_PROFESSIONAL_REVIEW_PRICE_ID
         sync: false
+      - key: STRIPE_PROFESSIONAL_REVIEW_PREP_PRICE_ID
+        sync: false
       - key: MAX_UPLOADS_PER_REQUEST
         sync: false
       - key: MAX_UPLOAD_BYTES
         sync: false
 
-# Optional AI vars can be added in Render after first deploy:
-# AI_REVIEW_ENABLED=false
-# AI_PROVIDER_ORDER=openai,anthropic,google,xai
-# OPENAI_API_KEY=
-# OPENAI_MODEL=
-# ANTHROPIC_API_KEY=
-# ANTHROPIC_MODEL=
-# GOOGLE_API_KEY=
-# GEMINI_MODEL=
-# XAI_API_KEY=
-# XAI_MODEL=
+# OpenAI-only central AI gateway. Add these only to the Smarter Justice central
+# service. All capability flags remain dark until exact live acceptance passes.
+# OPENAI_AI_ENABLED=false
+# AI_GLOBAL_KILL_SWITCH=true
+# AI_COST_HARD_STOP=false
+# AI_PORTAL_SMARTER_JUSTICE_CENTRAL_ENABLED=true
+# AI_TOOL_SJ_STARTING_POINT_ENABLED=false
+# AI_GATEWAY_CONTRACT_VERSION=sj-ai-gateway-v1.0.0
+# OPENAI_API_KEY=                # protected secret; never sync or commit
+# OPENAI_PROJECT_ID=
+# OPENAI_SERVICE_ACCOUNT_ID=
+# OPENAI_MODEL=gpt-5-mini
+# OPENAI_REQUEST_TIMEOUT_MS=12000
+# OPENAI_MAX_OUTPUT_TOKENS=900
+# OPENAI_STORE_RESPONSES=false
+# AI_DAILY_REQUEST_HARD_STOP=250
+# AI_MONTHLY_ESTIMATED_USD_HARD_STOP=100
+# AI_PORTAL_SERVICE_TOKENS_JSON={}  # protected server-to-server secrets

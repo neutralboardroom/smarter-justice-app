@@ -1,0 +1,24 @@
+{
+  "releaseVersion": "1.7.46",
+  "generatedAt": "2026-07-29T19:35:00-04:00",
+  "environment": "development-source-audit",
+  "node": "v22.16.0",
+  "npm": "10.9.2",
+  "productionVersion": "1.6.1",
+  "deploymentAuthorized": false,
+  "dependencyInstall": "BLOCKED_CONFIGURED_REGISTRY_HTTP_404_XTEND_4_0_2",
+  "vulnerabilityAudit": "BLOCKED_CONFIGURED_AUDIT_ENDPOINT_HTTP_404",
+  "postgresql": "NOT_ACCEPTED",
+  "smtp": "NOT_ACCEPTED",
+  "stripe": "CLOSED",
+  "monitoring": "NOT_ACCEPTED",
+  "backupRestore": "NOT_ACCEPTED",
+  "exactRollback": "OWNER_APPROVAL_REQUIRED",
+  "portalConnections": 0,
+  "launchPreflight": {
+    "status": "NO_GO",
+    "readyLanes": 0,
+    "blockedLanes": 4,
+    "blockedChecks": 92
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "1.0.0",
+  "releaseVersion": "1.7.42",
+  "generatedAt": "2026-07-28T00:00:00-04:00",
+  "deploymentAuthorized": false,
+  "authorityPolicy": "Dedicated exact portal artifacts remain authoritative; owner-recorded values are not independently verified by this build.",
+  "artifacts": [
+    {
+      "artifactId": "smarter-justice-v1.7.41",
+      "productId": "general-smarter-justice-start",
+      "version": "1.7.41",
+      "filename": "smarter-justice-v1.7.41.zip",
+      "sha256": "f7db1b271f3a88314095a471305ff4c913882e6e456be41f48312453064e8b15",
+      "sizeBytes": 2083467,
+      "evidenceState": "EXACT_VERIFIED",
+      "authority": "Exact uploaded baseline independently verified in this build.",
+      "deploymentState": "NOT_DEPLOYED",
+      "superseded": false
+    },
+    {
+      "artifactId": "smarter-justice-v1.7.42",
+      "productId": "general-smarter-justice-start",
+      "version": "1.7.42",
+      "filename": "smarter-justice-v1.7.42.zip",
+      "sha256": "DETACHED_AFTER_PACKAGING",
+      "sizeBytes": 0,
+      "evidenceState": "EXACT_VERIFIED",
+      "authority": "Final hash and size are reported externally after packaging; embedded inventory validates every other packaged file.",
+      "deploymentState": "NOT_DEPLOYED",
+      "superseded": false
+    },
+    {
+      "artifactId": "divorce-law-aid-owner-recorded",
+      "productId": "divorce-law-aid",
+      "version": "0.11.0",
+      "filename": "divorce-law-aid-v0.11.0.zip",
+      "sha256": "539ab77b6613dc08e2d730c99ce5e62cc72a697205787fe00d29832e9920d6eb",
+      "sizeBytes": 621669,
+      "evidenceState": "OWNER_RECORDED",
+      "authority": "Owner-recorded exact identity from the dedicated portal work; reverify the uploaded artifact in its own builder chat before integration.",
+      "deploymentState": "NOT_CONFIRMED",
+      "superseded": false
+    },
+    {
+      "artifactId": "estate-law-aid-owner-recorded",
+      "productId": "estate-law-aid",
+      "version": "1.1.39",
+      "filename": "estate-law-aid-v1.1.39.zip",
+      "sha256": "5a66f60884c79eaff67823121eb563a65d344f849611058b0ddfd3eb6f6a8e9a",
+      "sizeBytes": 4273466,
+      "evidenceState": "OWNER_RECORDED",
+      "authority": "Owner-recorded exact identity from the dedicated portal work; reverify the uploaded artifact in its own builder chat before integration.",
+      "deploymentState": "NOT_CONFIRMED",
+      "superseded": false
+    },
+    {
+      "artifactId": "personal-injury-law-aid-owner-recorded",
+      "productId": "personal-injury-law-aid",
+      "version": "0.30.0",
+      "filename": "personal-injury-law-aid-v0.30.0.zip",
+      "sha256": "740b4a83f165fc13fb06561b509b114d41b7ebb3a8a11611426ed749f5e5d852",
+      "sizeBytes": 1607304,
+      "evidenceState": "OWNER_RECORDED",
+      "authority": "Owner-recorded exact identity from the dedicated portal work; reverify the uploaded artifact in its own builder chat before integration.",
+      "deploymentState": "NOT_CONFIRMED",
+      "superseded": false
+    }
+  ]
+}

@@ -1,16 +1,16 @@
-const SHARED_STANDARD_VERSION = '1.3.3';
+const SHARED_STANDARD_VERSION = '1.4.0';
 
 const GOVERNANCE = {
   title: 'Smarter Justice Shared Platform Standard',
   purpose: 'Coordinate a family of separate, focused justice micro-portals through one private owner portfolio system without forcing every specialty into one rigid design, workflow, or codebase.',
   operatingModel: [
-    'Smarter Justice is the umbrella brand, trusted starting point, portfolio coordinator, shared-system steward, and private owner Control Center.',
+    'Smarter Justice is the umbrella brand, trusted starting point, self-contained legal-portfolio coordinator, shared-system steward, and private owner Control Center. Roger is the final owner and decision authority.',
     'Each focused portal remains a separate branded and deployable product with its own portal-specific build history, code package, workflows, risks, compliance decisions, and launch plan.',
-    'The Smarter Justice Master Coordination track governs ecosystem strategy, priorities, shared architecture, standards, cross-portal compatibility, Control Center development, and portfolio progress.',
+    'The Smarter Justice Legal Portfolio Control Center governs legal-network strategy, priorities, shared architecture, standards, cross-portal compatibility, releases, launch gates, owner decisions, and portfolio progress without a Neutral Boardroom dependency.',
     'Detailed implementation remains in a dedicated development chat for each portal.'
   ],
   masterCoordinationScope: [
-    'Overall ecosystem strategy and portal priorities',
+    'Overall legal-network strategy and portal priorities',
     'Shared architecture, interoperability, and reusable systems',
     'Shared customer, owner, staff, paralegal, reviewer, and professional dashboard standards',
     'Shared referral and Community Partner strategy',
@@ -47,7 +47,7 @@ const GOVERNANCE = {
     'Equivalent public-source, claim, verification, account-control, edit-authorization, and correction safeguards for individual and firm profiles',
     'Accurate campaign attribution and vendor-neutral customer payment language on general professional acquisition pages',
     'No government affiliation, guaranteed outcome, autonomous filing, or professional-relationship claims unless a separate valid engagement establishes otherwise',
-    'Changes are made only when they improve users, operations, compliance, safety, reliability, maintainability, deployability, conversion, or coordinated ecosystem value',
+    'Changes are made only when they improve users, operations, compliance, safety, reliability, maintainability, deployability, conversion, or coordinated legal-network value',
     'Users can choose AI-guided, human-first, or human-only assistance where applicable, with explicit consent and purpose-limited AI use',
     'No-guess question flows preserve uncertainty, answer-later states, missing records, and requests for human explanation',
     'Preparation, review, payment, drafting, download, signature, filing, submission, receipt, and acceptance remain separate states',
@@ -97,6 +97,7 @@ const GOVERNANCE = {
     'Directory completeness, default page size, pagination, official-source later-page support, clearable/shareable filters, individual/firm profile parity, claim-control tests, profile metadata, campaign attribution, firm estimate transparency, onboarding checklist, and narrow-phone acquisition evidence where a professional marketplace is active'
   ],
   futureControlCenterRoadmap: [
+    'Self-contained owner decision, artifact, portal, launch-gate, dependency, support, incident, backup, restore, and rollback registers',
     'Portal manifests and controlled portfolio synchronization',
     'Cross-portal capability matrix identifying the strongest proven implementation of each reusable system',
     'Evidence-backed official-form approval ledgers, universal reviewed-file delivery gates, expansion ledgers, and first-cohort review controls',

@@ -1,0 +1,32 @@
+{
+  "version": "1.7.40",
+  "date": "2026-07-28",
+  "nodeTarget": "22.x",
+  "verifiedNode": "v22.16.0",
+  "verifiedNpm": "10.9.2",
+  "moduleSystem": "CommonJS",
+  "dependencies": {
+    "pg": "^8.13.1",
+    "nodemailer": "^9.0.3"
+  },
+  "registryReachability": "HTTP_404_FROM_CONFIGURED_INTERNAL_REGISTRY",
+  "cleanInstall": "BLOCKED_REGISTRY_HTTP_404",
+  "vulnerabilityAudit": "BLOCKED_ADVISORY_ENDPOINT_HTTP_404",
+  "graphicalBrowserAcceptance": "NOT_RUN",
+  "physicalDeviceAcceptance": "NOT_RUN",
+  "assistiveTechnologyAcceptance": "NOT_RUN",
+  "deployment": "NOT_AUTHORIZED",
+  "testStatus": {
+    "officialSuiteParts": 96,
+    "passedDependencyIndependentPartsWorkingSource": 95,
+    "plannedFreshExtractionCycles": 2,
+    "blockedParts": 1,
+    "blockedTest": "tests/storage-readiness.test.js",
+    "reason": "The pg dependency could not be freshly installed because the configured registry returned HTTP 404 for required package tarballs. No local shim or false pass was used."
+  },
+  "sourceCounts": {
+    "javascriptFiles": 210,
+    "jsonFiles": 205,
+    "topLevelPublicHtmlFiles": 70
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "schema_id": "SJP-CAPABILITY-MATURITY-DASHBOARD-2026-08-03-V1",
+  "releaseVersion": "1.7.75",
+  "generated_at": "2026-08-03T10:20:00-04:00",
+  "maturity_scale": {
+    "D0": "concept only",
+    "D1": "schema or bounded validator",
+    "D2": "local deterministic workflow and tests",
+    "D3": "staging or cross-product acceptance",
+    "D4": "production accepted",
+    "D5": "operationally proven"
+  },
+  "capabilities": [
+    {
+      "candidate_id": "PROFESSIONAL_OPERATIONS_CENTER",
+      "decision": "SELECTED",
+      "maturity": "D2_LOCAL_STRUCTURED_WORKFLOW_REGISTRY",
+      "minimum_slice": "Read-only workflow and maturity aggregation across existing central professional operations.",
+      "deployment_effect": "NONE",
+      "exact_reason": "Existing claim, correction, readiness, and outreach workflows can be indexed coherently without replacing practice-management systems."
+    },
+    {
+      "candidate_id": "SOURCE_INTELLIGENCE_SYSTEM",
+      "decision": "SELECTED",
+      "maturity": "D2_EXISTING_REGISTRY_INDEX",
+      "minimum_slice": "Index current exact source registries and currentness controls; no new external source fetch.",
+      "deployment_effect": "NONE",
+      "exact_reason": "Central already owns official-source evidence registries; a read-only index improves owner operability without inventing freshness."
+    },
+    {
+      "candidate_id": "ECOSYSTEM_GOVERNANCE_CENTER",
+      "decision": "SELECTED",
+      "maturity": "D2_READ_ONLY_AGGREGATE",
+      "minimum_slice": "Aggregate validated release, readiness, authorization, architecture, and capability receipts.",
+      "deployment_effect": "NONE",
+      "exact_reason": "Connected to V11 governance and existing owner control center; aggregation remains receipt-based and fail-closed."
+    },
+    {
+      "candidate_id": "CAPABILITY_MATURITY_DASHBOARD",
+      "decision": "SELECTED",
+      "maturity": "D2_OWNER_VISIBILITY",
+      "minimum_slice": "Show current maturity, evidence, blockers, next action, rollback, and deployment effect for selected capabilities.",
+      "deployment_effect": "NONE",
+      "exact_reason": "Provides truthful owner visibility and prevents roadmap concepts from being mistaken for live capability."
+    },
+    {
+      "candidate_id": "CONSENT_BASED_JOURNEY_ORCHESTRATOR",
+      "decision": "SELECTED",
+      "maturity": "D1_SCHEMA_AND_VALIDATOR_ONLY",
+      "minimum_slice": "Consent receipt schema and fail-closed validator; runtime transfer disabled.",
+      "deployment_effect": "NONE",
+      "exact_reason": "Architecture compatibility can be proven now without creating a universal data store or automatic sync."
+    },
+    {
+      "candidate_id": "MATTER_READINESS_ENGINE_V2",
+      "decision": "DEFERRED",
+      "maturity": "D0_NOT_IMPLEMENTED",
+      "minimum_slice": null,
+      "deployment_effect": "NONE",
+      "exact_reason": "Existing structured public preparation tools already provide bounded readiness; deeper scoring needs separate legal-safety design and product evidence."
+    },
+    {
+      "candidate_id": "SHARED_TIMELINE_EVENT_CONTRACT",
+      "decision": "DEFERRED",
+      "maturity": "D0_PRODUCT_LOCAL_DESIGN_REQUIRED",
+      "minimum_slice": null,
+      "deployment_effect": "NONE",
+      "exact_reason": "A shared schema must first be accepted by product-local owners and storage models; central must not create a universal sensitive timeline."
+    },
+    {
+      "candidate_id": "HEALTH_CONTINUITY_TIMELINES",
+      "decision": "ROUTED",
+      "maturity": "NOT_APPLICABLE",
+      "minimum_slice": null,
+      "deployment_effect": "NONE",
+      "exact_reason": "Primary home is unified Smarter Health."
+    },
+    {
+      "candidate_id": "PROPERTY_LIFECYCLE_FRAMEWORK",
+      "decision": "ROUTED",
+      "maturity": "NOT_APPLICABLE",
+      "minimum_slice": null,
+      "deployment_effect": "NONE",
+      "exact_reason": "Primary home is unified Smarter Property."
+    },
+    {
+      "candidate_id": "MONEY_CONTINUITY_AND_PREPARATION_TIMELINES",
+      "decision": "ROUTED",
+      "maturity": "NOT_APPLICABLE",
+      "minimum_slice": null,
+      "deployment_effect": "NONE",
+      "exact_reason": "Primary home is unified Smarter Money."
+    }
+  ],
+  "summary": {
+    "selected": 5,
+    "deferred": 2,
+    "routed": 3,
+    "maximum_current_maturity": "D2",
+    "production_capabilities_claimed": 0
+  },
+  "deployment_authorized": false,
+  "production_request_sent": false
+}

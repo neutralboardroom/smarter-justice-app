@@ -1,0 +1,32 @@
+{
+  "schema": "smarter-justice-production-stabilization-watch",
+  "releaseVersion": "1.7.73",
+  "generatedAt": "2026-08-02T17:04:00-04:00",
+  "state": "NOT_STARTED_PRODUCTION_NOT_DEPLOYED",
+  "checkpoints": [
+    {
+      "checkpoint": "T+0",
+      "state": "NOT_APPLICABLE_YET"
+    },
+    {
+      "checkpoint": "T+15_MINUTES",
+      "state": "NOT_APPLICABLE_YET"
+    },
+    {
+      "checkpoint": "T+60_MINUTES",
+      "state": "NOT_APPLICABLE_YET"
+    },
+    {
+      "checkpoint": "BEFORE_MONDAY_DEMONSTRATION",
+      "state": "NOT_APPLICABLE_YET"
+    }
+  ],
+  "liveAcceptedProducts": [],
+  "portfolioDecision": "NO_GO",
+  "reasons": [
+    "COHORT_NOT_FROZEN",
+    "PROVIDER_IDENTITIES_UNBOUND",
+    "DEPLOYMENT_NOT_AUTHORIZED",
+    "PRODUCTION_NOT_DEPLOYED"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "schema": "smarter-justice-final-source-acceptance",
+  "releaseVersion": "1.7.70",
+  "generatedAt": "2026-08-02T15:44:00-04:00",
+  "status": "PRESEAL_SOURCE_ACCEPTED",
+  "presealAcceptance": {
+    "sha256": "64de0ea38d8f6433febfbc120c7af0a03cdd7e4ea1ae3a0e1902069068cd2dc7",
+    "sizeBytes": 7609127,
+    "entries": 2366,
+    "files": 2342,
+    "directories": 24,
+    "uncompressedBytes": 22536937,
+    "compressedBytes": 7255041,
+    "inventoryRecords": 2341,
+    "inventorySha256": "6aeb7e02aaac331bafea260817596218b8f45bd1f72682c2f0fce4047679efda",
+    "deterministicBuilds": 2,
+    "freshExtractions": 2,
+    "commandsPerExtraction": 123,
+    "testLogSha256": "1519303460f7dd2f0f5bc77cdd663853cba6068bb63c91e5b525655792328da2",
+    "identicalOutput": true,
+    "crc": "PASS",
+    "safePaths": "PASS",
+    "duplicatePaths": "PASS",
+    "sourceEquality": "PASS",
+    "state": "PRESEAL_SOURCE_ACCEPTED"
+  },
+  "immutableFinalIdentity": "DETACHED_AFTER_PACKAGING",
+  "launchState": "NO_GO",
+  "deploymentAuthorized": false,
+  "selfReferenceBoundary": "Preseal evidence is embedded; the immutable final ZIP identity is issued only in the detached receipt."
+}

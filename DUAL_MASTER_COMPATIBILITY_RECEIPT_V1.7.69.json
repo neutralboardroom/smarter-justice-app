@@ -1,0 +1,53 @@
+{
+  "schema": "smarter-justice-dual-master-compatibility-receipt",
+  "releaseVersion": "1.7.69",
+  "generatedAt": "2026-08-02T12:16:00-04:00",
+  "activePairReceiptId": "MPCR-2026-07-31-E1-R0-05F4296ED378",
+  "pairEpoch": 1,
+  "pairRevision": 0,
+  "centralMaster": {
+    "pass": "FIFTEENTH PASS",
+    "filename": "Smarter_Justice_Central_Master_Fifteenth_Pass_Sunday_Launch_Day_Deployment_Orchestration_2026-08-02.txt",
+    "sha256": "5dad361bae18b25dc8193ce32ca4263a72b12ce90316d6b97dbd191ce2b74223",
+    "sizeBytes": 383921,
+    "lineCount": 8204,
+    "evidenceState": "FILE_LIBRARY_EXACT_IDENTITY_RESOLVED_BYTES_NOT_PACKAGED"
+  },
+  "portalFamilyMaster": {
+    "pass": "THIRTY-SEVENTH PASS",
+    "filename": "Legal_Micro_Portals_Master_Thirty_Seventh_Pass_Sunday_Launch_Day_Deployment_Orchestration_2026-08-02.txt",
+    "sha256": "9e158fb5e3eaca32861d067e026513ac179f0b416e6abe6f51d889faaf29a387",
+    "sizeBytes": 746617,
+    "lineCount": 15240,
+    "evidenceState": "CURRENT_CHAT_EXACTLY_INSPECTED"
+  },
+  "baselineId": "DRB-2026-08-02-DUR001-DUR086-V13",
+  "semanticCapsuleSha256": "fb405d2b8e4301d8a2f02c33951dc28ebe7e492a181f679d6e088ebf31f6196b",
+  "compatibilityScope": [
+    "durable-rule baseline and closed inheritance",
+    "two-phase pair propagation",
+    "prompt self-identity",
+    "runtime active-pair discovery",
+    "replay and split-brain protection",
+    "portal-continuation binding governance"
+  ],
+  "state": "MASTER PAIR MATCHED — COMPATIBLE DESCENDANT WITH PROPAGATION REQUIRED",
+  "productAcceptanceCopied": false,
+  "d4OrD5Copied": false,
+  "deploymentOrLiveCopied": false,
+  "currentPackId": "SJP-2026-08-02-C15-P37-D11-V13",
+  "currentPackReadyForUse": true,
+  "canonicalPackCommitProven": false,
+  "activeCommittedRollbackPair": {
+    "receiptId": "MPCR-2026-07-31-E1-R0-05F4296ED378",
+    "state": "MASTER PAIR COMMITTED — PROMPT COMPATIBILITY ONLY"
+  },
+  "deploymentMaster": {
+    "pass": "ELEVENTH PASS",
+    "filename": "Smarter_Justice_and_Legal_Micro_Portals_Deployment_Master_Eleventh_Pass_Sunday_Launch_Day_Batch_Authorization_and_Production_Stabilization_2026-08-02.txt",
+    "sha256": "3b35a35490fdf159d278c1d949dc2537da51b58c6fa079f387fb036d8c0843a7",
+    "sizeBytes": 246306,
+    "lineCount": 4308,
+    "evidenceState": "CURRENT_CHAT_EXACTLY_INSPECTED"
+  }
+}

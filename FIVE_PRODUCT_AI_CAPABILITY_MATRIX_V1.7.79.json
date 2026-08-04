@@ -1,0 +1,64 @@
+{
+  "schema": "smarter-justice-five-product-ai-capability-matrix",
+  "matrixVersion": "1.0.0",
+  "releaseVersion": "1.7.79",
+  "launchBatchId": "SJP-OPENAI-LIVE-2026-08-03-BATCH-02",
+  "products": [
+    {
+      "product": "Smarter Justice central",
+      "artifact": "smarter-justice-v1.7.79.zip",
+      "toolId": "sj.starting_point_organizer.v1",
+      "maturity": "TESTED",
+      "featureFlagState": "DISABLED",
+      "liveSmokeState": "PENDING_KEY_BILLING_AND_DEPLOYMENT",
+      "fallback": "RULES_ONLY_AVAILABLE",
+      "blocker": "Protected OpenAI project, billing, service-account key, deployment, and controlled live smoke evidence are absent."
+    },
+    {
+      "product": "Estate Law Aid",
+      "toolId": "estate.missing_information_organizer.v1",
+      "maturity": "TESTED",
+      "featureFlagState": "DISABLED",
+      "liveSmokeState": "NOT_RUN",
+      "fallback": "PORTAL_NON_AI_REQUIRED",
+      "blocker": "Exact portal adapter and compatibility receipt not supplied in this central build."
+    },
+    {
+      "product": "Divorce Law Aid",
+      "toolId": "divorce.timeline_organizer.v1",
+      "maturity": "TESTED",
+      "featureFlagState": "DISABLED",
+      "liveSmokeState": "NOT_RUN",
+      "fallback": "PORTAL_NON_AI_REQUIRED",
+      "blocker": "Exact portal adapter and compatibility receipt not supplied in this central build."
+    },
+    {
+      "product": "Personal Injury Law Aid",
+      "toolId": "personal_injury.evidence_organizer.v1",
+      "maturity": "TESTED",
+      "featureFlagState": "DISABLED",
+      "liveSmokeState": "NOT_RUN",
+      "fallback": "PORTAL_NON_AI_REQUIRED",
+      "blocker": "Exact portal adapter and compatibility receipt not supplied in this central build."
+    },
+    {
+      "product": "Domestic Violence Aid",
+      "toolId": "domestic_violence.safe_preparation_checklist.v1",
+      "maturity": "CLOSED_BY_DESIGN",
+      "featureFlagState": "DISABLED",
+      "liveSmokeState": "NOT_RUN",
+      "fallback": "PUBLIC_EMERGENCY_AND_SAFETY_RESOURCES_REQUIRED",
+      "blocker": "AI-specific survivor-safety, privacy, portal compatibility, and controlled smoke gates are not accepted."
+    }
+  ],
+  "cohortOrder": [
+    "Smarter Justice central",
+    "Estate Law Aid",
+    "Divorce Law Aid",
+    "Personal Injury Law Aid",
+    "Domestic Violence Aid"
+  ],
+  "canary": "Estate Law Aid only after central live smoke and exact portal compatibility receipt",
+  "deploymentAuthorized": false,
+  "launchState": "NO_GO"
+}

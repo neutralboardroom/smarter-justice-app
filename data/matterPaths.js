@@ -4,7 +4,7 @@ const UNIVERSAL_TRIAGE_QUESTIONS = [
   { name: 'dateReceived', label: 'Date you received it', type: 'date', optional: true },
   { name: 'deadlineDate', label: 'Deadline, hearing date, response date, due date, appointment, or appeal date', type: 'date', optional: true },
   { name: 'courtOrAgency', label: 'Court, agency, company, office, insurer, employer, school, landlord, or other party involved', type: 'text', optional: true },
-  { name: 'desiredHelp', label: 'What do you want help with first?', type: 'select', options: ['Understand where to start', 'Organize documents for review', 'Prepare a worksheet or starter file', 'Prepare completed forms after review if available', 'Respond to a notice or deadline', 'Request attorney/professional review if needed'] }
+  { name: 'desiredHelp', label: 'What do you want help with first?', type: 'select', options: ['Understand where to start', 'Organize documents for review', 'Prepare a worksheet or starting summary', 'Prepare completed forms after review if available', 'Respond to a notice or deadline', 'Request attorney/professional review if needed'] }
 ];
 
 function q(name, label, type='text', options=[], optional=true){ return { name, label, type, options, optional }; }
@@ -168,7 +168,7 @@ const MATTER_PATHS = {
     name: 'Trademarks',
     reason: 'Trademark paths depend on owner, mark type, goods/services, use in commerce, specimen, USPTO status, Office Action deadlines, and whether attorney review is needed.',
     stages: [
-      { id:'trademark-new-application', name:'Trademark starter file', terms:['trademark','brand','logo','slogan','application'], required:['markText','ownerName','ownerType','goodsServices','currentUse','specimenAvailable'] },
+      { id:'trademark-new-application', name:'Trademark starting summary', terms:['trademark','brand','logo','slogan','application'], required:['markText','ownerName','ownerType','goodsServices','currentUse','specimenAvailable'] },
       { id:'trademark-office-action', name:'USPTO Office Action or deadline', terms:['office action','uspto refusal','deadline','response'], required:['markText','serialNumber','deadlineDate','officeActionReason','goodsServices'] },
       { id:'trademark-dispute', name:'Trademark dispute, infringement, or opposition', terms:['infringement','opposition','cease and desist','tm dispute'], required:['markText','opposingParty','dateReceived','deadlineDate','useEvidence'] }
     ],
@@ -178,7 +178,7 @@ const MATTER_PATHS = {
     name: 'Patents',
     reason: 'Patent matters depend on invention details, public disclosure dates, provisional/nonprovisional status, USPTO notices, drawings, prior art, and patent attorney review.',
     stages: [
-      { id:'patent-invention-starter', name:'Invention disclosure starter file', terms:['patent','invention','provisional','prototype'], required:['inventionTitle','inventors','publicDisclosureDate','prototypeStatus','priorArtKnown'] },
+      { id:'patent-invention-starter', name:'Invention disclosure starting summary', terms:['patent','invention','provisional','prototype'], required:['inventionTitle','inventors','publicDisclosureDate','prototypeStatus','priorArtKnown'] },
       { id:'patent-office-action', name:'USPTO patent notice or Office Action', terms:['office action','uspto','rejection','patent application'], required:['applicationNumber','deadlineDate','inventors','officeActionReason'] }
     ],
     questions: [q('inventionTitle','Invention title'), q('inventors','Inventor names'), q('publicDisclosureDate','First public disclosure/sale/use date','date'), q('prototypeStatus','Prototype/status'), q('priorArtKnown','Known similar products/patents'), q('applicationNumber','Application number if any'), q('officeActionReason','USPTO issue/rejection if any')]
@@ -187,7 +187,7 @@ const MATTER_PATHS = {
     name: 'Copyrights',
     reason: 'Copyright support depends on work type, authorship, publication, registration status, infringement/DMCA notices, and evidence ownership.',
     stages: [
-      { id:'copyright-registration-starter', name:'Copyright registration starter file', terms:['copyright','register','work','photo','music','book','software'], required:['workTitle','workType','authorName','ownerName','publicationStatus','creationDate'] },
+      { id:'copyright-registration-starter', name:'Copyright registration starting summary', terms:['copyright','register','work','photo','music','book','software'], required:['workTitle','workType','authorName','ownerName','publicationStatus','creationDate'] },
       { id:'copyright-dmca-dispute', name:'DMCA, takedown, infringement, or demand letter', terms:['dmca','takedown','infringement','cease and desist','copied'], required:['workTitle','opposingParty','dateReceived','deadlineDate','evidenceAvailable'] }
     ],
     questions: [q('workTitle','Work title'), q('workType','Type of work','select',['Photo','Writing/book/article','Music/sound recording','Video/film','Software','Artwork/design','Other']), q('authorName','Author/creator'), q('ownerName','Owner/claimant'), q('publicationStatus','Published?','select',['Published','Unpublished','Not sure']), q('creationDate','Creation date','date'), q('evidenceAvailable','Ownership/use evidence available?')]
@@ -243,7 +243,7 @@ function scoreFromMissing(stage, missing){
 function buildMatterPathAnalysis(context, practice){
   const path = MATTER_PATHS[practice?.slug] || null;
   const fallback = {
-    pathId: practice?.slug || 'other', pathName: practice?.name || 'General starting path', stageId:'general-start', stageName:'General starting file',
+    pathId: practice?.slug || 'other', pathName: practice?.name || 'General starting path', stageId:'general-start', stageName:'General starting point',
     userNextPathTitle:'Start with an organized file',
     userNextPathSummary:'Smarter Justice can organize your question, documents, state/local details, possible deadlines, and review options before any forms are chosen.',
     whyThisPath:['The matter needs basic facts, documents, and jurisdiction details before a specific form path should be chosen.'],
@@ -268,7 +268,7 @@ function buildMatterPathAnalysis(context, practice){
     stageName: stage.name,
     stageDescription: path.reason,
     userNextPathTitle: stage.name,
-    userNextPathSummary: `Based on the starting details, this should begin as: ${stage.name}. Smarter Justice should collect the missing details, organize documents, and route for Human Review Specialist review before promising completed forms.`,
+    userNextPathSummary: `Based on the starting details, this should begin as: ${stage.name}. Smarter Justice should collect the missing details and organize documents before showing a completed form or recommending professional review.`,
     whyThisPath: [path.reason, `The words, topic, document type, selected practice area, and saved answers most closely matched “${stage.name}.”`, missing.length ? `${missing.length} important detail(s) are still missing before a completed form path should be considered.` : 'The starter facts are more complete, but review is still required before delivery.'],
     dynamicMissingInformation: missing,
     timeline: timelineFor(path, stage, context),

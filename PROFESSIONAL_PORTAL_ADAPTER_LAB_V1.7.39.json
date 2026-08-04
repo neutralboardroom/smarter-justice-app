@@ -1,0 +1,30 @@
+{
+  "schemaName": "smarter-justice-professional-portal-adapter-lab",
+  "schemaVersion": "1.1.0",
+  "releaseVersion": "1.7.39",
+  "generatedAt": "2026-07-28T17:45:00-04:00",
+  "readiness": "D3_ADAPTER_TESTS_PASS",
+  "contractVersion": "1.2.0",
+  "portalContracts": 25,
+  "fixtures": {
+    "passed": 25,
+    "failed": 0,
+    "populated": 14,
+    "validEmpty": 11
+  },
+  "assignments": {
+    "resolvedCanonical": 678,
+    "unresolvedLegacy": 14
+  },
+  "safety": {
+    "prohibitedDataFindings": 0,
+    "liveConnections": 0,
+    "automaticWrites": 0,
+    "userMatterData": false,
+    "paymentData": false,
+    "credentials": false,
+    "confidentialData": false,
+    "integratedPortalStandardEnvelope": true
+  },
+  "claimBoundary": "D3 proves local read-only producer-consumer fixture behavior and the v1.0.0 integrated-standard envelope only. It does not prove dedicated portal conformance, staging, production, live connectivity, or portal writes."
+}

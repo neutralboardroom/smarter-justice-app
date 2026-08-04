@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "1.0.0",
+  "releaseVersion": "1.7.45",
+  "status": "NO_GO",
+  "generatedAt": "2026-07-29T14:30:00-04:00",
+  "p0": [
+    "Exact rollback approval",
+    "Legitimate npm install and vulnerability audit",
+    "PostgreSQL and migrations",
+    "SMTP verification and recovery",
+    "Owner and staff MFA acceptance",
+    "Stripe lifecycle and billing policy",
+    "Jurisdiction-specific attorney-advertising and fee-structure counsel review",
+    "Sponsored disclosure acceptance",
+    "Support, monitoring, incident, backup and restore",
+    "Browser, mobile, keyboard, zoom and screen-reader acceptance",
+    "D4 staging for Divorce, Estate and Personal Injury"
+  ],
+  "p1": [
+    "Resolve 14 ambiguous legacy assignments",
+    "Refresh portal registry from exact dedicated handoffs",
+    "First live attorney cohort and QR enrollment"
+  ]
+}

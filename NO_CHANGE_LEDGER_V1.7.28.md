@@ -1,0 +1,3 @@
+# v1.7.28 No-Change Ledger
+
+The following remain deliberately unchanged: public legal-help journeys; device-only free tools; professional directory ordering and counts; profile claim/verification/participation status; approved $15 monthly / $150 annual professional pricing; public paid Human Review pause; sensitive-traffic, payment, booking, review, upload, inquiry-routing, broad-sharing, reporting, and filing gates; production version v1.6.1; runtime dependencies and deployment architecture. No profile batch was added because it was unrelated to the architecture-focused owner instruction; Brooklyn remains the next lead market.

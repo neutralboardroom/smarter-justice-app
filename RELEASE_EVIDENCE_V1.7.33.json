@@ -1,0 +1,93 @@
+{
+  "version": "1.7.33",
+  "date": "2026-07-26",
+  "status": "exact-artifact-tested development release; not deployed",
+  "sourceArtifact": {
+    "filename": "smarter-justice-v1.7.32.zip",
+    "sha256": "e799ff53bc4864e4d4ef67dcf675734ebd60c8be0e9eabcbb80d466e5e8c0beb",
+    "sizeBytes": 1721833,
+    "entries": 523,
+    "files": 512,
+    "explicitDirectories": 11
+  },
+  "implementation": {
+    "legalNetworkRefocus": true,
+    "legacyCrossSectorRuntimeRetired": true,
+    "neutralBoardroomHandoff": true,
+    "neutralBoardroomHandoffOwnerOnly": true,
+    "neutralBoardroomHandoffNonconfidential": true,
+    "liveNeutralBoardroomIntegration": false,
+    "automaticNeutralBoardroomWrites": false,
+    "crossPillarAdministration": false,
+    "portfolioTruthRegistry": true,
+    "dashboardConformanceHighestClaim": "D2_CONTRACT_TESTED",
+    "centralizedPublicUserMatterData": false,
+    "automaticCrossRepositorySynchronization": false,
+    "storageConservation": true
+  },
+  "profileGrowth": {
+    "decision": "NO_WEAK_PADDING",
+    "newProfessionals": 0,
+    "newFirms": 0,
+    "newLinks": 0,
+    "regionsWorked": 0,
+    "publicDirectory": {
+      "professionals": 233,
+      "firms": 48,
+      "total": 281
+    },
+    "strictQualifying": {
+      "professionals": 232,
+      "firms": 46,
+      "total": 278
+    }
+  },
+  "storage": {
+    "removedFiles": 7,
+    "removedUncompressedBytes": 63138,
+    "testOnlyCompatibilityModulesPackaged": false
+  },
+  "testing": {
+    "suiteParts": 86,
+    "workingTreePassed": true,
+    "freshExtractionAPassed": true,
+    "freshExtractionBPassed": true,
+    "javascriptSyntaxChecksPassed": true,
+    "jsonParseChecksPassed": true,
+    "zipCrcPassed": true,
+    "unsafeEntryChecksPassed": true,
+    "byteIdentityAcrossExtractionsPassed": true,
+    "currentVulnerabilityCountClaimed": false,
+    "note": "Exact counts and detached ZIP identity are recorded after final packaging because an archive cannot contain its own stable checksum.",
+    "javascriptSyntaxFiles": 189,
+    "jsonFiles": 109,
+    "dependencyInstallAttempt": "npm ci --ignore-scripts attempted against the configured registry; download returned HTTP 503. The full suite passed with temporary external test-only pg and nodemailer compatibility modules supplied through NODE_PATH and excluded from the source and ZIP.",
+    "vulnerabilityAuditAttempt": "npm audit --omit=dev --json attempted; the configured advisory endpoint returned HTTP 503. No fresh v1.7.33 vulnerability count is claimed.",
+    "postTestByteStabilityPassed": true,
+    "inventoryValidatedInBothExtractions": true,
+    "candidateVerificationCompletedBeforeFinalFreeze": true,
+    "browserRenderedAcceptanceCompleted": false,
+    "browserRenderedAcceptanceNote": "No separate graphical browser or physical-device acceptance was completed in this build environment. The automated suite includes public UX, responsive-source, accessibility-source, route, runtime, security, and owner-surface contract checks."
+  },
+  "deployment": {
+    "deployed": false,
+    "lastVerifiedProduction": "1.6.1",
+    "rollbackArtifact": "smarter-justice-v1.7.32.zip",
+    "rollbackSha256": "e799ff53bc4864e4d4ef67dcf675734ebd60c8be0e9eabcbb80d466e5e8c0beb"
+  },
+  "activationGatesChanged": false,
+  "closedGates": [
+    "payments",
+    "subscriptions",
+    "booking",
+    "reviews",
+    "sensitive uploads",
+    "filing",
+    "unrestricted professional routing",
+    "AttorneyRide transfer",
+    "automatic cross-repository writes",
+    "centralized public-user matter storage",
+    "live Neutral Boardroom connection",
+    "cross-pillar administration"
+  ]
+}

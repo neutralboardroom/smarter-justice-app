@@ -1,0 +1,23 @@
+{
+  "schema": "smarter-justice-innovation-decision-record",
+  "releaseVersion": "1.7.60",
+  "generatedAt": "2026-07-31T16:19:00-04:00",
+  "decisions": [
+    {
+      "idea": "Owner action readiness validator and protected owner view",
+      "problem": "Prepared dependencies could remain passive or be mistaken for verified acceptance.",
+      "user": "Roger and launch operators",
+      "decision": "IMPLEMENT",
+      "benefit": "Shows requestable, reviewer-required and deferred actions while enforcing no-secret and received-not-verified rules.",
+      "risk": "Incorrect transition could overstate acceptance.",
+      "acceptanceTest": "tests/reusable-master-governance-v1760.test.js"
+    },
+    {
+      "idea": "Public visual redesign",
+      "problem": "No material defect found in exact baseline.",
+      "user": "Public and attorneys",
+      "decision": "REJECT",
+      "reason": "No changes for the sake of change; preserve strong surfaces."
+    }
+  ]
+}

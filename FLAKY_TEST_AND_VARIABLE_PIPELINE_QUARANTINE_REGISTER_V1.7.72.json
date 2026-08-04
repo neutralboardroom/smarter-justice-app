@@ -1,0 +1,15 @@
+{
+  "schema": "smarter-justice-flaky-test-variable-pipeline-quarantine",
+  "releaseVersion": "1.7.72",
+  "generatedAt": "2026-08-02T17:04:00-04:00",
+  "openQuarantines": [],
+  "quarantinedAcceptanceEvidenceCount": 0,
+  "controlledRiskSources": [
+    "ports use ephemeral or process-isolated values",
+    "tests use isolated storage directories",
+    "release timestamps are fixed",
+    "external network paths are not acceptance evidence",
+    "current research is classified external-state dependent"
+  ],
+  "status": "NO_OPEN_FLAKY_ACCEPTANCE_PIPELINE"
+}

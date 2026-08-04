@@ -1,0 +1,51 @@
+CONTROLLING SMARTER JUSTICE MASTER RULES PACK: v1.7.0 / SHA-256 2fed25ffb37bccd63e4ab00efcdf4b65e2a21fb4732e9830b0fc75a146083580 / packaged file SMARTER_JUSTICE_MASTER_RULES_AND_SUGGESTIONS_PACK.md. Read and preserve it before implementation.
+
+DIVORCE LAW AID PILOT 1 — DEDICATED BUILDER PROMPT FROM SMARTER JUSTICE v1.7.49
+
+You are working only in the dedicated portal repository named below. Do not modify Smarter Justice or another portal repository. First verify the exact uploaded artifact, extract cleanly, reproduce its baseline, and stop on any identity, inventory, security, migration, or architecture discrepancy. Preserve all verified working functionality, source provenance, privacy, security, accessibility, rollback, and exact-artifact evidence.
+
+CENTRAL OPERATING MODEL
+- Smarter Justice is the only central professional identity, authentication, claim, verification, firm, office, seat, membership, billing, entitlement, support, and core-profile authority.
+- The portal must not create a duplicate general professional account, password, subscription, firm-account, credential-review, billing, entitlement, or central support system.
+- The portal remains the public specialty-profile, specialty evidence, legal content, intake, brand, repository, version, deployment, and release authority.
+- Consume only an approved, portal-specific, read-only Smarter Justice professional handoff contract v1.4.0.
+- Validate destination ID, schema, digest, fingerprints, revisions, approved publication state, suppression, and prohibited fields.
+- Imports must be deterministic, idempotent, auditable, replay-safe, reject stale or wrong-destination data, preserve last-known-good state, produce an import receipt, and support rollback.
+- No automatic portal-to-central write-back. No user legal matter data, credentials, private verification evidence, support notes, secrets, or payment data in handoffs.
+- Payment never verifies identity, credentials, specialty evidence, portal eligibility, publication, organic rank, lead eligibility, appointment eligibility, or outcomes.
+- Keep every live import, payment, inquiry, appointment, review, sponsorship, upload, AI, and production gate closed unless separately approved with evidence.
+
+CENTRAL LINKS
+- Claim: https://smarterjustice.com/professional-signup.html?portal=divorce-law-aid&mode=claim
+- Create: https://smarterjustice.com/professional-signup.html?portal=divorce-law-aid&mode=create
+- Manage: https://smarterjustice.com/professional-dashboard.html?portal=divorce-law-aid
+- Billing: https://smarterjustice.com/professional-dashboard.html#professional-billing
+- Handoff: /api/owner/professional-network/portal-handoffs/divorce-law-aid
+
+REQUIRED PORTAL DELIVERABLES
+1. Claim, create, manage, and billing links with allowlisted return handling.
+2. Read-only v1.4.0 consumer and schema validation.
+3. Portal-specific professional and firm projections preserving local specialty evidence.
+4. Import receipt, rejection report, conflict report, last-known-good state, suppression, and rollback.
+5. Tests for tampered/unknown portal ID, wrong destination, bad digest, prohibited data, replay, duplicate, stale revision, private/public/suppress actions, and failed import preservation.
+6. Mobile, keyboard, zoom, screen-reader, empty, error, loading, success, and confirmation acceptance.
+7. One clean exact-tested final ZIP with inventory, hash, size, counts, release notes, audit, change map, continuation prompt, watchlist, and Next Version Improvement List.
+
+Exact owner-recorded artifact: divorce-law-aid-v0.11.0.zip; SHA-256 539ab77b6613dc08e2d730c99ce5e62cc72a697205787fe00d29832e9920d6eb; size 621,669 bytes. Reverify it in this dedicated chat.
+
+SIMPLE PUBLIC PILOT
+- Clean homepage and issue selector.
+- Divorce, separation, custody, child support, spousal support, and related family-law starting information.
+- Searchable specialty directory and professional profile pages.
+- Short approved consultation-preparation/contact path.
+- Clear disclaimers and mobile experience.
+- No incomplete court-form automation, automatic filing, legal-strategy prediction, or representation promise.
+
+ACCEPTANCE
+- Dedicated exact artifact is independently verified before changes.
+- Existing specialty content, evidence, profiles, accessibility, privacy, security, and release safeguards are preserved.
+- Central links work with the exact portal ID `divorce-law-aid` and fail closed for tampering.
+- The supplied local example handoff validates and imports in a test-only adapter.
+- Private records remain private; suppression removes public rendering without destroying evidence.
+- A failed import preserves last-known-good portal state.
+- No live connection or deployment is claimed without separate staging, production, rollback, support, monitoring, and owner acceptance.

@@ -1,0 +1,133 @@
+{
+  "schema_id": "SJP-DEVICE-ONLY-JOURNEY-HANDOFF-PLANNER-2026-08-03-V1",
+  "releaseVersion": "1.7.76",
+  "execution_mode": "DEVICE_ONLY_EXPORT",
+  "source_product": {
+    "id": "smarter-justice-central",
+    "name": "Smarter Justice"
+  },
+  "destinations": [
+    {
+      "id": "divorce-law-aid",
+      "name": "Divorce Law Aid"
+    },
+    {
+      "id": "estate-law-aid",
+      "name": "Estate Law Aid"
+    },
+    {
+      "id": "personal-injury-law-aid",
+      "name": "Personal Injury Law Aid"
+    },
+    {
+      "id": "domestic-violence-aid",
+      "name": "Domestic Violence Aid"
+    },
+    {
+      "id": "employment-law-aid",
+      "name": "Employment Law Aid"
+    },
+    {
+      "id": "consumer-protection-law-aid",
+      "name": "Consumer Protection, Fraud & Scam Law Aid"
+    },
+    {
+      "id": "bankruptcy-debt-law-aid",
+      "name": "Bankruptcy & Debt Law Aid"
+    },
+    {
+      "id": "civil-rights-law-aid",
+      "name": "Civil Rights & Police Misconduct Law Aid"
+    },
+    {
+      "id": "medical-malpractice-law-aid",
+      "name": "Medical Malpractice Law Aid"
+    },
+    {
+      "id": "trademark-patent-ip-law-aid",
+      "name": "Trademark, Patent & IP Law Aid"
+    },
+    {
+      "id": "contract-creator",
+      "name": "ContractCreator"
+    },
+    {
+      "id": "justice-tax-solutions",
+      "name": "Justice Tax Solutions"
+    }
+  ],
+  "matter_categories": [
+    "family",
+    "estate-probate",
+    "injury",
+    "safety",
+    "employment",
+    "consumer",
+    "debt-bankruptcy",
+    "civil-rights",
+    "medical-malpractice",
+    "intellectual-property",
+    "contracts",
+    "tax"
+  ],
+  "journey_steps": [
+    "understand-options",
+    "prepare-records",
+    "prepare-questions",
+    "review-official-sources",
+    "compare-help-paths",
+    "contact-a-professional"
+  ],
+  "preferred_languages": [
+    "not-specified",
+    "English",
+    "Spanish"
+  ],
+  "access_preferences": [
+    "not-specified",
+    "plain-language",
+    "large-text",
+    "screen-reader-friendly",
+    "remote-help",
+    "in-person-help"
+  ],
+  "allowed_data_categories": [
+    "user_selected_matter_category",
+    "user_selected_journey_step",
+    "user_selected_language",
+    "user_selected_access_preference"
+  ],
+  "prohibited_input_fields": [
+    "name",
+    "email",
+    "phone",
+    "address",
+    "legal_narrative",
+    "facts",
+    "notes",
+    "document_text",
+    "health_record",
+    "financial_account",
+    "authentication_secret",
+    "client_confidential_material"
+  ],
+  "maximum_expiry_minutes": 60,
+  "invariants": {
+    "explicit_user_choice_required": true,
+    "fixed_choices_only": true,
+    "free_text_absent": true,
+    "server_transmission_absent": true,
+    "server_storage_absent": true,
+    "automatic_sync_absent": true,
+    "automatic_destination_open_absent": true,
+    "universal_sensitive_database_absent": true,
+    "revocable_by_local_deletion": true
+  },
+  "runtime_effect": {
+    "cross_product_transfer_enabled": false,
+    "server_endpoint_accepting_plan": false,
+    "new_sensitive_storage": false,
+    "deployment_authorized": false,
+    "production_request_sent": false
+  }
+}

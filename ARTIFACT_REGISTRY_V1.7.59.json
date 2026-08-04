@@ -1,0 +1,99 @@
+{
+  "schema": "smarter-justice-artifact-registry-v2",
+  "releaseVersion": "1.7.59",
+  "generatedAt": "2026-07-31",
+  "singleCurrentRegistry": true,
+  "artifacts": [
+    {
+      "artifactId": "artifact:general-smarter-justice-start:6a362e8c55f0",
+      "portalId": "general-smarter-justice-start",
+      "version": "1.7.58",
+      "filename": "smarter-justice-v1.7.58.zip",
+      "sha256": "6a362e8c55f0c60a4668df78b4656ce87a2e592d4f7f60b298cd4e5cbd1fe56e",
+      "sizeBytes": 5017665,
+      "entries": 1490,
+      "files": 1472,
+      "directories": 18,
+      "uncompressedBytes": 14043650,
+      "compressedBytes": 4799883,
+      "inventoryRecords": 1471,
+      "inventorySha256": "fd1a4f3647915bae87daed77f8b0697a77b3d19de4c90082ee88e5a608ea2292",
+      "packageJsonSha256": "131a31d4a8acea619d92a9413cd3b8d986e3b588c70d20ebcae2a1ae969aef03",
+      "lockfileSha256": "4e757c93495bb040c7c15337c1f7e2dfba51dc652ea799afdd79f3e935dcff4d",
+      "sbomSha256": "a6bce49219e76904af07c7d2468a14e9c460389cceb1bca9b7f1a8d38d1b187c",
+      "treeSha256": "3196e8f8be04f54f95334cfbe0e4d6b06aaf5d77911639b7ab79004d6f1c3dd8",
+      "evidenceState": "EXACT_VERIFIED",
+      "independentlyVerifiedInThisBuild": true,
+      "role": "SOURCE_AND_IMMEDIATE_ROLLBACK"
+    },
+    {
+      "artifactId": "artifact:general-smarter-justice-start:detached-v1.7.59",
+      "portalId": "general-smarter-justice-start",
+      "version": "1.7.59",
+      "filename": "smarter-justice-v1.7.59.zip",
+      "sha256": "DETACHED_FINAL_DELIVERY_RECEIPT",
+      "sizeBytes": 0,
+      "evidenceState": "FINAL_SOURCE_ACCEPTED_DETACHED_ARCHIVE_IDENTITY_PENDING",
+      "independentlyVerifiedInThisBuild": false,
+      "role": "FINAL_ARCHIVE_IDENTITY_DETACHED",
+      "identityBoundary": "Final archive identity cannot be embedded self-referentially and must be attached after exact packaging.",
+      "candidateAcceptanceRecord": "CANDIDATE_ARTIFACT_ACCEPTANCE_V1.7.59.json",
+      "finalArtifactAcceptanceRecord": "FINAL_ARTIFACT_ACCEPTANCE_V1.7.59.json"
+    }
+  ],
+  "portalArtifacts": [
+    {
+      "portalId": "divorce-law-aid",
+      "version": "0.30.0",
+      "filename": "divorce-law-aid-v0.30.0.zip",
+      "sha256": "ee3983d01556c1c4c932d03c9cef3a7ef277c2d7d83172cc749b491a64db2f2c",
+      "sizeBytes": 3334694,
+      "evidenceState": "OWNER_RECORDED",
+      "independentlyVerifiedInThisBuild": false
+    },
+    {
+      "portalId": "estate-law-aid",
+      "version": "1.1.59",
+      "filename": "estate-law-aid-v1.1.59.zip",
+      "sha256": "79579ca31c0899e7f2f41b357233b03a4c15bba5573d51c0b362ebb856d9c26e",
+      "sizeBytes": 14172944,
+      "evidenceState": "OWNER_RECORDED",
+      "independentlyVerifiedInThisBuild": false
+    },
+    {
+      "portalId": "personal-injury-law-aid",
+      "version": "0.53.0",
+      "filename": "personal-injury-law-aid-v0.53.0.zip",
+      "sha256": "59fe729531f636c4a3b5865d607858e36e520a156220faea27e21b8c70ca3e62",
+      "sizeBytes": 4171177,
+      "evidenceState": "OWNER_RECORDED",
+      "independentlyVerifiedInThisBuild": false
+    },
+    {
+      "portalId": "domestic-violence-aid",
+      "version": "0.46.0",
+      "filename": "domestic-violence-aid-v0.46.0.zip",
+      "sha256": "cec63feec6fd2c6e35953da10009c8eed2dbcb23fdbc6db1949668231debed11",
+      "sizeBytes": 3021929,
+      "evidenceState": "OWNER_RECORDED",
+      "independentlyVerifiedInThisBuild": false
+    }
+  ],
+  "deployment": {
+    "authorized": false,
+    "state": "NOT_DEPLOYED",
+    "lastVerifiedProduction": "1.6.1"
+  },
+  "closedGates": [
+    "payments",
+    "subscriptions",
+    "booking",
+    "reviews",
+    "confidential uploads",
+    "sensitive external AI",
+    "automatic filing",
+    "unrestricted professional routing",
+    "automatic cross-repository synchronization",
+    "automatic public-user matter transfer"
+  ]
+}

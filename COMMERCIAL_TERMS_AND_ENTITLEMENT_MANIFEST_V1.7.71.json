@@ -1,0 +1,102 @@
+{
+  "schema": "smarter-justice-commercial-terms-and-entitlement-manifest",
+  "schemaVersion": "1.0.0",
+  "manifestVersion": "2026-07-31.1",
+  "releaseVersion": "1.7.71",
+  "generatedAt": "2026-08-02T16:19:00-04:00",
+  "ownerDecision": "BINDING_CURRENT_PILOT_STRUCTURE",
+  "effectiveDate": "2026-07-31",
+  "currency": "USD",
+  "billingInterval": "MONTHLY_ONLY",
+  "publicActivation": false,
+  "liveBilling": false,
+  "plans": {
+    "coveredAttorneyProfile": {
+      "planId": "sj-attorney-monthly-15",
+      "monthlyPriceCents": 1500,
+      "payerTypes": [
+        "INDIVIDUAL_ATTORNEY",
+        "AUTHORIZED_FIRM"
+      ],
+      "oneActivePayer": true
+    },
+    "claimedFirmProfile": {
+      "planId": "sj-firm-profile-monthly-15",
+      "monthlyPriceCents": 1500,
+      "payerTypes": [
+        "AUTHORIZED_FIRM"
+      ],
+      "oneActivePayer": true
+    },
+    "firmCoveredAttorneySeat": {
+      "planId": "sj-firm-covered-attorney-monthly-15",
+      "monthlyPriceCents": 1500,
+      "payerTypes": [
+        "AUTHORIZED_FIRM"
+      ],
+      "oneActivePayer": true
+    }
+  },
+  "examples": [
+    {
+      "firmCoveredAttorneySeats": 1,
+      "monthlyTotalCents": 3000
+    },
+    {
+      "firmCoveredAttorneySeats": 3,
+      "monthlyTotalCents": 6000
+    }
+  ],
+  "prohibitedWithoutNewOwnerDecision": [
+    "annual plans",
+    "setup fees",
+    "hidden add-ons",
+    "automatic paid-trial conversion",
+    "portal-specific duplicate subscriptions",
+    "volume discounts",
+    "charging both attorney and firm for the same attorney seat"
+  ],
+  "freeRights": [
+    "claim basic factual profile",
+    "correct facts",
+    "request suppression or removal",
+    "verification preparation",
+    "approved factual editing"
+  ],
+  "claimMemberSeparation": true,
+  "paymentNeverEstablishes": [
+    "identity",
+    "credentials",
+    "authority",
+    "specialty",
+    "publication",
+    "verification",
+    "factual truth",
+    "organic rank",
+    "endorsement",
+    "availability",
+    "opportunity allocation",
+    "representation",
+    "outcome"
+  ],
+  "lifecycleStates": [
+    "CLAIMED_BASIC_FACTUAL_CONTROL",
+    "MEMBER_ACTIVE_PAID_PROFESSIONAL_MEMBERSHIP",
+    "MEMBER_FIRM_COVERED_ATTORNEY_SEAT",
+    "FIRM_MEMBER_ACTIVE_PAID_FIRM_PROFILE",
+    "PAYMENT_PENDING",
+    "PAYMENT_FAILED",
+    "PAUSED",
+    "CANCELED",
+    "DELINQUENT",
+    "REFUNDED",
+    "HISTORICAL"
+  ],
+  "gates": {
+    "stripeTestMode": "BLOCKED_EXTERNAL_CONFIGURATION",
+    "liveActivation": "CLOSED",
+    "opportunityEligibility": "CLOSED",
+    "publicCheckout": "CLOSED"
+  },
+  "rollback": "Restore exact v1.7.60 commercial state; keep payment closed; preserve free profile control and historical receipts."
+}

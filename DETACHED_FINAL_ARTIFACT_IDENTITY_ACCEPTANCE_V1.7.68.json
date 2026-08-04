@@ -1,0 +1,31 @@
+{
+  "schema": "smarter-justice-detached-final-artifact-identity-acceptance",
+  "releaseVersion": "1.7.68",
+  "generatedAt": "2026-08-01T00:35:00-04:00",
+  "scope": "Runtime binding and exact artifact verification after immutable packaging; no circular identity is embedded in the ZIP.",
+  "states": [
+    "DETACHED_RECEIPT_NOT_CONFIGURED",
+    "DETACHED_RECEIPT_BOUND_ARTIFACT_NOT_REPRODUCED",
+    "DETACHED_RECEIPT_AND_ARTIFACT_VERIFIED",
+    "DETACHED_RECEIPT_ARTIFACT_MISMATCH",
+    "DETACHED_RECEIPT_REJECTED"
+  ],
+  "replayProtection": "A receipt for any release other than exact v1.7.68 is rejected. Lower or unrelated artifact identity cannot be promoted as current release truth.",
+  "privateOwnerEndpoint": "/api/owner/final-artifact-identity",
+  "launchState": "NO_GO",
+  "deploymentAuthorized": false,
+  "acceptanceState": "SOURCE_AND_PRESEAL_ACCEPTED_IMMUTABLE_FINAL_RECEIPT_REQUIRED",
+  "presealArtifact": {
+    "sha256": "4542a7f18458ec1f8a38df3e850327449618235a3c33f5c8cd1e307903d2f31c",
+    "sizeBytes": 5904344,
+    "entries": 1941,
+    "files": 1923,
+    "directories": 18,
+    "uncompressedBytes": 17007764,
+    "compressedBytes": 5617368,
+    "inventoryRecords": 1922,
+    "inventorySha256": "1a8bd92a64b3be20480ad1b9c260b735970e45c56ef075a4b62fa416bfe35a9e"
+  },
+  "commandsPerExtraction": 119,
+  "testLogSha256": "117bd79c2e1abd118cb38fef573a465bd18e04c816292a1196a0364cae0768a6"
+}

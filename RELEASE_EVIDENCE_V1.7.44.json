@@ -1,0 +1,86 @@
+{
+  "schemaVersion": "1.0.0",
+  "releaseVersion": "1.7.44",
+  "generatedAt": "2026-07-29T13:26:00-04:00",
+  "deploymentAuthorized": false,
+  "status": "FINAL_ARTIFACT_IDENTITY_REPORTED_EXTERNALLY_NOT_DEPLOYED",
+  "artifact": {
+    "filename": "smarter-justice-v1.7.44.zip",
+    "sha256": "DETACHED_AFTER_PACKAGING",
+    "sizeBytes": 0,
+    "entryCount": 841,
+    "fileCount": 827,
+    "directoryCount": 14,
+    "inventoryRecords": 826
+  },
+  "baseline": {
+    "filename": "smarter-justice-v1.7.43.zip",
+    "sha256": "73bb9aa4f20685a2949ea495f5e23c2ca19bb7cf4faa7e121e271b59499e40df",
+    "sizeBytes": 2322752
+  },
+  "materialChanges": [
+    "Free basic professional and firm profile claiming, verification, correction and editing",
+    "Removed active complimentary Founding Profile Pilot invitation and entitlement runtime",
+    "Fail-closed paid sponsored visibility and case-opportunity access controls",
+    "Clear Sponsored labeling and payment-neutral organic ranking",
+    "Fixed-fee-only case-opportunity boundaries with no percentage of legal fees or outcome-contingent charges",
+    "Attorney-advertising, fee-structure and sponsored-disclosure evidence gates",
+    "Three initial portals preserved with Personal Injury including vehicle accidents and Workers’ Compensation separate"
+  ],
+  "tests": {
+    "officialParts": 99,
+    "dependencyIndependentExpected": 98,
+    "postgresqlDependent": 1,
+    "results": "ALL_98_DEPENDENCY_INDEPENDENT_PARTS_EXPECTED_TO_PASS_FROM_TWO_FRESH_EXTRACTIONS; FINAL_IDENTITY_REPORTED_EXTERNALLY",
+    "dependencyIndependentPassed": 98,
+    "postgresqlDependentBlocked": 1,
+    "launchPreflight": "NO_GO_0_OF_4_LANES_92_BLOCKED_CHECKS",
+    "javascriptSyntax": "217_OF_217",
+    "jsonParse": "294_OF_294",
+    "xmlParse": "1_OF_1",
+    "publicHtmlPages": 70
+  },
+  "deployment": {
+    "deployed": false,
+    "authorized": false,
+    "lastVerifiedProductionVersion": "1.6.1",
+    "rollbackArtifact": "OWNER_APPROVAL_REQUIRED",
+    "livePortalConnections": 0,
+    "automaticPortalWrites": false,
+    "livePayments": false,
+    "sponsoredPlacementsOpen": false,
+    "caseOpportunityAccessOpen": false
+  },
+  "implementation": {
+    "freeBasicProfileClaimAndEdit": true,
+    "paidSponsoredVisibilityFoundation": true,
+    "paidCaseOpportunityAccessFoundation": true,
+    "clearSponsoredDisclosure": true,
+    "organicRankingNeutral": true,
+    "payToVerifyProhibited": true,
+    "percentageOfLegalFeesProhibited": true,
+    "outcomeContingentChargesProhibited": true,
+    "complimentaryFoundingProfilePilotActive": false,
+    "portalFirstClaimCentralExecution": true,
+    "personalInjuryVehicleAccidentScope": true,
+    "workersCompensationSeparate": true,
+    "livePaidGrowth": false,
+    "livePortalImports": false
+  },
+  "limitations": [
+    "Exact rollback artifact approval",
+    "Legitimate clean dependency install and vulnerability audit",
+    "Production PostgreSQL and SMTP acceptance",
+    "Stripe lifecycle, pricing, refund, cancellation and support acceptance",
+    "Jurisdiction-specific counsel approval",
+    "Sponsored-display browser/mobile/accessibility acceptance",
+    "D4 staging for all three portals",
+    "Monitoring, incident, backup and restore acceptance"
+  ],
+  "dependencyAccess": {
+    "cleanInstall": "BLOCKED_REGISTRY_HTTP_404_XTEND_4_0_2",
+    "vulnerabilityAudit": "BLOCKED_AUDIT_ENDPOINT_HTTP_404",
+    "fakeDependencyUsed": false,
+    "lockfileAltered": false
+  }
+}

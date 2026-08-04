@@ -1,0 +1,229 @@
+{
+  "schemaVersion": "1.0.0",
+  "release": {
+    "project": "Smarter Justice",
+    "version": "1.7.10",
+    "title": "Truthful Enrollment, Assistance Choice, Public Data Minimization, Professional Roles, and Portal Reconciliation",
+    "status": "exact artifact tested",
+    "artifactName": "smarter-justice-v1.7.10.zip",
+    "artifactSha256Location": "Smarter_Justice_v1.7.10_Exact_Artifact_Test_Record.json (external companion generated after final ZIP testing)",
+    "sourceBaseline": {
+      "artifact": "smarter-justice-v1.7.9.zip",
+      "sha256": "9bec35277e8f08d16520959e2162b4c16b623aac8e89826638f2ec24556f2b87",
+      "exactSizeBytes": 2104574,
+      "tests": "25-part regression passed before changes"
+    },
+    "rollbackArtifact": "smarter-justice-v1.7.9.zip",
+    "deployment": {
+      "deployed": false,
+      "liveVerified": false,
+      "lastVerifiedProductionVersion": "1.6.1",
+      "statement": "Code completion and exact-artifact testing do not change production status."
+    }
+  },
+  "completedImprovementItems": [
+    "SJ-NEXT-035",
+    "SJ-NEXT-037"
+  ],
+  "materiallyAdvancedImprovementItems": [
+    "SJ-NEXT-016",
+    "SJ-NEXT-018",
+    "SJ-NEXT-031",
+    "SJ-NEXT-036",
+    "SJ-NEXT-038",
+    "SJ-NEXT-039"
+  ],
+  "carriedForwardLaunchGates": [
+    "SJ-NEXT-001",
+    "SJ-NEXT-002",
+    "SJ-NEXT-003",
+    "SJ-NEXT-004",
+    "SJ-NEXT-005",
+    "SJ-NEXT-006",
+    "SJ-NEXT-007",
+    "SJ-NEXT-008",
+    "SJ-NEXT-009",
+    "SJ-NEXT-032",
+    "SJ-NEXT-033",
+    "SJ-NEXT-034"
+  ],
+  "changes": [
+    {
+      "id": "V1710-ENROLLMENT-TRUTH",
+      "problem": "Public pages implied applications were open while the paid pilot was paused.",
+      "implementation": "Safe public status and separation of account/profile preparation from paid application/payment.",
+      "preserved": "Account creation and closed pilot/payment gates.",
+      "tests": [
+        "tests/release-governance-v1710.test.js",
+        "tests/smoke.test.js"
+      ]
+    },
+    {
+      "id": "V1710-ASSISTANCE-CONTROL",
+      "problem": "Rules help was described as AI-guided, saved work lacked affirmative AI choice, and provider details appeared publicly.",
+      "implementation": "Rules-only default, affirmative AI choice, binding preference, provider-neutral public responses, protected diagnostics.",
+      "preserved": "Rules organization and fail-closed sensitive AI.",
+      "tests": [
+        "tests/release-governance-v1710.test.js",
+        "tests/smoke.test.js"
+      ]
+    },
+    {
+      "id": "V1710-PUBLIC-MINIMIZATION",
+      "problem": "Public health and AI status exposed internal details.",
+      "implementation": "Public health allowlist and protected AI diagnostics.",
+      "preserved": "Useful health/version truth.",
+      "tests": [
+        "tests/release-governance-v1710.test.js",
+        "tests/smoke.test.js"
+      ]
+    },
+    {
+      "id": "V1710-SERVICE-ROLES",
+      "problem": "Professional records lacked adverse-side/service-role classification.",
+      "implementation": "Shared roles in signup, accounts, profiles, edit, and display.",
+      "preserved": "Separate credential, payment, ranking, routing, engagement, and outcome states.",
+      "tests": [
+        "tests/release-governance-v1710.test.js"
+      ]
+    },
+    {
+      "id": "V1710-CORRECTION-PATH",
+      "problem": "Public correction/removal paths were not visible enough.",
+      "implementation": "Prefilled correction, duplicate, suppression, and removal links.",
+      "preserved": "Identity/source review and controlled operations.",
+      "tests": [
+        "tests/release-governance-v1710.test.js"
+      ]
+    },
+    {
+      "id": "V1710-PORTAL-TRUTH",
+      "problem": "Central portal records drifted from newer owner records.",
+      "implementation": "Reconciled versions and private boundaries without overriding dedicated truth.",
+      "preserved": "Separate brands, repositories, versions, deployments, and artifacts.",
+      "tests": [
+        "tests/release-governance-v1710.test.js"
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "id": "TEST-V1710-GOVERNANCE",
+      "path": "tests/release-governance-v1710.test.js",
+      "covers": [
+        "version truth",
+        "improvement list",
+        "program status",
+        "assistance choice",
+        "public minimization",
+        "service roles",
+        "correction visibility",
+        "portal truth",
+        "closed gates"
+      ]
+    },
+    {
+      "id": "TEST-FULL-REGRESSION",
+      "path": "npm test",
+      "covers": [
+        "all 25 regression parts"
+      ]
+    },
+    {
+      "id": "TEST-FINAL-ZIP",
+      "path": "fresh extraction, clean install/audit, npm test, syntax/JSON, ZIP safety, source equality, local health and boundaries",
+      "covers": [
+        "distributed artifact"
+      ]
+    }
+  ],
+  "immutableStatusHistory": [
+    {
+      "at": "2026-07-21",
+      "actor": "build",
+      "event": "v1.7.9 exact baseline verified",
+      "status": "baseline verified",
+      "evidence": "9bec35277e8f08d16520959e2162b4c16b623aac8e89826638f2ec24556f2b87"
+    },
+    {
+      "at": "2026-07-21",
+      "actor": "build",
+      "event": "v1.7.10 evidence-backed scope selected",
+      "status": "scope controlled",
+      "evidence": "Audit findings and maintained list"
+    },
+    {
+      "at": "2026-07-21",
+      "actor": "build",
+      "event": "v1.7.10 code and records completed",
+      "status": "code complete",
+      "evidence": "Release changes and targeted tests"
+    },
+    {
+      "at": "2026-07-21",
+      "actor": "build",
+      "event": "v1.7.10 final ZIP tested",
+      "status": "exact artifact tested",
+      "evidence": "External exact-artifact record"
+    }
+  ],
+  "privacySafeFunnelMeasurement": {
+    "runtimeCollectionStatus": "disabled pending privacy review and deployment configuration",
+    "allowedEvents": [
+      "homepage_audience_choice",
+      "public_start_opened",
+      "quick_start_selected",
+      "public_start_completed",
+      "starting_result_action_selected",
+      "focused_portal_details_viewed",
+      "professional_directory_viewed",
+      "professional_membership_viewed",
+      "professional_signup_started",
+      "professional_signup_completed",
+      "profile_claim_started",
+      "credential_step_completed",
+      "checkout_started",
+      "subscription_state_changed",
+      "support_requested"
+    ],
+    "allowedProperties": [
+      "event name",
+      "page or route identifier",
+      "coarse device class",
+      "coarse language",
+      "anonymous session identifier where legally approved",
+      "completion state",
+      "non-sensitive error category"
+    ],
+    "prohibitedProperties": [
+      "free-text legal description",
+      "document text",
+      "file name",
+      "person name",
+      "email",
+      "phone",
+      "street address",
+      "case number",
+      "notice number",
+      "medical information",
+      "immigration information",
+      "domestic-violence information",
+      "tax identifiers",
+      "payment-card data",
+      "professional-client communication"
+    ],
+    "rule": "No confidential description or document content may enter analytics. Consent, retention, access, deletion, and vendor settings require separate privacy approval."
+  },
+  "closedGates": [
+    "confidential production uploads",
+    "sensitive external AI without approved controls",
+    "professional membership applications and payments",
+    "public Human Review charges",
+    "public subscriptions",
+    "consultation booking",
+    "public reviews and ratings",
+    "unrestricted matching or routing",
+    "automatic filing",
+    "broad cross-portal sharing"
+  ]
+}

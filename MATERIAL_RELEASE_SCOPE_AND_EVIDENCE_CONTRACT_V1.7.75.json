@@ -1,0 +1,81 @@
+{
+  "schema_id": "SJP-MATERIAL-RELEASE-SCOPE-AND-EVIDENCE-CONTRACT-2026-08-03-V11",
+  "product": {
+    "name": "Smarter Justice",
+    "id": "smarter-justice-central",
+    "version": "1.7.75",
+    "artifact_sha256": "PREFINAL_NOT_YET_BOUND",
+    "central_role": "federated legal network identity, governance, professional operations, and shared contracts"
+  },
+  "release_classification": "COMPLETE_CONNECTED_CENTRAL_RECOVERY_RELEASE",
+  "problem_statement": "The exact v1.7.74 bytes are unavailable, while its documented provider-authorization lifecycle boundary and the newer V11 structured-workflow governance requirements must be restored without false lineage or unsafe production claims.",
+  "primary_non_profile_material_objective": "Rebuild the supported provider-discovery authorization lifecycle from exact v1.7.73 and supported release evidence, then add V11 structured workflow, capability maturity, architecture, and consent governance.",
+  "connected_secondary_non_profile_objectives": [
+    "Owner-only ecosystem governance aggregation",
+    "Capability maturity dashboard",
+    "Fail-closed consent-based journey contract",
+    "Complete 206-rule applicability ledger",
+    "Recovery lineage transparency"
+  ],
+  "profile_growth_and_enrichment_workstream": "NOT_APPLICABLE: Smarter Justice central release; no portal repository is modified.",
+  "selected_material_categories": [
+    "security and authorization",
+    "owner operability",
+    "architecture and privacy",
+    "release integrity and recovery",
+    "structured workflow governance"
+  ],
+  "non_goals": [
+    "No provider access",
+    "No secret access",
+    "No repository or deployment write",
+    "No production authorization",
+    "No universal sensitive database",
+    "No automatic cross-platform synchronization",
+    "No byte-exact v1.7.74 recovery claim"
+  ],
+  "risks_and_safety_boundaries": [
+    "Exact v1.7.73 remains rollback",
+    "All new governance is read-only/local",
+    "Cross-product runtime transfer remains disabled",
+    "Provider request remains owner-decision-required"
+  ],
+  "rollback_plan": {
+    "artifact_name": "smarter-justice-v1.7.73.zip",
+    "artifact_sha256": "5ed64a1c13de1a536303b07a2277e234a822b9bc316b7ea97cf2547e90811898",
+    "artifact_size_bytes": 8196348
+  },
+  "implementation_waves": [
+    {
+      "wave": 1,
+      "name": "Exact recovery intake and lineage receipt",
+      "status": "ACCEPTED"
+    },
+    {
+      "wave": 2,
+      "name": "Provider authorization lifecycle reconstruction",
+      "status": "ACCEPTED"
+    },
+    {
+      "wave": 3,
+      "name": "V11 structured workflows, maturity, and consent governance",
+      "status": "ACCEPTED"
+    },
+    {
+      "wave": 4,
+      "name": "Full regression and deterministic artifact acceptance",
+      "status": "PENDING_FINAL_ARTIFACT"
+    }
+  ],
+  "last_known_good_checkpoint": {
+    "artifact_name": "smarter-justice-v1.7.73.zip",
+    "artifact_sha256": "5ed64a1c13de1a536303b07a2277e234a822b9bc316b7ea97cf2547e90811898",
+    "artifact_size_bytes": 8196348
+  },
+  "final_stop_condition": "Stop after all connected local governance work is exact-tested and remaining work requires unavailable v1.7.74 bytes, external provider access, owner authorization, product-local adoption, or deployment environment.",
+  "safe_saturation_assertion": "Strongest justified local connected set selected; unrelated product-family capabilities routed or deferred with exact reasons.",
+  "wording_standard": "STRONGEST_JUSTIFIED_SET; smallest-set wording prohibited.",
+  "architecture_invariant_check": "PASS_PREFINAL",
+  "strategic_capability_candidate_review": "COMPLETE",
+  "launch_non_disruption": "No deployment or production gate opened."
+}

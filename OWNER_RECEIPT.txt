@@ -1,0 +1,35 @@
+SMARTER JUSTICE OWNER RECEIPT V14
+
+PRODUCT_NAME: Smarter Justice central
+PRODUCT_VERSION: 1.7.83
+STARTING_ARTIFACT_SHA256: 61fea278a69055915e9b4b916e4b64ec514614f1746cacf659a6931ccd0228b1
+RELEASE_PAYLOAD_INVENTORY_PATH: RELEASE_PAYLOAD_INVENTORY_SHA256.txt
+RELEASE_PAYLOAD_INVENTORY_SHA256: fe58265f9763061b446651eadf0ef267715b63779e7d781d1244175b325a91d3
+RELEASE_PAYLOAD_INVENTORY_RECORD_COUNT: 3145
+SOURCE_COMMIT_SHA256: UNPROVEN
+DEPLOYMENT_IDENTITY: UNPROVEN
+FINAL_DELIVERY_ZIP_IDENTITY: REPORTED_AFTER_PACKAGING
+
+1. PRODUCT AND RELEASE ROLE
+SMARTER_JUSTICE_CENTRAL. Repository production-qualification overlay over the exact accepted v1.7.83 source; deployment still requires protected owner authorization.
+
+2. PREDECESSOR AND SUCCESSION
+Exact predecessor and rollback: smarter-justice-v1.7.82.zip, SHA-256 61fea278a69055915e9b4b916e4b64ec514614f1746cacf659a6931ccd0228b1. V14 remains the exact governing companion packet.
+
+3. PRODUCT_PLATFORM IMPROVEMENTS
+Adds a first-gap-only owner evidence collection packet with provider-specific nonsecret identifier allowlists, required PASS checks, dependency receipts, forbidden inputs, an eight-hour maximum validity window, deterministic digest, and JSON/text output. It performs no provider call, persistence, live-state mutation, promotion application, deployment, or production activation.
+
+4. BUILDER_PROMPT_SYSTEM IMPROVEMENTS
+Adds a dynamic non-persisted V14 acceptance evidence bundle that cross-checks the canonical 145-command manifest, working-tree acceptance, package/lock/SBOM identities, both inventories, owner receipt, exact source and packet binding, and detached-final boundaries without creating a self-referential payload file.
+
+5. TESTS AND FRESH-EXTRACTION EVIDENCE
+Working-tree acceptance passed twice with identical 145-command logs, SHA-256 65997d8bb250b85b36c1c111f452a3b3caf4f044670fe01e276a21edb5240ef5. Candidate acceptance passed with two byte-identical builds and two fresh extractions: SHA-256 97ce078e17ccd96253f04e0300988680683a8dd8f8bf40177ff1d9db12f414cb, size 8886983 bytes, identical 145-command log SHA-256 65997d8bb250b85b36c1c111f452a3b3caf4f044670fe01e276a21edb5240ef5. Sealed final source acceptance passed twice with identical 145-command log SHA-256 65997d8bb250b85b36c1c111f452a3b3caf4f044670fe01e276a21edb5240ef5. Detached-final packaging and acceptance remain pending. PostgreSQL remains separately gated and unclaimed.
+
+6. LIVE AND DEPLOYMENT TRUTH
+No external receipt, provider access, secret, canonical repository/commit, Render deployment, DNS/TLS/health, controlled OpenAI smoke, portal compatibility receipt, production monitoring, deployment, or public activation is claimed.
+
+7. RELEASE DECISION
+NO_GO
+
+8. ONE EXACT OWNER ACTION, ONLY IF UNAVOIDABLE
+Use the protected first-gap collection packet only after the canonical GitHub repository and approved Render central service identities are known. Enter nonsecret identifiers and evidence references only; never paste credentials or API keys.

@@ -1,0 +1,3 @@
+# Smarter Justice Continuation Prompt After v1.7.50
+
+Treat the exact-tested v1.7.50 ZIP as the authoritative base. Re-verify it before changes. Preserve the launch-day operations workbench, fail-closed readiness, privacy-minimized outreach, free-profile cohort, lawful source-supported profile intake, central professional identity, revision-safe portal presence, read-only handoffs, and neutral organic ordering. Prioritize real external acceptance: PostgreSQL, SMTP, MFA, monitoring, backup/restore, exact portal staging, accessibility, support staffing, legal review, rollback, and owner go/no-go. Do not open live or paid gates without evidence and explicit approval.

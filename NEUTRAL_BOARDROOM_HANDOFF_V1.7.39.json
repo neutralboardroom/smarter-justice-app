@@ -1,0 +1,115 @@
+{
+  "handoffVersion": "1.1.0",
+  "handoffId": "handoff:smarter-justice:neutral-boardroom:1.7.39",
+  "sourceSystemId": "smarter-justice",
+  "sourceSystemName": "Smarter Justice",
+  "sourceRelease": "1.7.39",
+  "destinationSystemId": "neutral-boardroom-portfolio-os",
+  "destinationSystemName": "Neutral Boardroom Portfolio OS",
+  "scope": "Smarter Justice and its independent legal micro- and mid-sized portals only",
+  "operatingPhase": "SMARTER_JUSTICE_ACTIVE_OTHER_PILLARS_PLANNING_ONLY",
+  "relationship": {
+    "neutralBoardroom": "Separate top-level strategic, portfolio-governance, and final owner decision layer across all four pillars.",
+    "smarterJustice": "Legal-sector umbrella, public legal front door, legal-network coordinator, and legal operating layer.",
+    "legalPortals": "Independent authoritative implementations with separate repositories, artifacts, deployments, data, and safeguards."
+  },
+  "informationFlow": "LEGAL_PORTAL_TO_SMARTER_JUSTICE_TO_NEUTRAL_BOARDROOM",
+  "decisionFlow": "NEUTRAL_BOARDROOM_TO_SMARTER_JUSTICE_TO_RESPONSIBLE_LEGAL_PORTAL",
+  "dataPrinciple": "CENTRALIZE_PORTFOLIO_METADATA_DECENTRALIZE_USER_MATTER_DATA",
+  "evidenceBoundary": "The handoff is nonconfidential coordination metadata and never overrides a dedicated portal exact artifact or verified production behavior.",
+  "sourceBase": {
+    "filename": "smarter-justice-v1.7.37.zip",
+    "sha256": "e033daf1e65cf1681b13b535f6e828d186d17efdc1d6f8785fb3c9ebae911fdd",
+    "sizeBytes": 1889258,
+    "evidenceState": "EXACT_VERIFIED",
+    "artifact": "smarter-justice-v1.7.37.zip",
+    "version": "1.7.37"
+  },
+  "releaseStatus": "EXACT_ARTIFACT_TESTED_NOT_DEPLOYED",
+  "deployment": {
+    "deployed": false,
+    "lastVerifiedProduction": "1.6.1",
+    "productionVerificationClaimed": false
+  },
+  "automaticWrites": false,
+  "liveConnection": false,
+  "containsUserMatterData": false,
+  "containsCredentials": false,
+  "containsPaymentData": false,
+  "containsConfidentialData": false,
+  "prohibitedData": [
+    "legal matter contents",
+    "uploaded documents",
+    "privileged communications",
+    "user accounts",
+    "credentials and secrets",
+    "payment details",
+    "private professional claim evidence",
+    "production database exports"
+  ],
+  "closedGates": [
+    "AttorneyRide transfer",
+    "automatic cross-repository writes",
+    "automatic professional-record writes to legal portals",
+    "booking",
+    "centralized user-matter storage",
+    "filing",
+    "live Neutral Boardroom connection",
+    "live professional billing",
+    "payments",
+    "production deployment",
+    "professional appointment booking",
+    "public professional checkout",
+    "public professional inquiries",
+    "reviews",
+    "sensitive uploads",
+    "unrestricted professional routing"
+  ],
+  "ownerDecisions": [
+    {
+      "id": "decision-neutral-boardroom-top-layer",
+      "status": "OWNER_APPROVED",
+      "decision": "Neutral Boardroom is the top-level strategic and final owner voice across the four pillars."
+    },
+    {
+      "id": "decision-smarter-justice-legal-only",
+      "status": "OWNER_APPROVED",
+      "decision": "Smarter Justice concentrates only on legal-sector execution and its legal portal network."
+    },
+    {
+      "id": "decision-smarter-justice-first",
+      "status": "OWNER_APPROVED",
+      "decision": "Only Smarter Justice is actively being launched, marketed, operated, monetized, and perfected for now."
+    },
+    {
+      "id": "decision-central-professional-business-layer",
+      "status": "OWNER_APPROVED",
+      "decision": "Professionals and firms use one Smarter Justice account and billing relationship across qualifying legal portals; firms use organization accounts, seats, offices, and evidence-based portal assignments."
+    }
+  ],
+  "limitations": [
+    "No live Neutral Boardroom integration is implemented.",
+    "Dedicated portal artifact metadata remains owner-recorded until independently verified.",
+    "No deployment authorization is included.",
+    "Professional portal adapters are D3 local read-only fixtures only; no staging, production, live billing, or portal write is active.",
+    "Fourteen ambiguous legacy professional assignments remain outside portal exports pending individual review."
+  ],
+  "generatedAt": "2026-07-28T17:45:00-04:00",
+  "actionCenterBoundary": "Includes only aggregate nonconfidential legal-network execution priorities and owner dispositions; no automatic action or cross-system write.",
+  "professionalNetwork": {
+    "standardVersion": "1.2.0",
+    "accountModel": "one Smarter Justice professional identity",
+    "firmModel": "one firm organization account with offices and professional seats",
+    "portalContractCount": 25,
+    "contractState": "D3_LOCAL_ADAPTER_TESTED",
+    "canonicalPortalAssignments": 678,
+    "unresolvedLegacyAssignments": 14,
+    "populatedFixtures": 14,
+    "validEmptyFixtures": 11,
+    "liveConnections": 0,
+    "automaticWrites": false,
+    "liveBilling": false,
+    "publicCheckout": false
+  },
+  "releaseVersion": "1.7.39"
+}

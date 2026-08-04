@@ -1,0 +1,58 @@
+{
+  "schema": "smarter-justice-portfolio-products",
+  "version": "1.0.0",
+  "products": [
+    {
+      "productId": "smarter-justice-central",
+      "publicName": "Smarter Justice",
+      "repository": "OWNER_CONNECTION_PENDING",
+      "packageRoot": ".",
+      "releaseVersion": "1.7.73",
+      "sourceArtifact": "smarter-justice-v1.7.72.zip",
+      "sourceZipSha256": "d83a25d224f0cec197569204fb33ac19e32e6f3d307e57e48a265f53b052569c",
+      "candidateZipSha256": null,
+      "gitCommit": "UNBOUND",
+      "gitTree": "UNBOUND",
+      "canonicalDomain": "https://smarterjustice.com",
+      "renderFallback": "UNBOUND",
+      "renderWorkspace": "UNBOUND",
+      "renderServiceId": "UNBOUND",
+      "serviceType": "web",
+      "region": "oregon",
+      "gitBranch": "main",
+      "deploymentMode": "UNSELECTED_PROVIDER_DISCOVERY_REQUIRED",
+      "autoDeployTrigger": "off",
+      "overlappingDeployPolicy": "UNVERIFIED",
+      "runtime": "node 22.x",
+      "buildCommand": "npm ci --omit=dev",
+      "preDeployCommand": "npm run migrate",
+      "startCommand": "npm start",
+      "livenessPath": "/livez",
+      "readinessPath": "/readyz?lane=free-professional-profiles",
+      "databaseState": "POSTGRES_ACCEPTANCE_UNCLAIMED",
+      "persistentDiskState": "UNVERIFIED",
+      "migrationState": "REVERSIBILITY_REVIEW_REQUIRED",
+      "githubEnvironment": "production",
+      "secretPresenceStates": {
+        "DATABASE_URL": "UNTESTED",
+        "SMTP_HOST": "UNTESTED",
+        "SMTP_USER": "UNTESTED",
+        "SMTP_PASS": "UNTESTED",
+        "APP_BASE_URL": "UNTESTED",
+        "OWNER_CONTROL_CENTER_TOKEN": "UNTESTED"
+      },
+      "smokeManifest": "deployment/smoke-routes.json",
+      "lastKnownGood": {
+        "version": "1.6.1",
+        "state": "LAST_VERIFIED_PRODUCTION_VERSION_ONLY",
+        "deployId": "UNBOUND"
+      },
+      "rollbackEligible": false,
+      "deploymentState": "NOT_DEPLOYED",
+      "postDeploymentState": "NOT_STARTED",
+      "continuedLiveState": "NOT_ACCEPTED"
+    }
+  ],
+  "secretValuesIncluded": false,
+  "releaseVersion": null
+}

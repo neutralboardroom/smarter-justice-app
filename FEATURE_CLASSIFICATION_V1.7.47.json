@@ -1,0 +1,60 @@
+{
+  "releaseVersion": "1.7.47",
+  "generatedAt": "2026-07-29T15:54:00-04:00",
+  "liveReady": [],
+  "implementedVerifiedLocal": [
+    "Initial Launch Activation workbench",
+    "Free-profile-first attorney launch cohort operations",
+    "Campaign-attributed public professional follow-up request",
+    "Owner launch contact queue",
+    "Source-supported profile-candidate CSV preview",
+    "Duplicate and missing-fact review before commit",
+    "Private source-provenanced candidate creation for ready rows",
+    "Portal specialty suggestions without automatic approval",
+    "Revision-safe central portal-specific profile management",
+    "Read-only portal handoff foundations"
+  ],
+  "simulatedOrFixtureBased": [
+    "Profile-candidate batch commit in temporary test storage",
+    "Portal producer-consumer fixtures",
+    "Example import receipts and exports",
+    "Campaign and QR attribution fixtures"
+  ],
+  "gatedClosed": [
+    "Public profile publication",
+    "Live portal imports",
+    "Paid membership",
+    "Sponsored/Featured visibility",
+    "Lead and case-opportunity access",
+    "Public inquiries",
+    "Appointments",
+    "Reviews",
+    "Confidential uploads",
+    "External AI",
+    "Automatic portal writes",
+    "Production deployment"
+  ],
+  "blockedExternal": [
+    "Legitimate clean install",
+    "Fresh vulnerability audit",
+    "PostgreSQL storage acceptance",
+    "SMTP delivery",
+    "Owner/staff MFA operational acceptance",
+    "Monitoring and alerts",
+    "Backup and restore",
+    "Browser/mobile/accessibility acceptance",
+    "D4 portal staging",
+    "Exact rollback approval",
+    "Legal/commercial acceptance"
+  ],
+  "ownerDependent": [
+    "Launch date",
+    "First attorney cohort",
+    "Support owner and hours",
+    "Incident owner",
+    "Exact rollback artifact",
+    "Pricing and firm-seat model",
+    "Refund/cancellation terms",
+    "Deployment go/no-go"
+  ]
+}

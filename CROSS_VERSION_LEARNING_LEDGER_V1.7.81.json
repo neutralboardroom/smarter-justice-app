@@ -1,0 +1,49 @@
+{
+  "schema_id": "SJP-LMP-CROSS-VERSION-LEARNING-LEDGER-2026-08-03-V1",
+  "product": {
+    "name": "Smarter Justice",
+    "prior_version": "1.7.80",
+    "current_version": "1.7.81"
+  },
+  "prior_versions_reviewed": [
+    "1.7.79",
+    "1.7.80"
+  ],
+  "lessons": [
+    {
+      "lesson_id": "V14-1781-01",
+      "source_version_or_wave": "v1.7.80 single-receipt live-evidence preview",
+      "observation": "Individually valid receipts can still conflict, replay, or span incompatible environments when reviewed as a set.",
+      "what_worked_or_failed": "Exact single-receipt validation worked; batch consistency was not represented.",
+      "root_cause_or_enabling_factor": "No batch digest, component uniqueness, replay set, environment policy, or all-or-nothing transaction preview existed.",
+      "test_or_evidence_that_revealed_it": "NEXT_VERSION_IMPROVEMENT_LIST live-evidence-provider-adapters and unified operations obligations.",
+      "product_change_made": "Added batch reconciliation and deterministic promotion transaction preview.",
+      "builder_prompt_system_change_made": "Added conflict, replay, mixed-environment, tamper, and partial-batch tests.",
+      "future_candidate_selection_effect": "Prefer evidence workflows that validate the whole decision set, not isolated records.",
+      "future_testing_or_recovery_effect": "Recovery must preserve batch digest, uniqueness, ordering, and no-mutation boundaries.",
+      "status": "APPLIED"
+    },
+    {
+      "lesson_id": "V14-1781-02",
+      "source_version_or_wave": "v1.7.80 detached-final design",
+      "observation": "Keeping final identity outside the ZIP avoids self-reference but manual reporting can still drift from embedded candidate and source evidence.",
+      "what_worked_or_failed": "The boundary was correct; deterministic detached generation and comparison were missing.",
+      "root_cause_or_enabling_factor": "Packaging and reporting were separate operator steps without a shared verifier.",
+      "test_or_evidence_that_revealed_it": "NEXT_VERSION_IMPROVEMENT_LIST item v14-detached-final-delivery-receipt.",
+      "product_change_made": "No public behavior changed.",
+      "builder_prompt_system_change_made": "Added post-package twin comparison and seventeen-field cross-receipt validation.",
+      "future_candidate_selection_effect": "Prefer release automation that preserves non-circularity while reducing manual identity reconciliation.",
+      "future_testing_or_recovery_effect": "Final delivery must always produce and validate a detached receipt after immutable packaging.",
+      "status": "APPLIED"
+    }
+  ],
+  "unresolved_learning_questions": [
+    "Which exact GitHub repository and Render service are canonical?",
+    "What authenticated owner transaction should apply a valid evidence batch without creating hidden deployment authority?"
+  ],
+  "next_version_learning_priorities": [
+    "Canonical read-only provider adapters",
+    "Audited batch application authorization",
+    "Detached receipt publication beside immutable artifact"
+  ]
+}

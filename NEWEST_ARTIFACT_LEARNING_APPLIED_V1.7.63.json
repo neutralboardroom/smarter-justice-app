@@ -1,0 +1,35 @@
+{
+  "schema": "smarter-justice-newest-artifact-learning",
+  "releaseVersion": "1.7.63",
+  "generatedAt": "2026-07-31T23:11:00-04:00",
+  "source": {
+    "artifact": "smarter-justice-v1.7.62.zip",
+    "sha256": "2dbc85180e6319eda0320361093501bfa1eb4fa973b1b4572595095f57662735",
+    "evidenceState": "CURRENT_CHAT_REPRODUCED",
+    "dependencyIndependentParts": 116,
+    "testLogSha256": "5d4b08cb14a68fb0cd5d43216cfd8d67f60d2a3d6a6ff844bbee86b51a950490",
+    "filename": "smarter-justice-v1.7.62.zip",
+    "version": "1.7.62",
+    "sizeBytes": 5480221
+  },
+  "positiveLearning": [
+    "version-neutral portal authority",
+    "binding monthly $15 commercial manifest",
+    "one payer per seat",
+    "public freemium floor",
+    "Matter Path deterministic fallback",
+    "closed-gate truth",
+    "parallel-safe exact-extraction tests"
+  ],
+  "gapsImplemented": [
+    "canonical active master-pair runtime discovery",
+    "pair epoch/revision ordering and predecessor compare-and-swap",
+    "idempotent replay, replay rejection and split-brain quarantine",
+    "detached commit finalization and prompt self-identity",
+    "DUR-001 through DUR-043 closed inheritance and append-only transactions",
+    "current research and public-experience preservation"
+  ],
+  "portalLearningBoundary": "Owner/handoff-recorded metadata only; no current-chat portal ZIP inspection, D4, D5, deployment or live acceptance claimed.",
+  "launchState": "NO_GO",
+  "activeMasterPairReceipt": "MPCR-2026-07-31-E1-R0-05F4296ED378"
+}

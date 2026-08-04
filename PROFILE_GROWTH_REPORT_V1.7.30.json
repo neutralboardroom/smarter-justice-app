@@ -1,0 +1,104 @@
+{
+  "version": "1.7.30",
+  "date": "2026-07-24",
+  "program": "Phase One six-region professional-profile program",
+  "leadRegion": "Manhattan",
+  "nextLeadRegion": "Queens",
+  "target": {
+    "newIndividualProfessionals": 36,
+    "newFirms": 7,
+    "newProfessionalFirmLinks": 36,
+    "minimumRegionsWorked": 6
+  },
+  "candidateReview": {
+    "reviewed": 48,
+    "qualified": 36,
+    "duplicates": 7,
+    "deferred": 5,
+    "approximateYieldPercent": 75
+  },
+  "additions": {
+    "individualProfessionals": 36,
+    "firms": 7,
+    "professionalFirmLinks": 36,
+    "regions": [
+      {
+        "region": "Manhattan",
+        "county": "New York County",
+        "professionals": 6,
+        "firms": 1,
+        "primarySource": "Outten & Golden current people and attorney pages"
+      },
+      {
+        "region": "Brooklyn",
+        "county": "Kings County",
+        "professionals": 6,
+        "firms": 2,
+        "primarySource": "Davis Ndanusa Ikhlas & Saleem and Bisogno & Meyerson current firm/team pages"
+      },
+      {
+        "region": "Queens",
+        "county": "Queens County",
+        "professionals": 6,
+        "firms": 2,
+        "primarySource": "Sager Gellerman Eisner and FK Law Group current attorney/team pages"
+      },
+      {
+        "region": "The Bronx",
+        "county": "Bronx County",
+        "professionals": 6,
+        "firms": 1,
+        "primarySource": "The Bronx Defenders current about, leadership, and practice pages"
+      },
+      {
+        "region": "Northern Metro New Jersey",
+        "county": "Passaic County",
+        "professionals": 6,
+        "firms": 0,
+        "primarySource": "Scarinci Hollenbeck current Little Falls and attorney pages"
+      },
+      {
+        "region": "NYC-connected Connecticut",
+        "county": "Fairfield County",
+        "professionals": 6,
+        "firms": 1,
+        "primarySource": "Pullman & Comley current Bridgeport, attorney, and individual profile pages"
+      }
+    ]
+  },
+  "directoryBefore": {
+    "professionals": 161,
+    "firms": 35,
+    "publicTotal": 196,
+    "strictQualifyingTotal": 193
+  },
+  "directoryAfter": {
+    "professionals": 197,
+    "firms": 42,
+    "publicTotal": 239,
+    "strictQualifyingProfessionals": 196,
+    "strictQualifyingFirms": 40,
+    "strictQualifyingTotal": 236
+  },
+  "statusBoundaries": {
+    "claimStatus": "not claimed",
+    "verificationStatus": "not started",
+    "participation": false,
+    "membership": false,
+    "sponsorship": false,
+    "availability": "not configured",
+    "inquiryEligibility": false,
+    "independentCredentialVerification": false,
+    "paidOrganicOrdering": false
+  },
+  "sourcePolicy": [
+    "Professional-controlled pages are labeled self-reported public sources, not independent credential verification.",
+    "No copied headshots, testimonials, rankings, awards, case results, verdicts, settlements, outcome claims, or promotional superlatives.",
+    "Every record has source URLs, review date, correction/removal path, claim readiness, structured geography, practice evidence, and a public contact route."
+  ],
+  "limitations": [
+    "Five candidates were deferred because current public material did not support a sufficiently specific individual-level practice summary or current office relationship.",
+    "Seven candidates were excluded as inherited duplicates.",
+    "Independent credential and firm-authority review remains required before verification or profile control."
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "version": "1.7.38",
+  "date": "2026-07-27",
+  "status": "exact-artifact-tested development release; not deployed",
+  "sourceArtifact": {
+    "filename": "smarter-justice-v1.7.37.zip",
+    "sha256": "e033daf1e65cf1681b13b535f6e828d186d17efdc1d6f8785fb3c9ebae911fdd",
+    "sizeBytes": 1889258,
+    "entries": 622,
+    "files": 611,
+    "explicitDirectories": 11
+  },
+  "implementation": {
+    "launchSprintStandardVersion": "1.0.0",
+    "threeSeparateLaunchLanes": true,
+    "publicLaunchStatusApi": true,
+    "publicLaunchStatusPage": true,
+    "privateLaunchCommandCenter": true,
+    "productionPreflightCli": true,
+    "launchEnvironmentContract": true,
+    "launchRunbook48Hour": true,
+    "failClosedApprovals": true,
+    "paidPilotActivated": false,
+    "deploymentActivated": false,
+    "livePortalConnections": 0,
+    "automaticPortalWrites": 0,
+    "professionalPortalContractsAtD3": true,
+    "canonicalProfessionalPortalAssignments": 678,
+    "unresolvedLegacyProfessionalAssignments": 14
+  },
+  "profileGrowth": {
+    "newProfessionals": 0,
+    "newFirms": 0,
+    "newLinks": 0,
+    "reason": "No new attorney-specific evidence batch was researched or supplied for this launch-readiness release."
+  },
+  "testing": {
+    "suiteParts": 94,
+    "dependencyIndependentPartsExpected": 93,
+    "storageReadinessRequiresPg": true,
+    "cleanInstall": "BLOCKED_REGISTRY_TIMEOUT_OR_UNREACHABLE",
+    "vulnerabilityAudit": "BLOCKED_REGISTRY_TIMEOUT_OR_UNREACHABLE",
+    "freshExtractionCycles": 2,
+    "exactArtifactIdentity": "DETACHED_AFTER_FINAL_PACKAGING",
+    "dependencyIndependentPartsPassedWorkingSource": 93,
+    "blockedPartsWorkingSource": 1,
+    "blockedTest": "tests/storage-readiness.test.js",
+    "blockedReason": "The required pg package was unavailable because the configured npm registry timed out or was unreachable during retry; no substitute or test shim was packaged.",
+    "graphicalBrowserAcceptance": "NOT_RUN",
+    "physicalDeviceAcceptance": "NOT_RUN",
+    "assistiveTechnologyAcceptance": "NOT_RUN",
+    "javascriptSyntaxFiles": 208,
+    "jsonParseFiles": 177,
+    "topLevelPublicHtmlFiles": 70
+  },
+  "deployment": {
+    "deployed": false,
+    "deploymentAuthorized": false,
+    "lastVerifiedProduction": "1.6.1",
+    "rollbackArtifact": "smarter-justice-v1.7.37.zip",
+    "rollbackSha256": "e033daf1e65cf1681b13b535f6e828d186d17efdc1d6f8785fb3c9ebae911fdd"
+  },
+  "activationGatesChanged": false,
+  "limitations": [
+    "Production services, browser/device/accessibility acceptance, payment lifecycle, support staffing, monitoring, backup, restore, staging, and live deployment remain unverified.",
+    "The launch command center reports readiness but does not create operational evidence.",
+    "No payment, application, sensitive-storage, or deployment approval is enabled by default.",
+    "The npm registry timed out or was unreachable during the final retry, so clean dependency installation, storage-readiness execution, and vulnerability auditing remain blocked and unclaimed."
+  ],
+  "packaging": {
+    "repositoryLayout": "FILES_AT_ZIP_ROOT",
+    "inventorySelfExcluding": true,
+    "nodeModulesIncluded": false,
+    "exactZipIdentity": "DETACHED_AFTER_FINAL_PACKAGING"
+  },
+  "launchPreflight": {
+    "expectedDefaultResult": "NO_GO",
+    "observedWorkingSourceResult": "NO_GO",
+    "readyLanes": 0,
+    "blockedLanes": 3,
+    "reason": "Production configuration, operational evidence, and explicit approvals are intentionally absent from the packaged development artifact. The command center therefore fails closed."
+  }
+}

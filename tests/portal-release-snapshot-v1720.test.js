@@ -1,0 +1,12 @@
+'use strict';
+const assert=require('assert');const fs=require('fs');const path=require('path');
+const snapshot=require('../data/portalReleaseSnapshotV1720').getPortalReleaseSnapshot();
+assert.equal(snapshot.version,'1.7.75');assert.equal(snapshot.records.length,26);assert.equal(new Set(snapshot.records.map(x=>x.slug)).size,26);
+for(const row of snapshot.records){assert(row.name&&row.latestDevelopmentVersion&&row.latestZipName&&row.nextAction);assert.equal(row.sensitiveTrafficApproved,false);assert(['EXACT_VERIFIED','EXACT_VERIFIED_PENDING_DETACHED_IDENTITY','CANDIDATE_PENDING_FINAL_EXACT_ACCEPTANCE','OWNER_RECORDED','OWNER_RECORDED_NOT_STAGED','OWNER_RECORDED_VERSION_ONLY','FINAL_SOURCE_ACCEPTED_DETACHED_ARCHIVE_IDENTITY_PENDING','CANDIDATE_WORKING_TREE_ACCEPTANCE_PENDING','FINAL_SOURCE_SEALING_DETACHED_IDENTITY_PENDING','FINAL_PACKAGE_ACCEPTED_DETACHED_IDENTITY','MISSING'].includes(row.evidenceLevel));assert(/not deployed|not confirmed deployed|last verified production|not authorized|not built|deployment not confirmed/i.test(row.deploymentStatus));}
+const sj=snapshot.records.find(x=>x.slug==='general-smarter-justice-start');assert.equal(sj.latestDevelopmentVersion,'1.7.75');assert.equal(sj.latestZipName,'smarter-justice-v1.7.75.zip');assert.equal(sj.evidenceLevel,'FINAL_PACKAGE_ACCEPTED_DETACHED_IDENTITY');
+for(const [slug,version] of [['immigration-oasis','1.10.263'],['justice-tax-solutions','0.1.121'],['divorce-law-aid','0.44.0'],['estate-law-aid','1.1.67'],['criminal-law-aid','0.26.0'],['employment-law-aid','0.31.0'],['personal-injury-law-aid','0.66.0'],['domestic-violence-aid','0.49.0']]) assert.equal(snapshot.records.find(x=>x.slug===slug).latestDevelopmentVersion,version);
+assert.equal(snapshot.records.find(x=>x.slug==='car-accident-law-aid').evidenceLevel,'OWNER_RECORDED');
+assert(snapshot.boundaries.every(x=>/authoritative|do not prove|No sensitive|Owner-recorded/i.test(x)));
+const html=fs.readFileSync(path.join(__dirname,'..','public','control-center.html'),'utf8');const app=fs.readFileSync(path.join(__dirname,'..','public','app.js'),'utf8');const control=fs.readFileSync(path.join(__dirname,'..','lib','controlCenter.js'),'utf8');
+assert(html.includes('Current portfolio truth'));assert(app.includes('renderPortalReleaseSnapshot'));assert(app.includes('PORTAL_RELEASE_SNAPSHOT_V1.7.75.json'));assert(control.includes('portalReleaseSnapshot:getPortalReleaseSnapshot()'));
+console.log('v1.7.50 owner-only legal-portal release snapshot, evidence-state, and scope-boundary tests passed.');

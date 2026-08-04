@@ -1,0 +1,58 @@
+{
+  "schema": "smarter-justice-source-acceptance",
+  "releaseVersion": "1.7.68",
+  "generatedAt": "2026-08-02T11:24:00-04:00",
+  "state": "FROZEN_SOURCE_ACCEPTED_IDENTICAL",
+  "selectedBase": {
+    "filename": "smarter-justice-v1.7.67.zip",
+    "version": "1.7.67",
+    "sha256": "80efad7967acb44f5d28add7f1cadfc3d3a123a1a4a681cc56d13ea061c52f73",
+    "sizeBytes": 6510458,
+    "entries": 2129,
+    "files": 2111,
+    "directories": 18,
+    "uncompressedBytes": 18965424,
+    "compressedBytes": 6193814,
+    "inventoryRecords": 2110,
+    "inventorySha256": "081a799f7f2572b2b7971601794e0e38bed9cbaff573dd12e2587412c9698a7d",
+    "treeSha256": "081a799f7f2572b2b7971601794e0e38bed9cbaff573dd12e2587412c9698a7d",
+    "packageJsonSha256": "e63a7359e4d014e197a053b30116592857247ac761400a571200610e7513a714",
+    "packageLockSha256": "77427fb35a66d331d59c51f453af69d335381850086a3ca801b815a02c040e4d",
+    "lockfileSha256": "77427fb35a66d331d59c51f453af69d335381850086a3ca801b815a02c040e4d",
+    "sbomSha256": "f7cf376938f19ca94dd622720d6e9b51bc61d69a8865a63ee74b35ae4c9f8ca6",
+    "dependencyIndependentParts": 121,
+    "totalReadinessParts": 122,
+    "testLogSha256": "5d400c2ef6be3470ee525e02ce85f8327d7fdb976f77b1b0a84a15867a1844a7",
+    "concurrentBaselineRuns": 2,
+    "concurrentBaselineResult": "PASS_IDENTICAL_OUTPUT",
+    "evidenceState": "CURRENT_CHAT_REPRODUCED"
+  },
+  "workingTree": {
+    "commandsPerRun": 122,
+    "runs": 2,
+    "identicalOutput": true,
+    "testLogSha256": "de9eae5055e6e61facb891a3e942c88022ffdc67ccff9063ec64834ef78732e9",
+    "packageJsonSha256": "e50ec1c66858c55ba08d91bf875f21a2f29de78b61171d4e065933943faf6736",
+    "packageLockSha256": "218a227d0101c9ec962e619e5cdc550b623011f31aa15f4408ef778f5eb7eaa4",
+    "sbomSha256": "f568c25902aa9b45745bbd87671dead26956cb1a49b12c3b8e152b7ebffd8eaf"
+  },
+  "supplyChain": {
+    "cleanInstallState": "BLOCKED_CONFIGURED_REGISTRY_HTTP_404_XTEND_4_0_2",
+    "vulnerabilityAuditState": "BLOCKED_CONFIGURED_AUDIT_ENDPOINT_HTTP_404",
+    "privateRegistryCoordinatesPackaged": false,
+    "postgresAcceptanceClaimed": false,
+    "vulnerabilityAcceptanceClaimed": false
+  },
+  "launchState": "NO_GO",
+  "deploymentAuthorized": false,
+  "frozenSourceAcceptance": {
+    "trees": 2,
+    "commandsPerTree": 122,
+    "concurrent": true,
+    "identicalOutput": true,
+    "testLogSha256": "de9eae5055e6e61facb891a3e942c88022ffdc67ccff9063ec64834ef78732e9",
+    "sourceA": "sj1768-source-a",
+    "sourceB": "sj1768-source-b",
+    "state": "PASS_IDENTICAL_OUTPUT"
+  }
+}

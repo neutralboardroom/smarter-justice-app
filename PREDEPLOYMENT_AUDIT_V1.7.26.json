@@ -1,0 +1,49 @@
+{
+  "version": "1.7.26",
+  "date": "2026-07-23",
+  "sourceArtifact": {
+    "name": "smarter-justice-v1.7.25.zip",
+    "sha256": "f94e6747b9fd134cbd95abeda37da3b02278836005825b1ef085db5ed88619dc"
+  },
+  "baselineRegressionParts": 54,
+  "findings": {
+    "staleAiMetadata": "corrected",
+    "speculativePublicPricing": "removed",
+    "professionalSignupFriction": "reduced",
+    "ownerStaffPageShellAuthentication": "confirmed and regression-tested",
+    "profileGrowth": "12 professionals, 2 firms",
+    "profileSourceAccuracy": "direct professional source preferred and current displayed telephone aligned",
+    "nextVersionMachineMetadata": "refreshed to v1.7.26 with v1.7.25 baseline and classified priorities",
+    "cspBlockedPrintControl": "repaired with external tested listener"
+  },
+  "revenue": {
+    "implementedNow": [
+      "annual savings clarity",
+      "no-charge account creation clarity",
+      "unapproved public pricing removal"
+    ],
+    "ownerApproval": [
+      "founding annual incentive",
+      "location and team add-ons",
+      "public continuity subscription"
+    ],
+    "reviewRequired": [
+      "paid human review",
+      "professional marketplace services",
+      "expedited filing assistance",
+      "professional compensation model"
+    ],
+    "rejected": [
+      "ping-post lead sales",
+      "improper referral fees or fee sharing",
+      "paid organic rank",
+      "unverified reviews or guarantees"
+    ]
+  },
+  "limitations": [
+    "npm registry timeout; no fresh vulnerability count",
+    "headless Chromium unavailable in verification environment",
+    "production credentials and deployment unavailable"
+  ],
+  "deployed": false
+}

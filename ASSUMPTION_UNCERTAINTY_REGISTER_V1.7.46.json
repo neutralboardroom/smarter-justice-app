@@ -1,0 +1,36 @@
+{
+  "releaseVersion": "1.7.46",
+  "generatedAt": "2026-07-29T19:35:00-04:00",
+  "items": [
+    {
+      "id": "A-01",
+      "uncertainty": "The three micro-portal artifacts are not present in this Smarter Justice build context.",
+      "control": "Keep portal identities OWNER_RECORDED and live imports closed until exact artifacts and dedicated handoffs are received."
+    },
+    {
+      "id": "A-02",
+      "uncertainty": "Production PostgreSQL, SMTP, monitoring, backup, restore, and host configuration are not available for acceptance.",
+      "control": "Keep production and durable-account lanes NO_GO."
+    },
+    {
+      "id": "A-03",
+      "uncertainty": "The exact rollback artifact has not been selected and rehearsed by the owner.",
+      "control": "Do not infer or guess a rollback identity."
+    },
+    {
+      "id": "A-04",
+      "uncertainty": "Final pricing, taxes, refunds, cancellation, Sponsored placement, opportunity terms, and jurisdiction-specific legal review are not accepted.",
+      "control": "Show pricing pending approval and keep all paid growth closed."
+    },
+    {
+      "id": "A-05",
+      "uncertainty": "The first real attorney cohort, support owner, incident owner, and launch date are not recorded.",
+      "control": "Use the launch workbench to record them; do not fabricate values."
+    },
+    {
+      "id": "A-06",
+      "uncertainty": "A locally passing page or route does not prove live browser, device, keyboard, zoom, screen-reader, or portal acceptance.",
+      "control": "Require evidence-backed rehearsals and D4 staging."
+    }
+  ]
+}

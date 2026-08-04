@@ -1,0 +1,99 @@
+{
+  "schema": "smarter-justice-four-portal-launch-manifest",
+  "release": "1.7.51",
+  "status": "CURRENT_ACTIVE_MODEL_NO_GO",
+  "historicalThreePortalIds": [
+    "divorce-law-aid",
+    "estate-law-aid",
+    "personal-injury-law-aid"
+  ],
+  "currentPortalIds": [
+    "divorce-law-aid",
+    "estate-law-aid",
+    "personal-injury-law-aid",
+    "domestic-violence-aid"
+  ],
+  "portals": [
+    {
+      "order": 1,
+      "portalId": "divorce-law-aid",
+      "name": "Divorce Law Aid",
+      "artifact": "divorce-law-aid-v0.22.0.zip",
+      "version": "0.22.0",
+      "sha256": "094e1a0c7caea90265e0cecfd3ad5044320596ea7ddc76f9edae987cfd6f4333",
+      "sizeBytes": 2228140,
+      "evidenceState": "OWNER_RECORDED_NOT_STAGED",
+      "live": false
+    },
+    {
+      "order": 2,
+      "portalId": "estate-law-aid",
+      "name": "Estate Law Aid",
+      "artifact": "estate-law-aid-v1.1.47.zip",
+      "version": "1.1.47",
+      "sha256": "0dd5fd612de991ba06d3f20e30ba49e436ead4b94bbe70d1ab4638cb50a849ec",
+      "sizeBytes": 6846171,
+      "evidenceState": "OWNER_RECORDED_NOT_STAGED",
+      "live": false
+    },
+    {
+      "order": 3,
+      "portalId": "personal-injury-law-aid",
+      "name": "Personal Injury Law Aid",
+      "artifact": "personal-injury-law-aid-v0.40.0.zip",
+      "version": "0.40.0",
+      "sha256": "c559032649018abc9b3a31c55c7ddece213f060eae7a79079e0e38de3e454692",
+      "sizeBytes": 2580441,
+      "evidenceState": "OWNER_RECORDED_NOT_STAGED",
+      "live": false
+    },
+    {
+      "order": 4,
+      "portalId": "domestic-violence-aid",
+      "name": "Domestic Violence Aid",
+      "artifact": "domestic-violence-aid-v0.31.0.zip",
+      "version": "0.31.0",
+      "sha256": "e39ac3c2bb5952e539ff8740a107c847fbb14882deabf7c45ca852fd3546191f",
+      "sizeBytes": 1034010,
+      "evidenceState": "OWNER_RECORDED_NOT_STAGED",
+      "live": false
+    }
+  ],
+  "domesticViolence": {
+    "primaryIdentity": "Domestic Violence Aid",
+    "embeddedInitiative": "The Stop Sign Project — A Domestic Violence Aid Community Initiative",
+    "domainStatus": "NOT_OWNER_CONFIRMED",
+    "mandatorySafetyAcceptances": [
+      "survivor-safety",
+      "privacy-data-minimization",
+      "current-emergency-resources",
+      "safe-contact",
+      "confidential-location-suppression",
+      "quick-exit-limitations",
+      "legacy-record-review",
+      "stop-sign-preservation",
+      "exact-portal-staging-and-rollback"
+    ],
+    "legacyAutomaticReassignment": false,
+    "organizationAuthorityCentralSupport": "NOT_IMPLEMENTED",
+    "confidentialLocations": "SUPPRESSED",
+    "automaticContact": "PROHIBITED"
+  },
+  "closedGates": [
+    "deployment",
+    "DNS",
+    "live portal connection",
+    "automatic publication",
+    "automatic write-back",
+    "payment",
+    "sponsored",
+    "featured",
+    "professional opportunities",
+    "reviews",
+    "appointments",
+    "confidential uploads",
+    "external AI",
+    "automatic outreach"
+  ],
+  "launchState": "NO_GO"
+}

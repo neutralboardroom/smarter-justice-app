@@ -1,0 +1,41 @@
+{
+  "schema": "smarter-justice-deployment-file-4-binding",
+  "version": "1.0.0",
+  "releaseVersion": "1.7.73",
+  "packId": "SJP-2026-08-02-C15-P37-D11-V13",
+  "deploymentMaster": {
+    "pass": "TENTH PASS",
+    "filename": "Smarter_Justice_and_Legal_Micro_Portals_Deployment_Master_Tenth_Pass_Live_Launch_GitHub_Render_Zero_Touch_2026-08-01.txt",
+    "sha256": "f9fe1c62e2f2c1b02b23b2aeb256218872238f382db2e4d354ce0af9381a41da",
+    "sizeBytes": 234694,
+    "lineCount": 4000,
+    "packagedPath": "governance/masters/Smarter_Justice_and_Legal_Micro_Portals_Deployment_Master_Tenth_Pass.txt"
+  },
+  "centralMaster": {
+    "pass": "FOURTEENTH PASS",
+    "filename": "Smarter_Justice_Central_Master_Fourteenth_Pass_Active_Deployment_File_4_and_Live_Launch_Execution_2026-08-01.txt",
+    "sha256": "aa195e85f8b76ca6e3cb388477fd7acc0ed7e057c5a680e1c14ee7e801715250",
+    "sizeBytes": 375571,
+    "lineCount": 8067,
+    "packagedPath": "governance/masters/Smarter_Justice_Central_Master_Fourteenth_Pass.txt"
+  },
+  "portalFamilyMaster": {
+    "pass": "THIRTY-SIXTH PASS",
+    "filename": "Legal_Micro_Portals_Master_Thirty_Sixth_Pass_Active_Deployment_File_4_and_Live_Launch_Execution_2026-08-01.txt",
+    "sha256": "043bbe3b7f3cc3a2b6e4c7991c6c0d213a617db7606beb4199f892eff8c57884",
+    "sizeBytes": 738252,
+    "lineCount": 15097,
+    "packagedPath": "governance/masters/Legal_Micro_Portals_Master_Thirty_Sixth_Pass.txt"
+  },
+  "manifest": {
+    "filename": "Smarter_Justice_Coordinated_Four_File_Prompt_Pack_Manifest_Central_Fourteenth_Portal_Thirty_Sixth_Deployment_Tenth_2026-08-01.txt",
+    "sha256": "46f3242fa096bf2a933b814d203772e915094fca8927fbf8e4e36897b2e3ca0c",
+    "sizeBytes": 6041,
+    "lineCount": 125,
+    "selfExcludingSha256": "896394908c505cc043650f1821e01534a20c8ae4298eb7033c005470b2e4a0a4",
+    "packagedPath": "governance/receipts/Smarter_Justice_Coordinated_Four_File_Prompt_Pack_Manifest_C14_P36_D10.txt"
+  },
+  "bindingState": "EXACTLY_BOUND_LOCAL_IMPLEMENTATION",
+  "canonicalActivePairCommitProven": false,
+  "productionDeploymentProven": false
+}

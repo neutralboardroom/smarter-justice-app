@@ -1,0 +1,16 @@
+{
+  "version": "1.7.25",
+  "releaseDate": "2026-07-22",
+  "deployed": false,
+  "productionVersion": "1.6.1",
+  "rollbackArtifact": "smarter-justice-v1.7.24.zip",
+  "activationGatesChanged": false,
+  "research": {"completed": true,"reportMarkdown": "TRUST_VERIFICATION_RESEARCH_V1.7.25.md","reportJson": "TRUST_VERIFICATION_RESEARCH_V1.7.25.json","themes": ["imposter-scam resistance","independent official-channel verification","responsible AI verification","accessible self-help"]},
+  "publicTool": {"trustVerificationCenter": true,"deviceOnly": true,"messageAuthenticationVerdict": false,"legalAdvice": false,"deadlineCalculation": false,"draftTextReview": false,"riskScore": false,"upload": false,"save": false,"analytics": false,"aiTransmission": false,"leadCreation": false,"automaticReporting": false,"routing": false,"localTextAndJsonExports": true},
+  "ownerTools": {"trustVerificationResearchLedger": true,"innovationLabV1725": true,"evidenceSources": true,"rejectedShortcutControls": true},
+  "profileGrowth": {"leadMarket": "Northern Metro New Jersey","nextLeadMarket": "Brooklyn","newProfessionals": 12,"newFirms": 2,"newProfessionalFirmLinks": 12,"publicDirectory": {"professionals": 101,"firms": 30,"total": 131},"strictQualifying": {"professionals": 100,"firms": 28,"total": 128}},
+  "closedGates": {"sensitiveTraffic": true,"professionalPaidPilot": true,"publicPaidHumanReview": true,"payments": true,"booking": true,"publicReviews": true,"confidentialUploads": true,"professionalRouting": true,"broadCrossSectorSharing": true,"automaticFiling": true},
+  "testSuiteParts": 54,
+  "exactArtifactTested": true,
+  "testing": {"workingTreeRegressionParts": 54,"workingTreeRegressionPassed": true,"freshExtractionRegressionPassed": true,"twoExtractionEqualityPassed": true,"dependencyInstallAttempted": true,"configuredNpmMirrorCompleted": false,"temporaryExternalTestModulesUsed": true,"temporaryModulesIncludedInArtifact": false,"freshVulnerabilityCountClaimed": false}
+}

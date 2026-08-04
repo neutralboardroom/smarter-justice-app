@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "1.0.0",
+  "releaseVersion": "1.7.49",
+  "generatedAt": "2026-07-29T16:47:00-04:00",
+  "scope": "Production readiness, service status, and fail-safe monitoring",
+  "endpoints": {
+    "/health": {
+      "purpose": "legacy minimal process-health compatibility",
+      "successStatus": 200,
+      "launchAuthority": false,
+      "exposesReadiness": false
+    },
+    "/livez": {
+      "purpose": "process liveness",
+      "successStatus": 200,
+      "launchAuthority": false,
+      "containsSecrets": false
+    },
+    "/readyz": {
+      "purpose": "lane-aware dependency and gate readiness",
+      "readyStatus": 200,
+      "blockedStatus": 503,
+      "retryAfterSeconds": 60,
+      "launchAuthority": false,
+      "failClosed": true
+    },
+    "/api/public/service-status": {
+      "purpose": "truthful privacy-minimized public status",
+      "successStatus": 200,
+      "containsPersonalInformation": false,
+      "containsSecrets": false
+    },
+    "/api/owner/service-readiness": {
+      "purpose": "private owner lane diagnostics",
+      "requiresOwnerAuthorization": true,
+      "launchAuthority": false
+    }
+  },
+  "lanes": [
+    "public-free",
+    "free-professional-profiles",
+    "paid-membership",
+    "paid-professional-growth"
+  ],
+  "acceptance": [
+    "Liveness does not assert database, SMTP, portal, legal, payment, profile-publication, or deployment readiness.",
+    "Readiness returns HTTP 503 while the selected lane is blocked.",
+    "Readiness is derived from existing launch checks and cannot mutate a gate or owner approval.",
+    "Public status contains no secrets, storage paths, database errors, personal information, or professional email addresses.",
+    "Owner diagnostics require authorization and remain non-activating.",
+    "The legacy /health response remains minimal for compatibility."
+  ],
+  "notProven": [
+    "Production monitoring acceptance",
+    "External uptime alert delivery",
+    "Production PostgreSQL",
+    "SMTP delivery",
+    "Portal D4 staging",
+    "Backup and restore",
+    "Exact rollback approval",
+    "Device and accessibility acceptance",
+    "Legal approval",
+    "Deployment"
+  ],
+  "deploymentAuthorized": false
+}
