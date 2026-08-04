@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "productId": "example-law-aid",
+  "productName": "Example Law Aid",
+  "repository": "neutralboardroom/example-law-aid-app",
+  "runtime": {
+    "node": "22.x"
+  },
+  "commands": {
+    "install": "npm ci --no-audit",
+    "test": "npm test",
+    "build": "npm run build --if-present",
+    "migrate": "npm run migrate --if-present",
+    "start": "npm start",
+    "spanishCheck": "npm run test:spanish --if-present",
+    "dataContinuityCheck": "npm run test:data-continuity --if-present",
+    "securityCheck": "npm run test:security --if-present",
+    "releaseCheck": "npm run deployment:validate --if-present"
+  },
+  "health": {
+    "publicBaseUrlVariable": "PUBLIC_BASE_URL",
+    "paths": ["/health", "/livez"],
+    "expectedProductName": "Example Law Aid"
+  },
+  "localization": {
+    "requiredLocales": ["en", "es"],
+    "toggleRequired": true,
+    "criticalJourneyReceiptRequired": true
+  },
+  "dataContinuity": {
+    "persistentStorageRequired": true,
+    "backupReceiptRequired": true,
+    "migrationClassRequired": true,
+    "rollbackMustPreserveNewData": true
+  },
+  "sensitiveCapabilities": {
+    "payments": "CLOSED",
+    "confidentialUploads": "CLOSED",
+    "professionalHandoff": "CLOSED",
+    "externalAI": "CLOSED"
+  }
+}
