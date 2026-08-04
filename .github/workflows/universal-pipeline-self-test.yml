@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   pull_request:
     paths:
-      - '.github/actions/portfolio-production-deploy/**'
+      - '.github/actions/portfolio-exact-deploy/**'
       - '.github/workflows/portfolio-*.yml'
       - '.github/workflows/reusable-portfolio-qualification.yml'
       - '.github/workflows/universal-pipeline-self-test.yml'
@@ -16,7 +16,7 @@ on:
     branches:
       - ops/universal-safe-deployment-v1
     paths:
-      - '.github/actions/portfolio-production-deploy/**'
+      - '.github/actions/portfolio-exact-deploy/**'
       - '.github/workflows/portfolio-*.yml'
       - '.github/workflows/reusable-portfolio-qualification.yml'
       - '.github/workflows/universal-pipeline-self-test.yml'

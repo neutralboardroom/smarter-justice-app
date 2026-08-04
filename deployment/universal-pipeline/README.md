@@ -6,13 +6,13 @@ This directory defines the central deployment standard for Smarter Justice and a
 
 Roger Gillman gives deployment instructions in the Smarter Justice master builder chat. The master chat coordinates the exact product release. GitHub Actions and Render perform the technical deployment.
 
-A chat statement that a build is complete is never by itself a production trigger. Production deployment requires an exact qualified Git commit, a product-scoped configuration, successful mandatory gates, a portal-local protected GitHub environment, and that portal's protected Render deploy hook.
+A chat statement that a build is complete is never by itself a production trigger. Production deployment requires an exact qualified Git commit, a product-scoped configuration, successful mandatory gates, staging verification, a portal-local protected GitHub environment, and that portal's protected Render deploy hook.
 
 ## Permanent owner rules
 
 1. Persistent user data must survive every release, migration, rollback, and recovery.
 2. English and Spanish experiences must remain complete and equivalent across all public and authenticated journeys, emails, outreach, documents, controls, accessibility labels, and operational messages.
-3. Production releases fail closed when qualification, migration safety, data continuity, bilingual parity, backup readiness, or live verification is not proven.
+3. Staging and production releases fail closed when qualification, migration safety, data continuity, bilingual parity, backup readiness, rollback readiness, or live verification is not proven.
 4. Full card numbers and CVC values must never be stored by Smarter Justice or any portal. Payment providers retain sensitive card data; applications store only approved references and display-safe metadata.
 5. No workflow, builder, outside AI, or later packet may weaken these rules unless Roger Gillman explicitly supersedes them.
 
@@ -22,10 +22,11 @@ Each product repository contains:
 
 - `deployment/product-deployment.json`
 - a qualification caller workflow
-- a portal-local production workflow whose job targets that repository's protected `production` environment
+- a portal-local staging workflow targeting that repository's protected `staging` environment
+- a portal-local production workflow targeting that repository's protected `production` environment
 
-Qualification uses a version-pinned reusable workflow maintained here. Production uses a version-pinned composite deployment action maintained here so the caller repository's own `production` environment, approvals, variables, and secrets remain authoritative. Each product keeps its own repository, release history, Render service, domain, database, storage, secrets, rollback record, and exact ZIP lineage.
+Qualification uses a version-pinned reusable workflow maintained here. Staging and production use a version-pinned exact-deployment composite action maintained here, so each caller repository's own environment, approvals, variables, and secrets remain authoritative. The exact same qualified commit is promoted from staging to production. Each product keeps its own repository, release history, Render services, domains, database, storage, secrets, rollback records, and exact ZIP lineage.
 
 ## Safe rollout
 
-The first implementation is on branch `ops/universal-safe-deployment-v1`. It does not modify or deploy the currently live Smarter Justice service. Production automation remains disabled until the workflows, product configuration, environment protection, Render hook, migration policy, backup evidence, full English/Spanish implementation, and live checks are independently accepted.
+The first implementation is on branch `ops/universal-safe-deployment-v1`. It does not modify or deploy the currently live Smarter Justice service. Automation remains disabled until the workflows, product configuration, environment protections, Render hooks, migration policy, backup evidence, full English/Spanish implementation, and live checks are independently accepted.

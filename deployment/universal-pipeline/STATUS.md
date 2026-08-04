@@ -6,15 +6,15 @@ Draft review: pull request #5
 ## Completed foundation
 
 - Reusable portfolio qualification workflow
-- Portal-local protected-environment production deployment design
-- Version-pinned central composite deployment action
+- Portal-local protected staging and production workflows
+- Version-pinned central exact-commit deployment action shared by both environments
 - Product deployment contract and schema
 - Smarter Justice caller workflow foundation
 - Structural English/Spanish owner-rule gate
 - Structural persistent-user-data owner-rule gate
 - Exact commit, version, authorization, migration-class, backup-receipt, and rollback inputs
-- Render deploy-hook contract restricted to protected caller environments
-- Live version verification, application rollback, and evidence artifact
+- Render deploy-hook contracts restricted to protected caller environments
+- Live version verification, application rollback, and evidence artifacts
 - Independent pipeline-foundation self-test
 
 ## Current truthful test state
@@ -26,7 +26,7 @@ Draft review: pull request #5
 
 ## Deliberately not enabled yet
 
-- No production deployment has been triggered.
+- No staging or production deployment has been triggered.
 - No live Render setting has been changed.
 - The branch has not been merged to `main`.
 - Automatic production deployment is not enabled.
@@ -37,7 +37,7 @@ Draft review: pull request #5
 ## Next gates
 
 1. Pass the independent pipeline self-test.
-2. Add staging promotion before production.
+2. Add verifiable staging-promotion evidence to the production gate.
 3. Integrate the accepted pipeline into the next exact Smarter Justice source version, not sealed v1.7.83.
 4. Regenerate exact payload inventories, owner receipts, full ZIP, checksums, and acceptance evidence.
 5. Implement and verify complete Smarter Justice English/Spanish parity.

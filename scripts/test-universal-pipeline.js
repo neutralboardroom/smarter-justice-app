@@ -9,8 +9,9 @@ const errors = [];
 const requiredFiles = [
   '.github/workflows/reusable-portfolio-qualification.yml',
   '.github/workflows/portfolio-qualification.yml',
+  '.github/workflows/portfolio-staging-deploy.yml',
   '.github/workflows/portfolio-production-deploy.yml',
-  '.github/actions/portfolio-production-deploy/action.yml',
+  '.github/actions/portfolio-exact-deploy/action.yml',
   'deployment/product-deployment.json',
   'deployment/universal-pipeline/product-deployment.schema.json',
   'scripts/test-spanish-owner-rule.js',
@@ -41,8 +42,10 @@ if (configText) {
 const yamlFiles = [
   '.github/workflows/reusable-portfolio-qualification.yml',
   '.github/workflows/portfolio-qualification.yml',
+  '.github/workflows/portfolio-staging-deploy.yml',
   '.github/workflows/portfolio-production-deploy.yml',
-  '.github/actions/portfolio-production-deploy/action.yml'
+  '.github/workflows/universal-pipeline-self-test.yml',
+  '.github/actions/portfolio-exact-deploy/action.yml'
 ];
 for (const rel of yamlFiles) {
   const text = read(rel);
@@ -61,18 +64,24 @@ if (!/qualification-gate:/.test(reusable)) fail('Reusable qualification workflow
 if (!/English and Spanish parity gate/.test(reusable)) fail('Reusable qualification workflow lacks bilingual gate');
 if (!/persistent user data continuity gate/.test(reusable)) fail('Reusable qualification workflow lacks data-continuity gate');
 
-const caller = read('.github/workflows/portfolio-production-deploy.yml');
-if (!/environment:\s*production/.test(caller)) fail('Production caller does not target the portal-local protected production environment');
-if (!/rollback_sha:/.test(caller) || !/backup_receipt_id:/.test(caller)) fail('Production caller lacks rollback or backup receipt inputs');
-if (/https:\/\/api\.render\.com\/deploy\//.test(caller)) fail('Production caller must not contain a Render deploy hook URL');
+const staging = read('.github/workflows/portfolio-staging-deploy.yml');
+if (!/environment:\s*staging/.test(staging)) fail('Staging caller does not target the portal-local protected staging environment');
+if (!/deployment-stage:\s*STAGING/.test(staging)) fail('Staging caller does not bind the shared action to STAGING');
+if (!/STAGING_RENDER_DEPLOY_HOOK_URL/.test(staging) || !/STAGING_BASE_URL/.test(staging)) fail('Staging caller lacks protected endpoint contracts');
 
-const action = read('.github/actions/portfolio-production-deploy/action.yml');
-for (const required of ['target-sha','target-version','authorization-id','backup-receipt-id','rollback-sha','rollback-version']) {
+const production = read('.github/workflows/portfolio-production-deploy.yml');
+if (!/environment:\s*production/.test(production)) fail('Production caller does not target the portal-local protected production environment');
+if (!/deployment-stage:\s*PRODUCTION/.test(production)) fail('Production caller does not bind the shared action to PRODUCTION');
+if (!/rollback_sha:/.test(production) || !/backup_receipt_id:/.test(production)) fail('Production caller lacks rollback or backup receipt inputs');
+if (/https:\/\/api\.render\.com\/deploy\//.test(production) || /https:\/\/api\.render\.com\/deploy\//.test(staging)) fail('Caller workflows must not contain Render deploy hook URLs');
+
+const action = read('.github/actions/portfolio-exact-deploy/action.yml');
+for (const required of ['deployment-stage','target-sha','target-version','authorization-id','backup-receipt-id','rollback-sha','rollback-version']) {
   if (!action.includes(`${required}:`)) fail(`Deployment action lacks ${required}`);
 }
 if (!action.includes('qualification-gate')) fail('Deployment action does not verify exact-commit qualification');
 if (!action.includes('Restore last-known-good application commit')) fail('Deployment action lacks application rollback');
-if (!action.includes('production-deployment-receipt.json')) fail('Deployment action lacks production receipt');
+if (!action.includes('deployment-receipt.json')) fail('Deployment action lacks deployment receipt');
 if (!action.includes('api\\.render\\.com/deploy')) fail('Deployment action does not restrict the deploy hook host');
 
 for (const rel of ['scripts/test-spanish-owner-rule.js','scripts/test-data-continuity-owner-rule.js']) {
