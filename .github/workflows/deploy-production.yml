@@ -123,13 +123,15 @@ jobs:
             if curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/health" > "$RUNNER_TEMP/health.json" \
               && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/livez" > "$RUNNER_TEMP/livez.json" \
               && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/" > "$RUNNER_TEMP/home.html" \
-              && HEALTH="$RUNNER_TEMP/health.json" HOME_HTML="$RUNNER_TEMP/home.html" TARGET_VERSION="$TARGET_VERSION" node - <<'NODE'
+              && HEALTH="$RUNNER_TEMP/health.json" LIVEZ="$RUNNER_TEMP/livez.json" HOME_HTML="$RUNNER_TEMP/home.html" TARGET_VERSION="$TARGET_VERSION" node - <<'NODE'
           const fs=require('fs');
           const health=JSON.parse(fs.readFileSync(process.env.HEALTH,'utf8'));
+          const livez=JSON.parse(fs.readFileSync(process.env.LIVEZ,'utf8'));
           const home=fs.readFileSync(process.env.HOME_HTML,'utf8');
           if(health.ok!==true||health.version!==process.env.TARGET_VERSION||health.app!=='Smarter Justice')process.exit(1);
           if(health.sensitiveTrafficApproved!==false)process.exit(1);
-          if(!/Smarter Justice/i.test(home)||!/One clearer starting point/i.test(home))process.exit(1);
+          if(livez.ok!==true||livez.status!=='alive'||livez.version!==process.env.TARGET_VERSION||livez.app!=='Smarter Justice')process.exit(1);
+          if(!/Smarter Justice/i.test(home)||!/Start with the problem/i.test(home)||!/Tell us what happened/i.test(home))process.exit(1);
           NODE
             then
               cp "$RUNNER_TEMP/health.json" "$RUNNER_TEMP/production-smoke-evidence.json"
@@ -210,6 +212,7 @@ jobs:
             ${{ runner.temp }}/render-rollback-response.json
             ${{ runner.temp }}/health.json
             ${{ runner.temp }}/livez.json
+            ${{ runner.temp }}/home.html
             ${{ runner.temp }}/production-smoke-evidence.json
             ${{ runner.temp }}/smarter-justice-v${{ steps.target.outputs.version }}-COMPACT-CONTINUATION.zip
             ${{ runner.temp }}/smarter-justice-v${{ steps.target.outputs.version }}-COMPACT-CONTINUATION.zip.sha256
