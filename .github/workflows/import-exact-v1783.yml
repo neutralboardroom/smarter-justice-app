@@ -6,9 +6,16 @@ on:
       - agent/v1.7.83-production-import-protected-deploy
     paths:
       - 'smarter-justice-v1.7.83*.zip'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/import-exact-v1783.yml'
+      - 'smarter-justice-v1.7.83*.zip'
 
 permissions:
   contents: write
+  actions: read
 
 concurrency:
   group: smarter-justice-v1783-exact-import
@@ -44,8 +51,9 @@ jobs:
         run: |
           set -euo pipefail
           stage="$RUNNER_TEMP/smarter-justice-v1.7.83-source"
+          acceptance="$RUNNER_TEMP/smarter-justice-v1.7.83-acceptance"
           report="$RUNNER_TEMP/smarter-justice-v1.7.83-import-verification.json"
-          rm -rf "$stage"
+          rm -rf "$stage" "$acceptance"
           mkdir -p "$stage"
           python3 - "$ARCHIVE" "$stage" "$report" <<'PY'
           import hashlib, json, pathlib, stat, sys, zipfile
@@ -119,19 +127,19 @@ jobs:
           report_path.write_text(json.dumps(report, indent=2) + '\n', encoding='utf-8')
           print(json.dumps(report, indent=2))
           PY
+          cp -a "$stage" "$acceptance"
           echo "stage=$stage" >> "$GITHUB_OUTPUT"
+          echo "acceptance=$acceptance" >> "$GITHUB_OUTPUT"
           echo "report=$report" >> "$GITHUB_OUTPUT"
 
       - name: Use Node 22
         uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
         with:
           node-version: '22.x'
-          cache: npm
-          cache-dependency-path: ${{ steps.validate.outputs.stage }}/package-lock.json
           package-manager-cache: false
 
       - name: Run complete clean-source acceptance
-        working-directory: ${{ steps.validate.outputs.stage }}
+        working-directory: ${{ steps.validate.outputs.acceptance }}
         env:
           npm_config_registry: https://registry.npmjs.org/
           npm_config_audit: 'false'
@@ -152,7 +160,7 @@ jobs:
           path: |
             ${{ steps.archive.outputs.archive }}
             ${{ steps.validate.outputs.report }}
-            ${{ steps.validate.outputs.stage }}/sbom.cdx.json
+            ${{ steps.validate.outputs.acceptance }}/sbom.cdx.json
           if-no-files-found: error
           retention-days: 14
 
@@ -163,12 +171,26 @@ jobs:
           set -euo pipefail
           find . -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
           cp -a "$STAGE"/. .
-          rm -rf node_modules
           test "$(node -p "require('./package.json').version")" = "1.7.83"
           test "$(sha256sum FILE_INVENTORY_SHA256.txt | cut -d' ' -f1)" = "cfbf49c89af963d0ea7d7a9bed25cda3a6a2652e93dc6a8c021b72b9c05d7a8c"
+          python3 - <<'PY'
+          import hashlib, pathlib
+          root = pathlib.Path('.')
+          records = []
+          for line in (root / 'FILE_INVENTORY_SHA256.txt').read_text(encoding='utf-8').splitlines():
+              if not line.strip() or line.lstrip().startswith('#'):
+                  continue
+              expected, rel = line.split('  ', 1)
+              records.append((expected, rel))
+          assert len(records) == 3146
+          for expected, rel in records:
+              path = root / rel
+              assert path.is_file(), rel
+              assert hashlib.sha256(path.read_bytes()).hexdigest() == expected, rel
+          print('Exact source inventory reverified after import staging.')
+          PY
           test ! -e .github/workflows/import-exact-v1783.yml
-          test ! -e smarter-justice-v1.7.83.zip
-          test ! -e 'smarter-justice-v1.7.83 (1).zip'
+          test -z "$(find . -maxdepth 1 -type f -name 'smarter-justice-v1.7.83*.zip' -print -quit)"
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add -A
