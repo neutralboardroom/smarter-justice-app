@@ -1,0 +1,81 @@
+name: Verify exact staging promotion evidence
+description: Verifies that a successful, unexpired staging evidence artifact belongs to the exact repository, commit, and version being promoted.
+
+inputs:
+  target-sha:
+    description: Exact qualified commit proposed for production.
+    required: true
+  target-version:
+    description: Exact version proposed for production.
+    required: true
+  staging-evidence-artifact-id:
+    description: Numeric GitHub Actions artifact ID created by the successful staging deployment.
+    required: true
+  github-token:
+    description: Caller repository GitHub token with Actions read permission.
+    required: true
+
+outputs:
+  staging-receipt-sha256:
+    description: SHA-256 of the verified staging deployment receipt.
+    value: ${{ steps.verify.outputs.receipt_sha256 }}
+
+runs:
+  using: composite
+  steps:
+    - name: Download and verify the exact staging receipt
+      id: verify
+      shell: bash
+      env:
+        GH_TOKEN: ${{ inputs.github-token }}
+        TARGET_SHA: ${{ inputs.target-sha }}
+        TARGET_VERSION: ${{ inputs.target-version }}
+        ARTIFACT_ID: ${{ inputs.staging-evidence-artifact-id }}
+        REPOSITORY_ID: ${{ github.repository_id }}
+      run: |
+        set -euo pipefail
+        printf '%s' "$TARGET_SHA" | grep -Eq '^[0-9a-f]{40}$'
+        printf '%s' "$TARGET_VERSION" | grep -Eq '^[0-9]+\.[0-9]+\.[0-9]+([-.][A-Za-z0-9.]+)?$'
+        printf '%s' "$ARTIFACT_ID" | grep -Eq '^[1-9][0-9]*$'
+
+        metadata="$RUNNER_TEMP/staging-artifact-metadata.json"
+        archive="$RUNNER_TEMP/staging-evidence.zip"
+        receipt="$RUNNER_TEMP/staging-deployment-receipt.json"
+
+        gh api "repos/$GITHUB_REPOSITORY/actions/artifacts/$ARTIFACT_ID" > "$metadata"
+
+        METADATA="$metadata" TARGET_SHA="$TARGET_SHA" REPOSITORY_ID="$REPOSITORY_ID" node - <<'NODE'
+        const fs=require('fs');
+        const metadata=JSON.parse(fs.readFileSync(process.env.METADATA,'utf8'));
+        const expected=`portfolio-STAGING-evidence-${process.env.REPOSITORY_ID}-${process.env.TARGET_SHA}`;
+        if(metadata.expired===true) throw new Error('Staging evidence artifact is expired');
+        if(metadata.name!==expected) throw new Error(`Staging artifact name mismatch: ${metadata.name}`);
+        if(!metadata.archive_download_url) throw new Error('Staging artifact has no download URL');
+        NODE
+
+        curl --fail --silent --show-error --location \
+          -H 'Accept: application/vnd.github+json' \
+          -H "Authorization: Bearer $GH_TOKEN" \
+          -H 'X-GitHub-Api-Version: 2022-11-28' \
+          "https://api.github.com/repos/$GITHUB_REPOSITORY/actions/artifacts/$ARTIFACT_ID/zip" \
+          --output "$archive"
+
+        unzip -p "$archive" deployment-receipt.json > "$receipt"
+        test -s "$receipt"
+
+        RECEIPT="$receipt" TARGET_SHA="$TARGET_SHA" TARGET_VERSION="$TARGET_VERSION" node - <<'NODE'
+        const fs=require('fs');
+        const receipt=JSON.parse(fs.readFileSync(process.env.RECEIPT,'utf8'));
+        if(receipt.stage!=='STAGING') throw new Error('Receipt is not a staging receipt');
+        if(receipt.repository!==process.env.GITHUB_REPOSITORY) throw new Error('Staging receipt repository mismatch');
+        if(receipt.deployedSha!==process.env.TARGET_SHA) throw new Error('Staging receipt commit mismatch');
+        if(receipt.deployedVersion!==process.env.TARGET_VERSION) throw new Error('Staging receipt version mismatch');
+        if(receipt.ownerRules?.persistentUserData!==true) throw new Error('Persistent user data owner rule missing');
+        if(receipt.ownerRules?.englishSpanishParity!==true) throw new Error('English/Spanish owner rule missing');
+        if(receipt.ownerRules?.failClosed!==true) throw new Error('Fail-closed owner rule missing');
+        NODE
+
+        receipt_sha="$(sha256sum "$receipt" | awk '{print $1}')"
+        echo "receipt_sha256=$receipt_sha" >> "$GITHUB_OUTPUT"
+        cp "$metadata" "$RUNNER_TEMP/verified-staging-artifact-metadata.json"
+        cp "$receipt" "$RUNNER_TEMP/verified-staging-deployment-receipt.json"
