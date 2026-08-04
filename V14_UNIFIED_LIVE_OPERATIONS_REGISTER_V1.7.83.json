@@ -1,0 +1,113 @@
+{
+  "schema_id": "SJP-V14-UNIFIED-LIVE-OPERATIONS-REGISTER-2026-08-03-V1",
+  "release_version": "1.7.83",
+  "generated_at": "2026-08-03T19:45:00-04:00",
+  "packet": {
+    "id": "SJP-LMP-UNIVERSAL-ONE-STEP-2026-08-03-V14-ALL-CHAT-MODES",
+    "sha256": "fce42ce0927748f94189692ef5b3bf8e0fe9f8d12273287f03a68eb7bccdad6f"
+  },
+  "product_role": "SMARTER_JUSTICE_CENTRAL",
+  "identity_boundaries": {
+    "starting_artifact": {
+      "filename": "smarter-justice-v1.7.82.zip",
+      "version": "1.7.82",
+      "sha256": "61fea278a69055915e9b4b916e4b64ec514614f1746cacf659a6931ccd0228b1",
+      "state": "EXACT_ACCEPTED"
+    },
+    "release_payload": {
+      "inventory": "RELEASE_PAYLOAD_INVENTORY_SHA256.txt",
+      "state": "WORKING_TREE_TESTED_CANDIDATE_NOT_BUILT"
+    },
+    "source_commit": {
+      "sha256": null,
+      "state": "BLOCKED",
+      "reason": "No exact canonical repository commit is accessible in this build workspace."
+    },
+    "deployment": {
+      "identity": null,
+      "state": "BLOCKED",
+      "reason": "No exact Render service, deployment ID, commit, environment, canonical URL, or verification time is accessible."
+    },
+    "final_delivery_zip": {
+      "filename": "smarter-justice-v1.7.83.zip",
+      "sha256": null,
+      "size_bytes": null,
+      "state": "REPORTED_AFTER_PACKAGING"
+    }
+  },
+  "dependencies": [
+    {
+      "id": "neutral-boardroom-billing",
+      "state": "CONTRACT_READY_NOT_CONNECTED",
+      "evidence": "Existing Neutral Boardroom contracts and local validators; no live Stripe/provider verification in this workspace.",
+      "blocks_public_nonbilling_use": false
+    },
+    {
+      "id": "openai-central-gateway",
+      "state": "CONTRACT_READY_NOT_CONNECTED",
+      "evidence": "OpenAI-only central gateway, registries, mocks, kill switches, and deterministic fallback accepted in v1.7.78; no protected key, deployment, or controlled live smoke.",
+      "blocks_public_non_ai_use": false
+    },
+    {
+      "id": "postgres-database",
+      "state": "OWNER_ACTION_READY",
+      "evidence": "Schema, migrations, local dependency-independent tests, and separate PostgreSQL acceptance command exist; accepted provider database is not configured here."
+    },
+    {
+      "id": "transactional-email",
+      "state": "OWNER_ACTION_READY",
+      "evidence": "Privacy-minimized templates and provider controls exist; authenticated SMTP/provider acceptance is unproven."
+    },
+    {
+      "id": "github-canonical-repository",
+      "state": "OWNER_ACTION_READY",
+      "evidence": "Versioned source, CI-oriented tests, and rollback records exist; exact repository, branch protection, and commit are unproven."
+    },
+    {
+      "id": "render-central-service",
+      "state": "OWNER_ACTION_READY",
+      "evidence": "Render configuration and deployment doctor exist; exact approved service identity and deployment are unproven."
+    },
+    {
+      "id": "domains-dns-tls-health",
+      "state": "OWNER_ACTION_READY",
+      "evidence": "Domain and health contracts exist; current DNS, TLS, canonical URL, and production health are unverified."
+    },
+    {
+      "id": "sensitive-document-ai",
+      "state": "CLOSED_BY_DESIGN",
+      "evidence": "No separately approved document-transmission, malware, retention, redaction, consent, incident, and rollback contract."
+    },
+    {
+      "id": "production-deployment",
+      "state": "BLOCKED",
+      "evidence": "Canonical repository, exact commit, provider service, secrets, live smoke, portal compatibility, monitoring, and owner GO are not proven."
+    },
+    {
+      "id": "live-evidence-connector",
+      "label": "V14 live-evidence receipt connector",
+      "state": "CONTRACT_READY_NOT_CONNECTED",
+      "evidence": "V14_LIVE_EVIDENCE_CONNECTOR_CONTRACT_V1.7.83.json and lib/v14LiveEvidenceConnector.js provide exact nonsecret receipt validation and preview-only promotion; no external adapter or live receipt is connected.",
+      "live_evidence": null,
+      "owner_action": "Supply an exact nonsecret provider/repository/deployment receipt through the protected owner endpoint after the canonical GitHub repository and Render service are identified.",
+      "rollback": "Disable the endpoint or revert to v1.7.79; the connector never mutates the live register."
+    },
+    {
+      "id": "evidence-readiness-planner",
+      "label": "V14 evidence readiness and gap planner",
+      "state": "CONTRACT_READY_NOT_CONNECTED",
+      "evidence": "V14_EVIDENCE_READINESS_PLANNER_CONTRACT_V1.7.83.json and lib/v14EvidenceReadinessPlanner.js produce deterministic coverage, dependency blockers, prioritized gaps, and one exact owner action without mutation.",
+      "live_evidence": null,
+      "owner_action": "Supply exact current nonsecret receipts when canonical external identities are known.",
+      "rollback": "Disable the owner endpoint or revert to v1.7.82; no live register state is changed."
+    }
+  ],
+  "one_exact_owner_action": {
+    "required": true,
+    "action": "Identify the exact canonical GitHub repository and approved Smarter Justice Render service, then collect the first current nonsecret receipt identified by the readiness planner; do not enter or reveal the OpenAI key yet.",
+    "protected": true
+  },
+  "production_request_sent": false,
+  "deployment_authorized": false,
+  "launch_state": "NO_GO"
+}

@@ -1,0 +1,108 @@
+{
+  "schema": "smarter-justice-tamper-evident-evidence-manifest",
+  "schemaVersion": "1.0.0",
+  "releaseVersion": "1.7.60",
+  "generatedAt": "2026-07-31T16:19:00-04:00",
+  "selfReferenceBoundary": "This manifest does not prove its own hash or final ZIP identity. Those are detached after packaging.",
+  "entries": [
+    {
+      "evidenceId": "EV-BASE-INTAKE",
+      "path": "CURRENT_BUILD_INTAKE_V1.7.60.json",
+      "sha256": "13ad47087ab170d3a33fb908cb3a47cd4476475848554aea3d579cd71f11a8be",
+      "scope": "exact v1.7.59 source and immediate rollback",
+      "state": "CURRENT_CHAT_REPRODUCED",
+      "invalidationTriggers": [
+        "different source ZIP",
+        "inventory mismatch"
+      ]
+    },
+    {
+      "evidenceId": "EV-CONTROLLING-PROMPT",
+      "path": "REUSABLE_MASTER_COMMAND_INTAKE_V1.7.60.json",
+      "sha256": "3d89ad206469a119c16667343ab9d0aa31418a9d26c2ce28009798840bb2386b",
+      "scope": "owner build intent and prompt integrity",
+      "state": "CURRENT_CHAT_EXACTLY_INSPECTED",
+      "invalidationTriggers": [
+        "newer owner command",
+        "prompt integrity failure"
+      ]
+    },
+    {
+      "evidenceId": "EV-BASE-TEST",
+      "path": "BASELINE_RECORD_V1.7.60.md",
+      "sha256": "d8f2ba19ddfd8b0a707573fdaa081667a8cdc72cc7f248f83e5649622a4a0bd8",
+      "scope": "113-command source baseline twice",
+      "state": "CURRENT_CHAT_REPRODUCED",
+      "invalidationTriggers": [
+        "source or environment changes"
+      ]
+    },
+    {
+      "evidenceId": "EV-PORTAL-AUTHORITY",
+      "path": "INITIAL_PORTAL_AUTHORITY_V1.7.60.json",
+      "sha256": "c17d8c37ee05312b7fdd71d5537675ff832d4870e5f126fc6a779d0ce3b0c22d",
+      "scope": "owner-recorded metadata only",
+      "state": "CURRENT_CHAT_OWNER_RECORDED",
+      "invalidationTriggers": [
+        "newer portal artifact or owner correction"
+      ]
+    },
+    {
+      "evidenceId": "EV-LAUNCH-MATRIX",
+      "path": "LAUNCH_CAPABILITY_MATRIX_V1.7.60.json",
+      "sha256": "0e3c28ad183e738ea6e4048aac61172b205317d0a3cf40e74db6e9939a71829c",
+      "scope": "capability-specific local/gated truth",
+      "state": "TARGET_IMPLEMENTED",
+      "invalidationTriggers": [
+        "code/config/environment/approval/deployment changes"
+      ]
+    },
+    {
+      "evidenceId": "EV-OWNER-READINESS",
+      "path": "OWNER_ACTION_READINESS_V1.7.60.json",
+      "sha256": "8bfbbbf9c775524b8faf7dee5abdb6147d5b89b7176ad96d3de33fee19613b5e",
+      "scope": "validated no-secret owner-action readiness",
+      "state": "TARGET_IMPLEMENTED",
+      "invalidationTriggers": [
+        "request, prerequisite or verification change"
+      ]
+    },
+    {
+      "evidenceId": "EV-WORKING-TREE",
+      "path": "WORKING_TREE_ACCEPTANCE_V1.7.60.json",
+      "sha256": "d307e4d777b3432f0f7e1cc6957d33f52f5e0c3da6a0c8b04168e45d7eb6abdd",
+      "scope": "two concurrent independent frozen-tree 114-command runs",
+      "state": "CURRENT_CHAT_REPRODUCED",
+      "invalidationTriggers": [
+        "any packaged source change before candidate acceptance"
+      ]
+    },
+    {
+      "evidenceId": "EV-CANDIDATE",
+      "path": "CANDIDATE_ARTIFACT_ACCEPTANCE_V1.7.60.json",
+      "sha256": "5c4b8c99106814674f54bea0f53d08dafba83de264c20daf114cef20846e40d8",
+      "scope": "deterministic candidate acceptance",
+      "state": "CURRENT_CHAT_REPRODUCED",
+      "invalidationTriggers": [
+        "any source change after candidate testing"
+      ]
+    },
+    {
+      "evidenceId": "EV-FINAL",
+      "path": "FINAL_ARTIFACT_ACCEPTANCE_V1.7.60.json",
+      "sha256": "08d2c645ad911620c9bf7449e843dd22ba1b0927e596a5892b8a9dc01aa07775",
+      "scope": "sealed final source acceptance; detached ZIP identity follows",
+      "state": "SEALED_SOURCE_ACCEPTED_DETACHED_FINAL_IDENTITY_PENDING",
+      "invalidationTriggers": [
+        "any packaged file change"
+      ]
+    }
+  ],
+  "invalidatedEvidencePreservedHistorically": true,
+  "finalZipIdentityMode": "DETACHED_DELIVERY_RECEIPT",
+  "currentPackageEvidence": {
+    "packageJsonSha256": "fc87ec5cf1b64149f4e6938d1e974cd703d24bd8bbfe3d0dbc4ebb283e3a5965",
+    "packageLockSha256": "b812fdcdccc58aa9b547979ce9aae9aeb76ade2b3bc10d151b122bda4235d10e",
+    "sbomSha256": "bd321a506703e9a87e04e5406a47424b9dac0ad738da0a12f8a0b539a4b34c32"
+  }
+}

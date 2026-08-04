@@ -1,0 +1,9 @@
+'use strict';
+const assert=require('assert');const fs=require('fs');const path=require('path');const root=path.join(__dirname,'..');
+const html=fs.readFileSync(path.join(root,'public','communication-evidence-log.html'),'utf8');const js=fs.readFileSync(path.join(root,'public','communication-evidence-log.js'),'utf8');const tools=fs.readFileSync(path.join(root,'public','free-tools.html'),'utf8');
+for(const token of ['Communication & Evidence Log','Keep calls, messages, meetings, and evidence steps in one factual log','No call recording','No account. No server save. No analytics. No AI transmission. No call recording. No legal deadline calculation. Nothing is sent to a professional.','role="status" aria-live="polite"','Download text','Download JSON','Clear all','Review and preservation checklist'])assert(html.includes(token),token);
+for(const value of ['received','sent','call','meeting','observation','preservation','copy-kept','screenshot-kept','notes-only','needs-copy'])assert(html.includes(`value="${value}"`),value);
+for(const token of ['SMARTER_JUSTICE_COMMUNICATION_EVIDENCE_LOG_V1.7.31','recordsCalls:false','storesFiles:false','verifiesEvidence:false','calculatesDeadlines:false','sendsReminders:false','reviewChecklist','entries:rows'])assert(js.includes(token),token);
+for(const banned of ['fetch(','XMLHttpRequest','WebSocket','localStorage','sessionStorage','navigator.sendBeacon','setInterval(','Notification(','MediaRecorder','getUserMedia'])assert(!js.includes(banned),`network/storage/recording/reminder primitive present: ${banned}`);
+assert(tools.includes('/communication-evidence-log.html'));assert(fs.readFileSync(path.join(root,'public','sitemap.xml'),'utf8').includes('/communication-evidence-log.html'));assert(fs.readFileSync(path.join(root,'public','llms.txt'),'utf8').includes('Communication & Evidence Log'));
+console.log('communication-evidence-log-v1731.test.js passed');

@@ -1,0 +1,139 @@
+{
+  "schemaVersion": "1.0.0",
+  "releaseVersion": "1.7.43",
+  "generatedAt": "2026-07-28T23:45:00-04:00",
+  "deploymentAuthorized": false,
+  "status": "FINAL_ARTIFACT_IDENTITY_REPORTED_EXTERNALLY_NOT_DEPLOYED",
+  "artifact": {
+    "filename": "smarter-justice-v1.7.43.zip",
+    "sha256": "DETACHED_AFTER_PACKAGING",
+    "sizeBytes": 0,
+    "entryCount": 803,
+    "fileCount": 789,
+    "directoryCount": 14,
+    "inventoryRecords": 788
+  },
+  "baseline": {
+    "filename": "smarter-justice-v1.7.42.zip",
+    "sha256": "b3c265bb6d3ac39ded12fa59e105d8ac55b82f243832a8e48347ad5cabfcc0e9",
+    "sizeBytes": 2234729
+  },
+  "materialChanges": [
+    "Owner-controlled complimentary Founding Profile Pilot with time-bounded invitations and one-time redemption",
+    "Complimentary pilot entitlement explicitly separated from paid membership, verification, specialty approval, publication and ranking",
+    "Portal-first claim context and central create-profile execution across Divorce, Estate and Personal Injury",
+    "Initial professional signup narrowed to the three owner-approved pilot portals",
+    "Launch-focused professional dashboard and private owner invitation workspace",
+    "Personal Injury owner-recorded artifact truth refreshed to v0.31.0 while preserving Workers’ Compensation as a separate portal",
+    "All live payment, deployment, public publication, automatic-write and portal-import gates remain closed"
+  ],
+  "tests": {
+    "officialParts": 99,
+    "dependencyIndependentExpected": 98,
+    "postgresqlDependent": 1,
+    "results": "98_DEPENDENCY_INDEPENDENT_PASSED_IN_WORKING_SOURCE;_1_POSTGRESQL_DEPENDENT_BLOCKED_BY_LEGITIMATE_PACKAGE_REGISTRY_ACCESS",
+    "dependencyIndependentPassed": 98,
+    "postgresqlDependentBlocked": 1,
+    "javascriptSyntaxPassed": 217,
+    "jsonParsePassed": 272,
+    "topLevelPublicHtmlAudited": 70,
+    "launchPreflight": "NO_GO_0_READY_4_BLOCKED_82_BLOCKED_CHECKS"
+  },
+  "deployment": {
+    "deployed": false,
+    "authorized": false,
+    "lastVerifiedProductionVersion": "1.6.1",
+    "rollbackArtifact": "OWNER_APPROVAL_REQUIRED",
+    "livePortalConnections": 0,
+    "automaticPortalWrites": false,
+    "livePayments": false
+  },
+  "rollback": {
+    "status": "OWNER_APPROVAL_REQUIRED",
+    "artifact": "OWNER_APPROVAL_REQUIRED",
+    "reason": "Conflicting historical rollback records were not guessed."
+  },
+  "publicDirectoryTruth": {
+    "state": "TEMPORARY_NOINDEX_COMPATIBILITY_AND_CLAIM_LOOKUP",
+    "permanentSpecialtyDirectoryAuthority": "destination micro-portals",
+    "sitemapIncluded": false,
+    "navigationLabel": "temporary find-or-claim profile lookup"
+  },
+  "limitations": [
+    {
+      "priority": "P0",
+      "item": "Approve one exact rollback artifact",
+      "status": "BLOCKED_OWNER_DECISION"
+    },
+    {
+      "priority": "P0",
+      "item": "Legitimate clean install and vulnerability audit",
+      "status": "BLOCKED_REGISTRY"
+    },
+    {
+      "priority": "P0",
+      "item": "Production-like PostgreSQL, migrations, restart persistence and transactions",
+      "status": "NOT_VERIFIED"
+    },
+    {
+      "priority": "P0",
+      "item": "SMTP verification and recovery lifecycle",
+      "status": "NOT_VERIFIED"
+    },
+    {
+      "priority": "P0",
+      "item": "Stripe subscription lifecycle and support policy acceptance",
+      "status": "NOT_VERIFIED"
+    },
+    {
+      "priority": "P0",
+      "item": "Divorce, Estate and Personal Injury exact portal verification and D4 staging",
+      "status": "NOT_STARTED"
+    },
+    {
+      "priority": "P0",
+      "item": "Browser, mobile, keyboard, zoom and screen-reader acceptance",
+      "status": "NOT_COMPLETED"
+    },
+    {
+      "priority": "P0",
+      "item": "Monitoring, incident, backup and restore acceptance",
+      "status": "NOT_COMPLETED"
+    },
+    {
+      "priority": "P1",
+      "item": "Resolve 14 ambiguous legacy professional assignments",
+      "status": "OPEN"
+    },
+    {
+      "priority": "P1",
+      "item": "Narrow temporary Smarter Justice directory to claim/migration use and verify sitemap/navigation truth",
+      "status": "IMPLEMENTED_PARTIAL"
+    },
+    {
+      "priority": "P2",
+      "item": "Immigration Oasis and additional portal rollout after three pilots",
+      "status": "DEFERRED"
+    }
+  ],
+  "implementation": {
+    "foundingProfilePilot": true,
+    "complimentaryPilotAccess": true,
+    "falsePaidStatePrevention": true,
+    "portalFirstClaimCentralExecution": true,
+    "initialThreePortalSignup": true,
+    "launchFocusedProfessionalDashboard": true,
+    "personalInjuryVehicleAccidentScope": true,
+    "workersCompensationSeparate": true,
+    "livePaidPilot": false,
+    "livePortalImports": false
+  },
+  "dependencyEnvironment": {
+    "node": "v22.16.0",
+    "npm": "10.9.2",
+    "cleanInstall": "BLOCKED_CONFIGURED_REGISTRY_HTTP_404_XTEND_4.0.2",
+    "vulnerabilityAudit": "BLOCKED_CONFIGURED_AUDIT_ENDPOINT_HTTP_404",
+    "shimUsed": false,
+    "lockfileChangedForRegistry": false
+  }
+}

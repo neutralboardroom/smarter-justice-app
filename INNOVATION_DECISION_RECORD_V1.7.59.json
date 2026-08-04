@@ -1,0 +1,31 @@
+{
+  "releaseVersion": "1.7.59",
+  "generatedAt": "2026-07-31",
+  "decisions": [
+    {
+      "idea": "Version-neutral reusable build-governance owner view",
+      "problem": "Repeated fixed-version prompts created stale-base and same-version risks.",
+      "user": "Owner/builder",
+      "evidence": "Reusable master command and v1.7.58 negative learning",
+      "decision": "IMPLEMENT",
+      "benefit": "One validated current source for prompt, launch, owner action, lineage and continuity truth.",
+      "acceptanceTest": "reusable-master-governance-v1759.test.js"
+    },
+    {
+      "idea": "Public visual redesign",
+      "problem": "No verified public first-impression regression in v1.7.58.",
+      "user": "Public and attorneys",
+      "evidence": "Public surfaces already strong and exact-tested",
+      "decision": "REJECT",
+      "reason": "Change for novelty would add regression risk without material benefit."
+    },
+    {
+      "idea": "Activate external AI",
+      "problem": "Could add assisted workflows.",
+      "user": "Public users",
+      "evidence": "Provider/privacy/security/qualified review absent",
+      "decision": "DEFER",
+      "reason": "Deterministic fallback is sufficient for Tier A and live activation is not accepted."
+    }
+  ]
+}

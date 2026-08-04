@@ -1,0 +1,107 @@
+{
+  "schema_id": "SJP-SAFE-RELEASE-CAPACITY-AND-SATURATION-RECEIPT-2026-08-03-V12",
+  "product": {
+    "name": "Smarter Justice",
+    "id": "smarter-justice-central",
+    "version": "1.7.76",
+    "artifact_sha256": "PREFINAL_NOT_YET_BOUND",
+    "central_role": "federated legal network identity, governance, professional operations, shared contracts, and privacy-preserving journey preparation"
+  },
+  "primary_release_objective": "Make the consent-governed journey layer concretely useful without network transfer, while requiring material tested progress on both product and builder/prompt tracks.",
+  "candidate_queue": [
+    {
+      "candidate_id": "DEVICE_ONLY_JOURNEY_HANDOFF_PLANNER",
+      "decision": "SELECTED",
+      "maturity": "D3_PUBLIC_DEVICE_ONLY_TOOL",
+      "minimum_slice": "Fixed-choice explicit-consent local JSON/text handoff pack with expiry and integrity digest.",
+      "deployment_effect": "NONE",
+      "exact_reason": "Transforms the V11 schema-only consent boundary into bounded public utility without storage, sync, or server transfer."
+    },
+    {
+      "candidate_id": "V12_DUAL_TRACK_RELEASE_GATE",
+      "decision": "SELECTED",
+      "maturity": "D3_BUILD_GOVERNANCE",
+      "minimum_slice": "Deterministic validator requiring tested product and builder/prompt evidence plus cross-version learning.",
+      "deployment_effect": "NONE",
+      "exact_reason": "Prevents cosmetic or one-track ordinary material releases and operationalizes the Core Owner Mission."
+    },
+    {
+      "candidate_id": "JOURNEY_HANDOFF_PORTAL_IMPORT_ADAPTER",
+      "decision": "DEFERRED",
+      "maturity": "D0_PRODUCT_LOCAL_ACCEPTANCE_REQUIRED",
+      "minimum_slice": null,
+      "deployment_effect": "NONE",
+      "exact_reason": "Requires one exact portal artifact and product-local owner/schema acceptance; central must not create automatic transfer."
+    },
+    {
+      "candidate_id": "ACCESSIBLE_LOCAL_QR_EXPORT",
+      "decision": "DEFERRED",
+      "maturity": "D0_PRIVACY_AND_ACCESSIBILITY_REVIEW_REQUIRED",
+      "minimum_slice": null,
+      "deployment_effect": "NONE",
+      "exact_reason": "Requires shoulder-surfing, offline decoding, accessibility, and payload-limit evidence."
+    },
+    {
+      "candidate_id": "DUAL_TRACK_CANDIDATE_SCORING",
+      "decision": "DEFERRED",
+      "maturity": "D0_TRANSPARENT_RUBRIC_REQUIRED",
+      "minimum_slice": null,
+      "deployment_effect": "NONE",
+      "exact_reason": "Scoring must remain explainable, subordinate to safety constraints, and unable to replace human judgment."
+    }
+  ],
+  "accepted_waves": [
+    {
+      "wave": 1,
+      "name": "Exact V12 intake, baseline reproduction, and release-scope selection",
+      "status": "ACCEPTED"
+    },
+    {
+      "wave": 2,
+      "name": "Device-only Journey Handoff Planner product improvement",
+      "status": "ACCEPTED"
+    },
+    {
+      "wave": 3,
+      "name": "V12 dual-track continuous-improvement builder gate",
+      "status": "ACCEPTED"
+    }
+  ],
+  "allowed_final_stop_conditions": [
+    "NO_REMAINING_SAFE_CONNECTED_LOCAL_WORK",
+    "REMAINING_WORK_REQUIRES_OWNER_OR_EXTERNAL_DEPENDENCY",
+    "RISK_OR_REGRESSION_STOP_LOSS"
+  ],
+  "selected_final_stop_condition": "REMAINING_WORK_REQUIRES_OWNER_OR_EXTERNAL_DEPENDENCY",
+  "remaining_candidates_and_exact_reasons": [
+    {
+      "candidate_id": "JOURNEY_HANDOFF_PORTAL_IMPORT_ADAPTER",
+      "decision": "DEFERRED",
+      "maturity": "D0_PRODUCT_LOCAL_ACCEPTANCE_REQUIRED",
+      "minimum_slice": null,
+      "deployment_effect": "NONE",
+      "exact_reason": "Requires one exact portal artifact and product-local owner/schema acceptance; central must not create automatic transfer."
+    },
+    {
+      "candidate_id": "ACCESSIBLE_LOCAL_QR_EXPORT",
+      "decision": "DEFERRED",
+      "maturity": "D0_PRIVACY_AND_ACCESSIBILITY_REVIEW_REQUIRED",
+      "minimum_slice": null,
+      "deployment_effect": "NONE",
+      "exact_reason": "Requires shoulder-surfing, offline decoding, accessibility, and payload-limit evidence."
+    },
+    {
+      "candidate_id": "DUAL_TRACK_CANDIDATE_SCORING",
+      "decision": "DEFERRED",
+      "maturity": "D0_TRANSPARENT_RUBRIC_REQUIRED",
+      "minimum_slice": null,
+      "deployment_effect": "NONE",
+      "exact_reason": "Scoring must remain explainable, subordinate to safety constraints, and unable to replace human judgment."
+    }
+  ],
+  "product_track_progress": true,
+  "builder_prompt_track_progress": true,
+  "minimum_not_maximum_satisfied": true,
+  "deployment_authorized": false,
+  "launch_state": "NO_GO"
+}

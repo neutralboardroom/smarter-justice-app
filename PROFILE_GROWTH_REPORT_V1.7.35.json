@@ -1,0 +1,40 @@
+{
+  "version": "1.7.35",
+  "date": "2026-07-27",
+  "program": "Phase One six-region professional-profile program",
+  "leadRegion": "The Bronx",
+  "nextLeadRegion": "The Bronx",
+  "releaseDecision": "NO_WEAK_PADDING",
+  "researchPerformedInThisBuild": false,
+  "reason": "This release implements the owner-approved centralized professional business architecture and legal-portal coordination contracts. Existing 233 professionals and 48 firms are preserved without weak padding.",
+  "actual": {
+    "newIndividualProfessionals": 0,
+    "newFirms": 0,
+    "newProfessionalFirmLinks": 0,
+    "regionsWorked": 0
+  },
+  "directoryBefore": {
+    "professionals": 233,
+    "firms": 48,
+    "publicTotal": 281,
+    "strictQualifyingProfessionals": 232,
+    "strictQualifyingFirms": 46,
+    "strictQualifyingTotal": 278
+  },
+  "directoryAfter": {
+    "professionals": 233,
+    "firms": 48,
+    "publicTotal": 281,
+    "strictQualifyingProfessionals": 232,
+    "strictQualifyingFirms": 46,
+    "strictQualifyingTotal": 278
+  },
+  "statusBoundaries": {
+    "allExistingUnclaimedProfilesRemainSeparateFromVerification": true,
+    "paymentDoesNotAffectOrganicOrder": true,
+    "noParticipationOrAvailabilityInferred": true,
+    "noInquiryEligibilityActivated": true
+  },
+  "nextReleaseTrigger": "Resume Bronx-led research when current individual-level practice, office, contact, firm relationship, source date, and duplicate checks can be completed without displacing deployment and launch priorities.",
+  "decision": "NO_NEW_PROFILE_RESEARCH_THIS_RELEASE"
+}

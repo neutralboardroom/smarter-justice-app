@@ -1,0 +1,76 @@
+{
+  "schema_id": "SJP-V14-EVIDENCE-COLLECTION-PACKET-CONTRACT-2026-08-03-V1",
+  "release_version": "1.7.83",
+  "governing_packet": {
+    "id": "SJP-LMP-UNIVERSAL-ONE-STEP-2026-08-03-V14-ALL-CHAT-MODES",
+    "sha256": "fce42ce0927748f94189692ef5b3bf8e0fe9f8d12273287f03a68eb7bccdad6f"
+  },
+  "exact_source_artifact": {
+    "filename": "smarter-justice-v1.7.82.zip",
+    "version": "1.7.82",
+    "sha256": "61fea278a69055915e9b4b916e4b64ec514614f1746cacf659a6931ccd0228b1"
+  },
+  "purpose": "Turn the first deterministic V14 evidence-readiness gap into one downloadable nonsecret owner collection packet without provider access, persistence, state mutation, deployment authority, or production activation.",
+  "maximum_packet_validity_hours": 8,
+  "maximum_packet_bytes": 32768,
+  "allowed_output_formats": ["JSON", "TEXT"],
+  "required_packet_fields": [
+    "schema_id",
+    "packet_id",
+    "release_version",
+    "source_artifact",
+    "governing_packet",
+    "component_id",
+    "evidence_type",
+    "owner_action",
+    "required_nonsecret_identifiers",
+    "required_checks",
+    "dependency_receipts",
+    "forbidden_inputs",
+    "verification_criteria",
+    "created_at",
+    "expires_at",
+    "preview_only",
+    "external_calls",
+    "persists_data",
+    "mutates_live_state",
+    "deployment_authorized",
+    "launch_state",
+    "packet_digest"
+  ],
+  "component_nonsecret_identifiers": {
+    "github-canonical-repository": ["repository_owner", "repository_name", "default_branch", "commit_sha", "protected_branch_rule_reference"],
+    "render-central-service": ["render_service_name", "render_service_id", "deployment_id", "artifact_sha256", "rollback_deployment_id"],
+    "postgres-database": ["provider_name", "database_service_id", "environment", "migration_receipt_reference", "backup_receipt_reference", "restore_receipt_reference"],
+    "transactional-email": ["provider_name", "sender_domain", "sender_identity_reference", "delivery_receipt_reference", "bounce_path_reference"],
+    "domains-dns-tls-health": ["canonical_url", "dns_record_reference", "tls_certificate_reference", "health_check_reference", "redirect_policy_reference"],
+    "openai-central-gateway": ["openai_project_name", "service_account_name", "render_service_id", "gateway_contract_version", "controlled_smoke_receipt_reference"],
+    "neutral-boardroom-billing": ["billing_provider", "seller_account_reference", "webhook_endpoint_reference", "entitlement_contract_reference", "refund_test_reference"],
+    "production-deployment": ["repository_commit_sha", "artifact_sha256", "deployment_id", "canonical_url", "monitoring_receipt_reference", "rollback_receipt_reference", "detached_owner_go_reference"]
+  },
+  "forbidden_inputs": [
+    "passwords",
+    "api_keys",
+    "access_tokens",
+    "refresh_tokens",
+    "private_keys",
+    "database_connection_strings",
+    "smtp_credentials",
+    "billing_secrets",
+    "raw_openai_key",
+    "user_legal_matter_content",
+    "domestic_violence_confidential_locations"
+  ],
+  "fail_closed_rules": {
+    "first_gap_only": true,
+    "requires_deterministic_readiness_plan": true,
+    "secrets_allowed": false,
+    "external_calls": false,
+    "persists_data": false,
+    "mutates_live_state": false,
+    "applies_promotions": false,
+    "owner_go_inferred": false,
+    "deployment_authorized": false,
+    "launch_state": "NO_GO"
+  }
+}

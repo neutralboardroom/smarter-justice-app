@@ -1,0 +1,13 @@
+{
+  "releaseVersion": "1.7.56",
+  "generatedAt": "2026-07-30",
+  "status": "PASS",
+  "dependencyIndependentCommands": 110,
+  "runs": 1,
+  "mode": "FROZEN_WORKING_TREE",
+  "testLogSha256": "60beb21f8a8b4b9e82e48e6eef68f0934867f120405f78ac163c00b363f61d2a",
+  "packageJsonSha256": "cf95650d7e5bc9059285f719f6184580f0f77fac4d36cdfdb16218b2a8237b2b",
+  "packageLockSha256": "b88561eed83a3c684667a8b598834f4a0e64519dece98d6a44d76318f7037b71",
+  "sbomSha256": "016efba39226f944e436ade0498ca3e84678f4d914c204568fea993f0f521d36",
+  "launchState": "NO_GO"
+}

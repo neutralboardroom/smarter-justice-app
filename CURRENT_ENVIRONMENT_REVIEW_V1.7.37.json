@@ -1,0 +1,26 @@
+{
+  "version": "1.7.37",
+  "date": "2026-07-27",
+  "nodeTarget": "22.x",
+  "verifiedNode": "v22.16.0",
+  "verifiedNpm": "10.9.2",
+  "moduleSystem": "CommonJS",
+  "dependencies": {
+    "pg": "^8.13.1",
+    "nodemailer": "^9.0.3"
+  },
+  "registryReachability": "HTTP_503_SERVICE_TEMPORARILY_UNAVAILABLE",
+  "cleanInstall": "BLOCKED_HTTP_503",
+  "vulnerabilityAudit": "BLOCKED_HTTP_503",
+  "graphicalBrowserAcceptance": "NOT_RUN",
+  "physicalDeviceAcceptance": "NOT_RUN",
+  "assistiveTechnologyAcceptance": "NOT_RUN",
+  "deployment": "NOT_AUTHORIZED",
+  "testStatus": {
+    "officialSuiteParts": 93,
+    "passedDependencyIndependentParts": 92,
+    "blockedParts": 1,
+    "blockedTest": "tests/storage-readiness.test.js",
+    "reason": "pg could not be installed because the registry returned HTTP 503"
+  }
+}

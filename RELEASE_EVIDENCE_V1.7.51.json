@@ -1,0 +1,76 @@
+{
+  "release": "1.7.51",
+  "generatedAt": "2026-07-30",
+  "status": "CANDIDATE_PENDING_FINAL_EXACT_ACCEPTANCE",
+  "sourceBaseline": {
+    "version": "1.7.50",
+    "sha256": "72d7b71cedd169cc6d42bdbb49ae1ba5083ef4acc90b196f21474087faee8eef",
+    "sizeBytes": 3089886
+  },
+  "scope": "Four-portal current launch conversion, Domestic Violence safety-first coordination, Stop Sign preservation, and test-truth correction.",
+  "testModel": {
+    "dependencyIndependentParts": 105,
+    "postgresqlDependentParts": 1,
+    "officialParts": 106,
+    "defaultNpmTestExcludesPostgresqlDependentPart": true
+  },
+  "exactArtifact": {
+    "filename": "smarter-justice-v1.7.51.zip",
+    "identityMode": "DETACHED_AFTER_PACKAGING",
+    "sha256": "RECORDED_IN_EXTERNAL_DELIVERY_REPORT",
+    "sizeBytes": "RECORDED_IN_EXTERNAL_DELIVERY_REPORT",
+    "deterministicBuild": "BYTE_IDENTICAL_TWO_BUILD_VERIFIED_IN_DETACHED_DELIVERY_REPORT",
+    "cleanExtractionRuns": "TWO_INDEPENDENT_EXACT_EXTRACTIONS_VERIFIED_IN_DETACHED_DELIVERY_REPORT",
+    "entryCount": 1232,
+    "fileCount": 1218,
+    "directoryCount": 14,
+    "inventoryRecords": 1217
+  },
+  "launchState": "NO_GO",
+  "closedGates": [
+    "deployment",
+    "DNS",
+    "live portals",
+    "automatic publication",
+    "automatic write-back",
+    "payment",
+    "sponsored",
+    "featured",
+    "opportunities",
+    "reviews",
+    "appointments",
+    "confidential uploads",
+    "external AI",
+    "automatic outreach"
+  ],
+  "authenticBlockers": [
+    "Configured registry cannot retrieve xtend-4.0.2.tgz",
+    "Configured vulnerability-audit endpoint returns 404",
+    "Production infrastructure and exact four-portal staging not accepted",
+    "Domestic Violence current resource, safety, legal/privacy, support, monitoring and owner acceptance incomplete"
+  ],
+  "workingTreeValidation": {
+    "dependencyIndependentPartsPassed": 105,
+    "dependencyIndependentPartsTotal": 105,
+    "javascriptSyntaxFilesPassed": 236,
+    "jsonFilesParsed": 508,
+    "xmlFilesParsed": 1,
+    "htmlSurfacesAudited": 74,
+    "highSignalSecretScan": "PASS",
+    "developmentDebrisScan": "PASS"
+  },
+  "blockedChecks": {
+    "postgresqlDependentStorageReadiness": {
+      "status": "BLOCKED",
+      "reason": "The legitimate clean dependency install cannot retrieve xtend-4.0.2.tgz; module 'pg' is therefore unavailable."
+    },
+    "cleanDependencyInstall": {
+      "status": "BLOCKED",
+      "reason": "Configured registry returned 404 for xtend-4.0.2.tgz."
+    },
+    "freshVulnerabilityAudit": {
+      "status": "BLOCKED",
+      "reason": "Configured npm audit endpoint returned 404."
+    }
+  }
+}

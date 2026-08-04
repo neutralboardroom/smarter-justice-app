@@ -1,0 +1,53 @@
+{
+  "release": "1.7.57",
+  "generatedAt": "2026-07-30",
+  "theme": "Canonical initial-portal authority, monotonic supersession and continuation integrity",
+  "selectedOutcomes": [
+    "record exact accepted v1.7.56 as source and immediate rollback",
+    "refresh the four initial portal owner-recorded identities",
+    "establish one canonical initial-portal authority source",
+    "derive operating-system pilot artifacts from that source",
+    "validate monotonic version supersession and all emitted truth surfaces",
+    "expose protected owner authority evidence",
+    "replace the duplicated self-referential continuation with one complete v1.7.57-to-v1.7.58 handoff",
+    "preserve strong public and Attorney Partner Tour surfaces",
+    "keep every live, commercial, sensitive, portal and deployment gate closed"
+  ],
+  "preserved": [
+    "all working public tools and routes",
+    "Attorney Partner Tour, presenter mode, QR and print card",
+    "four independent portal repositories",
+    "free basic profile control",
+    "English-first state",
+    "Domestic Violence and Stop Sign safety boundaries",
+    "NO_GO and not deployed truth"
+  ],
+  "deferred": [
+    "D4 portal staging",
+    "real-device and assistive-technology acceptance",
+    "production PostgreSQL/SMTP/MFA/monitoring/backup/restore",
+    "legal/privacy/support/incident and owner GO"
+  ],
+  "closedGates": [
+    "payments",
+    "subscriptions",
+    "booking",
+    "reviews",
+    "confidential uploads",
+    "sensitive external AI",
+    "automatic filing",
+    "unrestricted professional routing",
+    "automatic cross-repository synchronization",
+    "automatic public-user matter transfer",
+    "live portal connections",
+    "professional opportunities",
+    "appointments"
+  ],
+  "completionEvidence": [
+    "tests/initial-portal-authority-v1757.test.js",
+    "INITIAL_PORTAL_AUTHORITY_V1.7.57.json",
+    "INITIAL_PORTAL_CURRENTNESS_RECEIPT_V1.7.57.json",
+    "FINAL_V1.7.56_TRUTH_RECONCILIATION_V1.7.57.json",
+    "PUBLIC_SURFACE_PRESERVATION_ACCEPTANCE_V1.7.57.json"
+  ]
+}

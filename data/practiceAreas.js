@@ -89,7 +89,7 @@ const PRACTICE_AREAS = [
   {
     "slug": "bankruptcy-debt",
     "name": "Bankruptcy & Debt",
-    "summary": "Chapter 7, Chapter 13, business bankruptcy starting files, creditor notices, debt settlement and collection organization.",
+    "summary": "Chapter 7, Chapter 13, business bankruptcy starting summaries, creditor notices, debt settlement and collection organization.",
     "requiresJurisdiction": true,
     "review": "attorney",
     "subcategories": [
@@ -174,8 +174,8 @@ const PRACTICE_AREAS = [
       "LLC formation",
       "Corporation formation",
       "EIN/SS-4",
-      "Operating agreement starting file",
-      "Bylaws starting file",
+      "Operating agreement starting summary",
+      "Bylaws starting summary",
       "Annual report",
       "Registered agent issue",
       "Foreign qualification",
@@ -266,7 +266,7 @@ const PRACTICE_AREAS = [
       "Noncompete or confidentiality agreement",
       "Business sale or purchase",
       "Franchise issue",
-      "Commercial litigation starting file",
+      "Commercial litigation starting summary",
       "Admiralty and maritime",
       "Advertising",
       "Agriculture",
@@ -367,11 +367,11 @@ const PRACTICE_AREAS = [
   {
     "slug": "trademarks",
     "name": "Trademarks",
-    "summary": "Trademark search, application starting file, Office Action organization, renewals and brand protection.",
+    "summary": "Trademark search, application starting summary, Office Action organization, renewals and brand protection.",
     "requiresJurisdiction": false,
     "review": "ip_attorney",
     "subcategories": [
-      "Trademark search starting file",
+      "Trademark search starting summary",
       "New trademark application",
       "Office Action",
       "Statement of use",
@@ -403,13 +403,13 @@ const PRACTICE_AREAS = [
   {
     "slug": "patents",
     "name": "Patents",
-    "summary": "Patent idea organization, provisional/nonprovisional starting file, USPTO notices and patent attorney review routing.",
+    "summary": "Patent idea organization, provisional/nonprovisional starting summary, USPTO notices and patent attorney review routing.",
     "requiresJurisdiction": false,
     "review": "patent_attorney",
     "subcategories": [
       "Patent idea organization",
-      "Provisional patent starting file",
-      "Nonprovisional patent starting file",
+      "Provisional patent starting summary",
+      "Nonprovisional patent starting summary",
       "USPTO notice",
       "Office Action",
       "Patent search notes",
@@ -439,7 +439,7 @@ const PRACTICE_AREAS = [
   {
     "slug": "copyrights",
     "name": "Copyrights",
-    "summary": "Copyright registration starting files, takedown notices, infringement letters and Copyright Office source routing.",
+    "summary": "Copyright registration starting summaries, takedown notices, infringement letters and Copyright Office source routing.",
     "requiresJurisdiction": false,
     "review": "ip_attorney",
     "subcategories": [
@@ -520,7 +520,7 @@ const PRACTICE_AREAS = [
     "requiresJurisdiction": true,
     "review": "attorney",
     "subcategories": [
-      "Probate starting file",
+      "Probate starting summary",
       "Administration without will",
       "Small estate affidavit",
       "Executor/administrator question",
@@ -693,7 +693,7 @@ const PRACTICE_AREAS = [
       "Collection notice",
       "Bank account restraint",
       "Wage garnishment",
-      "Answer starting file",
+      "Answer starting summary",
       "Evidence checklist"
     ],
     "minimumFields": [
@@ -813,7 +813,7 @@ const PRACTICE_AREAS = [
       "Record sealing",
       "Certificate of relief",
       "Certificate of good conduct",
-      "Pardon/clemency starting file",
+      "Pardon/clemency starting summary",
       "Arrest record correction",
       "Employment background-check issue",
       "Criminal record review"
@@ -1118,7 +1118,7 @@ const PRACTICE_AREAS = [
       "Military records request",
       "VA overpayment",
       "Military law issue",
-      "Discharge upgrade starting file"
+      "Discharge upgrade starting summary"
     ],
     "minimumFields": [
       "fullName",
@@ -1231,7 +1231,7 @@ const PRACTICE_AREAS = [
       "Out-of-network/surprise bill",
       "Hospital financial assistance",
       "Medicaid/Medicare billing issue",
-      "Appeal letter starting file",
+      "Appeal letter starting summary",
       "EOB review",
       "Collection from medical bill"
     ],
@@ -1614,11 +1614,11 @@ const PRACTICE_AREAS = [
   {
     "slug": "adoption-child-welfare",
     "name": "Adoption, Juvenile & Child Welfare",
-    "summary": "Adoption starting files, child welfare notices, juvenile court documents and family-agency routing.",
+    "summary": "Adoption starting summaries, child welfare notices, juvenile court documents and family-agency routing.",
     "requiresJurisdiction": true,
     "review": "attorney",
     "subcategories": [
-      "Adoption starting file",
+      "Adoption starting summary",
       "Stepparent adoption",
       "Adult adoption",
       "Agency adoption",
@@ -1699,7 +1699,7 @@ const PRACTICE_AREAS = [
     "subcategories": [
       "Summons or complaint",
       "Answer deadline",
-      "Civil litigation starting file",
+      "Civil litigation starting summary",
       "Discovery request",
       "Motion papers",
       "Settlement demand",
@@ -2429,7 +2429,7 @@ const PRACTICE_AREAS = [
       "Asbestos exposure",
       "Mesothelioma concern",
       "Chemical exposure",
-      "Toxic tort starting file",
+      "Toxic tort starting summary",
       "Workplace exposure",
       "Environmental exposure",
       "Medical record checklist",

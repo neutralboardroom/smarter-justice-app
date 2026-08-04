@@ -1,0 +1,45 @@
+{
+  "schema": "smarter-justice-dual-master-compatibility-receipt",
+  "releaseVersion": "1.7.67",
+  "generatedAt": "2026-08-01T12:54:00-04:00",
+  "activePairReceiptId": "MPCR-2026-07-31-E1-R0-05F4296ED378",
+  "pairEpoch": 1,
+  "pairRevision": 0,
+  "centralMaster": {
+    "filename": "Smarter_Justice_Central_Master_Thirteenth_Pass_Current_Pack_Authority_Final_Continuation_and_No_Churn_Control_2026-08-01.txt",
+    "pass": "THIRTEENTH PASS",
+    "sha256": "2027379953b53b17eaafceb8aaf10871e0efc51282e0de095d42d2de0e253f4d",
+    "sizeBytes": 366579,
+    "lineCount": 7920,
+    "evidenceState": "CURRENT_CHAT_EXACTLY_INSPECTED"
+  },
+  "portalFamilyMaster": {
+    "filename": "Legal_Micro_Portals_Master_Thirty_Fifth_Pass_Current_Pack_Authority_Final_Continuation_and_No_Churn_Control_2026-08-01.txt",
+    "pass": "THIRTY-FIFTH PASS",
+    "sha256": "fbf5b70ae2c9fcdd57ac0bbf51bbd57da2db1479e726f2a9dab4472558cdc28a",
+    "sizeBytes": 729484,
+    "lineCount": 14951,
+    "evidenceState": "CURRENT_CHAT_EXACTLY_INSPECTED"
+  },
+  "baselineId": "DRB-2026-08-01-DUR001-DUR074-V11",
+  "semanticCapsuleSha256": "c6d6c7c95d3eeb9fb1d6f4daefaeebc7871568a6c7e02eb53ac405104f9d290a",
+  "compatibilityScope": [
+    "durable-rule baseline and closed inheritance",
+    "two-phase pair propagation",
+    "prompt self-identity",
+    "runtime active-pair discovery",
+    "replay and split-brain protection",
+    "portal-continuation binding governance"
+  ],
+  "state": "MASTER PAIR MATCHED \u2014 COMPATIBLE DESCENDANT WITH PROPAGATION REQUIRED",
+  "productAcceptanceCopied": false,
+  "d4OrD5Copied": false,
+  "deploymentOrLiveCopied": false,
+  "currentPackId": "SJP-2026-08-01-C13-P35-V11",
+  "currentPackReadyForUse": true,
+  "canonicalPackCommitProven": false,
+  "activeCommittedRollbackPair": {
+    "receiptId": "MPCR-2026-07-31-E1-R0-05F4296ED378",
+    "state": "MASTER PAIR COMMITTED \u2014 PROMPT COMPATIBILITY ONLY"
+  }
+}

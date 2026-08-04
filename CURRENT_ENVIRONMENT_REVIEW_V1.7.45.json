@@ -1,0 +1,31 @@
+{
+  "schemaVersion": "1.0.0",
+  "releaseVersion": "1.7.45",
+  "generatedAt": "2026-07-29T14:30:00-04:00",
+  "nodeRequirement": "22.x",
+  "productionVersion": "1.6.1",
+  "deploymentStatus": "NOT_DEPLOYED",
+  "storage": "POSTGRESQL_REQUIRED_NOT_VERIFIED",
+  "smtp": "NOT_VERIFIED",
+  "stripe": "NOT_VERIFIED_LIVE_GATES_CLOSED",
+  "professionalGrowth": "IMPLEMENTED_CLOSED_BY_DEFAULT_COUNSEL_ACCEPTANCE_PENDING",
+  "livePortalConnections": 0,
+  "automaticPortalWrites": false,
+  "externalAi": false,
+  "dependencyInstall": "BLOCKED: configured registry returned HTTP 404 for xtend-4.0.2.tgz",
+  "vulnerabilityAudit": "BLOCKED: configured npm audit endpoint returned HTTP 404",
+  "nodeExactTested": "v22.16.0",
+  "npmExactTested": "10.9.2",
+  "dependencyIndependentTests": "99_OF_99_PASSED_WORKING_TREE",
+  "postgresqlDependentTests": "1_BLOCKED_MISSING_AUTHENTIC_PG_DEPENDENCY",
+  "launchPreflight": "NO_GO_0_OF_4_LANES_92_BLOCKED_CHECKS",
+  "staticChecks": {
+    "javascript": "221_OF_221",
+    "json": "328_OF_328",
+    "xml": "1_OF_1"
+  },
+  "browserDeviceAccessibility": "NOT_EXTERNALLY_ACCEPTED",
+  "backupRestore": "NOT_ACCEPTED",
+  "monitoringIncident": "NOT_ACCEPTED",
+  "exactRollback": "OWNER_APPROVAL_REQUIRED"
+}

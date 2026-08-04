@@ -1,0 +1,276 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedForRelease": "1.7.28",
+  "adoptionStatuses": [
+    "adopted",
+    "adopt-now",
+    "adapt-specialty",
+    "verify-first",
+    "defer",
+    "reject",
+    "not-applicable"
+  ],
+  "decisions": [
+    {
+      "portalId": "general-smarter-justice-start",
+      "capabilityId": "cross-portal-capability-adoption-ledger",
+      "status": "adopted",
+      "reason": "Implemented in v1.7.28 as the coordinating registry and portable snapshot.",
+      "dependencies": [],
+      "ownerApprovalRequired": false,
+      "sourceCapabilityPresent": true
+    },
+    {
+      "portalId": "general-smarter-justice-start",
+      "capabilityId": "full-lean-official-asset-overlay",
+      "status": "not-applicable",
+      "reason": "Current Smarter Justice artifact is small enough for a single authoritative ZIP; preserve the pattern for future large asset sets.",
+      "dependencies": [
+        "asset-size threshold or immutable large-form library"
+      ],
+      "ownerApprovalRequired": false,
+      "sourceCapabilityPresent": true
+    },
+    {
+      "portalId": "general-smarter-justice-start",
+      "capabilityId": "business-compliance-calendar-evidence-organizer",
+      "status": "adapt-specialty",
+      "reason": "A legal matter lifecycle calendar may help users, but only after authoritative date rules and uncertainty controls are defined.",
+      "dependencies": [
+        "portal-specific event taxonomy",
+        "official-source rules",
+        "deadline safety review"
+      ],
+      "ownerApprovalRequired": false,
+      "sourceCapabilityPresent": true
+    },
+    {
+      "portalId": "general-smarter-justice-start",
+      "capabilityId": "official-form-release-and-provenance-governance",
+      "status": "adapt-specialty",
+      "reason": "Focused legal portals with official forms should inherit provenance and edition controls; the umbrella should coordinate rather than duplicate specialty form engines.",
+      "dependencies": [
+        "focused portal form inventory"
+      ],
+      "ownerApprovalRequired": false,
+      "sourceCapabilityPresent": true
+    },
+    {
+      "portalId": "business-launch-desk",
+      "capabilityId": "artifact-first-continuation-handoff",
+      "status": "adopt-now",
+      "reason": "The audited v0.2.39 continuation prompt already follows the artifact-first handoff pattern; future builds must contribute outbound learning records.",
+      "dependencies": [
+        "latest uploaded ZIP"
+      ],
+      "ownerApprovalRequired": false,
+      "sourceCapabilityPresent": true
+    },
+    {
+      "portalId": "business-launch-desk",
+      "capabilityId": "trust-and-verification-center",
+      "status": "adapt-specialty",
+      "reason": "Useful for government, bank, vendor, and filing impersonation, with business-specific official verification sources.",
+      "dependencies": [
+        "current official sources",
+        "business-specific regression tests"
+      ],
+      "ownerApprovalRequired": false,
+      "sourceCapabilityPresent": true
+    },
+    {
+      "portalId": "business-launch-desk",
+      "capabilityId": "full-lean-official-asset-overlay",
+      "status": "not-applicable",
+      "reason": "The current v0.2.39 artifact does not require a heavy immutable asset base.",
+      "dependencies": [],
+      "ownerApprovalRequired": false,
+      "sourceCapabilityPresent": true
+    },
+    {
+      "portalId": "justice-tax-solutions",
+      "capabilityId": "artifact-first-continuation-handoff",
+      "status": "adopt-now",
+      "reason": "The audited v0.1.107 continuation prompt already follows the pattern and should receive the registry snapshot in its next release.",
+      "dependencies": [
+        "latest uploaded ZIP"
+      ],
+      "ownerApprovalRequired": false,
+      "sourceCapabilityPresent": true
+    },
+    {
+      "portalId": "justice-tax-solutions",
+      "capabilityId": "full-lean-official-asset-overlay",
+      "status": "verify-first",
+      "reason": "The artifact is already large because of official tax forms; evaluate an immutable form-asset pack before changing deployment architecture.",
+      "dependencies": [
+        "form-asset inventory",
+        "collision and edition rules",
+        "deployment proof",
+        "owner approval for architecture change"
+      ],
+      "ownerApprovalRequired": true,
+      "sourceCapabilityPresent": true
+    },
+    {
+      "portalId": "justice-tax-solutions",
+      "capabilityId": "business-compliance-calendar-evidence-organizer",
+      "status": "adapt-specialty",
+      "reason": "Tax notices, filing duties, payment plans, and recurring deadlines may benefit from a source-governed tax action calendar.",
+      "dependencies": [
+        "official IRS/state sources",
+        "deadline and payment safety review"
+      ],
+      "ownerApprovalRequired": false,
+      "sourceCapabilityPresent": true
+    },
+    {
+      "portalId": "justice-tax-solutions",
+      "capabilityId": "trust-and-verification-center",
+      "status": "adapt-specialty",
+      "reason": "IRS, state tax, preparer, payment, refund, and identity-theft impersonation verification is directly relevant.",
+      "dependencies": [
+        "official IRS/state verification sources",
+        "tax privacy safeguards"
+      ],
+      "ownerApprovalRequired": false,
+      "sourceCapabilityPresent": true
+    },
+    {
+      "portalId": "immigration-oasis",
+      "capabilityId": "full-lean-official-asset-overlay",
+      "status": "adopted",
+      "reason": "The v1.10.254 lean overlay plus v1.10.162 full asset base passed the documented assembled full-source preflight.",
+      "dependencies": [
+        "preserved full base",
+        "non-destructive overlay",
+        "full-asset preflight"
+      ],
+      "ownerApprovalRequired": false,
+      "sourceCapabilityPresent": true
+    },
+    {
+      "portalId": "immigration-oasis",
+      "capabilityId": "artifact-first-continuation-handoff",
+      "status": "adopt-now",
+      "reason": "Future prompts must explain the two-artifact deployment relationship exactly and contribute new lessons to the shared registry.",
+      "dependencies": [
+        "both lean and full artifacts"
+      ],
+      "ownerApprovalRequired": false,
+      "sourceCapabilityPresent": true
+    },
+    {
+      "portalId": "immigration-oasis",
+      "capabilityId": "official-form-release-and-provenance-governance",
+      "status": "adopted",
+      "reason": "Official form assets, tracks, and overlay preflight are already governed; continue edition and asset validation.",
+      "dependencies": [
+        "official form sources",
+        "asset manifests"
+      ],
+      "ownerApprovalRequired": false,
+      "sourceCapabilityPresent": true
+    },
+    {
+      "portalId": "immigration-oasis",
+      "capabilityId": "sensitive-traffic-server-gate",
+      "status": "adapt-specialty",
+      "reason": "All confidential immigration intake and document routes should enforce operational gates server-side.",
+      "dependencies": [
+        "route inventory",
+        "production storage evidence"
+      ],
+      "ownerApprovalRequired": false,
+      "sourceCapabilityPresent": true
+    },
+    {
+      "portalId": "smarter-ecosystem-control-center",
+      "capabilityId": "cross-portal-capability-adoption-ledger",
+      "status": "adopt-now",
+      "reason": "The standalone private platform should become the authoritative writable home for this registry after migration.",
+      "dependencies": [
+        "authenticated import/export",
+        "immutable artifact ledger",
+        "audit history"
+      ],
+      "ownerApprovalRequired": false,
+      "sourceCapabilityPresent": true
+    },
+    {
+      "portalId": "smarter-ecosystem-control-center",
+      "capabilityId": "metadata-only-ecosystem-coordination",
+      "status": "adopted",
+      "reason": "This is the platform’s approved purpose and privacy boundary.",
+      "dependencies": [
+        "private deployment",
+        "MFA",
+        "least-privilege roles"
+      ],
+      "ownerApprovalRequired": false,
+      "sourceCapabilityPresent": true
+    },
+    {
+      "portalId": "all-legal-micro-portals",
+      "capabilityId": "neutral-source-tracked-professional-directory",
+      "status": "adapt-specialty",
+      "reason": "Apply where a public professional directory belongs, using portal-specific eligibility, sources, credentials, and jurisdictions.",
+      "dependencies": [
+        "portal-specific profile standard",
+        "source register",
+        "claim and correction path"
+      ],
+      "ownerApprovalRequired": false,
+      "sourceCapabilityPresent": true
+    },
+    {
+      "portalId": "all-legal-micro-portals",
+      "capabilityId": "artifact-first-continuation-handoff",
+      "status": "adopt-now",
+      "reason": "Every continuation prompt must receive and contribute cross-portal learning without weakening portal-specific authority.",
+      "dependencies": [
+        "latest authoritative portal artifact"
+      ],
+      "ownerApprovalRequired": false,
+      "sourceCapabilityPresent": true
+    },
+    {
+      "portalId": "all-legal-micro-portals",
+      "capabilityId": "device-only-free-tool-pattern",
+      "status": "adapt-specialty",
+      "reason": "Prefer meaningful free local tools where sensitive infrastructure is not yet activated and the task can be completed safely in-browser.",
+      "dependencies": [
+        "specialty workflow design",
+        "accessibility tests",
+        "clear limitations"
+      ],
+      "ownerApprovalRequired": false,
+      "sourceCapabilityPresent": true
+    }
+  ],
+  "summary": {
+    "sourceArtifacts": 6,
+    "portalsRepresented": 5,
+    "learningRecords": 12,
+    "adoptionDecisions": 20,
+    "statusCounts": {
+      "adopted": 4,
+      "adopt-now": 5,
+      "adapt-specialty": 8,
+      "verify-first": 1,
+      "defer": 0,
+      "reject": 0,
+      "not-applicable": 2
+    },
+    "portalDecisionCounts": {
+      "all-legal-micro-portals": 3,
+      "business-launch-desk": 3,
+      "general-smarter-justice-start": 4,
+      "immigration-oasis": 4,
+      "justice-tax-solutions": 4,
+      "smarter-ecosystem-control-center": 2
+    },
+    "registryCapabilities": 104,
+    "currentPortfolioRecords": 0
+  }
+}

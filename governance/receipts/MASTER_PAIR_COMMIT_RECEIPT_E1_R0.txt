@@ -1,0 +1,92 @@
+MASTER PAIR COMMIT RECEIPT — SMARTER JUSTICE CENTRAL MASTER AND FOUR-PORTAL FAMILY MASTER
+
+RECEIPT ID: `MPCR-2026-07-31-E1-R0-05F4296ED378`
+TRANSACTION ID: `MPPT-2026-07-31-SJ8-FP26-304CB87BF174`
+PAIR_EPOCH: 1
+PAIR_REVISION: 0
+STATE: `MASTER PAIR COMMITTED — PROMPT COMPATIBILITY ONLY`
+EFFECTIVE TIME: 2026-07-31T22:41:00-04:00 — AMERICA/NEW_YORK
+AUTHORITY: Roger's instruction to begin the compatible Smarter Justice refinement, executed under the controlling Prompt Improvement durability and dual-master governance rules.
+
+CANONICAL ACTIVE PAIR
+
+CENTRAL MASTER
+- File: `Smarter_Justice_Reusable_Version_Neutral_Complete_Immediate_Build_Master_Command_Eighth_Pass_Canonical_Active_Master_Pair_Runtime_Discovery_Pair_Epoch_Replay_Protection_Detached_Commit_Finalization_v1.7.61_Learning_2026-07-31.txt`
+- Pass: EIGHTH PASS
+- SHA-256: `89f49e1433d05a937a31c2144e42e408a94c4502d8c388ad5f3a6eae7ad5aa68`
+- Exact size: 282,387 bytes
+- Lines: 6,542
+- Complete-file state: UTF-8, final newline, exact opening/ending markers validated
+
+PORTAL-FAMILY MASTER
+- File: `Four_Initial_Legal_Micro_Portals_Reusable_Master_Build_Prompt_Twenty_Sixth_Pass_Prompt_Self_Identity_Binding_Current_Pass_Marker_Derivation_Stale_Marker_Regression_2026-07-31.txt`
+- Pass: TWENTY-SIXTH PASS
+- SHA-256: `fd9e66a351067b6c02891c9474a4bc52edcbde552ae5706738d00930e6d4573f`
+- Exact size: 599,027 bytes
+- Lines: 12,776
+- Complete-file state: UTF-8, final newline, exact opening/ending markers validated
+
+DURABLE RULE BINDING
+- Baseline: `DRB-2026-07-31-DUR001-DUR043-V2`
+- Ordered active rules: `DUR-001` through `DUR-043`
+- Semantic-capsule SHA-256: `3d5f7cc4b33980148510834f6b23f902fb5416dbdc9398f106a3b14e81713bf8`
+- Status: BASELINE MATCHED; no durable-rule semantic change in this pair commit
+
+PREDECESSOR AND ROLLBACK PAIR
+
+This is the first formal pair receipt under the pair-epoch protocol. The exact pre-protocol last-known-compatible pair is recorded as the predecessor and rollback pair:
+
+CENTRAL PREDECESSOR
+- File: `Smarter_Justice_Reusable_Version_Neutral_Complete_Immediate_Build_Master_Command_Sixth_Pass_Closed_Durable_Rule_Inheritance_Append_Only_Baseline_Evolution_Fork_Merge_Reconciliation_v1.7.61_Learning_2026-07-31.txt`
+- SHA-256: `8d28931fdf1cac645f5006e9cde23a69592ce5b59377f7a4e9a3c6d37816f43d`
+- Exact size: 257,518 bytes
+- Lines: 6,145
+
+PORTAL-FAMILY PREDECESSOR
+- File: `Four_Initial_Legal_Micro_Portals_Reusable_Master_Build_Prompt_Twenty_Fourth_Pass_Dual_Master_Compatibility_Atomic_Propagation_Portal_Continuation_Binding_v1.7.61_Learning_2026-07-31.txt`
+- SHA-256: `695f39599094144a95c1a8d7ce07b6986703015701c2ff0d311c9a8215a7ba97`
+- Exact size: 584,680 bytes
+- Lines: 12,555
+
+PREDECESSOR RECEIPT: `PRE-PROTOCOL — NO EARLIER PAIR-EPOCH RECEIPT`
+ROLLBACK: restore the exact predecessor pair for affected shared prompt-governance boundaries and invalidate dependent successor compatibility receipts.
+
+COMPATIBILITY SCOPE ACCEPTED
+
+- durable-rule baseline, semantic fingerprint, append-only rule-change lineage, tombstones, and closed inheritance;
+- dual-master repository authority and shared-boundary fail-closed behavior;
+- last-known-compatible pair preservation and two-phase prepare/validate/commit/abort/rollback;
+- portal-continuation binding compatibility;
+- prompt self-identity and stale-marker regression;
+- canonical active-pair runtime discovery, pair-epoch/revision ordering, predecessor compare-and-swap, idempotent replay, split-brain quarantine, and detached commit finalization; and
+- exact central/portal master references for later Prompt Improvement and continuation updates.
+
+COMPATIBILITY LIMITS
+
+This receipt proves prompt-level compatibility only for the stated governance scope. It does not prove or copy:
+
+- Smarter Justice or portal source implementation;
+- product tests or exact product acceptance;
+- D4 or D5;
+- staging or production deployment;
+- billing, Stripe, entitlements, or commercial activation;
+- portal launch acceptance;
+- public-user or professional-service operation; or
+- continued live operation.
+
+REPLAY, CONFLICT, AND IDEMPOTENCY
+
+- An identical replay of this exact transaction must return or reference this same receipt.
+- A lower epoch/revision, unknown predecessor, duplicate receipt ID with different bytes, or attempt to revive the superseded seventh-pass pending proposal is `MASTER PAIR RECEIPT REPLAY REJECTED`.
+- A different receipt claiming this same predecessor and epoch/revision is `MASTER PAIR COMMIT CONFLICT`; affected shared boundaries fail closed pending exact reconciliation.
+- Later commits must bind this receipt's exact detached SHA-256 as predecessor after the receipt file is finalized and externally hashed.
+
+MIRROR AND PROPAGATION STATUS
+
+- Canonical receipt artifact: this exact detached file.
+- Required mirrors: Prompt Improvement current-authority register, Smarter Justice continuation, four-portal family governance record, and applicable portal-continuation binding receipts.
+- Mirror status at creation: PROPAGATION REQUIRED; absence of a mirror does not change this exact receipt's bytes or scope.
+- Embedded seventh-pass `COMMIT RECEIPT PENDING` text is historical and nonauthoritative.
+- Embedded eighth-pass preparation text becomes historical under this receipt.
+
+END OF MASTER PAIR COMMIT RECEIPT

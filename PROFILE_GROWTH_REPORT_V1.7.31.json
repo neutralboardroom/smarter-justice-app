@@ -1,0 +1,97 @@
+{
+  "version": "1.7.31",
+  "date": "2026-07-24",
+  "program": "Phase One six-region professional-profile program",
+  "leadRegion": "Queens",
+  "nextLeadRegion": "The Bronx",
+  "target": {
+    "newIndividualProfessionals": 36,
+    "newFirms": 6,
+    "newProfessionalFirmLinks": 36,
+    "minimumRegionsWorked": 6
+  },
+  "candidateReview": {
+    "reviewed": 47,
+    "qualified": 36,
+    "duplicates": 4,
+    "deferred": 7,
+    "approximateYieldPercent": 77
+  },
+  "additions": {
+    "individualProfessionals": 36,
+    "firms": 6,
+    "professionalFirmLinks": 36,
+    "regions": [
+      {
+        "region": "Manhattan",
+        "county": "New York County",
+        "professionals": 6,
+        "firms": 1,
+        "primarySource": "Cozen O’Connor current New York office and attorney pages"
+      },
+      {
+        "region": "Brooklyn",
+        "county": "Kings County",
+        "professionals": 6,
+        "firms": 1,
+        "primarySource": "Rubenstein & Rynecki current firm, roster, and attorney pages"
+      },
+      {
+        "region": "Queens",
+        "county": "Queens County",
+        "professionals": 6,
+        "firms": 1,
+        "primarySource": "Addabbo & Greenberg current Queens roster and attorney pages"
+      },
+      {
+        "region": "The Bronx",
+        "county": "Bronx County",
+        "professionals": 6,
+        "firms": 1,
+        "primarySource": "Oresky & Associates current Bronx office and attorney roster pages"
+      },
+      {
+        "region": "Northern Metro New Jersey",
+        "county": "Bergen County",
+        "professionals": 6,
+        "firms": 1,
+        "primarySource": "Meyerson, Fox & Conte current Montvale firm, roster, and attorney pages"
+      },
+      {
+        "region": "NYC-connected Connecticut",
+        "county": "Fairfield County",
+        "professionals": 6,
+        "firms": 1,
+        "primarySource": "Curtis, Brinckerhoff & Barrett current Stamford firm, roster, and attorney pages"
+      }
+    ]
+  },
+  "directoryBefore": {
+    "professionals": 197,
+    "firms": 42,
+    "publicTotal": 239,
+    "strictQualifyingTotal": 236
+  },
+  "directoryAfter": {
+    "professionals": 233,
+    "firms": 48,
+    "publicTotal": 281,
+    "strictQualifyingProfessionals": 232,
+    "strictQualifyingFirms": 46,
+    "strictQualifyingTotal": 278
+  },
+  "statusBoundaries": {
+    "allNewProfilesUnclaimed": true,
+    "allNewProfilesIndependentlyUnverified": true,
+    "allNewProfilesUnpaid": true,
+    "allNewProfilesNonParticipating": true,
+    "allNewProfilesUnavailableByDefault": true,
+    "allNewProfilesInquiryIneligible": true,
+    "organicOrderingUnaffectedByPayment": true
+  },
+  "sourceLimitations": [
+    "Professional-controlled sources are self-reported and are not independent credential verification.",
+    "Individual practice descriptions were summarized conservatively; copied biographies, testimonials, rankings, awards, verdicts, settlements, and outcome claims were excluded.",
+    "Every public record retains correction, dispute, claim, suppression, and removal pathways."
+  ]
+}

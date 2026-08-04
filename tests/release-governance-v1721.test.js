@@ -1,0 +1,11 @@
+'use strict';
+const assert=require('assert');
+const fs=require('fs');
+const path=require('path');
+for(const f of ['AUDIT_REPORT_V1.7.21.md','CHANGE_MAP_V1.7.21.md','NO_CHANGE_LEDGER_V1.7.21.md','CONTINUATION_PROMPT_V1.7.21.md','RELEASE_EVIDENCE_V1.7.21.json']) assert(fs.existsSync(path.join(__dirname,'..',f)),f);
+const evidence=JSON.parse(fs.readFileSync(path.join(__dirname,'..','RELEASE_EVIDENCE_V1.7.21.json'),'utf8'));
+assert.equal(evidence.version,'1.7.21');
+assert.equal(evidence.deployed,false);
+assert.equal(evidence.activationGatesChanged,false);
+assert.equal(evidence.standaloneCommandCenterBuilt,false);
+console.log('release-governance-v1721.test.js historical evidence passed');

@@ -1,0 +1,6 @@
+'use strict';
+const assert=require('assert');const fs=require('fs');const path=require('path');const root=path.join(__dirname,'..');
+assert(!fs.existsSync(path.join(root,'data','ecosystemCommandCenterV1721.js')),'active legacy multi-sector command module should be retired');
+const spec=require('../data/legalPortalCommandCenterV1729').getLegalPortalCommandCenter();assert.equal(spec.version,'1.7.75');assert(/self-contained/i.test(spec.neutralBoardroomRelationship.smarterJusticeRole));assert.equal(spec.neutralBoardroomRelationship.launchCritical,false);assert.equal(spec.automaticNeutralBoardroomWrites,false);assert(spec.compatibility.retiredLegacyRoutes.includes('/api/owner/ecosystem-command-center'));
+const html=fs.readFileSync(path.join(root,'public','control-center.html'),'utf8');const js=fs.readFileSync(path.join(root,'public','app.js'),'utf8');const server=fs.readFileSync(path.join(root,'server.js'),'utf8');assert(html.includes('legalNetworkCommandCenterSection'));assert(!html.includes('ecosystemCommandCenterSection'));assert(js.includes('renderLegalNetworkCommandCenter'));assert(!server.includes("pathName === '/api/owner/ecosystem-command-center'"));assert(server.includes('/api/owner/legal-portal-command-center'));
+console.log('ecosystem-command-center-v1721.test.js passed — legacy route retired');

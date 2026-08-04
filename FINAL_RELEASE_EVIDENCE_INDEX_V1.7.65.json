@@ -1,0 +1,16 @@
+{
+  "schema": "smarter-justice-final-release-evidence-index",
+  "releaseVersion": "1.7.65",
+  "generatedAt": "2026-08-01T00:35:00-04:00",
+  "state": "PENDING",
+  "records": [
+    "CURRENT_BUILD_INTAKE_V1.7.65.json",
+    "CURRENT_RELEASE_TRUTH_V1.7.65.json",
+    "DETACHED_FINAL_ARTIFACT_IDENTITY_ACCEPTANCE_V1.7.65.json",
+    "CURRENT_RESEARCH_AND_COMPETITIVE_LEARNING_V1.7.65.json",
+    "AUTOMATED_TEST_EVIDENCE_V1.7.65.json",
+    "CANDIDATE_ARTIFACT_ACCEPTANCE_V1.7.65.json",
+    "FINAL_SOURCE_ACCEPTANCE_V1.7.65.json",
+    "FINAL_ARTIFACT_ACCEPTANCE_V1.7.65.json"
+  ]
+}

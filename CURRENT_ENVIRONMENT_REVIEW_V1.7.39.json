@@ -1,0 +1,32 @@
+{
+  "version": "1.7.39",
+  "date": "2026-07-28",
+  "nodeTarget": "22.x",
+  "verifiedNode": "v22.16.0",
+  "verifiedNpm": "10.9.2",
+  "moduleSystem": "CommonJS",
+  "dependencies": {
+    "pg": "^8.13.1",
+    "nodemailer": "^9.0.3"
+  },
+  "registryReachability": "TIMEOUT_OR_UNREACHABLE_DURING_FINAL_RETRY",
+  "cleanInstall": "BLOCKED_REGISTRY_TIMEOUT_OR_UNREACHABLE",
+  "vulnerabilityAudit": "BLOCKED_REGISTRY_TIMEOUT_OR_UNREACHABLE",
+  "graphicalBrowserAcceptance": "NOT_RUN",
+  "physicalDeviceAcceptance": "NOT_RUN",
+  "assistiveTechnologyAcceptance": "NOT_RUN",
+  "deployment": "NOT_AUTHORIZED",
+  "testStatus": {
+    "officialSuiteParts": 95,
+    "passedDependencyIndependentPartsWorkingSource": 94,
+    "plannedFreshExtractionCycles": 2,
+    "blockedParts": 1,
+    "blockedTest": "tests/storage-readiness.test.js",
+    "reason": "The pg dependency could not be freshly installed because npm registry access timed out or was unreachable. No local shim or false pass was used."
+  },
+  "sourceCounts": {
+    "javascriptFiles": 209,
+    "jsonFiles": 191,
+    "topLevelPublicHtmlFiles": 70
+  }
+}

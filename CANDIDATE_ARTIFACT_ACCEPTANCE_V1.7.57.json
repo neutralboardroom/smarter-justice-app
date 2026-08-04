@@ -1,0 +1,30 @@
+{
+  "releaseVersion": "1.7.57",
+  "generatedAt": "2026-07-30",
+  "status": "PASS",
+  "candidateSha256": "2558121f4cf60bc8e7a9e63c40895d77e40e11c57b66cd237923421fe9af5ea7",
+  "candidateSizeBytes": 4930368,
+  "deterministicDoubleBuild": true,
+  "freshExtractionRuns": 2,
+  "dependencyIndependentCommandsPerRun": 111,
+  "launchState": "NO_GO",
+  "identicalTestOutput": true,
+  "testLogSha256": "8adb4e8b3c6acd3a676d786e660ef1e7873c9726f8e21720d50c0ce96de08dfa",
+  "crc": "PASS",
+  "pathSafety": "PASS",
+  "inventoryValidation": "PASS",
+  "sourceEquality": "PASS",
+  "candidateMetrics": {
+    "filename": "smarter-justice-v1.7.57-candidate-a.zip",
+    "sha256": "2558121f4cf60bc8e7a9e63c40895d77e40e11c57b66cd237923421fe9af5ea7",
+    "sizeBytes": 4930368,
+    "entries": 1452,
+    "files": 1434,
+    "directories": 18,
+    "uncompressedBytes": 13750170,
+    "compressedBytes": 4718270,
+    "inventoryRecords": 1433,
+    "inventorySha256": "37d35c0081a48c17e72369e878611f94e96a567430afb70af27ad39c8d8b9080",
+    "extractedTreeSha256": "9eeb43a1c33838fb45e5aff1844479061ad3a5a17df5bced0d0feca784553f4f"
+  }
+}

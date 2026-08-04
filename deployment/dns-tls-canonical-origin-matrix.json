@@ -1,0 +1,68 @@
+{
+  "schema": "smarter-justice-dns-tls-canonical-origin-matrix",
+  "releaseVersion": "1.7.73",
+  "generatedAt": "2026-08-02T17:04:00-04:00",
+  "products": [
+    {
+      "productId": "smarter-justice-central",
+      "canonicalDomain": "https://smarterjustice.com",
+      "ownership": "UNVERIFIED",
+      "dns": "UNVERIFIED",
+      "tls": "UNVERIFIED",
+      "redirectPolicy": "UNVERIFIED",
+      "canonicalMetadata": "LOCAL_STATIC_REVIEW_ONLY",
+      "callbacks": "UNVERIFIED",
+      "renderSubdomainPolicy": "KEEP_ENABLED_UNTIL_CUSTOM_DOMAIN_HEALTH_ROLLBACK_SUPPORT_ACCEPTED",
+      "hstsPreload": false
+    },
+    {
+      "productId": "divorce-law-aid",
+      "canonicalDomain": "https://divorcelawaid.com",
+      "ownership": "UNVERIFIED",
+      "dns": "UNVERIFIED",
+      "tls": "UNVERIFIED",
+      "redirectPolicy": "UNVERIFIED",
+      "canonicalMetadata": "UNVERIFIED",
+      "callbacks": "UNVERIFIED",
+      "renderSubdomainPolicy": "KEEP_ENABLED_UNTIL_CUSTOM_DOMAIN_HEALTH_ROLLBACK_SUPPORT_ACCEPTED",
+      "hstsPreload": false
+    },
+    {
+      "productId": "estate-law-aid",
+      "canonicalDomain": "https://estatelawaid.com",
+      "ownership": "UNVERIFIED",
+      "dns": "UNVERIFIED",
+      "tls": "UNVERIFIED",
+      "redirectPolicy": "UNVERIFIED",
+      "canonicalMetadata": "UNVERIFIED",
+      "callbacks": "UNVERIFIED",
+      "renderSubdomainPolicy": "KEEP_ENABLED_UNTIL_CUSTOM_DOMAIN_HEALTH_ROLLBACK_SUPPORT_ACCEPTED",
+      "hstsPreload": false
+    },
+    {
+      "productId": "personal-injury-law-aid",
+      "canonicalDomain": "https://personalinjurylawaid.com",
+      "ownership": "UNVERIFIED",
+      "dns": "UNVERIFIED",
+      "tls": "UNVERIFIED",
+      "redirectPolicy": "UNVERIFIED",
+      "canonicalMetadata": "UNVERIFIED",
+      "callbacks": "UNVERIFIED",
+      "renderSubdomainPolicy": "KEEP_ENABLED_UNTIL_CUSTOM_DOMAIN_HEALTH_ROLLBACK_SUPPORT_ACCEPTED",
+      "hstsPreload": false
+    },
+    {
+      "productId": "domestic-violence-aid",
+      "canonicalDomain": "https://domesticviolenceaid.com",
+      "ownership": "UNVERIFIED",
+      "dns": "UNVERIFIED",
+      "tls": "UNVERIFIED",
+      "redirectPolicy": "UNVERIFIED",
+      "canonicalMetadata": "UNVERIFIED",
+      "callbacks": "UNVERIFIED",
+      "renderSubdomainPolicy": "KEEP_ENABLED_UNTIL_CUSTOM_DOMAIN_HEALTH_ROLLBACK_SUPPORT_ACCEPTED",
+      "hstsPreload": false
+    }
+  ],
+  "liveAcceptance": false
+}

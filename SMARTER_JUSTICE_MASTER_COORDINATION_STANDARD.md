@@ -1,20 +1,21 @@
 # Smarter Justice Master Coordination Standard
 
-Version 1.3.3
+Version 1.4.0
 
-The Smarter Justice Master Coordination chat and track govern ecosystem strategy, shared systems, professional-marketplace policy, portfolio priorities, and the private builder dashboard. Detailed implementation remains in a dedicated development chat for each portal.
+Roger is the final owner authority. The private Smarter Justice Legal Portfolio Control Center and its Master Coordination track govern legal-portfolio strategy, shared systems, professional-marketplace policy, portal priorities, owner decisions, launch gates, and release truth. Neutral Boardroom is dormant optional future non-confidential export only and is not a launch, runtime, management, or source-of-truth dependency. The Master Coordination chat remains the strategy and standards track, while detailed portal implementation remains in a dedicated development chat for each portal.
 
 ## Master Coordination scope
 
 - overall ecosystem strategy and portal priorities;
 - shared architecture, design-system direction, interoperability, and reusable modules;
 - customer, owner, staff, paralegal, reviewer, professional, referral, and firm dashboard standards;
-- forms, official sources, jurisdictions, readiness, security, privacy, AI, compliance, pricing, account, and cross-portal standards;
+- forms, official sources, jurisdictions, readiness, security, privacy, AI, compliance, pricing, account, public paid Human Review, and cross-portal standards;
 - Master Rules and Suggestions Pack governance, protected retrieval, checksum, and change history;
 - private Control Center, real-package inventory, roadmap, progress, risks, blockers, test evidence, and launch readiness;
 - central professional and firm accounts, source profiles, claims, credentials, memberships, consultations, consent, sponsorship, reviews, and revenue;
 - shared registries, analytics, integrations, deployment tracking, and later safe automation;
-- decisions about which portal to build or improve next.
+- decisions about which portal to build or improve next;
+- self-contained owner decisions, artifact truth, pilot order, launch gates, dependencies, support, incidents, backup/restore, and rollback evidence.
 
 ## Portal implementation boundary
 
@@ -51,3 +52,21 @@ Every portal release should return an updated manifest, release notes, full cont
 ## Professional marketplace release coordination
 
 The Master Coordination track must monitor useful default result sizes, pagination, individual and firm profile parity, claim-control approval, accurate campaign attribution, checkout truthfulness, and phone/tablet acquisition evidence. These requirements belong in future portal prompts whenever a portal consumes the shared professional marketplace.
+
+
+## Shared origin-story coordination
+
+Every current and future micro-portal must carry a portal-specific Our Story page or clearly visible linked origin section that preserves the approved sentence:
+
+> Smarter Justice grew from years of street-level outreach through Justice Truck—meeting people where they were, listening to their legal concerns, speaking with attorneys, and seeing how difficult it could be to find the right starting point.
+
+The Master Coordination track must keep each specialty portal primary for its subject, Smarter Justice as the broader network identity, and Justice Truck as the original and continuing community-access and field-outreach brand. The brands should acknowledge one another without erasing their distinct roles. It must record copy approval, implementation, tests, exact artifact, deployment, live verification, specialty adaptation, and any owner-approved deviation for each portal. Unsupported claims of reach, trust, outcomes, law-firm status, court affiliation, government affiliation, or professional status are prohibited.
+
+
+## Public paid Human Review coordination
+
+The Master Coordination track owns `PUBLIC_PAID_HUMAN_REVIEW_STANDARD.md`, the shared service and order-state contract, required user acknowledgments, fee separation, fail-closed activation gates, support/refund controls, owner evidence, and micro-portal adoption status. Each micro-portal must explicitly record adopted, narrowed, omitted, or deferred Human Review Specialist services and may not create an incompatible checkout, fulfillment, refund, or professional-engagement model without an owner-approved documented deviation.
+
+## Smarter Network capability registry — v1.7.28
+The private coordination layer owns the network-wide learning metadata: source artifact identity, evidence status, reusable pattern, portal adoption decision, specialty adaptation, tests, dependencies, owner approvals, rejected transfers, and trigger for re-review. Dedicated portal ZIPs remain independently authoritative. The registry contains product and release metadata only, not confidential user records.
+

@@ -1,0 +1,104 @@
+{
+  "release": "1.7.53",
+  "generatedAt": "2026-07-30",
+  "status": "CANDIDATE_PENDING_FINAL_EXACT_ACCEPTANCE",
+  "sourceBaseline": {
+    "version": "1.7.52",
+    "filename": "smarter-justice-v1.7.52.zip",
+    "sha256": "33829e486ea38ab3dce60bd1f5f6a5023ba933286bcb380aa4887fc891033c71",
+    "sizeBytes": 3896700
+  },
+  "scope": "Explicit presenter mode, four practice-specific privacy-minimized short paths and QR handoffs, print-ready follow-up card, and field-outreach readiness evidence.",
+  "testModel": {
+    "dependencyIndependentParts": 107,
+    "postgresqlDependentParts": 1,
+    "officialParts": 108,
+    "defaultNpmTestExcludesPostgresqlDependentPart": true
+  },
+  "exactArtifact": {
+    "filename": "smarter-justice-v1.7.53.zip",
+    "identityMode": "DETACHED_AFTER_PACKAGING",
+    "sha256": "RECORDED_IN_EXTERNAL_DELIVERY_REPORT",
+    "sizeBytes": "RECORDED_IN_EXTERNAL_DELIVERY_REPORT",
+    "deterministicBuild": "RECORDED_IN_DETACHED_DELIVERY_REPORT",
+    "cleanExtractionRuns": "RECORDED_IN_DETACHED_DELIVERY_REPORT",
+    "entryCount": 1306,
+    "fileCount": 1288,
+    "directoryCount": 18,
+    "inventoryRecords": 1287
+  },
+  "launchState": "NO_GO",
+  "deploymentAuthorized": false,
+  "closedGates": [
+    "deployment",
+    "DNS changes",
+    "live portal connection",
+    "automatic publication",
+    "automatic central-to-portal writes",
+    "automatic portal-to-central writes",
+    "payment",
+    "Sponsored",
+    "Featured",
+    "professional opportunities",
+    "reviews",
+    "appointments",
+    "confidential uploads",
+    "external AI",
+    "electronic filing",
+    "automatic outreach",
+    "launch GO"
+  ],
+  "authenticBlockers": [
+    "Configured registry cannot retrieve xtend-4.0.2.tgz",
+    "Configured audit endpoint returns 404",
+    "Production infrastructure and exact four-portal staging remain unaccepted",
+    "Real-device, assistive-technology, legal/privacy, support, monitoring, backup/restore and owner GO remain incomplete"
+  ],
+  "workingTreeValidation": {
+    "dependencyIndependentPartsPassed": 107,
+    "dependencyIndependentPartsTotal": 107,
+    "javascriptSyntaxFilesPassed": 241,
+    "jsonFilesParsed": 533,
+    "xmlFilesParsed": 1,
+    "htmlSurfacesAudited": 76,
+    "highSignalSecretScan": "PASS",
+    "developmentDebrisScan": "PASS",
+    "svgFilesParsed": 8
+  },
+  "visualAcceptance": {
+    "routes": [
+      "/attorney-partner-tour.html?practice=estate&mode=presenter&step=1",
+      "/attorney-partner-tour.html?practice=estate",
+      "/attorney-tour-follow-up.html?practice=estate"
+    ],
+    "viewports": [
+      "desktop",
+      "laptop",
+      "tablet",
+      "phone",
+      "print-card"
+    ],
+    "horizontalOverflow": "NONE_OBSERVED",
+    "javascriptConsoleErrors": "NONE_OBSERVED",
+    "keyboardEntry": "PASS_FOR_TESTED_SURFACES",
+    "limitations": "Rendered evidence is not production, real-device, QR-camera, assistive-technology or live-portal acceptance.",
+    "renderMethod": "Local Chromium deterministic page.set_content harness using exact candidate HTML, CSS, JavaScript, API payloads, logo, and QR assets",
+    "evidenceDirectory": "release-evidence/visual-v1.7.53/",
+    "renderedEvidenceFiles": 5,
+    "qrCodeRendered": "PASS_FOR_TESTED_ESTATE_HANDOFF"
+  },
+  "blockedChecks": {
+    "postgresqlDependentStorageReadiness": {
+      "status": "BLOCKED",
+      "reason": "The legitimate clean dependency install cannot retrieve xtend-4.0.2.tgz; pg is unavailable."
+    },
+    "cleanDependencyInstall": {
+      "status": "BLOCKED",
+      "reason": "Configured registry returned 404 for xtend-4.0.2.tgz."
+    },
+    "freshVulnerabilityAudit": {
+      "status": "BLOCKED",
+      "reason": "Configured npm audit endpoint returned 404."
+    }
+  }
+}

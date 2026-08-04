@@ -5,10 +5,10 @@ Status: Private portfolio roadmap. A listed portal is not public or live unless 
 
 ## Real platforms currently tracked
 
-1. Smarter Justice — v1.6.0 controlled founding-professional launch-readiness release.
+1. Smarter Justice — v1.7.7 security, privacy, durability, and controlled-deployment corrective release; v1.7.7 is exact-artifact tested but not deployed; v1.7.6 remains the exact-tested rollback; neither is deployed, and production remains last verified v1.6.1 until controlled deployment and live verification.
 2. Immigration Oasis — effective v1.10.227, formed from the required v1.10.162 full base plus the v1.10.227 lean continuation overlay; never clean-deploy the lean package alone.
 3. Justice Tax Solutions — v0.1.93.
-4. ContractCreator.com — v0.1.0 first base.
+4. Business and Contract Law — contract-workflow first base; official replacement brand/domain pending because ContractCreator.com is not owned.
 5. Business Launch Desk — v0.2.6.
 6. Estate Help Desk — v1.0.36.
 7. CoveredNYC — v1.0.30 healthcare and health-coverage arm.

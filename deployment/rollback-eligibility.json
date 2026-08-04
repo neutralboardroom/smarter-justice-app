@@ -1,0 +1,16 @@
+{
+  "schema": "smarter-justice-rollback-eligibility",
+  "version": "1.0.0",
+  "productId": "smarter-justice-central",
+  "eligible": false,
+  "targetVersion": "1.6.1",
+  "blockers": [
+    "RETAINED_BUILD_ARTIFACT_UNVERIFIED",
+    "MIGRATION_COMPATIBILITY_UNVERIFIED",
+    "PERSISTENT_DISK_STATE_UNVERIFIED",
+    "ENVIRONMENT_CONFIGURATION_DELTA_UNVERIFIED",
+    "AUTO_DEPLOY_SIDE_EFFECT_UNVERIFIED"
+  ],
+  "automaticRollbackAuthorized": false,
+  "releaseVersion": null
+}

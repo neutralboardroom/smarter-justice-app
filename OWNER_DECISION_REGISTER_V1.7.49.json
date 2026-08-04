@@ -1,0 +1,79 @@
+{
+  "schemaVersion": "1.0.0",
+  "releaseVersion": "1.7.49",
+  "generatedAt": "2026-07-29T15:54:00-04:00",
+  "finalOwner": "Roger",
+  "decisions": [
+    {
+      "id": "free-basic-profile-control",
+      "status": "IMPLEMENTED",
+      "decision": "Attorneys and firms may claim, verify, correct and edit basic profiles without payment.",
+      "effectiveVersion": "1.7.44"
+    },
+    {
+      "id": "paid-growth",
+      "status": "IMPLEMENTED_FOUNDATION_GATES_CLOSED",
+      "decision": "Optional paid products may add clearly labeled sponsored visibility, enhanced prominence, lead eligibility and access to case or attorney-review opportunities.",
+      "effectiveVersion": "1.7.44"
+    },
+    {
+      "id": "fixed-fee-only",
+      "status": "IMPLEMENTED",
+      "decision": "Opportunity charges must be fixed disclosed subscription, advertising, platform or access charges; no percentage of legal fees or outcome-contingent charge.",
+      "effectiveVersion": "1.7.44"
+    },
+    {
+      "id": "payment-boundaries",
+      "status": "IMPLEMENTED",
+      "decision": "Payment never verifies identity or credentials, proves specialty relevance, buys organic rank or endorsement, or guarantees work or results.",
+      "effectiveVersion": "1.7.44"
+    },
+    {
+      "id": "complimentary-pilot",
+      "status": "SUPERSEDED",
+      "decision": "The v1.7.43 complimentary Founding Profile Pilot is no longer an active launch model.",
+      "effectiveVersion": "1.7.44"
+    },
+    {
+      "id": "three-portals",
+      "status": "IMPLEMENTED",
+      "decision": "Initial portals remain Divorce, Estate, and Personal Injury; Personal Injury includes vehicle accidents; Workers Compensation remains separate.",
+      "effectiveVersion": "1.7.44"
+    },
+    {
+      "id": "live-gates",
+      "status": "IMPLEMENTED",
+      "decision": "Live payments, sponsored placement, case opportunities, portal imports, automatic writes and deployment remain closed.",
+      "effectiveVersion": "1.7.44"
+    },
+    {
+      "id": "portal-specific-profile-management-v1745",
+      "status": "IMPLEMENTED_LOCAL_FAIL_CLOSED",
+      "decision": "Attorneys and authorized firms manage separate portal-specific profile sections centrally; approval is exact-revision and exact-central-source-revision bound; public rendering remains on each micro-portal.",
+      "effectiveVersion": "1.7.45",
+      "scope": "Divorce Law Aid, Estate Law Aid, and Personal Injury Law Aid",
+      "owner": "Roger",
+      "deploymentEffect": "NONE",
+      "liveGateEffect": "NONE"
+    },
+    {
+      "id": "OWNER-v1746-launch-activation",
+      "date": "2026-07-29",
+      "decision": "Improve launch readiness through one private activation workbench, focused three-portal attorney entry, and truthful legal-only messaging without opening any external or commercial gate.",
+      "scope": "Smarter Justice v1.7.46",
+      "status": "IMPLEMENTED_LOCAL_NOT_DEPLOYED",
+      "owner": "Roger",
+      "approvalEffect": "No deployment or gate activation",
+      "effectiveVersion": "1.7.46"
+    },
+    {
+      "id": "OWNER-v1747-free-profile-cohort",
+      "date": "2026-07-29",
+      "decision": "Operate the first real-attorney cohort around free basic profile control, lawful source-supported profile growth and campaign-attributed follow-up while keeping paid growth, verification, specialty approval, publication and deployment separately gated.",
+      "scope": "Smarter Justice v1.7.49",
+      "status": "IMPLEMENTED_LOCAL_NOT_DEPLOYED",
+      "owner": "Roger",
+      "approvalEffect": "No deployment or gate activation"
+    }
+  ]
+}

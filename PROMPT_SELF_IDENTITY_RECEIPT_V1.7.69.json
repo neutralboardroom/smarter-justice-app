@@ -1,0 +1,29 @@
+{
+  "schema": "smarter-justice-current-prompt-self-identity-receipt",
+  "releaseVersion": "1.7.69",
+  "generatedAt": "2026-08-02T12:16:00-04:00",
+  "currentPassLabel": "FIFTEENTH-PASS",
+  "prompt": {
+    "pass": "FIFTEENTH PASS",
+    "filename": "Smarter_Justice_Central_Master_Fifteenth_Pass_Sunday_Launch_Day_Deployment_Orchestration_2026-08-02.txt",
+    "sha256": "5dad361bae18b25dc8193ce32ca4263a72b12ce90316d6b97dbd191ce2b74223",
+    "sizeBytes": 383921,
+    "lineCount": 8204,
+    "packagedPath": "governance/masters/Smarter_Justice_Central_Master_Fifteenth_Pass.identity.json",
+    "openingMarkerVerified": true,
+    "finalMarkerVerified": true,
+    "selfExcludingSha256": null,
+    "availability": "COMPLETE_FILE_LIBRARY_SOURCE_RESOLVED",
+    "packagedBytes": false
+  },
+  "requiredOpeningPrefix": "SMARTER JUSTICE CENTRAL MASTER\nFIFTEENTH-PASS REUSABLE VERSION-NEUTRAL COMPLETE IMMEDIATE BUILD COMMAND",
+  "requiredEndingPrefix": "END OF SMARTER JUSTICE CENTRAL MASTER FIFTEENTH-PASS",
+  "exactParent": {
+    "pass": "FOURTEENTH PASS",
+    "sha256": "aa195e85f8b76ca6e3cb388477fd7acc0ed7e057c5a680e1c14ee7e801715250",
+    "sizeBytes": 375571,
+    "lineCount": 8067
+  },
+  "staleMarkerRegression": "PASS",
+  "state": "CURRENT_PROMPT_SELF_IDENTITY_MATCHED"
+}

@@ -1,0 +1,56 @@
+{
+  "schema": "smarter-justice-non-idempotent-outcome-register",
+  "releaseVersion": "1.7.62",
+  "generatedAt": "2026-07-31T22:24:00-04:00",
+  "baselineRuns": [
+    {
+      "run": "base-a",
+      "logSha256": "fff885cdbf303f31068fd8148cea31efc1ac3820acc1116cc23a2b36989a8675",
+      "result": "PASS IDENTICAL"
+    },
+    {
+      "run": "base-b",
+      "logSha256": "fff885cdbf303f31068fd8148cea31efc1ac3820acc1116cc23a2b36989a8675",
+      "result": "PASS IDENTICAL"
+    }
+  ],
+  "materialDifferencesDetected": 0,
+  "status": "NO_NON_IDEMPOTENT_OUTCOME_DETECTED_THROUGH_PRESEAL_ACCEPTANCE",
+  "policy": "Any material difference under the same accepted boundary invalidates affected evidence; preserve every run and do not rerun until success.",
+  "sourceRuns": [
+    {
+      "run": "frozen-source-a",
+      "logSha256": "5d4b08cb14a68fb0cd5d43216cfd8d67f60d2a3d6a6ff844bbee86b51a950490",
+      "result": "PASS IDENTICAL"
+    },
+    {
+      "run": "frozen-source-b",
+      "logSha256": "5d4b08cb14a68fb0cd5d43216cfd8d67f60d2a3d6a6ff844bbee86b51a950490",
+      "result": "PASS IDENTICAL"
+    }
+  ],
+  "candidateRuns": [
+    {
+      "run": "candidate-extract-a",
+      "logSha256": "5d4b08cb14a68fb0cd5d43216cfd8d67f60d2a3d6a6ff844bbee86b51a950490",
+      "result": "PASS IDENTICAL"
+    },
+    {
+      "run": "candidate-extract-b",
+      "logSha256": "5d4b08cb14a68fb0cd5d43216cfd8d67f60d2a3d6a6ff844bbee86b51a950490",
+      "result": "PASS IDENTICAL"
+    }
+  ],
+  "presealRuns": [
+    {
+      "run": "preseal-extract-a",
+      "logSha256": "5d4b08cb14a68fb0cd5d43216cfd8d67f60d2a3d6a6ff844bbee86b51a950490",
+      "result": "PASS IDENTICAL"
+    },
+    {
+      "run": "preseal-extract-b",
+      "logSha256": "5d4b08cb14a68fb0cd5d43216cfd8d67f60d2a3d6a6ff844bbee86b51a950490",
+      "result": "PASS IDENTICAL"
+    }
+  ]
+}

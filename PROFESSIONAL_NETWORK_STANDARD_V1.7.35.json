@@ -1,0 +1,39 @@
+{
+  "schemaName": "smarter-justice-professional-network-standard",
+  "schemaVersion": "1.0.0",
+  "releaseVersion": "1.7.35",
+  "generatedAt": "2026-07-27T11:00:00-04:00",
+  "purpose": "Centralize professional account, firm organization, seat, office, billing-foundation, and entitlement metadata in Smarter Justice while dedicated legal portals own specialty user experiences and source-specific public rendering.",
+  "ownerDecisions": [
+    "One Smarter Justice professional identity across qualifying legal portals.",
+    "One firm organization account for multiple professionals, offices, practice groups, seats, permissions, and centralized billing.",
+    "Fixed per-professional seat architecture with owner-approved volume discounts; no separate full base subscription for each portal.",
+    "Each individual practice and portal assignment requires independent evidence.",
+    "Payment never buys verification, unsupported specialties, endorsement, organic rank, inquiries, clients, or outcomes.",
+    "Corrections and removal do not require payment."
+  ],
+  "currentCounts": {
+    "professionals": 233,
+    "firms": 48,
+    "publicDirectoryRecords": 281,
+    "firmOrganizations": 48,
+    "professionalSeats": 233,
+    "legalPortalContracts": 25
+  },
+  "contractState": "D2_SCHEMAS_FIXTURES_AND_TESTS_PASS",
+  "liveConnections": 0,
+  "automaticWrites": false,
+  "closedGates": [
+    "public checkout",
+    "live billing",
+    "public inquiries",
+    "appointment booking",
+    "sponsored placement",
+    "automatic portal writes",
+    "production portal adapters",
+    "cross-portal user-matter transfer",
+    "deployment"
+  ],
+  "informationFlow": "PROFESSIONAL_OR_FIRM_TO_SMARTER_JUSTICE_ACCOUNT_AND_BILLING; USER_TO_RELEVANT_LEGAL_PORTAL_FOR_DISCOVERY_AND_SPECIALTY_EXPERIENCE",
+  "privacyBoundary": "No user legal matters, uploaded documents, credentials, payment details, private claims, or production secrets in portal coordination exports."
+}

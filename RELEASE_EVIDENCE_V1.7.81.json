@@ -1,0 +1,85 @@
+{
+  "schema": "smarter-justice-release-evidence",
+  "releaseVersion": "1.7.81",
+  "generatedAt": "2026-08-03T17:46:00-04:00",
+  "status": "CANDIDATE_ACCEPTED_FINAL_SOURCE_SEALED",
+  "sourceArtifact": {
+    "filename": "smarter-justice-v1.7.80.zip",
+    "version": "1.7.80",
+    "sha256": "afee85cdab7ec902e5a2965d39c937c046c43d0a3ef6a319fa4bb03e1ddc1b8c",
+    "sizeBytes": 8729437,
+    "entries": 3070,
+    "files": 3046,
+    "directories": 24,
+    "uncompressedBytes": 25991110,
+    "compressedBytes": 8263949,
+    "payloadInventoryRecords": 3043,
+    "payloadInventorySha256": "bcad6b07b9965c1ab409ab8f6f4dd639a165763dc6ed01cab10be4a66f752112",
+    "inventoryRecords": 3045,
+    "inventorySha256": "25c69af05ded494b2c32ddb13733baca7d190982fdc2f74bfa4b2920eac88c1c",
+    "treeSha256": "25c69af05ded494b2c32ddb13733baca7d190982fdc2f74bfa4b2920eac88c1c",
+    "packageJsonSha256": "b586ad7ab80d1f21d278dec09719e57809c38b2ef29f12739bb086f7885fdefd",
+    "packageLockSha256": "36136ce9777d16b32e6229cf3b4eab0be9a83e4b4ef58b0492c5587f726f2d2b",
+    "sbomSha256": "ff94e2aace2b3875504e7fe05ed3ccdbf60df7a12f9728f3cfb30980552a6dd0",
+    "dependencyIndependentParts": 139,
+    "totalReadinessParts": 140,
+    "testLogSha256": "29e56c4d0089d6c6a513945489acbb28160b7b779e2097310f68e8f19e9b6be4"
+  },
+  "workingTreeAcceptance": {
+    "record": "WORKING_TREE_ACCEPTANCE_V1.7.81.json",
+    "commandsPerRun": 141,
+    "runs": 2,
+    "identicalOutput": true,
+    "testLogSha256": "ad0f912ac3b7f958b0f6dadd4996db299f1e80e8ef330740ec53b01bc323074e",
+    "state": "ACCEPTED_COMPLETE_RUNS"
+  },
+  "materialImprovements": {
+    "productPlatform": [
+      "Owner-only V14 batch evidence reconciliation with duplicate, replay, conflict, mixed-environment, stale, tampered and identity mismatch rejection plus a deterministic no-mutation transaction preview"
+    ],
+    "builderPromptSystem": [
+      "Post-package detached final delivery receipt generation with deterministic twin comparison and seventeen-field cross-receipt verification outside the ZIP"
+    ]
+  },
+  "candidateAcceptance": {
+    "record": "CANDIDATE_ARTIFACT_ACCEPTANCE_V1.7.81.json",
+    "state": "CANDIDATE_ACCEPTED_NONCIRCULAR",
+    "sha256": "29faaf4533cbe148a0e35b8b66e17c908b3850ed5af08707b0633d73e736d6f0",
+    "sizeBytes": 8792846,
+    "testLogSha256": "ad0f912ac3b7f958b0f6dadd4996db299f1e80e8ef330740ec53b01bc323074e",
+    "entries": 3101,
+    "files": 3077,
+    "directories": 24,
+    "uncompressedBytes": 26096339,
+    "compressedBytes": 8322378,
+    "payloadInventoryRecords": 3074,
+    "payloadInventorySha256": "8614ea65010bd2935f2717fbb20d21782242ab621d88c1ab331f7579b8df0a59",
+    "legacyInventoryRecords": 3076,
+    "legacyInventorySha256": "a652bb961cbd98b4689c520d16697e84fe304527c72c2ff6b429feef19fe8403"
+  },
+  "finalAcceptance": {
+    "record": "FINAL_ARTIFACT_ACCEPTANCE_V1.7.81.json",
+    "state": "DETACHED_FINAL_ARCHIVE_PENDING_FROM_SEALED_SOURCE"
+  },
+  "v14": {
+    "packetId": "SJP-LMP-UNIVERSAL-ONE-STEP-2026-08-03-V14-ALL-CHAT-MODES",
+    "packetSha256": "fce42ce0927748f94189692ef5b3bf8e0fe9f8d12273287f03a68eb7bccdad6f",
+    "mode": "MODE_B_EXISTING_CHAT_PACKET_ONLY",
+    "artifactBindingReceipt": "ARTIFACT_BINDING_AND_MODE_RECEIPT.json",
+    "ownerReceipt": "OWNER_RECEIPT.txt",
+    "releasePayloadInventory": "RELEASE_PAYLOAD_INVENTORY_SHA256.txt",
+    "unifiedLiveOperations": "V14_UNIFIED_LIVE_OPERATIONS_REGISTER_V1.7.81.json",
+    "liveEvidenceConnector": "V14_LIVE_EVIDENCE_CONNECTOR_CONTRACT_V1.7.81.json",
+    "receiptAutomation": "V14_RELEASE_RECEIPT_AUTOMATION_V1.7.81.json",
+    "finalDeliveryIdentity": "REPORTED_AFTER_PACKAGING",
+    "evidenceBatchWorkspace": "V14_EVIDENCE_BATCH_WORKSPACE_CONTRACT_V1.7.81.json",
+    "detachedDeliveryReceiptContract": "V14_DETACHED_FINAL_DELIVERY_RECEIPT_CONTRACT_V1.7.81.json"
+  },
+  "launchState": "NO_GO",
+  "deploymentAuthorized": false,
+  "sourcePackageHashes": {
+    "packageJsonSha256": "368e14ec101496339f29d8b1082961dc34838235ff4316747edb9fb4dbba7be7",
+    "packageLockSha256": "c32343534da9b76bae22e259e3749f2c2ed9542714105b3ba856e95ba6b4c6aa",
+    "sbomSha256": "fb86c17cc96986a4a56eece2df3910714108139db7313d6f04551561193f6c96"
+  }
+}

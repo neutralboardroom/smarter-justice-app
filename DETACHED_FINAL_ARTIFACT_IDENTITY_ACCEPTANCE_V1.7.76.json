@@ -1,0 +1,11 @@
+{
+  "schema": "smarter-justice-detached-final-artifact-identity-acceptance",
+  "releaseVersion": "1.7.76",
+  "generatedAt": "2026-08-03T12:20:00-04:00",
+  "candidateAcceptanceRecord": "CANDIDATE_ARTIFACT_ACCEPTANCE_V1.7.76.json",
+  "finalArchiveFilename": "smarter-justice-v1.7.76.zip",
+  "identityBoundary": "Final archive SHA-256 and exact byte size are recorded outside the archive after immutable deterministic packaging.",
+  "embeddedFinalHashClaimed": false,
+  "deploymentAuthorized": false,
+  "launchState": "NO_GO"
+}

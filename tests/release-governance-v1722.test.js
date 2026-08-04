@@ -1,0 +1,18 @@
+'use strict';
+const assert=require('assert');
+const fs=require('fs');
+const path=require('path');
+for(const f of ['AUDIT_REPORT_V1.7.22.md','CHANGE_MAP_V1.7.22.md','NO_CHANGE_LEDGER_V1.7.22.md','CONTINUATION_PROMPT_V1.7.22.md','RELEASE_EVIDENCE_V1.7.22.json']) assert(fs.existsSync(path.join(__dirname,'..',f)),f);
+const evidence=JSON.parse(fs.readFileSync(path.join(__dirname,'..','RELEASE_EVIDENCE_V1.7.22.json'),'utf8'));
+assert.equal(evidence.version,'1.7.22');
+assert.equal(evidence.deployed,false);
+assert.equal(evidence.activationGatesChanged,false);
+assert.equal(evidence.standaloneCommandCenterBuilt,true);
+assert.equal(evidence.standaloneCommandCenter.version,'0.1.0');
+assert.equal(evidence.standaloneCommandCenter.exactArtifactTested,true);
+assert.equal(evidence.ecosystemWorkspace.sectorCount,4);assert(!fs.existsSync(path.join(__dirname,'..','lib','ecosystemWorkspace.js')));
+assert.equal(evidence.profileGrowth.publicDirectory.total,89);
+assert.equal(evidence.profileGrowth.strictQualifying.total,86);
+assert.equal(evidence.standaloneCommandCenter.sha256,'7ed812580a9ea63bd9ebe6c4c82c722c1ab0628241c5e4536f685dabd96e3879');
+assert(!fs.existsSync(path.join(__dirname,'..','SMARTER_ECOSYSTEM_CONTROL_CENTER_HANDOFF_V0.1.0.json')),'historical standalone handoff is preserved in release evidence rather than active root storage');
+console.log('release-governance-v1722.test.js historical evidence passed');

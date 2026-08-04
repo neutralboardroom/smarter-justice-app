@@ -1,0 +1,79 @@
+{
+  "schema": "smarter-justice-tamper-evident-evidence-manifest",
+  "releaseVersion": "1.7.65",
+  "generatedAt": "2026-07-31T23:59:00-04:00",
+  "status": "PRESEAL_FINAL_SOURCE_ACCEPTED_DETACHED_IMMUTABLE_ARCHIVE_PENDING",
+  "baseArtifact": {
+    "filename": "smarter-justice-v1.7.64.zip",
+    "version": "1.7.63",
+    "sha256": "12eadd10f7c993e55876fef6410ed2cabb0afcded4b824cd2fafcf045784c5e5",
+    "sizeBytes": 5682101,
+    "entries": 1782,
+    "files": 1764,
+    "directories": 18,
+    "uncompressedBytes": 16233707,
+    "compressedBytes": 5419833,
+    "inventoryRecords": 1763,
+    "inventorySha256": "0ae7ab5c89b75646dbeb74ec007483315e3fa97331aa09d58767eb88ce4361ec",
+    "packageJsonSha256": "d7f6f3ee2bf0f85c1659cf98963b1911d71890ccd2983806d5b06d8c642c7c29",
+    "packageLockSha256": "a8074d535b148b975e6623aba8a88aef86eece3d1b56a471795ea304f8bbd489",
+    "lockfileSha256": "a8074d535b148b975e6623aba8a88aef86eece3d1b56a471795ea304f8bbd489",
+    "sbomSha256": "047313cf14c96f58c9fbb5a90f14b28113fe7282f8c42146a5d864ee1afd8b9d",
+    "treeSha256": "0ae7ab5c89b75646dbeb74ec007483315e3fa97331aa09d58767eb88ce4361ec",
+    "dependencyIndependentParts": 117,
+    "totalReadinessParts": 118,
+    "testLogSha256": "541a63c6191ddf9a339d0069a355ca2fd6e0297f484d1f7c7e9cf39274a9e2ba",
+    "concurrentBaselineRuns": 2,
+    "concurrentBaselineResult": "PASS_IDENTICAL_OUTPUT",
+    "evidenceState": "CURRENT_CHAT_REPRODUCED"
+  },
+  "records": [
+    "CURRENT_BUILD_INTAKE_V1.7.65.json",
+    "PORTAL_AUTHORITY_DISCOVERY_V1.7.65.json",
+    "COMMERCIAL_TERMS_AND_ENTITLEMENT_MANIFEST_V1.7.65.json",
+    "PUBLIC_FREEMIUM_AND_COST_RECOVERY_V1.7.65.json",
+    "OWNER_ACTION_QUEUE_V1.7.65.json",
+    "RELEASE_EVIDENCE_V1.7.65.json",
+    "SUPPLY_CHAIN_DIAGNOSTIC_V1.7.65.json",
+    "PROFESSIONAL_LIFECYCLE_GOVERNANCE_ACCEPTANCE_V1.7.65.json",
+    "ATTORNEY_FIELD_OUTREACH_KIT_V1.7.65.json",
+    "ATTORNEY_OUTREACH_READINESS_V1.7.65.json",
+    "MICRO_PORTAL_INTEGRATION_ROLLOUT_V1.7.65.json",
+    "WORKING_TREE_ACCEPTANCE_V1.7.65.json",
+    "AUTOMATED_TEST_EVIDENCE_V1.7.65.json",
+    "SOURCE_ACCEPTANCE_V1.7.65.md",
+    "CANDIDATE_ARTIFACT_ACCEPTANCE_V1.7.65.json",
+    "FINAL_ARTIFACT_ACCEPTANCE_V1.7.65.json"
+  ],
+  "invalidationTriggers": [
+    "source change",
+    "configuration change",
+    "dependency change",
+    "feature flag change",
+    "environment change",
+    "provider change",
+    "artifact change"
+  ],
+  "launchState": "NO_GO",
+  "selfReferenceBoundary": "This manifest does not prove its own hash or the immutable final ZIP identity; the latter is detached after packaging.",
+  "finalZipIdentityMode": "DETACHED_DELIVERY_RECEIPT",
+  "sourceTestLogSha256": "383eed1a10769c543acfdd963ee42042ccee16e2ebbddbe9882482443b09bb62",
+  "currentSbomSha256": "047313cf14c96f58c9fbb5a90f14b28113fe7282f8c42146a5d864ee1afd8b9d",
+  "sourceAcceptance": {
+    "trees": 2,
+    "commandsPerTree": 117,
+    "testLogSha256": "541a63c6191ddf9a339d0069a355ca2fd6e0297f484d1f7c7e9cf39274a9e2ba"
+  },
+  "candidateAcceptance": {
+    "sha256": "de06aec05e28b49ad5dc84761ec67ecd8764fb401fb398191e5b2229096c488c",
+    "sizeBytes": 5680731,
+    "freshExtractions": 2,
+    "testLogSha256": "541a63c6191ddf9a339d0069a355ca2fd6e0297f484d1f7c7e9cf39274a9e2ba"
+  },
+  "presealAcceptance": {
+    "sha256": "279c94744a0330c57ea9c3cd32c84e8f134dc1ce04cfd37b44653f74c79e6b0e",
+    "sizeBytes": 5681449,
+    "freshExtractions": 2,
+    "testLogSha256": "541a63c6191ddf9a339d0069a355ca2fd6e0297f484d1f7c7e9cf39274a9e2ba"
+  }
+}

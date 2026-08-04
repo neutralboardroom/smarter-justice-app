@@ -1,0 +1,13 @@
+{
+  "schema": "smarter-justice-automated-test-evidence",
+  "releaseVersion": "1.7.62",
+  "generatedAt": "2026-07-31T22:24:00-04:00",
+  "dependencyIndependentParts": 116,
+  "sourceTrees": 2,
+  "result": "PASS_TWO_INDEPENDENT_FROZEN_SOURCE_TREES_IDENTICAL_OUTPUT",
+  "testLogSha256": "5d4b08cb14a68fb0cd5d43216cfd8d67f60d2a3d6a6ff844bbee86b51a950490",
+  "postgresqlDependentPart": "BLOCKED_NOT_CLAIMED",
+  "commandsPerRun": 116,
+  "outputComparison": "BYTE_IDENTICAL",
+  "concurrent": true
+}

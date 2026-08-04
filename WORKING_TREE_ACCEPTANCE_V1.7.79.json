@@ -1,0 +1,27 @@
+{
+  "schema": "smarter-justice-working-tree-acceptance",
+  "releaseVersion": "1.7.79",
+  "generatedAt": "2026-08-03T13:40:00-04:00",
+  "state": "ACCEPTED_COMPLETE_RUNS",
+  "commandsPerRun": 137,
+  "runs": 2,
+  "testLogSha256": "c0f49f555c082b4515a8f39cd0fec52494c665efd8f40caec4d20c29adf1b486",
+  "identicalOutput": true,
+  "postgresDependentParts": 1,
+  "postgresAcceptanceClaimed": false,
+  "sourceHashes": {
+    "packageJsonSha256": "8490026b9c00f2efa4db13512767fb6501d3b2cb69c5fdbb1df3df5ca27fca65",
+    "packageLockSha256": "5c1a85d14755452a2c32f04f7fe5a2ad558f8fbc2ab4ac2a67491ee2e672baf4",
+    "sbomSha256": "fe567d113bae7dd502fde2f44463a7752154cad9b96d0b84df8259bed0b941f6"
+  },
+  "materialImplementation": {
+    "productPlatform": [
+      "Unified V14 live-operations evidence register and owner view"
+    ],
+    "builderPromptSystem": [
+      "Exact Mode B artifact binding and non-self-referential owner receipt/payload inventory validation"
+    ]
+  },
+  "launchState": "NO_GO",
+  "deploymentAuthorized": false
+}

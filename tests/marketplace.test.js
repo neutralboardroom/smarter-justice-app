@@ -1,3 +1,4 @@
+const { portForTest } = require('./test-port');
 const assert = require('assert');
 const { spawn } = require('child_process');
 const path = require('path');
@@ -6,7 +7,7 @@ const os = require('os');
 const crypto = require('crypto');
 const professionalSources = require('../lib/publicProfessionalDataSources');
 
-const port = 3962;
+const port=portForTest(3962);
 const base = `http://127.0.0.1:${port}`;
 const tempStorage = fs.mkdtempSync(path.join(os.tmpdir(), 'smarter-justice-marketplace-'));
 const ownerToken = 'owner-marketplace-test-token-1234567890';
@@ -17,6 +18,7 @@ const server = spawn(process.execPath, ['server.js'], {
   env: {
     ...process.env,
     NODE_ENV: 'test',
+    ALLOW_TEST_PAID_PILOT_GATE: 'true',
     PORT: String(port),
     ADMIN_TOKEN: adminToken,
     OWNER_CONTROL_CENTER_TOKEN: ownerToken,
@@ -44,6 +46,15 @@ async function json(url, opts={}){
 }
 function ownerHeaders(extra={}){ return { 'X-Owner-Control-Token': ownerToken, ...extra }; }
 function post(body, headers={}){ return { method:'POST', headers:{ 'Content-Type':'application/json', ...headers }, body:JSON.stringify(body) }; }
+async function verifyProfessionalSignup(signupResult){
+  assert(signupResult.data.verification?.testToken,'test signup should provide a verification token');
+  assert.equal(String(signupResult.response.headers.get('set-cookie')||''),'','unverified signup should not issue a session');
+  const verified=await result(`${base}/api/professional/auth/email-verification/confirm`,post({token:signupResult.data.verification.testToken}));
+  assert.equal(verified.response.status,200,JSON.stringify(verified.data));
+  const cookie=String(verified.response.headers.get('set-cookie')||'').split(';')[0];
+  assert(/sj_professional_session=/.test(cookie));
+  return {cookie,verified};
+}
 
 (async()=>{
   try{
@@ -85,7 +96,9 @@ function post(body, headers={}){ return { method:'POST', headers:{ 'Content-Type
     assert(marketplace.summary && marketplace.governance, 'owner marketplace foundation missing');
     assert(marketplace.professionalAccounts && Array.isArray(marketplace.professionalAccounts.accounts), 'central professional account summary missing');
     assert(marketplace.summary.professionals >= 10 && marketplace.summary.firms >= 10, 'Downtown Brooklyn founding profile seeds missing');
-    assert.equal(marketplace.summary.publicDirectoryActivated, true);
+    assert.equal(marketplace.summary.publicDirectoryActivated, false);
+    assert.equal(marketplace.summary.claimMigrationLookupActivated, true);
+    assert.equal(marketplace.summary.focusedPortalPublicProfiles, true);
     assert(marketplace.membershipPlans.some(x=>x.id==='professional-member' && x.consultationEligibility), 'paid professional membership plan missing');
     assert(marketplace.membershipPlans.some(x=>x.id==='basic-directory' && !x.consultationEligibility), 'free directory plan must not grant consultations');
     const expectedRevenue = ['professional-memberships','firm-memberships','enhanced-profiles','sponsored-placements','scheduling-dashboard-tools','document-review-workflows','analytics','staff-accounts','practice-growth-tools','technology-fees','crm-integrations','white-label-enterprise'];
@@ -95,13 +108,14 @@ function post(body, headers={}){ return { method:'POST', headers:{ 'Content-Type
     assert(foundingIndividual && foundingIndividual.monthlyPriceCents===1500 && foundingIndividual.foundingPlan, 'NYC individual founding plan missing');
     assert(foundingFirm && foundingFirm.monthlyPriceCents===1500 && foundingFirm.audience==='firm', 'NYC founding firm plan missing');
     for(const id of ['founding-member-pilot','firm-volume-discounts','in-person-sales-enablement','mobile-qr-enrollment']) assert(marketplace.revenuePrograms.some(x=>x.id===id), `missing founding revenue program ${id}`);
-    assert(marketplace.firmVolumeDiscountTiers.some(x=>x.minSeats===5 && x.discountPercent===15), '5-seat firm discount tier missing');
+    assert(marketplace.firmVolumeDiscountTiers.every(x=>x.discountPercent===0), 'current pilot must not apply volume discounts');
 
     // Firm quotes are transparent and do not activate billing or eligibility.
     const fiveSeatQuote = await json(`${base}/api/owner/professional-marketplace/firm-quote`, post({planId:'nyc-founding-firm',seatCount:5}, ownerHeaders()));
-    assert.equal(fiveSeatQuote.quote.discountPercent,15);
-    assert.equal(fiveSeatQuote.quote.monthlyDiscountedPerSeatCents,1275);
-    assert.equal(fiveSeatQuote.quote.monthlyTotalCents,6375);
+    assert.equal(fiveSeatQuote.quote.discountPercent,0);
+    assert.equal(fiveSeatQuote.quote.monthlyDiscountedPerSeatCents,1500);
+    assert.equal(fiveSeatQuote.quote.firmProfileMonthlyCents,1500);
+    assert.equal(fiveSeatQuote.quote.monthlyTotalCents,9000);
     assert.equal(fiveSeatQuote.quote.pricingIsIllustrative,true);
 
     // Campaigns are private by default; only pilot-ready or active campaigns expose an invitation offer.
@@ -113,7 +127,7 @@ function post(body, headers={}){ return { method:'POST', headers:{ 'Content-Type
     assert(activeCampaign.publicOffer && activeCampaign.publicOffer.monthlyPriceCents===1500);
     const publicOffer = await json(`${base}/api/professional-membership-offer?campaign=NYC-TEST-DRAFT`);
     assert.equal(publicOffer.offer.foundingOffer,true);
-    assert(publicOffer.offer.firmDiscountTiers.some(x=>x.discountPercent===15));
+    assert(publicOffer.offer.firmDiscountTiers.every(x=>x.discountPercent===0));
 
     // Public interest creates only a private sales prospect and never a membership, profile, or eligibility status.
     const publicInterest = await json(`${base}/api/professional-membership-interest`, post({campaignCode:'NYC-TEST-DRAFT',contactName:'Jordan Pilot',professionalType:'attorney',email:'jordan@example.test',firmName:'Pilot Law',firmSeatEstimate:5,practiceAreas:['Business law'],consultationInterests:['Free consultations'],consentToContact:true}));
@@ -121,15 +135,16 @@ function post(body, headers={}){ return { method:'POST', headers:{ 'Content-Type
     const afterInterest = await json(`${base}/api/owner/professional-marketplace`, {headers:ownerHeaders()});
     const prospect = afterInterest.outreachProspects.find(x=>x.id===publicInterest.confirmationId);
     assert(prospect && prospect.status==='application started' && prospect.potentialSeats===5);
-    assert.equal(prospect.discountPercent,15);
-    assert.equal(prospect.estimatedMonthlyRevenueCents,6375);
+    assert.equal(prospect.discountPercent,0);
+    assert.equal(prospect.estimatedMonthlyRevenueCents,9000);
     assert(!afterInterest.professionals.some(x=>x.email==='jordan@example.test'), 'interest form must not create a professional profile');
     assert(!afterInterest.firms.some(x=>x.name==='Pilot Law'), 'interest form must not create a firm membership');
 
     // Private firm records preserve centralized billing and seat estimates without activating membership.
     const firmRecord = await json(`${base}/api/owner/professional-marketplace/firms`, post({name:'Example Founding Firm',seatCount:5,billingAdministratorName:'Morgan Admin',billingAdministratorEmail:'billing@example.test',membership:{planId:'nyc-founding-firm',status:'none',seatCount:5},jurisdictions:['New York'],portalEligibility:['general-smarter-justice-start']}, ownerHeaders()));
     assert.equal(firmRecord.firm.seatCount,5);
-    assert.equal(firmRecord.firm.quote.discountPercent,15);
+    assert.equal(firmRecord.firm.quote.discountPercent,0);
+    assert.equal(firmRecord.firm.quote.monthlyTotalCents,9000);
     assert.equal(firmRecord.firm.membership.status,'none');
 
     // Official NY source connector is recorded and owner-only.
@@ -249,8 +264,7 @@ function post(body, headers={}){ return { method:'POST', headers:{ 'Content-Type
     }));
     assert.equal(directClaimSignup.response.status,201,JSON.stringify(directClaimSignup.data));
     assert.equal(directClaimSignup.data.account.professionalIds.length,0,'find-and-claim signup should not create a duplicate private professional profile');
-    const directClaimCookie=String(directClaimSignup.response.headers.get('set-cookie')||'').split(';')[0];
-    await json(`${base}/api/professional/claim-profile`,post({professionalId:secondPublicSeed.recordId},{Cookie:directClaimCookie}));
+    const directClaimCookie=(await verifyProfessionalSignup(directClaimSignup)).cookie;
     const directClaimDashboard=await json(`${base}/api/professional/dashboard`,{headers:{Cookie:directClaimCookie}});
     assert.equal(directClaimDashboard.professionals.length,0,'claiming an existing profile should not add a duplicate owned draft');
     assert(directClaimDashboard.pendingClaimProfiles.some(x=>x.id===secondPublicSeed.recordId));
@@ -262,16 +276,36 @@ function post(body, headers={}){ return { method:'POST', headers:{ 'Content-Type
     // One central professional account may request profile control, but the request remains read-only until owner approval.
     const signupResult = await result(`${base}/api/professional/auth/signup`, post({
       accountType:'individual',displayName:'Central Account Attorney',email:'central-attorney@example.test',password:'LongPassword!123',
-      professionalType:'attorney',officeLocation:'26 Court Street, Brooklyn, NY',practiceAreas:['Family law'],portalEligibility:['general-smarter-justice-start'],
+      professionalType:'attorney',officeLocation:'26 Court Street, Brooklyn, NY',practiceAreas:['Family law'],portalEligibility:['digital-divorce'],
+      credentialType:'Attorney registration',credentialJurisdiction:'New York',credentialIdentifier:'NY-MARKETPLACE-001',credentialVerificationSource:'https://example.test/credential/ny-marketplace-001',
       acceptTerms:true,acceptPrivacy:true,campaignCode:'NYC-FOUNDING-26-COURT'
     }));
     assert.equal(signupResult.response.status,201,JSON.stringify(signupResult.data));
-    const professionalCookie=String(signupResult.response.headers.get('set-cookie')||'').split(';')[0];
-    assert(/sj_professional_session=/.test(professionalCookie),'professional signup should issue an HttpOnly session cookie');
+    const professionalCookie=(await verifyProfessionalSignup(signupResult)).cookie;
     let professionalDashboard=await json(`${base}/api/professional/dashboard`,{headers:{Cookie:professionalCookie}});
     assert.equal(professionalDashboard.professionals.length,1);
     const ownDraft=professionalDashboard.professionals[0];
     assert.equal(ownDraft.profileStatus,'private draft');
+    assert.equal(ownDraft.credentials.length,1,'signup credential should remain attached to the private profile');
+    const preparedOwnDraft=await json(`${base}/api/professional/profiles/${encodeURIComponent(ownDraft.id)}`,post({
+      expectedRevision:ownDraft.profileRevision,
+      displayName:ownDraft.displayName,
+      phone:'212-555-0140',website:'https://example.test/central-attorney',
+      biography:'Central Account Attorney helps New York families prepare for divorce and related family-law matters with clear communication and careful case organization.',
+      officeLocations:['26 Court Street, Brooklyn, NY'],jurisdictions:['New York'],practiceAreas:['Family law'],
+      languages:['English'],serviceRegions:['Brooklyn','New York City'],consultationModes:['video'],availabilityStatus:'accepting inquiries',
+      portalEligibility:['digital-divorce'],credentials:[{...ownDraft.credentials[0],verificationSource:'https://example.test/credential/ny-marketplace-001'}]
+    },{Cookie:professionalCookie}));
+    assert(preparedOwnDraft.professional.profileRevision>ownDraft.profileRevision);
+    const submittedOwnDraft=await json(`${base}/api/professional/profiles/${encodeURIComponent(ownDraft.id)}/submit-review`,post({}, {Cookie:professionalCookie}));
+    assert.equal(submittedOwnDraft.professional.submittedRevision,submittedOwnDraft.professional.profileRevision);
+    const ownCredential=submittedOwnDraft.professional.credentials[0];
+    const verifiedOwnCredential=await json(`${base}/api/owner/professional-marketplace/credential-verification`,post({
+      professionalId:ownDraft.id,credentialId:ownCredential.id,status:'active',verificationSource:'https://example.test/credential/ny-marketplace-001',verificationScope:['New York attorney registration']
+    },ownerHeaders()));
+    assert.equal(verifiedOwnCredential.professional.verificationStatus,'verified');
+    const reviewedOwnDraft=await json(`${base}/api/owner/professional-marketplace/professionals/${encodeURIComponent(ownDraft.id)}`,post({reviewStatus:'approved',ownerApprovalStatus:'approved'},ownerHeaders()));
+    assert.equal(reviewedOwnDraft.professional.reviewStatus,'approved');
     const claimResult=await json(`${base}/api/professional/claim-profile`,post({professionalId:publicSeed.recordId},{Cookie:professionalCookie}));
     assert(claimResult.profileRequest && claimResult.account.pendingClaimProfessionalIds.includes(publicSeed.recordId));
     professionalDashboard=await json(`${base}/api/professional/dashboard`,{headers:{Cookie:professionalCookie}});
@@ -283,11 +317,28 @@ function post(body, headers={}){ return { method:'POST', headers:{ 'Content-Type
     assert(ownerApproved.account.professionalIds.includes(publicSeed.recordId));
     const approvedEdit=await json(`${base}/api/professional/profiles/${encodeURIComponent(publicSeed.recordId)}`,post({biography:'Profile owner supplied biography pending public review.'},{Cookie:professionalCookie}));
     assert(/Profile owner supplied/.test(approvedEdit.professional.biography));
+    const blankProfessionalName=await result(`${base}/api/professional/profiles/${encodeURIComponent(publicSeed.recordId)}`,post({displayName:'   '},{Cookie:professionalCookie}));
+    assert.equal(blankProfessionalName.response.status,400,'profile management must not erase the public professional name');
     const pausedCheckout=await result(`${base}/api/professional/membership/checkout`,post({kind:'professional',id:ownDraft.id,planId:'nyc-founding-professional',seatCount:1,billingCadence:'monthly'},{Cookie:professionalCookie}));
     assert.equal(pausedCheckout.response.status,409,'membership enrollment must remain closed while the founding pilot is paused');
     const openedPilot=await json(`${base}/api/owner/professional-marketplace/pilot-controls`,post({status:'pilot-open',maxActiveProfessionalMemberships:25,maxActiveFirmMemberships:10,maxTotalFirmSeats:100,ownerApprovalRequired:true,notes:'Regression-test controlled pilot.'},ownerHeaders()));
     assert.equal(openedPilot.pilotControls.status,'pilot-open');
-    const unpaidCheckout=await json(`${base}/api/professional/membership/checkout`,post({kind:'professional',id:ownDraft.id,planId:'nyc-founding-professional',seatCount:1,billingCadence:'monthly'},{Cookie:professionalCookie}));
+    const pilotApplications=await json(`${base}/api/owner/pilot-program/controls`,post({applicationsOpen:true,paymentGateEnabled:false,maxSubmittedApplications:25,maxApprovedApplications:10,cohortName:'Regression pilot'},ownerHeaders()));
+    assert.equal(pilotApplications.controls.applicationsOpen,true);
+    const submittedPilot=await json(`${base}/api/professional/pilot-program/application/submit`,post({targetKind:'professional',targetId:ownDraft.id,planId:'nyc-founding-professional',billingCadence:'monthly',seatCount:1,professionalTypes:['attorney'],portalInterests:['digital-divorce'],acceptMembershipTerms:true,acceptPrivacy:true,acceptRecurringBilling:true,acceptNoGuarantees:true,acceptIndependentProfessional:true,acceptConflicts:true,idempotencyKey:'marketplace-pilot-submit'}, {Cookie:professionalCookie}));
+    assert.equal(submittedPilot.application.status,'submitted');
+    let pilotOwner=await json(`${base}/api/owner/pilot-program`,{headers:ownerHeaders()});
+    for(const evidence of pilotOwner.evidence) await json(`${base}/api/owner/pilot-program/evidence/${encodeURIComponent(evidence.key)}`,post({status:'evidence-complete',summary:'Regression evidence',verifiedBy:'marketplace.test'},ownerHeaders()));
+    const approvedPilot=await json(`${base}/api/owner/pilot-program/applications/${encodeURIComponent(submittedPilot.application.id)}/review`,post({status:'approved-for-payment',ownerDecision:'Approved for regression payment test',idempotencyKey:'marketplace-pilot-review'},ownerHeaders()));
+    assert.equal(approvedPilot.application.status,'approved-for-payment');
+    const paymentOpen=await json(`${base}/api/owner/pilot-program/controls`,post({applicationsOpen:true,paymentGateEnabled:true,maxSubmittedApplications:25,maxApprovedApplications:10,cohortName:'Regression pilot'},ownerHeaders()));
+    assert.equal(paymentOpen.paymentGate.available,true);
+    const missingCheckoutAcknowledgments=await result(`${base}/api/professional/membership/checkout`,post({kind:'professional',id:ownDraft.id,planId:'nyc-founding-professional',seatCount:1,billingCadence:'monthly'},{Cookie:professionalCookie}));
+    assert.equal(missingCheckoutAcknowledgments.response.status,400,'checkout must require final recurring-billing and no-guarantee acknowledgments');
+    assert.equal(missingCheckoutAcknowledgments.data.missingAcknowledgments.length,4);
+    const mismatchedCadence=await result(`${base}/api/professional/membership/checkout`,post({kind:'professional',id:ownDraft.id,planId:'nyc-founding-professional',seatCount:1,billingCadence:'annual',acceptMembershipTerms:true,acceptRecurringBilling:true,acceptCancellationPolicy:true,acceptNoGuarantees:true},{Cookie:professionalCookie}));
+    assert.equal(mismatchedCadence.response.status,409,'checkout billing frequency must match the owner-approved application');
+    const unpaidCheckout=await json(`${base}/api/professional/membership/checkout`,post({kind:'professional',id:ownDraft.id,planId:'nyc-founding-professional',seatCount:1,billingCadence:'monthly',acceptMembershipTerms:true,acceptRecurringBilling:true,acceptCancellationPolicy:true,acceptNoGuarantees:true},{Cookie:professionalCookie}));
     assert.equal(unpaidCheckout.stripeConfigured,false,'missing Stripe credentials must not fake paid membership');
     const stripeEvent={id:'evt_professional_membership_test',type:'checkout.session.completed',data:{object:{id:'cs_professional_membership_test',status:'complete',payment_status:'paid',customer:'cus_test',subscription:'sub_test',metadata:{kind:'professional_membership',accountId:signupResult.data.account.id,membershipKind:'professional',membershipId:ownDraft.id,planId:'nyc-founding-professional',seatCount:'1',billingCadence:'monthly'}}}};
     const rawStripeBody=JSON.stringify(stripeEvent); const stripeTimestamp=Math.floor(Date.now()/1000); const stripeSignature=crypto.createHmac('sha256','whsec-marketplace-regression-test').update(`${stripeTimestamp}.${rawStripeBody}`).digest('hex');
@@ -297,6 +348,9 @@ function post(body, headers={}){ return { method:'POST', headers:{ 'Content-Type
     const paidDraft=professionalDashboard.professionals.find(x=>x.id===ownDraft.id);
     assert.equal(paidDraft.membership.status,'active');
     assert.equal(paidDraft.eligibility.consultationEligible,false,'paid membership alone must not create consultation eligibility');
+    const duplicateActiveCheckout=await result(`${base}/api/professional/membership/checkout`,post({kind:'professional',id:ownDraft.id,planId:'nyc-founding-professional',seatCount:1,billingCadence:'monthly',acceptMembershipTerms:true,acceptRecurringBilling:true,acceptCancellationPolicy:true,acceptNoGuarantees:true},{Cookie:professionalCookie}));
+    assert.equal(duplicateActiveCheckout.response.status,409,'an active membership target must not create a second subscription');
+    assert(/already active/i.test(duplicateActiveCheckout.data.error));
 
     // Official registration selection may create a source-linked private account profile, but not a verified or public profile.
     const officialSignup=await result(`${base}/api/professional/auth/signup`,post({
@@ -304,7 +358,7 @@ function post(body, headers={}){ return { method:'POST', headers:{ 'Content-Type
       registrationNumber:'7654321',acceptTerms:true,acceptPrivacy:true
     }));
     assert.equal(officialSignup.response.status,201,JSON.stringify(officialSignup.data));
-    const officialCookie=String(officialSignup.response.headers.get('set-cookie')||'').split(';')[0];
+    const officialCookie=(await verifyProfessionalSignup(officialSignup)).cookie;
     const officialDashboard=await json(`${base}/api/professional/dashboard`,{headers:{Cookie:officialCookie}});
     assert.equal(officialDashboard.professionals[0].publicFacts.registrationNumber,'7654321');
     assert.equal(officialDashboard.professionals[0].publicProfileEnabled,false);
@@ -316,9 +370,7 @@ function post(body, headers={}){ return { method:'POST', headers:{ 'Content-Type
       claimFirmId:publicFirmSeed.recordId,seatCount:2,acceptTerms:true,acceptPrivacy:true
     }));
     assert.equal(firmClaimSignup.response.status,201,JSON.stringify(firmClaimSignup.data));
-    const firmClaimCookie=String(firmClaimSignup.response.headers.get('set-cookie')||'').split(';')[0];
-    const attachPublicFirm=await json(`${base}/api/professional/claim-firm`,post({firmId:publicFirmSeed.recordId},{Cookie:firmClaimCookie}));
-    assert(attachPublicFirm.account.pendingClaimFirmIds.includes(publicFirmSeed.recordId));
+    const firmClaimCookie=(await verifyProfessionalSignup(firmClaimSignup)).cookie;
     let firmClaimDashboard=await json(`${base}/api/professional/dashboard`,{headers:{Cookie:firmClaimCookie}});
     assert(firmClaimDashboard.pendingClaimFirms.some(x=>x.id===publicFirmSeed.recordId));
     r=await result(`${base}/api/professional/firms/${encodeURIComponent(publicFirmSeed.recordId)}`,post({phone:'212-555-0111'},{Cookie:firmClaimCookie}));
@@ -329,8 +381,14 @@ function post(body, headers={}){ return { method:'POST', headers:{ 'Content-Type
     const approvedFirmEdit=await json(`${base}/api/professional/firms/${encodeURIComponent(publicFirmSeed.recordId)}`,post({phone:'212-555-0111',locations:['26 Court Street, Brooklyn, NY']},{Cookie:firmClaimCookie}));
     assert.equal(approvedFirmEdit.firm.phone,'212-555-0111');
     assert.equal(approvedFirmEdit.firm.claimStatus,'claimed');
+    const blankFirmName=await result(`${base}/api/professional/firms/${encodeURIComponent(publicFirmSeed.recordId)}`,post({name:'   '},{Cookie:firmClaimCookie}));
+    assert.equal(blankFirmName.response.status,400,'firm management must not erase the public firm name');
     const claimedFirmPublic=await json(`${base}/api/public/firms/${encodeURIComponent(publicFirmSeed.id)}`);
     assert.equal(claimedFirmPublic.firm.claimed,true,'approved firm claim should be reflected honestly on the public profile');
+
+    // A new firm account requires an explicit firm identity; the contact name cannot silently become the firm name.
+    const missingFirmName=await result(`${base}/api/professional/auth/signup`,post({accountType:'firm',displayName:'Firm Contact Without Firm',email:'missing-firm-name@example.test',password:'LongPassword!MissingFirm',seatCount:3,acceptTerms:true,acceptPrivacy:true}));
+    assert.equal(missingFirmName.response.status,400,'firm signup must require a separate firm name');
 
     // A newly created firm account centrally manages seats and multiple professional profiles across portal practice areas.
     const firmSignup=await result(`${base}/api/professional/auth/signup`,post({
@@ -338,7 +396,7 @@ function post(body, headers={}){ return { method:'POST', headers:{ 'Content-Type
       officeLocation:'26 Court Street, Brooklyn, NY',seatCount:3,portalEligibility:['general-smarter-justice-start'],acceptTerms:true,acceptPrivacy:true
     }));
     assert.equal(firmSignup.response.status,201,JSON.stringify(firmSignup.data));
-    const firmCookie=String(firmSignup.response.headers.get('set-cookie')||'').split(';')[0];
+    const firmCookie=(await verifyProfessionalSignup(firmSignup)).cookie;
     let firmDashboard=await json(`${base}/api/professional/dashboard`,{headers:{Cookie:firmCookie}});
     assert.equal(firmDashboard.firms.length,1);
     const accountFirm=firmDashboard.firms[0];
@@ -347,9 +405,9 @@ function post(body, headers={}){ return { method:'POST', headers:{ 'Content-Type
     assert.equal(addedFirmPro.professional.membership.coveredByFirmId,accountFirm.id,'firm roster professional should be covered by the central firm membership record');
     firmDashboard=await json(`${base}/api/professional/dashboard`,{headers:{Cookie:firmCookie}});
     assert(firmDashboard.professionals.some(x=>x.displayName==='Firm Roster Attorney'));
-    const firmNoStripe=await json(`${base}/api/professional/membership/checkout`,post({kind:'firm',id:accountFirm.id,planId:'nyc-founding-firm',seatCount:3,billingCadence:'monthly'},{Cookie:firmCookie}));
-    assert.equal(firmNoStripe.stripeConfigured,false);
-    assert.equal(firmNoStripe.quote.discountPercent,10);
+    const firmCheckoutWithoutPilot=await result(`${base}/api/professional/membership/checkout`,post({kind:'firm',id:accountFirm.id,planId:'nyc-founding-firm',seatCount:3,billingCadence:'monthly'},{Cookie:firmCookie}));
+    assert.equal(firmCheckoutWithoutPilot.response.status,409,'a firm must submit its own approved pilot application before checkout');
+    assert(/current profile revision|professional membership application/i.test(firmCheckoutWithoutPilot.data.error));
 
     // Generated portal prompt and manifest inherit rules-pack version/checksum and marketplace rules.
     const cc = await json(`${base}/api/owner/control-center`, {headers:ownerHeaders()});

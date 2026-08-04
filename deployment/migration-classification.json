@@ -1,0 +1,12 @@
+{
+  "schema": "smarter-justice-migration-classification",
+  "version": "1.0.0",
+  "productId": "smarter-justice-central",
+  "classification": "REVIEW_REQUIRED_BEFORE_PRODUCTION",
+  "databaseSelected": false,
+  "irreversibleMigrationAuthorized": false,
+  "persistentDiskState": "UNVERIFIED",
+  "rollbackImpact": "UNKNOWN_UNTIL_PROVIDER_AND_DATABASE_BINDING",
+  "automaticProductionMigrationAuthorized": false,
+  "releaseVersion": null
+}

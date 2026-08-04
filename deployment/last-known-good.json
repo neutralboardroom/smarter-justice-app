@@ -1,0 +1,12 @@
+{
+  "schema": "smarter-justice-last-known-good",
+  "version": "1.6.1",
+  "productId": "smarter-justice-central",
+  "state": "VERSION_ONLY_REVALIDATION_REQUIRED",
+  "renderDeployId": "UNBOUND",
+  "gitCommit": "UNBOUND",
+  "canonicalDomain": "https://smarterjustice.com",
+  "rollbackEligible": false,
+  "reason": "Exact retained build, migration, disk, environment, and configuration evidence are not available in this build.",
+  "releaseVersion": null
+}

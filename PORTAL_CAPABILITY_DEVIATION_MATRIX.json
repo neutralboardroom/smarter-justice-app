@@ -1,0 +1,540 @@
+{
+  "version": "2.0.0",
+  "generatedForRelease": "1.7.28",
+  "baselineCapabilities": [
+    "Truthful public status and availability",
+    "Meaningful free starting help",
+    "Customer-facing plain language",
+    "Mobile and accessibility foundations",
+    "Privacy and security boundaries",
+    "Official-source and exact-source provenance",
+    "Separate professional profile, credential, payment, routing, engagement, and outcome states",
+    "Claimable professional-profile architecture where appropriate",
+    "Exact-artifact testing and rollback",
+    "Maintained Next Version Improvement List",
+    "Cross-Portal Learning and Adaptation section in every continuation prompt",
+    "Portable non-confidential capability and adoption snapshot"
+  ],
+  "portals": [
+    {
+      "portalSlug": "immigration-oasis",
+      "portalName": "Immigration Oasis",
+      "officialDomain": "immigrationoasis.com",
+      "publicCatalogStatus": "Live — Separate Platform",
+      "inheritedCapabilities": [
+        "Truthful public status and availability",
+        "Meaningful free starting help",
+        "Customer-facing plain language",
+        "Mobile and accessibility foundations",
+        "Privacy and security boundaries",
+        "Official-source and exact-source provenance",
+        "Separate professional profile, credential, payment, routing, engagement, and outcome states",
+        "Claimable professional-profile architecture where appropriate",
+        "Exact-artifact testing and rollback",
+        "Maintained Next Version Improvement List",
+        "Cross-Portal Learning and Adaptation section in every continuation prompt",
+        "Portable non-confidential capability and adoption snapshot"
+      ],
+      "approvedSpecialtyDeviations": [
+        "Remains a separate immigration-only platform and uses a verified v1.10.162 full-base plus v1.10.254 lean-overlay release model. The lean ZIP must never be clean-deployed alone."
+      ],
+      "missingBaselineRequirements": [
+        "Exact-artifact evidence is not recorded here."
+      ],
+      "exactBuildVersion": "1.10.254 lean overlay plus 1.10.162 full base",
+      "packageTruth": "verified two-artifact deployment pair",
+      "buildState": "exact artifacts and assembled full-source overlay preflight verified",
+      "deploymentTruth": "separate platform; lean overlay must never be clean-deployed alone",
+      "professionalDirectoryStatus": "portal-specific professional operations remain separately governed",
+      "improvementListStatus": "audited v1.10.254 continuation prompt requires exact two-artifact workflow",
+      "publicLinkActive": true,
+      "sourceOfTruth": "Dedicated portal project remains authoritative for code, exact checksum, deployment, and specialty requirements."
+    },
+    {
+      "portalSlug": "justice-tax-solutions",
+      "portalName": "Justice Tax Solutions",
+      "officialDomain": "justicetaxsolutions.com",
+      "publicCatalogStatus": "Pilot — Start Here Now",
+      "inheritedCapabilities": [
+        "Truthful public status and availability",
+        "Meaningful free starting help",
+        "Customer-facing plain language",
+        "Mobile and accessibility foundations",
+        "Privacy and security boundaries",
+        "Official-source and exact-source provenance",
+        "Separate professional profile, credential, payment, routing, engagement, and outcome states",
+        "Claimable professional-profile architecture where appropriate",
+        "Exact-artifact testing and rollback",
+        "Maintained Next Version Improvement List",
+        "Cross-Portal Learning and Adaptation section in every continuation prompt",
+        "Portable non-confidential capability and adoption snapshot"
+      ],
+      "approvedSpecialtyDeviations": [
+        "Large official tax-form assets may justify a future immutable asset-pack architecture, but the current deployment model must not change until the full inventory, overlay rules, form-edition governance, and deployment proof are complete and owner-approved."
+      ],
+      "missingBaselineRequirements": [
+        "No verified live destination is configured.",
+        "Exact-artifact evidence is not recorded here.",
+        "Deployment and live verification remain incomplete."
+      ],
+      "exactBuildVersion": "0.1.107",
+      "packageTruth": "justice-tax-solutions-v0.1.107.zip",
+      "buildState": "exact artifact identity and safety verified; dedicated source tests must be rerun in its build chat",
+      "deploymentTruth": "not confirmed deployed",
+      "professionalDirectoryStatus": "tax attorney, CPA, enrolled-agent, accountant, and firm operations remain portal-specific and gated",
+      "improvementListStatus": "audited v0.1.107 continuation prompt requires cross-portal learning review",
+      "publicLinkActive": false,
+      "sourceOfTruth": "Dedicated portal project remains authoritative for code, exact checksum, deployment, and specialty requirements."
+    },
+    {
+      "portalSlug": "estate-planning-probate",
+      "portalName": "Estate Law Aid",
+      "officialDomain": "estatelawaid.com",
+      "publicCatalogStatus": "In Development",
+      "inheritedCapabilities": [
+        "Truthful public status and availability",
+        "Meaningful free starting help",
+        "Customer-facing plain language",
+        "Mobile and accessibility foundations",
+        "Privacy and security boundaries",
+        "Official-source and exact-source provenance",
+        "Separate professional profile, credential, payment, routing, engagement, and outcome states",
+        "Claimable professional-profile architecture where appropriate",
+        "Exact-artifact testing and rollback",
+        "Maintained Next Version Improvement List",
+        "Cross-Portal Learning and Adaptation section in every continuation prompt",
+        "Portable non-confidential capability and adoption snapshot"
+      ],
+      "approvedSpecialtyDeviations": [],
+      "missingBaselineRequirements": [
+        "No verified live destination is configured.",
+        "Deployment and live verification remain incomplete."
+      ],
+      "exactBuildVersion": "1.0.36",
+      "packageTruth": "estate-help-desk-v1.0.36.zip",
+      "buildState": "exact-tested development package",
+      "deploymentTruth": "not deployed or live verified",
+      "professionalDirectoryStatus": "claimable profile foundations tracked in the portal project",
+      "improvementListStatus": "portal-specific list required after each release",
+      "publicLinkActive": false,
+      "sourceOfTruth": "Dedicated portal project remains authoritative for code, exact checksum, deployment, and specialty requirements."
+    },
+    {
+      "portalSlug": "business-launch-desk",
+      "portalName": "Business and Contract Law",
+      "officialDomain": "",
+      "publicCatalogStatus": "In Development",
+      "inheritedCapabilities": [
+        "Truthful public status and availability",
+        "Meaningful free starting help",
+        "Customer-facing plain language",
+        "Mobile and accessibility foundations",
+        "Privacy and security boundaries",
+        "Official-source and exact-source provenance",
+        "Separate professional profile, credential, payment, routing, engagement, and outcome states",
+        "Claimable professional-profile architecture where appropriate",
+        "Exact-artifact testing and rollback",
+        "Maintained Next Version Improvement List",
+        "Cross-Portal Learning and Adaptation section in every continuation prompt",
+        "Portable non-confidential capability and adoption snapshot"
+      ],
+      "approvedSpecialtyDeviations": [
+        "Compliance-calendar and evidence-organizer lessons may transfer outward, but business formation, licensing, tax, contract, and professional categories remain portal-specific."
+      ],
+      "missingBaselineRequirements": [
+        "Official owned domain is not recorded.",
+        "No verified live destination is configured.",
+        "Exact-artifact evidence is not recorded here.",
+        "Deployment and live verification remain incomplete."
+      ],
+      "exactBuildVersion": "0.2.39",
+      "packageTruth": "business-launch-desk-v0.2.39-compliance-calendar-continuous-improvement-phase-one-profile-growth-full-build.zip",
+      "buildState": "exact artifact identity verified; dedicated source tests must be rerun in its build chat",
+      "deploymentTruth": "not confirmed deployed",
+      "professionalDirectoryStatus": "claimable profile, claim review, outreach, shortlist, source revalidation, and Phase One growth are portal-specific",
+      "improvementListStatus": "audited v0.2.39 continuation prompt requires cross-portal learning review",
+      "publicLinkActive": false,
+      "sourceOfTruth": "Dedicated portal project remains authoritative for code, exact checksum, deployment, and specialty requirements."
+    },
+    {
+      "portalSlug": "bankruptcy-debt-help",
+      "portalName": "Bankruptcy & Debt Help",
+      "officialDomain": "",
+      "publicCatalogStatus": "In Development",
+      "inheritedCapabilities": [
+        "Truthful public status and availability",
+        "Meaningful free starting help",
+        "Customer-facing plain language",
+        "Mobile and accessibility foundations",
+        "Privacy and security boundaries",
+        "Official-source and exact-source provenance",
+        "Separate professional profile, credential, payment, routing, engagement, and outcome states",
+        "Claimable professional-profile architecture where appropriate",
+        "Exact-artifact testing and rollback",
+        "Maintained Next Version Improvement List",
+        "Cross-Portal Learning and Adaptation section in every continuation prompt",
+        "Portable non-confidential capability and adoption snapshot"
+      ],
+      "approvedSpecialtyDeviations": [],
+      "missingBaselineRequirements": [
+        "Exact current build artifact and version have not been reconciled in this package.",
+        "Official owned domain is not recorded.",
+        "No verified live destination is configured.",
+        "Exact-artifact evidence is not recorded here.",
+        "Deployment and live verification remain incomplete."
+      ],
+      "exactBuildVersion": "not reconciled",
+      "packageTruth": "not reconciled",
+      "buildState": "not reconciled",
+      "deploymentTruth": "not reconciled",
+      "professionalDirectoryStatus": "portal-specific status not reconciled",
+      "improvementListStatus": "portal-specific list status not reconciled",
+      "publicLinkActive": false,
+      "sourceOfTruth": "Dedicated portal project remains authoritative for code, exact checksum, deployment, and specialty requirements."
+    },
+    {
+      "portalSlug": "disability-benefits-help",
+      "portalName": "Disability Law Aid",
+      "officialDomain": "disabilitylawaid.com",
+      "publicCatalogStatus": "In Development",
+      "inheritedCapabilities": [
+        "Truthful public status and availability",
+        "Meaningful free starting help",
+        "Customer-facing plain language",
+        "Mobile and accessibility foundations",
+        "Privacy and security boundaries",
+        "Official-source and exact-source provenance",
+        "Separate professional profile, credential, payment, routing, engagement, and outcome states",
+        "Claimable professional-profile architecture where appropriate",
+        "Exact-artifact testing and rollback",
+        "Maintained Next Version Improvement List",
+        "Cross-Portal Learning and Adaptation section in every continuation prompt",
+        "Portable non-confidential capability and adoption snapshot"
+      ],
+      "approvedSpecialtyDeviations": [],
+      "missingBaselineRequirements": [
+        "No verified live destination is configured.",
+        "Deployment and live verification remain incomplete."
+      ],
+      "exactBuildVersion": "0.4.0",
+      "packageTruth": "disability-law-aid-v0.4.0.zip (owner-recorded current base; dedicated artifact re-verification required)",
+      "buildState": "exact-tested development package",
+      "deploymentTruth": "not deployed or live verified",
+      "professionalDirectoryStatus": "real claimable profile foundations included in the portal project",
+      "improvementListStatus": "maintained in the portal project",
+      "publicLinkActive": false,
+      "sourceOfTruth": "Dedicated portal project remains authoritative for code, exact checksum, deployment, and specialty requirements."
+    },
+    {
+      "portalSlug": "housing-tenant-help",
+      "portalName": "Landlord Tenant Aid",
+      "officialDomain": "landlordtenantaid.com",
+      "publicCatalogStatus": "In Development",
+      "inheritedCapabilities": [
+        "Truthful public status and availability",
+        "Meaningful free starting help",
+        "Customer-facing plain language",
+        "Mobile and accessibility foundations",
+        "Privacy and security boundaries",
+        "Official-source and exact-source provenance",
+        "Separate professional profile, credential, payment, routing, engagement, and outcome states",
+        "Claimable professional-profile architecture where appropriate",
+        "Exact-artifact testing and rollback",
+        "Maintained Next Version Improvement List",
+        "Cross-Portal Learning and Adaptation section in every continuation prompt",
+        "Portable non-confidential capability and adoption snapshot"
+      ],
+      "approvedSpecialtyDeviations": [],
+      "missingBaselineRequirements": [
+        "No verified live destination is configured.",
+        "Deployment and live verification remain incomplete."
+      ],
+      "exactBuildVersion": "0.6.0",
+      "packageTruth": "landlord-tenant-aid-v0.6.0.zip (owner-recorded current base; dedicated artifact re-verification required)",
+      "buildState": "exact-tested development package",
+      "deploymentTruth": "not deployed or live verified",
+      "professionalDirectoryStatus": "real claimable profile foundations included in the portal project",
+      "improvementListStatus": "maintained in the portal project",
+      "publicLinkActive": false,
+      "sourceOfTruth": "Dedicated portal project remains authoritative for code, exact checksum, deployment, and specialty requirements."
+    },
+    {
+      "portalSlug": "accident-injury-help",
+      "portalName": "Personal Injury Law Aid",
+      "officialDomain": "personalinjurylawaid.com",
+      "publicCatalogStatus": "In Development",
+      "inheritedCapabilities": [
+        "Truthful public status and availability",
+        "Meaningful free starting help",
+        "Customer-facing plain language",
+        "Mobile and accessibility foundations",
+        "Privacy and security boundaries",
+        "Official-source and exact-source provenance",
+        "Separate professional profile, credential, payment, routing, engagement, and outcome states",
+        "Claimable professional-profile architecture where appropriate",
+        "Exact-artifact testing and rollback",
+        "Maintained Next Version Improvement List",
+        "Cross-Portal Learning and Adaptation section in every continuation prompt",
+        "Portable non-confidential capability and adoption snapshot"
+      ],
+      "approvedSpecialtyDeviations": [],
+      "missingBaselineRequirements": [
+        "No verified live destination is configured.",
+        "Deployment and live verification remain incomplete."
+      ],
+      "exactBuildVersion": "0.3.0",
+      "packageTruth": "personal-injury-law-aid-v0.3.0.zip",
+      "buildState": "exact-tested development package",
+      "deploymentTruth": "not deployed or live verified",
+      "professionalDirectoryStatus": "real claimable profile foundations included in the portal project",
+      "improvementListStatus": "maintained in the portal project",
+      "publicLinkActive": false,
+      "sourceOfTruth": "Dedicated portal project remains authoritative for code, exact checksum, deployment, and specialty requirements."
+    },
+    {
+      "portalSlug": "digital-divorce",
+      "portalName": "Divorce Law Aid",
+      "officialDomain": "divorcelawaid.com",
+      "publicCatalogStatus": "In Development",
+      "inheritedCapabilities": [
+        "Truthful public status and availability",
+        "Meaningful free starting help",
+        "Customer-facing plain language",
+        "Mobile and accessibility foundations",
+        "Privacy and security boundaries",
+        "Official-source and exact-source provenance",
+        "Separate professional profile, credential, payment, routing, engagement, and outcome states",
+        "Claimable professional-profile architecture where appropriate",
+        "Exact-artifact testing and rollback",
+        "Maintained Next Version Improvement List",
+        "Cross-Portal Learning and Adaptation section in every continuation prompt",
+        "Portable non-confidential capability and adoption snapshot"
+      ],
+      "approvedSpecialtyDeviations": [],
+      "missingBaselineRequirements": [
+        "No verified live destination is configured.",
+        "Deployment and live verification remain incomplete."
+      ],
+      "exactBuildVersion": "0.5.0",
+      "packageTruth": "divorce-law-aid-v0.5.0.zip (owner-recorded current base; dedicated artifact re-verification required)",
+      "buildState": "exact-tested development package",
+      "deploymentTruth": "not deployed or live verified",
+      "professionalDirectoryStatus": "real claimable profile foundations included in the portal project",
+      "improvementListStatus": "maintained in the portal project",
+      "publicLinkActive": false,
+      "sourceOfTruth": "Dedicated portal project remains authoritative for code, exact checksum, deployment, and specialty requirements."
+    },
+    {
+      "portalSlug": "criminal-law-help-center",
+      "portalName": "Criminal Law Aid",
+      "officialDomain": "criminallawaid.com",
+      "publicCatalogStatus": "In Development",
+      "inheritedCapabilities": [
+        "Truthful public status and availability",
+        "Meaningful free starting help",
+        "Customer-facing plain language",
+        "Mobile and accessibility foundations",
+        "Privacy and security boundaries",
+        "Official-source and exact-source provenance",
+        "Separate professional profile, credential, payment, routing, engagement, and outcome states",
+        "Claimable professional-profile architecture where appropriate",
+        "Exact-artifact testing and rollback",
+        "Maintained Next Version Improvement List",
+        "Cross-Portal Learning and Adaptation section in every continuation prompt",
+        "Portable non-confidential capability and adoption snapshot"
+      ],
+      "approvedSpecialtyDeviations": [],
+      "missingBaselineRequirements": [
+        "No verified live destination is configured.",
+        "Deployment and live verification remain incomplete."
+      ],
+      "exactBuildVersion": "0.5.0",
+      "packageTruth": "criminal-law-aid-v0.5.0.zip (owner-recorded current base; dedicated artifact re-verification required)",
+      "buildState": "exact-tested development package",
+      "deploymentTruth": "not deployed or live verified",
+      "professionalDirectoryStatus": "real claimable profile foundations included in the portal project",
+      "improvementListStatus": "maintained in the portal project",
+      "publicLinkActive": false,
+      "sourceOfTruth": "Dedicated portal project remains authoritative for code, exact checksum, deployment, and specialty requirements."
+    },
+    {
+      "portalSlug": "employment-labor-law-help-center",
+      "portalName": "Employment Law Aid",
+      "officialDomain": "employmentlawaid.com",
+      "publicCatalogStatus": "In Development",
+      "inheritedCapabilities": [
+        "Truthful public status and availability",
+        "Meaningful free starting help",
+        "Customer-facing plain language",
+        "Mobile and accessibility foundations",
+        "Privacy and security boundaries",
+        "Official-source and exact-source provenance",
+        "Separate professional profile, credential, payment, routing, engagement, and outcome states",
+        "Claimable professional-profile architecture where appropriate",
+        "Exact-artifact testing and rollback",
+        "Maintained Next Version Improvement List",
+        "Cross-Portal Learning and Adaptation section in every continuation prompt",
+        "Portable non-confidential capability and adoption snapshot"
+      ],
+      "approvedSpecialtyDeviations": [],
+      "missingBaselineRequirements": [
+        "No verified live destination is configured.",
+        "Deployment and live verification remain incomplete."
+      ],
+      "exactBuildVersion": "0.8.0",
+      "packageTruth": "employment-law-aid-v0.8.0.zip (owner-recorded current base; dedicated artifact re-verification required)",
+      "buildState": "exact-tested development package",
+      "deploymentTruth": "not deployed or live verified",
+      "professionalDirectoryStatus": "real claimable profile foundations included in the portal project",
+      "improvementListStatus": "maintained in the portal project",
+      "publicLinkActive": false,
+      "sourceOfTruth": "Dedicated portal project remains authoritative for code, exact checksum, deployment, and specialty requirements."
+    },
+    {
+      "portalSlug": "name-records-employment",
+      "portalName": "Name, Records & Education Help",
+      "officialDomain": "",
+      "publicCatalogStatus": "Coming Soon",
+      "inheritedCapabilities": [
+        "Truthful public status and availability",
+        "Meaningful free starting help",
+        "Customer-facing plain language",
+        "Mobile and accessibility foundations",
+        "Privacy and security boundaries",
+        "Official-source and exact-source provenance",
+        "Separate professional profile, credential, payment, routing, engagement, and outcome states",
+        "Claimable professional-profile architecture where appropriate",
+        "Exact-artifact testing and rollback",
+        "Maintained Next Version Improvement List",
+        "Cross-Portal Learning and Adaptation section in every continuation prompt",
+        "Portable non-confidential capability and adoption snapshot"
+      ],
+      "approvedSpecialtyDeviations": [],
+      "missingBaselineRequirements": [
+        "Exact current build artifact and version have not been reconciled in this package.",
+        "Official owned domain is not recorded.",
+        "No verified live destination is configured.",
+        "Exact-artifact evidence is not recorded here.",
+        "Deployment and live verification remain incomplete."
+      ],
+      "exactBuildVersion": "not reconciled",
+      "packageTruth": "not reconciled",
+      "buildState": "not reconciled",
+      "deploymentTruth": "not reconciled",
+      "professionalDirectoryStatus": "portal-specific status not reconciled",
+      "improvementListStatus": "portal-specific list status not reconciled",
+      "publicLinkActive": false,
+      "sourceOfTruth": "Dedicated portal project remains authoritative for code, exact checksum, deployment, and specialty requirements."
+    },
+    {
+      "portalSlug": "intellectual-property-desk",
+      "portalName": "Intellectual Property Desk",
+      "officialDomain": "",
+      "publicCatalogStatus": "In Development",
+      "inheritedCapabilities": [
+        "Truthful public status and availability",
+        "Meaningful free starting help",
+        "Customer-facing plain language",
+        "Mobile and accessibility foundations",
+        "Privacy and security boundaries",
+        "Official-source and exact-source provenance",
+        "Separate professional profile, credential, payment, routing, engagement, and outcome states",
+        "Claimable professional-profile architecture where appropriate",
+        "Exact-artifact testing and rollback",
+        "Maintained Next Version Improvement List",
+        "Cross-Portal Learning and Adaptation section in every continuation prompt",
+        "Portable non-confidential capability and adoption snapshot"
+      ],
+      "approvedSpecialtyDeviations": [],
+      "missingBaselineRequirements": [
+        "Exact current build artifact and version have not been reconciled in this package.",
+        "Official owned domain is not recorded.",
+        "No verified live destination is configured.",
+        "Exact-artifact evidence is not recorded here.",
+        "Deployment and live verification remain incomplete."
+      ],
+      "exactBuildVersion": "not reconciled",
+      "packageTruth": "not reconciled",
+      "buildState": "not reconciled",
+      "deploymentTruth": "not reconciled",
+      "professionalDirectoryStatus": "portal-specific status not reconciled",
+      "improvementListStatus": "portal-specific list status not reconciled",
+      "publicLinkActive": false,
+      "sourceOfTruth": "Dedicated portal project remains authoritative for code, exact checksum, deployment, and specialty requirements."
+    },
+    {
+      "portalSlug": "domestic-violence-safety-support",
+      "portalName": "Stop Sign Project — Domestic Violence Safety & Legal Help",
+      "officialDomain": "stopsignproject.org",
+      "publicCatalogStatus": "In Development",
+      "inheritedCapabilities": [
+        "Truthful public status and availability",
+        "Meaningful free starting help",
+        "Customer-facing plain language",
+        "Mobile and accessibility foundations",
+        "Privacy and security boundaries",
+        "Official-source and exact-source provenance",
+        "Separate professional profile, credential, payment, routing, engagement, and outcome states",
+        "Claimable professional-profile architecture where appropriate",
+        "Exact-artifact testing and rollback",
+        "Maintained Next Version Improvement List",
+        "Cross-Portal Learning and Adaptation section in every continuation prompt",
+        "Portable non-confidential capability and adoption snapshot"
+      ],
+      "approvedSpecialtyDeviations": [
+        "Confidential domestic-violence descriptions and uploads remain outside the general Smarter Justice saved-work flow."
+      ],
+      "missingBaselineRequirements": [
+        "No verified live destination is configured.",
+        "Deployment and live verification remain incomplete."
+      ],
+      "exactBuildVersion": "0.9.0",
+      "packageTruth": "stopsignproject-v0.9.0.zip (owner-recorded current base; dedicated artifact re-verification required)",
+      "buildState": "exact-tested development package recorded by owner",
+      "deploymentTruth": "not deployed or live verified in this package",
+      "professionalDirectoryStatus": "survivor-centered professional and public-resource rules remain separately governed",
+      "improvementListStatus": "maintained in the dedicated Stop Sign Project",
+      "publicLinkActive": false,
+      "sourceOfTruth": "Dedicated portal project remains authoritative for code, exact checksum, deployment, and specialty requirements."
+    },
+    {
+      "portalSlug": "general-smarter-justice-start",
+      "portalName": "Smarter Justice General Start",
+      "officialDomain": "smarterjustice.com",
+      "publicCatalogStatus": "Available Now",
+      "inheritedCapabilities": [
+        "Truthful public status and availability",
+        "Meaningful free starting help",
+        "Customer-facing plain language",
+        "Mobile and accessibility foundations",
+        "Privacy and security boundaries",
+        "Official-source and exact-source provenance",
+        "Separate professional profile, credential, payment, routing, engagement, and outcome states",
+        "Claimable professional-profile architecture where appropriate",
+        "Exact-artifact testing and rollback",
+        "Maintained Next Version Improvement List",
+        "Cross-Portal Learning and Adaptation section in every continuation prompt",
+        "Portable non-confidential capability and adoption snapshot"
+      ],
+      "approvedSpecialtyDeviations": [
+        "Umbrella routing and owner portfolio coordination are primary; specialty legal workflows remain in separate portal projects."
+      ],
+      "missingBaselineRequirements": [],
+      "exactBuildVersion": "1.7.28",
+      "packageTruth": "smarter-justice-v1.7.28.zip",
+      "buildState": "exact artifact tested",
+      "deploymentTruth": "not deployed; last verified production remains v1.6.1",
+      "professionalDirectoryStatus": "125 professionals, 34 firms, 159 public records, and 156 strict qualifying profiles preserved from v1.7.27",
+      "improvementListStatus": "v1.7.28 list packages the Control Center registry migration and continuation-prompt rollout",
+      "publicLinkActive": true,
+      "sourceOfTruth": "Dedicated portal project remains authoritative for code, exact checksum, deployment, and specialty requirements."
+    }
+  ],
+  "summary": {
+    "portalsTracked": 15,
+    "exactBuildsRecorded": 9,
+    "liveLinksActive": 2,
+    "portalsWithDocumentedDeviations": 5,
+    "portalsWithMissingBaselineRequirements": 14
+  }
+}

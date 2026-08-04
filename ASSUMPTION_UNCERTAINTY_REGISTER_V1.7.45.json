@@ -1,0 +1,44 @@
+{
+  "schemaVersion": "1.0.0",
+  "releaseVersion": "1.7.45",
+  "generatedAt": "2026-07-29T14:30:00-04:00",
+  "status": "OPEN_AND_FAIL_CLOSED",
+  "items": [
+    {
+      "id": "AU-1745-01",
+      "uncertainty": "The exact current source and adapter behavior of the three micro-portals has not been independently inspected in this Smarter Justice build.",
+      "handling": "Treat portal versions as OWNER_RECORDED, keep live imports closed, and do not claim D3, D4 or D5 acceptance.",
+      "resolutionEvidence": "Dedicated exact-artifact handoff and adapter tests from each portal builder chat."
+    },
+    {
+      "id": "AU-1745-02",
+      "uncertainty": "Canonical public attorney and firm URL formats may differ across the three portals.",
+      "handling": "Store URLs only as owner/portal-provided acceptance evidence and validate them against allowlisted portal origins; do not invent public URLs.",
+      "resolutionEvidence": "Portal-specific link specification and accepted staging receipt."
+    },
+    {
+      "id": "AU-1745-03",
+      "uncertainty": "Portal-specific field sets may expand after portal artifact review.",
+      "handling": "Implement a conservative shared launch field set with per-portal scope rules and versioned records; preserve backward-compatible optional fields.",
+      "resolutionEvidence": "Dedicated portal schema review and contract-version decision."
+    },
+    {
+      "id": "AU-1745-04",
+      "uncertainty": "No authentic PostgreSQL dependency installation is available in the current environment.",
+      "handling": "Do not run or claim the PostgreSQL acceptance test; record the exact registry failure.",
+      "resolutionEvidence": "Clean install from an authentic registry and successful production-like PostgreSQL acceptance."
+    },
+    {
+      "id": "AU-1745-05",
+      "uncertainty": "Browser, physical-device, keyboard, zoom and screen-reader acceptance cannot be established from static source checks alone.",
+      "handling": "Add structural and regression tests only; retain external acceptance blockers.",
+      "resolutionEvidence": "Recorded acceptance against the exact deployed staging artifacts."
+    },
+    {
+      "id": "AU-1745-06",
+      "uncertainty": "Qualified jurisdiction-specific legal review for paid visibility and opportunities is not recorded.",
+      "handling": "Keep all paid-growth and opportunity gates closed.",
+      "resolutionEvidence": "Counsel review, owner approval, final terms and staging acceptance."
+    }
+  ]
+}

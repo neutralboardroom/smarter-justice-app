@@ -1,0 +1,23 @@
+{
+  "version": "1.7.36",
+  "date": "2026-07-27",
+  "removedFileCount": 0,
+  "removedUncompressedBytes": 0,
+  "addedMaterial": [
+    "professional portal alias registry",
+    "professional handoff schema",
+    "adapter validator",
+    "adapter lab",
+    "owner adapter UI",
+    "92nd regression test",
+    "current release records"
+  ],
+  "retainedReason": "No inherited file could be removed with high confidence without risking historical evidence or a working capability.",
+  "packagingRules": [
+    "exclude node_modules",
+    "exclude credentials and secret environment files",
+    "exclude runtime logs and database data",
+    "exclude test-only compatibility modules",
+    "include one self-excluding inventory"
+  ]
+}

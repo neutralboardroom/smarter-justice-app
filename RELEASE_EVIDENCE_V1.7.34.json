@@ -1,0 +1,110 @@
+{
+  "version": "1.7.34",
+  "date": "2026-07-27",
+  "status": "exact-artifact-tested development release; not deployed",
+  "sourceArtifact": {
+    "filename": "smarter-justice-v1.7.33.zip",
+    "sha256": "39e8bad618e51b4fff5abf569b30e7190a1c83335dec8cf9810f88aca6b95f98",
+    "sizeBytes": 1731712,
+    "entries": 536,
+    "files": 525,
+    "explicitDirectories": 11
+  },
+  "implementation": {
+    "legalNetworkActionCenter": true,
+    "deterministicRecommendations": true,
+    "ownerDispositions": true,
+    "evidenceFingerprintResurfacing": true,
+    "unifiedPortalTruthRegistry": true,
+    "controlCenterTruthReconciliation": true,
+    "legalWorkspaceTruthReconciliation": true,
+    "detachedSelfArtifactIdentity": true,
+    "neutralBoardroomPrimaryActionHandoff": true,
+    "currentFacingReleaseTruthRepair": true,
+    "liveNeutralBoardroomIntegration": false,
+    "automaticNeutralBoardroomWrites": false,
+    "automaticPortalActions": false,
+    "crossPillarAdministration": false,
+    "centralizedPublicUserMatterData": false,
+    "automaticCrossRepositorySynchronization": false,
+    "storageConservation": true
+  },
+  "portfolioTruth": {
+    "portals": 25,
+    "exactVerified": 1,
+    "productionVerified": 0,
+    "ownerRecorded": 23,
+    "missing": 1,
+    "completeIdentities": 18,
+    "detachedSelfIdentities": 1,
+    "highestDashboardClaim": "D2_CONTRACT_TESTED"
+  },
+  "profileGrowth": {
+    "decision": "NO_WEAK_PADDING",
+    "newProfessionals": 0,
+    "newFirms": 0,
+    "newLinks": 0,
+    "regionsWorked": 0,
+    "publicDirectory": {
+      "professionals": 233,
+      "firms": 48,
+      "total": 281
+    },
+    "strictQualifying": {
+      "professionals": 232,
+      "firms": 46,
+      "total": 278
+    }
+  },
+  "storage": {
+    "removedFiles": 1,
+    "removedUncompressedBytes": 125438,
+    "testOnlyCompatibilityModulesPackaged": false
+  },
+  "testing": {
+    "suiteParts": 90,
+    "workingTreePassed": true,
+    "freshExtractionAPassed": true,
+    "freshExtractionBPassed": true,
+    "javascriptSyntaxChecksPassed": true,
+    "jsonParseChecksPassed": true,
+    "zipCrcPassed": true,
+    "unsafeEntryChecksPassed": true,
+    "byteIdentityAcrossExtractionsPassed": true,
+    "currentVulnerabilityCountClaimed": false,
+    "javascriptSyntaxFiles": 194,
+    "jsonFiles": 121,
+    "dependencyInstallAttempt": "Attempted in the working tree and both independent fresh extractions on 2026-07-27. The configured npm registry returned HTTP 503 while fetching dependency tarballs, so no clean-install completion is claimed.",
+    "vulnerabilityAuditAttempt": "Attempted on 2026-07-27. The configured npm advisory endpoint returned HTTP 503, so no fresh vulnerability count is claimed.",
+    "postTestByteStabilityPassed": true,
+    "inventoryValidatedInBothExtractions": true,
+    "browserRenderedAcceptanceCompleted": false,
+    "browserRenderedAcceptanceNote": "No separate graphical browser, physical-device, or assistive-technology field acceptance is claimed.",
+    "cleanDependencyInstallCompleted": false,
+    "externalTestOnlyCompatibilityModulesUsed": true,
+    "externalTestOnlyCompatibilityModulesPackaged": false,
+    "externalTestOnlyCompatibilityModulesNote": "The complete suite and controlled runtime acceptance used temporary external pg and nodemailer compatibility modules through NODE_PATH after the configured registry failed. They are not part of the release artifact."
+  },
+  "deployment": {
+    "deployed": false,
+    "lastVerifiedProduction": "1.6.1",
+    "rollbackArtifact": "smarter-justice-v1.7.33.zip",
+    "rollbackSha256": "39e8bad618e51b4fff5abf569b30e7190a1c83335dec8cf9810f88aca6b95f98"
+  },
+  "activationGatesChanged": false,
+  "closedGates": [
+    "payments",
+    "subscriptions",
+    "booking",
+    "reviews",
+    "sensitive uploads",
+    "filing",
+    "unrestricted professional routing",
+    "AttorneyRide transfer",
+    "automatic cross-repository writes",
+    "centralized public-user matter storage",
+    "live Neutral Boardroom connection",
+    "cross-pillar administration",
+    "production deployment"
+  ]
+}

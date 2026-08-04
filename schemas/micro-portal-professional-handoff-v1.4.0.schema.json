@@ -1,0 +1,160 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "smarter-justice-micro-portal-professional-handoff-v1.4.0",
+  "title": "Smarter Justice micro-portal professional handoff",
+  "type": "object",
+  "required": [
+    "handoffVersion",
+    "handoffDigest",
+    "sourceSystem",
+    "destinationPortalId",
+    "assignments",
+    "profiles",
+    "firms",
+    "automaticWrites",
+    "liveConnection"
+  ],
+  "properties": {
+    "handoffVersion": {
+      "const": "1.4.0"
+    },
+    "handoffDigest": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "sourceSystem": {
+      "const": "smarter-justice"
+    },
+    "destinationPortalId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "assignments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "assignmentId",
+          "sourceRevision",
+          "approvedSourceRevision",
+          "recordFingerprint",
+          "distributionAction",
+          "suppressionState",
+          "professionalId",
+          "portalId",
+          "publicationEligible"
+        ],
+        "properties": {
+          "sourceRevision": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "approvedSourceRevision": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "recordFingerprint": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "distributionAction": {
+            "enum": [
+              "UPSERT_PUBLIC",
+              "UPSERT_PRIVATE",
+              "SUPPRESS"
+            ]
+          },
+          "suppressionState": {
+            "enum": [
+              "NONE",
+              "SUPPRESS"
+            ]
+          },
+          "publicationEligible": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "profiles": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "professionalId",
+          "sourceRevision",
+          "submittedRevision",
+          "reviewStatus",
+          "recordFingerprint",
+          "distributionAction",
+          "suppressionState",
+          "publicationEligible"
+        ],
+        "properties": {
+          "sourceRevision": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "submittedRevision": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "reviewStatus": {
+            "enum": [
+              "draft",
+              "submitted",
+              "changes-pending-review",
+              "changes-requested",
+              "approved",
+              "rejected"
+            ]
+          },
+          "recordFingerprint": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "publicationEligible": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "firms": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "firmId",
+          "sourceRevision",
+          "submittedRevision",
+          "reviewStatus",
+          "recordFingerprint"
+        ],
+        "properties": {
+          "sourceRevision": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "submittedRevision": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "recordFingerprint": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "automaticWrites": {
+      "const": false
+    },
+    "liveConnection": {
+      "const": false
+    }
+  },
+  "additionalProperties": true
+}

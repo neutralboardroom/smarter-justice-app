@@ -1,0 +1,42 @@
+{
+  "releaseVersion": "1.7.56",
+  "generatedAt": "2026-07-30",
+  "dependencyIndependentCommands": 110,
+  "postgresDependentCommands": 1,
+  "totalReadinessParts": 111,
+  "sourceBaseline": {
+    "commands": 109,
+    "runs": 2,
+    "mode": "CONCURRENT_INDEPENDENT_TREES",
+    "result": "PASS",
+    "identicalOutput": true,
+    "testLogSha256": "13fc73a7ade3561e2760cdee704e012f8696ec8e6569bff77866f740912b039c"
+  },
+  "workingTreeStatus": "PASS",
+  "launchState": "NO_GO",
+  "workingTree": {
+    "commands": 110,
+    "runs": 1,
+    "mode": "FROZEN_WORKING_TREE",
+    "result": "PASS",
+    "testLogSha256": "60beb21f8a8b4b9e82e48e6eef68f0934867f120405f78ac163c00b363f61d2a"
+  },
+  "candidateArtifact": {
+    "runs": 2,
+    "mode": "CONCURRENT_INDEPENDENT_EXACT_EXTRACTIONS",
+    "commandsPerRun": 110,
+    "result": "PASS",
+    "identicalOutput": true,
+    "testLogSha256": "60beb21f8a8b4b9e82e48e6eef68f0934867f120405f78ac163c00b363f61d2a"
+  },
+  "candidateStatus": "PASS",
+  "finalArtifactStatus": "FINAL_SEAL_REQUIRES_DETACHED_ACCEPTANCE",
+  "preSealFinalArtifact": {
+    "runs": 2,
+    "mode": "CONCURRENT_INDEPENDENT_EXACT_EXTRACTIONS",
+    "commandsPerRun": 110,
+    "result": "PASS",
+    "identicalOutput": true,
+    "testLogSha256": "60beb21f8a8b4b9e82e48e6eef68f0934867f120405f78ac163c00b363f61d2a"
+  }
+}

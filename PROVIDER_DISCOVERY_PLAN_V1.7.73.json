@@ -1,0 +1,128 @@
+{
+  "schema": "smarter-justice-provider-discovery-authorization-plan",
+  "releaseVersion": "1.7.73",
+  "plan_id": "SJP-PROVIDER-DISCOVERY-PLAN-2026-08-03-V1773",
+  "generatedAt": "2026-08-03T08:35:00-04:00",
+  "packId": "SJP-2026-08-02-C15-P37-D11-V13",
+  "source": {
+    "artifact_name": "smarter-justice-v1.7.72.zip",
+    "artifact_sha256": "db2b08c866c826abfc5d2a4b920419bacacbe6185f6f3d883cdec7c4af31c678",
+    "artifact_size_bytes": 8044070,
+    "identity_evidence_state": "EXACT_CURRENT_CHAT_VERIFIED"
+  },
+  "products": [
+    {
+      "product_id": "smarter-justice-central",
+      "public_name": "Smarter Justice",
+      "identity_evidence_state": "EXACT_CURRENT_CHAT_VERIFIED",
+      "request_state": "OWNER_AUTHORIZATION_REQUIRED",
+      "exact_blockers": [
+        "A detached owner authorization decision bound to the exact request ID and digest has not been supplied."
+      ],
+      "request": {
+        "schema_id": "SJP-PROVIDER-DISCOVERY-AUTHORIZATION-REQUEST-2026-08-02-V1",
+        "request_id": "provider-discovery-smarter-justice-v1.7.72-draft",
+        "created_at": "2026-08-03T08:35:00-04:00",
+        "expires_at": "2026-08-03T16:35:00-04:00",
+        "request_state": "OWNER_AUTHORIZATION_REQUIRED",
+        "authorization_state": "NOT_AUTHORIZED",
+        "product": {
+          "id": "smarter-justice-central",
+          "name": "Smarter Justice",
+          "version": "1.7.72",
+          "artifact_name": "smarter-justice-v1.7.72.zip",
+          "artifact_sha256": "db2b08c866c826abfc5d2a4b920419bacacbe6185f6f3d883cdec7c4af31c678",
+          "artifact_size_bytes": 8044070,
+          "identity_evidence_state": "EXACT_CURRENT_CHAT_VERIFIED"
+        },
+        "scopes": [
+          "GITHUB_REPOSITORY_METADATA",
+          "GITHUB_DEFAULT_BRANCH_COMMIT_TREE",
+          "RENDER_WORKSPACE_SERVICE_METADATA",
+          "DOMAIN_DNS_TLS_REDIRECT_METADATA",
+          "REQUIRED_SECRET_PRESENCE_ONLY",
+          "MIGRATION_CLASSIFICATION_METADATA",
+          "ROLLBACK_CANDIDATE_METADATA"
+        ],
+        "forbidden_actions": [
+          "READ_SECRET_VALUES",
+          "WRITE_REPOSITORY",
+          "CHANGE_BRANCH_OR_COMMIT",
+          "CREATE_OR_TRIGGER_DEPLOYMENT",
+          "CHANGE_RENDER_CONFIGURATION",
+          "CHANGE_DNS_OR_TLS",
+          "MUTATE_DATABASE",
+          "CREATE_OR_CHANGE_WEBHOOK",
+          "CHANGE_BILLING_OR_ENTITLEMENTS"
+        ],
+        "evidence_references": [
+          "smarter-justice-v1.7.72.zip",
+          "PROVIDER_DISCOVERY_RECEIPT_SMARTER_JUSTICE_SOURCE_V1.7.72.json",
+          "deployment/portfolio-products.json",
+          "deployment/launch-cohort-manifest.json"
+        ],
+        "read_only": true,
+        "secret_values_forbidden": true,
+        "write_operations_forbidden": true,
+        "deployment_requested": false,
+        "production_request_sent": false,
+        "next_executable_action": "Obtain a detached owner authorization decision bound to this exact request and digest before reading provider metadata."
+      }
+    },
+    {
+      "product_id": "divorce-law-aid",
+      "public_name": "Divorce Law Aid",
+      "identity_evidence_state": "VERSION_FILENAME_ONLY",
+      "request_state": "EXACT_ARTIFACT_CURRENTNESS_REQUIRED",
+      "exact_blockers": [
+        "The exact current product artifact bytes and SHA-256 were not supplied or freshly verified in this build."
+      ],
+      "request": null
+    },
+    {
+      "product_id": "estate-law-aid",
+      "public_name": "Estate Law Aid",
+      "identity_evidence_state": "HISTORICAL_EXACT_NOT_CURRENT_CHAT_VERIFIED",
+      "request_state": "EXACT_ARTIFACT_CURRENTNESS_REQUIRED",
+      "exact_blockers": [
+        "Historical identity evidence exists, but the exact current product artifact was not supplied or freshly verified in this build."
+      ],
+      "request": null
+    },
+    {
+      "product_id": "personal-injury-law-aid",
+      "public_name": "Personal Injury Law Aid",
+      "identity_evidence_state": "HISTORICAL_EXACT_NOT_CURRENT_CHAT_VERIFIED",
+      "request_state": "EXACT_ARTIFACT_CURRENTNESS_REQUIRED",
+      "exact_blockers": [
+        "Historical identity evidence exists, but the exact current product artifact was not supplied or freshly verified in this build."
+      ],
+      "request": null
+    },
+    {
+      "product_id": "domestic-violence-aid",
+      "public_name": "Domestic Violence Aid",
+      "identity_evidence_state": "HISTORICAL_EXACT_NOT_CURRENT_CHAT_VERIFIED",
+      "request_state": "EXACT_ARTIFACT_CURRENTNESS_REQUIRED",
+      "exact_blockers": [
+        "Historical identity evidence exists, but the exact current product artifact was not supplied or freshly verified in this build."
+      ],
+      "request": null
+    }
+  ],
+  "summary": {
+    "product_count": 5,
+    "exact_current_chat_verified_count": 1,
+    "owner_authorization_required_count": 1,
+    "artifact_currentness_required_count": 4,
+    "authorized_request_count": 0,
+    "completed_discovery_count": 0
+  },
+  "cohortFreezeEligible": false,
+  "cohortFrozen": false,
+  "recommendedCanaryProductId": null,
+  "deploymentAuthorized": false,
+  "productionRequestSent": false,
+  "secretValuesRead": false,
+  "nextProtectedAction": "Review and, only if intended, issue a detached owner authorization decision for the exact Smarter Justice v1.7.72 read-only request; independently supply and verify each portal's exact current artifact before authorizing that portal's request."
+}

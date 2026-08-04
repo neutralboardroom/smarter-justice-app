@@ -1,0 +1,27 @@
+{
+  "schema": "smarter-justice-provider-preflight-aggregate",
+  "releaseVersion": "1.7.71",
+  "generatedAt": "2026-08-02T16:19:00-04:00",
+  "sourceReceipts": [
+    "PROVIDER_DISCOVERY_RECEIPT_SMARTER_JUSTICE_SOURCE_V1.7.70.json"
+  ],
+  "suppliedReceiptCount": 1,
+  "validReceiptCount": 1,
+  "completeReceiptCount": 0,
+  "missingInitialCutoverReceipts": [
+    "divorce-law-aid",
+    "estate-law-aid",
+    "personal-injury-law-aid",
+    "domestic-violence-aid"
+  ],
+  "cohortFreezeEligible": false,
+  "cohortFrozen": false,
+  "canaryEligibleProductIds": [],
+  "recommendedCanaryProductId": null,
+  "deploymentAuthorized": false,
+  "productionRequestSent": false,
+  "secretValuesRead": false,
+  "crossBlockingApplied": false,
+  "missingReceiptInferenceApplied": false,
+  "nextExecutableAction": "Collect the four missing initial-product receipts and replace the Smarter Justice local-only source receipt with an owner-authorized read-only provider discovery receipt."
+}

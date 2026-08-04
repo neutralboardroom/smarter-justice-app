@@ -1,0 +1,286 @@
+{
+  "version": "1.0.0",
+  "generatedForRelease": "1.7.29",
+  "scope": "Smarter Justice and its separate legal micro-portals only",
+  "automaticCrossRepositorySynchronization": false,
+  "currentSmarterJusticeArtifact": {
+    "portalId": "general-smarter-justice-start",
+    "portalName": "Smarter Justice",
+    "version": "1.7.28",
+    "artifactName": "smarter-justice-v1.7.28.zip",
+    "sha256": "05ff27ec4a584457c904ad3701c14ba50096e79acc38153f0e296f2ab450a63b",
+    "sizeBytes": 2917694,
+    "zipEntries": 454,
+    "files": 443,
+    "explicitDirectories": 11,
+    "evidenceLevel": "exact artifact independently verified in the v1.7.29 build audit",
+    "deploymentStatus": "not deployed; last verified production remains v1.6.1",
+    "recordedAt": "2026-07-24"
+  },
+  "artifactHistory": [
+    {
+      "portalId": "general-smarter-justice-start",
+      "portalName": "Smarter Justice",
+      "role": "authoritative current development base",
+      "version": "1.7.27",
+      "artifactName": "smarter-justice-v1.7.27.zip",
+      "sha256": "3a627d1c5775b79e309605c1d74582d995314e8229805e9b6a954283eb985b46",
+      "sizeBytes": 2894831,
+      "zipEntries": 439,
+      "files": 428,
+      "explicitDirectories": 11,
+      "repositoryRoot": "root-level repository structure",
+      "evidenceLevel": "exact artifact verified and source inspected",
+      "deploymentStatus": "not deployed; last verified production remains v1.6.1",
+      "sourceOfTruthRule": "The uploaded ZIP must be inspected and exact-tested before any later build supersedes this record.",
+      "supersededBy": {
+        "version": "1.7.28",
+        "sha256": "05ff27ec4a584457c904ad3701c14ba50096e79acc38153f0e296f2ab450a63b",
+        "recordedAt": "2026-07-24"
+      }
+    },
+    {
+      "portalId": "business-launch-desk",
+      "portalName": "Business Launch Desk",
+      "role": "specialty reference artifact",
+      "version": "0.2.39",
+      "artifactName": "business-launch-desk-v0.2.39-compliance-calendar-continuous-improvement-phase-one-profile-growth-full-build.zip",
+      "uploadedArtifactName": "business-launch-desk-v0.2.39-compliance-calendar-continuous-improvement-phase-one-profile-growth-full-build(1).zip",
+      "sha256": "5c23d207366f96e5265e9f2adccaba7f7a5e8fa5cc7cf5955f38e10ea59ae52b",
+      "sizeBytes": 915417,
+      "zipEntries": 499,
+      "files": 499,
+      "explicitDirectories": 0,
+      "uncompressedFileBytes": 3956030,
+      "repositoryRoot": "business-launch-desk-v0.2.39/",
+      "evidenceLevel": "exact artifact identity verified; continuation prompt audited",
+      "deploymentStatus": "not confirmed deployed",
+      "continuationPrompt": {
+        "artifactName": "Business_Launch_Desk_Complete_Audited_Expanded_Master_Continuation_Prompt_After_v0.2.39.txt",
+        "sha256": "9011a8615cb7aa04ed7aafc15e63b0f0d7c9ea165e00ed3e9d4b075d3c5ca910",
+        "sizeBytes": 99645
+      }
+    },
+    {
+      "portalId": "justice-tax-solutions",
+      "portalName": "Justice Tax Solutions",
+      "role": "specialty reference artifact",
+      "version": "0.1.107",
+      "artifactName": "justice-tax-solutions-v0.1.107.zip",
+      "uploadedArtifactName": "justice-tax-solutions-v0.1.107(1).zip",
+      "sha256": "f470ace7021230fdb286f5090b1244fd67df26851b212a2fef622da81463354c",
+      "sizeBytes": 41473044,
+      "zipEntries": 857,
+      "files": 822,
+      "explicitDirectories": 35,
+      "uncompressedFileBytes": 75143037,
+      "repositoryRoot": "justice-tax-solutions-v0.1.107/",
+      "evidenceLevel": "exact artifact identity and safety verified; continuation prompt audited",
+      "deploymentStatus": "not confirmed deployed",
+      "continuationPrompt": {
+        "artifactName": "Justice_Tax_Solutions_Complete_Audited_Expanded_Master_Continuation_Prompt_After_v0.1.107.txt",
+        "sha256": "f63d954f9552b534826582d14c2a3cbf76b6079fa149ce75d7312882cf32c8f9",
+        "sizeBytes": 93793
+      }
+    },
+    {
+      "portalId": "immigration-oasis",
+      "portalName": "Immigration Oasis",
+      "role": "authoritative lean continuation overlay",
+      "version": "1.10.254",
+      "artifactName": "immigration-oasis-plus-humans-v1.10.254-LEAN-CONTINUATION-evidence-response-packet-profile-yield-do-not-clean-deploy.zip",
+      "uploadedArtifactName": "immigration-oasis-plus-humans-v1.10.254-LEAN-CONTINUATION-evidence-response-packet-profile-yield-do-not-clean-deploy(1).zip",
+      "sha256": "3d712aa342e66e272b49376d82517b099625222f135c2a94346693bbeb441ac4",
+      "sizeBytes": 18583502,
+      "zipEntries": 2249,
+      "files": 2249,
+      "explicitDirectories": 0,
+      "uncompressedFileBytes": 69729768,
+      "repositoryRoot": "root-level lean overlay",
+      "evidenceLevel": "exact artifact verified; overlay relationship and assembled full-source preflight verified",
+      "deploymentStatus": "must never be clean-deployed by itself",
+      "pairedArtifactId": "immigration-oasis-full-base-1.10.162",
+      "continuationPrompt": {
+        "artifactName": "Immigration_Oasis_Complete_Audited_Expanded_Master_Continuation_Prompt_After_v1.10.254.txt",
+        "sha256": "a770377cf56764f8fb293094c6e53caf30498ca8fb462c3e3b685d4789468bfe",
+        "sizeBytes": 91162
+      }
+    },
+    {
+      "artifactId": "immigration-oasis-full-base-1.10.162",
+      "portalId": "immigration-oasis",
+      "portalName": "Immigration Oasis",
+      "role": "preserved full official-form asset backstop",
+      "version": "1.10.162",
+      "artifactName": "immigration-oasis-plus-humans-v1.10.162-first-base-full-archive.zip",
+      "uploadedArtifactName": "immigration-oasis-plus-humans-v1.10.162-first-base-full-archive THIS IS THE FULL VERSION WE NEED(3).zip",
+      "sha256": "5676cec930733131a83d6d347d2241812e7719b89c773a45e5c80053ba383661",
+      "sizeBytes": 263398342,
+      "zipEntries": 2680,
+      "files": 2680,
+      "explicitDirectories": 0,
+      "uncompressedFileBytes": 389600526,
+      "repositoryRoot": "immigration-oasis-plus-humans-v1.10.162-first-base-full-archive/",
+      "evidenceLevel": "exact artifact verified; non-destructive overlay preflight passed when paired with v1.10.254",
+      "deploymentStatus": "asset base only; overlay latest lean source before build or deploy",
+      "pairedArtifactId": "immigration-oasis-lean-1.10.254"
+    },
+    {
+      "portalId": "general-smarter-justice-start",
+      "portalName": "Smarter Justice",
+      "version": "1.7.28",
+      "artifactName": "smarter-justice-v1.7.28.zip",
+      "sha256": "05ff27ec4a584457c904ad3701c14ba50096e79acc38153f0e296f2ab450a63b",
+      "sizeBytes": 2917694,
+      "zipEntries": 454,
+      "files": 443,
+      "explicitDirectories": 11,
+      "evidenceLevel": "exact artifact independently verified in the v1.7.29 build audit",
+      "deploymentStatus": "not deployed; last verified production remains v1.6.1",
+      "recordedAt": "2026-07-24"
+    }
+  ],
+  "identityChecks": [
+    {
+      "portalId": "general-smarter-justice-start",
+      "version": "1.7.27",
+      "artifactName": "smarter-justice-v1.7.27.zip",
+      "sha256": "3a627d1c5775b79e309605c1d74582d995314e8229805e9b6a954283eb985b46",
+      "sizeBytes": 2894831,
+      "validation": {
+        "valid": true,
+        "errors": []
+      }
+    },
+    {
+      "portalId": "business-launch-desk",
+      "version": "0.2.39",
+      "artifactName": "business-launch-desk-v0.2.39-compliance-calendar-continuous-improvement-phase-one-profile-growth-full-build.zip",
+      "sha256": "5c23d207366f96e5265e9f2adccaba7f7a5e8fa5cc7cf5955f38e10ea59ae52b",
+      "sizeBytes": 915417,
+      "validation": {
+        "valid": true,
+        "errors": []
+      }
+    },
+    {
+      "portalId": "justice-tax-solutions",
+      "version": "0.1.107",
+      "artifactName": "justice-tax-solutions-v0.1.107.zip",
+      "sha256": "f470ace7021230fdb286f5090b1244fd67df26851b212a2fef622da81463354c",
+      "sizeBytes": 41473044,
+      "validation": {
+        "valid": true,
+        "errors": []
+      }
+    },
+    {
+      "portalId": "immigration-oasis",
+      "version": "1.10.254",
+      "artifactName": "immigration-oasis-plus-humans-v1.10.254-LEAN-CONTINUATION-evidence-response-packet-profile-yield-do-not-clean-deploy.zip",
+      "sha256": "3d712aa342e66e272b49376d82517b099625222f135c2a94346693bbeb441ac4",
+      "sizeBytes": 18583502,
+      "validation": {
+        "valid": true,
+        "errors": []
+      }
+    },
+    {
+      "portalId": "immigration-oasis",
+      "version": "1.10.162",
+      "artifactName": "immigration-oasis-plus-humans-v1.10.162-first-base-full-archive.zip",
+      "sha256": "5676cec930733131a83d6d347d2241812e7719b89c773a45e5c80053ba383661",
+      "sizeBytes": 263398342,
+      "validation": {
+        "valid": true,
+        "errors": []
+      }
+    },
+    {
+      "portalId": "general-smarter-justice-start",
+      "version": "1.7.28",
+      "artifactName": "smarter-justice-v1.7.28.zip",
+      "sha256": "05ff27ec4a584457c904ad3701c14ba50096e79acc38153f0e296f2ab450a63b",
+      "sizeBytes": 2917694,
+      "validation": {
+        "valid": true,
+        "errors": []
+      }
+    }
+  ],
+  "staleRecords": [
+    {
+      "portalId": "business-launch-desk",
+      "recordedVersion": "0.2.39",
+      "recordedArtifact": "business-launch-desk-v0.2.39-compliance-calendar-continuous-improvement-phase-one-profile-growth-full-build.zip",
+      "status": "verify-before-update",
+      "reason": "This coordination snapshot may be older than the newest dedicated portal artifact. The registry must not be updated until that dedicated ZIP is uploaded and independently verified."
+    },
+    {
+      "portalId": "justice-tax-solutions",
+      "recordedVersion": "0.1.107",
+      "recordedArtifact": "justice-tax-solutions-v0.1.107.zip",
+      "status": "verify-before-update",
+      "reason": "This coordination snapshot may be older than the newest dedicated portal artifact. The registry must not be updated until that dedicated ZIP is uploaded and independently verified."
+    },
+    {
+      "portalId": "immigration-oasis",
+      "recordedVersion": "1.10.254",
+      "recordedArtifact": "immigration-oasis-plus-humans-v1.10.254-LEAN-CONTINUATION-evidence-response-packet-profile-yield-do-not-clean-deploy.zip",
+      "status": "verify-before-update",
+      "reason": "This coordination snapshot may be older than the newest dedicated portal artifact. The registry must not be updated until that dedicated ZIP is uploaded and independently verified."
+    },
+    {
+      "portalId": "immigration-oasis",
+      "recordedVersion": "1.10.162",
+      "recordedArtifact": "immigration-oasis-plus-humans-v1.10.162-first-base-full-archive.zip",
+      "status": "verify-before-update",
+      "reason": "This coordination snapshot may be older than the newest dedicated portal artifact. The registry must not be updated until that dedicated ZIP is uploaded and independently verified."
+    }
+  ],
+  "conflictRecords": [
+    {
+      "portalId": "smarter-ecosystem-control-center",
+      "artifactName": "smarter-ecosystem-control-center-v0.1.0.zip",
+      "classification": "out-of-scope-or-archival",
+      "resolution": "Keep as archival compatibility evidence only; do not continue a multi-sector platform."
+    }
+  ],
+  "decisionQueue": [
+    {
+      "portalId": "business-launch-desk",
+      "decision": "verify newest dedicated artifact before changing registry truth"
+    },
+    {
+      "portalId": "justice-tax-solutions",
+      "decision": "verify newest dedicated artifact before changing registry truth"
+    },
+    {
+      "portalId": "immigration-oasis",
+      "decision": "verify newest dedicated artifact before changing registry truth"
+    },
+    {
+      "portalId": "immigration-oasis",
+      "decision": "verify newest dedicated artifact before changing registry truth"
+    },
+    {
+      "portalId": "smarter-ecosystem-control-center",
+      "decision": "Keep as archival compatibility evidence only; do not continue a multi-sector platform."
+    }
+  ],
+  "appendOnlyRules": [
+    "Never delete or rewrite a previously verified artifact identity.",
+    "Add a supersession link only after the newer dedicated ZIP is independently verified.",
+    "Keep deployment truth separate from artifact existence.",
+    "Reject out-of-scope sector records.",
+    "Reject confidential matter data and secrets."
+  ],
+  "summary": {
+    "allowedPortalIds": 16,
+    "artifactHistoryRecords": 6,
+    "validIdentityRecords": 6,
+    "invalidIdentityRecords": 0,
+    "staleRecords": 4,
+    "conflicts": 1
+  }
+}

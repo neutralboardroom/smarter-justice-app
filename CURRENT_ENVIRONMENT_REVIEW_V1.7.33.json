@@ -1,0 +1,40 @@
+{
+  "version": "1.7.33",
+  "date": "2026-07-26",
+  "scope": "Owner architecture and exact v1.7.32 implementation facts. No external legal-source refresh was required because this release changes private legal-network governance, not public legal rules or forms.",
+  "items": [
+    {
+      "area": "Portfolio governance",
+      "finding": "Roger assigned Neutral Boardroom as the separate top-level strategic and final owner layer across all four pillars.",
+      "action": "Refocused Smarter Justice on legal-sector execution and added a bounded upward handoff."
+    },
+    {
+      "area": "Active runtime scope",
+      "finding": "Legacy ecosystem aliases and modules remained active even though current product scope was already legal-only.",
+      "action": "Retired active multi-sector routes, modules, UI identifiers, and standalone handoffs."
+    },
+    {
+      "area": "Data sovereignty",
+      "finding": "Top-level coordination needs only non-confidential metadata.",
+      "action": "Added explicit prohibited data classes, no live connection, no automatic writes, and graceful independence."
+    },
+    {
+      "area": "Smarter Justice operating priority",
+      "finding": "Smarter Justice is the only pillar currently being launched, marketed, operated, monetized, and perfected.",
+      "action": "Made legal-network operational priorities explicit; future pillars are not administered here."
+    },
+    {
+      "area": "Dependencies",
+      "finding": "Runtime dependency set is unchanged. Fresh registry installation remains subject to registry availability.",
+      "action": "Retry clean install and audit during exact-artifact testing; do not package test-only compatibility modules."
+    }
+  ],
+  "rejected": [
+    "A four-pillar administrator inside Smarter Justice",
+    "Direct writes from Smarter Justice into Neutral Boardroom",
+    "Central user-matter storage",
+    "A live integration presented before producer-consumer evidence",
+    "Profile-count padding",
+    "Cosmetic redesign unrelated to scope clarity"
+  ]
+}

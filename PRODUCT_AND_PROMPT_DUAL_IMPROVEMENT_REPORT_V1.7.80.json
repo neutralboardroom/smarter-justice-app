@@ -1,0 +1,119 @@
+{
+  "schema_id": "SJP-LMP-PRODUCT-AND-PROMPT-DUAL-IMPROVEMENT-REPORT-2026-08-03-V1",
+  "product": {
+    "name": "Smarter Justice",
+    "version": "1.7.80",
+    "artifact_sha256": "DETACHED_FINAL_NOT_YET_BUILT"
+  },
+  "release_classification": "ORDINARY_MATERIAL_DUAL_TRACK_RELEASE",
+  "independently_discovered_opportunities": [
+    "Convert the unified live-operations register from passive truth display into exact receipt validation without allowing automatic mutation.",
+    "Make V14 receipt/inventory creation reproducible rather than manually frozen."
+  ],
+  "creative_new_capability_candidates": [
+    "Live-evidence receipt connector",
+    "Preview-only state promotion",
+    "Deterministic V14 release receipt automation"
+  ],
+  "product_platform_improvements": [
+    {
+      "category": "PRODUCT_PLATFORM",
+      "problem": "v1.7.79 showed unified dependency states but had no exact receipt format or fail-closed promotion preview for new external evidence.",
+      "implementation": "Added a protected owner-only live-evidence contract and connector with exact source binding, canonical digest, 24-hour evidence window, component-specific required checks, secret/write/activation rejection, and preview-only proposed state. The connector never persists receipts or mutates the register.",
+      "before_state": "External evidence remained prose or provider-specific and could not be normalized safely.",
+      "after_state": "Exact nonsecret receipts can be validated and previewed while all state changes, owner GO, deployment, writes, and production activation remain separate and false.",
+      "affected_files_records_or_systems": [
+        "V14_LIVE_EVIDENCE_CONNECTOR_CONTRACT_V1.7.80.json",
+        "V14_UNIFIED_LIVE_OPERATIONS_REGISTER_V1.7.80.json",
+        "lib/v14LiveEvidenceConnector.js",
+        "lib/unifiedLiveOperations.js",
+        "server.js",
+        "tests/v14-live-evidence-connector-v1780.test.js"
+      ],
+      "tests_and_acceptance_evidence": [
+        "tests/v14-live-evidence-connector-v1780.test.js",
+        "tests/unified-live-operations-v1779.test.js"
+      ],
+      "benefit": "Roger can review consistent exact evidence before any dependency state changes, without exposing secrets or giving the connector deployment authority.",
+      "limitations": [
+        "No external adapter or live receipt is connected; no promotion is applied."
+      ]
+    }
+  ],
+  "builder_prompt_system_improvements": [
+    {
+      "category": "BUILDER_PROMPT_SYSTEM",
+      "problem": "V14 inventory and owner-receipt evidence could be validated after creation but lacked one deterministic generation/check command.",
+      "implementation": "Added deterministic UTF-8 path-sorted payload inventory generation with exact exclusions plus automated owner receipt inventory hash/count and outer-ZIP self-reference checks.",
+      "before_state": "The build had to freeze and verify receipt evidence through separate ad hoc steps.",
+      "after_state": "Candidate and final source freezes can use one reproducible generator/check path while detached final identity remains post-package only.",
+      "affected_files_or_artifacts": [
+        "V14_RELEASE_RECEIPT_AUTOMATION_V1.7.80.json",
+        "lib/v14ReleaseReceiptAutomation.js",
+        "scripts/generate-v14-release-receipts.js",
+        "OWNER_RECEIPT.txt",
+        "RELEASE_PAYLOAD_INVENTORY_SHA256.txt",
+        "tests/v14-release-receipt-automation-v1780.test.js",
+        "package.json"
+      ],
+      "tests_and_acceptance_evidence": [
+        "tests/v14-release-receipt-automation-v1780.test.js",
+        "tests/v14-release-governance-v1779.test.js"
+      ],
+      "future_build_benefit": "Reduces manual drift and ensures each candidate/final freeze carries reproducible non-self-referential evidence.",
+      "limitations": [
+        "The final outer ZIP SHA-256 and size still cannot be embedded."
+      ]
+    }
+  ],
+  "accepted_innovation_waves": [
+    "Exact live-evidence receipt validation",
+    "Deterministic V14 receipt/inventory automation"
+  ],
+  "reverted_or_rejected_innovation_waves": [
+    "Automatic state mutation from a submitted receipt was rejected.",
+    "Receipt persistence, external provider access, writes, deployment, and production activation were rejected."
+  ],
+  "lessons_carried_forward": [
+    "Evidence intake must be exact, current, nonsecret, and component-specific.",
+    "Validation and promotion preview are not authorization or state mutation.",
+    "V14 payload evidence should be generated reproducibly and outer ZIP identity must remain detached."
+  ],
+  "prior_limitations_reviewed": [
+    {
+      "id": "live-provider-and-deployment",
+      "source": "v1.7.79",
+      "disposition": "Preserved; connector validates only supplied evidence and performs no external action.",
+      "evidence": "V14_LIVE_EVIDENCE_CONNECTOR_CONTRACT_V1.7.80.json"
+    },
+    {
+      "id": "portal-compatibility",
+      "source": "v1.7.79",
+      "disposition": "Preserved; no portal receipt is invented.",
+      "evidence": "OWNER_RECEIPT.txt"
+    },
+    {
+      "id": "sensitive-document-ai",
+      "source": "v1.7.79",
+      "disposition": "Remains CLOSED_BY_DESIGN.",
+      "evidence": "V14_UNIFIED_LIVE_OPERATIONS_REGISTER_V1.7.80.json"
+    }
+  ],
+  "deferred_opportunities_with_exact_reasons": [
+    "External adapters require exact canonical service identities and protected read-only access.",
+    "State application requires a separate audited owner action.",
+    "OpenAI live smoke requires dark deployment and protected key entry.",
+    "Portal compatibility requires exact current portal artifacts."
+  ],
+  "next_innovation_opportunities": [
+    "Read-only GitHub and Render evidence adapters after canonical identities are supplied.",
+    "Detached final delivery receipt automation.",
+    "Controlled dark deployment and OpenAI smoke after all prerequisites pass."
+  ],
+  "dual_track_gate": {
+    "product_platform_track_passed": true,
+    "builder_prompt_system_track_passed": true,
+    "ordinary_material_release_authorized": true
+  },
+  "hard_constraints_preserved": true
+}

@@ -1,0 +1,51 @@
+{
+  "schema": "smarter-justice-current-build-intake",
+  "releaseVersion": "1.7.71",
+  "generatedAt": "2026-08-02T16:19:00-04:00",
+  "selectedBase": {
+    "filename": "smarter-justice-v1.7.70.zip",
+    "version": "1.7.70",
+    "sha256": "3a9f3c1bd554608225a2b152e3c3c4d089fd0a6a56c9242f2e49adf3027a606e",
+    "sizeBytes": 7749488,
+    "entries": 2470,
+    "files": 2446,
+    "directories": 24,
+    "uncompressedBytes": 23017804,
+    "compressedBytes": 7378990,
+    "inventoryRecords": 2445,
+    "inventorySha256": "ef5174a37e80d9e443eae167c3310dcecfa2e3597748b6fc3b6010e2f10850fe",
+    "packageJsonSha256": "167baef51783b8ad21f6bfb4efa0ab46b7801ce08b79e2c13fa47bcf57899537",
+    "packageLockSha256": "f37fd41d38b5e29fdffa90769e248667b3eefb4df62a9eb5d56951c06b2b6356",
+    "lockfileSha256": "f37fd41d38b5e29fdffa90769e248667b3eefb4df62a9eb5d56951c06b2b6356",
+    "sbomSha256": "29da861eb9aa9efdc19fe16170fe46457ca7515a8c980470be6d7d991b6d4e4a",
+    "treeSha256": "ef5174a37e80d9e443eae167c3310dcecfa2e3597748b6fc3b6010e2f10850fe",
+    "dependencyIndependentParts": 124,
+    "totalReadinessParts": 125,
+    "testLogSha256": "f42d200ed7f7cc40f9926533bcb8a4440e4599a0f6f45f8173e6fd9e5ff8433b",
+    "concurrentBaselineRuns": 2,
+    "concurrentBaselineResult": "PASS_IDENTICAL_OUTPUT",
+    "evidenceState": "CURRENT_CHAT_REPRODUCED"
+  },
+  "controllingPrompt": {
+    "pass": "EIGHTH PASS",
+    "sha256": "89f49e1433d05a937a31c2144e42e408a94c4502d8c388ad5f3a6eae7ad5aa68",
+    "sizeBytes": 282387,
+    "lineCount": 6542,
+    "complete": true
+  },
+  "activeMasterPair": "MPCR-2026-07-31-E1-R0-05F4296ED378",
+  "baselineReproduction": {
+    "cleanExtractions": 2,
+    "commandsPerExtraction": 119,
+    "identicalOutput": true,
+    "testLogSha256": "117bd79c2e1abd118cb38fef573a465bd18e04c816292a1196a0364cae0768a6"
+  },
+  "selectedScope": [
+    "exact v1.7.66 source and rollback reconciliation",
+    "current owner/handoff portal authority advancement",
+    "owner-action queue-source currentness repair",
+    "private prioritized launch-action packet",
+    "current official research revalidation"
+  ],
+  "launchState": "NO_GO"
+}

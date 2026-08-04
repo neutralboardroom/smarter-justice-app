@@ -1,0 +1,61 @@
+{
+  "releaseVersion": "1.7.54",
+  "generatedAt": "2026-07-30",
+  "status": "BLOCKED_WITH_EXACT_DIAGNOSIS",
+  "packageManager": {
+    "node": "v22.16.0",
+    "npm": "10.9.2",
+    "lockfileVersion": 3,
+    "lockfilePackageRecords": 16,
+    "runtimeDependencies": {
+      "nodemailer": "^9.0.3",
+      "pg": "^8.13.1"
+    },
+    "developmentDependencies": 0
+  },
+  "configuredRegistry": "CONFIGURED_PRIVATE_NPM_PROXY_REDACTED_FOR_RELEASE_PORTABILITY",
+  "configuredCleanInstallAttempt": {
+    "command": "npm ci --ignore-scripts --omit=dev",
+    "exitCode": 1,
+    "result": "HTTP_404",
+    "requestedArtifact": "xtend-4.0.2.tgz",
+    "accepted": false,
+    "requestedPath": "xtend/-/xtend-4.0.2.tgz"
+  },
+  "configuredAuditAttempt": {
+    "command": "npm audit --omit=dev --ignore-scripts --json",
+    "exitCode": 1,
+    "result": "HTTP_404",
+    "accepted": false,
+    "endpointPath": "-/npm/v1/security/audits/quick"
+  },
+  "publicRegistryInvestigation": {
+    "registry": "https://registry.npmjs.org",
+    "result": "INCONCLUSIVE_TIMEOUT_NO_ACCEPTANCE",
+    "observation": "An explicit public-registry npm ci attempt populated a temporary node_modules tree but did not return a successful exit within the bounded acceptance window; the process was terminated and no clean-install claim is made."
+  },
+  "lockfileEvidence": {
+    "xtendVersion": "4.0.2",
+    "xtendResolved": "https://registry.npmjs.org/xtend/-/xtend-4.0.2.tgz",
+    "xtendIntegrity": "sha512-LKYU1iAXJXUgAXn9URjiu+MWhyUXHsvfp7mcuYm9dSUKK0/CjtrUwFAxD82/mCWbtLsGjFIad0wIsod4zrTAEQ==",
+    "packageLockSha256": "ae22c56b733d2738aab637e30ff167b7d5b174a1f51c8f9a2662836406fe040f"
+  },
+  "sbom": {
+    "file": "SBOM.spdx.json",
+    "format": "SPDX-2.3",
+    "dependencyPackages": 15,
+    "sha256": "4663b42a3e5d6f34b0fb961e1f09988cb04eef2adca45532fa494de98b3b072e",
+    "deterministicGenerationVerifiedTwice": true,
+    "generator": "scripts/generate-sbom.js"
+  },
+  "productionReadiness": {
+    "pgDependencyPreserved": true,
+    "postgresqlAcceptance": "NOT_RUN_NO_DATABASE_URL_AND_CLEAN_INSTALL_NOT_ACCEPTED",
+    "vulnerabilityAcceptance": "NOT_ACCEPTED",
+    "vendoringUsed": false,
+    "newDependenciesAdded": false
+  },
+  "safeFailure": "The platform retains dependency-independent fallbacks for tests and fails closed for production persistence and sensitive writes. No production, PostgreSQL, audit, or supply-chain acceptance is claimed.",
+  "nextAcceptance": "Use an authorized functioning registry and audit endpoint, run exact clean npm ci, verify package provenance and licenses, then run the PostgreSQL acceptance script against an accepted database and preserve rollback evidence.",
+  "redactionNote": "The environment-specific private registry hostname and path prefix are intentionally omitted from the portable release. The exact command, package, endpoint suffix, HTTP status, and acceptance decision are preserved."
+}

@@ -1,0 +1,26 @@
+{
+  "schema": "smarter-justice-current-prompt-self-identity-receipt",
+  "releaseVersion": "1.7.63",
+  "generatedAt": "2026-07-31T23:11:00-04:00",
+  "currentPassLabel": "EIGHTH-PASS",
+  "prompt": {
+    "filename": "Smarter_Justice_Reusable_Version_Neutral_Complete_Immediate_Build_Master_Command_Eighth_Pass_Canonical_Active_Master_Pair_Runtime_Discovery_Pair_Epoch_Replay_Protection_Detached_Commit_Finalization_v1.7.61_Learning_2026-07-31.txt",
+    "packagedPath": "governance/masters/Smarter_Justice_Eighth_Pass_Master.txt",
+    "pass": "EIGHTH PASS",
+    "sha256": "89f49e1433d05a937a31c2144e42e408a94c4502d8c388ad5f3a6eae7ad5aa68",
+    "sizeBytes": 282387,
+    "lineCount": 6542,
+    "openingMarkerVerified": true,
+    "finalMarkerVerified": true
+  },
+  "requiredOpeningPrefix": "SMARTER JUSTICE\nEIGHTH-PASS REFINED REUSABLE VERSION-NEUTRAL COMPLETE IMMEDIATE BUILD",
+  "requiredEndingPrefix": "END OF EIGHTH-PASS",
+  "exactParent": {
+    "pass": "SEVENTH PASS",
+    "sha256": "1d84f962cd62a54196606f6b7740e6bf9faca02d2896b62180c50e6b6ddc1a09",
+    "sizeBytes": 274124,
+    "lineCount": 6413
+  },
+  "staleMarkerRegression": "PASS",
+  "state": "CURRENT_PROMPT_SELF_IDENTITY_MATCHED"
+}

@@ -1,0 +1,22 @@
+{
+  "schema": "smarter-justice-control-center-current-truth-acceptance",
+  "releaseVersion": "1.7.75",
+  "generatedAt": "2026-08-02T17:04:00-04:00",
+  "defect": "The private Control Center hardcoded v1.7.53 as the current development candidate.",
+  "resolution": "Replace the stale hardcoded claim with protected runtime release truth bound to exact source, rollback, detached final identity, launch, deployment, portal evidence and active master-pair state.",
+  "publicOrPrivateSurface": "PRIVATE_OWNER_CONTROL_CENTER",
+  "staleClaimRemoved": true,
+  "runtimeEndpoint": "/api/owner/current-release-truth",
+  "controlCenterPayloadField": "currentReleaseTruth",
+  "source": "smarter-justice-v1.7.73.zip",
+  "rollback": "smarter-justice-v1.7.73.zip",
+  "launchState": "NO_GO",
+  "deploymentAuthorized": false,
+  "liveGatesOpened": false,
+  "acceptanceState": "PASS_WORKING_TREE_TWO_RUNS_FROZEN_SOURCE_PENDING",
+  "dependencyIndependentParts": 126,
+  "sourceTrees": 2,
+  "testLogSha256": "2159c3e45c693c7662927331521547e797301f4f1764a5398c4bf11617cf1e52",
+  "identicalOutput": true,
+  "totalReadinessParts": 127
+}

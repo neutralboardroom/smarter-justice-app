@@ -1,0 +1,93 @@
+{
+  "schemaVersion": "1.0.0",
+  "releaseVersion": "1.7.46",
+  "generatedAt": "2026-07-29T19:35:00-04:00",
+  "deploymentAuthorized": false,
+  "status": "FINAL_ARTIFACT_IDENTITY_REPORTED_EXTERNALLY_AFTER_DETERMINISTIC_PACKAGING",
+  "baseline": {
+    "filename": "smarter-justice-v1.7.45.zip",
+    "version": "1.7.45",
+    "sha256": "2549ada6af5c88080736b3adede32f893b321a8f57682fe9d0538f75024af8b0",
+    "sizeBytes": 2550227,
+    "entryCount": 903,
+    "fileCount": 889,
+    "directoryCount": 14,
+    "inventoryRecords": 888,
+    "inventorySha256": "a6fe26986d8577d3024715e7448b444500741ac536238edd5c2e89dde3d9be57",
+    "treeDigest": "1e186586f2198f0b5bf1bede21646efcc7a16738e135bb34f883cd4c15852c84"
+  },
+  "artifact": {
+    "filename": "smarter-justice-v1.7.46.zip",
+    "sha256": "DETACHED_AFTER_PACKAGING",
+    "sizeBytes": 0,
+    "entryCount": 966,
+    "fileCount": 952,
+    "directoryCount": 14,
+    "inventoryRecords": 951
+  },
+  "tests": {
+    "officialParts": 101,
+    "dependencyIndependentExpected": 100,
+    "postgresqlDependent": 1,
+    "results": "ALL_100_DEPENDENCY_INDEPENDENT_PARTS_PASSED_IN_WORKING_TREE_AND_REQUIRED_FROM_TWO_FINAL_EXACT_EXTRACTIONS",
+    "dependencyIndependentPassed": 100,
+    "postgresqlDependentBlocked": 1,
+    "launchPreflight": "NO_GO_0_OF_4_LANES_92_BLOCKED_CHECKS",
+    "javascriptSyntax": "225_OF_225",
+    "jsonParse": "362_OF_362",
+    "xmlParse": "1_OF_1",
+    "publicHtmlPages": 73
+  },
+  "dependencyAccess": {
+    "cleanInstall": "BLOCKED_REGISTRY_HTTP_404_XTEND_4_0_2",
+    "vulnerabilityAudit": "BLOCKED_AUDIT_ENDPOINT_HTTP_404",
+    "fakeDependencyUsed": false,
+    "lockfileAltered": false
+  },
+  "implementation": {
+    "initialLaunchActivationWorkbench": true,
+    "launchBlockerDeduplication": true,
+    "nonActivatingEvidenceBoundary": true,
+    "launchRehearsalTracking": true,
+    "launchIssuePauseTriggers": true,
+    "threePortalAttorneyLaunchEntry": true,
+    "legalOnlyLaunchMessaging": true,
+    "unapprovedExactPricingRemoved": true,
+    "freeBasicProfileControlPreserved": true,
+    "portalSpecificProfileManagement": true,
+    "livePaidGrowth": false,
+    "publicProfileProductionActivation": false,
+    "livePortalImports": false,
+    "automaticPortalWrites": false,
+    "deployment": false
+  },
+  "materialChanges": [
+    "Private Initial Launch Activation workbench",
+    "Prioritized deduplicated P0 and P1 blocker queue",
+    "Non-activating evidence, rehearsal and issue records",
+    "Focused attorney and law-firm entry for three initial portals",
+    "Legal-only active launch messaging",
+    "Removal of unapproved exact prices, discounts and legacy active-pilot claims",
+    "Current release truth and regression reconciliation"
+  ],
+  "deployment": {
+    "deployed": false,
+    "authorized": false,
+    "lastVerifiedProductionVersion": "1.6.1",
+    "rollbackArtifact": "OWNER_APPROVAL_REQUIRED",
+    "livePortalConnections": 0,
+    "automaticPortalWrites": false,
+    "livePayments": false,
+    "sponsoredPlacementsOpen": false,
+    "caseOpportunityAccessOpen": false
+  },
+  "limitations": [
+    "Legitimate dependency install and fresh vulnerability audit remain blocked by configured endpoints",
+    "PostgreSQL, SMTP, MFA operations, monitoring, backup, restore and exact rollback are not externally accepted",
+    "D4 staging is incomplete for all three initial portals",
+    "Browser, physical-device and assistive-technology acceptance is not complete",
+    "Pricing and paid-product legal/commercial terms are not accepted",
+    "No production deployment is authorized"
+  ],
+  "launchPreflightEvidenceDigest": "0eeccc6235ecf36e5bd7ee73b11858c72fec70c84d830288311e8d9e065a664e"
+}

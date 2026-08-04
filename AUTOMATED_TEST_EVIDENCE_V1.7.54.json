@@ -1,0 +1,68 @@
+{
+  "releaseVersion": "1.7.54",
+  "generatedAt": "2026-07-30",
+  "nodeVersion": "v22.16.0",
+  "npmVersion": "10.9.2",
+  "testModel": {
+    "dependencyIndependentCommandParts": 108,
+    "postgresqlDependentReadinessParts": 1,
+    "totalReadinessParts": 109
+  },
+  "sourceAcceptance": {
+    "status": "PASSED_TWICE_IN_INDEPENDENT_SOURCE_TREES",
+    "command": "npm test",
+    "runs": [
+      {
+        "tree": "/mnt/data/sj1754-work",
+        "result": "PASS",
+        "logSha256": "d2a0d07e98caa62683fca6a5ce8bb6d9adc28648f29d49702abc45ae6ed955d1"
+      },
+      {
+        "tree": "independent clean source copy",
+        "result": "PASS",
+        "logSha256": "d2a0d07e98caa62683fca6a5ce8bb6d9adc28648f29d49702abc45ae6ed955d1"
+      }
+    ],
+    "logsIdentical": true,
+    "sourceTreeFilesCompared": 1317,
+    "sourceTreeHashesEqualBeforeEvidenceFinalization": true,
+    "coveredFacts": {
+      "publicHtmlPages": 76,
+      "practiceAreas": 69,
+      "catalogRows": 74,
+      "professionalRecords": 233,
+      "firmRecords": 48,
+      "launchState": "NO_GO"
+    }
+  },
+  "newReleaseTest": "tests/truth-lifecycle-governance-v1754.test.js",
+  "newReleaseCoverage": [
+    "current exact source and rollback truth",
+    "four owner-recorded initial portal identities",
+    "field ownership and conflict decisions",
+    "correction packet receipts",
+    "firm/office/seat/roster lifecycle policy",
+    "billing and opportunity fail-closed decisions",
+    "notification redaction and idempotency",
+    "owner-only governance endpoint",
+    "deterministic SBOM contract",
+    "closed commercial and portal gates"
+  ],
+  "candidateArchiveAcceptance": {
+    "status": "PASS",
+    "evidence": "CANDIDATE_ARTIFACT_ACCEPTANCE_V1.7.54.json",
+    "artifactSha256": "3f30b524469e1302a758f3389ce429812b5bdc8c75d979fa9784b347c7427a84",
+    "freshExtractionRuns": 2,
+    "testLogSha256": "d2a0d07e98caa62683fca6a5ce8bb6d9adc28648f29d49702abc45ae6ed955d1"
+  },
+  "finalArchiveAcceptance": "DETACHED_AFTER_FINAL_BUILD",
+  "claimsNotMade": [
+    "PostgreSQL acceptance",
+    "clean dependency installation through the configured registry",
+    "fresh vulnerability audit",
+    "SMTP acceptance",
+    "real-device or assistive-technology acceptance",
+    "D4 portal staging",
+    "deployment or launch approval"
+  ]
+}

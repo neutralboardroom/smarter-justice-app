@@ -1,0 +1,10 @@
+{
+  "version": "1.7.22",
+  "leadMarket": "Northern Metro New Jersey",
+  "nextLeadMarket": "Brooklyn",
+  "target": {"newIndividualProfessionals":12,"newFirms":2,"newProfessionalFirmLinks":12,"markets":{"Northern Metro New Jersey":8,"Manhattan":2,"Brooklyn":2}},
+  "actual": {"newIndividualProfessionals":12,"newFirms":2,"newProfessionalFirmLinks":12,"markets":{"Northern Metro New Jersey":8,"Manhattan":2,"Brooklyn":2}},
+  "finalDirectory": {"publicProfessionals":65,"publicFirms":24,"publicTotal":89,"qualifyingProfessionals":64,"qualifyingFirms":22,"qualifyingTotal":86},
+  "safety": {"allNewProfilesUnclaimed":true,"credentialVerificationCompleted":false,"participationActivated":false,"paymentsActivated":false,"inquiryEligibilityActivated":false},
+  "sourcePolicy": "Professional-controlled public pages are summarized conservatively. Rankings, awards, testimonials, case results, and promotional outcome claims are excluded. Independent credential verification remains pending."
+}

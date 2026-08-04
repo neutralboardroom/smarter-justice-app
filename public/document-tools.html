@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Device-Only Document Review, Action Plan, Drafts, and Preparation Binder | Smarter Justice</title>
+  <meta name="description" content="Review and compare text, build a source-linked action plan, prepare a factual draft, and assemble a private preparation binder on your device. Document contents are not sent, saved, or shared.">
+  <meta property="og:title" content="Device-Only Document Review, Action Plan, Drafts, and Preparation Binder | Smarter Justice">
+  <meta property="og:description" content="A free rules-based workspace for reviewing text, comparing versions, preserving corrections, building a source-linked plan, preparing a factual draft, and assembling a private preparation binder without sending text to Smarter Justice.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#0b3356">
+  <link rel="canonical" href="https://smarterjustice.com/document-tools.html">
+  <meta property="og:image" content="https://smarterjustice.com/images/brand/smarter-justice-social.png">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/images/brand/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="/images/brand/favicon-48.png" sizes="48x48" type="image/png">
+  <link rel="apple-touch-icon" href="/images/brand/apple-touch-icon.png" sizes="180x180">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/styles.css">
+  <script defer src="/app.js"></script>
+  <script defer src="/document-tools.js"></script>
+  <script defer src="/live-chat.js"></script>
+</head>
+<body class="document-tools-page">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <a class="brand" href="/" aria-label="Smarter Justice home"><img src="/logo.svg" alt="Smarter Justice"></a>
+  <button aria-expanded="false" aria-label="Open menu" class="nav-toggle" data-nav-toggle type="button">Menu</button>
+  <nav class="top-nav" data-nav aria-label="Main navigation"><a href="/free-tools.html">Free Tools</a><a href="/professional-membership.html">Professionals</a><a href="/professionals.html">Profile Lookup</a><a href="/portals.html">Portals</a><a href="/#public-start">Public Start</a><a href="/pricing.html">Pricing</a><a href="/how-it-works.html">How It Works</a><a class="mobile-only-nav" href="/professional-login.html">Professional Sign In</a></nav>
+  <a class="header-signin" href="/professional-login.html">Sign In</a>
+  <a class="header-cta" href="/professional-signup.html?campaign=DOCUMENT-TOOLS">Prepare Account</a>
+</header>
+<main id="main">
+  <section class="page-hero document-tools-hero">
+    <p class="eyebrow">Free device-only document tools</p>
+    <h1>Review, compare, plan, draft, and organize a preparation binder without sending text to us.</h1>
+    <p class="lead">Open a supported text file or paste text into this browser tab. The rules-based tool can organize exact source lines, identify stated dates and action language, compare two versions, help you build a source-linked action plan, prepare a factual question or letter draft, and assemble a private preparation binder you control.</p>
+  </section>
+
+  <section class="section narrow">
+    <div class="notice device-only-notice" role="note">
+      <strong>Your text stays in this browser tab.</strong>
+      <p>This page does not transmit document contents to Smarter Justice, save them to an account, use an AI, or share them with a professional. Your source text, corrections, questions, plan items, and communication draft exist only in this tab unless you choose to download them. Refreshing or closing the tab clears the workspace. Do not use a shared device for sensitive material.</p>
+    </div>
+    <div class="notice warning-note" role="note">
+      <strong>Text files only right now.</strong>
+      <p>Supported local files are TXT, Markdown, CSV, and JSON, up to 1 MB. Scanned images and PDFs are not read here. Confirm all dates, amounts, names, and source language directly from the original document.</p>
+    </div>
+  </section>
+
+  <section class="section document-tools-shell" aria-labelledby="reviewHeading">
+    <div class="section-heading">
+      <p class="eyebrow">Review one document</p>
+      <h2 id="reviewHeading">Organize what the text directly states.</h2>
+      <p>The tool reports one-based line references and exact excerpts. It does not decide what the text legally means, calculate a deadline, or determine what action you should take.</p>
+    </div>
+    <form id="documentReviewForm" class="card guided-form document-review-form" novalidate>
+      <div class="form-grid two document-source-grid">
+        <label>Source name
+          <input id="reviewSourceName" name="sourceName" maxlength="120" placeholder="Example: Notice dated July 10, 2026">
+        </label>
+        <label>Open a local text file
+          <input id="reviewFile" name="reviewFile" type="file" accept=".txt,.md,.markdown,.csv,.json,text/plain,text/markdown,text/csv,application/json" aria-describedby="reviewFileHelp">
+          <small id="reviewFileHelp">The browser reads the file locally. Its contents are not sent to Smarter Justice.</small>
+        </label>
+      </div>
+      <label>Document text
+        <textarea id="reviewText" name="reviewText" rows="16" maxlength="250000" required aria-describedby="reviewTextHelp reviewTextCount" placeholder="Paste text here, or open a supported local text file above."></textarea>
+      </label>
+      <div class="story-form-meta"><small id="reviewTextHelp">Instruction-like language inside a document is treated only as source text and is never followed as a command.</small><span id="reviewTextCount">0 of 250,000 characters</span></div>
+      <div class="tool-actions">
+        <button class="primary" type="submit">Review Text</button>
+        <button class="secondary" id="clearReview" type="button">Clear Review</button>
+        <button class="secondary" id="downloadReview" type="button" disabled>Download Summary</button>
+      </div>
+      <div id="reviewError" class="error-summary" role="alert" tabindex="-1" hidden></div>
+    </form>
+    <section id="reviewResult" class="document-result" aria-live="polite" hidden></section>
+  </section>
+
+  <section id="action-plan" class="section light-section document-tools-shell" aria-labelledby="planHeading">
+    <div class="section-heading">
+      <p class="eyebrow">Source-linked action plan</p>
+      <h2 id="planHeading">Turn reviewed text into questions, missing information, and next steps.</h2>
+      <p>Review text above first. Then choose the exact source findings that matter, preserve any correction or interpretation separately from the original line, and add your own questions or actions. The tool never changes the source text or decides what you should do.</p>
+    </div>
+    <div class="notice device-only-notice" role="note">
+      <strong>Original text and your notes stay separate.</strong>
+      <p>A correction records the original line and your note side by side. It does not overwrite the document. Any target date is one you enter yourself; the tool does not calculate a legal deadline.</p>
+    </div>
+    <form id="actionPlanForm" class="card guided-form action-plan-form" novalidate>
+      <div id="planSourceStatus" class="plan-source-status" role="status">Review text above to begin a source-linked plan.</div>
+      <fieldset class="source-finding-picker">
+        <legend>Choose source findings to carry into the plan</legend>
+        <p class="fine-print">Nothing is selected automatically. Confirm each excerpt against the original document.</p>
+        <div id="planSourceFindings" class="plan-source-findings"></div>
+      </fieldset>
+
+      <fieldset class="plan-entry-card">
+        <legend>Add a question, missing-information item, or next action</legend>
+        <div class="form-grid two">
+          <label>Item type
+            <select id="planItemType">
+              <option value="question">Question to resolve</option>
+              <option value="missing-information">Information or document to find</option>
+              <option value="next-action">Next action I choose</option>
+              <option value="note">User note</option>
+            </select>
+          </label>
+          <label>User-chosen target date (optional)
+            <input id="planTargetDate" type="date" aria-describedby="planTargetHelp">
+            <small id="planTargetHelp">This is not a calculated or verified legal deadline.</small>
+          </label>
+        </div>
+        <label>Item text
+          <textarea id="planItemText" rows="4" maxlength="1200" placeholder="Example: Ask the issuing office whether the response must be received or postmarked by the stated date."></textarea>
+        </label>
+        <button class="secondary" id="addPlanItem" type="button">Add to Plan</button>
+      </fieldset>
+
+      <fieldset class="plan-entry-card">
+        <legend>Record a correction or interpretation without changing the source</legend>
+        <div class="form-grid correction-grid">
+          <label>Original source line
+            <input id="correctionLine" type="number" min="1" step="1" inputmode="numeric" placeholder="Line number">
+          </label>
+          <label>Your correction or note
+            <textarea id="correctionNote" rows="3" maxlength="1200" placeholder="Explain what may be wrong, incomplete, or differently understood."></textarea>
+          </label>
+        </div>
+        <button class="secondary" id="addCorrection" type="button">Add Separate Correction</button>
+      </fieldset>
+
+      <div id="planError" class="error-summary" role="alert" tabindex="-1" hidden></div>
+      <div class="tool-actions">
+        <button class="primary" type="submit">Build or Update Action Plan</button>
+        <button class="secondary" id="clearPlan" type="button">Clear Plan</button>
+        <button class="secondary" id="downloadPlanText" type="button" disabled>Download Text Plan</button>
+        <button class="secondary" id="downloadPlanJson" type="button" disabled>Download Structured Plan</button>
+      </div>
+      <div class="plan-live-lists">
+        <section aria-labelledby="planItemsHeading"><h3 id="planItemsHeading">Your added items</h3><div id="planItemsList" class="plan-item-list"><p class="fine-print">No user-added items yet.</p></div></section>
+        <section aria-labelledby="correctionsHeading"><h3 id="correctionsHeading">Separate corrections and notes</h3><div id="correctionsList" class="plan-item-list"><p class="fine-print">No corrections recorded.</p></div></section>
+      </div>
+    </form>
+    <section id="actionPlanResult" class="document-result" aria-live="polite" hidden></section>
+  </section>
+
+  <section id="communication-prep" class="section document-tools-shell" aria-labelledby="communicationHeading">
+    <div class="section-heading">
+      <p class="eyebrow">Factual communication preparation</p>
+      <h2 id="communicationHeading">Turn confirmed source lines into a question or letter draft you review.</h2>
+      <p>Review text above first. Then choose the exact source findings you want to reference, enter your own context and request, and build an editable draft. The tool does not invent facts, decide your strategy, contact anyone, or send the message.</p>
+    </div>
+    <div class="notice device-only-notice" role="note">
+      <strong>Draft locally, review before sending.</strong>
+      <p>The original source lines remain separate from the editable draft. Nothing is selected automatically. The draft stays in this browser tab and is not saved, analyzed by AI, placed in analytics, or shared with a professional.</p>
+    </div>
+    <form id="communicationForm" class="card guided-form communication-form" novalidate>
+      <div id="communicationSourceStatus" class="plan-source-status" role="status">Review text above to begin a draft based on exact source lines.</div>
+      <fieldset class="source-finding-picker">
+        <legend>Choose exact source findings to reference</legend>
+        <p class="fine-print">Confirm every selected excerpt against the original document. Selected lines appear in a separate source appendix.</p>
+        <div id="communicationSourceFindings" class="plan-source-findings"></div>
+      </fieldset>
+      <div class="form-grid two">
+        <label>Draft type
+          <select id="communicationType">
+            <option value="clarification">Request clarification</option>
+            <option value="correction">Request a correction or review</option>
+            <option value="records">Request records or information</option>
+            <option value="questions">Prepare questions</option>
+            <option value="follow-up">Follow up on an earlier communication</option>
+          </select>
+        </label>
+        <label>Recipient or office
+          <input id="communicationRecipient" maxlength="120" placeholder="Example: Benefits Office or Ms. Rivera">
+        </label>
+        <label>Subject (optional)
+          <input id="communicationSubject" maxlength="160" placeholder="Example: Question about notice dated July 10, 2026">
+        </label>
+        <label>Your name or closing name (optional)
+          <input id="communicationSender" maxlength="120" placeholder="Example: Jordan Lee">
+        </label>
+      </div>
+      <label>Context you want to include (optional)
+        <textarea id="communicationContext" rows="4" maxlength="1600" placeholder="Add only facts you have confirmed and want included. The tool will not add facts for you."></textarea>
+      </label>
+      <label>Your question or requested action
+        <textarea id="communicationRequest" rows="5" maxlength="2000" required placeholder="Example: Please explain whether the document must be returned by mail or may be submitted online."></textarea>
+      </label>
+      <div class="form-grid two">
+        <label>User-chosen response date (optional)
+          <input id="communicationResponseDate" type="date" aria-describedby="communicationDateHelp">
+          <small id="communicationDateHelp">This date is entered by you. It is not calculated or verified as a legal deadline.</small>
+        </label>
+        <label>Closing
+          <select id="communicationClosing">
+            <option value="Thank you">Thank you</option>
+            <option value="Sincerely">Sincerely</option>
+            <option value="Respectfully">Respectfully</option>
+          </select>
+        </label>
+      </div>
+      <div id="communicationError" class="error-summary" role="alert" tabindex="-1" hidden></div>
+      <div class="tool-actions">
+        <button class="primary" type="submit">Build Editable Draft</button>
+        <button class="secondary" id="clearCommunication" type="button">Clear Draft</button>
+        <button class="secondary" id="downloadCommunication" type="button" disabled>Download Draft and Sources</button>
+      </div>
+    </form>
+    <section id="communicationResult" class="document-result" aria-live="polite" hidden>
+      <h2 id="communicationResultHeading" tabindex="-1">Editable communication draft</h2>
+      <div class="notice review-boundary"><strong>Draft only—confirm every fact before sending.</strong><p>Edit the draft below as needed. The source appendix stays separate and is not part of the message unless you choose to include it.</p></div>
+      <label for="communicationDraftEditor"><strong>Your editable draft</strong></label>
+      <textarea id="communicationDraftEditor" class="communication-draft-editor" rows="18" maxlength="12000"></textarea>
+      <section class="source-finding-section" aria-labelledby="communicationAppendixHeading"><h3 id="communicationAppendixHeading">Source appendix</h3><div id="communicationSourceAppendix"></div></section>
+    </section>
+  </section>
+
+  <section id="preparation-binder" class="section light-section document-tools-shell" aria-labelledby="binderHeading">
+    <div class="section-heading">
+      <p class="eyebrow">Device-only preparation binder</p>
+      <h2 id="binderHeading">Organize confirmed source lines and your own work into one reviewable package.</h2>
+      <p>Review text above first. You may then select exact source findings and, when available, include the action plan and editable communication draft you already prepared in this tab. The binder is for your own records or preparation before speaking with someone; Smarter Justice does not receive or send it.</p>
+    </div>
+    <div class="notice device-only-notice" role="note">
+      <strong>A local organizer, not a filing or automatic sharing service.</strong>
+      <p>The binder keeps source excerpts, your corrections, your questions or actions, and any draft in clearly separated sections. It does not verify legal effect, create a professional relationship, send a message, upload a file, or calculate a deadline.</p>
+    </div>
+    <form id="preparationBinderForm" class="card guided-form preparation-binder-form" novalidate>
+      <div id="binderSourceStatus" class="plan-source-status" role="status">Review text above to begin a source-linked preparation binder.</div>
+      <fieldset class="source-finding-picker">
+        <legend>Choose exact source findings for the binder</legend>
+        <p class="fine-print">Nothing is selected automatically. Confirm every excerpt against the original document.</p>
+        <div id="binderSourceFindings" class="plan-source-findings"></div>
+      </fieldset>
+      <div class="form-grid two">
+        <label>Binder title
+          <input id="binderTitle" maxlength="160" required placeholder="Example: Preparation notes for July 10 notice">
+        </label>
+        <label>Purpose
+          <select id="binderPurpose">
+            <option value="personal-records">Organize my personal records</option>
+            <option value="self-help-follow-up">Prepare for my own follow-up</option>
+            <option value="professional-conversation">Prepare before speaking with a professional</option>
+            <option value="agency-or-office-contact">Prepare before contacting an office or organization</option>
+          </select>
+        </label>
+      </div>
+      <label>Your summary (optional)
+        <textarea id="binderSummary" rows="5" maxlength="2400" placeholder="Add only facts or context you have confirmed. This summary is labeled as user-entered and is not inferred by the tool."></textarea>
+      </label>
+      <fieldset class="plan-entry-card binder-inclusion-card">
+        <legend>Include work already prepared in this tab</legend>
+        <label class="checkbox-line"><input id="binderIncludePlan" type="checkbox"> Include the current action plan, user-added items, and separate corrections</label>
+        <label class="checkbox-line"><input id="binderIncludeCommunication" type="checkbox"> Include the current editable communication draft and its source appendix</label>
+        <p id="binderAvailability" class="fine-print">Build an action plan or communication draft above if you want to include it.</p>
+      </fieldset>
+      <div id="binderError" class="error-summary" role="alert" tabindex="-1" hidden></div>
+      <div class="tool-actions">
+        <button class="primary" type="submit">Build Preparation Binder</button>
+        <button class="secondary" id="clearBinder" type="button">Clear Binder</button>
+        <button class="secondary" id="downloadBinderText" type="button" disabled>Download Text Binder</button>
+        <button class="secondary" id="downloadBinderJson" type="button" disabled>Download Structured Binder</button>
+      </div>
+    </form>
+    <section id="preparationBinderResult" class="document-result" aria-live="polite" hidden></section>
+  </section>
+
+  <section class="section document-tools-shell" aria-labelledby="qualityCheckHeading"><div class="section-heading"><div><p class="eyebrow">Finish the preparation journey</p><h2 id="qualityCheckHeading">Check the packet for visible gaps before you share it.</h2><p>Use the deterministic current-tab Preparation Quality Check to review source labels, dates, record references, questions, next steps, duplicates, possible contradictions, source dates, and possible sensitive-number patterns.</p></div><a class="primary link-btn" href="/preparation-quality-check.html">Open Preparation Quality Check</a></div><div class="notice"><strong>No score or legal conclusion</strong><p>The check does not determine truth, credibility, merit, evidence sufficiency, case strength, legal deadlines, filing readiness, or which source controls.</p></div></section>
+<section class="section document-tools-shell" aria-labelledby="compareHeading">
+    <div class="section-heading">
+      <p class="eyebrow">Compare two versions</p>
+      <h2 id="compareHeading">See added, removed, and changed lines.</h2>
+      <p>Use this for two text versions of an agreement, notice, form, letter, policy, or other document. The comparison is descriptive and does not decide whether a change is favorable, valid, enforceable, or complete.</p>
+    </div>
+    <form id="documentCompareForm" class="card guided-form document-compare-form" novalidate>
+      <div class="document-tool-grid">
+        <fieldset class="source-input-card">
+          <legend>Version A</legend>
+          <label>Source name<input id="compareNameA" maxlength="120" placeholder="Example: Original agreement"></label>
+          <label>Open a local text file<input id="compareFileA" type="file" accept=".txt,.md,.markdown,.csv,.json,text/plain,text/markdown,text/csv,application/json"></label>
+          <label>Text<textarea id="compareTextA" rows="13" maxlength="250000" required placeholder="Paste Version A here."></textarea></label>
+          <small id="compareCountA">0 of 250,000 characters</small>
+        </fieldset>
+        <fieldset class="source-input-card">
+          <legend>Version B</legend>
+          <label>Source name<input id="compareNameB" maxlength="120" placeholder="Example: Revised agreement"></label>
+          <label>Open a local text file<input id="compareFileB" type="file" accept=".txt,.md,.markdown,.csv,.json,text/plain,text/markdown,text/csv,application/json"></label>
+          <label>Text<textarea id="compareTextB" rows="13" maxlength="250000" required placeholder="Paste Version B here."></textarea></label>
+          <small id="compareCountB">0 of 250,000 characters</small>
+        </fieldset>
+      </div>
+      <label class="checkbox-line"><input id="includeUnchanged" type="checkbox"> Include unchanged lines in the displayed comparison</label>
+      <div class="tool-actions">
+        <button class="primary" type="submit">Compare Versions</button>
+        <button class="secondary" id="clearComparison" type="button">Clear Comparison</button>
+        <button class="secondary" id="downloadComparison" type="button" disabled>Download Comparison</button>
+      </div>
+      <div id="compareError" class="error-summary" role="alert" tabindex="-1" hidden></div>
+    </form>
+    <section id="compareResult" class="document-result" aria-live="polite" hidden></section>
+  </section>
+
+  <section class="section narrow">
+    <div class="card legal-content">
+      <h2>Important limits</h2>
+      <ul class="check-list">
+        <li>Findings are based only on the text in this browser tab and may miss context, tables, formatting, attachments, handwriting, or unreadable material.</li>
+        <li>A date shown in the text is not necessarily a legal deadline. Confirm deadlines through the issuing source or a qualified professional.</li>
+        <li>No attorney, accountant, tax professional, Human Review Specialist, or other professional reviews this work through this page.</li>
+        <li>The tool does not create an attorney-client, accountant-client, tax-professional-client, or other professional relationship.</li>
+        <li>Use the original document—not this summary—as the controlling source.</li>
+      </ul>
+      <p><a href="/upload-notice.html">Describe a notice for a starting-path suggestion</a> or <a href="/professionals.html">find a professional</a> when you need more than device-only organization. A downloaded plan or draft is user-prepared material, not a filing, submission, professional review, verified deadline record, or message sent by Smarter Justice.</p>
+    </div>
+  </section>
+</main>
+<section class="footer-cta no-print"><div><strong>Need a starting path?</strong><span>Describe the situation without saving it, or browse focused portals and public resources.</span></div><div><a class="primary" href="/#public-start">Tell Us What Happened</a><a class="secondary" href="/portals.html">Browse Portals</a></div></section>
+<footer class="site-footer expanded-footer"><div class="footer-brand"><img src="/logo.svg" alt="Smarter Justice" class="footer-logo"><p>Free public starting help with one connected professional network. Smarter Justice is not a law firm, tax firm, accounting firm, or government agency.</p></div><div class="footer-column"><h2>Public Start</h2><a href="/#public-start">Tell Us What Happened</a><a href="/upload-notice.html">Describe a Notice</a><a href="/document-tools.html">Review, Plan, or Draft from Text</a><a href="/portals.html">Focused Portals</a></div><div class="footer-column"><h2>Professionals</h2><a href="/professional-membership.html">Membership</a><a href="/professionals.html">Find or Claim a Profile</a><a href="/professional-login.html">Sign In</a></div><div class="footer-column"><h2>Trust</h2><a href="/privacy.html">Privacy</a><a href="/security.html">Security</a><a href="/terms.html">Terms</a><a href="/disclaimer.html">Disclaimer</a></div><div class="footer-bottom"><span>© 2026 Smarter Justice</span><span>Document contents remain in the current browser tab.</span></div></footer>
+</body>
+</html>

@@ -1,0 +1,45 @@
+{
+  "schemaVersion": "1.0.0",
+  "releaseVersion": "1.7.42",
+  "classes": {
+    "LAUNCH_NOW": [
+      "Self-contained private owner operating-system foundation",
+      "Central professional account and claim foundations",
+      "Central firm, office and seat foundations",
+      "Read-only v1.4.0 handoff generation",
+      "Divorce, Estate and Personal Injury pilot specifications",
+      "Temporary noindex claim/migration profile lookup"
+    ],
+    "KEEP_BUT_HIDE": [
+      "Advanced public tools not required by initial launch",
+      "Dormant Neutral Boardroom optional export",
+      "Deferred specialty marketplace foundations"
+    ],
+    "STAFF_ONLY": [
+      "Owner decision register",
+      "Artifact and portal registries",
+      "Launch gates",
+      "Dependencies",
+      "Support and incident records",
+      "Handoff batches and receipts"
+    ],
+    "DEFER": [
+      "Live portal imports",
+      "Appointments",
+      "Reviews",
+      "Sponsorship",
+      "External AI",
+      "Confidential uploads",
+      "Real-time synchronization",
+      "Advanced firm hierarchy"
+    ],
+    "REMOVE_FROM_LAUNCH": [
+      "Automatic portal writes",
+      "Separate Car Accident public pilot",
+      "Workers compensation merged into Personal Injury",
+      "Claim-value or liability prediction",
+      "Unconfigured payment controls",
+      "Any feature represented as live without evidence"
+    ]
+  }
+}

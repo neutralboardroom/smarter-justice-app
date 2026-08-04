@@ -1,0 +1,27 @@
+{
+  "schema": "smarter-justice-current-prompt-self-identity-receipt",
+  "releaseVersion": "1.7.68",
+  "generatedAt": "2026-08-02T11:24:00-04:00",
+  "currentPassLabel": "FOURTEENTH-PASS",
+  "prompt": {
+    "filename": "Smarter_Justice_Central_Master_Fourteenth_Pass_Active_Deployment_File_4_and_Live_Launch_Execution_2026-08-01.txt",
+    "packagedPath": "governance/masters/Smarter_Justice_Central_Master_Fourteenth_Pass.txt",
+    "pass": "FOURTEENTH PASS",
+    "sha256": "aa195e85f8b76ca6e3cb388477fd7acc0ed7e057c5a680e1c14ee7e801715250",
+    "sizeBytes": 375571,
+    "lineCount": 8067,
+    "openingMarkerVerified": true,
+    "finalMarkerVerified": true,
+    "selfExcludingSha256": null
+  },
+  "requiredOpeningPrefix": "SMARTER JUSTICE CENTRAL MASTER\nFOURTEENTH-PASS REUSABLE VERSION-NEUTRAL COMPLETE IMMEDIATE BUILD COMMAND",
+  "requiredEndingPrefix": "END OF SMARTER JUSTICE CENTRAL MASTER FOURTEENTH-PASS",
+  "exactParent": {
+    "pass": "THIRTEENTH PASS",
+    "sha256": "2027379953b53b17eaafceb8aaf10871e0efc51282e0de095d42d2de0e253f4d",
+    "sizeBytes": 366579,
+    "lineCount": 7920
+  },
+  "staleMarkerRegression": "PASS",
+  "state": "CURRENT_PROMPT_SELF_IDENTITY_MATCHED"
+}

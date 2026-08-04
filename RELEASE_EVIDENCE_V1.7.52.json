@@ -1,0 +1,97 @@
+{
+  "release": "1.7.52",
+  "generatedAt": "2026-07-30",
+  "status": "CANDIDATE_PENDING_FINAL_EXACT_ACCEPTANCE",
+  "sourceBaseline": {
+    "version": "1.7.51",
+    "filename": "smarter-justice-v1.7.51.zip",
+    "sha256": "d67b3871ac03be5f33eee1a99802f8f1cd0503a47221b9ff669f45afe873f439",
+    "sizeBytes": 3122852
+  },
+  "scope": "Canonical Attorney Partner Tour, stable post-meeting continuation, owner outreach readiness, document-help coordination, Justice Booth truth controls, and first-impression acceptance evidence.",
+  "testModel": {
+    "dependencyIndependentParts": 106,
+    "postgresqlDependentParts": 1,
+    "officialParts": 107,
+    "defaultNpmTestExcludesPostgresqlDependentPart": true
+  },
+  "exactArtifact": {
+    "filename": "smarter-justice-v1.7.52.zip",
+    "identityMode": "DETACHED_AFTER_PACKAGING",
+    "sha256": "RECORDED_IN_EXTERNAL_DELIVERY_REPORT",
+    "sizeBytes": "RECORDED_IN_EXTERNAL_DELIVERY_REPORT",
+    "deterministicBuild": "RECORDED_IN_DETACHED_DELIVERY_REPORT",
+    "cleanExtractionRuns": "RECORDED_IN_DETACHED_DELIVERY_REPORT",
+    "entryCount": 1269,
+    "fileCount": 1253,
+    "directoryCount": 16,
+    "inventoryRecords": 1252
+  },
+  "launchState": "NO_GO",
+  "deploymentAuthorized": false,
+  "closedGates": [
+    "deployment",
+    "DNS",
+    "live portals",
+    "automatic publication",
+    "automatic write-back",
+    "payment",
+    "Sponsored",
+    "Featured",
+    "opportunities",
+    "reviews",
+    "appointments",
+    "confidential uploads",
+    "external AI",
+    "electronic filing",
+    "automatic outreach",
+    "confidential-location handling"
+  ],
+  "authenticBlockers": [
+    "Configured registry cannot retrieve xtend-4.0.2.tgz",
+    "Configured vulnerability-audit endpoint returns 404",
+    "Production infrastructure and exact four-portal staging not accepted",
+    "Domestic Violence current resource, legal/privacy, accessibility, support, monitoring and owner acceptance incomplete"
+  ],
+  "workingTreeValidation": {
+    "dependencyIndependentPartsPassed": 106,
+    "dependencyIndependentPartsTotal": 106,
+    "javascriptSyntaxFilesPassed": 239,
+    "jsonFilesParsed": 521,
+    "xmlFilesParsed": 1,
+    "htmlSurfacesAudited": 75,
+    "highSignalSecretScan": "PASS",
+    "developmentDebrisScan": "PASS"
+  },
+  "visualAcceptance": {
+    "routes": [
+      "/",
+      "/attorney-partner-tour.html",
+      "/document-tools.html?tour=1&practice=divorce"
+    ],
+    "viewports": [
+      "desktop",
+      "laptop",
+      "tablet",
+      "phone"
+    ],
+    "horizontalOverflow": "NONE_OBSERVED",
+    "javascriptConsoleErrors": "NONE_OBSERVED",
+    "keyboardEntry": "PASS_FOR_TESTED_SURFACES",
+    "limitations": "Rendered evidence is not production, real-device, assistive-technology or live-portal acceptance."
+  },
+  "blockedChecks": {
+    "postgresqlDependentStorageReadiness": {
+      "status": "BLOCKED",
+      "reason": "The legitimate clean dependency install cannot retrieve xtend-4.0.2.tgz; pg is unavailable."
+    },
+    "cleanDependencyInstall": {
+      "status": "BLOCKED",
+      "reason": "Configured registry returned 404 for xtend-4.0.2.tgz."
+    },
+    "freshVulnerabilityAudit": {
+      "status": "BLOCKED",
+      "reason": "Configured npm audit endpoint returned 404."
+    }
+  }
+}

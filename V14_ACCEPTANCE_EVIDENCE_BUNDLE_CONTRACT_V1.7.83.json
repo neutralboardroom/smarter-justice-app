@@ -1,0 +1,50 @@
+{
+  "schema_id": "SJP-V14-ACCEPTANCE-EVIDENCE-BUNDLE-CONTRACT-2026-08-03-V1",
+  "release_version": "1.7.83",
+  "source_version": "1.7.82",
+  "source_artifact": {
+    "filename": "smarter-justice-v1.7.82.zip",
+    "sha256": "61fea278a69055915e9b4b916e4b64ec514614f1746cacf659a6931ccd0228b1"
+  },
+  "governing_packet": {
+    "id": "SJP-LMP-UNIVERSAL-ONE-STEP-2026-08-03-V14-ALL-CHAT-MODES",
+    "sha256": "fce42ce0927748f94189692ef5b3bf8e0fe9f8d12273287f03a68eb7bccdad6f"
+  },
+  "expected_dependency_independent_commands": 145,
+  "expected_total_readiness_parts": 146,
+  "required_files": [
+    "package.json",
+    "package-lock.json",
+    "SBOM.spdx.json",
+    "ACCEPTANCE_SUITE_MANIFEST_V1.7.83.json",
+    "WORKING_TREE_ACCEPTANCE_V1.7.83.json",
+    "CURRENT_RELEASE_TRUTH_V1.7.83.json",
+    "ARTIFACT_BINDING_AND_MODE_RECEIPT.json",
+    "OWNER_RECEIPT.txt",
+    "RELEASE_PAYLOAD_INVENTORY_SHA256.txt",
+    "FILE_INVENTORY_SHA256.txt"
+  ],
+  "required_current_tests": [
+    "tests/v14-evidence-collection-packet-v1783.test.js",
+    "tests/v14-acceptance-evidence-bundle-v1783.test.js"
+  ],
+  "bundle_mode": "DYNAMIC_NON_PERSISTED_VALIDATION",
+  "self_reference_policy": {
+    "bundle_persisted_inside_payload": false,
+    "final_outer_zip_sha256_embedded": false,
+    "final_outer_zip_size_embedded": false,
+    "inventory_hashes_computed_at_validation_time": true
+  },
+  "fail_closed_rules": {
+    "manifest_package_drift": "REJECT",
+    "missing_or_duplicate_command": "REJECT",
+    "non_pass_result": "REJECT",
+    "working_log_mismatch": "REJECT",
+    "package_identity_mismatch": "REJECT",
+    "inventory_drift": "REJECT",
+    "owner_receipt_self_reference": "REJECT",
+    "source_or_packet_identity_mismatch": "REJECT",
+    "deployment_authorized": false,
+    "launch_state": "NO_GO"
+  }
+}

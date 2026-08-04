@@ -1,0 +1,147 @@
+{
+  "schema": "smarter-justice-current-release-truth",
+  "schemaVersion": "1.2.0",
+  "releaseVersion": "1.7.71",
+  "generatedAt": "2026-08-02T16:19:00-04:00",
+  "selectedBase": {
+    "filename": "smarter-justice-v1.7.70.zip",
+    "version": "1.7.70",
+    "sha256": "3a9f3c1bd554608225a2b152e3c3c4d089fd0a6a56c9242f2e49adf3027a606e",
+    "sizeBytes": 7749488,
+    "entries": 2470,
+    "files": 2446,
+    "directories": 24,
+    "uncompressedBytes": 23017804,
+    "compressedBytes": 7378990,
+    "inventoryRecords": 2445,
+    "inventorySha256": "ef5174a37e80d9e443eae167c3310dcecfa2e3597748b6fc3b6010e2f10850fe",
+    "treeSha256": "ef5174a37e80d9e443eae167c3310dcecfa2e3597748b6fc3b6010e2f10850fe",
+    "packageJsonSha256": "167baef51783b8ad21f6bfb4efa0ab46b7801ce08b79e2c13fa47bcf57899537",
+    "packageLockSha256": "f37fd41d38b5e29fdffa90769e248667b3eefb4df62a9eb5d56951c06b2b6356",
+    "dependencyIndependentParts": 124,
+    "totalReadinessParts": 125,
+    "testLogSha256": "f42d200ed7f7cc40f9926533bcb8a4440e4599a0f6f45f8173e6fd9e5ff8433b"
+  },
+  "rollbackArtifact": {
+    "filename": "smarter-justice-v1.7.70.zip",
+    "version": "1.7.70",
+    "sha256": "3a9f3c1bd554608225a2b152e3c3c4d089fd0a6a56c9242f2e49adf3027a606e",
+    "sizeBytes": 7749488,
+    "entries": 2470,
+    "files": 2446,
+    "directories": 24,
+    "uncompressedBytes": 23017804,
+    "compressedBytes": 7378990,
+    "inventoryRecords": 2445,
+    "inventorySha256": "ef5174a37e80d9e443eae167c3310dcecfa2e3597748b6fc3b6010e2f10850fe",
+    "treeSha256": "ef5174a37e80d9e443eae167c3310dcecfa2e3597748b6fc3b6010e2f10850fe",
+    "packageJsonSha256": "167baef51783b8ad21f6bfb4efa0ab46b7801ce08b79e2c13fa47bcf57899537",
+    "packageLockSha256": "f37fd41d38b5e29fdffa90769e248667b3eefb4df62a9eb5d56951c06b2b6356",
+    "dependencyIndependentParts": 124,
+    "totalReadinessParts": 125,
+    "testLogSha256": "f42d200ed7f7cc40f9926533bcb8a4440e4599a0f6f45f8173e6fd9e5ff8433b"
+  },
+  "sourcePackage": {
+    "filename": "smarter-justice-v1.7.71.zip",
+    "version": "1.7.71",
+    "dependencyIndependentParts": 125,
+    "totalReadinessParts": 126,
+    "identityState": "CANDIDATE_ACCEPTED_FINAL_PACKAGING_PENDING"
+  },
+  "finalArchive": {
+    "filename": "smarter-justice-v1.7.71.zip",
+    "version": "1.7.71",
+    "identityState": "DETACHED_AFTER_IMMUTABLE_PACKAGING",
+    "sha256": null,
+    "sizeBytes": null
+  },
+  "activeMasterPair": {
+    "receiptId": "MPCR-2026-07-31-E1-R0-05F4296ED378",
+    "transactionId": "MPPT-2026-07-31-SJ8-FP26-304CB87BF174",
+    "pairEpoch": 1,
+    "pairRevision": 0,
+    "receiptSha256": "4dd826cb0f9d89e41528b9732f250899cab45ce89766ae7fdfdb8a44d48d906e",
+    "centralMasterSha256": "89f49e1433d05a937a31c2144e42e408a94c4502d8c388ad5f3a6eae7ad5aa68",
+    "portalFamilyMasterSha256": "fd9e66a351067b6c02891c9474a4bc52edcbde552ae5706738d00930e6d4573f",
+    "baselineId": "DRB-2026-07-31-DUR001-DUR043-V2",
+    "semanticCapsuleSha256": "3d5f7cc4b33980148510834f6b23f902fb5416dbdc9398f106a3b14e81713bf8"
+  },
+  "portalAuthority": {
+    "record": "INITIAL_PORTAL_AUTHORITY_V1.7.71.json",
+    "evidenceBoundary": "OWNER_RECORDED_OR_HANDOFF_RECORDED_NOT_CURRENT_CHAT_PORTAL_INSPECTION",
+    "liveConnectionsOpened": false,
+    "automaticWritesOpened": false
+  },
+  "ownerLaunchActionPacket": {
+    "record": "OWNER_LAUNCH_ACTION_PACKET_V1.7.71.json",
+    "state": "PRIVATE_VALIDATED_NONSECRET_EXECUTION_PACKET",
+    "readyNowCount": 4
+  },
+  "production": {
+    "lastVerifiedVersion": "1.6.1",
+    "deploymentAuthorized": false,
+    "deploymentState": "NOT_DEPLOYED",
+    "deployed": false
+  },
+  "launchState": "NO_GO",
+  "deploymentAuthorized": false,
+  "publicDisplay": {
+    "currentVersion": "1.7.71",
+    "sourceAndRollback": "smarter-justice-v1.7.70.zip",
+    "finalIdentity": "Detached receipt required after immutable packaging",
+    "promptPack": "SJP-2026-08-02-C15-P37-D11-V13 ready for Sunday deployment execution; canonical commit, deployment, and live acceptance remain separately evidenced",
+    "launch": "NO_GO",
+    "deployment": "Not authorized",
+    "sourceVersion": "1.7.70"
+  },
+  "validationState": "PREFINAL_CANDIDATE_ACCEPTED_FINAL_DETERMINISTIC_ARCHIVE_PENDING",
+  "currentPromptPack": {
+    "packId": "SJP-2026-08-02-C15-P37-D11-V13",
+    "state": "FOUR-FILE PACK FINALIZED \u2014 READY FOR SUNDAY DEPLOYMENT EXECUTION",
+    "canonicalCommitProven": false,
+    "baselineId": "DRB-2026-08-02-DUR001-DUR086-V13",
+    "ruleCount": 86,
+    "deploymentFile4State": "ACTIVE \u2014 INCLUDED \u2014 EXACTLY BOUND"
+  },
+  "candidateArtifact": {
+    "filename": "smarter-justice-v1.7.71-candidate-a.zip",
+    "sha256": "d8be93d379b798a2eabe012793bc356a2ea6d45257ba1321ebec819ce69b15a6",
+    "sizeBytes": 7892981,
+    "entries": 2579,
+    "files": 2555,
+    "directories": 24,
+    "uncompressedBytes": 23502791,
+    "compressedBytes": 7505247,
+    "inventoryRecords": 2554,
+    "inventorySha256": "efa5885707d054f6feec4ce584c1700710ee94867890c4aa701e0713cd2de123",
+    "deterministicBuilds": 2,
+    "byteIdenticalBuilds": true,
+    "freshExtractions": 2,
+    "commandsPerExtraction": 125,
+    "testLogSha256": "6ae9fccfc8b7717d7646a44ad6d190678df8a2f40ac8786e6a01c18cfe171180",
+    "identicalOutput": true,
+    "crc": "PASS",
+    "safePaths": "PASS",
+    "duplicatePaths": "PASS",
+    "symlinks": [],
+    "encryption": [],
+    "sourceEquality": "PASS",
+    "state": "CANDIDATE_ACCEPTED_NONCIRCULAR"
+  },
+  "deploymentReadiness": {
+    "record": "DEPLOYMENT_READINESS_V1.7.71.json",
+    "state": "LOCAL_LAUNCH_DAY_ORCHESTRATION_ACCEPTED_ALL_PRODUCT_PREFLIGHT_PENDING"
+  },
+  "packId": "SJP-2026-08-02-C15-P37-D11-V13",
+  "durableRuleBaseline": "DRB-2026-08-02-DUR001-DUR086-V13",
+  "presealArtifact": {
+    "candidateSha256": "d8be93d379b798a2eabe012793bc356a2ea6d45257ba1321ebec819ce69b15a6",
+    "candidateSizeBytes": 7892981,
+    "candidateInventorySha256": "efa5885707d054f6feec4ce584c1700710ee94867890c4aa701e0713cd2de123",
+    "candidateTestLogSha256": "6ae9fccfc8b7717d7646a44ad6d190678df8a2f40ac8786e6a01c18cfe171180",
+    "deterministicBuilds": 2,
+    "freshExtractions": 2,
+    "commandsPerExtraction": 125,
+    "state": "CANDIDATE_ACCEPTED_FINAL_PACKAGING_PENDING"
+  }
+}

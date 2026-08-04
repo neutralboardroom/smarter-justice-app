@@ -1,0 +1,137 @@
+{
+  "schema": "smarter-justice-generated-evidence-reproducibility-manifest",
+  "schemaVersion": "1.0.0",
+  "releaseVersion": "1.7.68",
+  "generatedAt": "2026-08-02T11:24:00-04:00",
+  "allowedClasses": [
+    "BYTE-DETERMINISTIC",
+    "CANONICALLY EQUIVALENT",
+    "SEMANTICALLY BOUNDED STOCHASTIC",
+    "EXTERNAL-STATE DEPENDENT",
+    "HUMAN-JUDGMENT DEPENDENT",
+    "NOT ACCEPTABLE AS SOLE EVIDENCE"
+  ],
+  "stateChangingIdempotencySeparatedFromEvidenceRepeatability": true,
+  "rerunUntilPassProhibited": true,
+  "generators": [
+    {
+      "generatorId": "GEN-NPM-TEST",
+      "name": "Complete dependency-independent test chain",
+      "repeatabilityClass": "BYTE-DETERMINISTIC",
+      "command": "npm test",
+      "inputBoundary": {
+        "sourceArtifact": "smarter-justice-v1.7.67.zip",
+        "runtime": "Node v22.16.0",
+        "timezone": "America/New_York",
+        "parallelTrees": 2,
+        "filename": "smarter-justice-v1.7.67.zip",
+        "version": "1.7.67",
+        "sha256": "80efad7967acb44f5d28add7f1cadfc3d3a123a1a4a681cc56d13ea061c52f73",
+        "sizeBytes": 6510458
+      },
+      "comparison": "complete stdout/stderr byte hash",
+      "requiredRuns": 2,
+      "acceptanceInvariant": "exit 0 and identical output hash",
+      "state": "PASS_IDENTICAL_INDEPENDENT_FROZEN_SOURCE_TREES",
+      "observedOutputSha256": "de9eae5055e6e61facb891a3e942c88022ffdc67ccff9063ec64834ef78732e9",
+      "observedRuns": 2
+    },
+    {
+      "generatorId": "GEN-SBOM",
+      "name": "SPDX SBOM generator",
+      "repeatabilityClass": "BYTE-DETERMINISTIC",
+      "command": "node scripts/generate-sbom.js",
+      "inputBoundary": {
+        "packageJson": "package.json",
+        "lockfile": "package-lock.json",
+        "createdAtRule": "portal-manifest lastExactArtifactTestDate at 00:00:00Z"
+      },
+      "comparison": "SHA-256",
+      "requiredRuns": 2,
+      "state": "PASS_IDENTICAL",
+      "observedOutputSha256": "f568c25902aa9b45745bbd87671dead26956cb1a49b12c3b8e152b7ebffd8eaf",
+      "observedRuns": 2
+    },
+    {
+      "generatorId": "GEN-INVENTORY",
+      "name": "Self-excluding file inventory",
+      "repeatabilityClass": "BYTE-DETERMINISTIC",
+      "command": "release inventory generator",
+      "inputBoundary": {
+        "tree": "frozen source excluding FILE_INVENTORY_SHA256.txt"
+      },
+      "comparison": "record bytes and SHA-256",
+      "requiredRuns": 2,
+      "state": "PRESEAL_PASS_IDENTICAL_FINAL_REGENERATION_PENDING",
+      "observedRuns": 4,
+      "candidateOutputSha256": "55c8e4befdd58bc8976a294d446b2f2e9f440c80b90fb9b1c12d542b40fd74f5",
+      "presealOutputSha256": "1a8bd92a64b3be20480ad1b9c260b735970e45c56ef075a4b62fa416bfe35a9e"
+    },
+    {
+      "generatorId": "GEN-ZIP",
+      "name": "Deterministic release ZIP",
+      "repeatabilityClass": "BYTE-DETERMINISTIC",
+      "command": "deterministic ZIP builder",
+      "inputBoundary": {
+        "frozenTree": "1.7.68",
+        "timestamp": "fixed release timestamp",
+        "ordering": "UTF-8 path sort",
+        "compression": "deflate level 9"
+      },
+      "comparison": "archive SHA-256 and bytes",
+      "requiredRuns": 2,
+      "state": "PRESEAL_PASS_BYTE_IDENTICAL_IMMUTABLE_FINAL_PENDING",
+      "observedBuilds": 2,
+      "candidateSha256": "742d941c3ff8c4d6704b59d7df063a123b35f0b36be859484fb4df3a84bee100",
+      "candidateSizeBytes": 5903262,
+      "candidateFreshExtractions": 2,
+      "presealSha256": "4542a7f18458ec1f8a38df3e850327449618235a3c33f5c8cd1e307903d2f31c",
+      "presealSizeBytes": 5904344,
+      "presealBuilds": 2,
+      "presealFreshExtractions": 2
+    },
+    {
+      "generatorId": "GEN-RESEARCH",
+      "name": "Current internet research record",
+      "repeatabilityClass": "EXTERNAL-STATE DEPENDENT",
+      "command": "current targeted web research",
+      "inputBoundary": {
+        "retrievalDate": "2026-07-31",
+        "sources": "identified URLs and official/product pages"
+      },
+      "comparison": "source identifiers, retrieval dates, claims and target dispositions",
+      "requiredRuns": 1,
+      "state": "CURRENT_RESEARCH_BOUND_TO_DATE"
+    },
+    {
+      "generatorId": "GEN-VISUAL-HUMAN",
+      "name": "First-seconds and visual-system human acceptance",
+      "repeatabilityClass": "HUMAN-JUDGMENT DEPENDENT",
+      "command": "structured human review",
+      "inputBoundary": {
+        "routes": [
+          "/",
+          "/pricing.html",
+          "/attorney-partner-tour.html"
+        ],
+        "criteria": "first seconds, hierarchy, controls, responsive and accessibility foundations"
+      },
+      "comparison": "reviewer criteria and receipt",
+      "requiredRuns": 1,
+      "state": "SOURCE_LEVEL_STRUCTURED_REVIEW_COMPLETE_REAL_DEVICE_GATE_OPEN"
+    },
+    {
+      "generatorId": "GEN-AI-OUTPUT",
+      "name": "AI-assisted research or drafting output",
+      "repeatabilityClass": "NOT ACCEPTABLE AS SOLE EVIDENCE",
+      "command": "AI-assisted workflow when used",
+      "inputBoundary": {
+        "instructionsDataSeparated": true,
+        "sourceVerificationRequired": true
+      },
+      "comparison": "structured invariants plus independent source or human verification",
+      "requiredRuns": 2,
+      "state": "ASSISTIVE_ONLY"
+    }
+  ]
+}

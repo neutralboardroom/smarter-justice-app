@@ -1,0 +1,52 @@
+{
+  "schema": "smarter-justice-current-build-intake",
+  "releaseVersion": "1.7.72",
+  "generatedAt": "2026-08-02T17:04:00-04:00",
+  "selectedBase": {
+    "filename": "smarter-justice-v1.7.71.zip",
+    "version": "1.7.71",
+    "sha256": "d83a25d224f0cec197569204fb33ac19e32e6f3d307e57e48a265f53b052569c",
+    "sizeBytes": 7894341,
+    "entries": 2579,
+    "files": 2555,
+    "directories": 24,
+    "uncompressedBytes": 23506134,
+    "compressedBytes": 7506607,
+    "inventoryRecords": 2554,
+    "inventorySha256": "ea934080b3313005256115b0922909598488e7897a29fd69570fb6bb742a33a6",
+    "packageJsonSha256": "836d84976c90d1d4bbab6daf807624498b9d79548b351ccc3730346a99fe249f",
+    "packageLockSha256": "cd2e8d59d3c4354eb38b3c65097ab3ccef49ae7b5b0c9ed1319fe6c5fbe65f47",
+    "lockfileSha256": "cd2e8d59d3c4354eb38b3c65097ab3ccef49ae7b5b0c9ed1319fe6c5fbe65f47",
+    "sbomSha256": "b245179ecf11656f43b875bff3c76a1c0eb306bb595135bfbd8c1bedbba340bf",
+    "treeSha256": "ea934080b3313005256115b0922909598488e7897a29fd69570fb6bb742a33a6",
+    "dependencyIndependentParts": 125,
+    "totalReadinessParts": 126,
+    "testLogSha256": "6ae9fccfc8b7717d7646a44ad6d190678df8a2f40ac8786e6a01c18cfe171180",
+    "concurrentBaselineRuns": 2,
+    "concurrentBaselineResult": "PASS_IDENTICAL_OUTPUT",
+    "evidenceState": "CURRENT_CHAT_REPRODUCED"
+  },
+  "controllingPrompt": {
+    "pass": "EIGHTH PASS",
+    "sha256": "89f49e1433d05a937a31c2144e42e408a94c4502d8c388ad5f3a6eae7ad5aa68",
+    "sizeBytes": 282387,
+    "lineCount": 6542,
+    "complete": true
+  },
+  "activeMasterPair": "MPCR-2026-07-31-E1-R0-05F4296ED378",
+  "baselineReproduction": {
+    "cleanExtractions": 2,
+    "commandsPerExtraction": 125,
+    "identicalOutput": true,
+    "testLogSha256": "6ae9fccfc8b7717d7646a44ad6d190678df8a2f40ac8786e6a01c18cfe171180"
+  },
+  "selectedScope": [
+    "artifact-bound provider discovery authorization requests",
+    "least-privilege read-only provider scopes",
+    "short owner authorization window",
+    "exact request-digest and receipt identity binding",
+    "stale, expired, tampered, secret-bearing and write-bearing receipt invalidation",
+    "protected owner provider-discovery-plan visibility"
+  ],
+  "launchState": "NO_GO"
+}

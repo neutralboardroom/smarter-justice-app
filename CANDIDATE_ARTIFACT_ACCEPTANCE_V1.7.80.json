@@ -1,0 +1,36 @@
+{
+  "schema": "smarter-justice-candidate-artifact-acceptance",
+  "releaseVersion": "1.7.80",
+  "generatedAt": "2026-08-03T17:18:00-04:00",
+  "state": "CANDIDATE_ACCEPTED_NONCIRCULAR",
+  "candidate": {
+    "filename": "smarter-justice-v1.7.80-candidate-a.zip",
+    "sha256": "4f9c01f43793ba3917231f3d23915b600dc6c5244d350dae5606bfb403adb099",
+    "sizeBytes": 8728563,
+    "entries": 3070,
+    "files": 3046,
+    "directories": 24,
+    "uncompressedBytes": 25989330,
+    "compressedBytes": 8263075,
+    "payloadInventoryRecords": 3043,
+    "payloadInventorySha256": "92c1b99a53204f91897cdbc6f1fd5fc27e01bb6fd99c73b658a29f6bb72e7c20",
+    "legacyInventoryRecords": 3045,
+    "legacyInventorySha256": "eac99e87948c7429d399a6649cb8464a88e8fde4eaf3a7801be8af0109e1e222",
+    "testLogSha256": "29e56c4d0089d6c6a513945489acbb28160b7b779e2097310f68e8f19e9b6be4"
+  },
+  "deterministicBuilds": 2,
+  "freshExtractions": 2,
+  "testLogSha256": "29e56c4d0089d6c6a513945489acbb28160b7b779e2097310f68e8f19e9b6be4",
+  "deploymentAuthorized": false,
+  "launchState": "NO_GO",
+  "sourceEquality": true,
+  "payloadInventoryEquality": true,
+  "legacyInventoryEquality": true,
+  "archiveValidation": {
+    "crc": "PASS",
+    "safePaths": "PASS",
+    "duplicates": 0,
+    "symlinks": 0,
+    "encryptedEntries": 0
+  }
+}

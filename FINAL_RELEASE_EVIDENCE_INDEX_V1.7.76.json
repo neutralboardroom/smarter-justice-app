@@ -1,0 +1,24 @@
+{
+  "schema": "smarter-justice-final-release-evidence-index",
+  "releaseVersion": "1.7.76",
+  "generatedAt": "2026-08-03T12:20:00-04:00",
+  "records": [
+    "RELEASE_EVIDENCE_V1.7.76.json",
+    "CURRENT_RELEASE_TRUTH_V1.7.76.json",
+    "WORKING_TREE_ACCEPTANCE_V1.7.76.json",
+    "CANDIDATE_ARTIFACT_ACCEPTANCE_V1.7.76.json",
+    "FINAL_SOURCE_ACCEPTANCE_V1.7.76.json",
+    "FINAL_ARTIFACT_ACCEPTANCE_V1.7.76.json",
+    "DETACHED_FINAL_ARTIFACT_IDENTITY_ACCEPTANCE_V1.7.76.json",
+    "ARTIFACT_REGISTRY_V1.7.76.json",
+    "BUILD_STATE_CHECKPOINT_V1.7.76.json",
+    "SAFE_RELEASE_CAPACITY_AND_SATURATION_RECEIPT_V1.7.76.json",
+    "CONTINUOUS_SELF_IMPROVEMENT_AND_INNOVATION_PLAN_V1.7.76.json",
+    "PRODUCT_AND_PROMPT_DUAL_IMPROVEMENT_REPORT_V1.7.76.json",
+    "CROSS_VERSION_LEARNING_LEDGER_V1.7.76.json",
+    "JOURNEY_HANDOFF_PLANNER_CONTRACT_V1.7.76.json"
+  ],
+  "finalIdentityState": "DETACHED_AFTER_IMMUTABLE_PACKAGING",
+  "launchState": "NO_GO",
+  "deploymentAuthorized": false
+}

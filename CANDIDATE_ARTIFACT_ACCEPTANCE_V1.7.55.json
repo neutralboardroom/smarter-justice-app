@@ -1,0 +1,55 @@
+{
+  "releaseVersion": "1.7.55",
+  "generatedAt": "2026-07-30",
+  "status": "CANDIDATE_ACCEPTED",
+  "deterministicBuild": {
+    "builds": 2,
+    "byteIdentical": true,
+    "candidateA": {
+      "filename": "smarter-justice-v1.7.55-candidate-a.zip",
+      "sha256": "856687218d1c6b0d64851ff0569bdedb493692108476e701864b2ed23ecffbd3",
+      "sizeBytes": 4752666,
+      "entries": 1373,
+      "files": 1355,
+      "directories": 18,
+      "uncompressedBytes": 13159450,
+      "compressedBytes": 4552412,
+      "inventoryRecords": 1354,
+      "inventorySha256": "fb4aff16338f47a47d743d833e402678e2901523cbea10750f114d4536759d1a",
+      "treeSha256": "fb4aff16338f47a47d743d833e402678e2901523cbea10750f114d4536759d1a"
+    },
+    "candidateB": {
+      "filename": "smarter-justice-v1.7.55-candidate-b.zip",
+      "sha256": "856687218d1c6b0d64851ff0569bdedb493692108476e701864b2ed23ecffbd3",
+      "sizeBytes": 4752666,
+      "entries": 1373,
+      "files": 1355,
+      "directories": 18,
+      "uncompressedBytes": 13159450,
+      "compressedBytes": 4552412,
+      "inventoryRecords": 1354,
+      "inventorySha256": "fb4aff16338f47a47d743d833e402678e2901523cbea10750f114d4536759d1a",
+      "treeSha256": "fb4aff16338f47a47d743d833e402678e2901523cbea10750f114d4536759d1a"
+    }
+  },
+  "archiveSafety": {
+    "crc": "PASS",
+    "duplicateEntries": "PASS_NONE",
+    "unsafePaths": "PASS_NONE",
+    "backslashes": "PASS_NONE",
+    "symlinks": "PASS_NONE",
+    "encryption": "PASS_NONE",
+    "forbiddenResidue": "PASS_NONE"
+  },
+  "freshExtractionAcceptance": {
+    "extractions": 2,
+    "inventoryValidation": "PASS",
+    "sourceTreeEquality": "PASS",
+    "concurrentCompleteSuites": 2,
+    "commandPartsPerSuite": 109,
+    "result": "PASS",
+    "identicalOutput": true,
+    "testLogSha256": "13fc73a7ade3561e2760cdee704e012f8696ec8e6569bff77866f740912b039c"
+  },
+  "finalArchiveBoundary": "Candidate evidence is embedded before deterministic final packaging; final archive identity and final fresh-extraction acceptance are detached."
+}

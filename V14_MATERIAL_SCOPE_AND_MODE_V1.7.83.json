@@ -1,0 +1,25 @@
+{
+  "schema_id": "SJP-V14-MATERIAL-SCOPE-AND-MODE-2026-08-03-V1",
+  "release_version": "1.7.83",
+  "selected_mode": "MODE_B_EXISTING_CHAT_PACKET_ONLY",
+  "version_increment_reason": "Material connected product and builder improvements were justified after exact audit; the version was not incremented merely because V14 was uploaded.",
+  "product_platform_scope": [
+    "First-gap-only owner evidence collection packet with provider-specific nonsecret identifiers, required checks, dependencies, forbidden inputs, expiry, JSON/text output, and deterministic digest.",
+    "No provider calls, credential collection, persistence, live-register mutation, promotion application, deployment, or production activation."
+  ],
+  "builder_prompt_system_scope": [
+    "Dynamic non-persisted acceptance evidence bundle bound to the canonical 145-command manifest and exact v1.7.82 source.",
+    "Cross-check working acceptance, package/lock/SBOM identities, both inventories, owner receipt, source/packet binding, and detached-final boundaries."
+  ],
+  "completed_prior_work_preserved": [
+    "Unified V14 live-operations register",
+    "OpenAI-only central gateway and all v1.7.78 safety controls",
+    "V12 dual-track continuous-improvement gates",
+    "Provider authorization lifecycle",
+    "Portfolio and launch-cohort readiness controls",
+    "Deterministic non-AI fallbacks and closed sensitive-document AI"
+  ],
+  "external_actions_performed": [],
+  "deployment_authorized": false,
+  "launch_state": "NO_GO"
+}

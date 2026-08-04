@@ -1,0 +1,60 @@
+{
+  "schema": "smarter-justice-public-surface-preservation-acceptance",
+  "releaseVersion": "1.7.60",
+  "generatedAt": "2026-07-31T16:19:00-04:00",
+  "publicHtmlPages": 76,
+  "htmlChanged": false,
+  "ownerControlExportFilenameUpdatesOnly": true,
+  "attorneyPartnerTourPreserved": true,
+  "matterPathPublicJourneysPreserved": true,
+  "domesticViolenceSafetyBoundaryPreserved": true,
+  "status": "PASS_CODE_LEVEL_REAL_DEVICE_ACCEPTANCE_STILL_REQUIRED",
+  "sourceArtifact": "smarter-justice-v1.7.59.zip",
+  "sourceSha256": "f08909fbf879e9005d47b7361f089decc946d78c21c6118471b4be1fb77f9bb0",
+  "decision": "PRESERVE_PUBLIC_EXPERIENCE_WITH_CURRENT_OWNER_EXPORT_POINTERS",
+  "reason": "No public journey or visual HTML surface changed. public/app.js changed only private owner-download filenames from v1.7.59 to v1.7.60.",
+  "files": [
+    {
+      "path": "public/index.html",
+      "sha256": "f1ca14e2462e43de38e08ce3029281f124cdd31c94b0b95dad0d064e8e4fa270"
+    },
+    {
+      "path": "public/attorney-partner-tour.html",
+      "sha256": "38c0a8d21083eb3c89263667521d737e14086fb46127d58811fbb8fa4efe3e68"
+    },
+    {
+      "path": "public/attorney-partner-tour.js",
+      "sha256": "e67987922517e17c029bd5e70ff16ca04c993019e7220d2a2aa9bdf295d3db15"
+    },
+    {
+      "path": "public/attorney-tour-follow-up.html",
+      "sha256": "f43ee134378ec52e1c02014b95e3da8c8b099ae8fe0aeaca824136b2cdf4a1a7"
+    },
+    {
+      "path": "public/attorney-tour-follow-up.js",
+      "sha256": "5a7c24580561bf40ea03f40eb5d4c79b16a93e90a4818f143436a6bd4922631f"
+    },
+    {
+      "path": "public/styles.css",
+      "sha256": "67661c6d9a411c1e0fa24afe50f9a42699500ebbe4cb6e6e8869796926378b54"
+    },
+    {
+      "path": "DOCUMENT_HELP_CAPABILITY_MATRIX_V1.7.52.json",
+      "sha256": "126d0a2c36730466e500605883711a8bf9168bf52314a87af2ccec38383badb1"
+    },
+    {
+      "path": "JUSTICE_BOOTH_TRUTH_MODEL_V1.7.52.json",
+      "sha256": "89027a76dce117d5849f244af3cfd273ba0c44d78ead37145d41b9273aa21991"
+    }
+  ],
+  "acceptance": [
+    "all existing public UX and outreach tests pass",
+    "listed hashes match the frozen v1.7.60 working tree and source-preserved public files",
+    "real-device and assistive-technology acceptance remains honestly open"
+  ],
+  "launchState": "NO_GO",
+  "changedPublicFiles": [
+    "public/app.js"
+  ],
+  "unchangedUserFacingHtmlPages": 76
+}

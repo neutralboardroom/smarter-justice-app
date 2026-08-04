@@ -1,0 +1,106 @@
+{
+  "version": "1.7.29",
+  "date": "2026-07-24",
+  "title": "Legal-Only Control Center, Registry Controls, and Six-Region Profile Growth",
+  "deployed": false,
+  "productionVersion": "1.6.1",
+  "rollbackArtifact": "smarter-justice-v1.7.28.zip",
+  "rollbackSha256": "05ff27ec4a584457c904ad3701c14ba50096e79acc38153f0e296f2ab450a63b",
+  "activationGatesChanged": false,
+  "sourceArtifact": {
+    "name": "smarter-justice-v1.7.28.zip",
+    "sha256": "05ff27ec4a584457c904ad3701c14ba50096e79acc38153f0e296f2ab450a63b",
+    "sizeBytes": 2917694,
+    "zipEntries": 454,
+    "files": 443,
+    "explicitDirectories": 11
+  },
+  "scope": {
+    "controlling": "Smarter Justice and its separate legal micro-portals only",
+    "expresslyOutOfScope": [
+      "Smarter Money",
+      "Smarter Health",
+      "Smarter Property"
+    ],
+    "legacyCompatibilityAliasesPreserved": true,
+    "separateMultiSectorControlCenterContinued": false
+  },
+  "implementation": {
+    "legalPortalControlCenter": true,
+    "legalPortalWorkspace": true,
+    "legacyEcosystemAliasesDeprecated": true,
+    "appendOnlyArtifactHistory": true,
+    "supersessionLinks": true,
+    "staleRecordQueue": true,
+    "conflictQueue": true,
+    "safeImportValidation": true,
+    "currentDeploymentRecords": true
+  },
+  "registry": {
+    "automaticCrossRepositorySynchronization": false,
+    "confidentialUserDataCentralized": false,
+    "outOfScopeRecordsAccepted": false,
+    "artifactIdentityValidation": true
+  },
+  "profileGrowth": {
+    "newProfessionals": 36,
+    "newFirms": 1,
+    "newLinks": 36,
+    "regionsWorked": 3,
+    "regionalCounts": {
+      "Brooklyn": 12,
+      "Northern Metro New Jersey": 12,
+      "NYC-connected Connecticut": 12
+    },
+    "publicDirectory": {
+      "professionals": 161,
+      "firms": 35,
+      "total": 196
+    },
+    "strictQualifying": {
+      "professionals": 160,
+      "firms": 33,
+      "total": 193
+    },
+    "nextLeadRegion": "Manhattan"
+  },
+  "gates": {
+    "sensitiveTrafficApproved": false,
+    "professionalPaidPilot": "paused",
+    "publicPaidHumanReview": "paused",
+    "professionalPayments": false,
+    "publicPayments": false,
+    "booking": false,
+    "reviews": false,
+    "confidentialUploads": false,
+    "unrestrictedRouting": false,
+    "automaticFiling": false,
+    "broadCrossPortalUserDataSharing": false,
+    "automaticCrossRepositorySynchronization": false
+  },
+  "testing": {
+    "suiteParts": 70,
+    "inheritedBaselineParts": 65,
+    "newRegressionParts": 5,
+    "workingTree": "passed",
+    "freshExtractionA": "passed independently",
+    "freshExtractionB": "passed independently",
+    "javascriptSyntaxChecks": 169,
+    "jsonParseChecks": 78,
+    "npmRegistry": "final clean npm ci/audit attempt also timed out against the configured registry; no successful install or audit result",
+    "npmVulnerabilityCount": null,
+    "testCompatibilityModules": "temporary external pg and nodemailer modules through NODE_PATH; not packaged",
+    "postTestByteEquality": true,
+    "twoExtractionEquality": true,
+    "zipCrc": true,
+    "archiveSafety": true,
+    "secretScan": true,
+    "manualHealthAndBoundaryCheck": "passed: v1.7.29 health; protected owner APIs fail closed; Fairfield and Passaic directory filters return expected totals"
+  },
+  "knownLimitations": [
+    "No production deployment or live acceptance was performed.",
+    "Clean npm install and vulnerability audit remain unverified because the configured registry timed out.",
+    "Real-device, browser, screen-reader, high-contrast, and 400% zoom acceptance remains external.",
+    "Dedicated legal-portal snapshots must be refreshed only after their newest ZIPs are uploaded and independently verified."
+  ]
+}

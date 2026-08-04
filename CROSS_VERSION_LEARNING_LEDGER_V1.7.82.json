@@ -1,0 +1,49 @@
+{
+  "schema_id": "SJP-LMP-CROSS-VERSION-LEARNING-LEDGER-2026-08-03-V1",
+  "product": {
+    "name": "Smarter Justice",
+    "prior_version": "1.7.81",
+    "current_version": "1.7.82"
+  },
+  "prior_versions_reviewed": [
+    "1.7.80",
+    "1.7.81"
+  ],
+  "lessons": [
+    {
+      "lesson_id": "V14-1782-01",
+      "source_version_or_wave": "v1.7.81 evidence batch workspace",
+      "observation": "A consistent partial batch still requires manual dependency analysis before the owner knows which evidence to collect next.",
+      "what_worked_or_failed": "Batch integrity and replay/conflict controls worked; readiness sequencing was not represented.",
+      "root_cause_or_enabling_factor": "The workspace modeled proposed promotions but not the full eight-component dependency graph.",
+      "test_or_evidence_that_revealed_it": "v1.7.81 owner action and 30-item backlog.",
+      "product_change_made": "Added deterministic coverage, dependency blockers, prioritized gaps, and one exact owner action.",
+      "builder_prompt_system_change_made": "Added focused tests for valid, missing, invalid, and deterministic plan states.",
+      "future_candidate_selection_effect": "Prefer owner tools that turn exact evidence into a bounded next action without creating hidden authority.",
+      "future_testing_or_recovery_effect": "Recovery must preserve component order, dependencies, and no-mutation rules.",
+      "status": "APPLIED"
+    },
+    {
+      "lesson_id": "V14-1782-02",
+      "source_version_or_wave": "v1.7.81 141-command acceptance",
+      "observation": "A monolithic shell chain can outlive an external tool window even though individual tests pass.",
+      "what_worked_or_failed": "The suite was exact and deterministic; command-level attribution was external and manual.",
+      "root_cause_or_enabling_factor": "No canonical manifest or stable segmented runner existed.",
+      "test_or_evidence_that_revealed_it": "Repeated acceptance execution-window limits during V14 releases.",
+      "product_change_made": "No public behavior changed.",
+      "builder_prompt_system_change_made": "Added the canonical 143-command manifest and stable segmented runner.",
+      "future_candidate_selection_effect": "Prefer exact automation that distinguishes runner limits from product failures.",
+      "future_testing_or_recovery_effect": "Next builds can re-run exact segments and compare one stable combined log.",
+      "status": "APPLIED"
+    }
+  ],
+  "unresolved_learning_questions": [
+    "Which exact GitHub repository and Render service are canonical?",
+    "Which external nonsecret receipt should be collected first after those identities are known?"
+  ],
+  "next_version_learning_priorities": [
+    "Read-only provider adapters",
+    "Audited evidence application authorization after exact live receipts",
+    "Real-device accessibility acceptance"
+  ]
+}

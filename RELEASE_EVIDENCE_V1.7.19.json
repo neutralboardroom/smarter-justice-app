@@ -1,0 +1,201 @@
+{
+  "schemaVersion": "1.0.0",
+  "release": {
+    "project": "Smarter Justice",
+    "version": "1.7.19",
+    "title": "Classic Visual System, Approved Brand Assets, and Three-Market Professional Growth",
+    "status": "exact-artifact-tested; not deployed",
+    "artifactName": "smarter-justice-v1.7.19.zip",
+    "artifactSha256Location": "External exact-artifact test record and final delivery summary",
+    "sourceBaseline": "smarter-justice-v1.7.18.zip \u2014 SHA-256 ac40bcffceb6835cdb7b020bdb6b37df2f21cf316211b0ecdd739d2fb447d098",
+    "rollbackArtifact": "smarter-justice-v1.7.18.zip",
+    "deployment": {
+      "deployed": false,
+      "liveVerified": false,
+      "productionVersion": "1.6.1",
+      "sensitiveTrafficApproved": false,
+      "professionalPilotStatus": "paused",
+      "publicPaidHumanReviewStatus": "paused"
+    }
+  },
+  "completedImprovementItems": [
+    "SJ-NEXT-048",
+    "SJ-NEXT-049"
+  ],
+  "materiallyAdvancedImprovementItems": [
+    "SJ-NEXT-047"
+  ],
+  "carriedForwardImprovementItems": [
+    "SJ-NEXT-050"
+  ],
+  "changes": [
+    {
+      "id": "V1719-CLASSIC-VISUAL",
+      "problem": "The inherited interface still used oversized heroes, broad gradients, excessive rounded surfaces, and heavier prototype-like visual treatment.",
+      "implementation": "Applied a shared white/near-white classic professional token and component override with smaller typography, restrained accents, clearer controls, reduced radii/shadows, visible focus, touch targets, and reduced-motion safeguards while preserving routes and layouts.",
+      "tests": [
+        "tests/classic-visual-brand-v1719.test.js",
+        "tests/public-ux.test.js",
+        "tests/customer-experience-v178.test.js"
+      ]
+    },
+    {
+      "id": "V1719-BRAND-ASSETS",
+      "problem": "The approved logo and favicon existed but the release lacked a complete technical brand package for raster fallbacks, touch icons, manifests, and social sharing.",
+      "implementation": "Preserved the approved SVG identity and generated required technical variants from the repository masters, added a brand provenance note, web manifest, and consistent HTML metadata references.",
+      "tests": [
+        "tests/classic-visual-brand-v1719.test.js",
+        "tests/static-checks.test.js"
+      ]
+    },
+    {
+      "id": "V1719-THREE-MARKET-PROFILES",
+      "problem": "The public directory was concentrated in Brooklyn and did not satisfy the new three-market growth standard.",
+      "implementation": "Added 25 source-tracked individual professionals, 5 firms, and 25 professional\u2013firm links across Brooklyn, Manhattan, and Northern Metro New Jersey; enriched one existing Brooklyn firm; preserved unclaimed/unverified/nonparticipating status.",
+      "tests": [
+        "tests/three-market-profile-growth-v1719.test.js",
+        "tests/professional-directory-search-v1714.test.js",
+        "tests/marketplace.test.js"
+      ]
+    },
+    {
+      "id": "V1719-MARKET-DISCOVERY",
+      "problem": "Users had no direct three-market entry points and no county/service-region filter.",
+      "implementation": "Added public market cards, county/service-region filtering, shareable filter state, and owner-visible batch targets/actuals without inventing radius results or paid ranking.",
+      "tests": [
+        "tests/three-market-profile-growth-v1719.test.js",
+        "tests/release-governance-v1719.test.js"
+      ]
+    },
+    {
+      "id": "V1719-PROTECTED-REDIRECT-ROBOTS",
+      "problem": "Unauthenticated protected-page redirects safely denied access but did not carry the noindex response header applied to the destination page.",
+      "implementation": "Added X-Robots-Tag noindex, nofollow, noarchive to owner/staff access redirects and extended the inherited security regression.",
+      "tests": [
+        "tests/security-boundaries-v177.test.js",
+        "tests/seo-performance-v1716.test.js",
+        "tests/release-governance-v1719.test.js"
+      ]
+    }
+  ],
+  "profileGrowth": {
+    "schemaVersion": "1.0.0",
+    "project": "Smarter Justice",
+    "releaseVersion": "1.7.19",
+    "preparedDate": "2026-07-22",
+    "leadMarket": "Brooklyn",
+    "nextLeadMarket": "Manhattan",
+    "targets": {
+      "individualProfessionals": 25,
+      "firms": 5,
+      "professionalFirmLinks": 25,
+      "markets": {
+        "Brooklyn": 11,
+        "Manhattan": 7,
+        "Northern Metro New Jersey": 7
+      }
+    },
+    "actual": {
+      "newIndividualProfessionals": 25,
+      "newFirms": 5,
+      "updatedFirms": 1,
+      "newProfessionalFirmLinks": 25,
+      "markets": {
+        "Brooklyn": 11,
+        "Manhattan": 7,
+        "Northern Metro New Jersey": 7
+      }
+    },
+    "finalDirectory": {
+      "publicProfessionals": 36,
+      "publicFirms": 21,
+      "publicTotal": 57,
+      "qualifyingProfessionals": 35,
+      "qualifyingFirms": 19,
+      "qualifyingTotal": 54
+    },
+    "marketDetails": [
+      {
+        "market": "Brooklyn",
+        "county": "Kings County",
+        "individualProfessionalsAdded": 11,
+        "firmsAdded": 0,
+        "firmsUpdated": 1
+      },
+      {
+        "market": "Manhattan",
+        "county": "New York County",
+        "individualProfessionalsAdded": 7,
+        "firmsAdded": 2,
+        "firmsUpdated": 0
+      },
+      {
+        "market": "Northern Metro New Jersey",
+        "county": "Hudson County",
+        "individualProfessionalsAdded": 7,
+        "firmsAdded": 3,
+        "firmsUpdated": 0
+      }
+    ],
+    "statusCounts": {
+      "publishedUnclaimedNewProfiles": 30,
+      "claimedNewProfiles": 0,
+      "credentialVerifiedNewProfiles": 0,
+      "inquiryEligibleNewProfiles": 0,
+      "paidNewProfiles": 0
+    },
+    "sourcePolicy": "Professional-controlled official firm websites were used for current public identity, office, and service facts. Credential status remains unverified until official licensing review. No commercial ratings, reviews, outcome claims, or inferred specialties were copied.",
+    "excludedOrDeferred": [
+      "No new profile outside Brooklyn, Manhattan, or Northern Metro New Jersey.",
+      "Profiles without individual-level service evidence or a current published business office were deferred.",
+      "Radius search remains closed until verified coordinates and distance rules exist."
+    ]
+  },
+  "tests": [
+    {
+      "id": "TEST-V1719-BRAND",
+      "path": "tests/classic-visual-brand-v1719.test.js",
+      "covers": "classic visual tokens, approved logo preservation, complete brand assets, metadata, manifest, focus and reduced motion"
+    },
+    {
+      "id": "TEST-V1719-PROFILES",
+      "path": "tests/three-market-profile-growth-v1719.test.js",
+      "covers": "profile target and actual counts, source and portal relevance, firm links, market search, claim readiness, owner accountability"
+    },
+    {
+      "id": "TEST-V1719-GOVERNANCE",
+      "path": "tests/release-governance-v1719.test.js",
+      "covers": "version consistency, records, runtime boundaries, exact profile totals, brand/public routes, and closed gates"
+    },
+    {
+      "id": "TEST-FULL-REGRESSION",
+      "path": "npm test",
+      "covers": "34 sequential regression parts"
+    }
+  ],
+  "closedGates": [
+    "confidential production uploads",
+    "sensitive external AI without approved controls",
+    "professional membership applications and payments",
+    "public Human Review charges",
+    "public subscriptions",
+    "consultation booking",
+    "public reviews and ratings",
+    "unrestricted matching or routing",
+    "automatic filing",
+    "broad cross-portal sharing"
+  ],
+  "dependencyAdvisoryCheck": {
+    "status": "unavailable",
+    "result": "HTTP 503 from the configured npm advisory endpoint during controlled retry",
+    "claim": "No fresh v1.7.19 vulnerability count is claimed."
+  },
+  "dependencyVerification": {
+    "cleanInstallAttempted": true,
+    "cleanInstallSucceeded": false,
+    "cleanInstallResult": "HTTP 503 while retrieving locked xtend 4.0.2 from the configured package registry",
+    "regressionMethod": "All 34 regression parts passed with temporary external test-only compatibility modules for pg and nodemailer. Those modules are excluded from the release ZIP.",
+    "lockfileComparison": "15 resolved dependency records are byte-for-byte identical to v1.7.18 except the root package version.",
+    "freshVulnerabilityCountClaimed": false
+  }
+}

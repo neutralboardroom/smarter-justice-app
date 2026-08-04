@@ -1,0 +1,50 @@
+{
+  "schema": "smarter-justice-supply-chain-diagnostic",
+  "schemaVersion": "1.0.0",
+  "releaseVersion": "1.7.63",
+  "generatedAt": "2026-07-31T23:40:00-04:00",
+  "configuredRegistry": {
+    "urlDisclosed": false,
+    "urlSha256": "82a9ed5f497b373b50aa00c733a0bab1943718a818e5ce82fb51fbc1a5b9c835",
+    "reason": "Configured registry host is environment-specific and excluded from packaged evidence."
+  },
+  "cleanInstall": {
+    "command": "npm ci --ignore-scripts --omit=dev",
+    "exitCode": 1,
+    "state": "BLOCKED",
+    "httpStatus": 404,
+    "blockedPackage": "xtend@4.0.2",
+    "claim": "Clean configured-registry installation is not accepted."
+  },
+  "vulnerabilityAudit": {
+    "command": "npm audit --omit=dev --ignore-scripts --json",
+    "exitCode": 1,
+    "state": "BLOCKED",
+    "httpStatus": 404,
+    "claim": "Fresh configured-registry vulnerability audit is not accepted."
+  },
+  "postgresqlReadiness": {
+    "state": "BLOCKED",
+    "reason": "The pg dependency tree cannot be clean-installed through the configured registry; the PostgreSQL-dependent readiness command was not accepted."
+  },
+  "lockfile": {
+    "version": 3,
+    "packageRecords": 16,
+    "integrityPreserved": true
+  },
+  "controls": {
+    "pgRemovedOrWeakened": false,
+    "fakePackageOrShimUsed": false,
+    "registryBypassClaimed": false,
+    "vendorTarballEmbedded": false,
+    "publicRegistryAcceptanceClaimed": false,
+    "sbomRegeneratedDeterministically": true
+  },
+  "launchEffect": "NO_GO",
+  "rollback": "Restore exact smarter-justice-v1.7.62.zip; keep persistence and live writes closed.",
+  "sbomSha256": "047313cf14c96f58c9fbb5a90f14b28113fe7282f8c42146a5d864ee1afd8b9d",
+  "sourceArtifact": "smarter-justice-v1.7.62.zip",
+  "cleanInstallAccepted": false,
+  "vulnerabilityAuditAccepted": false,
+  "postgresAcceptance": false
+}

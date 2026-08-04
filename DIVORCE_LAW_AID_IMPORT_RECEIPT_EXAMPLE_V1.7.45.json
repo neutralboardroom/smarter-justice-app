@@ -1,0 +1,17 @@
+{
+  "example": true,
+  "liveEvidence": false,
+  "releaseVersion": "1.7.45",
+  "portalId": "divorce-law-aid",
+  "batchId": "example-divorce-law-aid-batch",
+  "contractVersion": "1.4.0",
+  "digest": "0000000000000000000000000000000000000000000000000000000000000000",
+  "result": "EXAMPLE_NOT_PROCESSED",
+  "upsertPrivateCount": 0,
+  "upsertPublicCount": 0,
+  "suppressionCount": 0,
+  "rejectedCount": 0,
+  "conflictCount": 0,
+  "lastKnownGoodPreserved": true,
+  "rollbackAvailable": false
+}

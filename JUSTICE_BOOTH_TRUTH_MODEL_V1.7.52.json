@@ -1,0 +1,64 @@
+{
+  "schema": "smarter-justice-nyc-justice-booth-truth-model",
+  "schemaVersion": "1.0.0",
+  "releaseVersion": "1.7.52",
+  "geographicScope": "New York City only",
+  "allowedStatuses": [
+    "PLANNED",
+    "LOCATION_RESEARCH",
+    "OWNER_REVIEW",
+    "SCHEDULED",
+    "ACTIVE",
+    "COMPLETED",
+    "CANCELED",
+    "VERIFIED_LOCATION",
+    "UNVERIFIED",
+    "ARCHIVED"
+  ],
+  "publicStateRules": {
+    "PLANNED": "May be described only as planned, without a public schedule unless separately verified.",
+    "LOCATION_RESEARCH": "Private research state; not a public event claim.",
+    "OWNER_REVIEW": "Private review state; not a public event claim.",
+    "SCHEDULED": "May be described as scheduled only with verified location, date, time, responsible person, accessibility, safety, support, and cancellation plan.",
+    "ACTIVE": "May be described as active only during the verified operating window with responsible staffing and incident support.",
+    "COMPLETED": "May be described as completed only after a dated outcome record.",
+    "CANCELED": "Must not remain publicly represented as scheduled or active.",
+    "VERIFIED_LOCATION": "Location verification alone does not prove a scheduled or active booth.",
+    "UNVERIFIED": "Must not be represented as scheduled, active, or completed.",
+    "ARCHIVED": "Historical record only."
+  },
+  "requiredFields": [
+    "recordId",
+    "locationName",
+    "publicSafeAreaOrAddress",
+    "startsAt",
+    "endsAt",
+    "responsibleOwnerOrStaff",
+    "status",
+    "verificationState",
+    "resourcesOffered",
+    "accessibilityConsiderations",
+    "safetyConsiderations",
+    "materials",
+    "incidentOrCancellationNotes",
+    "outcomeSummary",
+    "correctionHistory"
+  ],
+  "prohibitedData": [
+    "confidential legal matter details",
+    "survivor narratives",
+    "precise confidential shelter or service locations",
+    "identity evidence",
+    "payment data",
+    "private support notes",
+    "secrets"
+  ],
+  "records": [],
+  "summary": {
+    "totalRecords": 0,
+    "scheduled": 0,
+    "active": 0,
+    "completed": 0,
+    "publicClaimsAllowed": false
+  }
+}

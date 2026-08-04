@@ -1,0 +1,19 @@
+{
+  "schema": "smarter-justice-portal-candidate-receipt-loop",
+  "schemaVersion": "1.0.0",
+  "releaseVersion": "1.7.75",
+  "states": [
+    "ACCEPTED",
+    "REJECTED",
+    "HELD",
+    "CORRECTED",
+    "PUBLISHED",
+    "SUPPRESSED"
+  ],
+  "centralReceivesReceipts": true,
+  "fieldOwnership": "CENTRAL_IDENTITY_AND_STATUS_PORTAL_SPECIALTY_ACCEPTANCE",
+  "lastWriteWinsProhibited": true,
+  "suppressionPropagation": true,
+  "staleRestorationPrevention": true,
+  "liveConnectionOpened": false
+}

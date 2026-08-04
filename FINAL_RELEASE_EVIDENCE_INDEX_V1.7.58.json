@@ -1,0 +1,13 @@
+{
+  "releaseVersion": "1.7.58",
+  "generatedAt": "2026-07-30",
+  "sourceAcceptance": "SOURCE_ACCEPTANCE_V1.7.58.md",
+  "workingTreeAcceptance": "WORKING_TREE_ACCEPTANCE_V1.7.58.json",
+  "candidateAcceptance": "CANDIDATE_ARTIFACT_ACCEPTANCE_V1.7.58.json",
+  "finalAcceptance": "FINAL_ARTIFACT_ACCEPTANCE_V1.7.58.json",
+  "releaseEvidence": "RELEASE_EVIDENCE_V1.7.58.json",
+  "artifactRegistry": "ARTIFACT_REGISTRY_V1.7.58.json",
+  "portfolioTruth": "PORTFOLIO_TRUTH_V1.7.58.json",
+  "launchState": "NO_GO",
+  "status": "PASS_PENDING_DETACHED_DELIVERY_IDENTITY"
+}

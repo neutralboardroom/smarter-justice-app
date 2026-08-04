@@ -1,0 +1,49 @@
+{
+  "schema_id": "SJP-LMP-CROSS-VERSION-LEARNING-LEDGER-2026-08-03-V1",
+  "product": {
+    "name": "Smarter Justice",
+    "prior_version": "1.7.79",
+    "current_version": "1.7.80"
+  },
+  "prior_versions_reviewed": [
+    "1.7.78",
+    "1.7.79"
+  ],
+  "lessons": [
+    {
+      "lesson_id": "V14-1780-01",
+      "source_version_or_wave": "v1.7.79 unified live operations",
+      "observation": "A truthful unified register still needs a normalized receipt boundary before external evidence can be evaluated consistently.",
+      "what_worked_or_failed": "State vocabulary and owner summary worked; provider-specific evidence remained unstructured.",
+      "root_cause_or_enabling_factor": "No shared exact receipt schema, digest, time window, or required-check policy existed.",
+      "test_or_evidence_that_revealed_it": "NEXT_VERSION_IMPROVEMENT_LIST item unified-live-operations-evidence-connectors.",
+      "product_change_made": "Added exact nonsecret receipt validation and preview-only promotion.",
+      "builder_prompt_system_change_made": "Added component rules and tests that reject stale, tampered, secret-bearing, write-bearing, activation-bearing, or incomplete evidence.",
+      "future_candidate_selection_effect": "Prefer integrations that reduce owner burden without conflating evidence, authorization, and mutation.",
+      "future_testing_or_recovery_effect": "Recovery must preserve receipt digest rules, exact source binding, and preview-only behavior.",
+      "status": "APPLIED"
+    },
+    {
+      "lesson_id": "V14-1780-02",
+      "source_version_or_wave": "v1.7.79 V14 payload freeze",
+      "observation": "A valid hand-built inventory can still drift across repeated freezes unless generation is deterministic and checkable.",
+      "what_worked_or_failed": "The V14 inventory validated; creation was not exposed as one reusable command.",
+      "root_cause_or_enabling_factor": "Generation and validation were separate release-operator steps.",
+      "test_or_evidence_that_revealed_it": "NEXT_VERSION_IMPROVEMENT_LIST item v14-receipt-automation.",
+      "product_change_made": "No public product behavior changed.",
+      "builder_prompt_system_change_made": "Added deterministic generator/check mode and receipt field verification.",
+      "future_candidate_selection_effect": "Select release-governance improvements that remove manual evidence drift.",
+      "future_testing_or_recovery_effect": "Candidate and final freezes must regenerate then check exact payload inventory before archive creation.",
+      "status": "APPLIED"
+    }
+  ],
+  "unresolved_learning_questions": [
+    "Which exact GitHub repository and Render service are canonical?",
+    "Which read-only evidence adapter should be connected first after those identities are known?"
+  ],
+  "next_version_learning_priorities": [
+    "Canonical repository and deployment evidence binding",
+    "Read-only external adapters",
+    "Detached final delivery receipt automation"
+  ]
+}

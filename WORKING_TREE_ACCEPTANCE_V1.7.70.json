@@ -1,0 +1,16 @@
+{
+  "schema": "smarter-justice-working-tree-acceptance",
+  "releaseVersion": "1.7.70",
+  "generatedAt": "2026-08-02T11:24:00-04:00",
+  "state": "PASS_TWO_COMPLETE_RUNS_IDENTICAL_OUTPUT",
+  "dependencyIndependentParts": 122,
+  "runs": 2,
+  "concurrent": false,
+  "testLogSha256": "de9eae5055e6e61facb891a3e942c88022ffdc67ccff9063ec64834ef78732e9",
+  "identicalOutput": true,
+  "packageJsonSha256": "e50ec1c66858c55ba08d91bf875f21a2f29de78b61171d4e065933943faf6736",
+  "packageLockSha256": "218a227d0101c9ec962e619e5cdc550b623011f31aa15f4408ef778f5eb7eaa4",
+  "sbomSha256": "f568c25902aa9b45745bbd87671dead26956cb1a49b12c3b8e152b7ebffd8eaf",
+  "launchState": "NO_GO",
+  "deploymentAuthorized": false
+}

@@ -1,0 +1,63 @@
+{
+  "schema_id": "SJP-LMP-CONTINUOUS-SELF-IMPROVEMENT-AND-INNOVATION-PLAN-2026-08-03-V1",
+  "product": {
+    "name": "Smarter Justice",
+    "current_exact_source": "smarter-justice-v1.7.81.zip",
+    "current_exact_source_sha256": "34c1928567993f40ead33fe5335a479e7e3e735f0e3911b3835952668f393d86",
+    "target_version": "1.7.82",
+    "starting_version": "1.7.81",
+    "starting_artifact_sha256": "34c1928567993f40ead33fe5335a479e7e3e735f0e3911b3835952668f393d86"
+  },
+  "core_owner_mission_sha256": "1e4efe3dd80a4c3ed6d03aabd1414c60fb91d747b463405c52bf8a0902556d0b",
+  "governing_packet": {
+    "id": "SJP-LMP-UNIVERSAL-ONE-STEP-2026-08-03-V14-ALL-CHAT-MODES",
+    "sha256": "fce42ce0927748f94189692ef5b3bf8e0fe9f8d12273287f03a68eb7bccdad6f"
+  },
+  "independent_opportunity_discovery": {
+    "exact_artifact_findings": [
+      "v1.7.81 reconciled evidence batches but did not translate partial coverage into a dependency-aware gap plan or one exact owner action.",
+      "v1.7.81 acceptance was exact but long combined runs could exceed external execution windows without one canonical segmented manifest and stable log format."
+    ],
+    "public_user_journey_findings": [
+      "Public deterministic and AI-disabled paths remain unchanged and available."
+    ],
+    "professional_staff_owner_findings": [
+      "Roger needs one owner-readable dependency plan that distinguishes valid, missing, and invalid receipts without applying state."
+    ],
+    "builder_prompt_system_findings": [
+      "Every dependency-independent command should have a stable identity and independently attributable outcome without changing the accepted suite order."
+    ]
+  },
+  "creative_new_capability_candidates": [
+    "Evidence readiness and dependency-gap planner",
+    "One exact next-evidence action",
+    "Canonical segmented acceptance manifest",
+    "Stable per-command acceptance runner"
+  ],
+  "product_platform_track": {
+    "selected": [
+      "Preview-only evidence coverage matrix",
+      "Dependency blockers and prioritized gap queue",
+      "One exact owner action with no state mutation"
+    ],
+    "deferred": [
+      "No external adapter, live receipt persistence, state application, provider access, deployment, or production activation."
+    ]
+  },
+  "builder_prompt_system_track": {
+    "selected": [
+      "Canonical 143-command manifest",
+      "Stable fail-fast per-command runner",
+      "Machine-readable run receipt and log SHA-256"
+    ],
+    "deferred": [
+      "PostgreSQL acceptance remains a separately gated part."
+    ]
+  },
+  "protected_owner_decisions_required": [
+    "Connect or identify the exact canonical GitHub repository and approved Smarter Justice Render service.",
+    "Enter the OpenAI key only later after exact dark deployment binding."
+  ],
+  "strongest_justified_set_selected": true,
+  "hard_constraints_preserved": true
+}

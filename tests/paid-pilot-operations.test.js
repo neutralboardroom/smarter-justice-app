@@ -1,0 +1,25 @@
+const assert=require('assert');
+const fs=require('fs');
+const os=require('os');
+const path=require('path');
+process.env.NODE_ENV='test';
+process.env.SMARTER_JUSTICE_STORAGE_DIR=fs.mkdtempSync(path.join(os.tmpdir(),'sj-paid-pilot-ops-'));
+const store=require('../lib/store');
+const ops=require('../lib/paidPilotOperations');
+(async()=>{
+  await store.init();
+  store.writeJson('paidPilotOperations.json',null);
+  const event={id:'evt_test_001',type:'checkout.session.completed',data:{object:{id:'cs_test_001',object:'checkout.session',payment_status:'paid',customer:'cus_1',subscription:'sub_1',metadata:{accountId:'acct_1',membershipKind:'professional',membershipId:'pro_1',planId:'nyc-founding-professional',billingCadence:'monthly',seatCount:'1'}}}};
+  const first=await ops.beginStripeEvent(event);assert(first.event);assert.strictEqual(first.duplicate,false);
+  const duplicate=await ops.beginStripeEvent(event);assert.strictEqual(duplicate.duplicate,true);
+  const completed=await ops.completeStripeEvent(event.id,{status:'handled',resultSummary:'activated'});assert.strictEqual(completed.event.status,'handled');
+  const issue=await ops.recordBillingIssue({dedupeKey:'invoice:in_1',type:'recurring-payment-failed',severity:'high',accountId:'acct_1',summary:'Payment failed.'});assert(issue.issue);
+  const issueAgain=await ops.recordBillingIssue({dedupeKey:'invoice:in_1',type:'recurring-payment-failed',severity:'high',accountId:'acct_1',summary:'Payment failed again.'});assert.strictEqual(issueAgain.deduplicated,true);assert.strictEqual(issueAgain.issue.occurrences,2);
+  const resolved=await ops.updateBillingIssue(issue.issue.id,{status:'resolved',resolution:'Member updated payment method.'});assert.strictEqual(resolved.issue.status,'resolved');
+  const incident=await ops.createIncident({title:'Database recovery exercise',category:'database',severity:'medium',status:'open',summary:'Test only.'});assert(incident.incident);
+  const incidentDone=await ops.updateIncident(incident.incident.id,{status:'resolved',recovery:'Restore verified in test.'});assert.strictEqual(incidentDone.incident.status,'resolved');
+  const approval=await ops.recordOwnerApproval({approvalType:'first-cohort-launch',scope:'test cohort',status:'approved',decision:'Test approval',approvedBy:'automated test'});assert.strictEqual(approval.approval.status,'approved');
+  const snapshot=await ops.recordEnvironmentSnapshot({label:'Test snapshot',source:'automated test',checks:[{key:'database',label:'Database',ready:true,status:'ready',detail:'test'}]});assert(snapshot.snapshot);
+  const owner=ops.ownerView();assert.strictEqual(owner.summary.failedStripeEvents,0);assert.strictEqual(owner.summary.openBillingIssues,0);assert.strictEqual(owner.summary.openIncidents,0);assert(owner.summary.approvedOwnerDecisions>=1);assert(ops.exportMarkdown().includes('Paid Pilot Operating Evidence'));
+  console.log('paid-pilot-operations.test.js passed');
+})().catch(err=>{console.error(err);process.exit(1);});

@@ -1,0 +1,43 @@
+{
+  "schema": "smarter-justice-final-continuation-artifact-match-receipt",
+  "schemaVersion": "1.0.0",
+  "releaseVersion": "1.7.75",
+  "generatedAt": "2026-08-03T10:20:00-04:00",
+  "continuation": "CONTINUATION_PROMPT_V1.7.75.md",
+  "artifactFilename": "smarter-justice-v1.7.75.zip",
+  "artifactVersion": "1.7.75",
+  "sourceArtifact": {
+    "filename": "smarter-justice-v1.7.73.zip",
+    "version": "1.7.73",
+    "sha256": "5ed64a1c13de1a536303b07a2277e234a822b9bc316b7ea97cf2547e90811898",
+    "sizeBytes": 8196348,
+    "entries": 2808,
+    "files": 2784,
+    "directories": 24,
+    "uncompressedBytes": 24514359,
+    "compressedBytes": 7772126,
+    "inventoryRecords": 2783,
+    "inventorySha256": "177c3f91ef3a65a73827b193055eb2f78f117c6bab20c2aaadb2a77faa2439e1",
+    "packageJsonSha256": "aa748a9ea7ca97fed5c63c0693a224430b6c0cf5fb3b3c30ec13c4f7b3f50275",
+    "packageLockSha256": "62abde600ea9b6ca1711c683c2ee3f9d1db4bce22e27f5c005cba19ce98cafeb",
+    "lockfileSha256": "62abde600ea9b6ca1711c683c2ee3f9d1db4bce22e27f5c005cba19ce98cafeb",
+    "sbomSha256": "6ad3f0b2a678e8d7fa8e0dd34d068915e843eab91d76ee0cf740cf054544bf02",
+    "treeSha256": "177c3f91ef3a65a73827b193055eb2f78f117c6bab20c2aaadb2a77faa2439e1",
+    "dependencyIndependentParts": 127,
+    "totalReadinessParts": 128,
+    "testLogSha256": "2159c3e45c693c7662927331521547e797301f4f1764a5398c4bf11617cf1e52",
+    "concurrentBaselineRuns": 2,
+    "concurrentBaselineResult": "PASS_IDENTICAL_OUTPUT",
+    "evidenceState": "CURRENT_CHAT_REPRODUCED"
+  },
+  "packId": "SJP-2026-08-02-C15-P37-D11-V13",
+  "testParts": 129,
+  "finalIdentityBinding": "DETACHED_FINAL_RECEIPT_AFTER_IMMUTABLE_PACKAGING",
+  "state": "MATCHED_EXCEPT_SELF_REFERENCE_SAFE_DETACHED_FINAL_HASH_AND_SIZE",
+  "materialChangeInvalidatesReceipt": true,
+  "candidateArtifact": {
+    "sha256": "bfa384de8877a8627e513e2b5de1cc73888372a33899eaa21166c78adf333fa9",
+    "sizeBytes": 8374364,
+    "state": "CANDIDATE_ACCEPTED_NONCIRCULAR"
+  }
+}

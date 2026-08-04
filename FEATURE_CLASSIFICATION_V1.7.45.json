@@ -1,0 +1,45 @@
+{
+  "schemaVersion": "1.0.0",
+  "releaseVersion": "1.7.45",
+  "launchNow": [
+    "Free account preparation after external gate approval",
+    "Free basic claim, verification, correction and profile editing after external gate approval",
+    "Private central profile preview",
+    "Owner claim and profile review",
+    "Controlled read-only profile exports after portal staging",
+    "Private revision-safe portal-specific profile editor for the three initial portals",
+    "Private exact-revision owner review for portal-specific profile records",
+    "Fail-closed portal profile acceptance operations"
+  ],
+  "keepButHide": [
+    "Paid membership checkout until accepted",
+    "Existing advanced marketplace foundations",
+    "Public paid services",
+    "Confidential uploads"
+  ],
+  "staffOnly": [
+    "Legal Portfolio Control Center",
+    "Professional-growth compliance controls",
+    "Promotion approval records",
+    "Portal export approval and receipts",
+    "Portal canonical-page, search, link, receipt, last-known-good, suppression and rollback evidence records"
+  ],
+  "defer": [
+    "Paid sponsored visibility",
+    "Case-opportunity access",
+    "Reviews",
+    "Appointments",
+    "Real-time synchronization",
+    "Automatic portal writes",
+    "External AI",
+    "D4 staging and D5 production activation for the three portals",
+    "Automatic portal imports and reconciliation",
+    "Live sponsored placement and opportunity routing"
+  ],
+  "removeFromLaunch": [
+    "Complimentary Founding Profile Pilot invitation and entitlement flow",
+    "Unlabeled paid placement",
+    "Percentage or outcome-contingent case-opportunity charges",
+    "Pay-to-verify or paid organic ranking"
+  ]
+}

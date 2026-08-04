@@ -1,0 +1,34 @@
+{
+  "schema_id": "SJP-V14-RELEASE-IDENTITY-AND-RECEIPT-CONTRACT-2026-08-03-V1",
+  "release_version": "1.7.80",
+  "governing_packet_id": "SJP-LMP-UNIVERSAL-ONE-STEP-2026-08-03-V14-ALL-CHAT-MODES",
+  "governing_packet_sha256": "fce42ce0927748f94189692ef5b3bf8e0fe9f8d12273287f03a68eb7bccdad6f",
+  "artifact_binding_receipt": "ARTIFACT_BINDING_AND_MODE_RECEIPT.json",
+  "embedded_owner_receipt": "OWNER_RECEIPT.txt",
+  "release_payload_inventory": "RELEASE_PAYLOAD_INVENTORY_SHA256.txt",
+  "release_payload_inventory_scope": {
+    "include": "all product payload files",
+    "exclude": [
+      "OWNER_RECEIPT.txt",
+      "RELEASE_PAYLOAD_INVENTORY_SHA256.txt",
+      "FILE_INVENTORY_SHA256.txt"
+    ],
+    "reason": "The legacy inventory is delivery evidence and may reference the V14 receipt/inventory; excluding all three prevents direct and indirect self-reference."
+  },
+  "identity_separation": [
+    "STARTING_ARTIFACT_IDENTITY",
+    "RELEASE_PAYLOAD_IDENTITY",
+    "SOURCE_COMMIT_IDENTITY",
+    "DEPLOYMENT_IDENTITY",
+    "FINAL_DELIVERY_ZIP_IDENTITY"
+  ],
+  "embedded_final_outer_zip_sha256_prohibited": true,
+  "embedded_final_outer_zip_size_prohibited": true,
+  "final_delivery_zip_identity": "REPORTED_AFTER_PACKAGING",
+  "current_payload_state": "WORKING_TREE_UNSEALED",
+  "candidate_identity_must_not_equal_starting_artifact": true,
+  "source_commit_proven": false,
+  "deployment_proven": false,
+  "deployment_authorized": false,
+  "launch_state": "NO_GO"
+}

@@ -1,0 +1,501 @@
+{
+  "schemaName": "smarter-justice-dashboard-contracts",
+  "schemaVersion": "1.1.0",
+  "releaseVersion": "1.7.42",
+  "generatedAt": "2026-07-28T17:45:00-04:00",
+  "roles": [
+    {
+      "role": "OWNER",
+      "authentication": "owner account or temporary development owner token",
+      "read": [
+        "all non-confidential portfolio metadata"
+      ],
+      "write": [
+        "owner decisions",
+        "assigned portal metadata through audited routes"
+      ],
+      "denied": [
+        "bypass exact-artifact verification",
+        "store public-user matter contents",
+        "activate closed gates without separate approval"
+      ]
+    },
+    {
+      "role": "PORTFOLIO_ADMIN",
+      "authentication": "required; future role foundation only",
+      "read": [
+        "approved portfolio metadata"
+      ],
+      "write": [
+        "non-confidential coordination metadata after activation"
+      ],
+      "denied": [
+        "owner-only approvals",
+        "deployment",
+        "payment activation",
+        "public-user matter data"
+      ]
+    },
+    {
+      "role": "PORTAL_ADMIN",
+      "authentication": "required in dedicated portal",
+      "read": [
+        "assigned portal operations"
+      ],
+      "write": [
+        "assigned portal records under portal controls"
+      ],
+      "denied": [
+        "unrelated portal mutation",
+        "umbrella owner decisions"
+      ]
+    },
+    {
+      "role": "PUBLIC_USER",
+      "authentication": "not required for device-only tools",
+      "read": [
+        "own current-tab work"
+      ],
+      "write": [
+        "own current-tab work and local exports"
+      ],
+      "denied": [
+        "portfolio metadata",
+        "internal queues",
+        "other users’ data"
+      ]
+    },
+    {
+      "role": "PROFESSIONAL",
+      "authentication": "future foundation only",
+      "read": [
+        "own approved profile and firm records"
+      ],
+      "write": [
+        "own approved profile requests after activation"
+      ],
+      "denied": [
+        "public-user private work without deliberate approved sharing",
+        "other professionals’ records"
+      ]
+    }
+  ],
+  "contracts": [
+    {
+      "contractId": "contract:portfolio-summary:1.0.0",
+      "producer": "Smarter Justice portfolioTruth module",
+      "consumer": "Private Portfolio Control Center",
+      "schemaVersion": "1.0.0",
+      "requiredFields": [
+        "portalId",
+        "releaseId",
+        "artifactId",
+        "evidenceState",
+        "maturity",
+        "health",
+        "nextAction"
+      ],
+      "permittedDataClasses": [
+        "release metadata",
+        "artifact identity",
+        "health status",
+        "owner decision",
+        "profile totals"
+      ],
+      "forbiddenDataClasses": [
+        "public-user facts",
+        "documents",
+        "communications",
+        "medical data",
+        "financial data",
+        "credentials"
+      ],
+      "sourceOfTruth": "PORTFOLIO_TRUTH_V1.7.36.json",
+      "freshness": "dated record; stale is explicit",
+      "readAuthority": [
+        "OWNER"
+      ],
+      "writeAuthority": [
+        "none through this read-only contract"
+      ],
+      "failureStates": [
+        "LOADING",
+        "EMPTY",
+        "STALE",
+        "BLOCKED",
+        "MALFORMED",
+        "UNAVAILABLE"
+      ],
+      "compatibility": "D2_CONTRACT_TESTED",
+      "rollback": "Return to exact Smarter Justice v1.7.33 legal-only Control Center behavior."
+    },
+    {
+      "contractId": "contract:public-preparation-quality:1.0.0",
+      "producer": "Public browser current tab",
+      "consumer": "Same public browser current tab and local export",
+      "schemaVersion": "1.0.0",
+      "requiredFields": [
+        "facts",
+        "sources",
+        "dates",
+        "records",
+        "questions",
+        "nextStep"
+      ],
+      "permittedDataClasses": [
+        "user-entered preparation text in current tab"
+      ],
+      "forbiddenDataClasses": [
+        "server persistence",
+        "analytics payload",
+        "automatic professional transfer"
+      ],
+      "sourceOfTruth": "User-controlled current-tab input",
+      "freshness": "current session only",
+      "readAuthority": [
+        "PUBLIC_USER"
+      ],
+      "writeAuthority": [
+        "PUBLIC_USER"
+      ],
+      "failureStates": [
+        "EMPTY",
+        "INCOMPLETE",
+        "MALFORMED_LOCAL_IMPORT"
+      ],
+      "compatibility": "D2_CONTRACT_TESTED",
+      "rollback": "Clear current-tab input or close the page."
+    },
+    {
+      "contractId": "contract:micro-portal-status:1.0.0",
+      "producer": "Future dedicated legal portal adapters",
+      "consumer": "Smarter Justice portfolio registry",
+      "schemaVersion": "1.0.0",
+      "requiredFields": [
+        "portalId",
+        "releaseId",
+        "evidenceState",
+        "updatedAt"
+      ],
+      "permittedDataClasses": [
+        "non-confidential portal metadata"
+      ],
+      "forbiddenDataClasses": [
+        "public-user matter contents",
+        "shared credentials"
+      ],
+      "sourceOfTruth": "Dedicated portal exact artifact or approved operational system",
+      "freshness": "producer timestamp and review trigger required",
+      "readAuthority": [
+        "OWNER",
+        "future PORTFOLIO_ADMIN"
+      ],
+      "writeAuthority": [
+        "separately approved adapter only"
+      ],
+      "failureStates": [
+        "UNAVAILABLE",
+        "STALE",
+        "UNSUPPORTED_VERSION",
+        "MALFORMED"
+      ],
+      "compatibility": "D0_CONCEPT_ONLY",
+      "rollback": "Portal remains independently usable; umbrella displays unavailable or stale state."
+    },
+    {
+      "contractId": "contract:neutral-boardroom-handoff:1.0.0",
+      "producer": "Smarter Justice neutralBoardroomHandoff module",
+      "consumer": "Owner-controlled file export and future Neutral Boardroom import preview",
+      "schemaVersion": "1.0.0",
+      "requiredFields": [
+        "handoffVersion",
+        "sourceSystemId",
+        "sourceRelease",
+        "destinationSystemId",
+        "scope",
+        "evidenceBoundary",
+        "automaticWrites"
+      ],
+      "permittedDataClasses": [
+        "non-confidential artifact and release summaries",
+        "deployment and rollback summaries",
+        "aggregate attention, risk, blocker, owner-decision, and next-action metadata"
+      ],
+      "forbiddenDataClasses": [
+        "public-user facts",
+        "documents",
+        "communications",
+        "medical data",
+        "financial data",
+        "credentials",
+        "payment data",
+        "private professional claim evidence"
+      ],
+      "sourceOfTruth": "NEUTRAL_BOARDROOM_HANDOFF_V1.7.36.json plus current legal-network owner views",
+      "freshness": "generated on deliberate owner export; destination must validate and preserve evidence states",
+      "readAuthority": [
+        "OWNER"
+      ],
+      "writeAuthority": [
+        "none; export-only in v1.7.33"
+      ],
+      "failureStates": [
+        "UNAVAILABLE",
+        "STALE",
+        "MALFORMED",
+        "UNSUPPORTED_VERSION",
+        "CONFIDENTIAL_DATA_REJECTED"
+      ],
+      "compatibility": "D2_CONTRACT_TESTED",
+      "rollback": "Do not export; Smarter Justice and every legal portal remain independently usable."
+    },
+    {
+      "contractId": "contract:legal-network-action-center:1.0.0",
+      "producer": "Smarter Justice legalNetworkActionCenter module",
+      "consumer": "Private Smarter Justice Control Center and owner export",
+      "schemaVersion": "1.0.0",
+      "requiredFields": [
+        "actionId",
+        "ruleId",
+        "ruleVersion",
+        "tier",
+        "title",
+        "reason",
+        "nextAction",
+        "evidenceState",
+        "fingerprint"
+      ],
+      "permittedDataClasses": [
+        "non-confidential legal-network metadata",
+        "owner disposition",
+        "review date",
+        "operational note"
+      ],
+      "forbiddenDataClasses": [
+        "public-user matter contents",
+        "documents",
+        "communications",
+        "medical data",
+        "financial data",
+        "credentials",
+        "payment data"
+      ],
+      "sourceOfTruth": "PORTFOLIO_TRUTH_V1.7.36.json plus owner disposition state",
+      "freshness": "recomputed deterministically on every owner view; dispositions resurface when the action fingerprint changes",
+      "readAuthority": [
+        "OWNER"
+      ],
+      "writeAuthority": [
+        "OWNER for action disposition only"
+      ],
+      "failureStates": [
+        "EMPTY",
+        "STALE",
+        "MALFORMED",
+        "UNAVAILABLE",
+        "PERSISTENCE_NOT_READY"
+      ],
+      "compatibility": "D2_CONTRACT_TESTED",
+      "rollback": "Return to exact Smarter Justice v1.7.33 attention-first portfolio truth without action dispositions."
+    },
+    {
+      "contractId": "contract:professional-network:portal-coordination:v1.1.0",
+      "producer": "Smarter Justice professional network",
+      "sourceOfTruth": "PROFESSIONAL_NETWORK_STANDARD_V1.7.36.json and runtime professionalNetwork owner view",
+      "automaticWrites": false,
+      "liveConnection": false,
+      "consumer": "Independent legal micro- and mid-sized portals",
+      "schemaVersion": "1.1.0",
+      "requiredFields": [
+        "assignmentId",
+        "portalId",
+        "sourcePortalIds",
+        "mappingState",
+        "professionalId",
+        "organizationId",
+        "seatId",
+        "officeIds",
+        "practiceAssignments",
+        "jurisdictions",
+        "languages",
+        "serviceMethods",
+        "claimState",
+        "credentialState",
+        "sourceFreshness",
+        "participationState",
+        "availabilityState",
+        "inquiryEligibility",
+        "membershipCoverageState",
+        "evidenceState"
+      ],
+      "permittedDataClasses": [
+        "professional ID",
+        "firm organization ID",
+        "office IDs",
+        "seat ID",
+        "evidence-labeled practice assignments",
+        "portal assignment state",
+        "claim state",
+        "credential state",
+        "participation state",
+        "availability state",
+        "inquiry eligibility",
+        "membership coverage state",
+        "sponsorship state"
+      ],
+      "forbiddenDataClasses": [
+        "user legal matters",
+        "uploaded user documents",
+        "credentials or secrets",
+        "payment card or bank data",
+        "private professional claim evidence",
+        "automatic portal mutation"
+      ],
+      "freshness": "generated from current professional-network records; local consumer fixtures use timestamp-independent fingerprints; unresolved aliases are excluded",
+      "readAuthority": [
+        "OWNER",
+        "AUTHORIZED_PROFESSIONAL",
+        "DEDICATED_PORTAL_ADAPTER_AFTER_APPROVAL"
+      ],
+      "writeAuthority": [
+        "none through the portal handoff contract"
+      ],
+      "failureStates": [
+        "EMPTY_VALID",
+        "STALE",
+        "CONFLICT",
+        "MALFORMED",
+        "UNRESOLVED_ALIAS",
+        "UNAVAILABLE",
+        "UNAUTHORIZED"
+      ],
+      "compatibility": "D3_ADAPTER_TESTED",
+      "rollback": "Ignore the export and preserve the dedicated portal’s previous professional records; no automatic write occurs."
+    },
+    {
+      "contractId": "contract:professional-portal-adapter-lab:1.0.0",
+      "producer": "Smarter Justice professionalPortalAdapterLab",
+      "consumer": "Private Professional Network owner surface and owner fixture export",
+      "schemaVersion": "1.0.0",
+      "requiredFields": [
+        "portalId",
+        "contractState",
+        "sourceFingerprint",
+        "validation",
+        "consumerPreview",
+        "handoff"
+      ],
+      "permittedDataClasses": [
+        "nonconfidential professional identity references",
+        "organization and seat references",
+        "evidence-labeled practice and portal assignment metadata",
+        "local validation findings"
+      ],
+      "forbiddenDataClasses": [
+        "user legal matters",
+        "uploaded documents",
+        "credentials or secrets",
+        "payment card or bank data",
+        "private claim evidence",
+        "automatic portal instructions"
+      ],
+      "sourceOfTruth": "PROFESSIONAL_PORTAL_ADAPTER_LAB_V1.7.36.json and local runtime fixtures",
+      "freshness": "recomputed on every owner view; fingerprints exclude generated timestamps",
+      "readAuthority": [
+        "OWNER"
+      ],
+      "writeAuthority": [
+        "none; fixture export only"
+      ],
+      "failureStates": [
+        "EMPTY_VALID",
+        "MALFORMED",
+        "PROHIBITED_DATA",
+        "PORTAL_MISMATCH",
+        "DUPLICATE_ASSIGNMENT",
+        "UNAVAILABLE"
+      ],
+      "compatibility": "D3_ADAPTER_TESTED",
+      "rollback": "Ignore fixtures and retain exact v1.7.35 D2 professional portal contracts; no portal was changed."
+    },
+    {
+      "contractId": "contract:integrated-legal-portal-standard:v1.7.42",
+      "surfaceId": "surface:portal-governance-and-handoffs",
+      "schemaVersion": "1.0.0",
+      "readAuthority": [
+        "owner",
+        "approved portal build process"
+      ],
+      "writeAuthority": [
+        "source-controlled release process"
+      ],
+      "forbiddenDataClasses": [
+        "user matter narratives",
+        "uploaded documents",
+        "credentials",
+        "payment data",
+        "private claim evidence"
+      ],
+      "claimBoundary": "Proves standard incorporation and local conformance tests only; does not prove implementation by any dedicated portal."
+    }
+  ],
+  "surfaces": [
+    {
+      "surfaceId": "surface:portfolio-control-center",
+      "name": "Smarter Justice Portfolio Control Center",
+      "status": "D2_CONTRACT_TESTED",
+      "dataBoundary": "Portfolio metadata only; no public-user matter contents.",
+      "gracefulFailure": "Legacy owner views remain usable if portfolio truth cannot load."
+    },
+    {
+      "surfaceId": "surface:micro-portal-operations",
+      "name": "Micro-Portal Operations Dashboard",
+      "status": "D0_CONCEPT_ONLY",
+      "dataBoundary": "Portal-local operations under dedicated portal authority.",
+      "gracefulFailure": "Dedicated portal remains independently usable."
+    },
+    {
+      "surfaceId": "surface:public-user-workspace",
+      "name": "Public User Workspace",
+      "status": "D2_CONTRACT_TESTED",
+      "dataBoundary": "Current-tab and local-export user-controlled preparation data.",
+      "gracefulFailure": "No server dependency; user may copy or download locally."
+    },
+    {
+      "surfaceId": "surface:professional-dashboard",
+      "name": "Professional or Firm Dashboard",
+      "status": "D0_CONCEPT_ONLY",
+      "dataBoundary": "Future own-profile and firm records only.",
+      "gracefulFailure": "Public profile remains viewable without implying participation."
+    },
+    {
+      "surfaceId": "surface:staff-review-support",
+      "name": "Staff, Review, or Support Dashboard",
+      "status": "D0_CONCEPT_ONLY",
+      "dataBoundary": "Closed until roles, least privilege, audit, support, and retention are approved.",
+      "gracefulFailure": "No access is granted."
+    },
+    {
+      "surfaceId": "surface:neutral-boardroom-handoff",
+      "name": "Neutral Boardroom Upward Handoff",
+      "status": "D2_CONTRACT_TESTED",
+      "dataBoundary": "Minimum necessary nonconfidential legal-network portfolio metadata only.",
+      "gracefulFailure": "No export or connection occurs; Smarter Justice and legal portals remain independently usable."
+    },
+    {
+      "surfaceId": "surface:legal-network-action-center",
+      "name": "Smarter Justice Legal-Network Action Center",
+      "status": "D2_CONTRACT_TESTED",
+      "dataBoundary": "Non-confidential legal-network execution metadata and owner dispositions only.",
+      "gracefulFailure": "Portfolio truth and existing Control Center views remain usable if action-center state is unavailable."
+    },
+    {
+      "surfaceId": "surface:professional-portal-adapter-lab",
+      "name": "Professional Portal Adapter Lab",
+      "status": "D3_ADAPTER_TESTED",
+      "dataBoundary": "Local nonconfidential read-only fixtures; no live connection or write.",
+      "gracefulFailure": "Professional Network remains usable and portals remain independent."
+    }
+  ],
+  "version": "1.7.42"
+}

@@ -1,0 +1,11 @@
+const assert=require('assert');const fs=require('fs');const path=require('path');
+process.env.SMARTER_JUSTICE_STORAGE_DIR=path.join(__dirname,'tmp-v1750');fs.rmSync(process.env.SMARTER_JUSTICE_STORAGE_DIR,{recursive:true,force:true});fs.mkdirSync(process.env.SMARTER_JUSTICE_STORAGE_DIR,{recursive:true});
+const ops=require('../lib/launchDayOperations');
+let v=ops.ownerView();assert.equal(v.releaseVersion,'1.7.75');assert.equal(v.activationBoundary.canLaunch,false);assert(v.privacyBoundary.excluded.includes('Legal narratives'));
+const shift=ops.createShift({name:'Day one',status:'open',owner:'Roger',supportOwner:'Support',incidentOwner:'Incident',supportTargetMinutes:30,pauseTriggers:['readiness-red','support-overload']}).shift;assert(shift.id);assert.equal(shift.capacityCap,25);
+const support=ops.recordSupport({shiftId:shift.id,category:'profile-control',priority:'urgent',status:'new',summary:'Attorney cannot locate profile-control link.',pauseTrigger:true}).support;assert.equal(support.containsLegalNarrative,false);assert.equal(support.containsSensitiveDocuments,false);
+for(const type of ops.JOURNEY_TYPES)ops.recordJourney({shiftId:shift.id,type,status:'passed',title:type,steps:['Open test path'],evidence:['local rehearsal'],findings:['No personal data used']});
+v=ops.ownerView();assert.equal(v.journeyCoverage.missingTypes.length,0);assert(v.summary.urgentSupport>=1);assert.equal(v.pauseDecision.recommended,true);assert(v.pauseDecision.reasons.length>=1);assert.equal(v.privacyBoundary.excluded.includes('Passwords'),true);
+const md=ops.exportMarkdown();assert(md.includes('Launch-Day Operations Snapshot'));assert(md.includes('Pause recommended: YES'));
+const server=fs.readFileSync(path.join(__dirname,'..','server.js'),'utf8');assert(server.includes('/api/owner/launch-day-operations'));const html=fs.readFileSync(path.join(__dirname,'..','public','launch-activation.html'),'utf8');assert(html.includes('Launch-day shifts, support triage, and full-journey rehearsals'));
+fs.rmSync(process.env.SMARTER_JUSTICE_STORAGE_DIR,{recursive:true,force:true});console.log('launch-day-operations-v1750.test.js passed');

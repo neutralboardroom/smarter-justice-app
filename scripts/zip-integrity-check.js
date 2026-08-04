@@ -7,3 +7,4 @@ for (const f of ['server.js','package.json','README.md','public/index.html','pub
   assert(fs.existsSync(path.join(root, f)), `missing ${f}`);
 }
 console.log('zip integrity source check passed');
+require('../tests/release-portability.test.js');

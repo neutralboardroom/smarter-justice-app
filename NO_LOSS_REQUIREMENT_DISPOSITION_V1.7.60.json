@@ -1,0 +1,94 @@
+{
+  "schema": "smarter-justice-no-loss-requirement-disposition",
+  "releaseVersion": "1.7.60",
+  "generatedAt": "2026-07-31T16:19:00-04:00",
+  "controllingPrompt": {
+    "filename": "Smarter_Justice_Reusable_Version_1(1).txt",
+    "canonicalFilename": "Smarter_Justice_Reusable_Version_1.txt",
+    "sha256": "3951396dafb92a5d706cf0483000717a70d5f72c0ef84888a7d77f9163d5b8ac",
+    "sizeBytes": 152541,
+    "lineCount": 4320,
+    "openingMarkerVerified": true,
+    "finalMarkerVerified": true
+  },
+  "summary": {
+    "preserved": 20,
+    "strengthened": 10,
+    "correctedAsStale": 5,
+    "deferredWithGenuineDependency": 8,
+    "rejectedWithEvidence": 2,
+    "omitted": 0
+  },
+  "requirements": [
+    {
+      "id": "newest-exact-base",
+      "disposition": "REVALIDATED AGAINST NEWEST ARTIFACT",
+      "evidence": "smarter-justice-v1.7.59.zip"
+    },
+    {
+      "id": "exact-v1759-current-truth",
+      "disposition": "CORRECTED AS STALE",
+      "evidence": "FINAL_V1.7.59_TRUTH_RECONCILIATION_V1.7.60.json"
+    },
+    {
+      "id": "four-portal-authority",
+      "disposition": "STRENGTHENED",
+      "evidence": "INITIAL_PORTAL_AUTHORITY_V1.7.60.json"
+    },
+    {
+      "id": "reusable-command-integrity",
+      "disposition": "REVALIDATED AGAINST NEWEST ARTIFACT",
+      "evidence": "REUSABLE_MASTER_COMMAND_INTAKE_V1.7.60.json"
+    },
+    {
+      "id": "newest-artifact-learning-applied",
+      "disposition": "STRENGTHENED",
+      "evidence": "NEWEST_ARTIFACT_LEARNING_APPLIED_V1.7.60.json"
+    },
+    {
+      "id": "owner-collaboration",
+      "disposition": "STRENGTHENED",
+      "evidence": "OWNER_ACTION_READINESS_V1.7.60.json"
+    },
+    {
+      "id": "launch-capability-matrix",
+      "disposition": "STRENGTHENED",
+      "evidence": "LAUNCH_CAPABILITY_MATRIX_V1.7.60.json"
+    },
+    {
+      "id": "central-commercial-nonduplication",
+      "disposition": "PRESERVED",
+      "evidence": "CENTRAL_COMMERCIAL_ARCHITECTURE_V1.7.60.json"
+    },
+    {
+      "id": "matter-path-ai-boundary",
+      "disposition": "PRESERVED",
+      "evidence": "MATTER_PATH_AND_AI_BOUNDARY_V1.7.60.json"
+    },
+    {
+      "id": "public-html-surfaces",
+      "disposition": "PRESERVED",
+      "evidence": "PUBLIC_SURFACE_PRESERVATION_ACCEPTANCE_V1.7.60.json"
+    },
+    {
+      "id": "portal-repositories",
+      "disposition": "MOVED TO THE CORRECT REPOSITORY OR PROMPT",
+      "evidence": "No portal repository modified"
+    },
+    {
+      "id": "production-and-live-gates",
+      "disposition": "DEFERRED WITH GENUINE DEPENDENCY",
+      "evidence": "PREDEPLOYMENT_READINESS_V1.7.60.md"
+    },
+    {
+      "id": "token-cosmetic-release",
+      "disposition": "REJECTED WITH EVIDENCE",
+      "evidence": "Material exact-truth, owner-action and learning release"
+    },
+    {
+      "id": "duplicate-portal-commercial-relationships",
+      "disposition": "REJECTED WITH EVIDENCE",
+      "evidence": "Central commercial architecture forbids duplication"
+    }
+  ]
+}

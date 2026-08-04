@@ -1,25 +1,51 @@
 # Smarter Justice Master Rules and Suggestions Pack
 
-- Version: 1.4.3
-- Effective date: 2026-07-20
-- Status: approved v1.5.3 pre-deployment official-source pagination, shareable directory search, profile discoverability, professional onboarding, firm-pricing transparency, customer-language, mobile, marketplace, and cross-portal governance standard
-- SHA-256 checksum: 54ca9eb7d1c708533b213d193b0516f26e25b6bde41456bd04daf399f5c38194
+- Version: 1.7.0
+- Effective date: 2026-07-29
+- Status: approved self-contained legal-portfolio operating, integrated portal, profile-growth, design, accessibility, release-quality, carry-forward, portfolio-truth, and exact-artifact standard
+- SHA-256 checksum: e35fe1c47da7b811bfd8102ee24c9cd57070c5f3529ac85069bde136b7c6d7ae
 
 ## Purpose
 
-Carry the current Smarter Justice ecosystem rules, strong defaults, recommendations, roadmap, and specialty-adaptation authority into every portal build, replacement continuation prompt, manifest, and handoff without requiring the owner to restate them.
+Carry Roger’s current self-contained Smarter Justice owner decisions and the legal-network rules, the mandatory integrated legal-portal standard, strong defaults, recommendations, roadmap, complete improvement list, and specialty-adaptation authority into every portal build, replacement continuation prompt, manifest, dashboard, release gate, and handoff without requiring the owner to restate them.
 
 ## Prompt and source priority
 
 - The newest approved portal-specific continuation prompt governs that portal unless the owner explicitly supersedes it.
 - The latest uploaded ZIP or repository state is the source of truth for code and must be inspected before changes.
-- This Master Rules Pack supplies ecosystem-wide requirements and defaults; it does not erase newer or more specific portal decisions.
+- This Master Rules Pack supplies legal-network-wide requirements and defaults; it does not erase newer or more specific portal decisions.
 - Older prompts, ZIPs, and summaries are historical context unless deliberately preserved by the newest governing prompt.
 - When requirements conflict, protect users, privacy, security, truthful public language, professional boundaries, official-source verification, and legal or regulatory compliance first.
 
-## Mandatory ecosystem rules
+## Mandatory legal-network rules
 
-- Do not make changes merely for the sake of making changes. Change only what materially improves users, operations, compliance, safety, security, reliability, maintainability, deployability, conversion, or ecosystem compatibility.
+- Roger is the final owner and decision authority. Smarter Justice is the active self-contained operating and governance system for the legal portfolio.
+- Neutral Boardroom is not part of the initial launch and must not be a runtime, management, launch-gate, deployment, billing, profile, support, monitoring, backup, rollback, portal-integration, or source-of-truth dependency. Any retained boundary is dormant optional future non-confidential export only.
+- The initial controlled portal order is Divorce Law Aid first, Estate Law Aid second, and Personal Injury Law Aid third. Immigration Oasis and later portals follow only after the initial model is proven.
+- Personal Injury Law Aid includes vehicle accidents and broad personal-injury starting paths. Workers’ Compensation Law Aid remains separate. The independent Car Accident Law Aid repository and history are preserved as a dormant compatibility asset and are not automatically merged, deleted, launched as a competing pilot, or silently reassigned.
+- Smarter Justice centrally owns professional identity, authentication, claims, verification, core profiles, firms, offices, seats, membership, billing, entitlements, support, and approved read-only profile distribution. Focused portals own their specialty content, evidence, public profiles, intake, brand, repository, deployment, and release truth.
+- Claiming, verifying, correcting, and editing a basic professional or firm profile is free and must not require a paid membership, invitation, trial, promotional code, or sponsored product.
+- Paid professional products are separate optional commercial programs. They may provide clearly labeled Sponsored or Featured prominence, enhanced visibility, lead eligibility, and access to case, attorney-review, or work opportunities only after every independent membership, verification, specialty, jurisdiction, conflicts, privacy, disclosure, support, compliance, and owner gate is satisfied.
+- Payment must never buy identity verification, credential approval, practice-area evidence, portal eligibility, correction rights, organic trust signals, an endorsement, a favorable review, or a claim that the professional is the best match.
+- Professional-growth charges must use disclosed fixed subscription, advertising, software, platform, or opportunity-access fees. Do not charge a percentage of legal fees, settlements, recoveries, refunds, or outcomes, and do not make charges contingent on retention, recovery, settlement, legal fees, or case results.
+- Every paid placement must be conspicuously labeled as Sponsored or equivalent advertising language at the point of display. Organic ordering and substantive routing must remain neutral and independently governed.
+- Live sponsored visibility and case-opportunity access must remain fail-closed until jurisdiction-specific attorney-advertising, solicitation, referral, fee-sharing, privacy, billing, conflicts, support, and qualified-counsel review evidence is recorded and Roger separately opens the applicable gate.
+- Public specialty discovery belongs on focused portals. Any Smarter Justice professional lookup retained during migration must be noindexed, excluded from the public sitemap, truthfully labeled for claim or migration use, and must not become a competing permanent specialty directory.
+- Every legal-portal build, audit, continuation prompt, release gate, design review, profile-growth plan, dashboard, and coordination handoff must include or exactly incorporate LEGAL_MICRO_PORTAL_INTEGRATED_STANDARD_V1.0.0.md.
+- Public free launch, professional account preparation, attorney applications, paid enrollment, sensitive storage, and deployment are separate fail-closed gates. No narrower gate or configured secret proves a broader gate, and every activation requires its own evidence and explicit owner approval.
+- Every appropriate legal-portal release has a dual mission: materially improve individually supported public professional coverage when evidence permits and materially improve complete product quality, not merely one or the other.
+- The exact assigned-portal artifact remains implementation truth. Shared systems may be adapted only when they fit the portal specialty and may not import unrelated content, claims, data, branding, workflows, or legal assumptions.
+- Every published individual attorney profile requires attorney-specific evidence connecting that person to the portal subject. Firm-wide practice, proximity, licensing alone, search snippets, generic directory categories, or AI prediction are insufficient.
+- For New York candidate generation, use the official New York State Attorney Registrations dataset eqw2-r5nb as the primary structured identity and registration foundation, subject to permitted use and separate individual-practice evidence.
+- Profile growth follows the owner-approved maximum-yield rotation across Downtown Brooklyn and 26 Court Street, broader Brooklyn, Manhattan, Queens, the Bronx, Northern Metro New Jersey, NYC-connected Connecticut, then Staten Island and Nassau before Suffolk, followed by statewide New York and the approved later-state order.
+- Every profile-growth batch must preserve provenance, checked dates, official identity evidence, individual-practice evidence, deduplication, conflicts, rejection reasons, suppression, claim state, freshness, and exact new, updated, total, geography, practice, and evidence-quality metrics, including honest zero values.
+- Every portal release must audit the complete applicable surface set, including public, professional, firm, owner/admin, evidence, import, account, form, directory, profile, claim, correction, removal, empty, loading, error, success, mobile, tablet, SEO, print, email, and accessibility states; homepage-only polish is insufficient.
+- The Smarter Justice family design uses a bright-white or near-white foundation, restrained portal accent, professional typography, coordinated logo and favicon assets, accessible contrast, clear action hierarchy, and strong mobile, tablet, desktop, zoom, keyboard, reduced-motion, and assistive-technology behavior.
+- Do not use nonfunctional decorative pills, capsules, chips, bubbles, or ovals. They are permitted only as real controls, links, filters, selectable options, or meaningful status indicators.
+- Do not stop at plans, mockups, disconnected screens, empty importers, recommendations, or token profile batches when substantially more responsible implementation and testing can be completed.
+- Every continuation prompt and release manifest must carry the complete current Next Version Improvement List. An item may disappear only when completed and verified, explicitly rejected by the owner, or superseded by a stronger controlling decision with evidence.
+- Every final release must freeze source, regenerate a self-excluding inventory, package one authoritative ZIP, verify safe archive structure, extract independently twice, test the exact packaged bytes, verify post-test stability, and record every blocked or unrun test honestly.
+- Do not make changes merely for the sake of making changes. Change only what materially improves users, operations, compliance, safety, security, reliability, maintainability, deployability, conversion, or legal-network compatibility.
 - Keep each focused micro-portal separately branded, deployable, versioned, testable, and reversible even when it reuses shared Smarter Justice capabilities.
 - Keep Immigration Oasis separate and immigration-only unless the owner expressly changes that decision.
 - Use plain customer-facing language and keep internal builder, routing-engine, queue, handoff, release-gate, risk-flag, and technical terminology out of public pages.
@@ -71,7 +97,7 @@ Carry the current Smarter Justice ecosystem rules, strong defaults, recommendati
 
 ## Strong defaults
 
-- Use one Smarter Justice Master Coordination track for ecosystem strategy and separate dedicated development chats for detailed portal implementation.
+- Use one Smarter Justice Master Coordination track for legal-network strategy and separate dedicated development chats for detailed portal implementation.
 - Use common conventions for security, upload handling, roles, audit logging, health endpoints, release manifests, referral attribution, review states, and form-source records where those conventions genuinely fit the specialty.
 - Provide a private owner Control Center that tracks portal versions, builds, milestones, decisions, adaptations, readiness, professional-network status, revenue capabilities, and future work.
 - Use a Green, Yellow, and Red readiness model where helpful: Green means an exact verified self-service lane is released; Yellow means free organization or a preliminary draft without filing-ready claims; Red means qualified professional completion or approval is required.
@@ -167,6 +193,10 @@ Non-waivable boundaries:
 
 ## Every build handoff must contain
 
+- Integrated legal-portal standard version and conformance status
+- Complete carried-forward Next Version Improvement List with evidence for every removal
+- Exact profile-growth and evidence-quality metrics, including honest zero values and attempted-source blockers
+- Complete surface, responsive, accessibility, performance, security, and exact-artifact acceptance evidence
 - Latest clean ZIP or repository reference
 - Current version and deployment status
 - Full test results from a clean environment
@@ -179,6 +209,9 @@ Non-waivable boundaries:
 
 ## Change log
 
+- 1.7.0 — 2026-07-28: Made Smarter Justice self-contained for legal-portfolio operations; made Roger the final owner authority; moved Neutral Boardroom to dormant optional non-confidential export only; established Divorce, Estate, and Personal Injury as the initial pilots; included vehicle accidents within Personal Injury while preserving Workers’ Compensation separately and Car Accident Law Aid as an independent compatibility asset.
+- 1.6.0 — 2026-07-27: Added the controlling 48-hour launch objective and separate fail-closed public, attorney-application, paid-enrollment, sensitive-storage, and deployment gates.
+- 1.5.0 — 2026-07-27: Integrated the owner-approved dual-mission legal-portal profile-growth, complete-product-quality, family-design, no-decorative-pill, attorney-specific evidence, New York structured-source, maximum-yield geography, exact metrics, complete-surface audit, carry-forward, and exact-artifact requirements.
 - 1.4.3 — 2026-07-20: Added official-source pagination and preserved-filter requirements, shareable and clearable public directory searches, public profile metadata and structured-data guidance, professional setup checklists, mobile autofill standards, transparent firm pricing estimators, and clearer free-versus-paid public pricing language.
 - 1.4.2 — 2026-07-20: Added mandatory useful default directory page sizes, pagination and completeness regression tests, individual/firm profile and claim-control parity, vendor-neutral public checkout language, accurate campaign attribution, and explicit narrow-phone acquisition-flow testing.
 - 1.4.1 — 2026-07-20: Added mandatory customer-language audits, phone/tablet/desktop conversion-path review, professional funnel truthfulness, transparent recurring-checkout disclosures, public/internal indexing separation, and explicit Control Center readiness fields for language, accessibility, conversion, and prompt/build handoffs.

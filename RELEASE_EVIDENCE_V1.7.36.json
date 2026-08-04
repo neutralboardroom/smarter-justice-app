@@ -1,0 +1,105 @@
+{
+  "version": "1.7.36",
+  "date": "2026-07-27",
+  "status": "exact-artifact-tested development release; not deployed",
+  "sourceArtifact": {
+    "filename": "smarter-justice-v1.7.35.zip",
+    "sha256": "823cb0dc2da5f01d316f2e399e5c9c1178a9b1a4e528727b866976f569da2df8",
+    "sizeBytes": 1794515,
+    "entries": 578,
+    "files": 567,
+    "explicitDirectories": 11
+  },
+  "implementation": {
+    "centralProfessionalIdentityFoundation": true,
+    "firmOrganizationAccountFoundation": true,
+    "multipleOfficeFoundation": true,
+    "perProfessionalSeatFoundation": true,
+    "evidenceBasedPracticeAssignmentFoundation": true,
+    "canonicalProfessionalPortalMapping": true,
+    "professionalPortalAliasRegistry": true,
+    "professionalPortalHandoffSchemaVersion": "1.1.0",
+    "canonicalProfessionalPortalAssignments": 678,
+    "unresolvedLegacyProfessionalAssignments": 14,
+    "professionalPortalCoordinationContracts": 25,
+    "professionalPortalContractsAtD3": true,
+    "professionalPortalFixturesPopulated": 14,
+    "professionalPortalFixturesValidEmpty": 11,
+    "deterministicPortalHandoffFingerprints": true,
+    "prohibitedPortalHandoffDataFindings": 0,
+    "liveProfessionalPortalConnections": 0,
+    "automaticProfessionalPortalWrites": false,
+    "liveProfessionalBilling": false,
+    "publicProfessionalCheckout": false,
+    "publicProfessionalInquiries": false,
+    "professionalAppointmentBooking": false,
+    "crossPillarAdministration": false,
+    "liveNeutralBoardroomIntegration": false,
+    "productionDeployment": false
+  },
+  "profileGrowth": {
+    "decision": "NO_WEAK_PADDING",
+    "newProfessionals": 0,
+    "newFirms": 0,
+    "newLinks": 0,
+    "regionsWorked": 0,
+    "publicDirectory": {
+      "professionals": 233,
+      "firms": 48,
+      "total": 281
+    },
+    "strictQualifying": {
+      "professionals": 232,
+      "firms": 46,
+      "total": 278
+    }
+  },
+  "storage": {
+    "removedFiles": 0,
+    "removedUncompressedBytes": 0,
+    "note": "Added canonical mapping, adapter validation, owner UI, tests, and concise current release records; no inherited working feature or source file was removed."
+  },
+  "testing": {
+    "suiteParts": 92,
+    "newProfessionalPortalAdapterLabTest": true,
+    "workingTree": "passed complete 92-part regression suite",
+    "freshExtractionA": "passed complete 92-part regression suite from independently extracted exact release artifact",
+    "freshExtractionB": "passed complete 92-part regression suite from independently extracted exact release artifact",
+    "javascriptSyntax": "203 JavaScript files passed node --check",
+    "jsonParsing": "149 JSON files parsed successfully",
+    "runtimeAcceptance": "passed in working tree and both independent release extractions, including owner-authenticated professional adapter APIs",
+    "inventoryValidation": "passed in both independent release extractions",
+    "byteEquality": "passed against frozen source for all self-inventoried packaged files",
+    "postTestStability": "passed; packaged file bytes remained unchanged after tests",
+    "dependencyInstall": "attempted from clean node_modules; configured npm registry returned HTTP 503 for xtend-4.0.2.tgz",
+    "vulnerabilityAudit": "attempted; configured npm advisory endpoint returned HTTP 503; no fresh vulnerability count claimed",
+    "testOnlyCompatibilityModulesPackaged": false,
+    "browserAcceptance": "not claimed",
+    "physicalDeviceAcceptance": "not claimed",
+    "assistiveTechnologyAcceptance": "not claimed"
+  },
+  "deployment": {
+    "deployed": false,
+    "lastVerifiedProduction": "1.6.1",
+    "rollbackArtifact": "smarter-justice-v1.7.35.zip",
+    "rollbackSha256": "823cb0dc2da5f01d316f2e399e5c9c1178a9b1a4e528727b866976f569da2df8"
+  },
+  "activationGatesChanged": false,
+  "closedGates": [
+    "payments",
+    "subscriptions",
+    "booking",
+    "reviews",
+    "sensitive uploads",
+    "filing",
+    "unrestricted professional routing",
+    "AttorneyRide transfer",
+    "automatic cross-repository writes",
+    "automatic professional portal writes",
+    "centralized public-user matter storage",
+    "live Neutral Boardroom connection",
+    "cross-pillar administration",
+    "production deployment"
+  ],
+  "finalArchiveIdentity": "Detached external delivery report; an archive cannot contain its own stable checksum."
+}

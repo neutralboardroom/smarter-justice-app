@@ -44,7 +44,7 @@ const SCHEMAS = {
       { name: 'noticeNumber', label: 'IRS, state, or city notice number if shown', type: 'text', optional: true },
       { name: 'amountInvolved', label: 'Approximate amount the notice says is due or disputed', type: 'text', optional: true },
       { name: 'deadlineDate', label: 'Deadline, response date, hearing date, or levy/garnishment date', type: 'date', optional: true },
-      { name: 'desiredHelp', label: 'Preferred help', type: 'select', options: ['Organize a tax notice', 'Prepare for CPA/enrolled agent/accountant review', 'Prepare for tax attorney review', 'Explore payment plan or offer in compromise starting file', 'Tax return preparation help'], optional: true }
+      { name: 'desiredHelp', label: 'Preferred help', type: 'select', options: ['Organize a tax notice', 'Prepare for CPA/enrolled agent/accountant review', 'Prepare for tax attorney review', 'Explore payment plan or offer in compromise starting summary', 'Tax return preparation help'], optional: true }
     ]
   },
   'divorce-family-law': {
@@ -56,6 +56,17 @@ const SCHEMAS = {
       { name: 'childrenInvolved', label: 'Are children involved?', type: 'select', options: ['Yes', 'No', 'Not sure'], optional: true },
       { name: 'courtOrAgency', label: 'Court name or county if papers were filed', type: 'text', optional: true },
       { name: 'deadlineDate', label: 'Response date, hearing date, or deadline', type: 'date', optional: true }
+    ]
+  },
+  'domestic-violence-protection-orders': {
+    title: 'Domestic violence safety and support starting details',
+    note: 'Use the dedicated no-save Domestic Violence Safety & Support portal. Do not collect names, contact details, addresses, documents, or account information through the general saved-matter workflow.',
+    requiredBeforeSpecificHelp: ['question'],
+    followUps: [
+      { name: 'safeToContinue', label: 'Is it safe to keep using this device right now?', type: 'select', options: ['Yes', 'No', 'Not sure'], optional: true },
+      { name: 'immediateDanger', label: 'Is anyone in immediate danger right now?', type: 'select', options: ['Yes', 'No', 'Not sure'], optional: true },
+      { name: 'desiredHelp', label: 'What kind of help would be most useful?', type: 'select', options: ['Talk with an advocate', 'Emergency shelter or safer housing', 'Order of protection information', 'Find a lawyer', 'Technology safety', 'Children or custody safety', 'Organize questions or documents', 'Help someone else', 'Not sure'], optional: true },
+      { name: 'county', label: 'County or borough for local resources', type: 'text', optional: true }
     ]
   },
   'landlord-tenant-housing': {

@@ -1,0 +1,10 @@
+'use strict';
+const assert=require('assert');const fs=require('fs');const path=require('path');
+const read=f=>fs.readFileSync(path.join(__dirname,'..',f),'utf8');
+const flyer=read('public/partner-flyer.html'),app=read('public/app.js');assert(!/onclick\s*=/.test(flyer));assert(flyer.includes('id="printPartnerFlyer"'));assert(app.includes("document.querySelector('#printPartnerFlyer')"));
+const pricing=read('public/pricing.html'),signup=read('public/professional-signup.html'),membership=read('public/professional-membership.html'),ai=read('public/ai-summary.html'),llms=read('public/llms.txt');
+assert(!pricing.includes('Supporter and Continuity')&&!pricing.includes('Expanded Continuity'));assert(!pricing.includes('$5<span>/month')&&!pricing.includes('$10<span>/month'));assert(pricing.includes('Meaningful guided starting help stays free'));assert(pricing.includes('No Paid Public Service Available'));assert(pricing.includes('Monthly only. No annual conversion or hidden add-on.'));assert(!/save \$30 per year|billed annually/i.test(pricing));
+assert(signup.includes('Only the fields marked required are needed now.'));assert(signup.includes('Optional now. Recommended before launch review.'));assert(signup.includes('No charge during account creation'));assert(!signup.includes('applications are paused'));assert(!membership.includes('Paid enrollment remains paused'));
+assert(ai.includes('Version 1.7.41')&&ai.includes('281 public records')&&ai.includes('278 strict qualifying profiles'));assert(llms.includes('Version 1.7.41')&&llms.includes('281 public records'));
+for(const f of ['PREDEPLOYMENT_AUDIT_V1.7.26.md','PREDEPLOYMENT_AUDIT_V1.7.26.json'])assert(fs.existsSync(path.join(__dirname,'..',f)));const audit=require('../PREDEPLOYMENT_AUDIT_V1.7.26.json');assert.equal(audit.baselineRegressionParts,54);assert(audit.revenue.rejected.includes('ping-post lead sales'));
+console.log('predeployment-audit-v1726.test.js passed');

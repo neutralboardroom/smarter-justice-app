@@ -1,0 +1,33 @@
+{
+  "schema_id": "SJP-PROVIDER-DISCOVERY-AUTHORIZATION-LIFECYCLE-2026-08-03-V1",
+  "releaseVersion": "1.7.75",
+  "allowed_event_types": [
+    "REQUEST_REGISTERED",
+    "AUTHORIZED_READ_ONLY",
+    "DECLINED",
+    "EXPIRED",
+    "REVOKED",
+    "EXECUTION_ENVELOPE_ISSUED",
+    "EXECUTION_RECEIPT_ACCEPTED"
+  ],
+  "terminal_states": [
+    "DECLINED",
+    "EXPIRED",
+    "REVOKED",
+    "COMPLETED"
+  ],
+  "invariants": {
+    "append_only": true,
+    "hash_chain_required": true,
+    "exact_request_binding_required": true,
+    "exact_artifact_binding_required": true,
+    "single_use_execution": true,
+    "replay_rejected": true,
+    "secret_values_forbidden": true,
+    "write_operations_forbidden": true,
+    "deployment_authority_separate": true,
+    "production_authority_separate": true,
+    "cohort_freeze_authority_separate": true,
+    "canary_authority_separate": true
+  }
+}

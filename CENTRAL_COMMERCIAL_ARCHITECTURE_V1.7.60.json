@@ -1,0 +1,61 @@
+{
+  "schema": "smarter-justice-central-commercial-architecture",
+  "schemaVersion": "1.0.0",
+  "releaseVersion": "1.7.60",
+  "generatedAt": "2026-07-31T16:19:00-04:00",
+  "state": "IMPLEMENTED_FOUNDATION_GATES_CLOSED",
+  "centralRelationship": {
+    "professionalAccount": "ONE_CENTRAL_ACCOUNT",
+    "professionalIdentity": "ONE_CENTRAL_IDENTITY",
+    "firmAndOffices": "CENTRAL_AUTHORITY_WITH_SEPARATE_ATTORNEY_CONTROL",
+    "stripeCustomer": "ONE_CENTRAL_CUSTOMER_WHERE_APPLICABLE",
+    "subscription": "ONE_CENTRAL_SUBSCRIPTION_OR_COVERED_FIRM_SEAT",
+    "entitlements": "CENTRAL_VERSIONED_FAIL_CLOSED",
+    "supportAndReconciliation": "CENTRAL"
+  },
+  "prohibitedDuplication": [
+    "duplicate portal professional accounts",
+    "duplicate Stripe customers for the same covered professional or firm",
+    "duplicate portal subscriptions for centrally covered participation",
+    "payment-derived profile facts, verification, authority, specialty, organic rank or endorsement"
+  ],
+  "pilotContext": {
+    "status": "PROPOSED_NOT_APPROVED",
+    "approximateMonthlyRangeUsd": [
+      10,
+      20
+    ],
+    "firmDiscounts": "PROPOSED",
+    "seatConcepts": [
+      "per-seat",
+      "covered-seat"
+    ],
+    "publicActivation": false,
+    "ownerDecisionRequired": true
+  },
+  "freeControls": [
+    "profile claim",
+    "factual correction",
+    "suppression",
+    "removal",
+    "verification preparation",
+    "approved profile editing"
+  ],
+  "futureLeadIntegrations": [
+    {
+      "vendor": "Nolo",
+      "state": "DEFERRED_SEPARATELY_GATED",
+      "initialLaunchDependency": false
+    },
+    {
+      "vendor": "4LegalLeads",
+      "state": "DEFERRED_SEPARATELY_GATED",
+      "initialLaunchDependency": false
+    }
+  ],
+  "liveBilling": false,
+  "publicCheckout": false,
+  "activePaidMembers": 0,
+  "automaticOpportunityDelivery": false,
+  "launchState": "NO_GO"
+}

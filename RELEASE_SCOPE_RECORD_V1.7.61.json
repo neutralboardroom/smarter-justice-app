@@ -1,0 +1,31 @@
+{
+  "schema": "smarter-justice-release-scope-record",
+  "releaseVersion": "1.7.61",
+  "generatedAt": "2026-07-31T17:14:00-04:00",
+  "releaseType": "COMPLETE CONNECTED MATERIAL RELEASE",
+  "selectedOutcomes": [
+    "exact v1.7.60 source and rollback reconciliation",
+    "fourth-pass reusable master intake",
+    "version-neutral portal authority discovery",
+    "binding monthly $15 commercial terms and one-payer-per-seat controls",
+    "public freemium floor and non-AI fallback",
+    "Monday owner-action gate reduction",
+    "continuation and prompt-regression protection"
+  ],
+  "preserved": [
+    "all public legal starting tools",
+    "Attorney Partner Tour structure",
+    "free factual profile control",
+    "separate portal repositories",
+    "closed live gates",
+    "Domestic Violence survivor-safety boundary"
+  ],
+  "excluded": [
+    "portal repository changes",
+    "deployment",
+    "live portal connections",
+    "live payment activation",
+    "paid AI activation"
+  ],
+  "launchState": "NO_GO"
+}

@@ -1,0 +1,86 @@
+{
+  "schema": "smarter-justice-current-research-competitive-learning",
+  "schemaVersion": "1.0.0",
+  "releaseVersion": "1.7.64",
+  "generatedAt": "2026-07-31T23:49:00-04:00",
+  "researchDate": "2026-07-31",
+  "scope": [
+    "accessibility currentness",
+    "AI risk and prompt injection",
+    "New York official self-help",
+    "release-truth presentation",
+    "portal authority freshness"
+  ],
+  "sourceHierarchyApplied": true,
+  "lawfulUseBoundary": "Official and public-source facts and patterns only; no protected implementation copied.",
+  "sources": [
+    {
+      "sourceId": "RES-W3C-WCAG22-20260731",
+      "publisher": "W3C Web Accessibility Initiative",
+      "title": "WCAG 2 Overview",
+      "url": "https://www.w3.org/WAI/standards-guidelines/wcag/",
+      "retrievedAt": "2026-07-31T23:49:00-04:00",
+      "sourceClass": "OFFICIAL_STANDARD",
+      "currentness": "W3C page updated May 5, 2026 and encourages use of the latest WCAG 2 version.",
+      "learning": "Preserve WCAG 2.2 and real human conformance acceptance; automated source checks are not a conformance claim.",
+      "disposition": "PRESERVE_AND_REVALIDATE"
+    },
+    {
+      "sourceId": "RES-W3C-ACT11-20260731",
+      "publisher": "W3C Web Accessibility Initiative",
+      "title": "Accessibility Conformance Testing Rules Format 1.1",
+      "url": "https://www.w3.org/WAI/",
+      "retrievedAt": "2026-07-31T23:49:00-04:00",
+      "sourceClass": "OFFICIAL_STANDARD",
+      "currentness": "W3C reports ACT Rules Format 1.1 became a Recommendation on February 5, 2026.",
+      "learning": "Bind automated accessibility evidence to explicit rules and keep human/device acceptance separate.",
+      "disposition": "ADAPT_TO_EVIDENCE_CLASSIFICATION"
+    },
+    {
+      "sourceId": "RES-NIST-AIRMF-20260731",
+      "publisher": "NIST",
+      "title": "AI Risk Management Framework",
+      "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+      "retrievedAt": "2026-07-31T23:49:00-04:00",
+      "sourceClass": "OFFICIAL_GOVERNMENT_GUIDANCE",
+      "currentness": "AI RMF 1.0 is being revised; NIST lists the 2024 Generative AI Profile and April 2026 critical-infrastructure concept note.",
+      "learning": "Keep AI governance versioned, monitored, human-reviewed and revalidated; do not make Tier A depend on external AI.",
+      "disposition": "PRESERVE_AND_REVALIDATE"
+    },
+    {
+      "sourceId": "RES-OWASP-PROMPT-INJECTION-20260731",
+      "publisher": "OWASP",
+      "title": "LLM Prompt Injection Prevention Cheat Sheet",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/LLM_Prompt_Injection_Prevention_Cheat_Sheet.html",
+      "retrievedAt": "2026-07-31T23:49:00-04:00",
+      "sourceClass": "PRIMARY_SECURITY_GUIDANCE",
+      "currentness": "Retrieved July 31, 2026.",
+      "learning": "Preserve instruction/data separation, validation, least privilege, monitoring, human approval and kill switches.",
+      "disposition": "PRESERVE"
+    },
+    {
+      "sourceId": "RES-NYCOURTS-COURTHELP-20260731",
+      "publisher": "New York State Unified Court System",
+      "title": "CourtHelp",
+      "url": "https://www.nycourts.gov/help/courthelp",
+      "retrievedAt": "2026-07-31T23:49:00-04:00",
+      "sourceClass": "OFFICIAL_COURT_SOURCE",
+      "currentness": "Retrieved July 31, 2026.",
+      "learning": "Keep official court resources and legal-information boundaries clear; do not imply filing or legal advice.",
+      "disposition": "PRESERVE"
+    }
+  ],
+  "implementedInnovations": [
+    "protected runtime current-release truth",
+    "stale private Control Center claim regression",
+    "evidence-scoped portal authority refresh"
+  ],
+  "preservedAfterResearch": [
+    "homepage and public visual system",
+    "WCAG 2.2 reference",
+    "non-AI Tier A fallback",
+    "official-resource routing",
+    "closed live gates"
+  ],
+  "result": "CURRENT_RESEARCH_COMPLETED_RUNTIME_TRUTH_FIX_SUPPORTED"
+}

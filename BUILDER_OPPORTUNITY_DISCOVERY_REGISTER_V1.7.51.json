@@ -1,0 +1,44 @@
+{
+  "release": "1.7.51",
+  "generatedAt": "2026-07-30",
+  "selectedScope": "Four-portal active launch conversion with Domestic Violence safety-first coordination and Stop Sign Project preservation",
+  "selectionReason": "Highest combined launch, survivor-safety, privacy, owner-operability, and testability value without opening a live gate.",
+  "rankedOpportunities": [
+    {
+      "rank": 1,
+      "item": "Four-portal active launch conversion",
+      "disposition": "IMPLEMENTED",
+      "benefit": "Removes obsolete three-portal current coordination."
+    },
+    {
+      "rank": 2,
+      "item": "Domestic Violence safety acceptance and safe entry",
+      "disposition": "IMPLEMENTED_FAIL_CLOSED",
+      "benefit": "Provides truthful no-save routing and mandatory safety evidence."
+    },
+    {
+      "rank": 3,
+      "item": "Stop Sign Project preservation",
+      "disposition": "IMPLEMENTED_AS_EXPLICIT_RELATIONSHIP",
+      "benefit": "Prevents brand, route, and initiative loss."
+    },
+    {
+      "rank": 4,
+      "item": "Organization authority contract",
+      "disposition": "GATED",
+      "benefit": "Avoids inventing unsupported central organization authority."
+    },
+    {
+      "rank": 5,
+      "item": "Exact four-portal staging",
+      "disposition": "BLOCKED_EXTERNAL_ARTIFACTS_AND_OWNER_ACCEPTANCE",
+      "benefit": "Required before live connection."
+    },
+    {
+      "rank": 6,
+      "item": "Payment, sponsored placement, opportunities, reviews, appointments, uploads, external AI",
+      "disposition": "DEFERRED_CLOSED",
+      "benefit": "Preserves legal, safety, and evidence boundaries."
+    }
+  ]
+}

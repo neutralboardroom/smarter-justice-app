@@ -1,0 +1,3 @@
+# Smarter Justice Continuation After v1.7.38
+
+Use the exact final `smarter-justice-v1.7.38.zip` as implementation truth after verifying its detached delivery identity. Continue the 48-hour controlled launch objective. Run the three launch lanes separately, preserve fail-closed approvals, complete production service and acceptance evidence, and deploy or activate only with Roger’s separate explicit authorization. Carry forward `LEGAL_MICRO_PORTAL_INTEGRATED_STANDARD_V1.0.0.md`, the current Master Rules Pack, the complete Next Version Improvement List, `LAUNCH_RUNBOOK_48_HOUR_V1.7.38.md`, and all limitations. Immediate rollback is exact `smarter-justice-v1.7.37.zip`, SHA-256 `e033daf1e65cf1681b13b535f6e828d186d17efdc1d6f8785fb3c9ebae911fdd`.

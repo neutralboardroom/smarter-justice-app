@@ -1,0 +1,49 @@
+{
+  "schema": "smarter-justice-central-commercial-architecture",
+  "schemaVersion": "2.0.0",
+  "releaseVersion": "1.7.72",
+  "generatedAt": "2026-08-02T17:04:00-04:00",
+  "state": "BINDING_15_DOLLAR_MANIFEST_IMPLEMENTED_GATES_CLOSED",
+  "manifest": "COMMERCIAL_TERMS_AND_ENTITLEMENT_MANIFEST_V1.7.72.json",
+  "centralRelationship": {
+    "professionalAccount": "ONE_CENTRAL_ACCOUNT",
+    "professionalIdentity": "ONE_CENTRAL_IDENTITY",
+    "firmAndOffices": "CENTRAL_AUTHORITY_WITH_SEPARATE_ATTORNEY_CONTROL",
+    "stripeCustomer": "ONE_CENTRAL_CUSTOMER_WHERE_APPLICABLE",
+    "subscription": "ONE_CENTRAL_SUBSCRIPTION_OR_COVERED_FIRM_SEAT",
+    "entitlements": "CENTRAL_VERSIONED_FAIL_CLOSED",
+    "supportAndReconciliation": "CENTRAL"
+  },
+  "currentMonthlyStructure": {
+    "attorneyCents": 1500,
+    "firmProfileCents": 1500,
+    "firmCoveredAttorneySeatCents": 1500,
+    "annualPlansAllowed": false,
+    "volumeDiscountsAllowed": false,
+    "onePayerPerAttorneySeat": true
+  },
+  "freeControls": [
+    "claim basic factual profile",
+    "correct facts",
+    "request suppression or removal",
+    "verification preparation",
+    "approved factual editing"
+  ],
+  "futureLeadIntegrations": [
+    {
+      "vendor": "Nolo",
+      "state": "DEFERRED_SEPARATELY_GATED",
+      "initialLaunchDependency": false
+    },
+    {
+      "vendor": "4LegalLeads",
+      "state": "DEFERRED_SEPARATELY_GATED",
+      "initialLaunchDependency": false
+    }
+  ],
+  "liveBilling": false,
+  "publicCheckout": false,
+  "activePaidMembers": 0,
+  "automaticOpportunityDelivery": false,
+  "launchState": "NO_GO"
+}

@@ -1,0 +1,16 @@
+{
+  "releaseVersion": "1.7.56",
+  "standardVersion": "1.0.0",
+  "generatedAt": "2026-07-30",
+  "fieldOwnershipMatrix": "See data/professionalLifecycleGovernanceV1754.js and owner API /api/owner/professional-lifecycle-governance",
+  "automaticPortalWriteBack": false,
+  "lastWriteWins": false,
+  "conflictReceiptsRequired": true,
+  "rollbackRequired": true,
+  "sensitiveNeverExported": [
+    "supportNarrative",
+    "survivorNarrative",
+    "safeContactChoice"
+  ],
+  "acceptance": "IMPLEMENTED_AND_TESTED_CENTRAL_FOUNDATION"
+}

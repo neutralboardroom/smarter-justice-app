@@ -1,0 +1,27 @@
+{
+  "schema": "smarter-justice-master-pair-commit-receipt-binding",
+  "releaseVersion": "1.7.72",
+  "generatedAt": "2026-08-02T17:04:00-04:00",
+  "receipt": {
+    "filename": "Smarter_Justice_Eighth_Pass_Four_Portal_Twenty_Sixth_Pass_Master_Pair_Commit_Receipt_2026-07-31.txt",
+    "packagedPath": "governance/receipts/MASTER_PAIR_COMMIT_RECEIPT_E1_R0.txt",
+    "sha256": "4dd826cb0f9d89e41528b9732f250899cab45ce89766ae7fdfdb8a44d48d906e",
+    "sizeBytes": 5295,
+    "lineCount": 92,
+    "receiptId": "MPCR-2026-07-31-E1-R0-05F4296ED378",
+    "transactionId": "MPPT-2026-07-31-SJ8-FP26-304CB87BF174",
+    "pairEpoch": 1,
+    "pairRevision": 0
+  },
+  "receiptTextState": "CURRENT_CHAT_EXACTLY_INSPECTED",
+  "receiptIdentityVerified": true,
+  "centralPromptIdentityVerified": true,
+  "state": "MASTER_PAIR COMMITTED — PROMPT COMPATIBILITY ONLY",
+  "compatibilityLimits": [
+    "no product implementation proof",
+    "no D4/D5 proof",
+    "no deployment proof",
+    "no commercial activation proof",
+    "no live-operation proof"
+  ]
+}

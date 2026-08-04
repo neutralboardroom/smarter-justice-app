@@ -1,0 +1,43 @@
+{
+  "release": "1.7.54",
+  "recordedAt": "2026-07-30",
+  "status": "SOURCE_EXACT_VERIFIED_BUILD_IN_PROGRESS",
+  "launchState": "NO_GO",
+  "suppliedArtifact": {
+    "filename": "smarter-justice-v1.7.53.zip",
+    "sha256": "f6c881faf1f72de44d062b15d3d7701574663a2b22a9d9273a6930580a359cac",
+    "sizeBytes": 4570546,
+    "entries": 1306,
+    "files": 1288,
+    "directories": 18,
+    "uncompressedBytes": 12560761,
+    "compressedBytes": 4380270,
+    "inventoryRecords": 1287,
+    "inventorySha256": "9c3c86944989026ebafe325d497a973e805e9e494f35418f9e3b3dab9dfcc31a",
+    "packageJsonSha256": "d74047957da87b20724f56c6e2dd72ea4013c13e316239cb4fe39039ea28f8c6",
+    "packageLockSha256": "551330437c360961c4362e82fd66fc5ab35d80582f7ab4a48b263450c659fed3",
+    "twoIndependentExtractionTreesEqual": true,
+    "dependencyIndependentSuiteRuns": 2,
+    "dependencyIndependentCommandParts": 107,
+    "totalReadinessParts": 108
+  },
+  "workingTree": {
+    "version": "1.7.54",
+    "source": "exact v1.7.53 extraction",
+    "deploymentAuthorized": false
+  },
+  "baselineTests": {
+    "dependencyIndependentCommandParts": 107,
+    "runs": 2,
+    "result": "PASS"
+  },
+  "authenticBlockers": {
+    "npmCi": "BLOCKED",
+    "request": "xtend-4.0.2.tgz",
+    "registryResult": "HTTP 404 from configured internal npm proxy",
+    "npmAudit": "BLOCKED",
+    "auditResult": "HTTP 404 from configured audit endpoint",
+    "postgresAcceptance": "NOT_RUN_DEPENDENCY_UNAVAILABLE",
+    "claimBoundary": "No clean-install, PostgreSQL, vulnerability or supply-chain acceptance is claimed."
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "schema": "smarter-justice-attorney-field-outreach-kit",
+  "schemaVersion": "1.0.0",
+  "releaseVersion": "1.7.65",
+  "recordedAt": "2026-07-31T23:58:00-04:00",
+  "launchState": "NO_GO",
+  "purpose": "Privacy-minimized, practice-relevant field handoff for Roger-guided attorney conversations.",
+  "modes": [
+    "self-guided",
+    "presenter"
+  ],
+  "practiceHandoffs": [
+    {
+      "practice": "divorce",
+      "portalId": "divorce-law-aid",
+      "label": "Divorce and family law",
+      "shortPath": "/attorney-tour/divorce",
+      "canonicalDestination": "/attorney-partner-tour.html?practice=divorce",
+      "qrAsset": "/images/attorney-tour/divorce.svg",
+      "printPath": "/attorney-tour-follow-up.html?practice=divorce",
+      "qrSha256": "b9f9f250470c31db2baca0107613358f85a42bb9d081312b576661485388a00a"
+    },
+    {
+      "practice": "estate",
+      "portalId": "estate-law-aid",
+      "label": "Estate planning and probate",
+      "shortPath": "/attorney-tour/estate",
+      "canonicalDestination": "/attorney-partner-tour.html?practice=estate",
+      "qrAsset": "/images/attorney-tour/estate.svg",
+      "printPath": "/attorney-tour-follow-up.html?practice=estate",
+      "qrSha256": "391d653831f8b5e6da0f22409b9bc5e860a2a14259c4b4e2097720111daaa21b"
+    },
+    {
+      "practice": "personal-injury",
+      "portalId": "personal-injury-law-aid",
+      "label": "Personal injury",
+      "shortPath": "/attorney-tour/personal-injury",
+      "canonicalDestination": "/attorney-partner-tour.html?practice=personal-injury",
+      "qrAsset": "/images/attorney-tour/personal-injury.svg",
+      "printPath": "/attorney-tour-follow-up.html?practice=personal-injury",
+      "qrSha256": "7517cccab24a71551f9a320076509ef9ad2bb32111d53d4dffb2f05660db78fc"
+    },
+    {
+      "practice": "domestic-violence",
+      "portalId": "domestic-violence-aid",
+      "label": "Domestic-violence-related legal or community service",
+      "shortPath": "/attorney-tour/domestic-violence",
+      "canonicalDestination": "/attorney-partner-tour.html?practice=domestic-violence",
+      "qrAsset": "/images/attorney-tour/domestic-violence.svg",
+      "printPath": "/attorney-tour-follow-up.html?practice=domestic-violence",
+      "qrSha256": "06970560582b1c3ae1530171b878a4333138b2761a277e51146388445d52fdf8"
+    }
+  ],
+  "privacy": {
+    "trackingEnabled": false,
+    "personalDataInUrls": false,
+    "matterDataInUrls": false,
+    "qrDestinationContainsCampaignIdentifier": false,
+    "allowedTourQueryParameters": [
+      "practice",
+      "mode",
+      "step"
+    ],
+    "notes": "QR codes contain only the public Smarter Justice host and a fixed practice-specific short path."
+  },
+  "printCard": {
+    "route": "/attorney-tour-follow-up.html",
+    "public": true,
+    "containsSyntheticOrPrivateProfileData": false,
+    "containsPricingOrComparativeCostClaims": false,
+    "containsJusticeBoothActivityClaims": false
+  },
+  "closedGates": [
+    "deployment",
+    "DNS changes",
+    "live portal connection",
+    "automatic publication",
+    "payment activation",
+    "confidential uploads",
+    "external AI",
+    "electronic filing",
+    "automatic outreach",
+    "launch GO"
+  ],
+  "sourceArtifact": "smarter-justice-v1.7.60.zip",
+  "releaseDisposition": "PRESERVED_AND_REVALIDATED_WITH_V1.7.65_COMMERCIAL_AND_PORTAL_AUTHORITY_TRUTH"
+}

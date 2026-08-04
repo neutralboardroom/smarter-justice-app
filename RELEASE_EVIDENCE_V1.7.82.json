@@ -1,0 +1,85 @@
+{
+  "schema": "smarter-justice-release-evidence",
+  "releaseVersion": "1.7.82",
+  "generatedAt": "2026-08-03T19:28:00-04:00",
+  "status": "FINAL_SOURCE_ACCEPTED_DETACHED_FINAL_PENDING",
+  "sourceArtifact": {
+    "filename": "smarter-justice-v1.7.81.zip",
+    "version": "1.7.81",
+    "sha256": "34c1928567993f40ead33fe5335a479e7e3e735f0e3911b3835952668f393d86",
+    "sizeBytes": 8794138,
+    "entries": 3101,
+    "files": 3077,
+    "directories": 24,
+    "uncompressedBytes": 26099466,
+    "compressedBytes": 8323670,
+    "payloadInventoryRecords": 3074,
+    "payloadInventorySha256": "659cf153799ee0358dd2a399f7381d3fe94b9f60a8ee46485f6e985ee95aab87",
+    "inventoryRecords": 3076,
+    "inventorySha256": "74a97a6274fccc591d1e846833e0ed5c3cd03cf98f2e075b106a52d8e331c995",
+    "treeSha256": "74a97a6274fccc591d1e846833e0ed5c3cd03cf98f2e075b106a52d8e331c995",
+    "packageJsonSha256": "368e14ec101496339f29d8b1082961dc34838235ff4316747edb9fb4dbba7be7",
+    "packageLockSha256": "c32343534da9b76bae22e259e3749f2c2ed9542714105b3ba856e95ba6b4c6aa",
+    "sbomSha256": "fb86c17cc96986a4a56eece2df3910714108139db7313d6f04551561193f6c96",
+    "dependencyIndependentParts": 141,
+    "totalReadinessParts": 142,
+    "testLogSha256": "ad0f912ac3b7f958b0f6dadd4996db299f1e80e8ef330740ec53b01bc323074e"
+  },
+  "workingTreeAcceptance": {
+    "record": "WORKING_TREE_ACCEPTANCE_V1.7.82.json",
+    "commandsPerRun": 143,
+    "runs": 2,
+    "identicalOutput": true,
+    "testLogSha256": "75ac27c328cacc1f39f3d92b675c27325662b9bc5a54f2de00556b9fe4306c11",
+    "state": "FINALIZED_WORKING_TREE_ACCEPTED"
+  },
+  "materialImprovements": {
+    "productPlatform": [
+      "Dependency-aware V14 evidence readiness and gap planner with deterministic coverage, dependency blockers, and one exact owner action without state mutation"
+    ],
+    "builderPromptSystem": [
+      "Canonical segmented acceptance manifest and stable per-command runner for all 143 dependency-independent commands"
+    ]
+  },
+  "candidateAcceptance": {
+    "record": "CANDIDATE_ARTIFACT_ACCEPTANCE_V1.7.82.json",
+    "state": "CANDIDATE_ACCEPTED",
+    "sha256": "693f28962182751c2182b401b56a0add01bde75741f7737a4addf11a89e822a3",
+    "sizeBytes": 8828711,
+    "testLogSha256": "75ac27c328cacc1f39f3d92b675c27325662b9bc5a54f2de00556b9fe4306c11"
+  },
+  "finalAcceptance": {
+    "record": "FINAL_ARTIFACT_ACCEPTANCE_V1.7.82.json",
+    "state": "FINAL_SOURCE_ACCEPTED_DETACHED_FINAL_PENDING"
+  },
+  "v14": {
+    "packetId": "SJP-LMP-UNIVERSAL-ONE-STEP-2026-08-03-V14-ALL-CHAT-MODES",
+    "packetSha256": "fce42ce0927748f94189692ef5b3bf8e0fe9f8d12273287f03a68eb7bccdad6f",
+    "mode": "MODE_B_EXISTING_CHAT_PACKET_ONLY",
+    "artifactBindingReceipt": "ARTIFACT_BINDING_AND_MODE_RECEIPT.json",
+    "ownerReceipt": "OWNER_RECEIPT.txt",
+    "releasePayloadInventory": "RELEASE_PAYLOAD_INVENTORY_SHA256.txt",
+    "unifiedLiveOperations": "V14_UNIFIED_LIVE_OPERATIONS_REGISTER_V1.7.82.json",
+    "liveEvidenceConnector": "V14_LIVE_EVIDENCE_CONNECTOR_CONTRACT_V1.7.82.json",
+    "receiptAutomation": "V14_RELEASE_RECEIPT_AUTOMATION_V1.7.82.json",
+    "finalDeliveryIdentity": "REPORTED_AFTER_PACKAGING",
+    "evidenceBatchWorkspace": "V14_EVIDENCE_BATCH_WORKSPACE_CONTRACT_V1.7.82.json",
+    "detachedDeliveryReceiptContract": "V14_DETACHED_FINAL_DELIVERY_RECEIPT_CONTRACT_V1.7.82.json",
+    "evidenceReadinessPlanner": "V14_EVIDENCE_READINESS_PLANNER_CONTRACT_V1.7.82.json",
+    "segmentedAcceptanceManifest": "ACCEPTANCE_SUITE_MANIFEST_V1.7.82.json",
+    "segmentedAcceptanceManifestSha256": "a50d77251321e063b6a572421fc741f0f03c9c319091e1b47503891bf5f4f4b7"
+  },
+  "launchState": "NO_GO",
+  "deploymentAuthorized": false,
+  "sourcePackageHashes": {
+    "packageJsonSha256": "db426c566ea41c9be7a899718bbbe904a624922071e5f04ddc4b3b849c141a67",
+    "packageLockSha256": "0e7bd658a2618f69848bf11a8286769d560693a08096543248ec41126298bd68",
+    "sbomSha256": "a5fa82094de6453a319371c6c38ce59ce310cd66ef67bac2d73b43efcb37e449"
+  },
+  "finalSourceAcceptance": {
+    "record": "FINAL_SOURCE_ACCEPTANCE_V1.7.82.json",
+    "state": "FINAL_SOURCE_ACCEPTED",
+    "runs": 2,
+    "testLogSha256": "75ac27c328cacc1f39f3d92b675c27325662b9bc5a54f2de00556b9fe4306c11"
+  }
+}

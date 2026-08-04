@@ -1,0 +1,56 @@
+{
+  "version": "1.7.26",
+  "date": "2026-07-23",
+  "deployed": false,
+  "rollbackArtifact": "smarter-justice-v1.7.25.zip",
+  "activationGatesChanged": false,
+  "predeploymentAudit": {
+    "complete": true,
+    "baselineRegressionParts": 54,
+    "staleMetadataCorrected": true,
+    "speculativePublicPricingRemoved": true,
+    "professionalSignupClarified": true,
+    "headlessBrowserLimitationDocumented": true,
+    "profileSourcesRechecked": true,
+    "nextVersionImprovementMetadataRefreshed": true,
+    "cspCompatiblePrintControl": true
+  },
+  "revenue": {
+    "professionalPricesChanged": false,
+    "annualSavingsClarified": true,
+    "newPublicPriceImplemented": false,
+    "opportunitiesClassified": true,
+    "paidOrganicRanking": false,
+    "pingPostLeadSelling": false
+  },
+  "security": {
+    "ownerAndStaffPageShellsAuthenticated": true,
+    "sensitiveTrafficApproved": false,
+    "confidentialUploadsEnabled": false
+  },
+  "profileGrowth": {
+    "leadMarket": "Brooklyn",
+    "nextLeadMarket": "Manhattan",
+    "newProfessionals": 12,
+    "newFirms": 2,
+    "newLinks": 12,
+    "publicDirectory": {
+      "professionals": 113,
+      "firms": 32,
+      "total": 145
+    },
+    "strictQualifying": {
+      "professionals": 112,
+      "firms": 30,
+      "total": 142
+    }
+  },
+  "testing": {
+    "expectedSuiteParts": 58,
+    "freshInstallCompleted": false,
+    "freshVulnerabilityCountClaimed": false
+  },
+  "production": {
+    "lastVerifiedVersion": "1.6.1"
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "version": "1.7.23",
+  "researchedAt": "2026-07-22",
+  "purpose": "Owner-only product strategy evidence. This is not a legal conclusion, endorsement, market-share claim, or permission to copy competitor branding or content.",
+  "competitors": [
+    {
+      "name": "LegalZoom",
+      "category": "subscription legal services and documents",
+      "observedPatterns": [
+        "membership bundles",
+        "short attorney consultations",
+        "document templates and review",
+        "predictable pricing"
+      ],
+      "adaptation": "Keep optional service bundles visible only after operational gates pass; preserve fee separation and no automatic professional relationship.",
+      "source": "https://www.legalzoom.com/attorneys/legal-plans-overview.html"
+    },
+    {
+      "name": "Rocket Lawyer",
+      "category": "membership documents and attorney access",
+      "observedPatterns": [
+        "personalized documents",
+        "e-signature and storage",
+        "questions and consultations",
+        "contract review automation"
+      ],
+      "adaptation": "Continue device-only preparation and exact-source tools; do not imply automated contract analysis is professional advice.",
+      "source": "https://www.rocketlawyer.com/"
+    },
+    {
+      "name": "Avvo",
+      "category": "lawyer directory and public Q&A",
+      "observedPatterns": [
+        "large profile coverage",
+        "ratings and reviews",
+        "public legal questions",
+        "claimable profiles"
+      ],
+      "adaptation": "Preserve source transparency and claim/correction workflows while keeping reviews inactive until verification and moderation controls are proven.",
+      "source": "https://www.avvo.com/"
+    },
+    {
+      "name": "FindLaw and Lawyers.com",
+      "category": "legal information and directories",
+      "observedPatterns": [
+        "topic libraries",
+        "practice-area browsing",
+        "directory comparison",
+        "English and Spanish access"
+      ],
+      "adaptation": "Improve plain-language path comparison and multilingual readiness without importing copyrighted articles or paid ranking logic.",
+      "source": "https://www.findlaw.com/"
+    },
+    {
+      "name": "LawHelp.org / Pro Bono Net",
+      "category": "legal-aid and self-help referral",
+      "observedPatterns": [
+        "trusted state-by-state referrals",
+        "eligibility-oriented help",
+        "forms and self-help resources",
+        "language access"
+      ],
+      "adaptation": "Make nonprofit legal aid and court/agency help first-class options rather than treating private counsel as the default.",
+      "source": "https://www.lawhelp.org/"
+    },
+    {
+      "name": "LegalMatch",
+      "category": "guided lawyer matching",
+      "observedPatterns": [
+        "structured case presentation",
+        "lawyer notifications",
+        "privacy messaging"
+      ],
+      "adaptation": "Use preparation tools but do not create or transmit a case, lead, or lawyer match without explicit user action and an opened routing gate.",
+      "source": "https://www.legalmatch.com/"
+    },
+    {
+      "name": "Clio Grow and Lawmatics",
+      "category": "professional intake and CRM",
+      "observedPatterns": [
+        "custom intake forms",
+        "pipeline tracking",
+        "follow-up automation",
+        "booking, reporting, and e-signature"
+      ],
+      "adaptation": "Retain professional workflow foundations, but keep booking, confidential intake, and automated follow-up closed until production operations are ready.",
+      "source": "https://www.clio.com/features/client-intake-legal-crm/"
+    }
+  ],
+  "approvedAdaptations": [
+    "Neutral Legal Help Options Navigator covering self-help, court or agency help, nonprofit legal aid, limited-scope assistance, one-time consultation, and full representation.",
+    "Clear comparison of fit, limits, preparation steps, cost questions, and relationship boundaries.",
+    "Owner-only competitor watchlist with dated sources and explicit non-copying rules.",
+    "Professional profile transparency, neutral ordering, correction and claim paths, and explicit participation status remain differentiators."
+  ],
+  "rejectedPatterns": [
+    "Paid or sponsored status influencing organic directory order.",
+    "Unverified ratings, testimonials, case results, or outcome promises.",
+    "Automatic lead creation, lawyer notification, or confidential case transmission.",
+    "Bundled paid services before staffing, security, payment, support, and legal gates pass.",
+    "Copying competitor text, layouts, scoring methods, branding, or proprietary content."
+  ]
+}

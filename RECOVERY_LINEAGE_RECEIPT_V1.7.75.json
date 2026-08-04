@@ -1,0 +1,36 @@
+{
+  "schema": "smarter-justice-recovery-lineage-receipt",
+  "releaseVersion": "1.7.75",
+  "receipt_id": "SJ-RECOVERY-V1775-2026-08-03",
+  "authoritative_recovery_base": {
+    "filename": "smarter-justice-v1.7.73.zip",
+    "sha256": "5ed64a1c13de1a536303b07a2277e234a822b9bc316b7ea97cf2547e90811898",
+    "size_bytes": 8196348,
+    "inventory_records": 2783,
+    "inventory_sha256": "177c3f91ef3a65a73827b193055eb2f78f117c6bab20c2aaadb2a77faa2439e1"
+  },
+  "unavailable_intermediate": {
+    "version": "1.7.74",
+    "reported_filename": "smarter-justice-v1.7.74.zip",
+    "reported_sha256": "f6310488038c2a2cffc233ee05a44f86f080553c918888b3a7c4d74350b67ae6",
+    "bytes_available_in_build_workspace": false,
+    "byte_exact_recovery_claimed": false
+  },
+  "supported_reconstruction_scope": [
+    "provider-discovery authorization lifecycle outcomes",
+    "append-only hash-chain validation",
+    "single-use envelope and receipt binding",
+    "replay and tamper rejection"
+  ],
+  "unsupported_claims": [
+    "byte-identical v1.7.74 source recovery",
+    "recovery of unsaved implementation details not present in exact evidence"
+  ],
+  "controlling_packet": {
+    "version": "V11",
+    "sha256": "5fc583752204994082de559b0b240aa78272ef2d92d6b5ebcba11f9ff38c15cc"
+  },
+  "launch_state": "NO_GO",
+  "deployment_authorized": false,
+  "production_deployed": false
+}

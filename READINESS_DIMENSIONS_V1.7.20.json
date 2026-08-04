@@ -1,0 +1,100 @@
+{
+  "schemaVersion": "1.0.0",
+  "project": "Smarter Justice",
+  "releaseVersion": "1.7.20",
+  "preparedDate": "2026-07-22",
+  "dimensions": [
+    {
+      "id": "publicExperience",
+      "status": "automated foundation passed",
+      "evidence": "A device-only Portal Preparation Pack connects the umbrella to focused portals with confirmed facts, local text/JSON exports, clear availability language, and no submission or persistence.",
+      "remaining": "Real-device, browser, user-comprehension, and usability acceptance remain pending."
+    },
+    {
+      "id": "accessibility",
+      "status": "automated foundation passed",
+      "evidence": "The new form uses semantic labels, fieldsets, required confirmation, live status text, keyboard-operable controls, and inherited focus/touch safeguards.",
+      "remaining": "Screen-reader, keyboard-only, zoom, large-text, and physical-device acceptance remain pending."
+    },
+    {
+      "id": "mobile",
+      "status": "automated foundation passed",
+      "evidence": "Portal-preparation and release-snapshot layouts use inherited responsive components and narrow-screen stacking.",
+      "remaining": "Physical iPhone, Android, and tablet acceptance remain pending."
+    },
+    {
+      "id": "subPlatformCoordination",
+      "status": "owner-recorded snapshot foundation",
+      "evidence": "The protected Control Center exposes 21 owner-recorded portal versions, artifact names, relationships, next actions, and explicit authority/deployment boundaries.",
+      "remaining": "Each dedicated portal artifact must remain independently authoritative and be reverified before any portal-specific build or deployment."
+    },
+    {
+      "id": "profileData",
+      "status": "source-tracked development batch",
+      "evidence": "17 new individuals, 1 new firm, and 17 links cover Manhattan, Brooklyn, and Hudson County; the directory reaches 75 public records and 72 strict qualifying profiles.",
+      "remaining": "Official credential checks, outreach, revalidation, duplicate monitoring, and live profile acceptance remain pending."
+    },
+    {
+      "id": "security",
+      "status": "code foundation passed",
+      "evidence": "Protected routes and fail-closed gates remain unchanged; the public preparation tool has no upload, account, analytics, AI, routing, or submission path.",
+      "remaining": "Production account, email, database, abuse, and operational acceptance remain pending."
+    },
+    {
+      "id": "privacy",
+      "status": "code foundation passed",
+      "evidence": "Portal Preparation Pack content stays in browser memory and local downloads; profile additions use permitted public business facts and professional-controlled sources only.",
+      "remaining": "Production privacy review and profile-request operations remain pending."
+    },
+    {
+      "id": "database",
+      "status": "external evidence required",
+      "evidence": "PostgreSQL, migrations, locking, reconnect, and fail-closed foundations remain unchanged.",
+      "remaining": "Production durability, backup, restore, and concurrency evidence remain pending."
+    },
+    {
+      "id": "email",
+      "status": "external evidence required",
+      "evidence": "Transactional-email and immutable essential-notice foundations remain unchanged.",
+      "remaining": "SPF, DKIM, DMARC, sender, delivery, bounce, complaint, reply, and support evidence remain pending."
+    },
+    {
+      "id": "payments",
+      "status": "closed",
+      "evidence": "Billing foundations exist but professional applications, payments, and public Human Review remain paused.",
+      "remaining": "Provider lifecycle, legal review, support, and owner activation remain pending."
+    },
+    {
+      "id": "legal",
+      "status": "external review required",
+      "evidence": "Preparation, profile, advertising, source, subscription, independence, correction, and claim boundaries remain explicit.",
+      "remaining": "Qualified legal and professional-responsibility review remains pending."
+    },
+    {
+      "id": "professionalOperations",
+      "status": "claim-ready foundation only",
+      "evidence": "Every new public record has source provenance, firm linkage, and a claim/correction path; none is represented as verified, participating, paid, available, or inquiry-eligible.",
+      "remaining": "Identity, authority, credential, outreach, support, service-level, billing, and inquiry operations remain pending."
+    },
+    {
+      "id": "artifactIntegrity",
+      "status": "exact artifact tested",
+      "evidence": "Package, manifest, release records, tests, profile report, portal snapshot, and SBOM are versioned for v1.7.20; the complete 37-part suite passed from fresh extraction with external test-only compatibility modules excluded from the ZIP.",
+      "remaining": "The immutable ZIP checksum and inventory are recorded in the external delivery record; deployment remains a separate closed step."
+    },
+    {
+      "id": "deployment",
+      "status": "not deployed",
+      "evidence": "v1.7.20 identifies v1.7.19 as the rollback artifact; production remains last verified v1.6.1.",
+      "remaining": "Owner approval and controlled exact-artifact deployment remain pending."
+    },
+    {
+      "id": "liveVerification",
+      "status": "not verified",
+      "evidence": "No v1.7.20 production deployment or live crawl has occurred.",
+      "remaining": "DNS, SSL, health, public routes, portal preparation, Control Center snapshot, searches, profiles, cache, robots, logs, monitoring, mobile, and accessibility require live verification."
+    }
+  ],
+  "summary": "v1.7.20 improves device-only cross-portal preparation, owner coordination, and Manhattan-led professional discovery while preserving every paid and sensitive gate as closed.",
+  "rule": "No page, snapshot, profile count, test, or percentage proves operational readiness. Each dimension requires its own evidence and approval."
+}

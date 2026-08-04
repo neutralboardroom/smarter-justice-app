@@ -1,0 +1,28 @@
+{
+  "release": "1.7.53",
+  "recordedAt": "2026-07-30T13:30:00-04:00",
+  "status": "BASELINE_VERIFIED_AND_SCOPE_SELECTED",
+  "launchState": "NO_GO",
+  "suppliedArtifact": {
+    "filename": "smarter-justice-v1.7.52.zip",
+    "sha256": "33829e486ea38ab3dce60bd1f5f6a5023ba933286bcb380aa4887fc891033c71",
+    "sizeBytes": 3896700,
+    "entries": 1269,
+    "files": 1253,
+    "directories": 16,
+    "layout": "repository files at ZIP root"
+  },
+  "workingTree": "smarter-justice-v1.7.53",
+  "baselineTests": {
+    "dependencyIndependentPartsPassed": 106,
+    "dependencyIndependentPartsTotal": 106,
+    "postgresqlDependentParts": 1,
+    "postgresqlStatus": "BLOCKED"
+  },
+  "authenticBlockers": [
+    "Configured registry cannot retrieve xtend-4.0.2.tgz",
+    "Configured audit endpoint returns 404",
+    "Production infrastructure and exact four-portal staging remain unaccepted",
+    "Real-device, assistive-technology, legal/privacy, support, monitoring, backup/restore and owner GO remain incomplete"
+  ]
+}

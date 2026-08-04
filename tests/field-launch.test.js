@@ -1,0 +1,26 @@
+const assert=require('assert');
+const fs=require('fs');
+const os=require('os');
+const path=require('path');
+process.env.NODE_ENV='test';
+process.env.SMARTER_JUSTICE_STORAGE_DIR=fs.mkdtempSync(path.join(os.tmpdir(),'sj-field-launch-'));
+const store=require('../lib/store');
+const paidOps=require('../lib/paidPilotOperations');
+const field=require('../lib/fieldLaunchProgram');
+(async()=>{
+  await store.init();store.writeJson('fieldLaunchProgram.json',null);store.writeJson('paidPilotOperations.json',null);
+  const config=field.publicConfig('DBK-COURTS-PUBLIC');assert(config.available);assert.strictEqual(config.location.area,'Downtown Brooklyn');assert.strictEqual(config.laneEnabled,false);assert(config.boundaries.some(x=>/not affiliated/i.test(x)||/government/i.test(x)));
+  const event=await field.recordEvent({eventType:'kiosk-view',campaignCode:'DBK-COURTS-PUBLIC',lane:'public',channel:'kiosk',idempotencyKey:'view-1'});assert(event.event);
+  const replay=await field.recordEvent({eventType:'kiosk-view',campaignCode:'DBK-COURTS-PUBLIC',lane:'public',channel:'kiosk',idempotencyKey:'view-1'});assert.strictEqual(replay.idempotentReplay,true);
+  const unsafe=await field.updateControls({status:'planning',staffLegalAdviceAllowed:true});assert(unsafe.error);
+  const noApproval=await field.updateControls({status:'controlled field pilot',publicLaneEnabled:true,professionalLaneEnabled:true,requireOwnerActivation:true});assert(noApproval.error);
+  await paidOps.recordOwnerApproval({approvalType:'nyc-field-launch',scope:'test field pilot',status:'approved',decision:'Test only',approvedBy:'automated test'});
+  const controls=await field.updateControls({status:'controlled field pilot',publicLaneEnabled:true,professionalLaneEnabled:true,requireOwnerActivation:true});assert.strictEqual(controls.controls.status,'controlled field pilot');
+  const campaign=await field.upsertCampaign({name:'Test office campaign',campaignCode:'TEST-OFFICE-PRO',locationId:'NYC-DBK-COURTHOUSE-CORRIDOR',lane:'professional',channel:'office visit',status:'planning'});assert(campaign.campaign);
+  const staff=await field.upsertStaff({staffCode:'RG-TEST',displayName:'Test Navigator',role:'field navigator',status:'training',allowedLanes:['public','professional'],acknowledgments:['No legal advice','No confidential oral intake']});assert(staff.staff);
+  const report=await field.recordDailyReport({date:'2026-07-20',locationId:'NYC-DBK-COURTHOUSE-CORRIDOR',campaignCodes:['DBK-COURTS-PUBLIC'],staffCodes:['RG-TEST'],flyersDistributed:20,publicConversations:5,professionalConversations:3,officeVisits:2,followUpsDue:2,notes:'No confidential facts recorded.'});assert(report.report);
+  const owner=field.ownerView();assert(owner.summary.events===1);assert(owner.campaigns.some(x=>x.campaignCode==='TEST-OFFICE-PRO'));assert(owner.dailyReports.length===1);assert(field.exportMarkdown().includes('NYC Field Launch Program'));
+  const kiosk=fs.readFileSync(path.join(__dirname,'..','public','kiosk.html'),'utf8');const kioskJs=fs.readFileSync(path.join(__dirname,'..','public','kiosk.js'),'utf8');assert(kiosk.includes('I need legal or tax help'));assert(kiosk.includes('I want to join the professional network'));assert(kiosk.includes('No court affiliation'));assert(kioskJs.includes('/api/public/field-launch/events'));
+  const standard=fs.readFileSync(path.join(__dirname,'..','NYC_FIELD_LAUNCH_STANDARD.md'),'utf8');assert(standard.includes('Downtown Brooklyn'));assert(standard.includes('Lower Manhattan'));
+  console.log('field-launch.test.js passed');
+})().catch(err=>{console.error(err);process.exit(1);});

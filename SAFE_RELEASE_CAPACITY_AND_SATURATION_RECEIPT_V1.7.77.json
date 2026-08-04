@@ -1,0 +1,82 @@
+{
+  "schema_id": "SJP-SAFE-RELEASE-CAPACITY-AND-SATURATION-RECEIPT-2026-08-03-V12",
+  "product": {
+    "name": "Smarter Justice",
+    "id": "smarter-justice-central",
+    "version": "1.7.77",
+    "artifact_sha256": "PREFINAL_NOT_YET_BOUND",
+    "central_role": "federated legal network identity, governance, professional operations, shared contracts, and privacy-preserving journey preparation"
+  },
+  "primary_release_objective": "Complete the next safe device-only continuity slice and make release evidence coverage fail closed.",
+  "candidate_queue": [
+    {
+      "candidate_id": "DEVICE_ONLY_HANDOFF_IMPORT_INSPECTOR",
+      "decision": "SELECTED",
+      "maturity": "D3_PUBLIC_DEVICE_ONLY_INSPECTION",
+      "minimum_slice": "Local JSON import with size, field, integrity, expiry, compatibility, status, and reset controls.",
+      "deployment_effect": "NONE",
+      "exact_reason": "Provides direct user continuity while preserving no transfer, no persistence, and no portal acceptance."
+    },
+    {
+      "candidate_id": "RELEASE_EVIDENCE_COVERAGE_GATE",
+      "decision": "SELECTED",
+      "maturity": "D3_BUILD_GOVERNANCE",
+      "minimum_slice": "Validate exact source, current version, affected files/tests, 21 carried-forward backlog IDs, prior limitations, and identity boundaries.",
+      "deployment_effect": "NONE",
+      "exact_reason": "Prevents evidence drift and durable-backlog loss before packaging."
+    },
+    {
+      "candidate_id": "DESTINATION_PORTAL_IMPORT_ADAPTER",
+      "decision": "DEFERRED",
+      "maturity": "D0_PRODUCT_LOCAL_ACCEPTANCE_REQUIRED",
+      "minimum_slice": null,
+      "deployment_effect": "NONE",
+      "exact_reason": "Requires exact portal artifact and independent product-local acceptance."
+    },
+    {
+      "candidate_id": "ACCESSIBLE_LOCAL_QR_EXPORT",
+      "decision": "DEFERRED",
+      "maturity": "D0_PRIVACY_AND_ACCESSIBILITY_REVIEW_REQUIRED",
+      "minimum_slice": null,
+      "deployment_effect": "NONE",
+      "exact_reason": "Requires shoulder-surfing, payload, print, camera, and assistive-technology evidence."
+    },
+    {
+      "candidate_id": "DUAL_TRACK_CANDIDATE_SCORING",
+      "decision": "DEFERRED",
+      "maturity": "D0_TRANSPARENT_RUBRIC_REQUIRED",
+      "minimum_slice": null,
+      "deployment_effect": "NONE",
+      "exact_reason": "Must remain explainable and subordinate to hard constraints and human judgment."
+    }
+  ],
+  "accepted_waves": [
+    {
+      "wave": 1,
+      "name": "Exact V12 intake and v1.7.76 baseline reproduction",
+      "status": "ACCEPTED"
+    },
+    {
+      "wave": 2,
+      "name": "Device-only handoff import inspector",
+      "status": "ACCEPTED"
+    },
+    {
+      "wave": 3,
+      "name": "Release evidence coverage gate",
+      "status": "ACCEPTED"
+    }
+  ],
+  "allowed_final_stop_conditions": [
+    "NO_REMAINING_SAFE_CONNECTED_LOCAL_WORK",
+    "REMAINING_WORK_REQUIRES_OWNER_OR_EXTERNAL_DEPENDENCY",
+    "RISK_OR_REGRESSION_STOP_LOSS"
+  ],
+  "selected_final_stop_condition": "REMAINING_WORK_REQUIRES_OWNER_OR_EXTERNAL_DEPENDENCY",
+  "remaining_candidates_and_exact_reasons": [],
+  "product_track_progress": true,
+  "builder_prompt_track_progress": true,
+  "minimum_not_maximum_satisfied": true,
+  "deployment_authorized": false,
+  "launch_state": "NO_GO"
+}

@@ -1,0 +1,30 @@
+{
+  "schema": "smarter-justice-candidate-acceptance",
+  "releaseVersion": "1.7.66",
+  "generatedAt": "2026-08-01T00:27:00-04:00",
+  "state": "CANDIDATE_ACCEPTED_PRESEAL_SOURCE_PENDING",
+  "candidateArtifact": {
+    "sha256": "742d941c3ff8c4d6704b59d7df063a123b35f0b36be859484fb4df3a84bee100",
+    "sizeBytes": 5903262,
+    "entries": 1940,
+    "files": 1922,
+    "directories": 18,
+    "uncompressedBytes": 17005490,
+    "compressedBytes": 5616428,
+    "inventoryRecords": 1921,
+    "inventorySha256": "55c8e4befdd58bc8976a294d446b2f2e9f440c80b90fb9b1c12d542b40fd74f5"
+  },
+  "deterministicBuilds": 2,
+  "byteIdentical": true,
+  "crc": "PASS",
+  "safePaths": "PASS",
+  "duplicatePaths": "PASS",
+  "symlinks": [],
+  "encryption": [],
+  "sourceEquality": true,
+  "freshExtractions": 2,
+  "commandsPerExtraction": 119,
+  "testLogSha256": "117bd79c2e1abd118cb38fef573a465bd18e04c816292a1196a0364cae0768a6",
+  "identicalOutput": true,
+  "launchState": "NO_GO"
+}

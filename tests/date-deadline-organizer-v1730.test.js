@@ -1,0 +1,9 @@
+'use strict';
+const assert=require('assert');const fs=require('fs');const path=require('path');const root=path.join(__dirname,'..');
+const html=fs.readFileSync(path.join(root,'public','date-deadline-organizer.html'),'utf8');const js=fs.readFileSync(path.join(root,'public','date-deadline-organizer.js'),'utf8');const tools=fs.readFileSync(path.join(root,'public','free-tools.html'),'utf8');
+for(const token of ['Date & Deadline Organizer','Put every stated date and follow-up target in one clear timeline','No legal deadline calculation','Verify urgent dates independently','No account. No server save. No analytics. No AI transmission. No legal deadline calculation. Nothing is sent to a professional.','role="status" aria-live="polite"','Download text','Download JSON','Clear all'])assert(html.includes(token),token);
+for(const value of ['source-deadline','hearing-appointment','filing-payment','renewal-follow-up','user-target','source-stated','needs-verification','estimated','user-created'])assert(html.includes(`value="${value}"`),value);
+for(const token of ['SMARTER_JUSTICE_DATE_DEADLINE_ORGANIZER_V1.7.30','calculatesDeadlines:false','sendsReminders:false','verificationChecklist','events:rows'])assert(js.includes(token),token);
+for(const banned of ['fetch(','XMLHttpRequest','WebSocket','localStorage','sessionStorage','navigator.sendBeacon','setInterval(','Notification('])assert(!js.includes(banned),`network/storage/reminder primitive present: ${banned}`);
+assert(tools.includes('/date-deadline-organizer.html'));assert(fs.readFileSync(path.join(root,'public','sitemap.xml'),'utf8').includes('/date-deadline-organizer.html'));assert(fs.readFileSync(path.join(root,'public','llms.txt'),'utf8').includes('Date & Deadline Organizer'));
+console.log('date-deadline-organizer-v1730.test.js passed');

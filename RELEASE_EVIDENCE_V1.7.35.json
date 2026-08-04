@@ -1,0 +1,120 @@
+{
+  "version": "1.7.35",
+  "date": "2026-07-27",
+  "status": "exact-artifact-tested development release; not deployed",
+  "sourceArtifact": {
+    "filename": "smarter-justice-v1.7.34.zip",
+    "sha256": "b363bf4a41422646f7561d67b387039b39dcbc55343c950e16d8493dd72ffcb1",
+    "sizeBytes": 1744744,
+    "entries": 556,
+    "files": 545,
+    "explicitDirectories": 11
+  },
+  "implementation": {
+    "legalNetworkActionCenter": true,
+    "deterministicRecommendations": true,
+    "ownerDispositions": true,
+    "evidenceFingerprintResurfacing": true,
+    "unifiedPortalTruthRegistry": true,
+    "controlCenterTruthReconciliation": true,
+    "legalWorkspaceTruthReconciliation": true,
+    "detachedSelfArtifactIdentity": true,
+    "neutralBoardroomPrimaryActionHandoff": true,
+    "currentFacingReleaseTruthRepair": true,
+    "liveNeutralBoardroomIntegration": false,
+    "automaticNeutralBoardroomWrites": false,
+    "automaticPortalActions": false,
+    "crossPillarAdministration": false,
+    "centralizedPublicUserMatterData": false,
+    "automaticCrossRepositorySynchronization": false,
+    "storageConservation": true,
+    "centralProfessionalIdentityFoundation": true,
+    "firmOrganizationAccountFoundation": true,
+    "multipleOfficeFoundation": true,
+    "perProfessionalSeatFoundation": true,
+    "evidenceBasedPracticeAssignmentFoundation": true,
+    "portalAssignmentFoundation": true,
+    "professionalEntitlementSeparation": true,
+    "professionalPortalCoordinationContracts": 25,
+    "professionalPortalContractsAtD2": true,
+    "liveProfessionalBilling": false,
+    "publicProfessionalCheckout": false,
+    "publicProfessionalInquiries": false,
+    "professionalAppointmentBooking": false,
+    "automaticProfessionalPortalWrites": false
+  },
+  "portfolioTruth": {
+    "portals": 25,
+    "exactVerified": 1,
+    "productionVerified": 0,
+    "ownerRecorded": 23,
+    "missing": 1,
+    "completeIdentities": 18,
+    "detachedSelfIdentities": 1,
+    "highestDashboardClaim": "D2_CONTRACT_TESTED"
+  },
+  "profileGrowth": {
+    "decision": "NO_WEAK_PADDING",
+    "newProfessionals": 0,
+    "newFirms": 0,
+    "newLinks": 0,
+    "regionsWorked": 0,
+    "publicDirectory": {
+      "professionals": 233,
+      "firms": 48,
+      "total": 281
+    },
+    "strictQualifying": {
+      "professionals": 232,
+      "firms": 46,
+      "total": 278
+    }
+  },
+  "storage": {
+    "removedFiles": 0,
+    "removedUncompressedBytes": 0,
+    "note": "Added the professional-network standard, runtime module, protected owner surface, professional summary, portal contracts, tests, and concise current release records; no inherited source file was removed in this release."
+  },
+  "testing": {
+    "suiteParts": 91,
+    "newProfessionalNetworkTest": true,
+    "workingTree": "passed \u2014 complete 91-part suite",
+    "freshExtractionA": "passed \u2014 complete 91-part suite with external test-only pg and nodemailer compatibility modules through NODE_PATH",
+    "freshExtractionB": "passed \u2014 complete 91-part suite with external test-only pg and nodemailer compatibility modules through NODE_PATH",
+    "javascriptSyntax": "passed \u2014 198 JavaScript files",
+    "jsonParsing": "passed \u2014 134 JSON files",
+    "runtimeAcceptance": "passed",
+    "inventoryValidation": "passed in both fresh extractions",
+    "byteEquality": "passed against frozen source",
+    "postTestStability": "passed",
+    "dependencyInstall": "attempted; configured npm registry returned HTTP 503 while fetching dependency archives",
+    "vulnerabilityAudit": "not freshly established; configured advisory/registry services were unavailable",
+    "testOnlyCompatibilityModulesPackaged": false,
+    "browserAcceptance": "not claimed",
+    "physicalDeviceAcceptance": "not claimed",
+    "assistiveTechnologyAcceptance": "not claimed"
+  },
+  "deployment": {
+    "deployed": false,
+    "lastVerifiedProduction": "1.6.1",
+    "rollbackArtifact": "smarter-justice-v1.7.34.zip",
+    "rollbackSha256": "b363bf4a41422646f7561d67b387039b39dcbc55343c950e16d8493dd72ffcb1"
+  },
+  "activationGatesChanged": false,
+  "closedGates": [
+    "payments",
+    "subscriptions",
+    "booking",
+    "reviews",
+    "sensitive uploads",
+    "filing",
+    "unrestricted professional routing",
+    "AttorneyRide transfer",
+    "automatic cross-repository writes",
+    "centralized public-user matter storage",
+    "live Neutral Boardroom connection",
+    "cross-pillar administration",
+    "production deployment"
+  ],
+  "finalArchiveIdentity": "Detached external delivery report; an archive cannot contain its own stable checksum."
+}

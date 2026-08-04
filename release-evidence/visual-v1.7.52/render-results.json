@@ -1,0 +1,16 @@
+{
+  "release": "1.7.52",
+  "renderedAt": "2026-07-30",
+  "browser": "Chromium headless local candidate",
+  "results": [
+    {"route":"/","viewport":"1440x900","httpStatus":200,"consoleErrors":[],"horizontalOverflow":false,"screenshot":"after-home-desktop.png"},
+    {"route":"/attorney-partner-tour.html?practice=divorce","viewport":"1440x900","httpStatus":200,"consoleErrors":[],"horizontalOverflow":false,"screenshot":"after-tour-desktop.png"},
+    {"route":"/attorney-partner-tour.html?practice=estate","viewport":"768x1024","httpStatus":200,"consoleErrors":[],"horizontalOverflow":false,"screenshot":"after-tour-tablet.png"},
+    {"route":"/attorney-partner-tour.html?practice=personal-injury","viewport":"390x844","httpStatus":200,"consoleErrors":[],"horizontalOverflow":false,"screenshot":"after-tour-phone.png"},
+    {"route":"/document-tools.html?tour=1&practice=divorce","viewport":"390x844","httpStatus":200,"consoleErrors":[],"horizontalOverflow":false,"screenshot":"after-tool-return-phone.png"}
+  ],
+  "limitations": [
+    "Local candidate rendering is not production evidence.",
+    "Screenshots do not prove exact portal availability, full accessibility conformance, legal approval, or owner GO."
+  ]
+}

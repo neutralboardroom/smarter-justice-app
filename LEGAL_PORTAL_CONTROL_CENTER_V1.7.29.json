@@ -1,0 +1,500 @@
+{
+  "commandCenter": {
+    "schemaVersion": "2.0.0",
+    "version": "1.7.29",
+    "generatedFor": "Smarter Justice owner and staff planning",
+    "workingName": "Smarter Justice Legal-Portal Control Center",
+    "status": "private legal-portal coordination layer inside Smarter Justice; not a separate multi-sector platform; not deployed as a standalone service",
+    "visibility": "private owner/staff only",
+    "scope": "Smarter Justice and its separate legal micro-portals only",
+    "purpose": "Coordinate non-confidential legal-portal release, deployment, capability, profile-operations, support, and activation metadata while preserving each dedicated portal as independently authoritative.",
+    "expresslyOutOfScope": [
+      "Smarter Money",
+      "Smarter Health",
+      "Smarter Property"
+    ],
+    "architectureDecision": {
+      "decision": "Strengthen the private Control Center inside Smarter Justice as a legal-portal-only coordination layer.",
+      "rationale": [
+        "Roger expressly limited this builder to Smarter Justice and its separate legal micro-portals.",
+        "Dedicated legal portals retain their own repository, domain, deployment, artifact, continuation prompt, safeguards, and public identity.",
+        "The Control Center coordinates metadata and evidence rather than confidential public-user matters."
+      ],
+      "migrationApproach": "Preserve legacy API aliases temporarily, filter out all non-legal sector records, expose legal-portal routes, and mark compatibility exports deprecated."
+    },
+    "modules": [
+      "Legal-portal registry and immutable artifact identity ledger",
+      "Build queue, owner decisions, risks, blockers, tests, and rollback evidence",
+      "Domain, DNS, SSL, repository, deployment, environment, and health truth",
+      "Cross-portal capability registry with specialty adoption decisions",
+      "Professional profile, source, claim, correction, and geographic-growth operations",
+      "Revenue, booking, review, routing, upload, and payment activation gates",
+      "Support, incidents, accessibility, field outreach, QR, and campaign records",
+      "Release prompt, manifest, artifact record, export, backup, and restore evidence"
+    ],
+    "dataBoundaries": {
+      "allowedByDefault": [
+        "Project and release metadata",
+        "Public professional and firm source records",
+        "Domains, deployments, health checks, and operational evidence",
+        "Non-confidential queues, decisions, risks, and owner notes"
+      ],
+      "prohibitedByDefault": [
+        "Legal intake facts or privileged communications",
+        "Confidential uploaded documents",
+        "Medical, financial, tax, or government-identifier content",
+        "Passwords, API keys, payment secrets, credentials, or recovery material",
+        "Automatic copies of public-user records between portals"
+      ]
+    },
+    "activationGates": [
+      "Owner and staff MFA with least-privilege authorization",
+      "PostgreSQL persistence and verified backup/restore",
+      "Approved private storage before confidential uploads",
+      "Security, privacy, accessibility, professional-responsibility, support, and deployment acceptance",
+      "Separate explicit owner approval for every sensitive or commercial gate"
+    ],
+    "compatibility": {
+      "legacyRoutes": [
+        "/api/owner/ecosystem-command-center",
+        "/api/owner/ecosystem-workspace",
+        "/api/owner/ecosystem-workspace/export"
+      ],
+      "status": "deprecated aliases return legal-only data; no out-of-scope records are accepted"
+    },
+    "automaticCrossRepositorySynchronization": false
+  },
+  "workspace": {
+    "schemaVersion": "2.0.0",
+    "generatedAt": "2026-07-24T23:38:31.030Z",
+    "generatedBy": "Smarter Justice v1.7.29 legal-portal workspace",
+    "purpose": "Coordinate non-confidential release and operational metadata for Smarter Justice and its separate legal micro-portals only.",
+    "scope": "Smarter Justice and its separate legal micro-portals only",
+    "portals": [
+      {
+        "id": "immigration-oasis",
+        "name": "Immigration Oasis",
+        "status": "exact artifact tested",
+        "priority": "high",
+        "staffLead": "Unassigned",
+        "latestVersion": "1.10.254",
+        "artifactName": "immigration-oasis-plus-humans-v1.10.254-LEAN-CONTINUATION-evidence-response-packet-profile-yield-do-not-clean-deploy.zip",
+        "sha256": "3d712aa342e66e272b49376d82517b099625222f135c2a94346693bbeb441ac4",
+        "sizeBytes": 18583502,
+        "authority": "exact artifact verified; overlay relationship and assembled full-source preflight verified",
+        "publicIdentity": "Dedicated immigration-only help for USCIS forms, notices, family immigration, citizenship, work authorization, RFEs, NOIDs, waivers, and immigration document organization.",
+        "nextAction": "Re-verify the newest dedicated artifact before updating this coordination record.",
+        "repositoryTarget": "",
+        "productionStatus": "must never be clean-deployed by itself",
+        "operationalNotes": "",
+        "updatedAt": "",
+        "updatedBy": ""
+      },
+      {
+        "id": "justice-tax-solutions",
+        "name": "Justice Tax Solutions",
+        "status": "exact artifact tested",
+        "priority": "high",
+        "staffLead": "Unassigned",
+        "latestVersion": "0.1.107",
+        "artifactName": "justice-tax-solutions-v0.1.107.zip",
+        "sha256": "f470ace7021230fdb286f5090b1244fd67df26851b212a2fef622da81463354c",
+        "sizeBytes": 41473044,
+        "authority": "exact artifact identity and safety verified; continuation prompt audited",
+        "publicIdentity": "Tax preparation and tax resolution help, including IRS/state/NYC notices, tax debt, offers in compromise, installment agreements, audits, liens, levies, amended returns, and organizer files.",
+        "nextAction": "Re-verify the newest dedicated artifact before updating this coordination record.",
+        "repositoryTarget": "",
+        "productionStatus": "not confirmed deployed",
+        "operationalNotes": "",
+        "updatedAt": "",
+        "updatedBy": ""
+      },
+      {
+        "id": "estate-planning-probate",
+        "name": "Estate Law Aid",
+        "status": "planned",
+        "priority": "high",
+        "staffLead": "Unassigned",
+        "latestVersion": "",
+        "artifactName": "",
+        "sha256": "",
+        "sizeBytes": 0,
+        "authority": "Dedicated legal-portal artifact must be verified before this record is treated as current.",
+        "publicIdentity": "Wills, trusts, powers of attorney, health care proxies, living wills, advance directives, beneficiary planning, probate, estate administration, and guardianship-adjacent routing.",
+        "nextAction": "Upload and verify the newest dedicated legal-portal artifact.",
+        "repositoryTarget": "",
+        "productionStatus": "Deployment not established by this coordination record.",
+        "operationalNotes": "",
+        "updatedAt": "",
+        "updatedBy": ""
+      },
+      {
+        "id": "business-launch-desk",
+        "name": "Business and Contract Law",
+        "status": "exact artifact tested",
+        "priority": "high",
+        "staffLead": "Unassigned",
+        "latestVersion": "0.2.39",
+        "artifactName": "business-launch-desk-v0.2.39-compliance-calendar-continuous-improvement-phase-one-profile-growth-full-build.zip",
+        "sha256": "5c23d207366f96e5265e9f2adccaba7f7a5e8fa5cc7cf5955f38e10ea59ae52b",
+        "sizeBytes": 915417,
+        "authority": "exact artifact identity verified; continuation prompt audited",
+        "publicIdentity": "Business formation, startups, LLCs, corporations, nonprofit formation, contracts, founder and operating agreements, EINs, annual reports, licenses, permits, and ongoing compliance support.",
+        "nextAction": "Re-verify the newest dedicated artifact before updating this coordination record.",
+        "repositoryTarget": "",
+        "productionStatus": "not confirmed deployed",
+        "operationalNotes": "",
+        "updatedAt": "",
+        "updatedBy": ""
+      },
+      {
+        "id": "contract-creator",
+        "name": "Business and Contract Law — legacy route",
+        "status": "planned",
+        "priority": "high",
+        "staffLead": "Unassigned",
+        "latestVersion": "",
+        "artifactName": "",
+        "sha256": "",
+        "sizeBytes": 0,
+        "authority": "Dedicated legal-portal artifact must be verified before this record is treated as current.",
+        "publicIdentity": "Legacy internal route preserved so earlier contract links continue into the approved Business and Contract Law experience.",
+        "nextAction": "Upload and verify the newest dedicated legal-portal artifact.",
+        "repositoryTarget": "",
+        "productionStatus": "Deployment not established by this coordination record.",
+        "operationalNotes": "",
+        "updatedAt": "",
+        "updatedBy": ""
+      },
+      {
+        "id": "bankruptcy-debt-help",
+        "name": "Bankruptcy & Debt Help",
+        "status": "planned",
+        "priority": "medium",
+        "staffLead": "Unassigned",
+        "latestVersion": "",
+        "artifactName": "",
+        "sha256": "",
+        "sizeBytes": 0,
+        "authority": "Dedicated legal-portal artifact must be verified before this record is treated as current.",
+        "publicIdentity": "Bankruptcy/debt organizers, Chapter 7/13 starting summaries, debt lawsuit answer organization, garnishment/judgment notices, and collection-response starting help.",
+        "nextAction": "Upload and verify the newest dedicated legal-portal artifact.",
+        "repositoryTarget": "",
+        "productionStatus": "Deployment not established by this coordination record.",
+        "operationalNotes": "",
+        "updatedAt": "",
+        "updatedBy": ""
+      },
+      {
+        "id": "disability-benefits-help",
+        "name": "Disability Law Aid",
+        "status": "planned",
+        "priority": "medium",
+        "staffLead": "Unassigned",
+        "latestVersion": "",
+        "artifactName": "",
+        "sha256": "",
+        "sizeBytes": 0,
+        "authority": "Dedicated legal-portal artifact must be verified before this record is treated as current.",
+        "publicIdentity": "SSDI, SSI, disability appeals, veterans benefits, SNAP, Medicaid, housing benefits, cash assistance, overpayments, and denial/appeal organization.",
+        "nextAction": "Upload and verify the newest dedicated legal-portal artifact.",
+        "repositoryTarget": "",
+        "productionStatus": "Deployment not established by this coordination record.",
+        "operationalNotes": "",
+        "updatedAt": "",
+        "updatedBy": ""
+      },
+      {
+        "id": "housing-tenant-help",
+        "name": "Landlord Tenant Aid",
+        "status": "planned",
+        "priority": "medium",
+        "staffLead": "Unassigned",
+        "latestVersion": "",
+        "artifactName": "",
+        "sha256": "",
+        "sizeBytes": 0,
+        "authority": "Dedicated legal-portal artifact must be verified before this record is treated as current.",
+        "publicIdentity": "Eviction notices, repairs, rent issues, security deposits, housing court documents, tenant/landlord letters, foreclosure/mortgage notices, and property-related document organization.",
+        "nextAction": "Upload and verify the newest dedicated legal-portal artifact.",
+        "repositoryTarget": "",
+        "productionStatus": "Deployment not established by this coordination record.",
+        "operationalNotes": "",
+        "updatedAt": "",
+        "updatedBy": ""
+      },
+      {
+        "id": "accident-injury-help",
+        "name": "Personal Injury Law Aid",
+        "status": "planned",
+        "priority": "medium",
+        "staffLead": "Unassigned",
+        "latestVersion": "",
+        "artifactName": "",
+        "sha256": "",
+        "sizeBytes": 0,
+        "authority": "Dedicated legal-portal artifact must be verified before this record is treated as current.",
+        "publicIdentity": "Vehicle accidents, personal injury, medical malpractice records, workers’ compensation, insurance letters, police reports, medical bills, demand-package organization, and attorney-review routing.",
+        "nextAction": "Upload and verify the newest dedicated legal-portal artifact.",
+        "repositoryTarget": "",
+        "productionStatus": "Deployment not established by this coordination record.",
+        "operationalNotes": "",
+        "updatedAt": "",
+        "updatedBy": ""
+      },
+      {
+        "id": "digital-divorce",
+        "name": "Divorce Law Aid",
+        "status": "planned",
+        "priority": "medium",
+        "staffLead": "Unassigned",
+        "latestVersion": "",
+        "artifactName": "",
+        "sha256": "",
+        "sizeBytes": 0,
+        "authority": "Dedicated legal-portal artifact must be verified before this record is treated as current.",
+        "publicIdentity": "Divorce, separation, custody, parenting time, child support, spousal support, property and debt organization, enforcement, modification, adoption, guardianship, and related family-law starting help.",
+        "nextAction": "Upload and verify the newest dedicated legal-portal artifact.",
+        "repositoryTarget": "",
+        "productionStatus": "Deployment not established by this coordination record.",
+        "operationalNotes": "",
+        "updatedAt": "",
+        "updatedBy": ""
+      },
+      {
+        "id": "criminal-law-help-center",
+        "name": "Criminal Law Aid",
+        "status": "planned",
+        "priority": "medium",
+        "staffLead": "Unassigned",
+        "latestVersion": "",
+        "artifactName": "",
+        "sha256": "",
+        "sizeBytes": 0,
+        "authority": "Dedicated legal-portal artifact must be verified before this record is treated as current.",
+        "publicIdentity": "Arrests, charges, court notices, warrants, bail, traffic and license matters, records, evidence organization, collateral consequences, and urgent defense-attorney preparation.",
+        "nextAction": "Upload and verify the newest dedicated legal-portal artifact.",
+        "repositoryTarget": "",
+        "productionStatus": "Deployment not established by this coordination record.",
+        "operationalNotes": "",
+        "updatedAt": "",
+        "updatedBy": ""
+      },
+      {
+        "id": "employment-labor-law-help-center",
+        "name": "Employment Law Aid",
+        "status": "planned",
+        "priority": "medium",
+        "staffLead": "Unassigned",
+        "latestVersion": "",
+        "artifactName": "",
+        "sha256": "",
+        "sizeBytes": 0,
+        "authority": "Dedicated legal-portal artifact must be verified before this record is treated as current.",
+        "publicIdentity": "Pay and hours, overtime, discrimination, harassment, retaliation, leave, accommodation, termination, severance, unemployment, workplace injuries, workers’ compensation, union, public-employee, and employer-compliance starting help.",
+        "nextAction": "Upload and verify the newest dedicated legal-portal artifact.",
+        "repositoryTarget": "",
+        "productionStatus": "Deployment not established by this coordination record.",
+        "operationalNotes": "",
+        "updatedAt": "",
+        "updatedBy": ""
+      },
+      {
+        "id": "name-records-employment",
+        "name": "Name, Records & Education Help",
+        "status": "planned",
+        "priority": "medium",
+        "staffLead": "Unassigned",
+        "latestVersion": "",
+        "artifactName": "",
+        "sha256": "",
+        "sizeBytes": 0,
+        "authority": "Dedicated legal-portal artifact must be verified before this record is treated as current.",
+        "publicIdentity": "Name change, personal-record correction, identity-document organization, and education or special-education starting help that does not yet have a dedicated live portal.",
+        "nextAction": "Upload and verify the newest dedicated legal-portal artifact.",
+        "repositoryTarget": "",
+        "productionStatus": "Deployment not established by this coordination record.",
+        "operationalNotes": "",
+        "updatedAt": "",
+        "updatedBy": ""
+      },
+      {
+        "id": "intellectual-property-desk",
+        "name": "Intellectual Property Desk",
+        "status": "planned",
+        "priority": "medium",
+        "staffLead": "Unassigned",
+        "latestVersion": "",
+        "artifactName": "",
+        "sha256": "",
+        "sizeBytes": 0,
+        "authority": "Dedicated legal-portal artifact must be verified before this record is treated as current.",
+        "publicIdentity": "Trademarks, patents, copyrights, USPTO office actions, brand protection, specimens, goods/services organization, and prepared for review IP starting summaries.",
+        "nextAction": "Upload and verify the newest dedicated legal-portal artifact.",
+        "repositoryTarget": "",
+        "productionStatus": "Deployment not established by this coordination record.",
+        "operationalNotes": "",
+        "updatedAt": "",
+        "updatedBy": ""
+      },
+      {
+        "id": "domestic-violence-safety-support",
+        "name": "Stop Sign Project — Domestic Violence Safety & Legal Help",
+        "status": "planned",
+        "priority": "medium",
+        "staffLead": "Unassigned",
+        "latestVersion": "",
+        "artifactName": "",
+        "sha256": "",
+        "sizeBytes": 0,
+        "authority": "Dedicated legal-portal artifact must be verified before this record is treated as current.",
+        "publicIdentity": "A dedicated free-first domestic-violence safety and legal-help portal is being developed for guided help, incident tracking, evidence and document organization, court preparation, safety planning, verified resources, and independently chosen professional help.",
+        "nextAction": "Upload and verify the newest dedicated legal-portal artifact.",
+        "repositoryTarget": "",
+        "productionStatus": "Deployment not established by this coordination record.",
+        "operationalNotes": "",
+        "updatedAt": "",
+        "updatedBy": ""
+      },
+      {
+        "id": "general-smarter-justice-start",
+        "name": "Smarter Justice General Start",
+        "status": "exact artifact tested",
+        "priority": "critical",
+        "staffLead": "Owner",
+        "latestVersion": "1.7.27",
+        "artifactName": "smarter-justice-v1.7.27.zip",
+        "sha256": "3a627d1c5775b79e309605c1d74582d995314e8229805e9b6a954283eb985b46",
+        "sizeBytes": 2894831,
+        "authority": "exact artifact verified and source inspected",
+        "publicIdentity": "Use the Smarter Justice general start when the user is unsure, the issue crosses categories, or the focused portal is not live yet.",
+        "nextAction": "Re-verify the newest dedicated artifact before updating this coordination record.",
+        "repositoryTarget": "",
+        "productionStatus": "not deployed; last verified production remains v1.6.1",
+        "operationalNotes": "",
+        "updatedAt": "",
+        "updatedBy": ""
+      }
+    ],
+    "roles": [
+      {
+        "role": "owner",
+        "may": [
+          "approve releases",
+          "change activation gates",
+          "assign staff",
+          "approve deployments",
+          "export legal-portal metadata"
+        ],
+        "mayNot": [
+          "bypass exact-artifact testing",
+          "store production secrets in exports"
+        ]
+      },
+      {
+        "role": "portfolio administrator",
+        "may": [
+          "maintain non-confidential legal-portal metadata",
+          "manage queues and calendars",
+          "prepare exports"
+        ],
+        "mayNot": [
+          "activate payments or sensitive traffic",
+          "change owner-only approvals"
+        ]
+      },
+      {
+        "role": "legal-portal lead",
+        "may": [
+          "maintain assigned legal-portal records",
+          "record blockers and milestones"
+        ],
+        "mayNot": [
+          "modify unrelated portals",
+          "approve deployments or activation gates"
+        ]
+      },
+      {
+        "role": "profile operations",
+        "may": [
+          "research public-source professional profiles",
+          "manage claim and correction queues"
+        ],
+        "mayNot": [
+          "verify credentials without evidence",
+          "activate inquiry eligibility"
+        ]
+      },
+      {
+        "role": "read-only auditor",
+        "may": [
+          "view release, decision, risk, and evidence records"
+        ],
+        "mayNot": [
+          "edit records",
+          "open any activation gate"
+        ]
+      }
+    ],
+    "activationGates": [
+      {
+        "id": "cross-portal-sensitive-data",
+        "label": "Cross-portal sensitive-data exchange",
+        "open": false,
+        "ownerOnly": true
+      },
+      {
+        "id": "payments",
+        "label": "Payments and subscriptions",
+        "open": false,
+        "ownerOnly": true
+      },
+      {
+        "id": "professional-routing",
+        "label": "Professional routing",
+        "open": false,
+        "ownerOnly": true
+      },
+      {
+        "id": "confidential-uploads",
+        "label": "Confidential uploads",
+        "open": false,
+        "ownerOnly": true
+      },
+      {
+        "id": "booking",
+        "label": "Booking and appointments",
+        "open": false,
+        "ownerOnly": true
+      },
+      {
+        "id": "reviews",
+        "label": "Public reviews",
+        "open": false,
+        "ownerOnly": true
+      },
+      {
+        "id": "production-deployment",
+        "label": "Production deployment",
+        "open": false,
+        "ownerOnly": true
+      }
+    ],
+    "prohibitedData": [
+      "Legal intake facts, privileged communications, or case files",
+      "Medical records or health histories",
+      "Financial and tax account numbers, credentials, statements, or transaction histories",
+      "Passwords, API keys, payment secrets, government identifiers, or recovery material",
+      "Automatic copies of public-user records between legal portals"
+    ],
+    "decisions": [],
+    "importRules": [
+      "Treat every dedicated legal-portal artifact as independently authoritative.",
+      "Do not infer deployment from artifact existence.",
+      "Reject Smarter Money, Smarter Health, and Smarter Property records.",
+      "Do not import confidential public-user records.",
+      "Keep every activation gate closed until separately approved and evidenced.",
+      "Record supersession without deleting historical checksums."
+    ]
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "release": "1.7.53",
+  "generatedAt": "2026-07-30",
+  "selectedTheme": "Attorney field outreach reliability and privacy-minimized continuation",
+  "findings": [
+    {
+      "id": "presenter-mode-gap",
+      "priority": "P0",
+      "audience": "Roger and attorneys",
+      "evidence": "v1.7.52 described guided use but displayed the entire tour without explicit presenter controls.",
+      "disposition": "IMPLEMENT_NOW",
+      "response": "Add a seven-step presenter mode with previous/next, progress, direct section navigation, keyboard support and full-tour fallback.",
+      "acceptance": "Presenter and self-guided modes both work without authentication or authorization bypass."
+    },
+    {
+      "id": "practice-handoff-gap",
+      "priority": "P0",
+      "audience": "Attorneys after an in-person meeting",
+      "evidence": "v1.7.52 provided one generic short path and copy action but no practice-specific scannable handoff.",
+      "disposition": "IMPLEMENT_NOW",
+      "response": "Add four fixed short paths, static QR SVGs and a print-ready follow-up card with tracking disabled.",
+      "acceptance": "Every short path redirects deterministically and every QR asset matches the recorded digest."
+    },
+    {
+      "id": "portal-staging",
+      "priority": "P0",
+      "audience": "Owner and public",
+      "evidence": "Exact portal staging is unavailable in the supplied artifact.",
+      "disposition": "DEFER",
+      "response": "Preserve labeled fallbacks and keep live-portal gates closed.",
+      "acceptance": "Requires exact portal artifacts, staging receipts, suppression and rollback evidence."
+    },
+    {
+      "id": "comparative-cost-copy",
+      "priority": "P1",
+      "audience": "Attorneys",
+      "evidence": "Current substantiation and owner/legal approval are absent.",
+      "disposition": "OWNER_DECISION_REQUIRED",
+      "response": "Do not publish comparative lead-cost or ROI language.",
+      "acceptance": "Current evidence and explicit owner/legal approval."
+    }
+  ]
+}

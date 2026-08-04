@@ -1,0 +1,14 @@
+{
+  "name": "Smarter Justice",
+  "short_name": "Smarter Justice",
+  "description": "Free legal and tax starting help, device-only preparation tools, and a transparent professional directory.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0b3356",
+  "icons": [
+    {"src": "/images/brand/icon-192.png", "sizes": "192x192", "type": "image/png"},
+    {"src": "/images/brand/icon-512.png", "sizes": "512x512", "type": "image/png"}
+  ]
+}

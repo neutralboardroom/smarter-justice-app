@@ -1,0 +1,97 @@
+{
+  "version": "1.7.37",
+  "date": "2026-07-27",
+  "status": "exact-artifact-tested development release; not deployed",
+  "sourceArtifact": {
+    "filename": "smarter-justice-v1.7.36.zip",
+    "sha256": "3056ce7b8e82b9f3430361c999316db5fcb09648d06855847f65e77cada1381f",
+    "sizeBytes": 1838269,
+    "entries": 602,
+    "files": 591,
+    "explicitDirectories": 11
+  },
+  "implementation": {
+    "integratedLegalPortalStandard": true,
+    "masterRulesPackVersion": "1.5.0",
+    "portalContinuationPromptStandardVersion": "1.4.0",
+    "buildProgramStandardVersion": "1.1.0",
+    "professionalNetworkStandardVersion": "1.2.0",
+    "professionalPortalContractVersion": "1.2.0",
+    "portfolioTruthRecords": 25,
+    "ownerRecordedRecords": 24,
+    "exactVerifiedRecords": 1,
+    "missingRecords": 0,
+    "carAccidentOwnerRecordRestored": true,
+    "businessLaunchDeskLegalMicroPortalBoundary": true,
+    "completeImprovementListCarryForward": true,
+    "professionalPortalContractsAtD3": true,
+    "canonicalProfessionalPortalAssignments": 678,
+    "unresolvedLegacyProfessionalAssignments": 14,
+    "livePortalConnections": 0,
+    "automaticPortalWrites": 0
+  },
+  "profileGrowth": {
+    "newProfessionals": 0,
+    "newFirms": 0,
+    "newLinks": 0,
+    "publicDirectory": {
+      "professionals": 233,
+      "firms": 48,
+      "publicRecords": 281,
+      "strictQualifyingProfessionals": 232,
+      "strictQualifyingFirms": 46,
+      "strictQualifyingRecords": 278,
+      "newProfessionals": 0,
+      "newFirms": 0,
+      "newLinks": 0,
+      "nextLeadRegion": "Maximum-yield Phase One rotation beginning with Downtown Brooklyn / 26 Court Street and current high-yield authorized markets"
+    },
+    "reason": "This release corrected governance, handoff, and current authority truth. No independently researched current individual-practice batch was available."
+  },
+  "testing": {
+    "suiteParts": 93,
+    "dependencyIndependentPartsExpected": 92,
+    "storageReadinessRequiresPg": true,
+    "javascriptSyntaxFiles": 204,
+    "jsonFiles": 163,
+    "cleanInstall": "BLOCKED_HTTP_503",
+    "vulnerabilityAudit": "BLOCKED_HTTP_503",
+    "freshExtractionCycles": 2,
+    "exactArtifactIdentity": "DETACHED_TO_EXTERNAL_DELIVERY_REPORT",
+    "passedDependencyIndependentParts": 92,
+    "blockedParts": 1,
+    "blockedTest": "tests/storage-readiness.test.js",
+    "blockedReason": "Configured npm registry and audit endpoint returned HTTP 503; pg could not be installed.",
+    "htmlFiles": 69,
+    "npmRegistryPing": "HTTP_503",
+    "npmAuditEndpoint": "HTTP_503"
+  },
+  "deployment": {
+    "deployed": false,
+    "deploymentAuthorized": false,
+    "lastVerifiedProduction": "1.6.1",
+    "rollbackArtifact": "smarter-justice-v1.7.36.zip",
+    "rollbackSha256": "3056ce7b8e82b9f3430361c999316db5fcb09648d06855847f65e77cada1381f"
+  },
+  "activationGatesChanged": false,
+  "limitations": [
+    "Only the Smarter Justice v1.7.37 candidate is exact-tested in this build after final packaging. Other portal entries remain owner-recorded coordination metadata until their dedicated artifacts are independently verified in context.",
+    "The separately named owner-uploaded integrated-standard source file was not supplied; the full controlling standard embedded in the approved continuation prompt is canonically preserved in this release.",
+    "Immigration Oasis deployment cannot be completed or verified from this Smarter Justice artifact alone; the full-plus-lean source, repository, service, database, credentials, and live environment remain in the dedicated portal context.",
+    "Dependency installation and vulnerability audit require an available package registry and advisory endpoint.",
+    "Graphical browser, physical-device, and assistive-technology acceptance remain unverified.",
+    "Deployment is not authorized. Last verified Smarter Justice production remains v1.6.1.",
+    "No public-user matter contents belong in this registry.",
+    "Neutral Boardroom handoff remains local owner-only export; no live integration or automatic writes are claimed.",
+    "Smarter Justice does not administer Smarter Health, Smarter Money, or Smarter Property."
+  ],
+  "packaging": {
+    "repositoryLayout": "FILES_AT_ZIP_ROOT",
+    "expectedPackagedFiles": 611,
+    "expectedExplicitDirectories": 11,
+    "expectedInventoryRecords": 610,
+    "inventorySelfExcluding": true,
+    "nodeModulesIncluded": false,
+    "exactZipIdentity": "DETACHED_TO_EXTERNAL_DELIVERY_REPORT"
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://smarterjustice.com/schemas/journey-handoff-plan-v1.0.0.schema.json",
+  "title": "Smarter Justice device-only journey handoff plan",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_id",
+    "plan_id",
+    "source_product",
+    "destination_product",
+    "purpose",
+    "selections",
+    "data_categories",
+    "explicit_user_choice",
+    "consent_receipt_id",
+    "created_at",
+    "expires_at",
+    "automatic_sync",
+    "server_transmission",
+    "server_storage",
+    "integrity_sha256"
+  ],
+  "properties": {
+    "schema_id": {
+      "const": "SJP-DEVICE-ONLY-JOURNEY-HANDOFF-PLAN-V1"
+    },
+    "plan_id": {
+      "type": "string",
+      "pattern": "^sj-handoff-[a-f0-9]{16}$"
+    },
+    "source_product": {
+      "const": "smarter-justice-central"
+    },
+    "destination_product": {
+      "type": "string"
+    },
+    "purpose": {
+      "type": "string"
+    },
+    "selections": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "matter_category",
+        "journey_step",
+        "preferred_language",
+        "access_preference"
+      ],
+      "properties": {
+        "matter_category": {
+          "type": "string"
+        },
+        "journey_step": {
+          "type": "string"
+        },
+        "preferred_language": {
+          "type": "string"
+        },
+        "access_preference": {
+          "type": "string"
+        }
+      }
+    },
+    "data_categories": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "explicit_user_choice": {
+      "const": true
+    },
+    "consent_receipt_id": {
+      "type": "string",
+      "pattern": "^sj-consent-[a-f0-9]{16}$"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "expires_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "automatic_sync": {
+      "const": false
+    },
+    "server_transmission": {
+      "const": false
+    },
+    "server_storage": {
+      "const": false
+    },
+    "integrity_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    }
+  }
+}

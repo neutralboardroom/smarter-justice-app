@@ -1,15 +1,31 @@
 # Smarter Justice
 
-Smarter Justice is an umbrella access platform, public professional directory, and private portfolio coordinator for focused justice micro-portals. It is not a law firm, tax firm, accounting firm, insurer, or government website and does not guarantee outcomes.
+Smarter Justice is a legal and tax starting-help network, public professional directory, and private portfolio coordinator for focused portals. It is not a law firm, tax firm, accounting firm, insurer, court, or government website and does not guarantee outcomes.
 
-Version 1.6.1 strengthens a controlled New York City founding-professional marketplace. The directory combines curated source-tracked Downtown Brooklyn profiles with live approved New York attorney-registration lookup. Official and seeded records are unclaimed unless control is verified and do not imply specialty, participation, membership, consultation availability, endorsement, quality, or trust.
+Version 1.7.41 refines attorney and firm signup, profile management, and recurring membership checkout while preserving fail-closed launch controls and exact legal-network governance. Directory totals remain 281 public records and 278 strict qualifying profiles because no unverified profile padding was added. Paid public services, professional enrollment, inquiry delivery, booking, reviews, confidential uploads, routing, filing, automatic cross-repository writes, centralized public-user matter storage, live Neutral Boardroom integration, and sensitive-storage services remain closed.
 
-One central Smarter Justice professional or firm account can manage approved profiles, firm seats, practice areas, locations, services, and participation across multiple micro-portals. A claim request never grants edit rights; owner approval is required. Credential verification, payment, agreements, service activation, availability, and consultation eligibility remain separate.
+Public users may describe a situation or a notice without including sensitive details and receive a starting-point suggestion that is not saved as an account or saved case. Confidential production uploads remain unavailable.
 
-Founding membership is modeled at $15 monthly or $150 annually. Firm plans use per-professional seats and transparent volume discounts. Stripe activation occurs only after a verified Checkout session or signed webhook confirms payment. Missing credentials leave membership inactive. Payment and sponsorship never control AI risk analysis, warnings, credentials, ratings, or neutral eligibility.
+Attorneys, tax professionals, law firms, and accounting firms may create a central professional account, locate or request control of profiles, manage approved information, record practice and participation preferences, and prepare a membership application. Profile control, identity, credentials, membership, availability, sponsorship, and access to optional professional opportunities remain separate. Membership does not guarantee clients, matters, rankings, revenue, or outcomes.
 
-The private Control Center tracks real and planned portals, package roles, versions, releases, tests, roadmaps, risks, blockers, source records, professional accounts, claims, outreach, memberships, revenue programs, and generated continuation prompts. The versioned Master Rules and Suggestions Pack is checksummed, embedded in prompts, recorded in manifests, and available to approved portals through a protected API.
+Justice Truck is the original and continuing community-access, vehicle, street, kiosk, event, and field-outreach brand. Smarter Justice is the broader network of focused portals, shared technology, professional profiles, and online starting tools. Specialty portals remain primary for their subjects.
 
-The operating model uses one Smarter Justice Master Coordination track and separate portal development chats. Shared standards are strong defaults, not inflexible rules. Documented specialty adaptations are permitted when beneficial and may not weaken privacy, security, source verification, consent, truthful language, professional independence, or compliance.
+The private Control Center tracks portals, packages, versions, tests, roadmaps, blockers, accounts, claims, memberships, field programs, public-service initiatives, and readiness evidence. Sensitive traffic, payments, booking, reviews, unrestricted matching, and broad cross-portal sharing remain closed until separately approved and verified.
 
-Version 1.6.0 preserves those public systems and adds fail-closed production persistence, owner and professional account security, paused-by-default professional pilot limits, credential and complaint procedures, and a Cross-Portal Capability Registry. The pilot remains closed until production and first-cohort evidence are complete.
+Free tools: https://smarterjustice.com/free-tools.html
+Device-only portal preparation: https://smarterjustice.com/portal-preparation.html
+Device-only Preparation Quality Check: https://smarterjustice.com/preparation-quality-check.html (checks visible organization gaps, duplicates, possible inconsistencies, source dates, and possible sensitive-number patterns; no truth, credibility, merit, sufficiency, case-strength, deadline, save, AI, filing, lead, or routing conclusion)
+Device-only Communication & Evidence Log: https://smarterjustice.com/communication-evidence-log.html (records user-entered communications, observations, preservation status, and follow-up; no call recording, file collection, evidence verification, deadline calculation, reminder, save, upload, AI, lead, or routing)
+Device-only Date & Deadline Organizer: https://smarterjustice.com/date-deadline-organizer.html (records user-entered dates; no legal deadline calculation, reminder, save, upload, AI, lead, or routing)
+Device-only document review and comparison: https://smarterjustice.com/document-tools.html
+Public professional directory: https://smarterjustice.com/professionals.html
+
+- Legal Help Options Navigator: https://smarterjustice.com/help-options.html (device-only; no matching, lead, upload, or transmission)
+
+- Whole Situation Map: https://smarterjustice.com/whole-situation.html (device-only; transparent rule trace; no advice, save, AI, lead, or automatic cross-portal sharing)
+
+- Trust & Verification Center: https://smarterjustice.com/trust-verification.html (device-only; no authentication verdict, upload, save, AI transmission, lead, report, or routing)
+
+- Current Availability: https://smarterjustice.com/launch-status.html — truthful status for free public help, professional accounts, applications, and paid membership.
+
+Attorney Partner Tour: https://smarterjustice.com/attorney-partner-tour.html — public presenter or self-guided explanation of central professional management, focused portal boundaries, free basic profile control, practice-specific QR handoffs, and closed launch gates.

@@ -1,0 +1,31 @@
+{
+  "schema": "smarter-justice-rollback-record",
+  "releaseVersion": "1.7.63",
+  "generatedAt": "2026-07-31T23:11:00-04:00",
+  "rollbackArtifact": {
+    "filename": "smarter-justice-v1.7.62.zip",
+    "version": "1.7.62",
+    "sha256": "2dbc85180e6319eda0320361093501bfa1eb4fa973b1b4572595095f57662735",
+    "sizeBytes": 5480221,
+    "entries": 1709,
+    "files": 1691,
+    "directories": 18,
+    "uncompressedBytes": 15563562,
+    "compressedBytes": 5229281,
+    "inventoryRecords": 1690,
+    "inventorySha256": "c55d97948d140cb8cec5bed2cb348d6c43f5ed2a88f79a05e56fffba414778cf",
+    "packageJsonSha256": "1faa2f5e93c5faff03b6bbd185e3c2df0942b3d87714f606bd698da710fb4d5a",
+    "packageLockSha256": "05051d490e7573394be3b450bac590272ba41428d3d518d0781a77e314cbd168",
+    "lockfileSha256": "05051d490e7573394be3b450bac590272ba41428d3d518d0781a77e314cbd168",
+    "sbomSha256": "554325a67b3bdbfe4f14c205c770af39ddf10a8de529ce8a2333dc6ac5a87714",
+    "treeSha256": "c55d97948d140cb8cec5bed2cb348d6c43f5ed2a88f79a05e56fffba414778cf",
+    "dependencyIndependentParts": 116,
+    "totalReadinessParts": 117,
+    "testLogSha256": "5d4b08cb14a68fb0cd5d43216cfd8d67f60d2a3d6a6ff844bbee86b51a950490",
+    "concurrentBaselineRuns": 2,
+    "concurrentBaselineResult": "PASS_IDENTICAL_OUTPUT",
+    "evidenceState": "CURRENT_CHAT_REPRODUCED"
+  },
+  "deploymentOccurred": false,
+  "staleRestorationProhibited": true
+}

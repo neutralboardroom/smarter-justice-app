@@ -1,0 +1,106 @@
+{
+  "version": "1.7.39",
+  "date": "2026-07-28",
+  "status": "exact-artifact-tested development release; not deployed",
+  "sourceArtifact": {
+    "filename": "smarter-justice-v1.7.38.zip",
+    "sha256": "88bb72afe77e3da8246ba199a3d156de9490afe53f147a4b88c93028b1a41bf9",
+    "sizeBytes": 1936034,
+    "entries": 647,
+    "files": 636,
+    "explicitDirectories": 11
+  },
+  "implementation": {
+    "launchSprintStandardVersion": "1.0.0",
+    "threeSeparateLaunchLanes": true,
+    "publicLaunchStatusApi": true,
+    "publicLaunchStatusPage": true,
+    "privateLaunchCommandCenter": true,
+    "productionPreflightCli": true,
+    "launchEnvironmentContract": true,
+    "launchRunbook48Hour": true,
+    "failClosedApprovals": true,
+    "paidPilotActivated": false,
+    "deploymentActivated": false,
+    "livePortalConnections": 0,
+    "automaticPortalWrites": 0,
+    "professionalPortalContractsAtD3": true,
+    "canonicalProfessionalPortalAssignments": 678,
+    "unresolvedLegacyProfessionalAssignments": 14,
+    "streamlinedAttorneySignup": true,
+    "signupPasswordServerParity": true,
+    "explicitFirmIdentityRequired": true,
+    "professionalAndFirmNameIntegrity": true,
+    "profileCompletenessAndUnsavedState": true,
+    "authoritativeFirmSeatCheckout": true,
+    "approvedApplicationCheckoutMatch": true,
+    "checkoutRecurringBillingAcknowledgments": true,
+    "stripeCheckoutIdempotency": true,
+    "activeMembershipDuplicateCheckoutBlocked": true,
+    "activeMembershipManagementState": true
+  },
+  "profileGrowth": {
+    "newProfessionals": 0,
+    "newFirms": 0,
+    "newLinks": 0,
+    "reason": "No new attorney-specific evidence batch was researched or supplied for this attorney-enrollment refinement release."
+  },
+  "testing": {
+    "suiteParts": 95,
+    "dependencyIndependentPartsExpected": 94,
+    "storageReadinessRequiresPg": true,
+    "cleanInstall": "BLOCKED_REGISTRY_TIMEOUT_OR_UNREACHABLE",
+    "vulnerabilityAudit": "BLOCKED_REGISTRY_TIMEOUT_OR_UNREACHABLE",
+    "freshExtractionCycles": 2,
+    "exactArtifactIdentity": "DETACHED_AFTER_FINAL_PACKAGING",
+    "dependencyIndependentPartsPassedWorkingSource": 94,
+    "blockedPartsWorkingSource": 1,
+    "blockedTest": "tests/storage-readiness.test.js",
+    "blockedReason": "The required pg package was unavailable because the configured npm registry timed out or was unreachable during retry; no substitute or test shim was packaged.",
+    "graphicalBrowserAcceptance": "NOT_RUN",
+    "physicalDeviceAcceptance": "NOT_RUN",
+    "assistiveTechnologyAcceptance": "NOT_RUN",
+    "javascriptSyntaxFiles": 209,
+    "jsonParseFiles": 191,
+    "topLevelPublicHtmlFiles": 70,
+    "officialSuiteParts": 95
+  },
+  "deployment": {
+    "deployed": false,
+    "deploymentAuthorized": false,
+    "lastVerifiedProduction": "1.6.1",
+    "rollbackArtifact": "smarter-justice-v1.7.38.zip",
+    "rollbackSha256": "88bb72afe77e3da8246ba199a3d156de9490afe53f147a4b88c93028b1a41bf9"
+  },
+  "activationGatesChanged": false,
+  "limitations": [
+    "Production services, graphical browser/device/assistive acceptance, payment lifecycle, support staffing, monitoring, backup, restore, staging, and live deployment remain unverified.",
+    "The refined checkout is fail-closed and has not processed a live card or production Stripe webhook.",
+    "No payment, application, inquiry, appointment, sensitive-storage, or deployment approval is enabled by this artifact.",
+    "The npm registry timed out or was unreachable during the final retry, so clean dependency installation, PostgreSQL storage-readiness execution, and vulnerability auditing remain blocked and unclaimed."
+  ],
+  "packaging": {
+    "repositoryLayout": "FILES_AT_ZIP_ROOT",
+    "inventorySelfExcluding": true,
+    "nodeModulesIncluded": false,
+    "exactZipIdentity": "DETACHED_AFTER_FINAL_PACKAGING"
+  },
+  "launchPreflight": {
+    "expectedDefaultResult": "NO_GO",
+    "observedWorkingSourceResult": "NO_GO",
+    "readyLanes": 0,
+    "blockedLanes": 3,
+    "reason": "Production configuration, operational evidence, and explicit approvals are intentionally absent from the packaged development artifact. The command center therefore fails closed."
+  },
+  "release": "1.7.39",
+  "summary": "Attorney signup, recurring membership checkout, and professional/firm profile-management refinement with fail-closed commercial controls.",
+  "materialChanges": [
+    "Streamlined required attorney and firm account-creation fields while keeping public profile preparation optional and expandable.",
+    "Aligned browser password guidance with the server 12-character minimum and required an explicit firm name for new firm accounts.",
+    "Added profile completeness, collapsible management sections, unsaved-change feedback, and guarded public professional and firm names.",
+    "Added exact recurring quote, renewal language, cancellation/refund acknowledgment, and no-guarantee acknowledgment before checkout.",
+    "Uses the authoritative firm workspace seat count and requires the approved application target, plan, seat count, and billing cadence to match checkout.",
+    "Added Stripe idempotency support and duplicate-submit protection without storing raw idempotency keys.",
+    "Preserved all launch, payment, inquiry, appointment, sponsorship, sensitive-storage, live-adapter, automatic-write, and deployment gates."
+  ]
+}

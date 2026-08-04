@@ -1,0 +1,56 @@
+{
+  "version": "1.7.33",
+  "date": "2026-07-26",
+  "policy": "Retire active legacy cross-sector runtime and redundant standalone multi-sector handoff artifacts while preserving historical release evidence, legal-network source, tests, exact provenance, and rollback.",
+  "removedFiles": [
+    {
+      "path": "data/ecosystemCommandCenterV1721.js",
+      "bytes": 6965,
+      "reason": "Obsolete active multi-sector runtime or redundant standalone handoff superseded by legal-network-only coordination and the Neutral Boardroom export."
+    },
+    {
+      "path": "data/ecosystemCommandCenterV1722.js",
+      "bytes": 7292,
+      "reason": "Obsolete active multi-sector runtime or redundant standalone handoff superseded by legal-network-only coordination and the Neutral Boardroom export."
+    },
+    {
+      "path": "data/ecosystemWorkspaceSeedV1722.js",
+      "bytes": 4622,
+      "reason": "Obsolete active multi-sector runtime or redundant standalone handoff superseded by legal-network-only coordination and the Neutral Boardroom export."
+    },
+    {
+      "path": "lib/ecosystemWorkspace.js",
+      "bytes": 919,
+      "reason": "Obsolete active multi-sector runtime or redundant standalone handoff superseded by legal-network-only coordination and the Neutral Boardroom export."
+    },
+    {
+      "path": "SMARTER_ECOSYSTEM_CONTROL_CENTER_HANDOFF_V0.1.0.json",
+      "bytes": 885,
+      "reason": "Obsolete active multi-sector runtime or redundant standalone handoff superseded by legal-network-only coordination and the Neutral Boardroom export."
+    },
+    {
+      "path": "SMARTER_ECOSYSTEM_CONTROL_CENTER_LEARNING_HANDOFF_V1.7.28.json",
+      "bytes": 35464,
+      "reason": "Obsolete active multi-sector runtime or redundant standalone handoff superseded by legal-network-only coordination and the Neutral Boardroom export."
+    },
+    {
+      "path": "SMARTER_ECOSYSTEM_CONTROL_CENTER_MIGRATION_BUNDLE_V0.1.0.json",
+      "bytes": 6991,
+      "reason": "Obsolete active multi-sector runtime or redundant standalone handoff superseded by legal-network-only coordination and the Neutral Boardroom export."
+    }
+  ],
+  "removedBytes": 63138,
+  "removedFileCount": 7,
+  "retained": [
+    "Current legal-network source, public tools, schemas, tests, package lock, SBOM, deployment and rollback records",
+    "Historical release evidence and compact governance records required for regression and provenance",
+    "One current continuation prompt after v1.7.33",
+    "Dedicated portal metadata only; no copied portal ZIPs or user-matter data",
+    "Neutral Boardroom handoff schema and module containing non-confidential metadata only"
+  ],
+  "minimumNextChatWorkingSet": [
+    "smarter-justice-v1.7.33.zip",
+    "CONTINUATION_PROMPT_V1.7.33.md"
+  ],
+  "safeCleanupRule": "Do not remove the exact v1.7.32 artifact or its continuation prompt until v1.7.33 is successfully downloaded and independently verified. Preserve historical evidence even after active legacy runtime aliases are retired."
+}

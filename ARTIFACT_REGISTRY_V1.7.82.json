@@ -1,0 +1,57 @@
+{
+  "schema": "smarter-justice-artifact-registry",
+  "releaseVersion": "1.7.82",
+  "generatedAt": "2026-08-03T19:28:00-04:00",
+  "singleCurrentRegistry": true,
+  "artifacts": [
+    {
+      "role": "SOURCE_AND_ROLLBACK",
+      "filename": "smarter-justice-v1.7.81.zip",
+      "sha256": "34c1928567993f40ead33fe5335a479e7e3e735f0e3911b3835952668f393d86",
+      "sizeBytes": 8794138,
+      "state": "EXACT_ACCEPTED",
+      "version": "1.7.81"
+    },
+    {
+      "role": "CANDIDATE_ACCEPTED",
+      "filename": "smarter-justice-v1.7.82-candidate-a.zip",
+      "sha256": "693f28962182751c2182b401b56a0add01bde75741f7737a4addf11a89e822a3",
+      "sizeBytes": 8828711,
+      "state": "CANDIDATE_ACCEPTED"
+    },
+    {
+      "role": "FINAL_DELIVERY_ZIP_IDENTITY",
+      "filename": "smarter-justice-v1.7.82.zip",
+      "sha256": null,
+      "sizeBytes": null,
+      "state": "REPORTED_AFTER_PACKAGING"
+    }
+  ],
+  "portalArtifacts": [],
+  "deployment": {
+    "authorized": false,
+    "productionRequestSent": false,
+    "deployed": false
+  },
+  "closedGates": [
+    "canonical GitHub repository and commit",
+    "approved Render service and deployment",
+    "OpenAI protected key and controlled live smoke",
+    "portal compatibility receipts",
+    "PostgreSQL acceptance",
+    "DNS/TLS/health verification",
+    "production"
+  ],
+  "currentSmarterJustice": {
+    "version": "1.7.82",
+    "identityState": "FINAL_SOURCE_ACCEPTED_DETACHED_FINAL_PENDING",
+    "candidateArtifact": "smarter-justice-v1.7.82-candidate-a.zip",
+    "candidateSha256": "693f28962182751c2182b401b56a0add01bde75741f7737a4addf11a89e822a3",
+    "candidateSizeBytes": 8828711,
+    "dependencyIndependentParts": 143,
+    "totalReadinessParts": 144,
+    "testLogSha256": "75ac27c328cacc1f39f3d92b675c27325662b9bc5a54f2de00556b9fe4306c11"
+  },
+  "launchState": "NO_GO",
+  "deploymentAuthorized": false
+}

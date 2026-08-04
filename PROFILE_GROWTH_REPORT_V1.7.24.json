@@ -1,0 +1,11 @@
+{
+  "version": "1.7.24",
+  "releaseDate": "2026-07-22",
+  "leadMarket": "Manhattan",
+  "nextLeadMarket": "Northern Metro New Jersey",
+  "target": {"newIndividualProfessionals": 12,"newFirms": 2,"newProfessionalFirmLinks": 12,"markets": {"Manhattan": 8,"Brooklyn": 2,"Northern Metro New Jersey": 2}},
+  "actual": {"newIndividualProfessionals": 12,"newFirms": 2,"newProfessionalFirmLinks": 12,"markets": {"Manhattan": 8,"Brooklyn": 2,"Northern Metro New Jersey": 2}},
+  "startingDirectory": {"publicProfessionals": 77,"publicFirms": 26,"publicTotal": 103,"qualifyingProfessionals": 76,"qualifyingFirms": 24,"qualifyingTotal": 100},
+  "finalDirectory": {"publicProfessionals": 89,"publicFirms": 28,"publicTotal": 117,"qualifyingProfessionals": 88,"qualifyingFirms": 26,"qualifyingTotal": 114},
+  "safeguards": {"claimStatus": "not claimed","verificationStatus": "not started","participating": false,"paid": false,"availability": "not configured","inquiryEligible": false,"paidStatusAffectsOrganicOrder": false}
+}

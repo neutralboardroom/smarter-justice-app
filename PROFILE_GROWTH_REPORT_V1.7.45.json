@@ -1,0 +1,15 @@
+{
+  "releaseVersion": "1.7.45",
+  "newProfessionals": 0,
+  "updatedProfessionals": 0,
+  "totalProfessionals": 233,
+  "publicDirectory": {
+    "total": 281
+  },
+  "note": "No profile-growth batch was performed. This release changes profile-control and paid-growth architecture only.",
+  "generatedAt": "2026-07-29T14:30:00-04:00",
+  "newFirms": 0,
+  "summary": "No public professional or firm facts were added or changed. v1.7.45 adds private portal-specific profile management and acceptance operations only.",
+  "sourceFactChanges": false,
+  "livePublication": false
+}

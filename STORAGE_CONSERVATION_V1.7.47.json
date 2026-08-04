@@ -1,0 +1,24 @@
+{
+  "version": "1.7.47",
+  "date": "2026-07-29",
+  "removedFileCount": 0,
+  "removedUncompressedBytes": 0,
+  "addedMaterial": [
+    "free-profile-first attorney cohort operations",
+    "consented campaign and QR follow-up request",
+    "owner contact queue and cohort export",
+    "source-supported profile-candidate CSV preview",
+    "duplicate and missing-fact review",
+    "private unclaimed candidate commit with provenance",
+    "101 dependency-independent test parts plus one PostgreSQL-dependent part",
+    "complete v1.7.47 release and continuation records"
+  ],
+  "retainedReason": "Historical release evidence remains intentionally preserved; no inherited file could be removed safely without risking audit or rollback context.",
+  "packagingRules": [
+    "exclude node_modules",
+    "exclude credentials and secret environment files",
+    "exclude runtime logs and database data",
+    "exclude test-only compatibility modules",
+    "include one self-excluding inventory"
+  ]
+}

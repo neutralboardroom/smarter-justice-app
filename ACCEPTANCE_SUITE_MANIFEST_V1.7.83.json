@@ -1,0 +1,745 @@
+{
+  "schema_id": "SJP-V14-SEGMENTED-ACCEPTANCE-MANIFEST-2026-08-03-V1",
+  "release_version": "1.7.83",
+  "source_artifact": {
+    "filename": "smarter-justice-v1.7.82.zip",
+    "version": "1.7.82",
+    "sha256": "61fea278a69055915e9b4b916e4b64ec514614f1746cacf659a6931ccd0228b1"
+  },
+  "governing_packet": {
+    "id": "SJP-LMP-UNIVERSAL-ONE-STEP-2026-08-03-V14-ALL-CHAT-MODES",
+    "sha256": "fce42ce0927748f94189692ef5b3bf8e0fe9f8d12273287f03a68eb7bccdad6f"
+  },
+  "expected_command_count": 145,
+  "commands": [
+    {
+      "index": 1,
+      "id": "catalog.test",
+      "command": "node tests/catalog.test.js"
+    },
+    {
+      "index": 2,
+      "id": "static-checks.test",
+      "command": "node tests/static-checks.test.js"
+    },
+    {
+      "index": 3,
+      "id": "public-ux.test",
+      "command": "node tests/public-ux.test.js"
+    },
+    {
+      "index": 4,
+      "id": "smoke.test",
+      "command": "node tests/smoke.test.js"
+    },
+    {
+      "index": 5,
+      "id": "marketplace.test",
+      "command": "node tests/marketplace.test.js"
+    },
+    {
+      "index": 6,
+      "id": "security-readiness.test",
+      "command": "node tests/security-readiness.test.js"
+    },
+    {
+      "index": 7,
+      "id": "release-portability.test",
+      "command": "node tests/release-portability.test.js"
+    },
+    {
+      "index": 8,
+      "id": "build-program.test",
+      "command": "node tests/build-program.test.js"
+    },
+    {
+      "index": 9,
+      "id": "domain-registry.test",
+      "command": "node tests/domain-registry.test.js"
+    },
+    {
+      "index": 10,
+      "id": "pilot-program.test",
+      "command": "node tests/pilot-program.test.js"
+    },
+    {
+      "index": 11,
+      "id": "founding-launch.test",
+      "command": "node tests/founding-launch.test.js"
+    },
+    {
+      "index": 12,
+      "id": "paid-pilot-operations.test",
+      "command": "node tests/paid-pilot-operations.test.js"
+    },
+    {
+      "index": 13,
+      "id": "revenue-access-model.test",
+      "command": "node tests/revenue-access-model.test.js"
+    },
+    {
+      "index": 14,
+      "id": "field-launch.test",
+      "command": "node tests/field-launch.test.js"
+    },
+    {
+      "index": 15,
+      "id": "portal-origin-story.test",
+      "command": "node tests/portal-origin-story.test.js"
+    },
+    {
+      "index": 16,
+      "id": "public-service-initiatives.test",
+      "command": "node tests/public-service-initiatives.test.js"
+    },
+    {
+      "index": 17,
+      "id": "public-paid-services.test",
+      "command": "node tests/public-paid-services.test.js"
+    },
+    {
+      "index": 18,
+      "id": "migrations-operational-readiness.test",
+      "command": "node tests/migrations-operational-readiness.test.js"
+    },
+    {
+      "index": 19,
+      "id": "professional-email-verification.test",
+      "command": "node tests/professional-email-verification.test.js"
+    },
+    {
+      "index": 20,
+      "id": "stop-sign-project-bridge.test",
+      "command": "node tests/stop-sign-project-bridge.test.js"
+    },
+    {
+      "index": 21,
+      "id": "customer-facing-clarity.test",
+      "command": "node tests/customer-facing-clarity.test.js"
+    },
+    {
+      "index": 22,
+      "id": "security-boundaries-v177.test",
+      "command": "node tests/security-boundaries-v177.test.js"
+    },
+    {
+      "index": 23,
+      "id": "customer-experience-v178.test",
+      "command": "node tests/customer-experience-v178.test.js"
+    },
+    {
+      "index": 24,
+      "id": "document-tools-v1712.test",
+      "command": "node tests/document-tools-v1712.test.js"
+    },
+    {
+      "index": 25,
+      "id": "document-action-plan-v1713.test",
+      "command": "node tests/document-action-plan-v1713.test.js"
+    },
+    {
+      "index": 26,
+      "id": "professional-directory-search-v1714.test",
+      "command": "node tests/professional-directory-search-v1714.test.js"
+    },
+    {
+      "index": 27,
+      "id": "professional-directory-compare-v1715.test",
+      "command": "node tests/professional-directory-compare-v1715.test.js"
+    },
+    {
+      "index": 28,
+      "id": "seo-performance-v1716.test",
+      "command": "node tests/seo-performance-v1716.test.js"
+    },
+    {
+      "index": 29,
+      "id": "communication-prep-v1717.test",
+      "command": "node tests/communication-prep-v1717.test.js"
+    },
+    {
+      "index": 30,
+      "id": "preparation-binder-v1718.test",
+      "command": "node tests/preparation-binder-v1718.test.js"
+    },
+    {
+      "index": 31,
+      "id": "classic-visual-brand-v1719.test",
+      "command": "node tests/classic-visual-brand-v1719.test.js"
+    },
+    {
+      "index": 32,
+      "id": "three-market-profile-growth-v1719.test",
+      "command": "node tests/three-market-profile-growth-v1719.test.js"
+    },
+    {
+      "index": 33,
+      "id": "portal-preparation-v1720.test",
+      "command": "node tests/portal-preparation-v1720.test.js"
+    },
+    {
+      "index": 34,
+      "id": "portal-release-snapshot-v1720.test",
+      "command": "node tests/portal-release-snapshot-v1720.test.js"
+    },
+    {
+      "index": 35,
+      "id": "three-market-profile-growth-v1720.test",
+      "command": "node tests/three-market-profile-growth-v1720.test.js"
+    },
+    {
+      "index": 36,
+      "id": "ecosystem-command-center-v1721.test",
+      "command": "node tests/ecosystem-command-center-v1721.test.js"
+    },
+    {
+      "index": 37,
+      "id": "release-governance-v1721.test",
+      "command": "node tests/release-governance-v1721.test.js"
+    },
+    {
+      "index": 38,
+      "id": "ecosystem-workspace-v1722.test",
+      "command": "node tests/ecosystem-workspace-v1722.test.js"
+    },
+    {
+      "index": 39,
+      "id": "three-market-profile-growth-v1722.test",
+      "command": "node tests/three-market-profile-growth-v1722.test.js"
+    },
+    {
+      "index": 40,
+      "id": "standalone-ecosystem-handoff-v1722.test",
+      "command": "node tests/standalone-ecosystem-handoff-v1722.test.js"
+    },
+    {
+      "index": 41,
+      "id": "release-governance-v1722.test",
+      "command": "node tests/release-governance-v1722.test.js"
+    },
+    {
+      "index": 42,
+      "id": "competitive-landscape-v1723.test",
+      "command": "node tests/competitive-landscape-v1723.test.js"
+    },
+    {
+      "index": 43,
+      "id": "help-options-navigator-v1723.test",
+      "command": "node tests/help-options-navigator-v1723.test.js"
+    },
+    {
+      "index": 44,
+      "id": "three-market-profile-growth-v1723.test",
+      "command": "node tests/three-market-profile-growth-v1723.test.js"
+    },
+    {
+      "index": 45,
+      "id": "release-governance-v1723.test",
+      "command": "node tests/release-governance-v1723.test.js"
+    },
+    {
+      "index": 46,
+      "id": "whole-situation-map-v1724.test",
+      "command": "node tests/whole-situation-map-v1724.test.js"
+    },
+    {
+      "index": 47,
+      "id": "innovation-lab-v1724.test",
+      "command": "node tests/innovation-lab-v1724.test.js"
+    },
+    {
+      "index": 48,
+      "id": "three-market-profile-growth-v1724.test",
+      "command": "node tests/three-market-profile-growth-v1724.test.js"
+    },
+    {
+      "index": 49,
+      "id": "release-governance-v1724.test",
+      "command": "node tests/release-governance-v1724.test.js"
+    },
+    {
+      "index": 50,
+      "id": "trust-verification-center-v1725.test",
+      "command": "node tests/trust-verification-center-v1725.test.js"
+    },
+    {
+      "index": 51,
+      "id": "trust-verification-research-v1725.test",
+      "command": "node tests/trust-verification-research-v1725.test.js"
+    },
+    {
+      "index": 52,
+      "id": "three-market-profile-growth-v1725.test",
+      "command": "node tests/three-market-profile-growth-v1725.test.js"
+    },
+    {
+      "index": 53,
+      "id": "release-governance-v1725.test",
+      "command": "node tests/release-governance-v1725.test.js"
+    },
+    {
+      "index": 54,
+      "id": "predeployment-audit-v1726.test",
+      "command": "node tests/predeployment-audit-v1726.test.js"
+    },
+    {
+      "index": 55,
+      "id": "protected-static-pages-v1726.test",
+      "command": "node tests/protected-static-pages-v1726.test.js"
+    },
+    {
+      "index": 56,
+      "id": "three-market-profile-growth-v1726.test",
+      "command": "node tests/three-market-profile-growth-v1726.test.js"
+    },
+    {
+      "index": 57,
+      "id": "release-governance-v1726.test",
+      "command": "node tests/release-governance-v1726.test.js"
+    },
+    {
+      "index": 58,
+      "id": "sensitive-public-forms-v1727.test",
+      "command": "node tests/sensitive-public-forms-v1727.test.js"
+    },
+    {
+      "index": 59,
+      "id": "directory-source-freshness-v1727.test",
+      "command": "node tests/directory-source-freshness-v1727.test.js"
+    },
+    {
+      "index": 60,
+      "id": "three-market-profile-growth-v1727.test",
+      "command": "node tests/three-market-profile-growth-v1727.test.js"
+    },
+    {
+      "index": 61,
+      "id": "release-governance-v1727.test",
+      "command": "node tests/release-governance-v1727.test.js"
+    },
+    {
+      "index": 62,
+      "id": "cross-portal-learning-v1728.test",
+      "command": "node tests/cross-portal-learning-v1728.test.js"
+    },
+    {
+      "index": 63,
+      "id": "continuation-learning-standard-v1728.test",
+      "command": "node tests/continuation-learning-standard-v1728.test.js"
+    },
+    {
+      "index": 64,
+      "id": "release-governance-v1728.test",
+      "command": "node tests/release-governance-v1728.test.js"
+    },
+    {
+      "index": 65,
+      "id": "six-region-profile-growth-v1729.test",
+      "command": "node tests/six-region-profile-growth-v1729.test.js"
+    },
+    {
+      "index": 66,
+      "id": "legal-portal-scope-v1729.test",
+      "command": "node tests/legal-portal-scope-v1729.test.js"
+    },
+    {
+      "index": 67,
+      "id": "cross-portal-registry-controls-v1729.test",
+      "command": "node tests/cross-portal-registry-controls-v1729.test.js"
+    },
+    {
+      "index": 68,
+      "id": "current-deployment-docs-v1729.test",
+      "command": "node tests/current-deployment-docs-v1729.test.js"
+    },
+    {
+      "index": 69,
+      "id": "release-governance-v1729.test",
+      "command": "node tests/release-governance-v1729.test.js"
+    },
+    {
+      "index": 70,
+      "id": "date-deadline-organizer-v1730.test",
+      "command": "node tests/date-deadline-organizer-v1730.test.js"
+    },
+    {
+      "index": 71,
+      "id": "six-region-profile-growth-v1730.test",
+      "command": "node tests/six-region-profile-growth-v1730.test.js"
+    },
+    {
+      "index": 72,
+      "id": "public-legal-scope-v1730.test",
+      "command": "node tests/public-legal-scope-v1730.test.js"
+    },
+    {
+      "index": 73,
+      "id": "release-governance-v1730.test",
+      "command": "node tests/release-governance-v1730.test.js"
+    },
+    {
+      "index": 74,
+      "id": "communication-evidence-log-v1731.test",
+      "command": "node tests/communication-evidence-log-v1731.test.js"
+    },
+    {
+      "index": 75,
+      "id": "six-region-profile-growth-v1731.test",
+      "command": "node tests/six-region-profile-growth-v1731.test.js"
+    },
+    {
+      "index": 76,
+      "id": "current-environment-v1731.test",
+      "command": "node tests/current-environment-v1731.test.js"
+    },
+    {
+      "index": 77,
+      "id": "release-governance-v1731.test",
+      "command": "node tests/release-governance-v1731.test.js"
+    },
+    {
+      "index": 78,
+      "id": "preparation-quality-check-v1732.test",
+      "command": "node tests/preparation-quality-check-v1732.test.js"
+    },
+    {
+      "index": 79,
+      "id": "portfolio-truth-dashboard-v1732.test",
+      "command": "node tests/portfolio-truth-dashboard-v1732.test.js"
+    },
+    {
+      "index": 80,
+      "id": "storage-conservation-v1732.test",
+      "command": "node tests/storage-conservation-v1732.test.js"
+    },
+    {
+      "index": 81,
+      "id": "release-governance-v1732.test",
+      "command": "node tests/release-governance-v1732.test.js"
+    },
+    {
+      "index": 82,
+      "id": "legal-network-refocus-v1733.test",
+      "command": "node tests/legal-network-refocus-v1733.test.js"
+    },
+    {
+      "index": 83,
+      "id": "neutral-boardroom-handoff-v1733.test",
+      "command": "node tests/neutral-boardroom-handoff-v1733.test.js"
+    },
+    {
+      "index": 84,
+      "id": "storage-conservation-v1733.test",
+      "command": "node tests/storage-conservation-v1733.test.js"
+    },
+    {
+      "index": 85,
+      "id": "release-governance-v1733.test",
+      "command": "node tests/release-governance-v1733.test.js"
+    },
+    {
+      "index": 86,
+      "id": "legal-network-action-center-v1734.test",
+      "command": "node tests/legal-network-action-center-v1734.test.js"
+    },
+    {
+      "index": 87,
+      "id": "portfolio-truth-reconciliation-v1734.test",
+      "command": "node tests/portfolio-truth-reconciliation-v1734.test.js"
+    },
+    {
+      "index": 88,
+      "id": "legal-workspace-unification-v1734.test",
+      "command": "node tests/legal-workspace-unification-v1734.test.js"
+    },
+    {
+      "index": 89,
+      "id": "release-governance-v1734.test",
+      "command": "node tests/release-governance-v1734.test.js"
+    },
+    {
+      "index": 90,
+      "id": "professional-network-v1735.test",
+      "command": "node tests/professional-network-v1735.test.js"
+    },
+    {
+      "index": 91,
+      "id": "professional-portal-adapter-lab-v1736.test",
+      "command": "node tests/professional-portal-adapter-lab-v1736.test.js"
+    },
+    {
+      "index": 92,
+      "id": "integrated-portal-standard-v1737.test",
+      "command": "node tests/integrated-portal-standard-v1737.test.js"
+    },
+    {
+      "index": 93,
+      "id": "launch-readiness-v1738.test",
+      "command": "node tests/launch-readiness-v1738.test.js"
+    },
+    {
+      "index": 94,
+      "id": "attorney-enrollment-v1739.test",
+      "command": "node tests/attorney-enrollment-v1739.test.js"
+    },
+    {
+      "index": 95,
+      "id": "central-profile-distribution-v1740.test",
+      "command": "node tests/central-profile-distribution-v1740.test.js"
+    },
+    {
+      "index": 96,
+      "id": "launch-minimal-professional-integration-v1741.test",
+      "command": "node tests/launch-minimal-professional-integration-v1741.test.js"
+    },
+    {
+      "index": 97,
+      "id": "self-contained-pilot-expansion-v1742.test",
+      "command": "node tests/self-contained-pilot-expansion-v1742.test.js"
+    },
+    {
+      "index": 98,
+      "id": "free-profile-paid-growth-v1744.test",
+      "command": "node tests/free-profile-paid-growth-v1744.test.js"
+    },
+    {
+      "index": 99,
+      "id": "portal-presence-management-v1745.test",
+      "command": "node tests/portal-presence-management-v1745.test.js"
+    },
+    {
+      "index": 100,
+      "id": "launch-activation-v1746.test",
+      "command": "node tests/launch-activation-v1746.test.js"
+    },
+    {
+      "index": 101,
+      "id": "launch-cohort-profile-growth-v1747.test",
+      "command": "node tests/launch-cohort-profile-growth-v1747.test.js"
+    },
+    {
+      "index": 102,
+      "id": "launch-outreach-conversion-v1748.test",
+      "command": "node tests/launch-outreach-conversion-v1748.test.js"
+    },
+    {
+      "index": 103,
+      "id": "service-readiness-v1749.test",
+      "command": "node tests/service-readiness-v1749.test.js"
+    },
+    {
+      "index": 104,
+      "id": "launch-day-operations-v1750.test",
+      "command": "node tests/launch-day-operations-v1750.test.js"
+    },
+    {
+      "index": 105,
+      "id": "four-portal-domestic-violence-v1751.test",
+      "command": "node tests/four-portal-domestic-violence-v1751.test.js"
+    },
+    {
+      "index": 106,
+      "id": "attorney-partner-tour-v1752.test",
+      "command": "node tests/attorney-partner-tour-v1752.test.js"
+    },
+    {
+      "index": 107,
+      "id": "attorney-field-outreach-v1753.test",
+      "command": "node tests/attorney-field-outreach-v1753.test.js"
+    },
+    {
+      "index": 108,
+      "id": "truth-lifecycle-governance-v1754.test",
+      "command": "node tests/truth-lifecycle-governance-v1754.test.js"
+    },
+    {
+      "index": 109,
+      "id": "release-reproducibility-v1755.test",
+      "command": "node tests/release-reproducibility-v1755.test.js"
+    },
+    {
+      "index": 110,
+      "id": "initial-portal-currentness-v1756.test",
+      "command": "node tests/initial-portal-currentness-v1756.test.js"
+    },
+    {
+      "index": 111,
+      "id": "initial-portal-authority-v1757.test",
+      "command": "node tests/initial-portal-authority-v1757.test.js"
+    },
+    {
+      "index": 112,
+      "id": "initial-portal-authority-v1758.test",
+      "command": "node tests/initial-portal-authority-v1758.test.js"
+    },
+    {
+      "index": 113,
+      "id": "reusable-master-governance-v1759.test",
+      "command": "node tests/reusable-master-governance-v1759.test.js"
+    },
+    {
+      "index": 114,
+      "id": "reusable-master-governance-v1760.test",
+      "command": "node tests/reusable-master-governance-v1760.test.js"
+    },
+    {
+      "index": 115,
+      "id": "fourth-pass-governance-v1761.test",
+      "command": "node tests/fourth-pass-governance-v1761.test.js"
+    },
+    {
+      "index": 116,
+      "id": "fifth-pass-governance-v1762.test",
+      "command": "node tests/fifth-pass-governance-v1762.test.js"
+    },
+    {
+      "index": 117,
+      "id": "eighth-pass-governance-v1763.test",
+      "command": "node tests/eighth-pass-governance-v1763.test.js"
+    },
+    {
+      "index": 118,
+      "id": "current-release-truth-v1767.test",
+      "command": "node tests/current-release-truth-v1767.test.js"
+    },
+    {
+      "index": 119,
+      "id": "detached-final-identity-v1767.test",
+      "command": "node tests/detached-final-identity-v1767.test.js"
+    },
+    {
+      "index": 120,
+      "id": "owner-launch-action-packet-v1767.test",
+      "command": "node tests/owner-launch-action-packet-v1767.test.js"
+    },
+    {
+      "index": 121,
+      "id": "coordinated-pack-oca-registry-v1767.test",
+      "command": "node tests/coordinated-pack-oca-registry-v1767.test.js"
+    },
+    {
+      "index": 122,
+      "id": "deployment-readiness-v1768.test",
+      "command": "node tests/deployment-readiness-v1768.test.js"
+    },
+    {
+      "index": 123,
+      "id": "launch-day-orchestration-v1769.test",
+      "command": "node tests/launch-day-orchestration-v1769.test.js"
+    },
+    {
+      "index": 124,
+      "id": "portfolio-launch-readiness-v1770.test",
+      "command": "node tests/portfolio-launch-readiness-v1770.test.js"
+    },
+    {
+      "index": 125,
+      "id": "provider-preflight-v1771.test",
+      "command": "node tests/provider-preflight-v1771.test.js"
+    },
+    {
+      "index": 126,
+      "id": "provider-discovery-plan-v1772.test",
+      "command": "node tests/provider-discovery-plan-v1772.test.js"
+    },
+    {
+      "index": 127,
+      "id": "provider-discovery-authorization-v1773.test",
+      "command": "node tests/provider-discovery-authorization-v1773.test.js"
+    },
+    {
+      "index": 128,
+      "id": "provider-discovery-authorization-lifecycle-v1775.test",
+      "command": "node tests/provider-discovery-authorization-lifecycle-v1775.test.js"
+    },
+    {
+      "index": 129,
+      "id": "structured-workflow-governance-v1775.test",
+      "command": "node tests/structured-workflow-governance-v1775.test.js"
+    },
+    {
+      "index": 130,
+      "id": "journey-handoff-planner-v1776.test",
+      "command": "node tests/journey-handoff-planner-v1776.test.js"
+    },
+    {
+      "index": 131,
+      "id": "continuous-improvement-dual-track-v1776.test",
+      "command": "node tests/continuous-improvement-dual-track-v1776.test.js"
+    },
+    {
+      "index": 132,
+      "id": "journey-handoff-inspector-v1777.test",
+      "command": "node tests/journey-handoff-inspector-v1777.test.js"
+    },
+    {
+      "index": 133,
+      "id": "release-evidence-coverage-v1777.test",
+      "command": "node tests/release-evidence-coverage-v1777.test.js"
+    },
+    {
+      "index": 134,
+      "id": "openai-central-gateway-v1778.test",
+      "command": "node tests/openai-central-gateway-v1778.test.js"
+    },
+    {
+      "index": 135,
+      "id": "openai-ai-operations-v1778.test",
+      "command": "node tests/openai-ai-operations-v1778.test.js"
+    },
+    {
+      "index": 136,
+      "id": "unified-live-operations-v1779.test",
+      "command": "node tests/unified-live-operations-v1779.test.js"
+    },
+    {
+      "index": 137,
+      "id": "v14-release-governance-v1779.test",
+      "command": "node tests/v14-release-governance-v1779.test.js"
+    },
+    {
+      "index": 138,
+      "id": "v14-live-evidence-connector-v1780.test",
+      "command": "node tests/v14-live-evidence-connector-v1780.test.js"
+    },
+    {
+      "index": 139,
+      "id": "v14-release-receipt-automation-v1780.test",
+      "command": "node tests/v14-release-receipt-automation-v1780.test.js"
+    },
+    {
+      "index": 140,
+      "id": "v14-evidence-batch-workspace-v1781.test",
+      "command": "node tests/v14-evidence-batch-workspace-v1781.test.js"
+    },
+    {
+      "index": 141,
+      "id": "v14-detached-delivery-receipt-v1781.test",
+      "command": "node tests/v14-detached-delivery-receipt-v1781.test.js"
+    },
+    {
+      "index": 142,
+      "id": "v14-evidence-readiness-planner-v1782.test",
+      "command": "node tests/v14-evidence-readiness-planner-v1782.test.js"
+    },
+    {
+      "index": 143,
+      "id": "v14-segmented-acceptance-runner-v1782.test",
+      "command": "node tests/v14-segmented-acceptance-runner-v1782.test.js"
+    },
+    {
+      "index": 144,
+      "id": "v14-evidence-collection-packet-v1783.test",
+      "command": "node tests/v14-evidence-collection-packet-v1783.test.js"
+    },
+    {
+      "index": 145,
+      "id": "v14-acceptance-evidence-bundle-v1783.test",
+      "command": "node tests/v14-acceptance-evidence-bundle-v1783.test.js"
+    }
+  ],
+  "stable_log_format": "SJP-V14-ACCEPTANCE-LOG-V1",
+  "fail_fast": true,
+  "per_command_timeout_ms": 120000,
+  "postgres_dependent_parts_excluded": 1
+}

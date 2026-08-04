@@ -1,0 +1,51 @@
+{
+  "schema": "smarter-justice-current-research-and-competitive-learning",
+  "schemaVersion": "1.2.0",
+  "releaseVersion": "1.7.66",
+  "retrievedAt": "2026-08-01T01:05:00-04:00",
+  "scope": "Release-relevant accessibility, AI-risk, injection isolation, and New York official self-help boundaries.",
+  "sources": [
+    {
+      "id": "W3C-WCAG22",
+      "authority": "W3C",
+      "url": "https://www.w3.org/TR/WCAG22/",
+      "retrievedAt": "2026-08-01T01:05:00-04:00",
+      "currentFact": "WCAG 2.2 remains the current W3C Recommendation and W3C encourages use of the most current WCAG version when developing or updating accessibility policies.",
+      "targetDisposition": "REVALIDATED_UNCHANGED",
+      "implementation": "Preserve keyboard, focus, reflow, target-size, status-message and accessible-name checks; real-device and assistive-technology acceptance remains open."
+    },
+    {
+      "id": "NIST-AIRMF",
+      "authority": "NIST",
+      "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+      "retrievedAt": "2026-08-01T01:05:00-04:00",
+      "currentFact": "NIST continues to publish the AI RMF, Generative AI Profile, AIRC resources, and notes that AI RMF 1.0 is being revised.",
+      "targetDisposition": "REVALIDATED_AND_IMPROVED",
+      "implementation": "Keep AI optional, risk-scoped, source-verified, monitored, reversible and never sole evidence for legal or live-state claims."
+    },
+    {
+      "id": "OWASP-2025-INJECTION",
+      "authority": "OWASP",
+      "url": "https://owasp.org/Top10/2025/A05_2025-Injection/",
+      "retrievedAt": "2026-08-01T01:05:00-04:00",
+      "currentFact": "OWASP Top 10:2025 emphasizes separating untrusted data from commands and points to LLM01:2025 Prompt Injection for LLM-specific risk.",
+      "targetDisposition": "REVALIDATED_UNCHANGED",
+      "implementation": "Preserve untrusted-content isolation and no instruction-following from uploaded or imported content."
+    },
+    {
+      "id": "NYCOURTS-COURTHELP",
+      "authority": "New York State Unified Court System",
+      "url": "https://www.nycourts.gov/help/courthelp",
+      "retrievedAt": "2026-08-01T01:05:00-04:00",
+      "currentFact": "CourtHelp provides legal information for self-represented court users and states that it does not provide legal advice.",
+      "targetDisposition": "REVALIDATED_UNCHANGED",
+      "implementation": "Preserve legal-information, official-resource and attorney-review boundaries; no public copy change was justified."
+    }
+  ],
+  "lawfulCompetitiveLearning": {
+    "result": "NO_ADDITIONAL_PUBLIC_PRODUCT_CHANGE_REQUIRED",
+    "reason": "The selected release problem is private launch execution truth. Existing public design and free legal starting paths remain strong and no researched source justified cosmetic or copied feature changes."
+  },
+  "nextRevalidationTrigger": "next material release, source change, law/standard change, provider activation, or public-resource change",
+  "launchState": "NO_GO"
+}

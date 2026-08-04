@@ -1,0 +1,111 @@
+{
+  "schema": "smarter-justice-provider-discovery-owner-authorization-packet",
+  "releaseVersion": "1.7.75",
+  "packet_id": "SJP-PROVIDER-DISCOVERY-OWNER-AUTHORIZATION-2026-08-03-V1775-RECOVERY",
+  "generatedAt": "2026-08-03T10:20:00-04:00",
+  "packId": "SJP-2026-08-02-C15-P37-D11-V13",
+  "source": {
+    "artifact_name": "smarter-justice-v1.7.73.zip",
+    "artifact_sha256": "5ed64a1c13de1a536303b07a2277e234a822b9bc316b7ea97cf2547e90811898",
+    "artifact_size_bytes": 8196348,
+    "identity_evidence_state": "EXACT_CURRENT_CHAT_VERIFIED",
+    "recovery_note": "v1.7.74 final bytes unavailable in this workspace; no byte-exact recovery claim is made."
+  },
+  "request_reference": {
+    "authorization_request_id": "provider-discovery-smarter-justice-v1.7.73-recovery-draft",
+    "authorization_request_digest": "7f231430f37586eabab9fc64800f4e1985a30f4c8ac62331a29f0fa8097b732a",
+    "product": {
+      "id": "smarter-justice-central",
+      "name": "Smarter Justice",
+      "version": "1.7.73",
+      "artifact_name": "smarter-justice-v1.7.73.zip",
+      "artifact_sha256": "5ed64a1c13de1a536303b07a2277e234a822b9bc316b7ea97cf2547e90811898",
+      "artifact_size_bytes": 8196348,
+      "identity_evidence_state": "EXACT_CURRENT_CHAT_VERIFIED"
+    },
+    "created_at": "2026-08-03T10:20:00-04:00",
+    "expires_at": "2026-08-03T18:20:00-04:00",
+    "scopes": [
+      "GITHUB_REPOSITORY_METADATA",
+      "GITHUB_DEFAULT_BRANCH_COMMIT_TREE",
+      "RENDER_WORKSPACE_SERVICE_METADATA",
+      "DOMAIN_DNS_TLS_REDIRECT_METADATA",
+      "REQUIRED_SECRET_PRESENCE_ONLY",
+      "MIGRATION_CLASSIFICATION_METADATA",
+      "ROLLBACK_CANDIDATE_METADATA"
+    ],
+    "forbidden_actions": [
+      "READ_SECRET_VALUES",
+      "WRITE_REPOSITORY",
+      "CHANGE_BRANCH_OR_COMMIT",
+      "CREATE_OR_TRIGGER_DEPLOYMENT",
+      "CHANGE_RENDER_CONFIGURATION",
+      "CHANGE_DNS_OR_TLS",
+      "MUTATE_DATABASE",
+      "CREATE_OR_CHANGE_WEBHOOK",
+      "CHANGE_BILLING_OR_ENTITLEMENTS"
+    ]
+  },
+  "decision_state": "OWNER_DECISION_REQUIRED",
+  "decision": null,
+  "decision_template": {
+    "schema_id": "SJP-PROVIDER-DISCOVERY-OWNER-AUTHORIZATION-DECISION-2026-08-03-V1",
+    "decision_id": null,
+    "authorization_request_id": "provider-discovery-smarter-justice-v1.7.73-recovery-draft",
+    "authorization_request_digest": "7f231430f37586eabab9fc64800f4e1985a30f4c8ac62331a29f0fa8097b732a",
+    "product": {
+      "id": "smarter-justice-central",
+      "name": "Smarter Justice",
+      "version": "1.7.73",
+      "artifact_name": "smarter-justice-v1.7.73.zip",
+      "artifact_sha256": "5ed64a1c13de1a536303b07a2277e234a822b9bc316b7ea97cf2547e90811898",
+      "artifact_size_bytes": 8196348,
+      "identity_evidence_state": "EXACT_CURRENT_CHAT_VERIFIED"
+    },
+    "decision_state": null,
+    "issued_at": null,
+    "expires_at": null,
+    "authorized_scopes": [
+      "GITHUB_REPOSITORY_METADATA",
+      "GITHUB_DEFAULT_BRANCH_COMMIT_TREE",
+      "RENDER_WORKSPACE_SERVICE_METADATA",
+      "DOMAIN_DNS_TLS_REDIRECT_METADATA",
+      "REQUIRED_SECRET_PRESENCE_ONLY",
+      "MIGRATION_CLASSIFICATION_METADATA",
+      "ROLLBACK_CANDIDATE_METADATA"
+    ],
+    "forbidden_actions_acknowledged": [
+      "READ_SECRET_VALUES",
+      "WRITE_REPOSITORY",
+      "CHANGE_BRANCH_OR_COMMIT",
+      "CREATE_OR_TRIGGER_DEPLOYMENT",
+      "CHANGE_RENDER_CONFIGURATION",
+      "CHANGE_DNS_OR_TLS",
+      "MUTATE_DATABASE",
+      "CREATE_OR_CHANGE_WEBHOOK",
+      "CHANGE_BILLING_OR_ENTITLEMENTS"
+    ],
+    "owner_confirmation": null,
+    "execution_nonce": null,
+    "read_only": true,
+    "secret_values_forbidden": true,
+    "write_operations_forbidden": true,
+    "deployment_authorized": false,
+    "production_request_sent": false,
+    "cohort_freeze_authorized": false,
+    "canary_authorized": false,
+    "single_use": true
+  },
+  "authorizationReady": false,
+  "executionEnvelope": null,
+  "providerMetadataRead": false,
+  "secretValuesRead": false,
+  "deploymentAuthorized": false,
+  "productionRequestSent": false,
+  "cohortFrozen": false,
+  "canarySelected": false,
+  "exact_blockers": [
+    "No detached owner authorization decision has been supplied."
+  ],
+  "nextProtectedAction": "Review the exact recovery request and issue a detached decision only if the listed read-only scopes and time window are intended; otherwise decline or allow the request to expire."
+}

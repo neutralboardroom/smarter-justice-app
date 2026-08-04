@@ -1,0 +1,64 @@
+CONTROLLING SMARTER JUSTICE MASTER RULES PACK: v1.7.0 / SHA-256 2fed25ffb37bccd63e4ab00efcdf4b65e2a21fb4732e9830b0fc75a146083580 / packaged file SMARTER_JUSTICE_MASTER_RULES_AND_SUGGESTIONS_PACK.md. Read and preserve it before implementation.
+
+PERSONAL INJURY LAW AID PILOT 3 — DEDICATED BUILDER PROMPT FROM SMARTER JUSTICE v1.7.48
+
+You are working only in the dedicated portal repository named below. Do not modify Smarter Justice or another portal repository. First verify the exact uploaded artifact, extract cleanly, reproduce its baseline, and stop on any identity, inventory, security, migration, or architecture discrepancy. Preserve all verified working functionality, source provenance, privacy, security, accessibility, rollback, and exact-artifact evidence.
+
+CENTRAL OPERATING MODEL
+- Smarter Justice is the only central professional identity, authentication, claim, verification, firm, office, seat, membership, billing, entitlement, support, and core-profile authority.
+- The portal must not create a duplicate general professional account, password, subscription, firm-account, credential-review, billing, entitlement, or central support system.
+- The portal remains the public specialty-profile, specialty evidence, legal content, intake, brand, repository, version, deployment, and release authority.
+- Consume only an approved, portal-specific, read-only Smarter Justice professional handoff contract v1.4.0.
+- Validate destination ID, schema, digest, fingerprints, revisions, approved publication state, suppression, and prohibited fields.
+- Imports must be deterministic, idempotent, auditable, replay-safe, reject stale or wrong-destination data, preserve last-known-good state, produce an import receipt, and support rollback.
+- No automatic portal-to-central write-back. No user legal matter data, credentials, private verification evidence, support notes, secrets, or payment data in handoffs.
+- Payment never verifies identity, credentials, specialty evidence, portal eligibility, publication, organic rank, lead eligibility, appointment eligibility, or outcomes.
+- Keep every live import, payment, inquiry, appointment, review, sponsorship, upload, AI, and production gate closed unless separately approved with evidence.
+
+CENTRAL LINKS
+- Claim: https://smarterjustice.com/professional-signup.html?portal=personal-injury-law-aid&mode=claim
+- Create: https://smarterjustice.com/professional-signup.html?portal=personal-injury-law-aid&mode=create
+- Manage: https://smarterjustice.com/professional-dashboard.html?portal=personal-injury-law-aid
+- Billing: https://smarterjustice.com/professional-dashboard.html#professional-billing
+- Handoff: /api/owner/professional-network/portal-handoffs/personal-injury-law-aid
+
+REQUIRED PORTAL DELIVERABLES
+1. Claim, create, manage, and billing links with allowlisted return handling.
+2. Read-only v1.4.0 consumer and schema validation.
+3. Portal-specific professional and firm projections preserving local specialty evidence.
+4. Import receipt, rejection report, conflict report, last-known-good state, suppression, and rollback.
+5. Tests for tampered/unknown portal ID, wrong destination, bad digest, prohibited data, replay, duplicate, stale revision, private/public/suppress actions, and failed import preservation.
+6. Mobile, keyboard, zoom, screen-reader, empty, error, loading, success, and confirmation acceptance.
+7. One clean exact-tested final ZIP with inventory, hash, size, counts, release notes, audit, change map, continuation prompt, watchlist, and Next Version Improvement List.
+
+Exact owner-recorded artifact: personal-injury-law-aid-v0.31.0.zip; SHA-256 82b6f4a7e2582f598ad68d5f71be69c82e7fb09f18ed60a050d5bf449e51c07a; size 1,302,721 bytes. Reverify it in this dedicated chat.
+
+CONTROLLING SCOPE
+- Vehicle accidents are included within Personal Injury Law Aid for the initial pilot: cars, trucks, motorcycles, rideshare, pedestrian, bicycle, uninsured/hit-and-run, and related injury starting paths.
+- Also support simple starting paths for premises/slip-and-fall, construction/worksite third-party injuries, products, dog bites, wrongful death, medical/nursing-home injury starting paths, and other negligence injuries.
+- Workers’ Compensation Law Aid remains a separate portal. A work injury may require separate workers’ compensation and third-party personal-injury routing; never merge their legal workflows, eligibility, evidence, or account state.
+- Preserve the separate Car Accident Law Aid repository and history as a dormant compatibility asset. Do not separately launch it during this pilot, delete it, merge repositories, or automatically reassign its records.
+- No claim-value calculator, liability prediction, serious-injury determination, deadline guarantee, settlement prediction, demand-package automation, filing, or attorney-acceptance promise.
+
+SIMPLE PUBLIC PILOT
+- Clean homepage and injury-type selector.
+- Short evidence-preservation and consultation-preparation checklist.
+- Insurance, police-report, treatment, witness, photo, expense, and work-impact organization without legal conclusions.
+- Searchable specialty directory and professional profile pages.
+- Clear urgent-action language directing users to current official sources and qualified counsel rather than hard-coded guarantees.
+- Mobile-first QR-friendly attorney enrollment.
+
+CURRENT NEW YORK RESEARCH BOUNDARY
+- New York DFS identifies No-Fault/PIP as personal-injury coverage for drivers, passengers, and pedestrians and publishes current claim instructions.
+- New York enacted material motor-vehicle insurance reforms in May 2026; any public legal explanation must be current, jurisdiction-specific, source-dated, and reviewed before launch.
+- The New York Workers’ Compensation Board separately describes workers’ compensation as benefits for work-related injury or illness.
+Official research references: https://www.dfs.ny.gov/consumers/auto_insurance/Auto_resource_center ; https://www.dfs.ny.gov/industry-guidance/circular-letters/c32026-01 ; https://www.wcb.ny.gov/content/main/Workers/lp_workers-comp.jsp
+
+ACCEPTANCE
+- Dedicated exact artifact is independently verified before changes.
+- Existing specialty content, evidence, profiles, accessibility, privacy, security, and release safeguards are preserved.
+- Central links work with the exact portal ID `personal-injury-law-aid` and fail closed for tampering.
+- The supplied local example handoff validates and imports in a test-only adapter.
+- Private records remain private; suppression removes public rendering without destroying evidence.
+- A failed import preserves last-known-good portal state.
+- No live connection or deployment is claimed without separate staging, production, rollback, support, monitoring, and owner acceptance.

@@ -8,7 +8,7 @@ const FORM_PATH_READINESS = [
 
 const FORM_PATHS = [
   {
-    id: 'tax-resolution-oic-starter', practiceSlug: 'taxes', title: 'IRS offer in compromise starter file', readinessLevel: 1,
+    id: 'tax-resolution-oic-starter', practiceSlug: 'taxes', title: 'IRS offer in compromise starting summary', readinessLevel: 1,
     officialSourceName: 'IRS Offer in Compromise', jurisdiction: 'Federal',
     officialForms: ['Form 656-B', 'Form 656', 'Form 433-A(OIC)', 'Form 433-B(OIC)'],
     matchedTerms: ['offer in compromise','oic','settle tax debt','tax debt','433-a','433-b','656'],
@@ -17,7 +17,7 @@ const FORM_PATHS = [
     deliveryType: 'worksheet and tax-resolution review file first; no automatic OIC submission in this version'
   },
   {
-    id: 'tax-installment-agreement-9465-starter', practiceSlug: 'taxes', title: 'IRS installment agreement starter file', readinessLevel: 2,
+    id: 'tax-installment-agreement-9465-starter', practiceSlug: 'taxes', title: 'IRS installment agreement starting summary', readinessLevel: 2,
     officialSourceName: 'IRS Forms, Instructions & Publications', jurisdiction: 'Federal',
     officialForms: ['Form 9465'],
     matchedTerms: ['installment agreement','payment plan','9465','monthly payment','pay over time'],
@@ -26,7 +26,7 @@ const FORM_PATHS = [
     deliveryType: 'organized worksheet; possible official draft after verification and review'
   },
   {
-    id: 'tax-preparation-1040-starter', practiceSlug: 'taxes', title: 'Individual tax preparation starter file', readinessLevel: 1,
+    id: 'tax-preparation-1040-starter', practiceSlug: 'taxes', title: 'Individual tax preparation starting summary', readinessLevel: 1,
     officialSourceName: 'IRS Forms, Instructions & Publications', jurisdiction: 'Federal/state/local as selected',
     officialForms: ['Form 1040 family', 'state/local tax forms where applicable'],
     matchedTerms: ['tax preparation','file taxes','1040','w-2','1099','deduction','refund'],
@@ -35,7 +35,7 @@ const FORM_PATHS = [
     deliveryType: 'tax-preparation organizer; no return filing in this version'
   },
   {
-    id: 'bankruptcy-chapter-7-13-starter', practiceSlug: 'bankruptcy-debt', title: 'Bankruptcy debt schedule starter file', readinessLevel: 1,
+    id: 'bankruptcy-chapter-7-13-starter', practiceSlug: 'bankruptcy-debt', title: 'Bankruptcy debt schedule starting summary', readinessLevel: 1,
     officialSourceName: 'United States Courts Bankruptcy Forms', jurisdiction: 'Federal bankruptcy court plus local district rules',
     officialForms: ['Voluntary Petition B 101', 'Schedules A/B-J', 'Statement of Financial Affairs', 'Means Test forms'],
     matchedTerms: ['chapter 7','chapter 13','bankruptcy','means test','creditor','debt schedule'],
@@ -44,7 +44,7 @@ const FORM_PATHS = [
     deliveryType: 'organized debt and document worksheet; attorney review recommended'
   },
   {
-    id: 'ssa-disability-appeal-starter', practiceSlug: 'disability-benefits', title: 'Social Security disability appeal starter file', readinessLevel: 1,
+    id: 'ssa-disability-appeal-starter', practiceSlug: 'disability-benefits', title: 'Social Security disability appeal starting summary', readinessLevel: 1,
     officialSourceName: 'Social Security Administration Forms', jurisdiction: 'Federal',
     officialForms: ['SSA-561', 'SSA-3441', 'SSA-827 where applicable'],
     matchedTerms: ['ssdi','ssi','disability appeal','ssa-561','ssa-3441','denied disability'],
@@ -53,7 +53,7 @@ const FORM_PATHS = [
     deliveryType: 'appeal organizer and medical-evidence checklist first'
   },
   {
-    id: 'business-ein-ss4-starter', practiceSlug: 'business-formation-compliance', title: 'Business formation and EIN starter file', readinessLevel: 2,
+    id: 'business-ein-ss4-starter', practiceSlug: 'business-formation-compliance', title: 'Business formation and EIN starting summary', readinessLevel: 2,
     officialSourceName: 'IRS and state business filing sources', jurisdiction: 'Federal plus selected state/local filing office',
     officialForms: ['IRS SS-4', 'state entity formation forms', 'beneficial ownership/compliance checklist where applicable'],
     matchedTerms: ['ein','ss-4','llc','corporation','articles of organization','articles of incorporation','annual report','registered agent','beneficial ownership','boi'],
@@ -62,22 +62,22 @@ const FORM_PATHS = [
     deliveryType: 'organized business filing worksheet; possible draft after state-source verification and review'
   },
   {
-    id: 'trademark-application-starter', practiceSlug: 'trademarks', title: 'Trademark application starter file', readinessLevel: 1,
+    id: 'trademark-application-starter', practiceSlug: 'trademarks', title: 'Trademark application starting summary', readinessLevel: 1,
     officialSourceName: 'USPTO Trademark Center', jurisdiction: 'Federal',
     officialForms: ['USPTO online trademark application pathway', 'Office Action response organizer'],
     matchedTerms: ['trademark','brand name','logo','office action','specimen','goods and services'],
     requiredFields: ['markText','ownerName','goodsServices','firstUseDate','specimenAvailable','officeActionDeadline'],
     reviewerChecklist: ['Do not promise direct USPTO filing in this version.', 'Collect owner, mark, goods/services, specimen, and deadlines.', 'Recommend trademark attorney review for clearance, refusals, Office Actions, or disputes.'],
-    deliveryType: 'USPTO starter file and specimen checklist first'
+    deliveryType: 'USPTO starting summary and specimen checklist first'
   },
   {
-    id: 'state-family-divorce-starter', practiceSlug: 'divorce-family-law', title: 'State divorce and family starting file', readinessLevel: 1,
+    id: 'state-family-divorce-starter', practiceSlug: 'divorce-family-law', title: 'State divorce and family starting summary', readinessLevel: 1,
     officialSourceName: 'State court self-help and local court forms', jurisdiction: 'Selected state/county/court',
     officialForms: ['state-specific divorce, custody, support, visitation, or family court forms'],
     matchedTerms: ['divorce','custody','visitation','child support','family court','uncontested divorce'],
     requiredFields: ['state','county','marriageDate','children','agreementStatus','servedPapers','courtDate','protectionOrderConcern'],
     reviewerChecklist: ['State and county must be selected before form guidance.', 'Identify whether the matter is uncontested, contested, custody/support-related, or protection-order-related.', 'Recommend attorney review for contested issues, domestic violence, children, property, or urgent court dates.'],
-    deliveryType: 'state/county starter file; official form draft only after jurisdiction verification in a future version'
+    deliveryType: 'state/county starting summary; official form draft only after jurisdiction verification in a future version'
   },
   {
     id: 'vehicle-accident-document-organizer', practiceSlug: 'vehicle-accidents', title: 'Vehicle accident document organizer', readinessLevel: 1,
@@ -126,7 +126,7 @@ function evaluateFormPathReadiness(path, facts){
     missingFieldLabels: missingFields.map(labelForField),
     reviewerStatus,
     canPrepareCompletedDraftNow: false,
-    userMessage: missingFields.length ? 'More information is needed before any completed form draft should be considered.' : 'The starter facts look more complete, but Human Review Specialist review is still required before any completed form delivery.'
+    userMessage: missingFields.length ? 'More information is needed before any completed form draft should be considered.' : 'The main details appear more complete, but the required review must still occur before a completed form is shown.'
   };
 }
 function scorePath(path, context){

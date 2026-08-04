@@ -1,0 +1,22 @@
+{
+  "schemaVersion": "1.0.0",
+  "releaseVersion": "1.7.46",
+  "claimContext": [
+    "portalId",
+    "localProfileId",
+    "professionalIdWhenKnown",
+    "intent",
+    "allowlistedReturnDestination",
+    "signedOrTamperResistantState"
+  ],
+  "createIntent": "create",
+  "manageDestination": "Smarter Justice central dashboard",
+  "safety": [
+    "minimum context only",
+    "safe redirect allowlist",
+    "expiry",
+    "tamper rejection",
+    "no credentials or legal narratives"
+  ],
+  "status": "LOCAL_SPECIFICATION_NOT_D4_ACCEPTED"
+}

@@ -1,0 +1,59 @@
+{
+  "schemaVersion": "1.0.0",
+  "releaseVersion": "1.7.45",
+  "status": "EVIDENCE_RECORDED_COUNSEL_ACCEPTANCE_PENDING_PAID_GATES_CLOSED",
+  "generatedAt": "2026-07-29T14:30:00-04:00",
+  "controls": {
+    "basicProfileClaimFree": true,
+    "basicProfileEditFree": true,
+    "paidPlacementLabel": "Sponsored",
+    "organicRankingNeutral": true,
+    "payToVerifyProhibited": true,
+    "percentageOfLegalFeesProhibited": true,
+    "outcomeContingentChargesProhibited": true,
+    "jurisdictionCounselApprovalRequired": true,
+    "paidSponsoredVisibilityOpen": false,
+    "caseOpportunityAccessOpen": false
+  },
+  "evidence": [
+    {
+      "authority": "New York State Unified Court System",
+      "title": "Order amending Rules of Professional Conduct 7.1, 7.3 and 7.4 effective June 1, 2026",
+      "url": "https://www.nycourts.gov/LegacyPDFS/rules/comments/orders/AO-177-26.pdf",
+      "use": "Attorney advertising, solicitation, truthful communications, and specialization boundaries"
+    },
+    {
+      "authority": "New York State Unified Court System",
+      "title": "Park v. DeJonge",
+      "url": "https://www.nycourts.gov/REPORTER/3dseries/2024/2024_04328.htm",
+      "use": "New York professional-independence and nonlawyer fee-sharing boundary"
+    },
+    {
+      "authority": "Federal Trade Commission",
+      "title": "Native Advertising: A Guide for Businesses",
+      "url": "https://www.ftc.gov/business-guidance/resources/native-advertising-guide-businesses",
+      "use": "Clear and prominent advertising disclosure design"
+    },
+    {
+      "authority": "Justia",
+      "title": "Lawyer Directory and premium placement materials",
+      "url": "https://www.justia.com/lawyers",
+      "use": "Competitor product-pattern research only; free profile control separated from paid visibility"
+    },
+    {
+      "authority": "Avvo",
+      "title": "Attorney profile and advertising materials",
+      "url": "https://www.avvo.com/for-lawyers",
+      "use": "Competitor product-pattern research only; not legal authority"
+    }
+  ],
+  "ownerApprovalsStillRequired": [
+    "Final prices and benefits",
+    "Terms, cancellation and refund policy",
+    "Jurisdiction-specific counsel opinion",
+    "Sponsored-display acceptance on desktop, tablet and mobile",
+    "Case-opportunity charge and routing acceptance",
+    "Production Stripe and support acceptance",
+    "Paid-gate go/no-go"
+  ]
+}

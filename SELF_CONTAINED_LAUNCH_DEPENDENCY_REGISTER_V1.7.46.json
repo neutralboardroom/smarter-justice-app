@@ -1,0 +1,144 @@
+{
+  "schemaVersion": "1.0.0",
+  "releaseVersion": "1.7.46",
+  "generatedAt": "2026-07-29T19:35:00-04:00",
+  "deploymentAuthorized": false,
+  "neutralBoardroomLaunchCritical": false,
+  "dependencies": [
+    {
+      "id": "node-runtime",
+      "name": "Node.js 22.x",
+      "purpose": "Application runtime",
+      "status": "TESTED_LOCAL",
+      "launchCriticality": "CRITICAL",
+      "failureBehavior": "Application does not start; no unsafe fallback.",
+      "manualFallback": "Restore the approved runtime and exact artifact."
+    },
+    {
+      "id": "npm-registry",
+      "name": "npm package registry access",
+      "purpose": "Legitimate clean dependency installation and advisory audit",
+      "status": "BLOCKED",
+      "launchCriticality": "BUILD_CRITICAL",
+      "failureBehavior": "Do not fabricate dependencies or claim a clean install.",
+      "manualFallback": "Retry through an approved legitimate registry and record evidence."
+    },
+    {
+      "id": "postgresql",
+      "name": "PostgreSQL",
+      "purpose": "Production durable state and transactional records",
+      "status": "NOT_CONFIGURED",
+      "launchCriticality": "CRITICAL",
+      "failureBehavior": "Production writes fail closed.",
+      "manualFallback": "No sensitive or commercial writes until persistence is restored."
+    },
+    {
+      "id": "smtp",
+      "name": "SMTP provider",
+      "purpose": "Verification, recovery, receipts and operational notices",
+      "status": "NOT_CONFIGURED",
+      "launchCriticality": "CRITICAL",
+      "failureBehavior": "Transactional flow remains pending and support state is shown; no false delivery claim.",
+      "manualFallback": "Owner-reviewed support process without bypassing email verification."
+    },
+    {
+      "id": "stripe",
+      "name": "Stripe",
+      "purpose": "Central membership and subscription billing",
+      "status": "NOT_CONFIGURED",
+      "launchCriticality": "COMMERCIAL_CRITICAL",
+      "failureBehavior": "Checkout and entitlement activation remain closed.",
+      "manualFallback": "No manual entitlement grant based only on a claimed payment."
+    },
+    {
+      "id": "dns-tls",
+      "name": "DNS and TLS",
+      "purpose": "Canonical HTTPS service",
+      "status": "CONFIGURED_UNVERIFIED",
+      "launchCriticality": "CRITICAL",
+      "failureBehavior": "Do not authorize launch on an unverified origin.",
+      "manualFallback": "Use staging only after HTTPS verification."
+    },
+    {
+      "id": "private-storage",
+      "name": "Private file storage",
+      "purpose": "Restricted uploads if later enabled",
+      "status": "NOT_CONFIGURED",
+      "launchCriticality": "CONDITIONAL",
+      "failureBehavior": "Confidential uploads remain closed.",
+      "manualFallback": "Do not collect files."
+    },
+    {
+      "id": "monitoring",
+      "name": "Monitoring and alerting",
+      "purpose": "Service, database, email, Stripe and integration health",
+      "status": "NOT_CONFIGURED",
+      "launchCriticality": "CRITICAL",
+      "failureBehavior": "Launch remains NO_GO.",
+      "manualFallback": "Documented manual checks may support staging only."
+    },
+    {
+      "id": "logging",
+      "name": "Structured operational logging",
+      "purpose": "Errors, security events and audit support",
+      "status": "TESTED_LOCAL",
+      "launchCriticality": "CRITICAL",
+      "failureBehavior": "Sensitive actions fail or are blocked when authoritative audit cannot be recorded.",
+      "manualFallback": "No unaudited sensitive action."
+    },
+    {
+      "id": "backup-storage",
+      "name": "Encrypted backup storage",
+      "purpose": "Database and private operational recovery",
+      "status": "NOT_CONFIGURED",
+      "launchCriticality": "CRITICAL",
+      "failureBehavior": "Launch remains NO_GO.",
+      "manualFallback": "None for live commercial launch."
+    },
+    {
+      "id": "hosting",
+      "name": "Hosting and deployment provider",
+      "purpose": "Staging and production execution",
+      "status": "CONFIGURED_UNVERIFIED",
+      "launchCriticality": "CRITICAL",
+      "failureBehavior": "No deployment authorization.",
+      "manualFallback": "Local development only."
+    },
+    {
+      "id": "divorce-portal",
+      "name": "Divorce Law Aid",
+      "purpose": "Pilot destination portal",
+      "status": "CONFIGURED_UNVERIFIED",
+      "launchCriticality": "PILOT_CRITICAL",
+      "failureBehavior": "Keep export private and preserve last-known-good portal state.",
+      "manualFallback": "Smarter Justice claim and account functions remain available without claiming a live portal connection."
+    },
+    {
+      "id": "estate-portal",
+      "name": "Estate Law Aid",
+      "purpose": "Pilot destination portal",
+      "status": "CONFIGURED_UNVERIFIED",
+      "launchCriticality": "PILOT_CRITICAL",
+      "failureBehavior": "Keep export private and preserve last-known-good portal state.",
+      "manualFallback": "Smarter Justice claim and account functions remain available without claiming a live portal connection."
+    },
+    {
+      "id": "personal-injury-portal",
+      "name": "Personal Injury Law Aid",
+      "purpose": "Pilot destination covering vehicle accidents and other injury matters",
+      "status": "CONFIGURED_UNVERIFIED",
+      "launchCriticality": "PILOT_CRITICAL",
+      "failureBehavior": "Keep export private and preserve last-known-good portal state.",
+      "manualFallback": "Smarter Justice claim and account functions remain available without claiming a live portal connection."
+    },
+    {
+      "id": "neutral-boardroom",
+      "name": "Neutral Boardroom",
+      "purpose": "Optional future non-confidential export only",
+      "status": "DORMANT",
+      "launchCriticality": "NOT_CRITICAL",
+      "failureBehavior": "No effect on Smarter Justice launch, management, billing, profiles, support, monitoring, backup, rollback or portal integration.",
+      "manualFallback": "No fallback required; Smarter Justice is authoritative."
+    }
+  ]
+}

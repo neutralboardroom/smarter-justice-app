@@ -1,0 +1,158 @@
+{
+  "schema": "smarter-justice-attorney-outreach-readiness",
+  "schemaVersion": "1.1.0",
+  "releaseVersion": "1.7.58",
+  "recordedAt": "2026-07-30T20:28:00-04:00",
+  "launchState": "NO_GO",
+  "purpose": "Private evidence-based readiness for Roger-guided, presenter-mode, self-guided, and printed attorney follow-up review of Smarter Justice and the four coordinated legal micro-portals.",
+  "canonicalTour": {
+    "route": "/attorney-partner-tour.html",
+    "shortPath": "/attorney-tour",
+    "public": true,
+    "canonicalUrl": "https://smarterjustice.com/attorney-partner-tour.html",
+    "campaignCode": "ATTORNEY-TOUR",
+    "presenterMode": "mode=presenter",
+    "selfGuidedMode": "mode=self-guided",
+    "fieldCardRoute": "/attorney-tour-follow-up.html"
+  },
+  "practiceVariants": [
+    "divorce-law-aid",
+    "estate-law-aid",
+    "personal-injury-law-aid",
+    "domestic-violence-aid"
+  ],
+  "readinessItems": [
+    {
+      "id": "homepage-attorney-entry",
+      "label": "Homepage attorney entry",
+      "status": "READY_FOR_REVIEW",
+      "evidence": [
+        "Canonical tour is linked from the public homepage and professional banner.",
+        "Representative exact-candidate desktop and laptop render evidence is packaged without observed horizontal overflow or console errors."
+      ],
+      "nextAction": "Complete real-device and assistive-technology acceptance."
+    },
+    {
+      "id": "canonical-partner-tour",
+      "label": "Attorney Partner Tour",
+      "status": "READY_FOR_REVIEW",
+      "evidence": [
+        "One canonical public route supports explicit presenter and self-guided modes without authentication or authorization bypass."
+      ],
+      "nextAction": "Complete real-device and assistive-technology acceptance."
+    },
+    {
+      "id": "presenter-mode",
+      "label": "Presenter mode",
+      "status": "READY_FOR_REVIEW",
+      "evidence": [
+        "Seven-step presenter mode includes previous/next controls, progress, direct section navigation, and self-guided fallback.",
+        "Representative tablet and phone presenter-step render evidence is packaged."
+      ],
+      "nextAction": "Complete in-person laptop and phone rehearsal with keyboard and touch."
+    },
+    {
+      "id": "practice-relevant-sequencing",
+      "label": "Practice-relevant sequencing",
+      "status": "READY_FOR_REVIEW",
+      "evidence": [
+        "Divorce, estate, personal-injury, and domestic-violence variants select a relevant specialty overview and safe public tool."
+      ],
+      "nextAction": "Verify exact portal links only after portal staging evidence exists."
+    },
+    {
+      "id": "profile-showcase",
+      "label": "Professional profile showcase",
+      "status": "READY_FOR_REVIEW",
+      "evidence": [
+        "The tour uses an unmistakably synthetic demonstration record and explains canonical portal ownership."
+      ],
+      "nextAction": "Replace demonstration fallback with an accepted portal profile only after exact staging approval."
+    },
+    {
+      "id": "public-tool-demonstration",
+      "label": "Public-tool demonstration",
+      "status": "READY_FOR_REVIEW",
+      "evidence": [
+        "The tour links only to existing no-account Smarter Justice tools and adds a return-to-tour path."
+      ],
+      "nextAction": "Use synthetic inputs only during demonstrations."
+    },
+    {
+      "id": "post-meeting-continuation",
+      "label": "Post-meeting continuation",
+      "status": "READY_FOR_REVIEW",
+      "evidence": [
+        "Stable practice-specific short paths, static QR codes, and a print-ready follow-up card contain no secret, client, matter, payment, owner, or staff data."
+      ],
+      "nextAction": "Verify production domain routing before printed distribution."
+    },
+    {
+      "id": "field-outreach-kit",
+      "label": "Field outreach handoff kit",
+      "status": "READY_FOR_REVIEW",
+      "evidence": [
+        "Four fixed practice-specific short paths, locally generated static QR SVGs, and a print-ready card are included with tracking disabled.",
+        "The tested print render shows the estate QR and clean short path without personal or tracking data."
+      ],
+      "nextAction": "Print and scan-test each card on real devices before field use."
+    },
+    {
+      "id": "membership-wording",
+      "label": "Membership wording",
+      "status": "OWNER_DECISION_REQUIRED",
+      "evidence": [
+        "The public tour uses durable benefits and qualified no-guarantee language; comparative lead-cost claims are not published."
+      ],
+      "nextAction": "Roger must approve any public comparative cost or current pricing statement."
+    },
+    {
+      "id": "justice-booth-public-claim",
+      "label": "Justice Booth public claim",
+      "status": "BLOCKED",
+      "evidence": [
+        "No verified scheduled or active booth record exists in this artifact."
+      ],
+      "nextAction": "Create and verify a specific NYC record before public schedule or active-state wording."
+    },
+    {
+      "id": "exact-portal-demonstration",
+      "label": "Exact portal demonstration",
+      "status": "BLOCKED",
+      "evidence": [
+        "All four portal artifacts remain owner-recorded and not exact-staged in Smarter Justice."
+      ],
+      "nextAction": "Stage exact portal artifacts and approve public profile/tool routes independently."
+    },
+    {
+      "id": "production-readiness",
+      "label": "Production launch readiness",
+      "status": "BLOCKED",
+      "evidence": [
+        "Production PostgreSQL, vulnerability audit, exact four-portal staging, monitoring, backup/restore, legal review, accessibility acceptance, and owner GO remain incomplete."
+      ],
+      "nextAction": "Complete each independent gate without treating the tour as launch authorization."
+    }
+  ],
+  "closedGates": [
+    "deployment",
+    "DNS changes",
+    "live portal connection",
+    "automatic publication",
+    "automatic central-to-portal writes",
+    "automatic portal-to-central writes",
+    "payment activation",
+    "Sponsored",
+    "Featured",
+    "professional opportunities",
+    "reviews",
+    "appointments",
+    "confidential uploads",
+    "external AI",
+    "electronic filing",
+    "automatic public outreach",
+    "launch GO"
+  ],
+  "sourceArtifact": "smarter-justice-v1.7.57.zip",
+  "releaseDisposition": "PRESERVED_AFTER_HASH_AND_REGRESSION_REVIEW"
+}

@@ -1,0 +1,23 @@
+{
+  "releaseVersion": "1.7.58",
+  "generatedAt": "2026-07-30",
+  "status": "PASS_PENDING_DETACHED_DELIVERY_IDENTITY",
+  "filename": "smarter-justice-v1.7.58.zip",
+  "identityMode": "DETACHED_AFTER_PACKAGING",
+  "deterministicDoubleBuild": true,
+  "freshExtractionRuns": 2,
+  "commandsPerRun": 112,
+  "identicalOutput": true,
+  "testLogSha256": "3681f911574912eaa9ca08d2f066088e6d53a6cd9c1d304f6bf72ac225af65cd",
+  "expectedEntries": 1490,
+  "expectedFiles": 1472,
+  "expectedDirectories": 18,
+  "expectedInventoryRecords": 1471,
+  "crcRequired": true,
+  "pathSafetyRequired": true,
+  "inventoryRequired": true,
+  "sourceEqualityRequired": true,
+  "launchState": "NO_GO",
+  "deploymentAuthorized": false,
+  "identityBoundary": "The final archive cannot contain its own SHA-256 or byte size. Detached delivery receipt controls exact final identity."
+}

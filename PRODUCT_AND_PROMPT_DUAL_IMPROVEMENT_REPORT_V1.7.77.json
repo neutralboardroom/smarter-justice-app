@@ -1,0 +1,115 @@
+{
+  "schema_id": "SJP-LMP-PRODUCT-AND-PROMPT-DUAL-IMPROVEMENT-REPORT-2026-08-03-V1",
+  "product": {
+    "name": "Smarter Justice",
+    "version": "1.7.77",
+    "artifact_sha256": "DETACHED_FINAL_NOT_YET_BUILT"
+  },
+  "release_classification": "ORDINARY_MATERIAL_DUAL_TRACK_RELEASE",
+  "independently_discovered_opportunities": [
+    "Complete the safe local inspection half of the Journey Handoff workflow without opening portal transfer.",
+    "Convert the observed backlog-collapse and evidence-reference weakness into a deterministic release invariant."
+  ],
+  "creative_new_capability_candidates": [
+    "DEVICE_ONLY_HANDOFF_IMPORT_INSPECTOR",
+    "RELEASE_EVIDENCE_COVERAGE_GATE"
+  ],
+  "product_platform_improvements": [
+    {
+      "category": "PUBLIC_USER_WORKFLOW_PRIVACY_INTEGRITY_ACCESSIBILITY",
+      "problem": "A downloaded handoff pack could not be verified locally for integrity, expiry, exact fields, or central destination compatibility.",
+      "implementation": "Added a browser-only JSON inspector with a 16 KB limit, exact field allowlists, Web Crypto integrity verification, expiry/future-time checks, central destination-category compatibility, fixed next-step guidance, accessible live status, and local reset.",
+      "before_state": "Users could create and download a minimal pack but had no built-in way to verify it later.",
+      "after_state": "Users can create, download, and locally inspect a pack while network transfer, persistent storage, automatic opening, and portal import remain disabled.",
+      "affected_files_records_or_systems": [
+        "JOURNEY_HANDOFF_PLANNER_CONTRACT_V1.7.77.json",
+        "lib/journeyHandoffPlanner.js",
+        "public/journey-handoff-planner.html",
+        "public/journey-handoff-planner.js",
+        "tests/journey-handoff-inspector-v1777.test.js"
+      ],
+      "tests_and_acceptance_evidence": [
+        "tests/journey-handoff-inspector-v1777.test.js"
+      ],
+      "benefit": "A returning user can detect tampering, expiry, unsupported fields, and destination mismatch without uploading the pack or re-entering sensitive facts.",
+      "limitations": [
+        "Central compatibility is guidance only and does not prove that any destination portal imported or accepted the pack.",
+        "The inspector does not calculate deadlines, determine eligibility, provide legal advice, or persist inspection history."
+      ]
+    }
+  ],
+  "builder_prompt_system_improvements": [
+    {
+      "category": "PROMPT_CONTINUATION_SCHEMA_TEST_AUTOMATION_EVIDENCE_RECOVERY_OR_RELEASE",
+      "problem": "The V12 dual-track gate validated report shape but did not verify referenced files/tests, exact source identity, prior limitations, or preservation of the full unresolved backlog.",
+      "implementation": "Added a deterministic release-evidence coverage contract and validator that checks current version/source/packet identity, expected command counts, referenced files and tests, package-script inclusion, all 21 carried-forward backlog IDs, prior limitation dispositions, current evidence files, and non-circular candidate/final identity boundaries.",
+      "before_state": "A structurally valid report could cite missing evidence or silently drop unresolved work.",
+      "after_state": "The ordinary release fails closed when evidence references are missing, source identity is stale, prior limitations are unreviewed, or any required backlog item disappears without an evidence-backed disposition.",
+      "affected_files_or_artifacts": [
+        "RELEASE_EVIDENCE_COVERAGE_CONTRACT_V1.7.77.json",
+        "lib/releaseEvidenceCoverage.js",
+        "NEXT_VERSION_IMPROVEMENT_LIST.json",
+        "CONTINUOUS_SELF_IMPROVEMENT_AND_INNOVATION_PLAN_V1.7.77.json",
+        "PRODUCT_AND_PROMPT_DUAL_IMPROVEMENT_REPORT_V1.7.77.json",
+        "CROSS_VERSION_LEARNING_LEDGER_V1.7.77.json",
+        "tests/release-evidence-coverage-v1777.test.js"
+      ],
+      "tests_and_acceptance_evidence": [
+        "tests/release-evidence-coverage-v1777.test.js"
+      ],
+      "future_build_benefit": "Future builders receive an executable evidence-completeness and carry-forward invariant before candidate packaging.",
+      "limitations": [
+        "The gate verifies repository evidence consistency; it does not prove external provider, production, device, legal-review, or accessibility acceptance."
+      ]
+    }
+  ],
+  "accepted_innovation_waves": [
+    "Device-only local handoff inspection",
+    "Release evidence and backlog coverage gate"
+  ],
+  "reverted_or_rejected_innovation_waves": [
+    {
+      "wave": "Destination portal import or automatic handoff",
+      "reason": "Exact product-local acceptance and separate authorization remain absent."
+    }
+  ],
+  "lessons_carried_forward": [
+    "Advance only the next safe maturity slice when a product-local integration boundary is not accepted.",
+    "Convert a regression that almost removed durable obligations into a deterministic invariant rather than relying on manual care."
+  ],
+  "prior_limitations_reviewed": [
+    {
+      "id": "V1776-HANDOFF-NO-PORTAL-IMPORT",
+      "source": "PRODUCT_AND_PROMPT_DUAL_IMPROVEMENT_REPORT_V1.7.76.json",
+      "disposition": "PRESERVED",
+      "evidence": "Local inspection explicitly reports portal_import_accepted=false and never opens or transmits to a destination."
+    },
+    {
+      "id": "V1776-DUAL-GATE-NOT-HUMAN-JUDGMENT",
+      "source": "PRODUCT_AND_PROMPT_DUAL_IMPROVEMENT_REPORT_V1.7.76.json",
+      "disposition": "PRESERVED",
+      "evidence": "Coverage validation remains repository-scoped and deploymentAuthorized=false."
+    }
+  ],
+  "deferred_opportunities_with_exact_reasons": [
+    {
+      "opportunity": "Destination portal import adapter",
+      "reason": "Requires one exact destination artifact, product-local schema acceptance, privacy/security review, and owner authority."
+    },
+    {
+      "opportunity": "Accessible local QR export",
+      "reason": "Requires separate shoulder-surfing, payload, offline decoding, print, camera, and assistive-technology acceptance."
+    }
+  ],
+  "next_innovation_opportunities": [
+    "Pilot one product-local import adapter only after exact portal acceptance.",
+    "Add a privacy-reviewed QR representation only after real-device and shoulder-surfing acceptance.",
+    "Add transparent candidate scoring only after a human-readable rubric cannot override hard safety constraints."
+  ],
+  "dual_track_gate": {
+    "product_platform_track_passed": true,
+    "builder_prompt_system_track_passed": true,
+    "ordinary_material_release_authorized": true
+  },
+  "hard_constraints_preserved": true
+}

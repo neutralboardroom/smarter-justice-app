@@ -1,0 +1,51 @@
+{
+  "schema": "smarter-justice-current-research-and-competitive-learning",
+  "schemaVersion": "3.0.0",
+  "releaseVersion": "1.7.69",
+  "generatedAt": "2026-08-01T12:54:00-04:00",
+  "retrievedAt": "2026-08-01",
+  "sources": [
+    {
+      "sourceId": "NY-OCA-EQW2-R5NB",
+      "authority": "OFFICIAL",
+      "title": "NYS Attorney Registrations",
+      "observations": [
+        "Public information pursuant to 22 NYCRR 118",
+        "Posting frequency label Quarterly",
+        "Approximately 432K rows and 20 columns observed",
+        "Registration number described as seven-digit unique number"
+      ],
+      "targetAdaptation": "Central immutable observations, namespaced credentials, targeted recheck gates, business-contact privacy and no good-standing inference",
+      "copiedProtectedImplementation": false
+    },
+    {
+      "sourceId": "NIST-AI-RMF",
+      "authority": "OFFICIAL_STANDARD",
+      "title": "NIST AI Risk Management Framework and Generative AI Profile",
+      "observations": [
+        "AI RMF 1.0 remains available",
+        "Generative AI Profile NIST-AI-600-1 remains an official companion resource"
+      ],
+      "targetAdaptation": "Preserve AI as assistive evidence, never sole proof; keep deterministic fallback and gated external providers",
+      "copiedProtectedImplementation": false
+    },
+    {
+      "sourceId": "W3C-WCAG22",
+      "authority": "OFFICIAL_STANDARD",
+      "title": "WCAG 2.2",
+      "observations": [
+        "Current W3C Recommendation",
+        "W3C encourages use of the latest WCAG version"
+      ],
+      "targetAdaptation": "Preserve WCAG 2.2-oriented public and owner-interface checks; human acceptance remains separate",
+      "copiedProtectedImplementation": false
+    }
+  ],
+  "innovationDisposition": "IMPLEMENT_CENTRAL_OCA_REGISTRY_CONTRACTS_AND_PACK_GOVERNANCE_NO_PUBLIC_REDESIGN",
+  "revalidationTriggers": [
+    "OFFICIAL_SOURCE_CHANGE",
+    "PACK_CHANGE",
+    "MATERIAL_PRODUCT_CHANGE",
+    "PRELAUNCH_REVIEW"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "releaseVersion": "1.7.58",
+  "generatedAt": "2026-07-30",
+  "decisions": [
+    {
+      "idea": "Canonical initial-portal authority with monotonic supersession",
+      "problem": "The currentness receipt detected drift but repeated current records still lacked an explicit single owner authority source and version-regression guard.",
+      "user": "Roger and future release operators",
+      "evidence": "Three initial portals advanced after v1.7.56; the same identities appear in multiple current surfaces.",
+      "expectedBenefit": "One canonical source, derived operating-system artifacts and deterministic regression checks prevent accidental downgrade or cross-surface conflict.",
+      "decision": "IMPLEMENT",
+      "acceptanceTest": "Authority validation reports three advances, one unchanged portal, zero regressions and zero cross-surface conflicts."
+    },
+    {
+      "idea": "Repair embedded continuation integrity",
+      "problem": "The v1.7.56-generated continuation duplicated opening sections and named v1.7.58 as the next version for a v1.7.58 base.",
+      "user": "Roger and the next Smarter Justice builder",
+      "evidence": "Direct source inspection.",
+      "expectedBenefit": "One self-contained, non-self-referential v1.7.58-to-v1.7.58 command prevents wrong-base or no-op builds.",
+      "decision": "IMPLEMENT",
+      "acceptanceTest": "Continuation contains one complete handoff opening and names v1.7.58 as the expected next version."
+    },
+    {
+      "idea": "Restyle public experience",
+      "problem": "No material public defect found.",
+      "user": "public users and attorneys",
+      "evidence": "All public regression tests pass and preserved route hashes match the source.",
+      "expectedBenefit": "None sufficient to justify churn.",
+      "decision": "REJECT",
+      "reason": "No changes for the sake of changes."
+    }
+  ]
+}

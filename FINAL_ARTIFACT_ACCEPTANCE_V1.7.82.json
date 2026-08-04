@@ -1,0 +1,23 @@
+{
+  "schema": "smarter-justice-final-artifact-acceptance",
+  "releaseVersion": "1.7.82",
+  "generatedAt": "2026-08-03T19:28:00-04:00",
+  "acceptanceModel": "V14_PAYLOAD_RECEIPT_NONCIRCULAR_CANDIDATE_THEN_DETACHED_FINAL",
+  "detachedFinalArchiveRequired": true,
+  "candidateAcceptance": {
+    "state": "CANDIDATE_ACCEPTED",
+    "sha256": "693f28962182751c2182b401b56a0add01bde75741f7737a4addf11a89e822a3",
+    "sizeBytes": 8828711
+  },
+  "finalArchive": {
+    "filename": "smarter-justice-v1.7.82.zip",
+    "sha256": null,
+    "sizeBytes": null,
+    "identityState": "REPORTED_AFTER_PACKAGING"
+  },
+  "embeddedOwnerReceipt": "OWNER_RECEIPT.txt",
+  "releasePayloadInventory": "RELEASE_PAYLOAD_INVENTORY_SHA256.txt",
+  "launchState": "NO_GO",
+  "deploymentAuthorized": false,
+  "state": "FINAL_SOURCE_ACCEPTED_DETACHED_FINAL_PENDING"
+}

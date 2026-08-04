@@ -1,0 +1,33 @@
+{
+  "schema": "smarter-justice-working-tree-acceptance",
+  "releaseVersion": "1.7.75",
+  "generatedAt": "2026-08-03T08:35:00-04:00",
+  "state": "PASS_TWO_IDENTICAL_RUNS_EXACT_CANDIDATE_PENDING",
+  "commandsPerRun": 127,
+  "runs": 2,
+  "testLogSha256": "2159c3e45c693c7662927331521547e797301f4f1764a5398c4bf11617cf1e52",
+  "identicalOutput": true,
+  "postgresDependentParts": 1,
+  "postgresAcceptanceClaimed": false,
+  "materialImplementation": {
+    "detachedProviderDiscoveryOwnerAuthorization": true,
+    "exactRequestDigestBinding": true,
+    "exactArtifactAndScopeBinding": true,
+    "maximumAuthorizationWindowHours": 8,
+    "singleUseExecutionEnvelope": true,
+    "nonceReplayRejected": true,
+    "silentRequestMutationRejected": true,
+    "secretWriteDeploymentProductionAuthorityRejected": true,
+    "ownerReadOnlyAuthorizationEndpoint": "/api/owner/provider-discovery-authorization",
+    "authorizedRequests": 0,
+    "executionEnvelopesCreated": 0,
+    "providerMetadataRead": false,
+    "secretValuesReadOrStored": false,
+    "cohortFrozen": false,
+    "recommendedCanaryProductId": null,
+    "deploymentAuthorized": false,
+    "productionRequestSent": false
+  },
+  "launchState": "NO_GO",
+  "deploymentAuthorized": false
+}

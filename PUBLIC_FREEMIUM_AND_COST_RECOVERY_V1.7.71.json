@@ -1,0 +1,71 @@
+{
+  "schema": "smarter-justice-public-freemium-and-cost-recovery-manifest",
+  "schemaVersion": "1.0.0",
+  "releaseVersion": "1.7.71",
+  "generatedAt": "2026-08-02T16:19:00-04:00",
+  "state": "FREE_CORE_ACCEPTED_HIGH_COST_SERVICES_CLOSED",
+  "freeCore": [
+    "issue and portal routing",
+    "plain-language legal starting information",
+    "official-resource discovery",
+    "attorney and firm profile search",
+    "basic Matter Path and readiness preparation",
+    "questions, unknowns, dates and missing-document organization",
+    "basic checklists, organizers and non-AI Document Help entry",
+    "user-controlled export and deletion",
+    "correction, suppression, removal, privacy, support and safety pathways",
+    "useful non-AI fallback"
+  ],
+  "neverPaywall": [
+    "emergency information",
+    "safety guidance",
+    "official-resource discovery",
+    "basic legal starting help",
+    "profile search",
+    "factual correction",
+    "suppression or removal",
+    "deletion",
+    "non-AI starting path"
+  ],
+  "fairUse": {
+    "transparent": true,
+    "mustRemainUseful": true,
+    "allowedControls": [
+      "request frequency",
+      "document pages or file size",
+      "storage volume and retention",
+      "OCR/model tokens or processing time",
+      "abuse and automated scraping",
+      "queues and cooldowns"
+    ],
+    "limitsConfiguredForPaidProcessing": false
+  },
+  "highCostServices": {
+    "state": "CLOSED",
+    "types": [
+      "external AI",
+      "OCR",
+      "document processing",
+      "storage"
+    ],
+    "requires": [
+      "reasonable free allowance",
+      "advance unit and price disclosure",
+      "explicit opt-in",
+      "usage and spending limits",
+      "receipts",
+      "failed-service credit or refund handling",
+      "support and complaints",
+      "Tier E data controls",
+      "useful non-AI fallback",
+      "owner approval"
+    ],
+    "costAndAllowanceManifestState": "NOT_APPROVED_NOT_ACTIVE"
+  },
+  "nonRegression": {
+    "paymentRequiredForFreeCore": false,
+    "paidAiRequiredForTierA": false,
+    "testRequiredEveryRelease": true
+  },
+  "launchState": "NO_GO"
+}

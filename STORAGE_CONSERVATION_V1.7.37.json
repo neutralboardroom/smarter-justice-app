@@ -1,0 +1,22 @@
+{
+  "version": "1.7.37",
+  "date": "2026-07-27",
+  "removedFileCount": 0,
+  "removedUncompressedBytes": 0,
+  "addedMaterial": [
+    "canonical integrated legal-portal standard",
+    "updated Master Rules and prompt/build standards",
+    "current authority ledger",
+    "standard-conformance handoff envelope",
+    "93rd regression test",
+    "current release records"
+  ],
+  "retainedReason": "Historical release evidence remains intentionally preserved; no inherited file could be removed safely without risking audit or rollback context.",
+  "packagingRules": [
+    "exclude node_modules",
+    "exclude credentials and secret environment files",
+    "exclude runtime logs and database data",
+    "exclude test-only compatibility modules",
+    "include one self-excluding inventory"
+  ]
+}

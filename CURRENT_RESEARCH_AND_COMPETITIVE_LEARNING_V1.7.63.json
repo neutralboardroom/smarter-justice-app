@@ -1,0 +1,150 @@
+{
+  "schema": "smarter-justice-current-research-competitive-learning",
+  "schemaVersion": "1.0.0",
+  "releaseVersion": "1.7.63",
+  "generatedAt": "2026-07-31T23:11:00-04:00",
+  "researchDate": "2026-07-31",
+  "scope": [
+    "accessibility",
+    "AI risk and prompt injection",
+    "New York official self-help and DIY forms",
+    "attorney profile claiming",
+    "commercial disclosure and plan boundaries",
+    "master-pair governance and evidence repeatability"
+  ],
+  "sourceHierarchyApplied": true,
+  "lawfulUseBoundary": "Public ideas and patterns only; no protected code, text, data, branding, trade dress, access-control bypass or confidential material copied.",
+  "sources": [
+    {
+      "sourceId": "RES-W3C-WCAG22",
+      "publisher": "W3C Web Accessibility Initiative",
+      "title": "WCAG 2 Overview and WCAG 2.2",
+      "url": "https://www.w3.org/WAI/standards-guidelines/wcag/",
+      "retrievedAt": "2026-07-31T23:11:00-04:00",
+      "sourceClass": "OFFICIAL_STANDARD",
+      "currentness": "W3C overview current in July 2026; WCAG 2.2 remains the recommended current WCAG 2 version.",
+      "learning": "Preserve WCAG 2.2 keyboard, focus, target-size, consistent-help and accessible-authentication acceptance.",
+      "disposition": "PRESERVE_AND_REVALIDATE",
+      "implementation": "No cosmetic redesign; human real-device and assistive-technology acceptance remains open."
+    },
+    {
+      "sourceId": "RES-NIST-AIRMF",
+      "publisher": "NIST",
+      "title": "AI Risk Management Framework",
+      "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+      "retrievedAt": "2026-07-31T23:11:00-04:00",
+      "sourceClass": "OFFICIAL_GOVERNMENT_GUIDANCE",
+      "currentness": "AI RMF 1.0 is under revision; NIST lists the 2024 Generative AI Profile and 2026 critical-infrastructure profile work.",
+      "learning": "Bind AI governance to current framework versions, human oversight, verification, fallback, monitoring and revalidation.",
+      "disposition": "PRESERVE_AND_REVALIDATE",
+      "implementation": "Tier A remains non-AI-capable; external AI remains gated."
+    },
+    {
+      "sourceId": "RES-OWASP-LLM",
+      "publisher": "OWASP",
+      "title": "LLM Prompt Injection Prevention Cheat Sheet",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/LLM_Prompt_Injection_Prevention_Cheat_Sheet.html",
+      "retrievedAt": "2026-07-31T23:11:00-04:00",
+      "sourceClass": "PRIMARY_SECURITY_GUIDANCE",
+      "currentness": "retrieved July 31 2026",
+      "learning": "Separate instructions from untrusted data, validate input/output, restrict privileges, monitor and require human approval for high-risk actions.",
+      "disposition": "PRESERVE_AND_REVALIDATE",
+      "implementation": "Imported prompt, receipt, web and portal text remain data and cannot mutate authority."
+    },
+    {
+      "sourceId": "RES-NYCOURTS-COURTHELP",
+      "publisher": "New York State Unified Court System",
+      "title": "CourtHelp",
+      "url": "https://www.nycourts.gov/help/courthelp",
+      "retrievedAt": "2026-07-31T23:11:00-04:00",
+      "sourceClass": "OFFICIAL_COURT_SOURCE",
+      "currentness": "retrieved July 31 2026",
+      "learning": "Keep legal information distinct from legal advice and route users to official court resources.",
+      "disposition": "PRESERVE",
+      "implementation": "Public starting help and no-representation boundary remain unchanged."
+    },
+    {
+      "sourceId": "RES-NYCOURTS-DIY",
+      "publisher": "New York State Unified Court System",
+      "title": "DIY Forms",
+      "url": "https://www.nycourts.gov/help/diy-forms",
+      "retrievedAt": "2026-07-31T23:11:00-04:00",
+      "sourceClass": "OFFICIAL_COURT_SOURCE",
+      "currentness": "retrieved July 31 2026",
+      "learning": "Guided forms can prepare papers but do not e-file them; official-form state and commercial-use limits must remain explicit.",
+      "disposition": "PRESERVE_AND_REVALIDATE",
+      "implementation": "Drafting, filing and court acceptance remain separate states."
+    },
+    {
+      "sourceId": "RES-JUSTIA-PROFILES",
+      "publisher": "Justia",
+      "title": "Lawyer Directory FAQ and free profile claiming",
+      "url": "https://lawyers.justia.com/faq",
+      "retrievedAt": "2026-07-31T23:11:00-04:00",
+      "sourceClass": "PUBLIC_COMPETITOR_PRODUCT",
+      "currentness": "retrieved July 31 2026",
+      "learning": "Free profile control and clear claim paths are useful public patterns; identity and authority still require platform-specific verification.",
+      "disposition": "LAWFULLY_ADAPT_EXISTING_PATTERN",
+      "implementation": "Smarter Justice free factual control remains separate from paid membership."
+    },
+    {
+      "sourceId": "RES-AVVO-PROFILES",
+      "publisher": "Avvo",
+      "title": "How Avvo obtains lawyer information and profile claim support",
+      "url": "https://support.avvo.com/hc/en-us/articles/208463046-How-does-Avvo-get-information-about-lawyers",
+      "retrievedAt": "2026-07-31T23:11:00-04:00",
+      "sourceClass": "PUBLIC_COMPETITOR_PRODUCT",
+      "currentness": "public support page available in July 2026",
+      "learning": "Source-based profiles need correction paths and free claiming; platform ratings or availability claims should not be copied.",
+      "disposition": "PRESERVE_STRICTER_SMARTER_JUSTICE_BOUNDARY",
+      "implementation": "No ratings, endorsement or availability claims added."
+    },
+    {
+      "sourceId": "RES-LEGALZOOM-PLANS",
+      "publisher": "LegalZoom",
+      "title": "Legal Plan Contract",
+      "url": "https://www.legalzoom.com/legal/product-service-terms/legal-plan-contract",
+      "retrievedAt": "2026-07-31T23:11:00-04:00",
+      "sourceClass": "PUBLIC_PROVIDER_TERMS",
+      "currentness": "current public contract retrieved July 2026",
+      "learning": "Subscription access, plan scope and independent attorney retention boundaries require explicit terms and cannot be inferred from payment alone.",
+      "disposition": "PRESERVE_STRICTER_SMARTER_JUSTICE_BOUNDARY",
+      "implementation": "The $15 manifest remains closed pending exact terms, Stripe and owner acceptance."
+    }
+  ],
+  "implementedInnovations": [
+    "complete durable-rule coverage",
+    "evidence repeatability classification",
+    "every-surface public-language inventory",
+    "English-first control correction"
+  ],
+  "preservedAfterResearch": [
+    "homepage layout and visual identity",
+    "free factual profile control",
+    "paid/organic separation",
+    "official-resource routing",
+    "non-AI Tier A fallback"
+  ],
+  "revalidationTriggers": [
+    "material law or standard change",
+    "provider or competitor product change",
+    "new owner decision",
+    "later material release"
+  ],
+  "innovationCandidates": [
+    {
+      "candidateId": "INN-SJ1763-MASTER-PAIR-RUNTIME",
+      "idea": "Treat exact detached pair receipts as runtime governance state with epoch/revision and replay protection.",
+      "source": "controlling eighth-pass prompt and commit receipt",
+      "decision": "IMPLEMENT",
+      "reason": "Prevents stale embedded prompt state and split-brain authority without affecting product live gates."
+    },
+    {
+      "candidateId": "INN-SJ1763-PUBLIC-DESIGN",
+      "idea": "Redesign public homepage for visual novelty.",
+      "decision": "REJECT",
+      "reason": "Current public inventory remains strong; no research evidence supports cosmetic churn."
+    }
+  ],
+  "result": "CURRENT_RESEARCH_COMPLETED_PRESERVATION_AND_GOVERNANCE_IMPROVEMENT_SUPPORTED"
+}

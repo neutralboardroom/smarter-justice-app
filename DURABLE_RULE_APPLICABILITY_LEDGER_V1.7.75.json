@@ -1,0 +1,2490 @@
+{
+  "schema_id": "SJP-DURABLE-RULE-APPLICABILITY-LEDGER-2026-08-03-V11",
+  "product": {
+    "name": "Smarter Justice",
+    "id": "smarter-justice-central",
+    "version": "1.7.75",
+    "artifact_sha256": "PREFINAL_NOT_YET_BOUND",
+    "central_role": "federated legal network identity, governance, professional operations, and shared contracts"
+  },
+  "generated_at": "2026-08-03T10:20:00-04:00",
+  "global_successorship_ledger_sha256": "5546eac445dc21434fddceacf61a1ad1610387fd4765e36873dd676f859e933e",
+  "release_classification": "COMPLETE_CONNECTED_CENTRAL_RECOVERY_RELEASE",
+  "primary_non_profile_material_objective": "Restore supported authorization lifecycle governance and add V11 structured workflow, capability maturity, and consent architecture controls.",
+  "profile_workstream": "NOT_APPLICABLE_WITH_REASON: central release does not own portal profile-growth execution.",
+  "allowed_product_statuses": [
+    "SATISFIED",
+    "APPLICABLE_OPEN",
+    "BLOCKED",
+    "NOT_APPLICABLE_WITH_REASON",
+    "SUPERSEDED_WITH_AUTHORITY",
+    "CONFLICTING",
+    "INHERIT_SUPERSEDED_TOMBSTONE",
+    "CONDITION_NOT_TRIGGERED"
+  ],
+  "rule_count": 206,
+  "shared_rules": [
+    {
+      "id": "DUR-001",
+      "family": "MASTER",
+      "title": "MATERIAL IMPROVEMENT ONLY",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-002",
+      "family": "MASTER",
+      "title": "PROACTIVE RESPONSIBLE-TEAM SELF-IMPROVEMENT AND USEFUL INNOVATION",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-003",
+      "family": "MASTER",
+      "title": "COMPLETE CONNECTED WORK; NO TOKEN REVISION",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-004",
+      "family": "MASTER",
+      "title": "NO-LOSS PRESERVATION OF WORKING CAPABILITIES AND OWNER REQUIREMENTS",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-005",
+      "family": "MASTER",
+      "title": "EXACT SOURCE, ARTIFACT, AND CURRENT-TRUTH DISCIPLINE",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-006",
+      "family": "MASTER",
+      "title": "REUSABLE VERSION-NEUTRAL NEWEST-ARTIFACT DISCOVERY",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-007",
+      "family": "MASTER",
+      "title": "DUAL-MASTER AND REPOSITORY AUTHORITY",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-008",
+      "family": "MASTER",
+      "title": "IMMEDIATE AUTHORIZED EXECUTION AND ACTIVE HUMAN ASSISTANCE",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-009",
+      "family": "MASTER",
+      "title": "VERIFIED LEARNING, LINEAGE, TARGET ACCEPTANCE, AND WITHDRAWAL",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-010",
+      "family": "MASTER",
+      "title": "PROMPT-HELPER SOURCE ISOLATION AND RECOVERABLE WORK",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-011",
+      "family": "MASTER",
+      "title": "PUBLIC-FACING PLAIN LANGUAGE; NO INTERNAL OR DEVELOPER LEAKAGE",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-012",
+      "family": "MASTER",
+      "title": "FIRST-SECONDS HOMEPAGE AND EVIDENCE-BASED VISUAL-SYSTEM REVIEW",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-013",
+      "family": "MASTER",
+      "title": "BRIGHT, CLEAN, SIMPLE, MODERN, PROFESSIONAL DESIGN DEFAULT",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-014",
+      "family": "MASTER",
+      "title": "ACCESSIBILITY, PRIVACY, SECURITY, SUPPORT, FAILURE, AND ROLLBACK",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-015",
+      "family": "MASTER",
+      "title": "ENGLISH-FIRST WITH DORMANT FUTURE-LANGUAGE ARCHITECTURE",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-016",
+      "family": "MASTER",
+      "title": "USEFUL PUBLIC FREEMIUM FLOOR",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-017",
+      "family": "MASTER",
+      "title": "TRANSPARENT HIGH-COST SERVICE COST RECOVERY",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-018",
+      "family": "MASTER",
+      "title": "MATTER PATH, MEMORY-FIRST PREPARATION, AND NON-AI FALLBACK",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-019",
+      "family": "MASTER",
+      "title": "CANONICAL ATTORNEY/FIRM PAGES AND LAWFUL PROFILE GROWTH",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-020",
+      "family": "MASTER",
+      "title": "FREE FACTUAL CONTROL SEPARATE FROM PAID MEMBERSHIP",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-021",
+      "family": "MASTER",
+      "title": "CURRENT $15 MONTHLY PROFESSIONAL AND FIRM STRUCTURE",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-022",
+      "family": "MASTER",
+      "title": "ONE CENTRAL COMMERCIAL RELATIONSHIP AND NO DOUBLE BILLING",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-023",
+      "family": "MASTER",
+      "title": "NO GUARANTEE OF CLIENTS, LEADS, REVENUE, REPRESENTATION, OR OUTCOMES",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-024",
+      "family": "MASTER",
+      "title": "TOP-TIER ATTORNEY DEMONSTRATIONS AND HUMAN REHEARSAL",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-025",
+      "family": "MASTER",
+      "title": "FOUR-PORTAL FAMILY, PRODUCT IDENTITY, AND STOP SIGN PRESERVATION",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-026",
+      "family": "MASTER",
+      "title": "DOMESTIC VIOLENCE SURVIVOR-SAFETY OVERLAY",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-027",
+      "family": "MASTER",
+      "title": "PATH-SCOPED D0-D5, PRODUCT-SPECIFIC ACCEPTANCE, AND LIVE-STATE TRUTH",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-028",
+      "family": "MASTER",
+      "title": "SUPPRESSION PROPAGATION, STALE-RESTORATION PREVENTION, AND UNTRUSTED CONTENT",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-029",
+      "family": "MASTER",
+      "title": "ACCEPTANCE FREEZE, EVIDENCE INVALIDATION, ATOMIC RECOVERY, AND EXACT RELEASE",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-030",
+      "family": "MASTER",
+      "title": "CENTRAL/PORTAL FIELD OWNERSHIP AND NO AUTOMATIC WRITE-BACK",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-031",
+      "family": "MASTER",
+      "title": "CURRENT PORTAL AUTHORITY MUST BE DISCOVERED, NOT FROZEN IN A REUSABLE MASTER",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-032",
+      "family": "MASTER",
+      "title": "CONCISE, PORTABLE, STORAGE-CONSCIOUS ARTIFACT DELIVERY",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-033",
+      "family": "MASTER",
+      "title": "SMARTER JUSTICE MASTER RULES AND VERSIONED SHARED STANDARDS",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-034",
+      "family": "MASTER",
+      "title": "NEXT VERSION IMPROVEMENT LIST AND COMPLETE CONTINUATION",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-035",
+      "family": "MASTER",
+      "title": "DOCUMENT HELP, PUBLIC TOOLS, OFFICIAL FORMS, AND TEMPORAL CURRENTNESS",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-036",
+      "family": "MASTER",
+      "title": "PROFESSIONAL OPPORTUNITY FAIRNESS, CONSENT, AND REPRESENTATION BOUNDARY",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-037",
+      "family": "MASTER",
+      "title": "OWNER/STAFF ROUTINE OPERABILITY AND CONTROL-CENTER TRUTH",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-038",
+      "family": "MASTER",
+      "title": "JUSTICE BOOTH, JUSTICE TRUCK, AND OUTREACH STATUS TRUTH",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-039",
+      "family": "MASTER",
+      "title": "OPTIONAL FUTURE NOLO AND 4LEGALLEADS INTEGRATIONS",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-040",
+      "family": "MASTER",
+      "title": "GENERATED-EVIDENCE REPRODUCIBILITY, NON-IDEMPOTENT-OUTCOME, AND FLAKY-TEST CONTROL",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-041",
+      "family": "MASTER",
+      "title": "CURRENT INTERNET RESEARCH, LAWFUL COMPETITIVE LEARNING, AND EVIDENCE-BASED INNOVATION",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-042",
+      "family": "MASTER",
+      "title": "VERSIONED DURABLE-RULE BASELINE, SEMANTIC FINGERPRINT, AND CLOSED INHERITANCE",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-043",
+      "family": "MASTER",
+      "title": "APPEND-ONLY RULE-CHANGE TRANSACTIONS, BASELINE EVOLUTION, AND FORK/MERGE RECONCILIATION",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-044",
+      "family": "MASTER",
+      "title": "UNIVERSAL LEGAL-MICRO-PORTAL BUILD ELIGIBILITY WITH SEPARATE LAUNCH CONTROL",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-045",
+      "family": "MASTER",
+      "title": "ORDINARY MATERIAL RELEASE PROFILE ADDITION AND ENRICHMENT MANDATE",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-046",
+      "family": "MASTER",
+      "title": "UNIVERSAL PROACTIVE CREATIVITY, INNOVATION, AND RESPONSIBLE SELF-IMPROVEMENT OWNER COMMAND",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-047",
+      "family": "MASTER",
+      "title": "STALE, DORMANT, OR LONG-UNUPDATED PORTAL REACTIVATION AND MODERNIZATION",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-048",
+      "family": "MASTER",
+      "title": "ONE INDIVIDUAL PROFESSIONAL PER CANONICAL PUBLIC PROFILE PAGE AND EVIDENCE-BASED COMPETITIVE QUALITY",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-049",
+      "family": "MASTER",
+      "title": "PROFESSIONAL-CONTROLLED PROFILE MEDIA AND SAFE VISUAL IDENTITY",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-050",
+      "family": "MASTER",
+      "title": "TRUTHFUL PROFESSIONAL-GROWTH ENTRY POINT AND NON-GUARANTEE MARKETING",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-051",
+      "family": "MASTER",
+      "title": "ONE CENTRAL NETWORK PROFESSIONAL IDENTITY WITH PORTAL-SPECIFIC CANONICAL PAGE BINDING",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-052",
+      "family": "MASTER",
+      "title": "PUBLISHABLE PROFESSIONAL PROFILE UTILITY FLOOR AND NO THIN-STUB GROWTH COUNTING",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-053",
+      "family": "MASTER",
+      "title": "TRUTHFUL REVIEWS, RATINGS, TESTIMONIALS, ENDORSEMENTS, AWARDS, AND FEATURED PLACEMENT",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-054",
+      "family": "MASTER",
+      "title": "CENTRAL OFFICIAL PROFESSIONAL IDENTITY AND EVIDENCE REGISTRY",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-055",
+      "family": "MASTER",
+      "title": "SEPARATE IDENTITY, REGISTRATION, SPECIALTY EVIDENCE, PORTAL ACCEPTANCE, AND PUBLICATION",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-056",
+      "family": "MASTER",
+      "title": "BUSINESS-CONTACT PRIVACY, GOOD-STANDING NON-INFERENCE, AND PUBLIC-DISCIPLINE TRUTH",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-057",
+      "family": "MASTER",
+      "title": "CENTRAL SOURCE REFRESH, PORTAL CANDIDATE PACKETS, RECEIPT LOOP, AND SUPPRESSION PROPAGATION",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-058",
+      "family": "MASTER",
+      "title": "AUTHORITATIVE SPECIALTY AND COURT EVIDENCE, DATA MINIMIZATION, AND NO OUTCOME RANKING",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-059",
+      "family": "MASTER",
+      "title": "MONDAY LAUNCH PRIORITY, BUILDER-FIRST COMPLETION, AND STRONGEST-SAFE-SCOPE TRUTH",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-060",
+      "family": "MASTER",
+      "title": "COMPLETE ATTORNEY DEMONSTRATION AND EVERY-VISIBLE-SURFACE PROFESSIONAL ACCEPTANCE",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-061",
+      "family": "MASTER",
+      "title": "SMARTER JUSTICE NYC POPUPS, PERMISSION AND SCHEDULE TRUTH, STREET-LEVEL PRIVACY, AND PUBLIC-SERVICE FLOOR",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-062",
+      "family": "MASTER",
+      "title": "DOMESTIC-VIOLENCE AND SENSITIVE-MATTER POPUP SAFETY",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-063",
+      "family": "MASTER",
+      "title": "SUNDAY DEPLOYMENT SCREENSHOT, REAL-DEVICE, CROSS-SITE LINK, AND VISUAL ACCEPTANCE",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-064",
+      "family": "MASTER",
+      "title": "LAUNCH-DAY RUNBOOK, SUPPORT, MONITORING, INCIDENT, FREEZE, AND ROLLBACK",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-065",
+      "family": "MASTER",
+      "title": "ATTORNEY OUTREACH, ADVERTISING, SOLICITATION, ENDORSEMENT, AND POPUP COMMUNICATION TRUTH",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-066",
+      "family": "MASTER",
+      "title": "COORDINATED PROMPT PACK DELIVERY, COMPANION ROLES, AND EXACT-SET CURRENTNESS",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-067",
+      "family": "MASTER",
+      "title": "PRODUCT-SPECIFIC CONTINUATION HANDOFF, NEW-CHAT INTAKE, AND SAME-CHAT EXACT-ARTIFACT REUSE",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-068",
+      "family": "MASTER",
+      "title": "DEPLOYMENT-INSTRUCTION BINDING, ENVIRONMENT TRUTH, AND STALE-DEPLOYMENT PREVENTION",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-069",
+      "family": "MASTER",
+      "title": "IMMEDIATE-PARENT BASELINE, CURRENT-PASS INHERITANCE, AND FINALIZED-PACK TRUTH",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-070",
+      "family": "MASTER",
+      "title": "CONTINUATION HANDOFF AS EXECUTABLE IMMEDIATE-BUILD COMMAND",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-071",
+      "family": "MASTER",
+      "title": "EXACT BUILD-PACKET COMPLETENESS STATES, INPUT AVAILABILITY, AND NO-REDUNDANT-UPLOAD DECISION",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-072",
+      "family": "MASTER",
+      "title": "FINALIZED PACK READINESS, OWNER USE, CANONICAL REGISTER COMMIT, AND PRODUCT-IMPLEMENTATION SEPARATION",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-073",
+      "family": "MASTER",
+      "title": "CONTINUATION FINALIZATION AFTER EXACT ARTIFACT, STALENESS INVALIDATION, AND MATCHED-PACK INTAKE",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-074",
+      "family": "MASTER",
+      "title": "MASTER-PACK STABILITY, PRODUCT-RELEASE INDEPENDENCE, AND NO UNNECESSARY PROMPT-PASS CHURN",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-075",
+      "family": "MASTER",
+      "title": "ACTIVE DEPLOYMENT FILE 4 AND COORDINATED FOUR-FILE PACK",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-076",
+      "family": "MASTER",
+      "title": "FULL-SCOPE BUILDER EXECUTION, NO ARTIFICIAL HOLDING PATTERN, AND EXACT DEPENDENCY TRUTH",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-077",
+      "family": "MASTER",
+      "title": "PER-PRODUCT DEPLOYMENT CONTRACT, ONBOARDING DOCTOR, AND ZERO-TOUCH OPERATIONS",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-078",
+      "family": "MASTER",
+      "title": "EXACT DEPLOYMENT AUTHORIZATION, CURRENT GITHUB/RENDER SEMANTICS, AND MODE SELECTION",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-079",
+      "family": "MASTER",
+      "title": "PRODUCTION IDENTITY, HEALTH, SMOKE, SCREENSHOT, LIVE ACCEPTANCE, AND ROLLBACK TRUTH",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-080",
+      "family": "MASTER",
+      "title": "PROTECTED HUMAN ACTIONS, SECRET SAFETY, DNS, BILLING, MIGRATION, AND IMMEDIATE RESUMPTION",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-081",
+      "family": "MASTER",
+      "title": "SUNDAY LAUNCH-DAY TEMPORAL CONTROL AND STALE-DATE TRANSITION",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-082",
+      "family": "MASTER",
+      "title": "EXACT FIVE-PRODUCT COHORT MANIFEST AND PORTFOLIO-SCOPED AUTHORIZATION",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-083",
+      "family": "MASTER",
+      "title": "READ-ONLY ALL-PRODUCT PREFLIGHT, CANARY, DEPLOYMENT WAVES, AND STOP CONDITIONS",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-084",
+      "family": "MASTER",
+      "title": "DNS, TLS, CANONICAL ORIGIN, CALLBACK, AND RENDER-SUBDOMAIN ACCEPTANCE",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-085",
+      "family": "MASTER",
+      "title": "EXTERNAL-SERVICE ACTIVATION MATRIX, MIGRATION CLASSIFICATION, AND PROTECTED OWNER-ACTION CLOSURE",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "DUR-086",
+      "family": "MASTER",
+      "title": "PRODUCTION STABILIZATION WATCH AND MONDAY DEMONSTRATION ACCEPTANCE",
+      "global_status": "ACTIVE_MASTER_BASELINE",
+      "global_authority": [
+        "DRB-2026-08-02-DUR001-DUR086-V13"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "ODR-001",
+      "family": "OWNER",
+      "title": "MATERIAL IMPROVEMENT ONLY",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "ODR-002",
+      "family": "OWNER",
+      "title": "NO-LOSS PRESERVATION",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "ODR-003",
+      "family": "OWNER",
+      "title": "ONE PRODUCT, ONE MATERIAL RELEASE, ONE FRESH CHAT, TWO UPLOADS, ONE FINAL ZIP",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "ODR-004",
+      "family": "OWNER",
+      "title": "NO SEPARATE BUILD-EXECUTE MESSAGE",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "ODR-005",
+      "family": "OWNER",
+      "title": "ONE UNIVERSAL SHARED PACKET",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "ODR-006",
+      "family": "OWNER",
+      "title": "EXACT FINAL PRODUCT SELF-CONTINUITY",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "ODR-007",
+      "family": "OWNER",
+      "title": "ORIGINAL FILENAMES AND EXACT IDENTITIES",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "ODR-008",
+      "family": "OWNER",
+      "title": "EQUAL PORTAL BUILD AND DEPLOYMENT ELIGIBILITY",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "ODR-009",
+      "family": "OWNER",
+      "title": "NO ARTIFICIAL ORIGINAL-COHORT BLOCKER",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "ODR-010",
+      "family": "OWNER",
+      "title": "TIMED-OUT CHAT RECOVERY PATH",
+      "global_status": "SUPERSEDED_TOMBSTONE",
+      "global_authority": [
+        "ODR-025",
+        "ODR-027"
+      ],
+      "global_condition": null,
+      "product_status": "SUPERSEDED_WITH_AUTHORITY",
+      "evidence_or_reason": "Preserved as a historical tombstone under the V11 global successorship ledger; not executed as an active rule.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "ODR-011",
+      "family": "OWNER",
+      "title": "NORMAL BUILDS REMAIN SIMPLE",
+      "global_status": "ACTIVE_AS_AMENDED",
+      "global_authority": [
+        "ODR-025"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "ODR-012",
+      "family": "OWNER",
+      "title": "SEPARATE CONTINUATION AND NEXT-VERSION ROLES",
+      "global_status": "CONDITIONAL",
+      "global_authority": [
+        "ODR-027"
+      ],
+      "global_condition": "Only when Roger explicitly requests an optional handoff-only or Recovery Builder Packet.",
+      "product_status": "CONDITION_NOT_TRIGGERED",
+      "evidence_or_reason": "Condition retained: Only when Roger explicitly requests an optional handoff-only or Recovery Builder Packet.. No unsupported trigger was inferred in this local recovery release.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "ODR-013",
+      "family": "OWNER",
+      "title": "FINAL ZIP BECOMES NEXT BASE",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "ODR-014",
+      "family": "OWNER",
+      "title": "NO REDUNDANT OR CONFLICTING UPLOADS",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "ODR-015",
+      "family": "OWNER",
+      "title": "ONE PROTECTED OWNER ACTION AT A TIME",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "ODR-016",
+      "family": "OWNER",
+      "title": "PROFILE GROWTH IN ORDINARY MATERIAL PORTAL RELEASES",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "ODR-017",
+      "family": "OWNER",
+      "title": "BRIGHT CLEAN PROFESSIONAL DESIGN WITHOUT NOVELTY CHURN",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "ODR-018",
+      "family": "OWNER",
+      "title": "CONCISE OWNER OPERABILITY",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "ODR-019",
+      "family": "OWNER",
+      "title": "CURRENT PACKET REGENERATION",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "ODR-020",
+      "family": "OWNER",
+      "title": "ALL OWNER-APPROVED PORTALS ARE FIRST-CLASS PRODUCTS",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "ODR-021",
+      "family": "OWNER",
+      "title": "NORMAL-VERSUS-TIMED-OUT WORKFLOW SELECTION",
+      "global_status": "SUPERSEDED_TOMBSTONE",
+      "global_authority": [
+        "ODR-025",
+        "ODR-027"
+      ],
+      "global_condition": null,
+      "product_status": "SUPERSEDED_WITH_AUTHORITY",
+      "evidence_or_reason": "Preserved as a historical tombstone under the V11 global successorship ledger; not executed as an active rule.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "ODR-022",
+      "family": "OWNER",
+      "title": "PRODUCT-SPECIFIC DURABLE-RULE INHERITANCE",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "ODR-023",
+      "family": "OWNER",
+      "title": "DURABLE-RULE APPLICABILITY LEDGER",
+      "global_status": "ACTIVE_AS_AMENDED",
+      "global_authority": [
+        "ODR-027",
+        "ODR-036"
+      ],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "ODR-024",
+      "family": "OWNER",
+      "title": "NO CONTROLLING INSTRUCTIONS AFTER TERMINAL MARKERS",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "ODR-025",
+      "family": "OWNER",
+      "title": "ONE-STEP CONTINUATION RECOVERY AND BUILD",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "ODR-026",
+      "family": "OWNER",
+      "title": "NO FALSE RECOVERY OF UNSAVED CHAT WORK",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "ODR-027",
+      "family": "OWNER",
+      "title": "HANDOFF-ONLY OUTPUT IS OPTIONAL",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "ODR-028",
+      "family": "OWNER",
+      "title": "INITIAL CUTOVER SCOPE SEPARATE FROM PORTFOLIO BUILD READINESS",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "ODR-029",
+      "family": "OWNER",
+      "title": "FULL LAUNCH-READINESS PARITY FOR EVERY PORTAL",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "ODR-030",
+      "family": "OWNER",
+      "title": "NO NON-COHORT QUEUE STARVATION",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "ODR-031",
+      "family": "OWNER",
+      "title": "LAUNCH_READY_NOT_SCHEDULED IS A SUCCESSFUL READINESS STATE",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "ODR-032",
+      "family": "OWNER",
+      "title": "CENTRAL SERVICES MUST REMAIN PORTFOLIO-WIDE",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "ODR-033",
+      "family": "OWNER",
+      "title": "EXPLICIT DURABLE-RULE SUCCESSORSHIP AND TOMBSTONES",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "ODR-034",
+      "family": "OWNER",
+      "title": "NO UNNECESSARY REUPLOAD IN AN EXISTING CHAT",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "ODR-035",
+      "family": "OWNER",
+      "title": "EACH PRODUCT CHAT OWNS ONLY ITS READINESS RECEIPT",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "ODR-036",
+      "family": "OWNER",
+      "title": "MACHINE-GENERATED LEDGER AND EXCEPTION-FIRST OWNER REPORTING",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "ODR-037",
+      "family": "OWNER",
+      "title": "PROFILES ARE A REQUIRED WORKSTREAM, NOT THE SOLE ORDINARY RELEASE",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "ODR-038",
+      "family": "OWNER",
+      "title": "PRIMARY NON-PROFILE MATERIAL OBJECTIVE",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "ODR-039",
+      "family": "OWNER",
+      "title": "BALANCED CONNECTED IMPROVEMENT SET WITHOUT FORCED CHURN",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "ODR-040",
+      "family": "OWNER",
+      "title": "COMPLETED MATERIAL IMPROVEMENTS REPORT",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "ODR-041",
+      "family": "OWNER",
+      "title": "BALANCED NEXT VERSION IMPROVEMENT LIST",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "ODR-042",
+      "family": "OWNER",
+      "title": "PROFILE-ONLY RELEASES REQUIRE HONEST SPECIAL CLASSIFICATION",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "ODR-043",
+      "family": "OWNER",
+      "title": "AT LEAST ONE IS A FLOOR, NOT A CEILING",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "ODR-044",
+      "family": "OWNER",
+      "title": "STRONGEST SAFELY SATURATED RELEASE SCOPE",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "ODR-045",
+      "family": "OWNER",
+      "title": "STAGED IMPLEMENTATION WAVES AND LAST-KNOWN-GOOD STATE",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "ODR-046",
+      "family": "OWNER",
+      "title": "ZERO UNRESOLVED NEW REGRESSION AND AUTOMATIC STOP-LOSS",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "ODR-047",
+      "family": "OWNER",
+      "title": "SAFE RELEASE CAPACITY AND SATURATION RECEIPT",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "ODR-048",
+      "family": "OWNER",
+      "title": "BUILD CONTINUITY AND INTERRUPTION PROTECTION",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "ODR-049",
+      "family": "OWNER",
+      "title": "CURRENT-DATE EXECUTION TRUTH",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "ODR-050",
+      "family": "OWNER",
+      "title": "STRONGEST JUSTIFIED SET \u2014 NEVER SMALLEST SET",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "ODR-051",
+      "family": "OWNER",
+      "title": "CORE NETWORK ARCHITECTURE PRESERVATION",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "ODR-052",
+      "family": "OWNER",
+      "title": "NO UNIVERSAL SENSITIVE USER DATABASE OR AUTOMATIC CROSS-INDUSTRY SYNC",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "ODR-053",
+      "family": "OWNER",
+      "title": "STRUCTURED WORKFLOWS BEFORE GENERIC AI CHAT",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "ODR-054",
+      "family": "OWNER",
+      "title": "AGREED HIGH-VALUE CAPABILITY CANDIDATES",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "ODR-055",
+      "family": "OWNER",
+      "title": "CAPABILITY ADOPTION MUST NOT DELAY OR DESTABILIZE LAUNCH",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "ODR-056",
+      "family": "OWNER",
+      "title": "MATTER READINESS WITHOUT LEGAL MERIT OR OUTCOME SCORING",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "ODR-057",
+      "family": "OWNER",
+      "title": "PROFESSIONAL OPERATIONS WITHOUT PREMATURE PRACTICE-MANAGEMENT REPLACEMENT",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "ODR-058",
+      "family": "OWNER",
+      "title": "SOURCE INTELLIGENCE AND GOVERNANCE AS EVIDENCE-BACKED SHARED SERVICES",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "ODR-059",
+      "family": "OWNER",
+      "title": "TIMELINE CONTRACTS AND CONSENT-BASED JOURNEYS",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "ODR-060",
+      "family": "OWNER",
+      "title": "CAPABILITY MATURITY MUST DISTINGUISH PLANS FROM PRODUCTION TRUTH",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "BDR-001",
+      "family": "BUILDER",
+      "title": "VALIDATE BEFORE USE",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "BDR-002",
+      "family": "BUILDER",
+      "title": "SEPARATE INTENT AUTHORITY FROM FACTUAL TRUTH",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "BDR-003",
+      "family": "BUILDER",
+      "title": "EXACT MULTIPLE-ARTIFACT SELECTION",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "BDR-004",
+      "family": "BUILDER",
+      "title": "PROVISIONAL CONTINUATION WITHOUT STOPPING",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "BDR-005",
+      "family": "BUILDER",
+      "title": "NO INVENTED HISTORY OR LIVE STATE",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "BDR-006",
+      "family": "BUILDER",
+      "title": "CORRECT PRODUCT ROUTING",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "BDR-007",
+      "family": "BUILDER",
+      "title": "PRACTICE-SPECIFIC STRICTER OVERLAY",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "BDR-008",
+      "family": "BUILDER",
+      "title": "COMPLETE CONNECTED MATERIAL RELEASE",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "BDR-009",
+      "family": "BUILDER",
+      "title": "CURRENT AUTHORITATIVE RESEARCH",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "BDR-010",
+      "family": "BUILDER",
+      "title": "LAWFUL PROFILE ACCEPTANCE AND EXACT COUNTS",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "BDR-011",
+      "family": "BUILDER",
+      "title": "NO UNNECESSARY DEPENDENCY OR ARCHITECTURE CHURN",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "BDR-012",
+      "family": "BUILDER",
+      "title": "FULL TESTING AND DETERMINISTIC RELEASE",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "BDR-013",
+      "family": "BUILDER",
+      "title": "DEPLOYMENT PREPARATION IS NOT BLOCKED BY CUTOVER AUTHORIZATION",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "BDR-014",
+      "family": "BUILDER",
+      "title": "PRODUCTION CUTOVER REQUIRES EXACT AUTHORIZATION",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "BDR-015",
+      "family": "BUILDER",
+      "title": "PACKET CORRUPTION FAILS CLOSED FOR THE PACKET ONLY",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "BDR-016",
+      "family": "BUILDER",
+      "title": "CONTEXT-WINDOW DISCIPLINE",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "BDR-017",
+      "family": "BUILDER",
+      "title": "FINAL CONTINUATION AFTER FINAL ARTIFACT",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "BDR-018",
+      "family": "BUILDER",
+      "title": "ORIGINAL EXACT MASTER PRESERVATION",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "BDR-019",
+      "family": "BUILDER",
+      "title": "TIMED-OUT GENERATOR PRODUCES A SELF-CONTAINED PRACTICE-SPECIFIC PACKET",
+      "global_status": "CONDITIONAL",
+      "global_authority": [
+        "BDR-027"
+      ],
+      "global_condition": "Only when an optional product-specific handoff or Recovery Builder Packet is expressly requested.",
+      "product_status": "CONDITION_NOT_TRIGGERED",
+      "evidence_or_reason": "Condition retained: Only when an optional product-specific handoff or Recovery Builder Packet is expressly requested.. No unsupported trigger was inferred in this local recovery release.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "BDR-020",
+      "family": "BUILDER",
+      "title": "HONEST ACCEPTANCE LABELS",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "BDR-021",
+      "family": "BUILDER",
+      "title": "WORKFLOW PACKET EXCLUSIVITY",
+      "global_status": "SUPERSEDED_TOMBSTONE",
+      "global_authority": [
+        "BDR-025",
+        "BDR-027"
+      ],
+      "global_condition": null,
+      "product_status": "SUPERSEDED_WITH_AUTHORITY",
+      "evidence_or_reason": "Preserved as a historical tombstone under the V11 global successorship ledger; not executed as an active rule.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "BDR-022",
+      "family": "BUILDER",
+      "title": "NO STALE EMBEDDED-PACKET IDENTITY",
+      "global_status": "CONDITIONAL",
+      "global_authority": [],
+      "global_condition": "Only when a packet actually embeds or wraps another packet.",
+      "product_status": "CONDITION_NOT_TRIGGERED",
+      "evidence_or_reason": "Condition retained: Only when a packet actually embeds or wraps another packet.. No unsupported trigger was inferred in this local recovery release.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "BDR-023",
+      "family": "BUILDER",
+      "title": "DIRECTLY READABLE GENERATED RECOVERY PACKETS",
+      "global_status": "CONDITIONAL",
+      "global_authority": [
+        "BDR-027"
+      ],
+      "global_condition": "Only when an optional generated handoff or Recovery Builder Packet is expressly requested.",
+      "product_status": "CONDITION_NOT_TRIGGERED",
+      "evidence_or_reason": "Condition retained: Only when an optional generated handoff or Recovery Builder Packet is expressly requested.. No unsupported trigger was inferred in this local recovery release.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "BDR-024",
+      "family": "BUILDER",
+      "title": "PRODUCT-SPECIFIC RULE DISCOVERY AND STATUS",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "BDR-025",
+      "family": "BUILDER",
+      "title": "AUTOMATIC CONTINUATION MODE DETECTION",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "BDR-026",
+      "family": "BUILDER",
+      "title": "PARTIAL ARTIFACT SAFETY",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "BDR-027",
+      "family": "BUILDER",
+      "title": "NO MANDATORY RECOVERY-PACKET DETOUR",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "BDR-028",
+      "family": "BUILDER",
+      "title": "TWO INDEPENDENT PORTFOLIO TRACKS",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "BDR-029",
+      "family": "BUILDER",
+      "title": "SAME READINESS GATES FOR COHORT AND NON-COHORT PORTALS",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "BDR-030",
+      "family": "BUILDER",
+      "title": "PORTFOLIO READINESS STATE MACHINE",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "BDR-031",
+      "family": "BUILDER",
+      "title": "PER-PRODUCT READINESS MATRIX AND NO CROSS-BLOCKING",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "BDR-032",
+      "family": "BUILDER",
+      "title": "PORTFOLIO-NEUTRAL CENTRAL IMPLEMENTATION",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "BDR-033",
+      "family": "BUILDER",
+      "title": "APPLY THE GLOBAL SUCCESSORSHIP LEDGER BEFORE PRODUCT RULES",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "BDR-034",
+      "family": "BUILDER",
+      "title": "VERIFY EXISTING-CHAT FILE ACCESS BEFORE REQUESTING UPLOAD",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "BDR-035",
+      "family": "BUILDER",
+      "title": "PRODUCT RECEIPT FIRST; PORTFOLIO AGGREGATION SEPARATE",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "BDR-036",
+      "family": "BUILDER",
+      "title": "FAST EXCEPTION-FIRST DURABLE-RULE PROCESSING",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "BDR-037",
+      "family": "BUILDER",
+      "title": "NON-PROFILE MATERIALITY GATE",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "BDR-038",
+      "family": "BUILDER",
+      "title": "MATERIAL RELEASE SCOPE AND EVIDENCE CONTRACT",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "BDR-039",
+      "family": "BUILDER",
+      "title": "MATERIAL IMPROVEMENT CATEGORY TAXONOMY",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "BDR-040",
+      "family": "BUILDER",
+      "title": "EVIDENCE-BACKED COMPLETED IMPROVEMENTS REPORT",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "BDR-041",
+      "family": "BUILDER",
+      "title": "RELEASE-STAGNATION AND CATEGORY-COVERAGE CHECK",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "BDR-042",
+      "family": "BUILDER",
+      "title": "FINAL OWNER SUMMARY ORDER",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "BDR-043",
+      "family": "BUILDER",
+      "title": "IMPLEMENT THE FULL JUSTIFIED CONNECTED IMPROVEMENT SET",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "BDR-044",
+      "family": "BUILDER",
+      "title": "SAFE RELEASE CAPACITY GATE AND CANDIDATE QUEUE",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "BDR-045",
+      "family": "BUILDER",
+      "title": "BASELINE-WAVE-VERIFY-CHECKPOINT LOOP",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "BDR-046",
+      "family": "BUILDER",
+      "title": "REGRESSION STOP-LOSS AND SCOPE FREEZE",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "BDR-047",
+      "family": "BUILDER",
+      "title": "SATURATION DECISION AND EXACT DEFERRAL REASONS",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "BDR-048",
+      "family": "BUILDER",
+      "title": "MACHINE-READABLE BUILD-STATE CHECKPOINT",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "BDR-049",
+      "family": "BUILDER",
+      "title": "CURRENT-DATE OVERLAY APPLICATION",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "BDR-050",
+      "family": "BUILDER",
+      "title": "STRONGEST JUSTIFIED SET LANGUAGE AND EXECUTION",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "BDR-051",
+      "family": "BUILDER",
+      "title": "ARCHITECTURE INVARIANT CHECK BEFORE STRATEGIC CAPABILITY WORK",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "BDR-052",
+      "family": "BUILDER",
+      "title": "STRATEGIC CAPABILITY CANDIDATE REGISTRY",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "BDR-053",
+      "family": "BUILDER",
+      "title": "MATTER READINESS ENGINE V2 ACCEPTANCE CONTRACT",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "BDR-054",
+      "family": "BUILDER",
+      "title": "PROFESSIONAL OPERATIONS CENTER MATURITY PATH",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "BDR-055",
+      "family": "BUILDER",
+      "title": "SOURCE INTELLIGENCE SYSTEM CONTRACT",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "BDR-056",
+      "family": "BUILDER",
+      "title": "ECOSYSTEM GOVERNANCE AND CAPABILITY MATURITY CONTRACT",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "BDR-057",
+      "family": "BUILDER",
+      "title": "SHARED TIMELINE EVENT CONTRACT WITHOUT SHARED WAREHOUSE",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "BDR-058",
+      "family": "BUILDER",
+      "title": "CONSENT-BASED JOURNEY ORCHESTRATION CONTRACT",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "BDR-059",
+      "family": "BUILDER",
+      "title": "LIFECYCLE CONTINUITY CANDIDATES FOR UNIFIED PRODUCT FAMILIES",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    },
+    {
+      "id": "BDR-060",
+      "family": "BUILDER",
+      "title": "STRATEGIC CAPABILITY NON-DISRUPTION AND ROUTING",
+      "global_status": "ACTIVE",
+      "global_authority": [],
+      "global_condition": null,
+      "product_status": "SATISFIED",
+      "evidence_or_reason": "Applied through exact-source intake, no-loss recovery, connected V11 governance scope, fail-closed authority, tests, evidence, rollback, and deterministic packaging requirements.",
+      "affected_gate": "RELEASE_ACCEPTANCE"
+    }
+  ],
+  "chat_reporting_mode": "EXCEPTION_FIRST; complete ledger retained in ZIP",
+  "complete_ledger_location": "DURABLE_RULE_APPLICABILITY_LEDGER_V1.7.75.json",
+  "open_or_blocked_count": 0,
+  "status": "PREFINAL_COMPLETE"
+}

@@ -1,0 +1,46 @@
+{
+  "release": "1.7.52",
+  "generatedAt": "2026-07-30",
+  "decisions": [
+    {
+      "idea": "Practice-adaptive Attorney Partner Tour",
+      "problem": "One generic sales path would force irrelevant portal review.",
+      "user": "Attorney prospect and Roger",
+      "evidence": "No canonical tour existed in v1.7.51; four distinct launch practices are registered.",
+      "expectedBenefit": "Faster relevance and clearer central-platform story.",
+      "decision": "IMPLEMENT",
+      "risk": "Duplicate maintenance or unsupported live claims.",
+      "control": "Single data-driven route, synthetic data, fail-closed fallbacks and tests."
+    },
+    {
+      "idea": "Persistent return-to-tour banner on public tools",
+      "problem": "A demonstration could strand the presenter in a tool.",
+      "user": "Attorney prospect and Roger",
+      "evidence": "Existing tools had no tour context.",
+      "expectedBenefit": "Reliable short presentation and continuation.",
+      "decision": "IMPLEMENT",
+      "risk": "Unwanted tracking.",
+      "control": "Allowlisted query state only; no personal data or cross-site identifier."
+    },
+    {
+      "idea": "Public lead-cost comparison",
+      "problem": "Value needs strong framing.",
+      "user": "Attorney prospect",
+      "evidence": "Owner direction supports qualified framing but current artifact lacks substantiation/approved public wording.",
+      "expectedBenefit": "Potentially stronger conversion.",
+      "decision": "DEFER",
+      "risk": "Misleading market or ROI claim.",
+      "control": "Require current evidence and separate owner/legal approval."
+    },
+    {
+      "idea": "Live portal mirror inside Smarter Justice",
+      "problem": "Could simplify a demo.",
+      "user": "Presenter",
+      "evidence": "Repository boundaries require canonical portal pages in independent products.",
+      "expectedBenefit": "Superficial convenience.",
+      "decision": "REJECT",
+      "risk": "Duplicate specialty directory, stale content and false integration.",
+      "control": "Use safe fallback and portal-specific builders instead."
+    }
+  ]
+}

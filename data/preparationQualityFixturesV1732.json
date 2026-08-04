@@ -1,0 +1,76 @@
+{
+  "version": "1.7.32",
+  "generatedAt": "2026-07-25T23:30:00-04:00",
+  "fixtures": [
+    {
+      "id": "normal",
+      "packet": {
+        "facts": "Notice received: July 10, 2026. Source: user recollection and envelope.",
+        "sources": "Agency notice dated July 8, 2026; reviewed July 25, 2026.",
+        "dates": "2026-07-10 — USER_ENTERED — user recollection and envelope.",
+        "records": "Document: agency notice, page 2.",
+        "questions": "Has the agency received the missing record?",
+        "nextStep": "Verify receipt through the official portal.",
+        "privacyReviewed": true
+      },
+      "expect": {"minimumStrengths": 6, "forbiddenTitles": ["Privacy review is not confirmed"]}
+    },
+    {
+      "id": "incomplete",
+      "packet": {"facts": "", "sources": "", "dates": "", "records": "", "questions": "", "nextStep": "", "privacyReviewed": false},
+      "expect": {"minimumAttentionItems": 7, "requiredTitles": ["Facts section is empty", "Privacy review is not confirmed"]}
+    },
+    {
+      "id": "duplicate",
+      "packet": {
+        "facts": "Status: User-entered and unverified.",
+        "sources": "Source dated July 8, 2026.",
+        "dates": "2026-07-10 — USER_ENTERED — user recollection.",
+        "records": "Status: User-entered and unverified.",
+        "questions": "What happens next?",
+        "nextStep": "Review the official source.",
+        "privacyReviewed": true
+      },
+      "expect": {"requiredTitles": ["Possible duplicate entry"]}
+    },
+    {
+      "id": "contradictory",
+      "packet": {
+        "facts": "Amount: $100. Source: user-entered.",
+        "sources": "Source dated July 8, 2026.",
+        "dates": "2026-07-10 — USER_ENTERED — user recollection.",
+        "records": "Amount: $200",
+        "questions": "Which amount is correct?",
+        "nextStep": "Compare the source documents.",
+        "privacyReviewed": true
+      },
+      "expect": {"requiredTitles": ["Possible inconsistent values"]}
+    },
+    {
+      "id": "sensitive-number",
+      "packet": {
+        "facts": "Identifier: 123-45-6789. Source: user-entered.",
+        "sources": "Source dated July 8, 2026.",
+        "dates": "2026-07-10 — USER_ENTERED — user recollection.",
+        "records": "Document: notice.",
+        "questions": "Can this identifier be removed?",
+        "nextStep": "Redact unnecessary identifiers.",
+        "privacyReviewed": false
+      },
+      "expect": {"requiredKinds": ["privacy"], "requiredTitles": ["Possible Social Security number pattern"]}
+    },
+    {
+      "id": "false-positive-year",
+      "packet": {
+        "facts": "Year: 2026. Source: official record.",
+        "sources": "Official record dated July 8, 2026.",
+        "dates": "2026-07-10 — SOURCE_STATED — official record.",
+        "records": "Document: notice.",
+        "questions": "Is another source needed?",
+        "nextStep": "Review the source.",
+        "privacyReviewed": true
+      },
+      "expect": {"forbiddenTitles": ["Possible long account or identifier pattern", "Possible payment-card-like pattern"]}
+    }
+  ]
+}

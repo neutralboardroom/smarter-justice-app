@@ -1,0 +1,50 @@
+{
+  "releaseVersion": "1.7.60",
+  "generatedAt": "2026-07-31T16:19:00-04:00",
+  "currentCandidate": {
+    "filename": "smarter-justice-v1.7.60.zip",
+    "identityMode": "DETACHED_AFTER_PACKAGING",
+    "launchState": "NO_GO",
+    "status": "WORKING_TREE_ACCEPTED_CANDIDATE_NOT_YET_BUILT"
+  },
+  "immediateRollback": {
+    "filename": "smarter-justice-v1.7.59.zip",
+    "version": "1.7.59",
+    "sha256": "f08909fbf879e9005d47b7361f089decc946d78c21c6118471b4be1fb77f9bb0",
+    "sizeBytes": 5140893,
+    "entries": 1540,
+    "files": 1522,
+    "directories": 18,
+    "uncompressedBytes": 14436218,
+    "compressedBytes": 4915537,
+    "inventoryRecords": 1521,
+    "inventorySha256": "3d88800f9dffc009de333cc37564f8f8a78a7f6a5700d12f54fc4b29acb4b891",
+    "packageJsonSha256": "4989e6fe8315ce1aefa7d6293e697ead2e529f4867c878ff7875254594b36a38",
+    "packageLockSha256": "0a57574b69b77be51de3b0b3473ca297f3871a9f5e4c3d20494826842d161743",
+    "lockfileSha256": "0a57574b69b77be51de3b0b3473ca297f3871a9f5e4c3d20494826842d161743",
+    "sbomSha256": "655acf4a8b0ce9497a14f676015aec7d1dcf9a27957aeb21f39e13dc4a6f1fd1",
+    "treeSha256": "b1d0354584ec57223cca8dc48a62462a13a91adf6ee22f8f1714241fb72bc9cf",
+    "dependencyIndependentParts": 113,
+    "totalReadinessParts": 114,
+    "testLogSha256": "30a26f564c97905a6f8bd527058f1b67bdaa402e06290f2a7a7c5aafe9c5f87e",
+    "concurrentBaselineRuns": 2,
+    "concurrentBaselineResult": "PASS_IDENTICAL_OUTPUT",
+    "evidenceState": "CURRENT_CHAT_REPRODUCED"
+  },
+  "rollbackTriggers": [
+    "artifact/inventory mismatch",
+    "authorization or data-integrity defect",
+    "suppression restoration risk",
+    "security/privacy/accessibility P0",
+    "deployment verification failure"
+  ],
+  "procedure": [
+    "pause affected capability",
+    "preserve audit and owner receipts",
+    "restore exact v1.7.59 source/configuration",
+    "prevent stale or suppressed data restoration",
+    "verify health and support status",
+    "record owner decision"
+  ],
+  "dataLossPolicy": "Never silently discard valid post-release receipts; reconcile before rollback and fail closed."
+}

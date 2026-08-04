@@ -1,0 +1,68 @@
+{
+  "schema": "smarter-justice-production-smoke-routes",
+  "version": "1.0.0",
+  "productId": "smarter-justice-central",
+  "routes": [
+    {
+      "path": "/livez",
+      "expectedStatus": [
+        200
+      ],
+      "critical": true
+    },
+    {
+      "path": "/readyz?lane=free-professional-profiles",
+      "expectedStatus": [
+        200,
+        503
+      ],
+      "critical": true,
+      "note": "503 is expected until recorded dependencies and approvals are complete."
+    },
+    {
+      "path": "/",
+      "expectedStatus": [
+        200
+      ],
+      "critical": true
+    },
+    {
+      "path": "/find-help.html",
+      "expectedStatus": [
+        200
+      ],
+      "critical": true
+    },
+    {
+      "path": "/professional-directory.html",
+      "expectedStatus": [
+        200
+      ],
+      "critical": true
+    },
+    {
+      "path": "/privacy.html",
+      "expectedStatus": [
+        200
+      ],
+      "critical": true
+    },
+    {
+      "path": "/support.html",
+      "expectedStatus": [
+        200
+      ],
+      "critical": true
+    },
+    {
+      "path": "/__smarter_justice_hard_404__",
+      "expectedStatus": [
+        404
+      ],
+      "critical": true
+    }
+  ],
+  "requiresCanonicalHttps": true,
+  "requiresVersionCommitIdentity": true,
+  "releaseVersion": null
+}

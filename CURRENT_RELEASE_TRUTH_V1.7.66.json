@@ -1,0 +1,110 @@
+{
+  "schema": "smarter-justice-current-release-truth",
+  "schemaVersion": "1.2.0",
+  "releaseVersion": "1.7.66",
+  "generatedAt": "2026-08-01T01:05:00-04:00",
+  "selectedBase": {
+    "filename": "smarter-justice-v1.7.65.zip",
+    "version": "1.7.65",
+    "sha256": "91cbdb0a9c858ba7812b8683f6060b68b2f139a722001ca0609db98699b7b879",
+    "sizeBytes": 5905756,
+    "entries": 1941,
+    "files": 1923,
+    "directories": 18,
+    "uncompressedBytes": 17011260,
+    "compressedBytes": 5618780,
+    "inventoryRecords": 1922,
+    "inventorySha256": "01a591623699e9f6ca6744bb8f8dfbf28a0308aad9e88ee4c5eccab93e635666",
+    "packageJsonSha256": "e720ba92837a8e08e139c745d23ee72756658c1b139aebdb06aba5eb4dcec01b",
+    "packageLockSha256": "62a09c062b68c0c0b1388f14fd5dd32e6947b200bb364f1c7f21e27cc36ea97b",
+    "sbomSha256": "b1563e75dd60ba955ddd31b6eb7d9717ee72ac4216992b82d0d7814b7283c827",
+    "dependencyIndependentParts": 119,
+    "totalReadinessParts": 120,
+    "testLogSha256": "117bd79c2e1abd118cb38fef573a465bd18e04c816292a1196a0364cae0768a6",
+    "evidenceState": "CURRENT_CHAT_REPRODUCED",
+    "lockfileSha256": "62a09c062b68c0c0b1388f14fd5dd32e6947b200bb364f1c7f21e27cc36ea97b",
+    "treeSha256": "01a591623699e9f6ca6744bb8f8dfbf28a0308aad9e88ee4c5eccab93e635666",
+    "concurrentBaselineRuns": 2,
+    "concurrentBaselineResult": "PASS_IDENTICAL_OUTPUT"
+  },
+  "rollbackArtifact": {
+    "filename": "smarter-justice-v1.7.65.zip",
+    "version": "1.7.65",
+    "sha256": "91cbdb0a9c858ba7812b8683f6060b68b2f139a722001ca0609db98699b7b879",
+    "sizeBytes": 5905756,
+    "entries": 1941,
+    "files": 1923,
+    "directories": 18,
+    "uncompressedBytes": 17011260,
+    "compressedBytes": 5618780,
+    "inventoryRecords": 1922,
+    "inventorySha256": "01a591623699e9f6ca6744bb8f8dfbf28a0308aad9e88ee4c5eccab93e635666",
+    "packageJsonSha256": "e720ba92837a8e08e139c745d23ee72756658c1b139aebdb06aba5eb4dcec01b",
+    "packageLockSha256": "62a09c062b68c0c0b1388f14fd5dd32e6947b200bb364f1c7f21e27cc36ea97b",
+    "sbomSha256": "b1563e75dd60ba955ddd31b6eb7d9717ee72ac4216992b82d0d7814b7283c827",
+    "dependencyIndependentParts": 119,
+    "totalReadinessParts": 120,
+    "testLogSha256": "117bd79c2e1abd118cb38fef573a465bd18e04c816292a1196a0364cae0768a6",
+    "evidenceState": "CURRENT_CHAT_REPRODUCED",
+    "lockfileSha256": "62a09c062b68c0c0b1388f14fd5dd32e6947b200bb364f1c7f21e27cc36ea97b",
+    "treeSha256": "01a591623699e9f6ca6744bb8f8dfbf28a0308aad9e88ee4c5eccab93e635666",
+    "concurrentBaselineRuns": 2,
+    "concurrentBaselineResult": "PASS_IDENTICAL_OUTPUT"
+  },
+  "sourcePackage": {
+    "version": "1.7.66",
+    "filename": "smarter-justice-v1.7.66.zip",
+    "state": "SOURCE_ACCEPTANCE_PENDING",
+    "dependencyIndependentParts": 120,
+    "totalReadinessParts": 121,
+    "testLogSha256": null,
+    "sbomSha256": null,
+    "sourceTrees": 0,
+    "identicalOutput": false
+  },
+  "finalArchive": {
+    "filename": "smarter-justice-v1.7.66.zip",
+    "identityState": "DETACHED_AFTER_IMMUTABLE_PACKAGING",
+    "receiptState": "DETACHED_RECEIPT_NOT_CONFIGURED",
+    "sha256": null,
+    "sizeBytes": null,
+    "runtimeBinding": "SMARTER_JUSTICE_FINAL_ARTIFACT_RECEIPT plus optional SMARTER_JUSTICE_FINAL_ARTIFACT_PATH"
+  },
+  "activeMasterPair": {
+    "receiptId": "MPCR-2026-07-31-E1-R0-05F4296ED378",
+    "transactionId": "MPPT-2026-07-31-SJ8-FP26-304CB87BF174",
+    "pairEpoch": 1,
+    "pairRevision": 0,
+    "receiptSha256": "4dd826cb0f9d89e41528b9732f250899cab45ce89766ae7fdfdb8a44d48d906e",
+    "centralMasterSha256": "89f49e1433d05a937a31c2144e42e408a94c4502d8c388ad5f3a6eae7ad5aa68",
+    "portalFamilyMasterSha256": "fd9e66a351067b6c02891c9474a4bc52edcbde552ae5706738d00930e6d4573f",
+    "baselineId": "DRB-2026-07-31-DUR001-DUR043-V2",
+    "semanticCapsuleSha256": "3d5f7cc4b33980148510834f6b23f902fb5416dbdc9398f106a3b14e81713bf8"
+  },
+  "portalAuthority": {
+    "record": "INITIAL_PORTAL_AUTHORITY_V1.7.66.json",
+    "evidenceBoundary": "OWNER_RECORDED_OR_HANDOFF_RECORDED_NOT_CURRENT_CHAT_PORTAL_INSPECTION",
+    "liveConnectionsOpened": false,
+    "automaticWritesOpened": false
+  },
+  "ownerLaunchActionPacket": {
+    "record": "OWNER_LAUNCH_ACTION_PACKET_V1.7.66.json",
+    "state": "PRIVATE_VALIDATED_NONSECRET_EXECUTION_PACKET",
+    "readyNowCount": 3
+  },
+  "production": {
+    "lastVerifiedVersion": "1.6.1",
+    "deploymentAuthorized": false,
+    "deploymentState": "NOT_DEPLOYED"
+  },
+  "launchState": "NO_GO",
+  "deploymentAuthorized": false,
+  "publicDisplay": {
+    "currentVersion": "1.7.66",
+    "sourceAndRollback": "smarter-justice-v1.7.65.zip",
+    "finalIdentity": "Detached receipt required after immutable packaging",
+    "launch": "NO_GO",
+    "deployment": "Not authorized"
+  },
+  "validationState": "PENDING_SOURCE_ACCEPTANCE"
+}

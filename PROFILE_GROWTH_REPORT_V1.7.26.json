@@ -1,0 +1,34 @@
+{
+  "version": "1.7.26",
+  "leadMarket": "Brooklyn",
+  "nextLeadMarket": "Manhattan",
+  "reviewDate": "2026-07-23",
+  "actual": {
+    "newIndividualProfessionals": 12,
+    "newFirms": 2,
+    "newProfessionalFirmLinks": 12,
+    "markets": {
+      "Brooklyn": 8,
+      "Manhattan": 2,
+      "Northern Metro New Jersey": 2
+    }
+  },
+  "finalDirectory": {
+    "professionals": 113,
+    "firms": 32,
+    "publicTotal": 145,
+    "qualifyingProfessionals": 112,
+    "qualifyingFirms": 30,
+    "qualifyingTotal": 142
+  },
+  "safeguards": [
+    "unclaimed",
+    "credential verification not started",
+    "nonparticipating",
+    "unpaid",
+    "unavailable",
+    "inquiry-ineligible",
+    "neutral organic presentation",
+    "source and review date retained"
+  ]
+}

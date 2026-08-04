@@ -1,0 +1,13 @@
+{
+  "releaseVersion": "1.7.56",
+  "generatedAt": "2026-07-30",
+  "status": "FINAL_SOURCE_SEALED_DETACHED_ARCHIVE_ACCEPTANCE_REQUIRED",
+  "sourceAcceptance": "SOURCE_ACCEPTANCE_V1.7.56.md",
+  "releaseEvidence": "RELEASE_EVIDENCE_V1.7.56.json",
+  "candidateAcceptance": "CANDIDATE_ARTIFACT_ACCEPTANCE_V1.7.56.json",
+  "exactFinalDeliveryReceipt": "DETACHED",
+  "launchState": "NO_GO",
+  "candidateAcceptanceStatus": "PASS",
+  "finalArtifactAcceptance": "FINAL_ARTIFACT_ACCEPTANCE_V1.7.56.json",
+  "preSealFinalAcceptanceStatus": "PASS"
+}

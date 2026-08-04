@@ -1,0 +1,17 @@
+{
+  "releaseVersion": "1.7.60",
+  "generatedAt": "2026-07-31T16:19:00-04:00",
+  "status": "PASS_IDENTICAL_OUTPUT",
+  "runs": 2,
+  "mode": "CONCURRENT_INDEPENDENT_FROZEN_TREES",
+  "commandPartsPerRun": 114,
+  "dependencyIndependentParts": 114,
+  "postgresqlDependentParts": 1,
+  "totalReadinessParts": 115,
+  "launchState": "NO_GO",
+  "identicalOutput": true,
+  "testLogSha256": "756b4cb4f36c381b63f11cec582645f12c9a0245d026294539f07fe5e05348f0",
+  "packageJsonSha256": "fc87ec5cf1b64149f4e6938d1e974cd703d24bd8bbfe3d0dbc4ebb283e3a5965",
+  "packageLockSha256": "b812fdcdccc58aa9b547979ce9aae9aeb76ade2b3bc10d151b122bda4235d10e",
+  "sbomSha256": "bd321a506703e9a87e04e5406a47424b9dac0ad738da0a12f8a0b539a4b34c32"
+}

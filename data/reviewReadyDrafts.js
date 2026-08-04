@@ -1,9 +1,9 @@
 const REVIEW_READY_DRAFT_LEVELS = [
-  { level: 0, label: 'Not selected yet', userMeaning: 'Smarter Justice has not matched this file to a review-ready draft path yet.' },
+  { level: 0, label: 'Not selected yet', userMeaning: 'Smarter Justice has not matched this saved work to a supported draft path yet.' },
   { level: 1, label: 'Organizer only', userMeaning: 'Answers are organized for review, but no official-form field map is active yet.' },
-  { level: 2, label: 'Form-preparation starter file', userMeaning: 'User answers are mapped to official-form-style fields for Human Review Specialist review.' },
-  { level: 3, label: 'Draft organized for human review', userMeaning: 'A Human Review Specialist can check saved answers, missing items, official sources, and supporting documents before anything is delivered.' },
-  { level: 4, label: 'Approved for user review after human review', userMeaning: 'Only after staff approval can the draft be delivered for the user to review, correct, sign, and file if appropriate.' }
+  { level: 2, label: 'Form information organized', userMeaning: 'The user’s answers are mapped to the fields used by the selected form so they can be checked.' },
+  { level: 3, label: 'Draft organized for review', userMeaning: 'Saved answers, missing items, official instructions, and supporting documents can be checked before a draft is shown.' },
+  { level: 4, label: 'Available for user review', userMeaning: 'After the required review, the user can review, correct, sign, and file the draft when appropriate.' }
 ];
 
 function field(key, label, opts={}){
@@ -13,7 +13,7 @@ function field(key, label, opts={}){
 const REVIEW_READY_DRAFT_PATHS = [
   {
     id: 'irs-9465-installment-agreement-review-draft',
-    title: 'IRS Form 9465 Installment Agreement review-ready draft',
+    title: 'IRS Form 9465 Installment Agreement draft prepared for review',
     practiceSlug: 'taxes',
     relatedFormPathIds: ['tax-installment-agreement-9465-starter'],
     safePathReason: 'Form 9465 is a clearer federal payment-plan request path, but tax professional review may still be needed for liens, levies, business taxes, audits, appeals, or high balances.',
@@ -41,7 +41,7 @@ const REVIEW_READY_DRAFT_PATHS = [
   },
   {
     id: 'irs-ss4-ein-review-draft',
-    title: 'IRS Form SS-4 EIN review-ready draft',
+    title: 'IRS Form SS-4 EIN draft prepared for review',
     practiceSlug: 'business-formation-compliance',
     relatedFormPathIds: ['business-ein-ss4-starter'],
     safePathReason: 'EIN/SS-4 facts can be organized into a clear field map, but entity type, responsible party, and state formation details still require careful review.',
@@ -69,7 +69,7 @@ const REVIEW_READY_DRAFT_PATHS = [
   },
   {
     id: 'ssa-561-reconsideration-review-draft',
-    title: 'SSA-561 Request for Reconsideration review-ready draft',
+    title: 'SSA-561 Request for Reconsideration draft prepared for review',
     practiceSlug: 'disability-benefits',
     relatedFormPathIds: ['ssa-disability-appeal-starter'],
     safePathReason: 'SSA appeal facts can be organized around the denial notice, appeal deadline, medical conditions, providers, medications, and work history.',
@@ -77,7 +77,7 @@ const REVIEW_READY_DRAFT_PATHS = [
     officialFormNumbers: ['SSA-561', 'SSA-3441 where applicable'],
     officialUrl: 'https://www.ssa.gov/forms/ssa-561.html',
     sourceCheckedDate: '2026-06-19',
-    automationBoundary: 'Review-ready appeal starter only. Users must verify appeal deadline, upload the denial notice, and decide how to file with SSA.',
+    automationBoundary: 'Prepared for review appeal starter only. Users must verify appeal deadline, upload the denial notice, and decide how to file with SSA.',
     reviewerRequired: true,
     professionalReviewRecommendation: 'Benefits attorney/advocate review may be recommended when the denial deadline is close, the user has a hearing issue, or medical evidence is complex.',
     requiredDocuments: ['SSA denial notice', 'Medical provider list', 'Medication list', 'Treatment dates', 'Work history', 'Any new evidence'],
@@ -98,7 +98,7 @@ const REVIEW_READY_DRAFT_PATHS = [
 
   {
     id: 'irs-1040x-amended-return-review-draft',
-    title: 'IRS Form 1040-X amended return review-ready starter draft',
+    title: 'IRS Form 1040-X amended return prepared for review starter draft',
     practiceSlug: 'taxes',
     relatedFormPathIds: ['tax-return-preparation-organizer'],
     safePathReason: 'A prior filed individual return can be organized into an amended-return review worksheet, but corrected tax calculations and filing decisions require careful review.',
@@ -126,7 +126,7 @@ const REVIEW_READY_DRAFT_PATHS = [
   },
   {
     id: 'irs-433a-oic-review-draft',
-    title: 'IRS Form 433-A (OIC) collection information review-ready starter draft',
+    title: 'IRS Form 433-A (OIC) collection information prepared for review starter draft',
     practiceSlug: 'taxes',
     relatedFormPathIds: ['tax-resolution-oic-starter'],
     safePathReason: 'OIC financial facts can be organized, but the decision to submit an offer and the amount/payment structure are high-risk tax-resolution questions.',
@@ -155,7 +155,7 @@ const REVIEW_READY_DRAFT_PATHS = [
   },
   {
     id: 'irs-2848-poa-review-draft',
-    title: 'IRS Form 2848 power of attorney review-ready starter draft',
+    title: 'IRS Form 2848 power of attorney prepared for review starter draft',
     practiceSlug: 'taxes',
     relatedFormPathIds: [],
     safePathReason: 'Form 2848 facts can be organized for a taxpayer and eligible representative, but eligibility, scope, CAF details, and signatures must be verified carefully.',
@@ -182,7 +182,7 @@ const REVIEW_READY_DRAFT_PATHS = [
   },
   {
     id: 'irs-8857-innocent-spouse-review-draft',
-    title: 'IRS Form 8857 innocent spouse relief review-ready starter draft',
+    title: 'IRS Form 8857 innocent spouse relief prepared for review starter draft',
     practiceSlug: 'taxes',
     relatedFormPathIds: [],
     safePathReason: 'Innocent spouse facts can be organized around the liability, spouse/former spouse, notice, and timeline, but eligibility and supporting facts are review-heavy.',
@@ -209,7 +209,7 @@ const REVIEW_READY_DRAFT_PATHS = [
   },
   {
     id: 'copyright-registration-review-draft',
-    title: 'Copyright registration review-ready starter draft',
+    title: 'Copyright registration prepared for review starter draft',
     practiceSlug: 'copyrights',
     relatedFormPathIds: [],
     safePathReason: 'Copyright registration can be organized by work type, title, authorship, ownership, creation/publication facts, and evidence, while official filing remains through the Copyright Office system or forms.',
@@ -217,7 +217,7 @@ const REVIEW_READY_DRAFT_PATHS = [
     officialFormNumbers: ['Form TX', 'Form VA', 'Form PA', 'Form SR', 'eCO registration pathway'],
     officialUrl: 'https://www.copyright.gov/forms/',
     sourceCheckedDate: '2026-06-19',
-    automationBoundary: 'Registration starter file only. No automatic Copyright Office filing in this version.',
+    automationBoundary: 'Registration starting summary only. No automatic Copyright Office filing in this version.',
     reviewerRequired: true,
     professionalReviewRecommendation: 'Copyright attorney review may be recommended for infringement, ownership disputes, works made for hire, multiple authors, or DMCA issues.',
     requiredDocuments: ['Copy/deposit of the work', 'Work title', 'Author/creator facts', 'Owner/claimant facts', 'Publication status/date', 'Evidence of ownership'],
@@ -236,10 +236,10 @@ const REVIEW_READY_DRAFT_PATHS = [
   },
   {
     id: 'vehicle-accident-demand-file-review-draft',
-    title: 'Vehicle accident demand/support file review-ready draft',
+    title: 'Vehicle accident demand/support file draft prepared for review',
     practiceSlug: 'vehicle-accidents',
     relatedFormPathIds: ['vehicle-accident-document-organizer'],
-    safePathReason: 'Accident facts can be organized into a review-ready insurance/demand-support file without giving settlement value or legal advice.',
+    safePathReason: 'Accident facts can be organized into a prepared for review insurance/demand-support file without giving settlement value or legal advice.',
     officialSourceName: 'Police, DMV, insurance, medical-billing, and court sources by state/local jurisdiction',
     officialFormNumbers: ['Police report request', 'insurance claim file', 'medical-bill organizer'],
     officialUrl: '',
@@ -323,7 +323,7 @@ function buildReviewReadyDraftEvaluation(c){
       status:'organizer only',
       level:1,
       label:'Organizer only',
-      userMessage:'This file can still be organized for review, but Smarter Justice has not matched it to one of the first review-ready draft paths yet.',
+      userMessage:'This file can still be organized for review, but Smarter Justice has not matched it to one of the first draft prepared for review paths yet.',
       completionPercent:0,
       mappedFields:[],
       missingRequiredFields:[],
@@ -341,7 +341,7 @@ function buildReviewReadyDraftEvaluation(c){
   const completionPercent = Math.round((completeTotal / requiredTotal) * 100);
   const docsUploaded = Array.isArray(c.attachments) ? c.attachments.length : 0;
   const level = completionPercent >= 85 && docsUploaded > 0 ? 3 : 2;
-  const label = level >= 3 ? 'Draft organized for human review' : 'Form-preparation starter file';
+  const label = level >= 3 ? 'Draft organized for human review' : 'Form information organizer';
   const approvalStatus = c.reviewReadyDraftStatus || 'not reviewed yet';
   const approvalGatePassed = /approved for user review|delivered to user/i.test(String(approvalStatus));
   const deliveryBlockers = [
@@ -365,7 +365,7 @@ function buildReviewReadyDraftEvaluation(c){
     requiredDocuments:path.requiredDocuments,
     level,
     label,
-    userMessage: missingRequiredFields.length ? 'Smarter Justice can organize a form-preparation starter file, but more information is needed before it should be reviewed or delivered.' : 'The main required starter fields are present. Human Review Specialist review is still required before delivery.',
+    userMessage: missingRequiredFields.length ? 'Smarter Justice can organize the form information, but more details are needed before a draft can be reviewed or shown.' : 'The main required starter fields are present. The required review must be completed before a draft is shown.',
     completionPercent,
     mappedFields,
     missingRequiredFields,

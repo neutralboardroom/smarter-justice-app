@@ -1,0 +1,40 @@
+{
+  "schema": "smarter-justice-release-scope",
+  "releaseVersion": "1.7.69",
+  "releaseType": "COMPLETE_CONNECTED_MATERIAL_RELEASE",
+  "generatedAt": "2026-08-02T11:24:00-04:00",
+  "selectedBase": {
+    "filename": "smarter-justice-v1.7.68.zip",
+    "version": "1.7.68",
+    "sha256": "a7cb9f15c98959e60736408d6d081022ddebbd2371d14c72c6724f8483310920",
+    "sizeBytes": 7084707,
+    "entries": 2129,
+    "files": 2111,
+    "directories": 18,
+    "uncompressedBytes": 18965424,
+    "compressedBytes": 6193814,
+    "inventoryRecords": 2110,
+    "inventorySha256": "081a799f7f2572b2b7971601794e0e38bed9cbaff573dd12e2587412c9698a7d",
+    "packageJsonSha256": "e63a7359e4d014e197a053b30116592857247ac761400a571200610e7513a714",
+    "packageLockSha256": "77427fb35a66d331d59c51f453af69d335381850086a3ca801b815a02c040e4d",
+    "sbomSha256": "f7cf376938f19ca94dd622720d6e9b51bc61d69a8865a63ee74b35ae4c9f8ca6",
+    "dependencyIndependentParts": 121,
+    "totalReadinessParts": 122,
+    "testLogSha256": "5d400c2ef6be3470ee525e02ce85f8327d7fdb976f77b1b0a84a15867a1844a7",
+    "evidenceState": "CURRENT_CHAT_REPRODUCED",
+    "lockfileSha256": "77427fb35a66d331d59c51f453af69d335381850086a3ca801b815a02c040e4d",
+    "treeSha256": "081a799f7f2572b2b7971601794e0e38bed9cbaff573dd12e2587412c9698a7d",
+    "concurrentBaselineRuns": 2,
+    "concurrentBaselineResult": "PASS_IDENTICAL_OUTPUT"
+  },
+  "materialChanges": [
+    "Reconciled exact delivered v1.7.65 source and rollback truth.",
+    "Advanced owner-recorded Divorce and Personal Injury portal authority without false portal inspection.",
+    "Repaired owner-action readiness to bind the current queue rather than a stale v1.7.60 source.",
+    "Added a private prioritized launch-action packet and protected owner endpoint.",
+    "Revalidated official accessibility, AI-risk, injection-isolation and New York CourtHelp sources."
+  ],
+  "publicVisualChange": "NONE_EVIDENCE_SUPPORTS_PRESERVATION",
+  "liveGatesOpened": false,
+  "launchState": "NO_GO"
+}

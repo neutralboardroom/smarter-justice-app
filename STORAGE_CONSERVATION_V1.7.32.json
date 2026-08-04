@@ -1,0 +1,60 @@
+{
+  "version": "1.7.32",
+  "date": "2026-07-25",
+  "policy": "Remove only proven unused runtime assets, duplicate handoff copies, and reproducible residue; preserve exact provenance, rollback, tests, current governance, and required historical evidence.",
+  "removedFiles": [
+    {
+      "path": "public/images/justice-truck-logo.jpg",
+      "bytes": 176664,
+      "reason": "Unreferenced historical media"
+    },
+    {
+      "path": "public/images/justice-truck-field-outreach-history.jpg",
+      "bytes": 507052,
+      "reason": "Unreferenced historical media"
+    },
+    {
+      "path": "public/images/justice-truck-stop-sign-history.jpg",
+      "bytes": 234524,
+      "reason": "Unreferenced historical media"
+    },
+    {
+      "path": "public/images/justice-truck-original-wrap-design.jpg",
+      "bytes": 314973,
+      "reason": "Unreferenced historical media"
+    },
+    {
+      "path": "SMARTER_JUSTICE_V1.7.10_COMPLETE_NEXT_CHAT_MASTER_CONTINUATION_PROMPT.txt",
+      "bytes": 114643,
+      "reason": "Duplicate full continuation-prompt copy superseded by current compact continuation record"
+    },
+    {
+      "path": "SMARTER_JUSTICE_V1.7.11_COMPLETE_NEXT_CHAT_MASTER_CONTINUATION_PROMPT.txt",
+      "bytes": 125438,
+      "reason": "Duplicate full continuation-prompt copy superseded by current compact continuation record"
+    },
+    {
+      "path": "SMARTER_JUSTICE_V1.7.12_COMPLETE_NEXT_CHAT_MASTER_CONTINUATION_PROMPT.txt",
+      "bytes": 130012,
+      "reason": "Duplicate full continuation-prompt copy superseded by current compact continuation record"
+    },
+    {
+      "path": "SMARTER_JUSTICE_V1.7.13_COMPLETE_NEXT_CHAT_MASTER_CONTINUATION_PROMPT.txt",
+      "bytes": 172056,
+      "reason": "Duplicate full continuation-prompt copy superseded by current compact continuation record"
+    }
+  ],
+  "removedBytes": 1775362,
+  "removedFileCount": 8,
+  "retained": [
+    "Current source, public assets, schemas, tests, package lock, SBOM, deployment and rollback records",
+    "Historical regression tests and compact release-specific governance records still referenced by the inherited suite",
+    "One current continuation prompt after v1.7.32",
+    "Dedicated portal metadata only; no copied portal ZIPs"
+  ],
+  "minimumNextChatWorkingSet": [
+    "smarter-justice-v1.7.32.zip",
+    "CONTINUATION_PROMPT_V1.7.32.md"
+  ],
+  "safeCleanupRule": "Do not remove v1.7.31 or its authoritative continuation prompt until v1.7.32 is successfully downloaded and independently verified."
+}

@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Attorney Partner Tour | Smarter Justice</title>
+  <meta name="description" content="See how Smarter Justice coordinates one central professional profile across focused legal portals while keeping verification, publication, and optional paid products separate.">
+  <meta name="theme-color" content="#0b3356">
+  <link rel="canonical" href="https://smarterjustice.com/attorney-partner-tour.html">
+  <meta property="og:title" content="Attorney Partner Tour | Smarter Justice">
+  <meta property="og:description" content="A concise guided or self-guided review of the Smarter Justice professional platform and four coordinated legal portals.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://smarterjustice.com/attorney-partner-tour.html">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/images/brand/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="/images/brand/favicon-48.png" sizes="48x48" type="image/png">
+  <link rel="apple-touch-icon" href="/images/brand/apple-touch-icon.png" sizes="180x180">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/styles.css">
+  <script defer src="/app.js"></script>
+  <script defer src="/attorney-partner-tour.js"></script>
+  <script defer src="/program-status.js"></script>
+</head>
+<body class="attorney-partner-tour-page">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header tour-header">
+    <a class="brand" href="/" aria-label="Smarter Justice home"><img src="/logo.svg" alt="Smarter Justice"></a>
+    <button class="nav-toggle" aria-expanded="false" aria-label="Open menu" data-nav-toggle>Menu</button>
+    <nav class="top-nav" data-nav aria-label="Main navigation">
+      <a href="#tour-story">Tour</a>
+      <a href="/professionals.html">Find Profile</a>
+      <a href="/professional-membership.html">Membership</a>
+      <a href="/attorney-launch.html?campaign=ATTORNEY-TOUR">Claim or Create</a>
+      <a href="/contact.html?topic=professional-profile">Support</a>
+      <a class="mobile-only-nav" href="/professional-login.html">Professional Sign In</a>
+    </nav>
+    <a class="header-signin" href="/professional-login.html">Sign In</a>
+  </header>
+
+  <main id="main">
+    <section class="tour-hero">
+      <div class="tour-hero-copy">
+        <p class="eyebrow">Attorney Partner Tour</p>
+        <h1>One central professional system. Focused legal portals for the public.</h1>
+        <p class="lead">See the Smarter Justice model in a concise guided or self-guided sequence: central professional identity, a practice-relevant portal, a clear profile structure, one public tool, and a direct next step.</p>
+        <div class="hero-actions">
+          <button class="primary" id="startPresenterMode" type="button">Start Presenter Mode</button>
+          <a class="secondary link-btn" id="startSelfGuidedMode" href="#tour-story">View Full Tour</a>
+          <a class="text-link" href="/attorney-launch.html?campaign=ATTORNEY-TOUR">Find or Claim a Profile</a>
+        </div>
+        <div class="tour-proof-grid" aria-label="Tour summary">
+          <div><strong>15 seconds</strong><span>Understand the central role</span></div>
+          <div><strong>2 minutes</strong><span>See a relevant portal, profile, and tool</span></div>
+          <div><strong>10 minutes</strong><span>Review management, membership, and next steps</span></div>
+        </div>
+        <p class="fine-print">This tour does not create an account, publish a profile, activate payment, connect a live portal, or guarantee clients, revenue, ranking, appointments, or outcomes.</p>
+      </div>
+      <aside class="tour-quick-card" aria-labelledby="practiceHeading">
+        <p class="eyebrow">Choose the most relevant path</p>
+        <h2 id="practiceHeading">Which practice should the tour emphasize?</h2>
+        <div class="tour-practice-choices" id="tourPracticeChoices" role="group" aria-label="Practice-specific tour choices">
+          <button type="button" data-tour-practice="divorce">Divorce and family</button>
+          <button type="button" data-tour-practice="estate">Estate and probate</button>
+          <button type="button" data-tour-practice="personal-injury">Personal injury</button>
+          <button type="button" data-tour-practice="domestic-violence">Domestic violence</button>
+        </div>
+        <p class="fine-print">The sequence changes to emphasize one relevant portal. It does not infer or approve specialty eligibility.</p>
+      </aside>
+    </section>
+
+    <section class="tour-mode-bar" aria-label="Tour viewing mode">
+      <div><strong>Choose how to review</strong><span id="tourModeDescription">The full tour shows every section on one page.</span></div>
+      <div class="tour-mode-actions" role="group" aria-label="Tour mode choices">
+        <button type="button" data-tour-mode="self-guided" aria-pressed="true">Full tour</button>
+        <button type="button" data-tour-mode="presenter" aria-pressed="false">Presenter mode</button>
+        <a class="secondary link-btn" id="tourPrintCard" href="/attorney-tour-follow-up.html?practice=divorce">Print follow-up card</a>
+      </div>
+    </section>
+
+    <div class="tour-presenter-controls" id="tourPresenterControls" hidden>
+      <button class="secondary" type="button" id="tourPreviousStep">Previous</button>
+      <p aria-live="polite"><strong id="tourProgress">Step 1 of 7</strong><span id="tourProgressLabel">Smarter Justice’s role</span></p>
+      <button class="primary" type="button" id="tourNextStep">Next</button>
+    </div>
+
+    <nav class="tour-step-nav" aria-label="Attorney Partner Tour sections">
+      <a href="#tour-role">1. Central role</a>
+      <a href="#tour-portal">2. Relevant portal</a>
+      <a href="#tour-profile">3. Profile</a>
+      <a href="#tour-tool">4. Public tool</a>
+      <a href="#tour-dashboard">5. Dashboard</a>
+      <a href="#tour-membership">6. Membership</a>
+      <a href="#tour-continue">7. Continue</a>
+    </nav>
+
+    <section class="section tour-story" id="tour-story">
+      <article class="tour-step" id="tour-role">
+        <div class="tour-step-number" aria-hidden="true">1</div>
+        <div class="tour-step-content">
+          <p class="eyebrow">Smarter Justice’s role</p>
+          <h2>Central management without replacing specialty portals.</h2>
+          <p>Smarter Justice coordinates professional accounts, one core profile, firm and office relationships, claims, verification workflows, membership, support, and approved read-only profile distribution. Each legal micro-portal remains a separate product with its own specialty content, public profile pages, tools, repository, deployment, and rollback.</p>
+          <ul class="check-list tour-checks">
+            <li>One central professional identity and core profile.</li>
+            <li>Free basic profile claiming, correction, suppression, and removal.</li>
+            <li>Separate specialty evidence, portal eligibility, publication, and membership states.</li>
+            <li>No automatic two-way portal synchronization during the controlled launch.</li>
+          </ul>
+          <a class="tour-next-link" href="#tour-portal">Next: see the relevant portal</a>
+        </div>
+      </article>
+
+      <article class="tour-step" id="tour-portal">
+        <div class="tour-step-number" aria-hidden="true">2</div>
+        <div class="tour-step-content">
+          <p class="eyebrow">Practice-relevant portal</p>
+          <h2 id="tourPortalName">Divorce Law Aid</h2>
+          <p id="tourPortalSummary">Loading the selected specialty overview…</p>
+          <div class="tour-portal-status" id="tourPortalStatus" aria-live="polite"><p>Checking the verified destination state…</p></div>
+          <div class="hero-actions">
+            <a class="primary link-btn" id="tourPortalPrimary" href="/divorce-family-law.html">Open Specialty Overview</a>
+            <a class="secondary link-btn" href="/founding-portals.html">See All Four Launch Portals</a>
+          </div>
+          <p class="fine-print">A recognized portal identity or owner-recorded ZIP is not proof that a live public integration has been staged or approved.</p>
+          <a class="tour-next-link" href="#tour-profile">Next: see the profile structure</a>
+        </div>
+      </article>
+
+      <article class="tour-step" id="tour-profile">
+        <div class="tour-step-number" aria-hidden="true">3</div>
+        <div class="tour-step-content">
+          <p class="eyebrow">Professional profile</p>
+          <h2>A polished profile should show evidence, control, and clear boundaries.</h2>
+          <div class="tour-profile-showcase" id="tourProfileShowcase">
+            <div class="tour-demo-label">Synthetic demonstration record — not a live attorney or firm</div>
+            <div class="tour-profile-heading">
+              <div class="tour-profile-monogram" aria-hidden="true">EA</div>
+              <div><h3>Example Attorney — Demonstration Record</h3><p>Example Law Firm — Demonstration Record</p></div>
+            </div>
+            <div class="tour-profile-statuses" id="tourProfileStatuses"></div>
+            <dl class="tour-profile-fields" id="tourProfileFields"></dl>
+          </div>
+          <p>The canonical public specialty profile belongs on the relevant micro-portal. Smarter Justice manages the central record and approved distribution; it does not create a second permanent specialty directory.</p>
+          <div class="hero-actions">
+            <a class="primary link-btn" href="/professionals.html">Find an Existing Profile</a>
+            <a class="secondary link-btn" id="tourClaimProfile" href="/attorney-launch.html?campaign=ATTORNEY-TOUR">Claim or Create a Profile</a>
+          </div>
+          <a class="tour-next-link" href="#tour-tool">Next: demonstrate one public tool</a>
+        </div>
+      </article>
+
+      <article class="tour-step" id="tour-tool">
+        <div class="tour-step-number" aria-hidden="true">4</div>
+        <div class="tour-step-content">
+          <p class="eyebrow">Useful public tool</p>
+          <h2 id="tourToolName">Device-only document preparation tools</h2>
+          <p id="tourToolSummary">Use synthetic demonstration content only. The tool does not create an attorney-client relationship or guarantee a legal result.</p>
+          <div class="tour-tool-boundary">
+            <strong>Demonstration rule</strong>
+            <p>Use resettable synthetic input. Do not use a client file, survivor narrative, private claim, payment data, support note, confidential location, or unrestricted administrative account.</p>
+          </div>
+          <div id="tourSafetyNote" class="notice" hidden></div>
+          <div class="hero-actions">
+            <a class="primary link-btn" id="tourToolLink" href="/document-tools.html?tour=1&amp;practice=divorce">Open the Public Tool</a>
+            <a class="secondary link-btn" href="#tour-dashboard">Skip to the Dashboard Story</a>
+          </div>
+          <p class="fine-print">A return-to-tour control appears on the selected tool. Existing browser-local tools remain browser-local; confidential uploads and external AI remain closed.</p>
+          <a class="tour-next-link" href="#tour-dashboard">Next: see the central dashboard story</a>
+        </div>
+      </article>
+
+      <article class="tour-step" id="tour-dashboard">
+        <div class="tour-step-number" aria-hidden="true">5</div>
+        <div class="tour-step-content">
+          <p class="eyebrow">Central professional dashboard</p>
+          <h2>Every status should explain what it means and what happens next.</h2>
+          <div class="tour-dashboard-preview" aria-label="Demonstration dashboard status cards">
+            <article><span>Core profile</span><strong>Claim review required</strong><p>Account creation does not grant profile control.</p></article>
+            <article><span>Identity and credentials</span><strong>Separate evidence steps</strong><p>Email, identity, professional status, and exact-profile authority are distinct.</p></article>
+            <article><span>Portal participation</span><strong>Practice evidence pending</strong><p>Each portal independently reviews specialty relevance and publication.</p></article>
+            <article><span>Membership</span><strong>Optional and separate</strong><p>Payment does not complete verification, publication, or eligibility.</p></article>
+            <article><span>Firm and office</span><strong>Authority must be supported</strong><p>Seats, billing ownership, and professional independence remain distinct.</p></article>
+            <article><span>Support</span><strong>Correction and removal available</strong><p>Basic control rights do not depend on payment.</p></article>
+          </div>
+          <p class="fine-print">This is a public demonstration of status concepts, not an authenticated account or administrative view.</p>
+          <a class="tour-next-link" href="#tour-membership">Next: review membership value</a>
+        </div>
+      </article>
+
+      <article class="tour-step" id="tour-membership">
+        <div class="tour-step-number" aria-hidden="true">6</div>
+        <div class="tour-step-content">
+          <p class="eyebrow">Membership and participation</p>
+          <h2 id="tourMembershipHeading">One central professional system, with optional paid products kept separate.</h2>
+          <ul class="check-list tour-checks" id="tourMembershipBenefits"></ul>
+          <p class="tour-disclosure" id="tourMembershipDisclosure"></p>
+          <div class="hero-actions">
+            <a class="primary link-btn" href="/professional-membership.html">Review Current Membership Information</a>
+            <a class="secondary link-btn" href="/professional-membership-terms.html">Read Membership Terms</a>
+          </div>
+          <p class="fine-print">Comparative lead-cost statements and current pricing require separate owner approval and current support. This tour does not publish them.</p>
+          <a class="tour-next-link" href="#tour-continue">Next: continue after the meeting</a>
+        </div>
+      </article>
+
+      <article class="tour-step tour-final-step" id="tour-continue">
+        <div class="tour-step-number" aria-hidden="true">7</div>
+        <div class="tour-step-content">
+          <p class="eyebrow">Continue after the meeting</p>
+          <h2>Return through one stable, privacy-minimized path.</h2>
+          <div class="tour-handoff-grid">
+            <div class="tour-qr-card">
+              <img id="tourQrCode" src="/images/attorney-tour/divorce.svg" alt="QR code for the Divorce and family law Attorney Partner Tour">
+              <strong>Scan to reopen this practice-specific tour</strong>
+              <p>No personal or matter data is encoded.</p>
+            </div>
+            <div class="tour-short-link-card">
+              <span>Practice-specific short path</span>
+              <strong id="tourShortPath">smarterjustice.com/attorney-tour/divorce</strong>
+              <button class="secondary" id="copyTourLink" type="button">Copy Tour Link</button>
+              <p class="fine-print" id="copyTourLinkResult" aria-live="polite">The link contains no client data, private matter information, payment credential, tracking identifier, or unrestricted approval token.</p>
+            </div>
+          </div>
+          <div class="tour-final-actions">
+            <a class="primary link-btn" id="tourContinueProfile" href="/attorney-launch.html?campaign=ATTORNEY-TOUR">Find, Claim, or Create a Profile</a>
+            <a class="secondary link-btn" href="/professional-membership.html">Review Membership</a>
+            <a class="secondary link-btn" href="/contact.html?topic=professional-profile">Request Follow-Up</a>
+            <a class="secondary link-btn" id="tourPrintFollowUp" href="/attorney-tour-follow-up.html?practice=divorce">Print Follow-Up Card</a>
+            <a class="text-link" href="#main">Restart the Tour</a>
+          </div>
+          <div class="notice tour-launch-boundary"><strong>Launch boundary</strong><p>Smarter Justice remains NO_GO. This tour is a demonstration and outreach-readiness improvement, not deployment approval or proof that any portal, payment, confidential upload, external AI, appointment, review, opportunity, or Justice Booth is live.</p></div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div><img src="/logo.svg" alt="" class="footer-logo"><p><strong>Smarter Justice</strong><br>Central professional management and public legal starting help across focused legal portals. Not a law firm, licensing authority, or guaranteed referral service.</p></div>
+    <div class="footer-links"><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/disclaimer.html">Disclaimer</a><a href="/contact.html">Support</a></div>
+  </footer>
+</body>
+</html>

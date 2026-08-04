@@ -1,0 +1,20 @@
+{
+  "version": "1.7.45",
+  "date": "2026-07-29",
+  "releaseWarrant": "MATERIAL_EVIDENCE_BASED_IMPROVEMENT",
+  "improvements": [
+    "Separate revision-safe portal-specific profile sections for the three launch portals",
+    "Exact portal revision and exact central source revision approval",
+    "Approved allowlisted specialty projection in read-only handoffs",
+    "Fail-closed owner acceptance operations for canonical pages, search, reciprocal links, receipts, last-known-good, suppression and rollback",
+    "Personal Injury scope validation preserves Workers Compensation and Medical Malpractice boundaries"
+  ],
+  "publicUserBenefit": "Future portal pages can receive more complete specialty-specific approved information without creating duplicate accounts or editors. No live public behavior is claimed.",
+  "ownerBenefit": "Roger can review specialty revisions and record integration evidence without editing JSON or changing portal repositories.",
+  "deferred": [
+    "Exact portal artifacts and dedicated handoffs",
+    "D4 staging and D5 production",
+    "PostgreSQL, SMTP, MFA, monitoring, backup, restore, accessibility and rollback acceptance",
+    "Stripe and counsel-approved commercial gates"
+  ]
+}

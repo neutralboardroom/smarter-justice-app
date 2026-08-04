@@ -1,0 +1,97 @@
+{
+  "schemaVersion": "1.0.0",
+  "releaseVersion": "1.7.45",
+  "generatedAt": "2026-07-29T14:30:00-04:00",
+  "deploymentAuthorized": false,
+  "status": "FINAL_ARTIFACT_IDENTITY_REPORTED_EXTERNALLY_NOT_DEPLOYED",
+  "artifact": {
+    "filename": "smarter-justice-v1.7.45.zip",
+    "sha256": "DETACHED_AFTER_PACKAGING",
+    "sizeBytes": 0,
+    "entryCount": 903,
+    "fileCount": 889,
+    "directoryCount": 14,
+    "inventoryRecords": 888
+  },
+  "baseline": {
+    "filename": "smarter-justice-v1.7.44.zip",
+    "sha256": "b280f19078b95a006becf970b55a480464fa157d679a98886c2665fb2697c1b3",
+    "sizeBytes": 2401801,
+    "entryCount": 841,
+    "fileCount": 827,
+    "directoryCount": 14,
+    "inventoryRecords": 826
+  },
+  "materialChanges": [
+    "Revision-safe portal-specific professional and firm profile sections for Divorce Law Aid, Estate Law Aid, and Personal Injury Law Aid",
+    "Free central editing and exact-revision submission without a portal account or payment requirement",
+    "Exact-revision owner approval bound to the current central professional or firm source revision",
+    "Approved portal-specific fields included only in allowlisted read-only professional handoffs",
+    "Fail-closed owner acceptance records for canonical attorney pages, canonical firm pages, search, reciprocal firm-attorney links, imports, last-known-good state, suppression, and rollback",
+    "Personal Injury portal-specific matter validation preserves vehicle accidents and rejects Workers’ Compensation and Medical Malpractice as silent scope merges",
+    "No portal repository modification, live portal import, automatic portal write, paid gate activation, deployment, or production-readiness claim"
+  ],
+  "tests": {
+    "officialParts": 100,
+    "dependencyIndependentExpected": 99,
+    "postgresqlDependent": 1,
+    "results": "ALL_99_DEPENDENCY_INDEPENDENT_PARTS_PASSED_IN_WORKING_TREE; TWO_EXACT_EXTRACTIONS_PENDING_FINAL_PACKAGING",
+    "dependencyIndependentPassed": 99,
+    "postgresqlDependentBlocked": 1,
+    "launchPreflight": "NO_GO_0_OF_4_LANES_92_BLOCKED_CHECKS",
+    "javascriptSyntax": "221_OF_221",
+    "jsonParse": "328_OF_328",
+    "xmlParse": "1_OF_1",
+    "publicHtmlPages": 71
+  },
+  "deployment": {
+    "deployed": false,
+    "authorized": false,
+    "lastVerifiedProductionVersion": "1.6.1",
+    "rollbackArtifact": "OWNER_APPROVAL_REQUIRED",
+    "livePortalConnections": 0,
+    "automaticPortalWrites": false,
+    "livePayments": false,
+    "sponsoredPlacementsOpen": false,
+    "caseOpportunityAccessOpen": false
+  },
+  "implementation": {
+    "freeBasicProfileClaimAndEdit": true,
+    "paidSponsoredVisibilityFoundation": true,
+    "paidCaseOpportunityAccessFoundation": true,
+    "clearSponsoredDisclosure": true,
+    "organicRankingNeutral": true,
+    "payToVerifyProhibited": true,
+    "percentageOfLegalFeesProhibited": true,
+    "outcomeContingentChargesProhibited": true,
+    "complimentaryFoundingProfilePilotActive": false,
+    "portalFirstClaimCentralExecution": true,
+    "personalInjuryVehicleAccidentScope": true,
+    "workersCompensationSeparate": true,
+    "livePaidGrowth": false,
+    "livePortalImports": false,
+    "portalSpecificProfileManagement": true,
+    "portalSpecificRevisionSafety": true,
+    "portalSpecificApprovedProjection": true,
+    "portalPresenceAcceptanceOperations": true,
+    "portalAcceptanceFailClosed": true,
+    "portalProfileProductionActivation": false,
+    "automaticPortalWrites": false
+  },
+  "limitations": [
+    "Exact portal artifacts and dedicated handoffs are not present in this Smarter Justice build context",
+    "D3 adapter and D4 staging acceptance remain incomplete for all three portals",
+    "Canonical public profile, firm-profile, search, reciprocal-link, import-receipt, suppression, last-known-good and rollback evidence remain unaccepted",
+    "Exact rollback artifact approval",
+    "Legitimate clean dependency install and vulnerability audit",
+    "Production PostgreSQL, SMTP, MFA, monitoring, incident, backup, restore, browser, mobile and accessibility acceptance",
+    "Stripe lifecycle, pricing, refunds, cancellation, support and jurisdiction-specific counsel acceptance"
+  ],
+  "dependencyAccess": {
+    "cleanInstall": "BLOCKED_REGISTRY_HTTP_404_XTEND_4_0_2",
+    "vulnerabilityAudit": "BLOCKED_AUDIT_ENDPOINT_HTTP_404",
+    "fakeDependencyUsed": false,
+    "lockfileAltered": false
+  },
+  "launchPreflightEvidenceDigest": "0eeccc6235ecf36e5bd7ee73b11858c72fec70c84d830288311e8d9e065a664e"
+}

@@ -1,0 +1,27 @@
+{
+  "releaseVersion": "1.7.54",
+  "generatedAt": "2026-07-30",
+  "currentCandidate": "smarter-justice-v1.7.54.zip",
+  "immediateRollback": {
+    "filename": "smarter-justice-v1.7.53.zip",
+    "sha256": "f6c881faf1f72de44d062b15d3d7701574663a2b22a9d9273a6930580a359cac",
+    "evidenceState": "EXACT_VERIFIED"
+  },
+  "rollbackTriggers": [
+    "truth registry contradiction",
+    "authorization or notification redaction regression",
+    "field projection conflict bypass",
+    "closed gate opens without accepted evidence",
+    "inventory or deterministic build mismatch",
+    "fresh-extraction test failure"
+  ],
+  "procedure": [
+    "pause sensitive and commercial gates",
+    "retain current records and receipts",
+    "restore exact v1.7.53 source artifact",
+    "verify SHA-256 and inventory",
+    "run dependency-independent suite",
+    "confirm NO_GO and closed gates"
+  ],
+  "dataLossPolicy": "Do not delete lifecycle, conflict, notification, support, billing or integration receipts during rollback."
+}

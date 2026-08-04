@@ -1,0 +1,55 @@
+{
+  "releaseVersion": "1.7.54",
+  "generatedAt": "2026-07-30",
+  "status": "CANDIDATE_EXACT_ACCEPTED",
+  "candidateArtifact": {
+    "filename": "smarter-justice-v1.7.54-candidate-a.zip",
+    "sha256": "3f30b524469e1302a758f3389ce429812b5bdc8c75d979fa9784b347c7427a84",
+    "sizeBytes": 4665612,
+    "entries": 1339,
+    "files": 1321,
+    "directories": 18,
+    "uncompressedFileBytes": 12870734,
+    "compressedFileBytes": 4470386,
+    "inventoryRecords": 1320,
+    "inventorySha256": "fcb21e94c260f9a432bd95eac5e4fb999ace8d1910da3432e50e2f001929dbfe",
+    "packageJsonSha256": "ab3b087bedc3883fdb5d985e7d5b60194940a44ad14c48b8a3359b04d1119a0a",
+    "packageLockSha256": "ae22c56b733d2738aab637e30ff167b7d5b174a1f51c8f9a2662836406fe040f"
+  },
+  "deterministicBuilds": {
+    "count": 2,
+    "byteIdentical": true,
+    "sha256Equal": true,
+    "sizeEqual": true
+  },
+  "archiveSafety": {
+    "crcPassed": true,
+    "unsafePaths": 0,
+    "duplicateEntries": 0,
+    "symlinks": 0,
+    "forbiddenResidue": 0,
+    "repositoryFilesAtZipRoot": true
+  },
+  "inventoryAcceptance": {
+    "passed": true,
+    "selfExcluding": true,
+    "sourceAndTwoExtractionTreesIdentical": true,
+    "treeHash": "5d17c6b7d0f523834011e858807adfd7ab4dfedfa371367d17a744bf14d5f1e7"
+  },
+  "freshExtractionAcceptance": {
+    "independentExtractions": 2,
+    "dependencyIndependentSuiteRuns": 2,
+    "commandPartsPerRun": 108,
+    "bothPassed": true,
+    "testOutputIdentical": true,
+    "testLogSha256": "d2a0d07e98caa62683fca6a5ce8bb6d9adc28648f29d49702abc45ae6ed955d1"
+  },
+  "blockedSupplyChainChecks": {
+    "configuredNpmCi": "HTTP_404_XTEND_4_0_2_NOT_ACCEPTED",
+    "configuredNpmAudit": "HTTP_404_AUDIT_ENDPOINT_NOT_ACCEPTED",
+    "postgresqlAcceptance": "NOT_RUN_NOT_ACCEPTED"
+  },
+  "launchState": "NO_GO",
+  "deploymentState": "NOT_DEPLOYED",
+  "finalPackageNote": "Candidate acceptance is embedded in the final source. The final package is rebuilt after this record and receives a separate detached exact receipt plus two final fresh-extraction runs."
+}

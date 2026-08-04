@@ -1,0 +1,23 @@
+{
+  "schema": "smarter-justice-reusable-master-command-intake",
+  "releaseVersion": "1.7.59",
+  "generatedAt": "2026-07-31T15:53:00-04:00",
+  "prompt": {
+    "filename": "Smarter_Justice_Reusable_Version_1.txt",
+    "sha256": "3951396dafb92a5d706cf0483000717a70d5f72c0ef84888a7d77f9163d5b8ac",
+    "sizeBytes": 152541,
+    "lineCount": 4320,
+    "openingMarkerVerified": true,
+    "finalMarkerVerified": true
+  },
+  "integrityMarkers": {
+    "opening": "SMARTER JUSTICE / SECOND-PASS REFINED REUSABLE VERSION-NEUTRAL",
+    "closing": "END OF SECOND-PASS REFINED SMARTER JUSTICE REUSABLE VERSION-NEUTRAL COMPLETE IMMEDIATE BUILD MASTER COMMAND",
+    "verified": true
+  },
+  "authorityUse": "CONTROLLING_BUILD_INTENT",
+  "implementationTruthSource": "smarter-justice-v1.7.58.zip",
+  "nextVersionDerived": "1.7.59",
+  "sameVersionReleasePrevented": true,
+  "historicalV1758LearningRevalidated": true
+}

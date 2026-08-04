@@ -1,0 +1,153 @@
+{
+  "schema": "smarter-justice-learning-lineage-and-propagation-register",
+  "schemaVersion": "1.0.0",
+  "releaseVersion": "1.7.61",
+  "generatedAt": "2026-07-31T17:14:00-04:00",
+  "sourceArtifact": {
+    "filename": "smarter-justice-v1.7.59.zip",
+    "version": "1.7.59",
+    "sha256": "f08909fbf879e9005d47b7361f089decc946d78c21c6118471b4be1fb77f9bb0",
+    "sizeBytes": 5140893,
+    "entries": 1540,
+    "files": 1522,
+    "directories": 18,
+    "uncompressedBytes": 14436218,
+    "compressedBytes": 4915537,
+    "inventoryRecords": 1521,
+    "inventorySha256": "3d88800f9dffc009de333cc37564f8f8a78a7f6a5700d12f54fc4b29acb4b891",
+    "packageJsonSha256": "4989e6fe8315ce1aefa7d6293e697ead2e529f4867c878ff7875254594b36a38",
+    "packageLockSha256": "0a57574b69b77be51de3b0b3473ca297f3871a9f5e4c3d20494826842d161743",
+    "lockfileSha256": "0a57574b69b77be51de3b0b3473ca297f3871a9f5e4c3d20494826842d161743",
+    "sbomSha256": "655acf4a8b0ce9497a14f676015aec7d1dcf9a27957aeb21f39e13dc4a6f1fd1",
+    "treeSha256": "b1d0354584ec57223cca8dc48a62462a13a91adf6ee22f8f1714241fb72bc9cf",
+    "dependencyIndependentParts": 115,
+    "totalReadinessParts": 116,
+    "testLogSha256": "30a26f564c97905a6f8bd527058f1b67bdaa402e06290f2a7a7c5aafe9c5f87e",
+    "concurrentBaselineRuns": 2,
+    "concurrentBaselineResult": "PASS_IDENTICAL_OUTPUT",
+    "evidenceState": "CURRENT_CHAT_REPRODUCED"
+  },
+  "lineagePolicy": "Only exact source-verified or target-accepted learning may be propagated; prompts and copied summaries are not proof.",
+  "items": [
+    {
+      "learningId": "SJ-LRN-1760-001",
+      "parentLearningId": "SJ-LRN-1759-001",
+      "sourceProduct": "Smarter Justice",
+      "sourceArtifact": "smarter-justice-v1.7.59.zip",
+      "sourceSha256": "f08909fbf879e9005d47b7361f089decc946d78c21c6118471b4be1fb77f9bb0",
+      "sourceEvidenceState": "CURRENT_CHAT_REPRODUCED",
+      "classification": "SMARTER JUSTICE CENTRAL-ONLY PRACTICE",
+      "candidate": "Reusable command integrity, no-loss disposition, capability tiers, owner action queue and atomic continuity.",
+      "sourceBenefit": "Makes later builds recoverable, version-monotonic and owner-actionable.",
+      "sourceLimit": "Deployment and live operation remain unaccepted.",
+      "targetDisposition": "ADOPT AS VERIFIED",
+      "targetImplementation": [
+        "REUSABLE_MASTER_COMMAND_INTAKE_V1.7.60.json",
+        "OWNER_ACTION_READINESS_V1.7.60.json",
+        "CONTINUATION_SNAPSHOT_V1.7.60.json"
+      ],
+      "propagationState": "TARGET IMPLEMENTED",
+      "targetAcceptance": "PENDING_EXACT_FINAL_ARTIFACT",
+      "rollback": "smarter-justice-v1.7.59.zip"
+    },
+    {
+      "learningId": "SJ-LRN-1760-002",
+      "parentLearningId": "SJ-LRN-1759-003",
+      "sourceProduct": "Initial legal portals",
+      "sourceArtifact": "OWNER_RECORDED_CURRENT_AUTHORITIES",
+      "sourceSha256": null,
+      "sourceEvidenceState": "CURRENT_CHAT OWNER-RECORDED",
+      "classification": "PORTAL-SHARED PRACTICE",
+      "candidate": "Current portal exact identity, evidence state, staging, deployment and live acceptance remain separate.",
+      "sourceBenefit": "Prevents stale or falsely verified five-platform launch truth.",
+      "sourceLimit": "Portal exact artifacts were not inspected in this build.",
+      "targetDisposition": "ADAPT FOR SMARTER JUSTICE",
+      "targetImplementation": [
+        "INITIAL_PORTAL_AUTHORITY_V1.7.60.json",
+        "INITIAL_PORTAL_CURRENTNESS_RECEIPT_V1.7.60.json"
+      ],
+      "propagationState": "TARGET PROMPTED",
+      "targetAcceptance": "CENTRAL_METADATA_ACCEPTED_PORTAL_D4_BLOCKED",
+      "rollback": "smarter-justice-v1.7.59.zip"
+    },
+    {
+      "learningId": "SJ-LRN-1760-003",
+      "parentLearningId": "SJ-LRN-1759-004",
+      "sourceProduct": "Smarter Justice",
+      "sourceArtifact": "smarter-justice-v1.7.59.zip",
+      "sourceSha256": "f08909fbf879e9005d47b7361f089decc946d78c21c6118471b4be1fb77f9bb0",
+      "sourceEvidenceState": "CURRENT_CHAT_REPRODUCED",
+      "classification": "SMARTER JUSTICE CENTRAL-ONLY PRACTICE",
+      "candidate": "One central professional account, commercial relationship and fail-closed entitlement model.",
+      "sourceBenefit": "Avoids duplicate portal accounts, subscriptions and support fragmentation.",
+      "sourceLimit": "Live billing remains closed.",
+      "targetDisposition": "ADOPT AS VERIFIED",
+      "targetImplementation": [
+        "CENTRAL_COMMERCIAL_ARCHITECTURE_V1.7.60.json"
+      ],
+      "propagationState": "TARGET IMPLEMENTED",
+      "targetAcceptance": "POLICY_AND_SCHEMA_ACCEPTED_LIVE_GATE_CLOSED",
+      "rollback": "smarter-justice-v1.7.59.zip"
+    },
+    {
+      "learningId": "SJ-LRN-1760-004",
+      "parentLearningId": "SJ-LRN-1759-005",
+      "sourceProduct": "Domestic Violence Aid",
+      "sourceArtifact": "domestic-violence-aid-v0.48.0.zip",
+      "sourceSha256": "e170a5393dba673d5efc78ae008c4393977bd4e5892421152a1a3ae49d1d38d0",
+      "sourceEvidenceState": "CURRENT_CHAT OWNER-RECORDED",
+      "classification": "SAFETY-RESTRICTED PRACTICE",
+      "candidate": "Survivor-safety review, no confidential locations, privacy minimization and separate routing acceptance.",
+      "sourceBenefit": "Protects central coordination touching Domestic Violence Aid.",
+      "sourceLimit": "Dedicated portal implementation not inspected.",
+      "targetDisposition": "VERIFY BEFORE ADOPTION",
+      "targetImplementation": [
+        "OWNER_ACTION_QUEUE_V1.7.60.json"
+      ],
+      "propagationState": "VERIFY AGAINST NEW SOURCE VERSION",
+      "targetAcceptance": "QUALIFIED_REVIEW_REQUIRED",
+      "rollback": "Keep live routing closed."
+    },
+    {
+      "learningId": "SJ-LRN-1760-005",
+      "parentLearningId": "SJ-LRN-1759-005",
+      "sourceProduct": "Smarter Justice",
+      "sourceArtifact": "smarter-justice-v1.7.59.zip",
+      "sourceSha256": "f08909fbf879e9005d47b7361f089decc946d78c21c6118471b4be1fb77f9bb0",
+      "sourceEvidenceState": "CURRENT_CHAT_REPRODUCED",
+      "classification": "SMARTER JUSTICE CENTRAL-ONLY PRACTICE",
+      "candidate": "Matter Path deterministic fallback, explainable readiness and separately gated external AI.",
+      "sourceBenefit": "Preserves useful Tier A routing and preparation without making external AI a launch dependency.",
+      "sourceLimit": "Paid provider activation, sensitive data processing and live external AI remain closed.",
+      "targetDisposition": "ADOPT AS VERIFIED",
+      "targetImplementation": [
+        "MATTER_PATH_AND_AI_BOUNDARY_V1.7.60.json"
+      ],
+      "propagationState": "TARGET IMPLEMENTED",
+      "targetAcceptance": "POLICY_AND_DETERMINISTIC_FALLBACK_ACCEPTED_EXTERNAL_AI_CLOSED",
+      "rollback": "smarter-justice-v1.7.59.zip"
+    },
+    {
+      "learningId": "SJ-L-1761-VERSION-NEUTRAL-PORTAL-AUTHORITY",
+      "parentLearningId": "SJ-L-1760-PORTAL-AUTHORITY",
+      "sourceProduct": "Smarter Justice",
+      "sourceArtifact": "smarter-justice-v1.7.60.zip",
+      "classification": "SMARTER JUSTICE CENTRAL-ONLY PRACTICE",
+      "disposition": "ADAPT FOR SMARTER JUSTICE",
+      "propagationState": "TARGET IMPLEMENTED",
+      "benefit": "Portal releases no longer force master-prompt revisions or stale current-version propagation.",
+      "gateState": "LOCALLY_ACCEPTED_PENDING_EXACT_FINAL_ARTIFACT"
+    },
+    {
+      "learningId": "SJ-L-1761-BINDING-15-MONTHLY",
+      "parentLearningId": "SJ-L-1760-CENTRAL-COMMERCIAL",
+      "sourceProduct": "Owner decision / Smarter Justice",
+      "sourceArtifact": "smarter-justice-v1.7.60.zip",
+      "classification": "SMARTER JUSTICE CENTRAL-ONLY PRACTICE",
+      "disposition": "ADOPT AS VERIFIED",
+      "propagationState": "TARGET IMPLEMENTED",
+      "benefit": "One clear monthly commercial relationship with no duplicate payer or portal subscription.",
+      "gateState": "IMPLEMENTED_GATES_CLOSED"
+    }
+  ]
+}

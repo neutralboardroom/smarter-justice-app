@@ -1,0 +1,77 @@
+{
+  "schema": "smarter-justice-release-evidence",
+  "releaseVersion": "1.7.78",
+  "generatedAt": "2026-08-03T12:19:00-04:00",
+  "status": "CANDIDATE_ACCEPTED_FINAL_SOURCE_SEALED_DETACHED_FINAL_PENDING",
+  "sourceArtifact": {
+    "filename": "smarter-justice-v1.7.77.zip",
+    "version": "1.7.77",
+    "sha256": "0df3fc34a27eccbd0f209d5479106d8f491549361e18d075b107ed87553b1ccf",
+    "sizeBytes": 8459920,
+    "entries": 2987,
+    "files": 2963,
+    "directories": 24,
+    "uncompressedBytes": 25384000,
+    "compressedBytes": 8007392,
+    "inventoryRecords": 2962,
+    "inventorySha256": "74135292d6f9f6c39bfdfb69db78de9efc6e3252e9a302f015d73f90bc736638",
+    "treeSha256": "74135292d6f9f6c39bfdfb69db78de9efc6e3252e9a302f015d73f90bc736638",
+    "packageJsonSha256": "f181e25011fea7fe48aa883e0b8008466c9f7c386bb8c2c6ba5a75748a164ad3",
+    "packageLockSha256": "1e586daf999a080c30a96ec280aa3e0414d5ad44e6d4ca1387fa343cb5798d89",
+    "sbomSha256": "58c24b6b6b1ddff28a80823c7397377fea210b7582ddd3e8cc04d03605e3c445",
+    "dependencyIndependentParts": 133,
+    "totalReadinessParts": 134,
+    "testLogSha256": "b0c0743c4eb031ada699d50f328d648f712deb4e9f23136cc15d4c255c023976"
+  },
+  "workingTreeAcceptance": {
+    "record": "WORKING_TREE_ACCEPTANCE_V1.7.78.json",
+    "commandsPerRun": 135,
+    "runs": 2,
+    "identicalOutput": true,
+    "testLogSha256": "da346ac79ed36e791091d0f6dcf355620d5e3ee875b58945475554a1a035cd58",
+    "state": "PASS_TWO_IDENTICAL_RUNS_EXACT_CANDIDATE_PENDING"
+  },
+  "materialImprovements": {
+    "productPlatform": [
+      "OpenAI-only central registered-tool gateway",
+      "Five-product AI capability matrix and owner operations truth",
+      "User transparency, injection isolation, output validation and deterministic fallback"
+    ],
+    "builderPromptSystem": [
+      "Exact overlay checkpoint and OpenAI launch governance validator",
+      "Mock/synthetic gateway, safety and operations regression tests"
+    ]
+  },
+  "candidateAcceptance": {
+    "record": "CANDIDATE_ARTIFACT_ACCEPTANCE_V1.7.78.json",
+    "state": "CANDIDATE_ACCEPTED_NONCIRCULAR",
+    "sha256": "623b3081b1a6c5316b6c37dc2837d0b747389416941192cd0e932a829d3a3489",
+    "sizeBytes": 8503453,
+    "testLogSha256": "da346ac79ed36e791091d0f6dcf355620d5e3ee875b58945475554a1a035cd58"
+  },
+  "finalAcceptance": {
+    "record": "FINAL_ARTIFACT_ACCEPTANCE_V1.7.78.json",
+    "state": "DETACHED_FINAL_ARCHIVE_PENDING"
+  },
+  "launchState": "NO_GO",
+  "deploymentAuthorized": false,
+  "openAiLaunch": {
+    "launchBatchId": "SJP-OPENAI-LIVE-2026-08-03-BATCH-02",
+    "overlayCheckpoint": "OPENAI_LAUNCH_OVERLAY_CHECKPOINT_V1.7.78.json",
+    "gatewayContract": "AI_GATEWAY_CONTRACT_V1.7.78.json",
+    "modelConfiguration": "AI_MODEL_CONFIGURATION_V1.7.78.json",
+    "toolPromptRegistry": "AI_TOOL_AND_PROMPT_REGISTRY_V1.7.78.json",
+    "capabilityMatrix": "FIVE_PRODUCT_AI_CAPABILITY_MATRIX_V1.7.78.json",
+    "vendorPolicy": "OPENAI_ONLY",
+    "keyConfigured": false,
+    "liveSmokePassed": false,
+    "portalCompatibilityReceipts": 0,
+    "deploymentAuthorized": false,
+    "launchState": "NO_GO"
+  },
+  "sourcePackageHashes": {
+    "packageJsonSha256": "a5b18758ea301db10bbb826959ec2a531de55bb7bc3de419eef5ae794b9b8a37",
+    "packageLockSha256": "f3fced9c44334858328ed25783b6114fafd6060654cc549fe02afe6e8bb80fb7",
+    "sbomSha256": "6b0997aebc62a510b55f5c286d16bb410d5444a26a31ca18f03998e500a9e8b9"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "receiptVersion": "1.0.0",
+  "environment": "LOCAL_FIXTURE_ONLY",
+  "portalId": "personal-injury-law-aid",
+  "batchId": "fixture-964d0317589299fd",
+  "schemaVersion": "1.4.0",
+  "digest": "964d0317589299fde534dc6b4bf0a6cabe736b4154933b5ca3ba3ed6d16dbc68",
+  "receivedAt": "2026-07-28T00:00:00-04:00",
+  "processedAt": "2026-07-28T00:00:00-04:00",
+  "upsertPrivateCount": 60,
+  "upsertPublicCount": 0,
+  "suppressionCount": 0,
+  "rejectedCount": 0,
+  "conflictCount": 0,
+  "lastKnownGood": true,
+  "adapterVersion": "1.1.0",
+  "operator": "local-fixture-generator",
+  "result": "LOCAL_VALIDATION_PASS_NOT_IMPORTED",
+  "errorSummary": "",
+  "rollbackAvailable": true,
+  "liveConnection": false,
+  "automaticWrites": false
+}

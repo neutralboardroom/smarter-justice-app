@@ -1,0 +1,157 @@
+{
+  "schemaVersion": "1.0.0",
+  "release": {
+    "project": "Smarter Justice",
+    "version": "1.7.9",
+    "title": "Predeployment Governance, Portal Truth, Readiness, and Workflow Inventory",
+    "status": "exact artifact tested",
+    "artifactName": "smarter-justice-v1.7.9.zip",
+    "artifactSha256Location": "Smarter_Justice_v1.7.9_Exact_Artifact_Test_Record.json (external companion generated after final ZIP testing)",
+    "sourceBaseline": {
+      "artifact": "smarter-justice-v1.7.8.zip",
+      "sha256": "e8d72ce5fae315fa6e06cf54040d14e6d941a6f9c95dfca53fbf80ecac92bb1c",
+      "tests": "24-part regression passed before changes"
+    },
+    "rollbackArtifact": "smarter-justice-v1.7.8.zip",
+    "deployment": {
+      "deployed": false,
+      "liveVerified": false,
+      "lastVerifiedProductionVersion": "1.6.1",
+      "statement": "Code-complete and exact-artifact-tested development status does not change production status."
+    }
+  },
+  "completedImprovementItems": [
+    "SJ-NEXT-010",
+    "SJ-NEXT-011",
+    "SJ-NEXT-012",
+    "SJ-NEXT-013",
+    "SJ-NEXT-021",
+    "SJ-NEXT-022",
+    "SJ-NEXT-023"
+  ],
+  "partiallyCompletedImprovementItems": [
+    "SJ-NEXT-014",
+    "SJ-NEXT-016",
+    "SJ-NEXT-018"
+  ],
+  "tests": [
+    {
+      "id": "TEST-V179-GOVERNANCE",
+      "path": "tests/release-governance-v179.test.js",
+      "covers": [
+        "structured improvement list",
+        "active queue",
+        "release evidence",
+        "readiness dimensions",
+        "portal registry truth",
+        "portal capability matrix",
+        "form and document workflow inventory",
+        "professional review timing",
+        "profile data operations"
+      ]
+    },
+    {
+      "id": "TEST-FULL-REGRESSION",
+      "path": "npm test",
+      "covers": [
+        "all prior public, security, storage, marketplace, portal, form, customer-language, and customer-experience protections"
+      ]
+    },
+    {
+      "id": "TEST-FINAL-ZIP",
+      "path": "fresh extraction, npm ci --ignore-scripts, npm test, ZIP safety, source equality, local health",
+      "covers": [
+        "distributed artifact rather than only the working directory"
+      ]
+    }
+  ],
+  "immutableStatusHistory": [
+    {
+      "at": "2026-07-21",
+      "actor": "owner",
+      "event": "Next Version Improvement List maintenance rule approved",
+      "status": "approved",
+      "evidence": "User instruction recorded in project history"
+    },
+    {
+      "at": "2026-07-21",
+      "actor": "build",
+      "event": "v1.7.8 baseline artifact verified",
+      "status": "baseline verified",
+      "evidence": "SHA-256 e8d72ce5fae315fa6e06cf54040d14e6d941a6f9c95dfca53fbf80ecac92bb1c and 24-part baseline regression"
+    },
+    {
+      "at": "2026-07-21",
+      "actor": "build",
+      "event": "v1.7.9 governance and portal-truth improvements completed",
+      "status": "code complete",
+      "evidence": "Structured release artifacts and targeted test"
+    },
+    {
+      "at": "2026-07-21",
+      "actor": "build",
+      "event": "v1.7.9 final release candidate tested",
+      "status": "exact artifact tested",
+      "evidence": "External exact-artifact test record accompanies the final ZIP"
+    }
+  ],
+  "privacySafeFunnelMeasurement": {
+    "runtimeCollectionStatus": "disabled pending privacy review and deployment configuration",
+    "allowedEvents": [
+      "homepage_audience_choice",
+      "public_start_opened",
+      "quick_start_selected",
+      "public_start_completed",
+      "starting_result_action_selected",
+      "focused_portal_details_viewed",
+      "professional_directory_viewed",
+      "professional_membership_viewed",
+      "professional_signup_started",
+      "professional_signup_completed",
+      "profile_claim_started",
+      "credential_step_completed",
+      "checkout_started",
+      "subscription_state_changed",
+      "support_requested"
+    ],
+    "allowedProperties": [
+      "event name",
+      "page or route identifier",
+      "coarse device class",
+      "coarse language",
+      "anonymous session identifier where legally approved",
+      "completion state",
+      "non-sensitive error category"
+    ],
+    "prohibitedProperties": [
+      "free-text legal description",
+      "document text",
+      "file name",
+      "person name",
+      "email",
+      "phone",
+      "street address",
+      "case number",
+      "notice number",
+      "medical information",
+      "immigration information",
+      "domestic-violence information",
+      "tax identifiers",
+      "payment-card data",
+      "professional-client communication"
+    ],
+    "rule": "No confidential description or document content may enter analytics. Consent, retention, access, deletion, and vendor settings require separate privacy approval."
+  },
+  "closedGates": [
+    "confidential production uploads",
+    "sensitive external AI",
+    "professional membership payments",
+    "public Human Review charges",
+    "public subscriptions",
+    "consultation booking",
+    "public reviews and ratings",
+    "unrestricted matching or routing",
+    "automatic filing",
+    "broad cross-portal sharing"
+  ]
+}

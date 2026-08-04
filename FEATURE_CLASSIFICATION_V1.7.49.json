@@ -1,0 +1,62 @@
+{
+  "releaseVersion": "1.7.49",
+  "generatedAt": "2026-07-29T16:22:00-04:00",
+  "liveReady": [],
+  "implementedVerifiedLocal": [
+    "Initial Launch Activation workbench",
+    "Free-profile-first attorney cohort",
+    "Source-supported private profile-candidate intake",
+    "Personalized expiring and revocable attorney invitations",
+    "SHA-256-only invitation token storage",
+    "Public-safe invitation resolution without email exposure",
+    "Existing contact reuse on invitation completion",
+    "Invitation lifecycle tracking",
+    "Recognized launch campaigns",
+    "Allowlisted aggregate launch funnel",
+    "Raw invitation token removal from visible URL after validation",
+    "Owner campaign metrics and CSV export",
+    "Revision-safe portal-specific profile management",
+    "Read-only portal handoff foundations"
+  ],
+  "simulatedOrFixtureBased": [
+    "Invitation issue/open/redeem/revoke/expiry in temporary test storage",
+    "Aggregate funnel counters in temporary test storage",
+    "Profile-candidate batch commit in temporary test storage",
+    "Portal producer-consumer fixtures",
+    "Example import receipts and exports"
+  ],
+  "gatedClosed": [
+    "Public profile publication",
+    "Live portal imports",
+    "Paid membership",
+    "Sponsored/Featured visibility",
+    "Lead and case-opportunity access",
+    "Public inquiries",
+    "Appointments",
+    "Reviews",
+    "Confidential uploads",
+    "External AI",
+    "Automatic portal writes",
+    "Production deployment"
+  ],
+  "blockedExternal": [
+    "Legitimate dependency installation",
+    "Fresh vulnerability audit",
+    "PostgreSQL acceptance",
+    "SMTP acceptance",
+    "Owner/staff MFA operations",
+    "Monitoring and alerts",
+    "Backup and restore",
+    "Exact rollback",
+    "Current three-portal D4 staging",
+    "Physical-device and assistive-technology acceptance"
+  ],
+  "ownerDependent": [
+    "Launch date and cohort",
+    "Support and incident owners",
+    "Production providers and credentials",
+    "Exact rollback artifact",
+    "Legal/commercial approvals",
+    "Deployment authorization"
+  ]
+}

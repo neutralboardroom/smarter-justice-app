@@ -1,0 +1,4 @@
+'use strict';
+const assert=require('assert');const fs=require('fs');const path=require('path');
+for(const f of ['AUDIT_REPORT_V1.7.23.md','CHANGE_MAP_V1.7.23.md','NO_CHANGE_LEDGER_V1.7.23.md','CONTINUATION_PROMPT_V1.7.23.md','RELEASE_EVIDENCE_V1.7.23.json','COMPETITIVE_LANDSCAPE_V1.7.23.json'])assert(fs.existsSync(path.join(__dirname,'..',f)),f);
+const evidence=require('../RELEASE_EVIDENCE_V1.7.23.json');assert.equal(evidence.version,'1.7.23');assert.equal(evidence.deployed,false);assert.equal(evidence.activationGatesChanged,false);assert.equal(evidence.competitorResearch.completed,true);assert.equal(evidence.publicTool.legalHelpOptionsNavigator,true);assert.equal(evidence.profileGrowth.publicDirectory.total,103);assert.equal(evidence.profileGrowth.strictQualifying.total,100);console.log('release-governance-v1723.test.js historical evidence passed');

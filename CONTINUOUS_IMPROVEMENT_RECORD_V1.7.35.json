@@ -1,0 +1,58 @@
+{
+  "version": "1.7.35",
+  "date": "2026-07-27",
+  "theme": "Central professional network and legal-portal coordination",
+  "builderOriginatedCandidates": [
+    {
+      "id": "v1735-candidate-central-identity",
+      "decision": "IMPROVE_NOW",
+      "problem": "Professional account, membership, and portal-participation concepts were distributed across multiple records and could be understood as separate portal relationships.",
+      "result": "Implemented one Smarter Justice professional identity and professional-scoped network view across qualifying legal portals."
+    },
+    {
+      "id": "v1735-candidate-firm-organizations",
+      "decision": "IMPROVE_NOW",
+      "problem": "Firms needed one explicit organization model for multiple professionals, offices, seats, billing administration, and future permissions.",
+      "result": "Implemented firm organizations, actual firm-office references, per-professional seats, billing foundations, and volume-discount readiness."
+    },
+    {
+      "id": "v1735-candidate-assignment-evidence",
+      "decision": "IMPROVE_NOW",
+      "problem": "Firm-wide practice descriptions could be mistaken for individual attorney specialty evidence.",
+      "result": "Implemented separately governed individual practice assignments and portal assignments with payment-independent approval states."
+    },
+    {
+      "id": "v1735-candidate-portal-contracts",
+      "decision": "IMPROVE_NOW",
+      "problem": "Dedicated legal portals lacked one versioned professional metadata boundary.",
+      "result": "Implemented 25 D2 contract-tested read-only handoffs with allowed fields, prohibited data classes, failure states, and no automatic writes."
+    },
+    {
+      "id": "v1735-candidate-live-commerce",
+      "decision": "DEFER",
+      "problem": "Live billing, pricing, checkout, inquiry, appointment, and sponsorship activation lacks complete approved production controls.",
+      "result": "Built safe foundations while keeping every commercial and contact gate closed."
+    },
+    {
+      "id": "v1735-candidate-profile-growth",
+      "decision": "DEFER",
+      "problem": "A clean current individual-level source batch was not independently researched during this architecture release.",
+      "result": "Added zero profiles and preserved exact totals without weak padding."
+    },
+    {
+      "id": "v1735-candidate-cross-pillar-admin",
+      "decision": "REJECT",
+      "problem": "Smarter Justice must not administer inactive nonlegal pillars.",
+      "result": "Preserved legal-network-only scope and concise Neutral Boardroom metadata handoff."
+    }
+  ],
+  "releaseWarrant": {
+    "material": true,
+    "coherent": true,
+    "safe": true,
+    "completeSubjectToExactArtifactGate": true
+  },
+  "ownerBenefit": "The owner can manage one professional-business architecture across the legal network, including firms, offices, seats, evidence-gated assignments, entitlement boundaries, and portal contracts.",
+  "professionalBenefit": "An attorney or firm can eventually maintain one Smarter Justice relationship rather than separate base accounts and subscriptions for every qualifying portal.",
+  "publicUserBenefit": "Users remain on the relevant specialty portal, while professional placement stays evidence-based and independent from payment."
+}

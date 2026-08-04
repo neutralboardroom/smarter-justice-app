@@ -1,0 +1,119 @@
+{
+  "schema_id": "SJP-LMP-PRODUCT-AND-PROMPT-DUAL-IMPROVEMENT-REPORT-2026-08-03-V1",
+  "product": {
+    "name": "Smarter Justice",
+    "version": "1.7.83",
+    "artifact_sha256": "DETACHED_FINAL_NOT_YET_BUILT"
+  },
+  "release_classification": "ORDINARY_MATERIAL_DUAL_TRACK_RELEASE",
+  "independently_discovered_opportunities": [
+    "Translate the deterministic first readiness gap into one exact nonsecret evidence collection packet.",
+    "Cross-bind the canonical suite and release evidence dynamically without creating a self-referential persisted bundle."
+  ],
+  "creative_new_capability_candidates": [
+    "Evidence collection packet",
+    "Provider-specific nonsecret allowlists",
+    "Dynamic acceptance evidence bundle",
+    "Outer-ZIP self-reference rejection"
+  ],
+  "product_platform_improvements": [
+    {
+      "category": "PRODUCT_PLATFORM",
+      "problem": "The readiness planner names the next gap but does not give Roger a complete field-level collection packet.",
+      "implementation": "Added a first-gap-only, time-limited JSON/text packet with exact source and V14 binding, provider-specific nonsecret identifiers, required PASS checks, dependency receipts, forbidden inputs, deterministic digest, and closed preview-only boundaries.",
+      "before_state": "Roger had one exact action but still had to infer which nonsecret identifiers and checks to collect.",
+      "after_state": "Roger receives one downloadable packet containing only the exact nonsecret evidence needed for the first gap.",
+      "affected_files_records_or_systems": [
+        "V14_EVIDENCE_COLLECTION_PACKET_CONTRACT_V1.7.83.json",
+        "lib/v14EvidenceCollectionPacket.js",
+        "server.js",
+        "tests/v14-evidence-collection-packet-v1783.test.js"
+      ],
+      "tests_and_acceptance_evidence": [
+        "tests/v14-evidence-collection-packet-v1783.test.js",
+        "tests/v14-evidence-readiness-planner-v1782.test.js"
+      ],
+      "benefit": "Reduces owner work and secret-exposure risk without opening provider access or live state.",
+      "limitations": [
+        "No external identity or evidence receipt is supplied or accepted by this release."
+      ]
+    }
+  ],
+  "builder_prompt_system_improvements": [
+    {
+      "category": "BUILDER_PROMPT_SYSTEM",
+      "problem": "The canonical manifest and release receipts were separately valid but not cross-bound in one dynamic, non-persisted check.",
+      "implementation": "Added a dynamic acceptance evidence bundle that validates 145 unique ordered commands, working-tree acceptance, exact package/lock/SBOM hashes, both inventories, owner receipt, source and V14 binding, and detached-final boundaries.",
+      "before_state": "Operators had to invoke several validators and manually reconcile their identities.",
+      "after_state": "One fail-closed check produces a deterministic bundle digest without adding a circular payload file.",
+      "affected_files_or_artifacts": [
+        "V14_ACCEPTANCE_EVIDENCE_BUNDLE_CONTRACT_V1.7.83.json",
+        "lib/v14AcceptanceEvidenceBundle.js",
+        "scripts/check-v14-acceptance-evidence-bundle.js",
+        "tests/v14-acceptance-evidence-bundle-v1783.test.js",
+        "package.json",
+        "ACCEPTANCE_SUITE_MANIFEST_V1.7.83.json"
+      ],
+      "tests_and_acceptance_evidence": [
+        "tests/v14-acceptance-evidence-bundle-v1783.test.js",
+        "ACCEPTANCE_SUITE_MANIFEST_V1.7.83.json"
+      ],
+      "benefit": "Prevents omitted, duplicated, stale, reordered, non-PASS, identity-mismatched, or self-referential acceptance evidence.",
+      "limitations": [
+        "It validates local evidence only and does not prove PostgreSQL, provider, deployment, or production state."
+      ],
+      "future_build_benefit": "Every freeze can run one dynamic cross-receipt check after inventory regeneration."
+    }
+  ],
+  "accepted_innovation_waves": [
+    "Nonsecret first-gap evidence collection packet",
+    "Dynamic non-persisted acceptance evidence bundle"
+  ],
+  "reverted_or_rejected_innovation_waves": [
+    "Provider calls, secret collection, receipt persistence, automatic state application, and deployment authorization were rejected.",
+    "A persisted bundle containing current inventory hashes was rejected as potentially self-referential."
+  ],
+  "lessons_carried_forward": [
+    "Single-receipt validation is insufficient for a multi-dependency launch decision.",
+    "Final archive identity must remain detached but should be automatically cross-checked against embedded evidence."
+  ],
+  "prior_limitations_reviewed": [
+    {
+      "id": "live-provider-and-deployment",
+      "source": "v1.7.82",
+      "disposition": "Preserved; connector validates only supplied evidence and performs no external action.",
+      "evidence": "V14_LIVE_EVIDENCE_CONNECTOR_CONTRACT_V1.7.83.json"
+    },
+    {
+      "id": "portal-compatibility",
+      "source": "v1.7.82",
+      "disposition": "Preserved; no portal receipt is invented.",
+      "evidence": "OWNER_RECEIPT.txt"
+    },
+    {
+      "id": "sensitive-document-ai",
+      "source": "v1.7.82",
+      "disposition": "Remains CLOSED_BY_DESIGN.",
+      "evidence": "V14_UNIFIED_LIVE_OPERATIONS_REGISTER_V1.7.83.json"
+    }
+  ],
+  "deferred_opportunities_with_exact_reasons": [
+    "External adapters require exact canonical identities and protected read-only access.",
+    "Applying a valid batch requires a separate authenticated, audited, reversible owner authorization transaction.",
+    "Live OpenAI smoke and portal compatibility require protected deployment and exact portal artifacts."
+  ],
+  "next_innovation_opportunities": [
+    "Collect the first exact nonsecret GitHub/Render receipt with owner-provided identities.",
+    "Add a detached signed owner acknowledgment only after canonical live evidence exists.",
+    "Automate post-package publication of the final ZIP and detached delivery receipt."
+  ],
+  "dual_track_gate": {
+    "product_platform_material_progress": true,
+    "builder_prompt_system_material_progress": true,
+    "ordinary_release_gate": "PASS_PENDING_FULL_ACCEPTANCE",
+    "product_platform_track_passed": true,
+    "builder_prompt_system_track_passed": true,
+    "ordinary_material_release_authorized": true
+  },
+  "hard_constraints_preserved": true
+}

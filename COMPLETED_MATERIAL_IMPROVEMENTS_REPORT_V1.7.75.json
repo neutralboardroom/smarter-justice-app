@@ -1,0 +1,139 @@
+{
+  "schema_id": "SJP-COMPLETED-MATERIAL-IMPROVEMENTS-REPORT-2026-08-03-V11",
+  "product": {
+    "name": "Smarter Justice",
+    "id": "smarter-justice-central",
+    "version": "1.7.75",
+    "artifact_sha256": "PREFINAL_NOT_YET_BOUND",
+    "central_role": "federated legal network identity, governance, professional operations, and shared contracts"
+  },
+  "release_classification": "COMPLETE_CONNECTED_CENTRAL_RECOVERY_RELEASE",
+  "release_headline": "Truthful recovery of the provider authorization lifecycle plus V11 structured workflow and consent governance.",
+  "primary_non_profile_material_improvement": {
+    "name": "Append-only provider-discovery authorization lifecycle",
+    "before": "Exact v1.7.73 has detached authorization and single-use envelope controls but not the complete documented v1.7.74 lifecycle artifact.",
+    "after": "Hash-chained request, authorize/decline/expire/revoke, envelope, receipt, replay, tamper, and owner visibility controls are rebuilt and tested without claiming v1.7.74 byte identity.",
+    "evidence": [
+      "lib/providerDiscoveryAuthorizationLifecycle.js",
+      "PROVIDER_DISCOVERY_AUTHORIZATION_LIFECYCLE_V1.7.75.json",
+      "tests/provider-discovery-authorization-lifecycle-v1775.test.js"
+    ]
+  },
+  "other_non_profile_material_improvements": [
+    {
+      "name": "Structured workflow governance registry",
+      "evidence": [
+        "STRUCTURED_WORKFLOW_GOVERNANCE_V1.7.75.json"
+      ]
+    },
+    {
+      "name": "Strategic capability decision and maturity dashboard",
+      "evidence": [
+        "STRATEGIC_CAPABILITY_DECISION_REGISTER_V1.7.75.json",
+        "CAPABILITY_MATURITY_DASHBOARD_V1.7.75.json"
+      ]
+    },
+    {
+      "name": "Consent architecture compatibility validator",
+      "evidence": [
+        "CONSENT_BASED_JOURNEY_ORCHESTRATION_CONTRACT_V1.7.75.json",
+        "SMARTER_NETWORK_ARCHITECTURE_AND_CONSENT_COMPATIBILITY_RECEIPT_V1.7.75.json"
+      ]
+    },
+    {
+      "name": "Complete V11 durable-rule applicability ledger",
+      "evidence": [
+        "DURABLE_RULE_APPLICABILITY_LEDGER_V1.7.75.json"
+      ]
+    }
+  ],
+  "professional_profile_growth_and_enrichment": "NOT_APPLICABLE_TO_CENTRAL_RELEASE",
+  "legal_content_and_source_currentness": "No substantive legal-source refresh claimed; existing exact registries are indexed only.",
+  "testing_exact_artifact_and_readiness": "PENDING_FINAL_ARTIFACT",
+  "material_categories_completed": [
+    "authorization",
+    "governance",
+    "privacy architecture",
+    "owner operability",
+    "recovery integrity"
+  ],
+  "claimed_activity_not_counted_as_material_improvement": [
+    "version label updates",
+    "copied historical evidence",
+    "format-only changes"
+  ],
+  "unresolved_next_work": [
+    "Owner decision remains absent",
+    "Provider metadata remains unread",
+    "Four portal exact artifacts remain required for their requests",
+    "Product-local consent contract adoption remains separate",
+    "PostgreSQL-dependent acceptance remains separate"
+  ],
+  "deferred_connected_material_improvements_with_exact_reasons": [
+    {
+      "candidate_id": "MATTER_READINESS_ENGINE_V2",
+      "decision": "DEFERRED",
+      "maturity": "D0_NOT_IMPLEMENTED",
+      "minimum_slice": null,
+      "deployment_effect": "NONE",
+      "exact_reason": "Existing structured public preparation tools already provide bounded readiness; deeper scoring needs separate legal-safety design and product evidence."
+    },
+    {
+      "candidate_id": "SHARED_TIMELINE_EVENT_CONTRACT",
+      "decision": "DEFERRED",
+      "maturity": "D0_PRODUCT_LOCAL_DESIGN_REQUIRED",
+      "minimum_slice": null,
+      "deployment_effect": "NONE",
+      "exact_reason": "A shared schema must first be accepted by product-local owners and storage models; central must not create a universal sensitive timeline."
+    },
+    {
+      "candidate_id": "HEALTH_CONTINUITY_TIMELINES",
+      "decision": "ROUTED",
+      "maturity": "NOT_APPLICABLE",
+      "minimum_slice": null,
+      "deployment_effect": "NONE",
+      "exact_reason": "Primary home is unified Smarter Health."
+    },
+    {
+      "candidate_id": "PROPERTY_LIFECYCLE_FRAMEWORK",
+      "decision": "ROUTED",
+      "maturity": "NOT_APPLICABLE",
+      "minimum_slice": null,
+      "deployment_effect": "NONE",
+      "exact_reason": "Primary home is unified Smarter Property."
+    },
+    {
+      "candidate_id": "MONEY_CONTINUITY_AND_PREPARATION_TIMELINES",
+      "decision": "ROUTED",
+      "maturity": "NOT_APPLICABLE",
+      "minimum_slice": null,
+      "deployment_effect": "NONE",
+      "exact_reason": "Primary home is unified Smarter Money."
+    }
+  ],
+  "accepted_implementation_waves": [
+    {
+      "wave": 1,
+      "name": "Exact recovery intake and lineage receipt",
+      "status": "ACCEPTED"
+    },
+    {
+      "wave": 2,
+      "name": "Provider authorization lifecycle reconstruction",
+      "status": "ACCEPTED"
+    },
+    {
+      "wave": 3,
+      "name": "V11 structured workflows, maturity, and consent governance",
+      "status": "ACCEPTED"
+    }
+  ],
+  "regression_and_stop_loss": "Zero unresolved new regression required before candidate packaging.",
+  "safe_release_saturation_receipt": "SAFE_RELEASE_CAPACITY_AND_SATURATION_RECEIPT_V1.7.75.json",
+  "build_state_checkpoint": "BUILD_STATE_CHECKPOINT_V1.7.75.json",
+  "current_date_overlay_applied": true,
+  "strategic_capability_results": "STRATEGIC_CAPABILITY_DECISION_REGISTER_V1.7.75.json",
+  "architecture_and_consent_compatibility_receipt": "SMARTER_NETWORK_ARCHITECTURE_AND_CONSENT_COMPATIBILITY_RECEIPT_V1.7.75.json",
+  "strongest_justified_set_language_validated": true,
+  "qualified_launch_not_delayed_by_unrelated_scope": true
+}

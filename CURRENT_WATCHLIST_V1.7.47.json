@@ -1,0 +1,51 @@
+{
+  "releaseVersion": "1.7.47",
+  "generatedAt": "2026-07-29T15:54:00-04:00",
+  "items": [
+    {
+      "priority": "P0",
+      "item": "Production PostgreSQL, migrations, transactions and restart persistence",
+      "status": "BLOCKED_EXTERNAL"
+    },
+    {
+      "priority": "P0",
+      "item": "SMTP verification/recovery and owner/staff MFA acceptance",
+      "status": "NOT_ACCEPTED"
+    },
+    {
+      "priority": "P0",
+      "item": "Support, incident, monitoring, backup, restore and exact rollback",
+      "status": "NOT_ACCEPTED"
+    },
+    {
+      "priority": "P0",
+      "item": "Exact Divorce, Estate and Personal Injury artifacts, D3/D4 acceptance, receipts and rollback",
+      "status": "NOT_ACCEPTED"
+    },
+    {
+      "priority": "P0",
+      "item": "Browser, phone, tablet, keyboard, zoom and screen-reader acceptance",
+      "status": "NOT_ACCEPTED"
+    },
+    {
+      "priority": "P1",
+      "item": "Pricing, Stripe lifecycle, disclosures, refunds, cancellation, legal review and opportunity workflow",
+      "status": "CLOSED"
+    },
+    {
+      "priority": "WATCH",
+      "item": "Prevent historical founding/tax/accounting promotion from resurfacing on launch-facing pages",
+      "status": "REGRESSION_COVERED"
+    },
+    {
+      "priority": "P0",
+      "item": "Lawful source permission, provenance, currentness and human review for every production profile batch",
+      "status": "NOT_ACCEPTED"
+    },
+    {
+      "priority": "WATCH",
+      "item": "Prevent profile batch operations from granting verification, specialty, publication, paid growth or organic prominence",
+      "status": "REGRESSION_COVERED"
+    }
+  ]
+}

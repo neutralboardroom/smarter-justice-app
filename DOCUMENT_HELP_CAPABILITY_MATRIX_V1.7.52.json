@@ -1,0 +1,93 @@
+{
+  "schema": "smarter-justice-document-help-capability-matrix",
+  "schemaVersion": "1.0.0",
+  "releaseVersion": "1.7.52",
+  "status": "STANDARD_DEFINED_PORTAL_ADOPTION_UNVERIFIED",
+  "sharedCapabilities": [
+    {"id":"draft-letter-notice","label":"Draft a letter or notice"},
+    {"id":"upload-review","label":"Upload and review a document"},
+    {"id":"compare-documents","label":"Compare two or more documents"},
+    {"id":"analysis-feedback","label":"Receive analysis, feedback, and suggestions"},
+    {"id":"agreement-preparation","label":"Prepare or review an agreement"},
+    {"id":"official-form-library","label":"Find a current official form"},
+    {"id":"guided-form-preparation","label":"Complete guided official-form preparation"},
+    {"id":"form-filling-workspace","label":"Use a controlled form-filling workspace"},
+    {"id":"attorney-organization","label":"Organize documents and facts for an attorney"},
+    {"id":"attorney-review-package","label":"Prepare an attorney-review package"},
+    {"id":"advanced-form-builder","label":"Request controlled access to an advanced form builder"},
+    {"id":"workspace-continuity","label":"Preserve workspace continuity where safe and approved"}
+  ],
+  "sharedRules": {
+    "confidentialUploads": "CLOSED_UNLESS_SEPARATELY_APPROVED",
+    "externalAi": "CLOSED_UNLESS_SEPARATELY_APPROVED",
+    "electronicFiling": "NOT_OFFERED_OR_IMPLIED",
+    "unsupportedFormats": "MUST_NOT_BE_CLAIMED",
+    "browserLocalProcessing": "PRESERVE_WHERE_CURRENTLY_SAFE_AND_COMPLETE",
+    "privateDocumentsExcludedFrom": ["analytics","ordinary logs","URLs","public demo records","profile exports","portfolio records","fixtures","version-control history"]
+  },
+  "officialFormCurrentnessFields": [
+    "issuingAuthority",
+    "formIdentifier",
+    "editionOrRevisionDate",
+    "officialSourceUrl",
+    "retrievedAt",
+    "verifiedAt",
+    "jurisdiction",
+    "expirationOrReplacementState"
+  ],
+  "formatControlFields": [
+    "format",
+    "maximumSizeBytes",
+    "validation",
+    "parsingBehavior",
+    "previewBehavior",
+    "failureBehavior",
+    "privacy",
+    "retention",
+    "deletion",
+    "accessibility",
+    "maliciousFileHandling",
+    "processingLocation",
+    "sensitiveContentPermission"
+  ],
+  "portals": [
+    {
+      "portalId":"divorce-law-aid",
+      "name":"Divorce Law Aid",
+      "pilotOrder":1,
+      "artifactReference":"divorce-law-aid-v0.22.0.zip",
+      "artifactEvidence":"OWNER_RECORDED_NOT_STAGED",
+      "adoptionState":"VERIFY_IN_DEDICATED_PORTAL_ARTIFACT",
+      "recommendedEntryPoints":["draft-letter-notice","upload-review","agreement-preparation","official-form-library","guided-form-preparation","attorney-review-package"]
+    },
+    {
+      "portalId":"estate-law-aid",
+      "name":"Estate Law Aid",
+      "pilotOrder":2,
+      "artifactReference":"estate-law-aid-v1.1.47.zip",
+      "artifactEvidence":"OWNER_RECORDED_NOT_STAGED",
+      "adoptionState":"VERIFY_IN_DEDICATED_PORTAL_ARTIFACT",
+      "recommendedEntryPoints":["draft-letter-notice","upload-review","compare-documents","agreement-preparation","official-form-library","attorney-review-package"]
+    },
+    {
+      "portalId":"personal-injury-law-aid",
+      "name":"Personal Injury Law Aid",
+      "pilotOrder":3,
+      "artifactReference":"personal-injury-law-aid-v0.40.0.zip",
+      "artifactEvidence":"OWNER_RECORDED_NOT_STAGED",
+      "adoptionState":"VERIFY_IN_DEDICATED_PORTAL_ARTIFACT",
+      "scopeBoundary":"Vehicle accidents and other general personal-injury matters; workers’ compensation and medical malpractice remain separate portals.",
+      "recommendedEntryPoints":["upload-review","compare-documents","analysis-feedback","attorney-organization","attorney-review-package","workspace-continuity"]
+    },
+    {
+      "portalId":"domestic-violence-aid",
+      "name":"Domestic Violence Aid",
+      "pilotOrder":4,
+      "artifactReference":"domestic-violence-aid-v0.31.0.zip",
+      "artifactEvidence":"OWNER_RECORDED_NOT_STAGED",
+      "adoptionState":"VERIFY_WITH_SURVIVOR_SAFETY_OVERLAY",
+      "safetyBoundary":"No silent autosave, automatic contact, precise confidential location, sensitive URL content, or unapproved upload storage.",
+      "recommendedEntryPoints":["draft-letter-notice","official-form-library","guided-form-preparation","attorney-organization","attorney-review-package"]
+    }
+  ]
+}

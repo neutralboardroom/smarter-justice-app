@@ -1,0 +1,10 @@
+'use strict';
+const assert=require('assert');const fs=require('fs');const path=require('path');
+const root=path.join(__dirname,'..');const html=fs.readFileSync(path.join(root,'public','trust-verification.html'),'utf8');const js=fs.readFileSync(path.join(root,'public','trust-verification.js'),'utf8');const tools=fs.readFileSync(path.join(root,'public','free-tools.html'),'utf8');
+for(const token of ['Trust & Verification Center','Pause, preserve, and verify','Suspicious message verification plan','AI-assisted legal draft safety check','does not authenticate a message','No authentication result, legal advice, deadline calculation'])assert(html.includes(token),token);
+for(const sender of ['court','law-enforcement','government','law-firm','collector','bank-insurer','other'])assert(html.includes(`value="${sender}"`),sender);
+for(const check of ['jurisdiction','official-sources','citations','facts','dates','privacy','court-rules','human-review'])assert(html.includes(`value="${check}"`),check);
+for(const banned of ['fetch(','XMLHttpRequest','WebSocket','localStorage','sessionStorage','navigator.sendBeacon'])assert(!js.includes(banned),`network/storage primitive present: ${banned}`);
+for(const token of ['SMARTER_JUSTICE_TRUST_MESSAGE_V1.7.25','SMARTER_JUSTICE_AI_DRAFT_CHECK_V1.7.25','SMARTER_JUSTICE_TRUST_VERIFICATION_EXPORT_V1.7.25','Download text','Download JSON'])assert((html+js).includes(token),token);
+assert(tools.includes('/trust-verification.html'));assert(fs.readFileSync(path.join(root,'public','sitemap.xml'),'utf8').includes('/trust-verification.html'));assert(fs.readFileSync(path.join(root,'public','llms.txt'),'utf8').includes('Trust & Verification Center'));
+console.log('trust-verification-center-v1725.test.js passed');

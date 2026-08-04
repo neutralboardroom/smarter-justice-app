@@ -1145,9 +1145,9 @@ const OFFICIAL_SOURCE_CATALOG = [
 
 const FORM_READINESS_LEVELS = [
   { level: 0, label: 'Source catalog only', meaning: 'Official source is tracked, but Smarter Justice should not guide or complete this path yet.' },
-  { level: 1, label: 'Worksheet only', meaning: 'Smarter Justice can collect facts and create an organized starter file for review.' },
+  { level: 1, label: 'Worksheet only', meaning: 'Smarter Justice can collect facts and create an organized starting summary for review.' },
   { level: 2, label: 'Field-mapped draft foundation', meaning: 'A future version may map answers to fields after verification; human review remains required.' },
-  { level: 3, label: 'Review-ready completed draft', meaning: 'Completed official drafts may be generated only after internal review and verified mapping.' },
+  { level: 3, label: 'Prepared for review completed draft', meaning: 'Completed official drafts may be generated only after internal review and verified mapping.' },
   { level: 4, label: 'Sign-ready after review', meaning: 'User-facing completed forms can be delivered only after review, user verification, and payment where applicable.' },
   { level: 5, label: 'Filing support where allowed', meaning: 'Future filing/e-filing support only where permitted and technically/compliance ready.' }
 ];
@@ -1157,7 +1157,7 @@ function readinessForForm(form, row){
   if (/professional engagement required|attorney review|tax professional|tax attorney|patent attorney|ip attorney|review recommended|professional review/.test(text)) return 1;
   if (/worksheet|starter-file/.test(text)) return 1;
   if (/future verified|field/.test(text)) return 2;
-  if (/review-ready completed/.test(text)) return 3;
+  if (/prepared for review completed/.test(text)) return 3;
   if (/sign-ready/.test(text)) return 4;
   return 1;
 }

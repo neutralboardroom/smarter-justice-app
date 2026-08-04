@@ -1,0 +1,67 @@
+{
+  "version": "1.7.33",
+  "date": "2026-07-26",
+  "maturitySummary": "Material legal-network refocus release that removes obsolete cross-pillar administrative runtime, clarifies authority, creates a minimum necessary upward handoff, and preserves Smarter Justice execution rigor.",
+  "baseline": {
+    "sourceArtifact": "smarter-justice-v1.7.32.zip",
+    "sourceSha256": "e799ff53bc4864e4d4ef67dcf675734ebd60c8be0e9eabcbb80d466e5e8c0beb",
+    "sourceSizeBytes": 1721833,
+    "testSuiteParts": 82,
+    "directory": {
+      "professionals": 233,
+      "firms": 48,
+      "publicTotal": 281,
+      "strictQualifyingProfessionals": 232,
+      "strictQualifyingFirms": 46,
+      "strictQualifyingTotal": 278
+    }
+  },
+  "implemented": [
+    {
+      "change": "Legal-network refocus",
+      "benefit": "Removes top-level four-pillar administration from Smarter Justice so it can concentrate on legal-sector launch and operations.",
+      "result": "Current command center, workspace, UI, exports, and runtime state are legal-network-only."
+    },
+    {
+      "change": "Neutral Boardroom upward handoff",
+      "benefit": "Gives the top-level owner system concise evidence-labeled legal-network status without centralizing confidential data.",
+      "result": "Versioned owner-only JSON export with no live connection or writes."
+    },
+    {
+      "change": "Legacy runtime retirement",
+      "benefit": "Reduces ambiguity, code paths, storage, test burden, and risk of accidentally reviving cross-sector scope.",
+      "result": "Removed 7 active legacy files and 63138 bytes; old API aliases fail closed."
+    },
+    {
+      "change": "Authority and data boundary",
+      "benefit": "Separates owner strategy, legal-sector execution, and portal implementation truth.",
+      "result": "Decision and information flows are explicit in runtime records and tests."
+    },
+    {
+      "change": "Profile-quality restraint",
+      "benefit": "Preserves directory quality during an architecture-focused release.",
+      "result": "Zero new profiles; existing exact totals preserved."
+    }
+  ],
+  "preserved": [
+    "Public legal starting-help and preparation tools",
+    "Independent legal portal authority",
+    "Legal professional marketplace foundations",
+    "Preparation Quality Check and portfolio truth",
+    "All sensitive, commercial, deployment, and automatic-write gates"
+  ],
+  "risks": [
+    "Dedicated portal records still require exact re-verification",
+    "No live Neutral Boardroom producer-consumer adapter",
+    "No deployment authorization",
+    "No physical-device or assistive-technology acceptance",
+    "Registry access may block a fresh dependency audit"
+  ],
+  "highestValueNext": [
+    "Deploy and verify the strongest legal portals",
+    "Refresh exact legal-portal metadata from dedicated artifacts",
+    "Improve legal professional participation and revenue foundations",
+    "Resume Bronx-led profile research when source quality supports it",
+    "Consider a D3 read-only Neutral Boardroom adapter only after both products have stable approved contracts"
+  ]
+}

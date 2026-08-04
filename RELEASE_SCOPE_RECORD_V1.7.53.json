@@ -1,0 +1,57 @@
+{
+  "release": "1.7.53",
+  "generatedAt": "2026-07-30",
+  "theme": "Attorney field outreach reliability and privacy-minimized continuation",
+  "selectedOutcomes": [
+    "Explicit presenter and self-guided Attorney Partner Tour modes",
+    "Four practice-specific stable short paths",
+    "Four static locally generated QR SVGs with recorded SHA-256 values",
+    "Print-ready public follow-up card",
+    "Owner readiness evidence for field handoff and presenter mode"
+  ],
+  "preserved": [
+    "v1.7.52 Attorney Partner Tour content and four practice variants",
+    "Four-portal and Domestic Violence safety controls",
+    "Synthetic profile and public-tool boundaries",
+    "Central professional, firm, membership, support and owner systems",
+    "Independent portal repositories and historical release evidence"
+  ],
+  "excludedPortalWork": [
+    "No micro-portal repository changes",
+    "No live portal adapter or public profile publication",
+    "No portal branding or specialty content claims"
+  ],
+  "deferred": [
+    "Exact four-portal staging",
+    "Real-device and assistive-technology acceptance",
+    "Comparative cost and ROI copy",
+    "Verified Justice Booth operations",
+    "Production services and live commercial gates"
+  ],
+  "closedGates": [
+    "deployment",
+    "DNS changes",
+    "live portal connection",
+    "automatic publication",
+    "automatic central-to-portal writes",
+    "automatic portal-to-central writes",
+    "payment",
+    "Sponsored",
+    "Featured",
+    "professional opportunities",
+    "reviews",
+    "appointments",
+    "confidential uploads",
+    "external AI",
+    "electronic filing",
+    "automatic outreach",
+    "launch GO"
+  ],
+  "completionEvidence": [
+    "107 dependency-independent tests",
+    "Static and exact-artifact validation",
+    "Deterministic double build",
+    "Two independent clean-extraction test runs",
+    "Rendered desktop, laptop, tablet, phone and print-card evidence"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "version": "1.7.36",
+  "date": "2026-07-27",
+  "decision": "NO_WEAK_PADDING",
+  "newProfessionals": 0,
+  "newFirms": 0,
+  "newLinks": 0,
+  "publicDirectory": {
+    "professionals": 233,
+    "firms": 48,
+    "total": 281
+  },
+  "strictQualifying": {
+    "professionals": 232,
+    "firms": 46,
+    "total": 278
+  },
+  "reason": "This release corrected professional portal identity and adapter reliability. No clean independently researched profile batch was introduced."
+}

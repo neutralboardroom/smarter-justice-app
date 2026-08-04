@@ -1,0 +1,22 @@
+{
+  "version": "1.7.46",
+  "date": "2026-07-28",
+  "removedFileCount": 0,
+  "removedUncompressedBytes": 0,
+  "addedMaterial": [
+    "self-contained Legal Portfolio Operating System and private owner controls",
+    "three controlled pilot packages for Divorce, Estate, and Personal Injury",
+    "vehicle-accident inclusion with Workers’ Compensation separation and Car Accident compatibility preservation",
+    "current owner, artifact, portal, gate, dependency, support, incident, and receipt registers",
+    "98-part regression suite with a new self-contained pilot-expansion test",
+    "complete v1.7.46 continuation contract and Master Rules Pack v1.7.0"
+  ],
+  "retainedReason": "Historical release evidence remains intentionally preserved; no inherited file could be removed safely without risking audit or rollback context.",
+  "packagingRules": [
+    "exclude node_modules",
+    "exclude credentials and secret environment files",
+    "exclude runtime logs and database data",
+    "exclude test-only compatibility modules",
+    "include one self-excluding inventory"
+  ]
+}

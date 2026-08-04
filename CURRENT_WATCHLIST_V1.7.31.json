@@ -1,0 +1,41 @@
+{
+  "version": "1.7.31",
+  "reviewDate": "2026-07-24",
+  "items": [
+    {
+      "item": "Node 22 patch and lifecycle",
+      "reason": "Runtime security and hosting support can change.",
+      "trigger": "New security release, hosting default change, or Node 22 end-of-life milestone."
+    },
+    {
+      "item": "npm registry and dependency advisories",
+      "reason": "Clean install and vulnerability status remain unverified while registry access times out.",
+      "trigger": "Registry access returns or an advisory affects nodemailer, pg, or a transitive dependency."
+    },
+    {
+      "item": "Communication & Evidence Log user safety",
+      "reason": "Users may mistake a local index for evidence preservation, authentication, recording, or legal advice.",
+      "trigger": "User confusion, support issue, accessibility failure, or request for file/recording support."
+    },
+    {
+      "item": "Professional-source freshness and corrections",
+      "reason": "Self-reported office, roster, practice, and contact facts can change.",
+      "trigger": "Review-date threshold, correction, claim, dispute, dead link, office change, or credential concern."
+    },
+    {
+      "item": "Phase One geographic yield",
+      "reason": "All six regions remain active until documented diminishing returns.",
+      "trigger": "Low qualifying yield after systematic source review or material coverage gaps."
+    },
+    {
+      "item": "WCAG 2.2 and real-device acceptance",
+      "reason": "Source-level checks do not replace physical-device and assistive-technology testing.",
+      "trigger": "Device lab access, accessibility complaint, or browser/platform change."
+    },
+    {
+      "item": "Sensitive/commercial activation gates",
+      "reason": "Payments, uploads, booking, reviews, routing, and external AI require production evidence and owner approval.",
+      "trigger": "Credentials, infrastructure, support ownership, professional-responsibility review, and explicit activation instruction become available."
+    }
+  ]
+}

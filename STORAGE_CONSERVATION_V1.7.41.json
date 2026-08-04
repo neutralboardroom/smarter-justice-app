@@ -1,0 +1,23 @@
+{
+  "version": "1.7.41",
+  "date": "2026-07-28",
+  "removedFileCount": 0,
+  "removedUncompressedBytes": 0,
+  "addedMaterial": [
+    "central professional self-entry without a prebuilt listing",
+    "owner-assisted professional and firm entry",
+    "private central profile and firm workspaces",
+    "v1.4.0 focused-portal assignment, profile, and firm handoffs",
+    "publication eligibility and payment/publication separation",
+    "96th regression test",
+    "current release evidence"
+  ],
+  "retainedReason": "Historical release evidence remains intentionally preserved; no inherited file could be removed safely without risking audit or rollback context.",
+  "packagingRules": [
+    "exclude node_modules",
+    "exclude credentials and secret environment files",
+    "exclude runtime logs and database data",
+    "exclude test-only compatibility modules",
+    "include one self-excluding inventory"
+  ]
+}

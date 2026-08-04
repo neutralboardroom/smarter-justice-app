@@ -1,0 +1,118 @@
+{
+  "schema_id": "SJP-LMP-PRODUCT-AND-PROMPT-DUAL-IMPROVEMENT-REPORT-2026-08-03-V1",
+  "product": {
+    "name": "Smarter Justice",
+    "version": "1.7.82",
+    "artifact_sha256": "DETACHED_FINAL_NOT_YET_BUILT"
+  },
+  "release_classification": "ORDINARY_MATERIAL_DUAL_TRACK_RELEASE",
+  "independently_discovered_opportunities": [
+    "Convert a valid or partial batch into a deterministic dependency-aware evidence gap plan.",
+    "Make the complete acceptance suite independently executable and attributable without changing command order."
+  ],
+  "creative_new_capability_candidates": [
+    "Evidence readiness planner",
+    "Dependency-aware owner action queue",
+    "Canonical acceptance manifest",
+    "Segmented stable-log runner"
+  ],
+  "product_platform_improvements": [
+    {
+      "category": "PRODUCT_PLATFORM",
+      "problem": "v1.7.81 reconciled batches but did not show full component coverage, dependency blockers, or the next exact evidence action.",
+      "implementation": "Added an owner-only readiness planner over the preview-only batch validator. It classifies all eight components, calculates evidence coverage, exposes missing dependencies and validation errors, and emits one exact owner action. It never persists receipts, calls providers, mutates state, applies promotions, infers owner GO, deploys, or activates production.",
+      "before_state": "Roger could review batch consistency but had to manually infer remaining dependency order.",
+      "after_state": "One deterministic plan presents coverage, gaps, dependency order, and the next exact nonsecret evidence action.",
+      "affected_files_records_or_systems": [
+        "V14_EVIDENCE_READINESS_PLANNER_CONTRACT_V1.7.82.json",
+        "lib/v14EvidenceReadinessPlanner.js",
+        "server.js",
+        "tests/v14-evidence-readiness-planner-v1782.test.js"
+      ],
+      "tests_and_acceptance_evidence": [
+        "tests/v14-evidence-readiness-planner-v1782.test.js",
+        "tests/v14-evidence-batch-workspace-v1781.test.js"
+      ],
+      "benefit": "Reduces owner interpretation work while keeping all live state and deployment authority closed.",
+      "limitations": [
+        "No external live receipts are present and no state can be applied."
+      ]
+    }
+  ],
+  "builder_prompt_system_improvements": [
+    {
+      "category": "BUILDER_PROMPT_SYSTEM",
+      "problem": "Long exact suites could exceed an external execution window even when individual commands were healthy, leaving ambiguous operator evidence.",
+      "implementation": "Added a version-bound manifest for every dependency-independent command and a segmented fail-fast runner with stable command IDs, exact package-chain drift detection, per-command status/output, deterministic combined log hashing, and a machine-readable run receipt.",
+      "before_state": "The package test chain was exact but not separately manifested or attributable.",
+      "after_state": "All 143 commands have a canonical identity and reproducible stable log without weakening or reordering the suite.",
+      "affected_files_or_artifacts": [
+        "ACCEPTANCE_SUITE_MANIFEST_V1.7.82.json",
+        "lib/v14SegmentedAcceptanceRunner.js",
+        "scripts/run-segmented-acceptance.js",
+        "tests/v14-segmented-acceptance-runner-v1782.test.js",
+        "package.json"
+      ],
+      "tests_and_acceptance_evidence": [
+        "tests/v14-segmented-acceptance-runner-v1782.test.js",
+        "ACCEPTANCE_SUITE_MANIFEST_V1.7.82.json"
+      ],
+      "benefit": "Eliminates ambiguity between product failure and external runner timeout.",
+      "limitations": [
+        "The PostgreSQL-dependent part remains separate and unclaimed."
+      ],
+      "future_build_benefit": "Future releases can execute exact segments, distinguish command failure from runner-window limits, and compare one stable combined log."
+    }
+  ],
+  "accepted_innovation_waves": [
+    "Dependency-aware V14 evidence readiness planning",
+    "Canonical segmented acceptance execution"
+  ],
+  "reverted_or_rejected_innovation_waves": [
+    "Automatic batch application was rejected.",
+    "Receipt persistence, provider access, partial promotion, writes, deployment, and production activation were rejected."
+  ],
+  "lessons_carried_forward": [
+    "Single-receipt validation is insufficient for a multi-dependency launch decision.",
+    "Final archive identity must remain detached but should be automatically cross-checked against embedded evidence."
+  ],
+  "prior_limitations_reviewed": [
+    {
+      "id": "live-provider-and-deployment",
+      "source": "v1.7.81",
+      "disposition": "Preserved; connector validates only supplied evidence and performs no external action.",
+      "evidence": "V14_LIVE_EVIDENCE_CONNECTOR_CONTRACT_V1.7.82.json"
+    },
+    {
+      "id": "portal-compatibility",
+      "source": "v1.7.81",
+      "disposition": "Preserved; no portal receipt is invented.",
+      "evidence": "OWNER_RECEIPT.txt"
+    },
+    {
+      "id": "sensitive-document-ai",
+      "source": "v1.7.81",
+      "disposition": "Remains CLOSED_BY_DESIGN.",
+      "evidence": "V14_UNIFIED_LIVE_OPERATIONS_REGISTER_V1.7.82.json"
+    }
+  ],
+  "deferred_opportunities_with_exact_reasons": [
+    "External adapters require exact canonical identities and protected read-only access.",
+    "Applying a valid batch requires a separate authenticated, audited, reversible owner authorization transaction.",
+    "Live OpenAI smoke and portal compatibility require protected deployment and exact portal artifacts."
+  ],
+  "next_innovation_opportunities": [
+    "Read-only GitHub and Render adapters after exact identities are supplied.",
+    "Audited single-use owner authorization for applying a validated promotion transaction.",
+    "Publish the detached delivery receipt beside the final artifact without modifying either file."
+  ],
+  "dual_track_gate": {
+    "product_platform_material_progress": true,
+    "builder_prompt_system_material_progress": true,
+    "ordinary_release_gate": "PASS_PENDING_FULL_ACCEPTANCE",
+    "product_platform_track_passed": true,
+    "builder_prompt_system_track_passed": true,
+    "ordinary_material_release_authorized": true
+  },
+  "hard_constraints_preserved": true
+}

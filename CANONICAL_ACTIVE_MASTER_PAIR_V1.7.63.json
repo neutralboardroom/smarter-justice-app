@@ -1,0 +1,55 @@
+{
+  "schema": "smarter-justice-canonical-active-master-pair",
+  "schemaVersion": "1.0.0",
+  "releaseVersion": "1.7.63",
+  "generatedAt": "2026-07-31T23:11:00-04:00",
+  "state": "MASTER PAIR COMMITTED — PROMPT COMPATIBILITY ONLY",
+  "receiptId": "MPCR-2026-07-31-E1-R0-05F4296ED378",
+  "transactionId": "MPPT-2026-07-31-SJ8-FP26-304CB87BF174",
+  "pairEpoch": 1,
+  "pairRevision": 0,
+  "receipt": {
+    "filename": "Smarter_Justice_Eighth_Pass_Four_Portal_Twenty_Sixth_Pass_Master_Pair_Commit_Receipt_2026-07-31.txt",
+    "packagedPath": "governance/receipts/MASTER_PAIR_COMMIT_RECEIPT_E1_R0.txt",
+    "sha256": "4dd826cb0f9d89e41528b9732f250899cab45ce89766ae7fdfdb8a44d48d906e",
+    "sizeBytes": 5295,
+    "lineCount": 92,
+    "receiptId": "MPCR-2026-07-31-E1-R0-05F4296ED378",
+    "transactionId": "MPPT-2026-07-31-SJ8-FP26-304CB87BF174",
+    "pairEpoch": 1,
+    "pairRevision": 0
+  },
+  "centralMaster": {
+    "filename": "Smarter_Justice_Reusable_Version_Neutral_Complete_Immediate_Build_Master_Command_Eighth_Pass_Canonical_Active_Master_Pair_Runtime_Discovery_Pair_Epoch_Replay_Protection_Detached_Commit_Finalization_v1.7.61_Learning_2026-07-31.txt",
+    "packagedPath": "governance/masters/Smarter_Justice_Eighth_Pass_Master.txt",
+    "pass": "EIGHTH PASS",
+    "sha256": "89f49e1433d05a937a31c2144e42e408a94c4502d8c388ad5f3a6eae7ad5aa68",
+    "sizeBytes": 282387,
+    "lineCount": 6542,
+    "openingMarkerVerified": true,
+    "finalMarkerVerified": true
+  },
+  "portalFamilyMaster": {
+    "filename": "Four_Initial_Legal_Micro_Portals_Reusable_Master_Build_Prompt_Twenty_Sixth_Pass_Prompt_Self_Identity_Binding_Current_Pass_Marker_Derivation_Stale_Marker_Regression_2026-07-31.txt",
+    "pass": "TWENTY-SIXTH PASS",
+    "sha256": "fd9e66a351067b6c02891c9474a4bc52edcbde552ae5706738d00930e6d4573f",
+    "sizeBytes": 599027,
+    "lineCount": 12776,
+    "evidenceState": "DETACHED_RECEIPT_BOUND_NOT_CURRENT_CHAT_FILE_INSPECTION"
+  },
+  "baselineId": "DRB-2026-07-31-DUR001-DUR043-V2",
+  "semanticCapsuleSha256": "3d5f7cc4b33980148510834f6b23f902fb5416dbdc9398f106a3b14e81713bf8",
+  "predecessor": {
+    "state": "PRE-PROTOCOL_NO_EARLIER_PAIR_EPOCH_RECEIPT",
+    "centralMasterSha256": "8d28931fdf1cac645f5006e9cde23a69592ce5b59377f7a4e9a3c6d37816f43d",
+    "portalFamilyMasterSha256": "695f39599094144a95c1a8d7ce07b6986703015701c2ff0d311c9a8215a7ba97"
+  },
+  "compareAndSwapRequiredForSuccessor": true,
+  "identicalReplayReturnsSameReceipt": true,
+  "lowerEpochOrRevisionRejected": true,
+  "sameEpochDifferentBytesConflict": true,
+  "unknownPredecessorRejected": true,
+  "productImplementationEffect": "NONE",
+  "launchState": "NO_GO",
+  "deploymentAuthorized": false
+}

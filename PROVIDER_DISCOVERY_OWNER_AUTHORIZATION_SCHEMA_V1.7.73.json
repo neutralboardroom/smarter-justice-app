@@ -1,0 +1,46 @@
+{
+  "schema_id": "SJP-PROVIDER-DISCOVERY-OWNER-AUTHORIZATION-DECISION-2026-08-03-V1",
+  "releaseVersion": "1.7.73",
+  "purpose": "Keep the provider-discovery request immutable and require a separate owner decision bound to the exact request digest, exact product artifact, exact read-only scopes, a short time window, and a single-use execution nonce.",
+  "allowedDecisionStates": [
+    "AUTHORIZED_READ_ONLY",
+    "DECLINED",
+    "REVOKED"
+  ],
+  "maximumAuthorizationWindowHours": 8,
+  "requiredBindingFields": [
+    "authorization_request_id",
+    "authorization_request_digest",
+    "product.id",
+    "product.version",
+    "product.artifact_name",
+    "product.artifact_sha256",
+    "product.artifact_size_bytes"
+  ],
+  "requiredSafetyAcknowledgments": [
+    "read_only",
+    "secret_values_forbidden",
+    "write_operations_forbidden",
+    "deployment_authorized",
+    "production_request_sent",
+    "cohort_freeze_authorized",
+    "canary_authorized",
+    "single_use"
+  ],
+  "exactAuthorizationConfirmation": "I authorize only the listed read-only provider discovery scopes for this exact request and time window.",
+  "invariants": {
+    "requestMutationCannotAuthorize": true,
+    "detachedDecisionRequired": true,
+    "exactRequestDigestRequired": true,
+    "exactProductArtifactRequired": true,
+    "scopeEscalationForbidden": true,
+    "secretValuesForbidden": true,
+    "writesForbidden": true,
+    "deploymentAuthorizationSeparate": true,
+    "productionRequestSeparate": true,
+    "cohortFreezeSeparate": true,
+    "canarySelectionSeparate": true,
+    "singleUseExecutionNonceRequired": true,
+    "replayRejected": true
+  }
+}

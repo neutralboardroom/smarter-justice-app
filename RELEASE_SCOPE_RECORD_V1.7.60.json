@@ -1,0 +1,30 @@
+{
+  "schema": "smarter-justice-release-scope-record",
+  "releaseVersion": "1.7.60",
+  "generatedAt": "2026-07-31T16:19:00-04:00",
+  "releaseType": "COMPLETE CONNECTED MATERIAL RELEASE",
+  "selectedOutcomes": [
+    "exact v1.7.59 source and rollback reconciliation",
+    "newest four-portal owner authority",
+    "mandatory newest-artifact learning revalidation",
+    "owner-action readiness and transition validation",
+    "capability-tier independent-launch truth",
+    "reusable continuation monotonicity and recovery"
+  ],
+  "preserved": [
+    "all public HTML pages",
+    "Attorney Partner Tour",
+    "Matter Path deterministic fallback",
+    "central commercial nonduplication",
+    "closed live gates",
+    "separate portal repositories"
+  ],
+  "excluded": [
+    "portal repository changes",
+    "deployment",
+    "live portal connections",
+    "payment activation",
+    "external AI activation"
+  ],
+  "launchState": "NO_GO"
+}

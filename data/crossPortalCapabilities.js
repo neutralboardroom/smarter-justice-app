@@ -1,9 +1,23 @@
-const CAPABILITY_REGISTRY_VERSION = '1.0.0';
+const CAPABILITY_REGISTRY_VERSION = '2.0.0';
+const { buildLearningSystem } = require('./crossPortalLearningV1728');
 
 const CAPABILITY_DEFINITIONS = [
   ['brand-positioning','Brand and positioning','public-experience','general-smarter-justice-start','1.6.0','proven'],
+  ['classic-bright-visual-system','Classic bright professional visual system','public-experience','general-smarter-justice-start','1.7.19','proven'],
+  ['approved-brand-asset-package','Approved logo, favicon, manifest, and technical brand variants','public-experience','general-smarter-justice-start','1.7.19','proven'],
+  ['three-market-profile-growth','Brooklyn, Manhattan, and Northern Metro New Jersey profile growth','marketplace','general-smarter-justice-start','1.7.19','proven'],
+  ['county-service-region-search','County and documented service-region professional search','marketplace','general-smarter-justice-start','1.7.19','proven'],
+  ['device-only-portal-preparation-pack','Device-only focused-portal preparation and local handoff pack','workflow','general-smarter-justice-start','1.7.20','proven'],
+  ['owner-portal-release-snapshot','Protected owner-recorded sub-platform release snapshot','operations','general-smarter-justice-start','1.7.20','proven'],
+  ['manhattan-led-profile-growth-v1720','Manhattan-led three-market professional profile continuation','marketplace','general-smarter-justice-start','1.7.20','proven'],
+  ['current-version-sbom-identity','Current-release dependency SBOM identity','quality-and-release','general-smarter-justice-start','1.7.20','proven'],
   ['homepage-first-impression','Homepage first impression','public-experience','justice-tax-solutions','0.1.93','proven'],
   ['free-starting-funnel','Free starting funnel','public-experience','justice-tax-solutions','0.1.93','proven'],
+  ['free-tools-journey','Unified free public-tools journey','public-experience','general-smarter-justice-start','1.7.16','proven'],
+  ['public-capability-truth','Plain-language capability availability and limits','public-experience','general-smarter-justice-start','1.7.16','proven'],
+  ['canonical-seo-metadata','Canonical metadata across indexable public pages','public-experience','general-smarter-justice-start','1.7.16','proven'],
+  ['static-asset-caching','Safe static-asset caching policy','deployment','general-smarter-justice-start','1.7.16','proven'],
+  ['protected-page-robots-headers','Protected-page robots response headers','security','general-smarter-justice-start','1.7.16','proven'],
   ['account-creation','Account creation','identity','general-smarter-justice-start','1.6.0','proven'],
   ['authentication-recovery','Authentication and recovery','identity','justice-tax-solutions','0.1.93','proven'],
   ['mfa-privileged','MFA for privileged accounts','security','justice-tax-solutions','0.1.93','proven'],
@@ -28,12 +42,23 @@ const CAPABILITY_DEFINITIONS = [
   ['official-form-governance','Official form governance','forms','justice-tax-solutions','0.1.93','proven'],
   ['draft-generation','Draft generation','documents','contract-creator','0.1.0','proven'],
   ['document-comparison','Document comparison and redlines','documents','contract-creator','0.1.0','proven'],
+  ['device-only-document-review','Device-only text review with source-line provenance','documents','general-smarter-justice-start','1.7.12','proven'],
+  ['device-only-document-comparison','Device-only text comparison','documents','general-smarter-justice-start','1.7.12','proven'],
+  ['device-only-source-linked-action-plan','Device-only source-linked action planning','workflow','general-smarter-justice-start','1.7.13','proven'],
+  ['device-only-factual-communication-preparation','Device-only factual question and letter preparation','communications','general-smarter-justice-start','1.7.17','proven'],
+  ['device-only-preparation-binder','Device-only source-grounded preparation binder','workflow','general-smarter-justice-start','1.7.18','proven'],
+  ['separate-user-correction-provenance','Original-source and user-correction separation','documents','general-smarter-justice-start','1.7.13','proven'],
   ['customer-verification','Customer verification','quality-and-release','justice-tax-solutions','0.1.93','proven'],
   ['human-review','Human Review Specialist workflow','professional-help','immigration-oasis','1.10.227','proven'],
   ['paralegal-preparation','Paralegal or preparer workflow','professional-help','estate-help-desk','1.0.36','proven'],
   ['professional-review','Attorney or professional review','professional-help','estate-help-desk','1.0.36','proven'],
   ['consultation-scheduling','Consultation scheduling','professional-help','immigration-oasis','1.10.227','partial'],
   ['professional-directory','Professional directory','marketplace','general-smarter-justice-start','1.6.0','proven'],
+  ['neutral-multi-field-professional-search','Neutral multi-field professional search','marketplace','general-smarter-justice-start','1.7.14','proven'],
+  ['exact-postal-professional-search','Exact ZIP, city, and state professional search','marketplace','general-smarter-justice-start','1.7.14','proven'],
+  ['professional-practice-search-taxonomy','Plain-language professional practice search taxonomy','marketplace','general-smarter-justice-start','1.7.14','proven'],
+  ['qualifying-profile-metrics','Strict qualifying professional-profile metrics','marketplace','general-smarter-justice-start','1.7.14','proven'],
+  ['device-only-professional-comparison','Device-only source-grounded professional comparison and local export','marketplace','general-smarter-justice-start','1.7.15','proven'],
   ['profile-claiming','Profile claiming','marketplace','general-smarter-justice-start','1.6.0','proven'],
   ['credential-verification','Credential verification','marketplace','justice-tax-solutions','0.1.93','proven'],
   ['professional-membership','Professional membership','marketplace','general-smarter-justice-start','1.6.0','partial'],
@@ -50,7 +75,7 @@ const CAPABILITY_DEFINITIONS = [
   ['matter-roadmap','Matter roadmap','lifecycle','business-launch-desk','0.2.6','proven'],
   ['data-room','Data room or document vault','lifecycle','business-launch-desk','0.2.6','proven'],
   ['state-jurisdiction-rules','State and jurisdiction rules','governance','business-launch-desk','0.2.6','proven'],
-  ['official-source-registry','Official-source registry','governance','justice-tax-solutions','0.1.93','proven'],
+  ['official-source-registry','Official-source registry','governance','justice-tax-solutions','0.1.107','proven'],
   ['release-gates','Release gates','quality-and-release','immigration-oasis','1.10.227','proven'],
   ['pilot-controls','Pilot and cohort controls','quality-and-release','estate-help-desk','1.0.36','proven'],
   ['capacity-controls','Capacity controls','quality-and-release','estate-help-desk','1.0.36','proven'],
@@ -73,33 +98,45 @@ const CAPABILITY_DEFINITIONS = [
   ['production-persistence-failure-controls','Production persistence failure controls','security','general-smarter-justice-start','1.6.0','proven'],
   ['owner-account-security','Owner account sessions, MFA, and recovery','security','general-smarter-justice-start','1.6.0','proven'],
   ['professional-account-security','Professional password recovery, MFA, and session controls','security','general-smarter-justice-start','1.6.0','proven'],
-  ['cross-portal-capability-registry','Cross-portal Capability Registry and Success Pattern Library','governance','general-smarter-justice-start','1.6.0','proven'],
+  ['cross-portal-capability-registry','Cross-portal Capability Registry and Success Pattern Library','governance','general-smarter-justice-start','1.7.28','proven'],
+  ['cross-portal-learning-adaptation-system','Evidence-aware Cross-Portal Learning and Adaptation System','governance','general-smarter-justice-start','1.7.28','proven'],
   ['professional-pilot-controls','Controlled professional pilot capacity and compliance controls','marketplace','general-smarter-justice-start','1.6.0','proven'],
-  ['full-lean-governance','Full/lean/overlay package governance','deployment','immigration-oasis','1.10.227','proven'],
+  ['full-lean-governance','Full/lean/overlay package governance','deployment','immigration-oasis','1.10.254','proven'],
   ['contract-negotiation','Contract negotiation packages','specialty','contract-creator','0.1.0','proven'],
   ['estate-maps','Asset, people, beneficiary, and fiduciary maps','specialty','estate-help-desk','1.0.36','proven'],
   ['coverage-household-map','Coverage household mapping','specialty','coverednyc','1.0.30','proven'],
-  ['business-compliance-lifecycle','Business launch-to-compliance lifecycle','specialty','business-launch-desk','0.2.6','proven']
+  ['business-compliance-lifecycle','Business launch-to-compliance lifecycle','specialty','business-launch-desk','0.2.39','proven']
 ].map(([id,name,category,bestReferencePortal,bestReferenceVersion,evidenceStatus])=>({id,name,category,bestReferencePortal,bestReferenceVersion,evidenceStatus}));
 
 const SUCCESS_PATTERNS = [
   { id:'free-first-no-guess', name:'Free-first no-guess journey', originPortal:'justice-tax-solutions', originVersion:'0.1.93', status:'proven', value:'Combines a meaningful free starting service with explicit uncertainty, readiness lanes, and professional escalation.', reuse:'Evaluate for every portal; adapt questions, risk lanes, and professional categories.' },
-  { id:'full-lean-release-governance', name:'Full/lean overlay governance', originPortal:'immigration-oasis', originVersion:'1.10.227', status:'proven', value:'Protects large official asset sets while allowing small continuation builds.', reuse:'Use only where a portal has heavy immutable assets or required base packages.' },
+  { id:'full-lean-release-governance', name:'Full/lean overlay governance', originPortal:'immigration-oasis', originVersion:'1.10.254 + 1.10.162 full base', status:'proven', value:'Protects large official asset sets while allowing small continuation builds.', reuse:'Use only where a portal has heavy immutable assets or required base packages.' },
   { id:'contract-board', name:'Side-specific Contract Board', originPortal:'contract-creator', originVersion:'0.1.0', status:'proven', value:'Surfaces competing interpretations, disagreement, negotiation choices, and final consolidation.', reuse:'Adapt for adversarial documents and multi-party decisions; do not copy into simple forms.' },
-  { id:'launch-compliance-roadmap', name:'Launch-to-compliance roadmap', originPortal:'business-launch-desk', originVersion:'0.2.6', status:'proven', value:'Keeps users engaged after formation through tax, licensing, filing, and lifecycle reminders.', reuse:'Adapt to portals with recurring duties and post-completion obligations.' },
+  { id:'launch-compliance-roadmap', name:'Launch-to-compliance roadmap', originPortal:'business-launch-desk', originVersion:'0.2.39', status:'proven', value:'Keeps users engaged after formation through tax, licensing, filing, and lifecycle reminders.', reuse:'Adapt to portals with recurring duties and post-completion obligations.' },
   { id:'estate-completion-gates', name:'Estate completion checkpoints', originPortal:'estate-help-desk', originVersion:'1.0.36', status:'proven', value:'Separates drafting, signing, notarization, filing, funding, transfer, and final delivery.', reuse:'Use wherever formal execution or post-signing actions matter.' },
   { id:'coverage-truth-check', name:'Free Coverage Truth Check', originPortal:'coverednyc', originVersion:'1.0.30', status:'proven', value:'Starts with the user’s real plan, household, providers, prescriptions, bills, notices, and life event.', reuse:'Adapt the truth-check concept for notices, contracts, returns, benefits, and existing documents.' },
+  { id:'cross-portal-learning-loop', name:'Artifact-to-registry-to-continuation learning loop', originPortal:'general-smarter-justice-start', originVersion:'1.7.28', status:'proven', value:'Turns every verified portal audit into reusable evidence, adoption decisions, specialty adaptations, and portable continuation context.', reuse:'Mandatory evaluation for every portal; never treat a source-portal feature as implemented in a target portal without artifact evidence.' },
   { id:'central-professional-identity', name:'Central professional identity and firm seats', originPortal:'general-smarter-justice-start', originVersion:'1.6.0', status:'proven-foundation', value:'Avoids separate conflicting professional accounts across focused portals.', reuse:'All legal, tax, accounting, broker, and approved professional portals should use the central identity model.' }
 ];
 
 
 const CAPABILITY_EVIDENCE = {
+  'device-only-preparation-binder':{confirmedFrom:['source code','automated tests','public interface'],sourceFiles:['public/document-tools.html','public/document-tools.js','public/free-tools.html','public/styles.css'],screensOrRoutes:['/document-tools.html#preparation-binder','/free-tools.html'],apiEndpoints:[],dataModels:['browser-tab state only; local text and JSON downloads'],dependencies:['modern browser'],testStatus:'tests/preparation-binder-v1718.test.js passed',knownDefects:['Real-device, assistive-technology, long-content, download, refresh, and shared-device acceptance remain pending.'],nextAction:'Validate the complete binder journey on real phones, tablets, keyboard-only use, screen readers, zoom, long content, downloads, clearing, and shared-device conditions.'},
+  'free-tools-journey':{confirmedFrom:['source code','automated tests','public interface'],sourceFiles:['public/free-tools.html','public/index.html','public/styles.css'],screensOrRoutes:['/free-tools.html','/'],apiEndpoints:['POST /api/public/story-route','GET /api/public/professionals','GET /api/public/firms'],dataModels:['no new persistence; links to existing public tools'],dependencies:['modern browser'],testStatus:'tests/seo-performance-v1716.test.js and tests/public-ux.test.js passed',knownDefects:['Real-device and assistive-technology acceptance remains pending.'],nextAction:'Validate the complete free-tools journey on real phones, tablets, keyboard-only use, screen readers, zoom, and poor connections.'},
+  'public-capability-truth':{confirmedFrom:['source code','automated tests','public interface'],sourceFiles:['public/free-tools.html','public/index.html'],screensOrRoutes:['/free-tools.html'],apiEndpoints:[],dataModels:[],dependencies:[],testStatus:'tests/seo-performance-v1716.test.js and tests/customer-facing-clarity.test.js passed',knownDefects:['External operations such as paid review, confidential uploads, and automatic filing remain closed.'],nextAction:'Keep public availability statements synchronized with owner-approved activation evidence.'},
+  'canonical-seo-metadata':{confirmedFrom:['source code','automated tests','public interface'],sourceFiles:['public/*.html','public/sitemap.xml','public/llms.txt','public/professional.js'],screensOrRoutes:['all indexable public HTML pages'],apiEndpoints:[],dataModels:[],dependencies:['canonical production domain'],testStatus:'tests/seo-performance-v1716.test.js passed',knownDefects:['Live crawl and Search Console verification remain pending until deployment.'],nextAction:'Verify canonical responses, sitemap retrieval, index coverage, and dynamic profile URLs after controlled deployment.'},
+  'static-asset-caching':{confirmedFrom:['source code','automated tests'],sourceFiles:['server.js'],screensOrRoutes:['public CSS, JavaScript, image, and icon assets'],apiEndpoints:[],dataModels:[],dependencies:['HTTP cache support'],testStatus:'tests/seo-performance-v1716.test.js passed',knownDefects:['No CDN-specific immutable fingerprinting is implemented.'],nextAction:'Measure real production cache hit behavior and page weight after deployment before considering fingerprinted assets.'},
+  'protected-page-robots-headers':{confirmedFrom:['source code','automated tests'],sourceFiles:['server.js','public/robots.txt'],screensOrRoutes:['owner, staff, account, readiness, and checkout state pages'],apiEndpoints:[],dataModels:[],dependencies:[],testStatus:'tests/seo-performance-v1716.test.js passed',knownDefects:['Robots controls do not replace authentication or authorization.'],nextAction:'Verify live response headers and that private pages remain inaccessible without authorization.'},
   'production-persistence-failure-controls':{confirmedFrom:['source code','automated tests','release documentation'],sourceFiles:['lib/store.js','lib/storageAdapter.js','server.js'],screensOrRoutes:['/api/launch-readiness'],apiEndpoints:['GET /api/launch-readiness'],dataModels:['smarter_justice_store'],dependencies:['PostgreSQL','durable private upload storage'],testStatus:'tests/storage-readiness.test.js passed',knownDefects:['Database writes are not yet wrapped in application-level transactions; production deployment still requires database and restore evidence.'],nextAction:'Verify PostgreSQL, durable upload storage, write failure behavior, backup, and restore in staging.'},
   'owner-account-security':{confirmedFrom:['source code','automated tests','private interface'],sourceFiles:['lib/accountSecurity.js','lib/ownerAccounts.js','server.js','public/control-center.html','public/app.js'],screensOrRoutes:['/control-center.html'],apiEndpoints:['GET /api/owner/auth/status','POST /api/owner/auth/login','POST /api/owner/auth/mfa/begin','POST /api/owner/auth/mfa/confirm','POST /api/owner/auth/recovery-codes/rotate','POST /api/owner/auth/sessions/revoke-others'],dataModels:['ownerAccounts.json'],dependencies:['authenticator app','secure environment bootstrap'],testStatus:'tests/security-readiness.test.js passed',knownDefects:['Owner password self-service recovery is deliberately not enabled; secure operational recovery remains an owner procedure.'],nextAction:'Bootstrap the production owner account, enroll MFA, store recovery codes offline, and verify session revocation on real devices.'},
   'professional-account-security':{confirmedFrom:['source code','automated tests','professional interface'],sourceFiles:['lib/accountSecurity.js','lib/professionalAccounts.js','server.js','public/professional-login.html','public/professional.js'],screensOrRoutes:['/professional-login.html','/professional-dashboard.html'],apiEndpoints:['POST /api/professional/auth/login','POST /api/professional/auth/password-reset/request','POST /api/professional/auth/password-reset/confirm','POST /api/professional/auth/mfa/begin','POST /api/professional/auth/mfa/confirm','POST /api/professional/auth/sessions/revoke-others'],dataModels:['professionalAccounts.json'],dependencies:['SMTP for real password-reset delivery','authenticator app'],testStatus:'tests/security-readiness.test.js passed',knownDefects:['MFA is available but not yet mandatory for all professional accounts.'],nextAction:'Verify SMTP delivery, reset-link privacy, authenticator setup, recovery codes, and multi-device session revocation in staging.'},
   'cross-portal-capability-registry':{confirmedFrom:['source code','automated tests','Control Center interface'],sourceFiles:['data/crossPortalCapabilities.js','lib/controlCenter.js','public/control-center.html','public/app.js'],screensOrRoutes:['/control-center.html'],apiEndpoints:['GET /api/owner/control-center','GET /api/owner/control-center/export'],dataModels:['generated capability registry'],dependencies:['portal portfolio records','portal audit evidence'],testStatus:'tests/security-readiness.test.js and tests/static-checks.test.js passed',knownDefects:['Most non-Smarter-Justice portal evidence remains based on imported audit records rather than live synchronized manifests.'],nextAction:'Add controlled portal-manifest ingestion and evidence refresh without overwriting portal-specific decisions.'},
-  'professional-pilot-controls':{confirmedFrom:['source code','automated tests','Control Center interface'],sourceFiles:['lib/professionalMarketplace.js','server.js','public/control-center.html','public/app.js'],screensOrRoutes:['/control-center.html','/professional-dashboard.html'],apiEndpoints:['POST /api/owner/professional-marketplace/pilot-controls','POST /api/owner/professional-marketplace/credential-verification','POST /api/owner/professional-marketplace/complaints','POST /api/owner/professional-marketplace/suspension'],dataModels:['professionalMarketplace.json pilotControls','credentials','complaints'],dependencies:['owner approval','production persistence','Stripe evidence','written operating procedures'],testStatus:'tests/marketplace.test.js passed',knownDefects:['The default pilot remains paused and no production cohort has been approved.'],nextAction:'Complete procedures and evidence, then open only a capped owner-approved cohort.'}
-};
+  'professional-pilot-controls':{confirmedFrom:['source code','automated tests','Control Center interface'],sourceFiles:['lib/professionalMarketplace.js','server.js','public/control-center.html','public/app.js'],screensOrRoutes:['/control-center.html','/professional-dashboard.html'],apiEndpoints:['POST /api/owner/professional-marketplace/pilot-controls','POST /api/owner/professional-marketplace/credential-verification','POST /api/owner/professional-marketplace/complaints','POST /api/owner/professional-marketplace/suspension'],dataModels:['professionalMarketplace.json pilotControls','credentials','complaints'],dependencies:['owner approval','production persistence','Stripe evidence','written operating procedures'],testStatus:'tests/marketplace.test.js passed',knownDefects:['The default pilot remains paused and no production cohort has been approved.'],nextAction:'Complete procedures and evidence, then open only a capped owner-approved cohort.',
+  'device-only-document-review':{confirmedFrom:['source code','automated tests','public interface'],sourceFiles:['public/document-tools.html','public/document-tools.js','public/styles.css'],screensOrRoutes:['/document-tools.html'],apiEndpoints:[],dataModels:['browser-tab memory only'],dependencies:['modern browser FileReader and Blob support'],testStatus:'tests/document-tools-v1712.test.js and tests/public-ux.test.js passed',knownDefects:['Text-only release does not read PDF, image, handwriting, table structure, or page metadata; real-device and assistive-technology acceptance remains pending.'],nextAction:'Complete real-browser and assistive-technology acceptance before considering additional formats or optional AI-assisted explanation.'},
+  'device-only-document-comparison':{confirmedFrom:['source code','automated tests','public interface'],sourceFiles:['public/document-tools.html','public/document-tools.js','public/styles.css'],screensOrRoutes:['/document-tools.html'],apiEndpoints:[],dataModels:['browser-tab memory only'],dependencies:['modern browser FileReader and Blob support'],testStatus:'tests/document-tools-v1712.test.js passed',knownDefects:['Line-oriented comparison does not reproduce formatting, tables, signatures, exhibits, or binary document structure.'],nextAction:'Validate comparison behavior on representative text fixtures and real devices; preserve neutral descriptions and exact source references.'},
+  'device-only-factual-communication-preparation':{confirmedFrom:['source code','automated tests','public interface'],sourceFiles:['public/document-tools.html','public/document-tools.js','public/styles.css','public/free-tools.html'],screensOrRoutes:['/document-tools.html#communication-prep','/free-tools.html'],apiEndpoints:[],dataModels:['browser-tab memory only'],dependencies:['modern browser Blob support'],testStatus:'tests/communication-prep-v1717.test.js, tests/customer-facing-clarity.test.js, and tests/public-ux.test.js passed',knownDefects:['The release supports user-controlled factual drafts from supported text only; it does not send messages, verify recipient details, provide strategy, calculate deadlines, or perform professional review. Real-device and assistive-technology acceptance remains pending.'],nextAction:'Complete real-browser, mobile, tablet, keyboard-only, screen-reader, 200% zoom, long-text, editing, download, and clear-state acceptance before considering account continuity or professional handoff.'}
+  ,'cross-portal-learning-adaptation-system':{confirmedFrom:['source code','automated tests','Control Center interface','portable registry snapshots'],sourceFiles:['data/crossPortalLearningV1728.js','data/crossPortalCapabilities.js','lib/controlCenter.js','public/control-center.html','public/app.js','CROSS_PORTAL_CAPABILITY_REGISTRY_V1.7.28.json','PORTAL_CAPABILITY_ADOPTION_STATUS_V1.7.28.json','CROSS_PORTAL_LEARNING_AND_ADAPTATION_STANDARD_V1.7.28.md'],screensOrRoutes:['/control-center.html'],apiEndpoints:['GET /api/owner/control-center','GET /api/owner/control-center/export'],dataModels:['portable source artifact registry','learning records','portal adoption decisions','continuation prompt contract'],dependencies:['actual portal artifacts','portal-specific continuation prompts','Smarter Ecosystem Control Center migration'],testStatus:'tests/cross-portal-learning-v1728.test.js and tests/continuation-learning-standard-v1728.test.js passed',knownDefects:['The registry is a packaged portable snapshot; the standalone Control Center does not yet provide authenticated writable synchronization across portal repositories.'],nextAction:'Import the v1.7.28 learning handoff into the standalone Smarter Ecosystem Control Center and add authenticated append-only update history without centralizing confidential user data.'}
+}};
 
 const CATEGORY_VALUE = {
   'public-experience':{userValue:'high',conversionValue:'high',revenueValue:'indirect',complianceValue:'medium',securityValue:'medium'},
@@ -164,20 +201,27 @@ function buildCapabilityRegistry(portals=[]){
       dataModels:evidence.dataModels || [],
       dependencies:evidence.dependencies || [],
       knownDefects:evidence.knownDefects || ['No defect is recorded in the Control Center; verify from the current source package before reuse.'],
-      lastReviewedDate:'2026-07-20',
+      lastReviewedDate:'2026-07-22',
       ownerDecision:sharedCoreCandidate ? 'Preserve as a reusable candidate; adoption requires evidence and a material portal benefit.' : 'Preserve as a specialty precedent; do not force ecosystem-wide adoption.',
       nextAction:evidence.nextAction || 'Open the reference portal source and tests before adopting, then record the target portal adaptation and evidence.',
       implementations
     };
   });
+  const learningSystem=buildLearningSystem(capabilities,portals);
   return {
     version:CAPABILITY_REGISTRY_VERSION,
     generatedAt:new Date().toISOString(),
+    generatedForRelease:'1.7.28',
     capabilityCount:capabilities.length,
     successPatternCount:SUCCESS_PATTERNS.length,
     categories:[...new Set(capabilities.map(item=>item.category))].sort(),
     capabilities,
-    successPatterns:SUCCESS_PATTERNS
+    successPatterns:SUCCESS_PATTERNS,
+    learningSystem,
+    sourceArtifacts:learningSystem.sourceArtifacts,
+    adoptionDecisions:learningSystem.adoptionDecisions,
+    continuationPromptContract:learningSystem.continuationPromptContract,
+    learningPolicy:learningSystem.learningPolicy
   };
 }
 

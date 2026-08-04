@@ -1,0 +1,23 @@
+{
+  "receiptVersion": "1.0.0",
+  "environment": "LOCAL_FIXTURE_ONLY",
+  "portalId": "divorce-law-aid",
+  "batchId": "fixture-8ad6df8dc0e73503",
+  "schemaVersion": "1.4.0",
+  "digest": "8ad6df8dc0e735037689473caaa36a183c38dc316dc266238e48f15080b5118c",
+  "receivedAt": "2026-07-28T00:00:00-04:00",
+  "processedAt": "2026-07-28T00:00:00-04:00",
+  "upsertPrivateCount": 31,
+  "upsertPublicCount": 0,
+  "suppressionCount": 0,
+  "rejectedCount": 0,
+  "conflictCount": 0,
+  "lastKnownGood": true,
+  "adapterVersion": "1.1.0",
+  "operator": "local-fixture-generator",
+  "result": "LOCAL_VALIDATION_PASS_NOT_IMPORTED",
+  "errorSummary": "",
+  "rollbackAvailable": true,
+  "liveConnection": false,
+  "automaticWrites": false
+}

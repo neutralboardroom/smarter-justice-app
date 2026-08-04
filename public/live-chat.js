@@ -6,8 +6,18 @@
     const btn=document.createElement('button');
     btn.className='live-chat-fallback';
     btn.textContent='Need help?';
+    btn.setAttribute('aria-label','Open Smarter Justice contact and support page');
     btn.addEventListener('click',()=>{ location.href='/contact.html'; });
     document.body.appendChild(btn);
+    const footer=document.querySelector('.site-footer');
+    if(footer && 'IntersectionObserver' in window){
+      const observer=new IntersectionObserver(entries=>{
+        const near=entries.some(entry=>entry.isIntersecting);
+        btn.classList.toggle('near-footer',near);
+        btn.textContent=near?'Help':'Need help?';
+      },{rootMargin:'0px 0px 40px 0px',threshold:.02});
+      observer.observe(footer);
+    }
   }
 
   function loadTawk(propertyId, widgetId){

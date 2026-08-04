@@ -1,0 +1,32 @@
+{
+  "schema": "smarter-justice-final-prior-truth-reconciliation",
+  "releaseVersion": "1.7.62",
+  "generatedAt": "2026-07-31T22:24:00-04:00",
+  "sourceArtifact": {
+    "filename": "smarter-justice-v1.7.61.zip",
+    "version": "1.7.61",
+    "sha256": "a8ef3578f4a899e69dfe5388082ba556b6f1facb7b63e6c31f1d3e84e7ae391e",
+    "sizeBytes": 5398198,
+    "entries": 1648,
+    "files": 1630,
+    "directories": 18,
+    "uncompressedBytes": 15261638,
+    "compressedBytes": 5156624,
+    "inventoryRecords": 1629,
+    "inventorySha256": "852b3e7088194781dc95782882c6a75dd7c9001f2515ae7f4ae9cd1a66c2449d",
+    "packageJsonSha256": "2c199e186aab1c9db13d72bb287d0e250b395684149f7652e287afa0f4f8302e",
+    "packageLockSha256": "4e827289feebc2c4b2ddc4c59c3c6e13cdbeef57134135e1b70bf6c17bfd9847",
+    "lockfileSha256": "4e827289feebc2c4b2ddc4c59c3c6e13cdbeef57134135e1b70bf6c17bfd9847",
+    "sbomSha256": "07923bc4356b8ede4f98b7f82c8e7f930c1fa25180bc38b7a74895f70c18e457",
+    "treeSha256": "852b3e7088194781dc95782882c6a75dd7c9001f2515ae7f4ae9cd1a66c2449d",
+    "dependencyIndependentParts": 115,
+    "totalReadinessParts": 116,
+    "testLogSha256": "fff885cdbf303f31068fd8148cea31efc1ac3820acc1116cc23a2b36989a8675",
+    "concurrentBaselineRuns": 2,
+    "concurrentBaselineResult": "PASS_IDENTICAL_OUTPUT",
+    "evidenceState": "CURRENT_CHAT_REPRODUCED"
+  },
+  "candidateEraHistoryPreserved": true,
+  "currentTruthUse": "exact v1.7.61 is source and immediate rollback for v1.7.62",
+  "result": "PASS"
+}

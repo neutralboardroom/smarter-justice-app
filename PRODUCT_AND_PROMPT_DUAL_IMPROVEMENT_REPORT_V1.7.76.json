@@ -1,0 +1,93 @@
+{
+  "schema_id": "SJP-LMP-PRODUCT-AND-PROMPT-DUAL-IMPROVEMENT-REPORT-2026-08-03-V1",
+  "product": {
+    "name": "Smarter Justice",
+    "version": "1.7.76",
+    "artifact_sha256": "DETACHED_FINAL_NOT_YET_BUILT"
+  },
+  "release_classification": "ORDINARY_MATERIAL_DUAL_TRACK_RELEASE",
+  "independently_discovered_opportunities": [
+    "Turn the V11 consent schema into a usable device-only public workflow.",
+    "Make the V12 dual-progress requirement fail closed in code and tests."
+  ],
+  "creative_new_capability_candidates": [
+    "DEVICE_ONLY_JOURNEY_HANDOFF_PLANNER",
+    "DUAL_TRACK_RELEASE_GATE"
+  ],
+  "product_platform_improvements": [
+    {
+      "category": "PUBLIC_USER_WORKFLOW_PRIVACY_ACCESSIBILITY",
+      "problem": "Consent-based journey orchestration was schema-only and did not help a user carry a chosen next step into another product.",
+      "implementation": "Added a fixed-choice browser-only handoff planner, deterministic integrity receipt, 60-minute consent expiry, local JSON/text downloads, and explicit no-transfer boundaries.",
+      "before_state": "D1 schema and validator only; runtime disabled.",
+      "after_state": "D2 usable device-only planner; runtime transfer and server storage remain disabled.",
+      "affected_files_records_or_systems": [
+        "JOURNEY_HANDOFF_PLANNER_CONTRACT_V1.7.76.json",
+        "lib/journeyHandoffPlanner.js",
+        "public/journey-handoff-planner.html",
+        "public/journey-handoff-planner.js",
+        "schemas/journey-handoff-plan-v1.0.0.schema.json"
+      ],
+      "tests_and_acceptance_evidence": [
+        "tests/journey-handoff-planner-v1776.test.js"
+      ],
+      "benefit": "Users can preserve continuity without re-entering or transmitting sensitive facts.",
+      "limitations": [
+        "No automatic routing, upload, account save, provider sharing, or destination acceptance is claimed."
+      ]
+    }
+  ],
+  "builder_prompt_system_improvements": [
+    {
+      "category": "PROMPT_CONTINUATION_SCHEMA_TEST_AUTOMATION_EVIDENCE_RECOVERY_OR_RELEASE",
+      "problem": "The owner-mandated product-and-prompt dual progress requirement was documentary rather than mechanically enforced.",
+      "implementation": "Added a deterministic validator and protected owner view that reject ordinary material release authority unless both tracks contain material changes, affected artifacts, tests, benefits, limitations, and cross-version lessons.",
+      "before_state": "A release could carry a V12 template without a product-level fail-closed dual-track validator.",
+      "after_state": "Both tracks must independently pass before ordinary material release authority can become true.",
+      "affected_files_or_artifacts": [
+        "lib/continuousImprovement.js",
+        "CONTINUOUS_SELF_IMPROVEMENT_AND_INNOVATION_PLAN_V1.7.76.json",
+        "PRODUCT_AND_PROMPT_DUAL_IMPROVEMENT_REPORT_V1.7.76.json",
+        "CROSS_VERSION_LEARNING_LEDGER_V1.7.76.json",
+        "tests/continuous-improvement-dual-track-v1776.test.js"
+      ],
+      "tests_and_acceptance_evidence": [
+        "tests/continuous-improvement-dual-track-v1776.test.js"
+      ],
+      "future_build_benefit": "Future builders get an executable release criterion instead of relying on a narrative assertion.",
+      "limitations": [
+        "The gate validates evidence structure and internal consistency; it does not replace human judgment about protected owner decisions."
+      ]
+    }
+  ],
+  "accepted_innovation_waves": [
+    "Device-only journey planner",
+    "Dual-track release gate"
+  ],
+  "reverted_or_rejected_innovation_waves": [
+    {
+      "wave": "Server-side or automatic cross-product handoff",
+      "reason": "Separate authorization and mature privacy/security/storage evidence are absent."
+    }
+  ],
+  "lessons_carried_forward": [
+    "A governed schema should advance to a usable local workflow when that can be done without opening prohibited runtime boundaries.",
+    "Owner missions should be represented by deterministic tests when feasible."
+  ],
+  "deferred_opportunities_with_exact_reasons": [
+    {
+      "opportunity": "Server-side handoff storage or automatic delivery",
+      "reason": "Requires identity, encryption, retention, deletion, incident, consent revocation, destination acceptance, and owner authorization evidence."
+    }
+  ],
+  "next_innovation_opportunities": [
+    "Add portal-local import adapters only after each portal independently accepts the schema.",
+    "Add a user-controlled QR representation after privacy and shoulder-surfing review."
+  ],
+  "dual_track_gate": {
+    "product_platform_track_passed": true,
+    "builder_prompt_system_track_passed": true,
+    "ordinary_material_release_authorized": true
+  },
+  "hard_constraints_preserved": true
+}

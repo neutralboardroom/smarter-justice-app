@@ -1,0 +1,30 @@
+{
+  "releaseVersion": "1.7.59",
+  "generatedAt": "2026-07-31",
+  "nodeVersion": "v22.16.0",
+  "npmVersion": "10.9.2",
+  "configuredRegistry": "CONFIGURED_NPM_PROXY_REDACTED",
+  "lockfilePreserved": true,
+  "directDependencies": {
+    "nodemailer": "^9.0.3",
+    "pg": "^8.13.1"
+  },
+  "configuredInstallStatus": "BLOCKED_HTTP_404",
+  "configuredInstallRequest": "xtend/-/xtend-4.0.2.tgz",
+  "configuredInstallEvidence": "Configured npm proxy returned HTTP 404 for xtend-4.0.2.tgz; exact private host omitted from packaged evidence.",
+  "configuredAuditStatus": "BLOCKED_HTTP_404",
+  "configuredAuditRequest": "-/npm/v1/security/audits/quick",
+  "configuredAuditEvidence": "Configured npm audit endpoint returned HTTP 404; exact private host omitted from packaged evidence.",
+  "postgresqlAcceptance": "BLOCKED_DEPENDENCY_UNAVAILABLE",
+  "noDependencyRemovedToBypassBlocker": true,
+  "noVendoringAdded": true,
+  "sbomGeneratedDeterministically": true,
+  "sbomSha256": "a6bce49219e76904af07c7d2468a14e9c460389cceb1bca9b7f1a8d38d1b187c",
+  "launchState": "NO_GO",
+  "configuredRegistryHost": "REDACTED_PRIVATE_CONFIGURATION",
+  "registryResult": "HTTP_404_REPRODUCED",
+  "auditResult": "HTTP_404_REPRODUCED",
+  "cleanInstallAccepted": false,
+  "vulnerabilityAuditAccepted": false,
+  "postgresqlAccepted": false
+}

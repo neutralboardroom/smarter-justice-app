@@ -1,0 +1,129 @@
+{
+  "schema_id": "SJP-LMP-PRODUCT-AND-PROMPT-DUAL-IMPROVEMENT-REPORT-2026-08-03-V1",
+  "product": {
+    "name": "Smarter Justice",
+    "version": "1.7.78",
+    "artifact_sha256": "DETACHED_FINAL_NOT_YET_BUILT"
+  },
+  "release_classification": "ORDINARY_MATERIAL_DUAL_TRACK_RELEASE",
+  "independently_discovered_opportunities": [
+    "Replace the unsafe multi-vendor runtime with the required OpenAI-only central registered-tool gateway.",
+    "Make launch truth, capability maturity, injection isolation and owner workload machine-readable and testable."
+  ],
+  "creative_new_capability_candidates": [
+    "Server-to-server registered-tool gateway",
+    "Five-product AI capability matrix",
+    "Central AI Operations owner view",
+    "OpenAI overlay integrity validator"
+  ],
+  "product_platform_improvements": [
+    {
+      "category": "PRODUCT_PLATFORM",
+      "problem": "The existing AI helper supported four vendors directly, accepted a broad serialized case object, lacked a registered-tool server identity contract, and had incomplete user transparency and operations controls.",
+      "implementation": "Implemented an OpenAI-only central Responses API gateway with exact portal/tool allowlists, server-to-server authentication, minimal structured input projection, instruction/data isolation, injection detection, strict JSON Schema output validation, bounded timeout and quota controls, circuit breaker, cost hard stop, global and tool flags, metadata-only operational evidence, deterministic fallback, public transparency, and protected owner operations visibility.",
+      "before_state": "Direct multi-vendor helper with alternate key variables and no central machine-readable contract or five-product maturity matrix.",
+      "after_state": "One central OpenAI-only registered-tool gateway, five registered bounded tools, five-product capability matrix, dark launch flags, no-key-in-portal architecture, and deterministic non-AI continuity.",
+      "affected_files_records_or_systems": [
+        "lib/centralAiGateway.js",
+        "lib/aiProviders.js",
+        "server.js",
+        "public/app.js",
+        ".env.example",
+        "render.yaml",
+        "AI_GATEWAY_CONTRACT_V1.7.78.json",
+        "AI_MODEL_CONFIGURATION_V1.7.78.json",
+        "AI_TOOL_AND_PROMPT_REGISTRY_V1.7.78.json",
+        "FIVE_PRODUCT_AI_CAPABILITY_MATRIX_V1.7.78.json"
+      ],
+      "tests_and_acceptance_evidence": [
+        "tests/openai-central-gateway-v1778.test.js",
+        "tests/openai-ai-operations-v1778.test.js"
+      ],
+      "benefit": "Creates a safe, minimal, OpenAI-only launch architecture without exposing secrets or making nonessential AI a dependency of public legal access.",
+      "limitations": [
+        "No live API request, provider billing, protected key, deployment, portal adapter compatibility receipt, or production evidence exists in this local build.",
+        "Domestic Violence Aid remains closed by design pending separate survivor-safety and privacy acceptance."
+      ]
+    }
+  ],
+  "builder_prompt_system_improvements": [
+    {
+      "category": "BUILDER_PROMPT_SYSTEM",
+      "problem": "The release system did not bind the successor overlay identity or fail when active configuration reintroduced alternate vendors, arbitrary prompts, content logging, missing kill switches, or overstated live maturity.",
+      "implementation": "Added an exact overlay checkpoint, machine-readable gateway/model/tool/capability records, an OpenAI launch governance validator, two mock/synthetic regression suites, and current release evidence that separates TESTED dark code from live smoke, deployment and stabilization.",
+      "before_state": "V12 dual-track checks existed, but no overlay-specific OpenAI launch gate or exact five-product AI receipt existed.",
+      "after_state": "Ordinary release acceptance now includes exact overlay identity, OpenAI-only active config, registered tools, injection and schema isolation, metadata-only logs, no live-smoke claim, and closed deployment gates.",
+      "affected_files_or_artifacts": [
+        "lib/openAiLaunchGovernance.js",
+        "OPENAI_LAUNCH_OVERLAY_CHECKPOINT_V1.7.78.json",
+        "AI_GATEWAY_CONTRACT_V1.7.78.json",
+        "AI_MODEL_CONFIGURATION_V1.7.78.json",
+        "AI_TOOL_AND_PROMPT_REGISTRY_V1.7.78.json",
+        "FIVE_PRODUCT_AI_CAPABILITY_MATRIX_V1.7.78.json",
+        "CONTINUOUS_SELF_IMPROVEMENT_AND_INNOVATION_PLAN_V1.7.78.json",
+        "CROSS_VERSION_LEARNING_LEDGER_V1.7.78.json"
+      ],
+      "tests_and_acceptance_evidence": [
+        "tests/openai-central-gateway-v1778.test.js",
+        "tests/openai-ai-operations-v1778.test.js"
+      ],
+      "future_build_benefit": "Future AI changes must remain OpenAI-only, registered, schema-bound, privacy-minimized, exact-evaluated, and truthful about dark, canary, open, degraded, killed and blocked states.",
+      "limitations": [
+        "Repository, GitHub branch, Render service, OpenAI project, billing, key and live environment were not accessible and therefore were not fabricated or modified."
+      ]
+    }
+  ],
+  "accepted_innovation_waves": [
+    "OpenAI-only gateway refactor",
+    "Five-product operations and maturity truth",
+    "Overlay-specific release governance"
+  ],
+  "reverted_or_rejected_innovation_waves": [
+    "Multi-vendor runtime and public vendor selection were removed from active configuration.",
+    "Unrestricted arbitrary prompt endpoint was rejected.",
+    "Document transmission, sensitive free text, cross-portal histories, automatic external actions and live feature activation were rejected."
+  ],
+  "lessons_carried_forward": [
+    "Provider code is not launch evidence.",
+    "AI must remain optional and fail to deterministic non-AI behavior.",
+    "Secrets and browser-supplied portal identity are never trusted."
+  ],
+  "prior_limitations_reviewed": [
+    {
+      "id": "live-provider-and-deployment",
+      "source": "v1.7.77 and overlay",
+      "disposition": "Preserved as an explicit blocker, not claimed complete.",
+      "evidence": "FIVE_PRODUCT_AI_CAPABILITY_MATRIX_V1.7.78.json"
+    },
+    {
+      "id": "portal-compatibility",
+      "source": "v1.7.77 backlog",
+      "disposition": "Preserved; four exact portal artifacts and adapters were not supplied.",
+      "evidence": "AI_TOOL_AND_PROMPT_REGISTRY_V1.7.78.json"
+    },
+    {
+      "id": "sensitive-document-ai",
+      "source": "successor overlay section 11",
+      "disposition": "Closed by design.",
+      "evidence": "AI_GATEWAY_CONTRACT_V1.7.78.json"
+    }
+  ],
+  "deferred_opportunities_with_exact_reasons": [
+    "Live smoke: protected key, billing and deployed central service absent.",
+    "Portal adapters: exact current portal artifacts absent.",
+    "Automated production release: GitHub and Render authority absent.",
+    "Sensitive documents: separate contract and acceptance absent."
+  ],
+  "next_innovation_opportunities": [
+    "Complete protected OpenAI project/key setup and one controlled central live smoke.",
+    "Issue exact portal compatibility receipts, beginning with Estate Law Aid when otherwise ready.",
+    "Implement versioned GitHub-to-Render dark deployment and canary automation after repository and service authority are proven.",
+    "Advance non-AI staging, accessibility, support, billing and rollback obligations independently of AI."
+  ],
+  "dual_track_gate": {
+    "product_platform_track_passed": true,
+    "builder_prompt_system_track_passed": true,
+    "ordinary_material_release_authorized": true
+  },
+  "hard_constraints_preserved": true
+}

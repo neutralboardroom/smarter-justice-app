@@ -1,0 +1,79 @@
+{
+  "schema": "smarter-justice-release-evidence",
+  "releaseVersion": "1.7.79",
+  "generatedAt": "2026-08-03T13:40:00-04:00",
+  "status": "CANDIDATE_ACCEPTED_FINAL_SOURCE_SEALED",
+  "sourceArtifact": {
+    "filename": "smarter-justice-v1.7.78.zip",
+    "version": "1.7.78",
+    "sha256": "1c09bc5fa955e6ae81db6c027ae6424ac8d60324ef4de1b875b1009dc4a1f634",
+    "sizeBytes": 8504533,
+    "entries": 3010,
+    "files": 2986,
+    "directories": 24,
+    "uncompressedBytes": 25485923,
+    "compressedBytes": 8048463,
+    "inventoryRecords": 2985,
+    "inventorySha256": "fbb67ad4b6725df02bd871198a848259595fd78211bb754e2e5cf511014ddd6b",
+    "treeSha256": "fbb67ad4b6725df02bd871198a848259595fd78211bb754e2e5cf511014ddd6b",
+    "packageJsonSha256": "a5b18758ea301db10bbb826959ec2a531de55bb7bc3de419eef5ae794b9b8a37",
+    "packageLockSha256": "f3fced9c44334858328ed25783b6114fafd6060654cc549fe02afe6e8bb80fb7",
+    "sbomSha256": "6b0997aebc62a510b55f5c286d16bb410d5444a26a31ca18f03998e500a9e8b9",
+    "dependencyIndependentParts": 135,
+    "totalReadinessParts": 136,
+    "testLogSha256": "da346ac79ed36e791091d0f6dcf355620d5e3ee875b58945475554a1a035cd58"
+  },
+  "workingTreeAcceptance": {
+    "record": "WORKING_TREE_ACCEPTANCE_V1.7.79.json",
+    "commandsPerRun": 137,
+    "runs": 2,
+    "identicalOutput": true,
+    "testLogSha256": "c0f49f555c082b4515a8f39cd0fec52494c665efd8f40caec4d20c29adf1b486",
+    "state": "ACCEPTED_COMPLETE_RUNS"
+  },
+  "materialImprovements": {
+    "productPlatform": [
+      "Unified V14 live-operations evidence register and protected owner view"
+    ],
+    "builderPromptSystem": [
+      "Exact Mode B artifact binding and non-self-referential owner receipt/payload inventory governance"
+    ]
+  },
+  "candidateAcceptance": {
+    "record": "CANDIDATE_ARTIFACT_ACCEPTANCE_V1.7.79.json",
+    "state": "CANDIDATE_ACCEPTED_NONCIRCULAR",
+    "sha256": "5dabc2121574cb2952e7a08586f54b0b46e5c74758bf13fc4fbb724a4fa21bb0",
+    "sizeBytes": 8686218,
+    "testLogSha256": "c0f49f555c082b4515a8f39cd0fec52494c665efd8f40caec4d20c29adf1b486",
+    "entries": 3040,
+    "files": 3016,
+    "directories": 24,
+    "uncompressedBytes": 25894679,
+    "compressedBytes": 8225478,
+    "payloadInventoryRecords": 3013,
+    "payloadInventorySha256": "ae4a7dc8414e6c6ed85968169bca6f6ebe6578980d8bcd6de50f3a4fde94a79f",
+    "legacyInventoryRecords": 3015,
+    "legacyInventorySha256": "2f6b8e7d14136ca94e6bfdd919663232ac22e49261d1f582042d4209bcb11c02"
+  },
+  "finalAcceptance": {
+    "record": "FINAL_ARTIFACT_ACCEPTANCE_V1.7.79.json",
+    "state": "DETACHED_FINAL_ARCHIVE_PENDING_FROM_SEALED_SOURCE"
+  },
+  "v14": {
+    "packetId": "SJP-LMP-UNIVERSAL-ONE-STEP-2026-08-03-V14-ALL-CHAT-MODES",
+    "packetSha256": "fce42ce0927748f94189692ef5b3bf8e0fe9f8d12273287f03a68eb7bccdad6f",
+    "mode": "MODE_B_EXISTING_CHAT_PACKET_ONLY",
+    "artifactBindingReceipt": "ARTIFACT_BINDING_AND_MODE_RECEIPT.json",
+    "ownerReceipt": "OWNER_RECEIPT.txt",
+    "releasePayloadInventory": "RELEASE_PAYLOAD_INVENTORY_SHA256.txt",
+    "unifiedLiveOperations": "V14_UNIFIED_LIVE_OPERATIONS_REGISTER_V1.7.79.json",
+    "finalDeliveryIdentity": "REPORTED_AFTER_PACKAGING"
+  },
+  "launchState": "NO_GO",
+  "deploymentAuthorized": false,
+  "sourcePackageHashes": {
+    "packageJsonSha256": "8490026b9c00f2efa4db13512767fb6501d3b2cb69c5fdbb1df3df5ca27fca65",
+    "packageLockSha256": "5c1a85d14755452a2c32f04f7fe5a2ad558f8fbc2ab4ac2a67491ee2e672baf4",
+    "sbomSha256": "fe567d113bae7dd502fde2f44463a7752154cad9b96d0b84df8259bed0b941f6"
+  }
+}

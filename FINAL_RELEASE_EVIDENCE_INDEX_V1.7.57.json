@@ -1,0 +1,12 @@
+{
+  "releaseVersion": "1.7.57",
+  "generatedAt": "2026-07-30",
+  "status": "FINAL_SOURCE_ACCEPTED_DETACHED_ARCHIVE_IDENTITY_PENDING",
+  "sourceAcceptance": "SOURCE_ACCEPTANCE_V1.7.57.md",
+  "releaseEvidence": "RELEASE_EVIDENCE_V1.7.57.json",
+  "candidateAcceptance": "CANDIDATE_ARTIFACT_ACCEPTANCE_V1.7.57.json",
+  "exactFinalDeliveryReceipt": "DETACHED_AFTER_FINAL_SEAL",
+  "launchState": "NO_GO",
+  "workingTreeAcceptance": "WORKING_TREE_ACCEPTANCE_V1.7.57.json",
+  "finalArtifactAcceptance": "FINAL_ARTIFACT_ACCEPTANCE_V1.7.57.json"
+}

@@ -1,0 +1,105 @@
+{
+  "version": "1.7.34",
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-07-27T01:39:37-04:00",
+  "highestClaim": "D2_CONTRACT_TESTED",
+  "states": [
+    "D0_CONCEPT_ONLY",
+    "D1_FIXTURE_RENDERED",
+    "D2_CONTRACT_TESTED",
+    "D3_INTEGRATION_TESTED",
+    "D4_STAGING_VERIFIED",
+    "D5_PRODUCTION_VERIFIED"
+  ],
+  "runs": [
+    {
+      "conformanceRunId": "conformance:portfolio-truth:v1.7.34",
+      "surfaceId": "surface:portfolio-control-center",
+      "state": "D2_CONTRACT_TESTED",
+      "passed": [
+        "stable identifiers",
+        "evidence-state validation",
+        "owner-only route",
+        "attention-first rendering contract",
+        "stale and missing states",
+        "forbidden data-class assertions",
+        "legacy ecosystem runtime aliases retired",
+        "legal-network naming and scope",
+        "Neutral Boardroom relationship visible"
+      ],
+      "notProven": [
+        "cross-portal live producer integration",
+        "staging roles",
+        "production monitoring"
+      ]
+    },
+    {
+      "conformanceRunId": "conformance:preparation-quality:v1.7.34",
+      "surfaceId": "surface:public-user-workspace",
+      "state": "D2_CONTRACT_TESTED",
+      "passed": [
+        "device-only implementation",
+        "no fetch or storage APIs",
+        "normal, incomplete, duplicate, contradictory, sensitive-number, and false-positive fixtures",
+        "local text and JSON export"
+      ],
+      "notProven": [
+        "physical-device acceptance",
+        "assistive-technology acceptance"
+      ]
+    },
+    {
+      "conformanceRunId": "conformance:micro-portal-adapters:v1.7.34",
+      "surfaceId": "surface:micro-portal-operations",
+      "state": "D0_CONCEPT_ONLY",
+      "passed": [
+        "contract documented"
+      ],
+      "notProven": [
+        "producer adapters",
+        "consumer integration",
+        "staging or production interoperability"
+      ]
+    },
+    {
+      "conformanceRunId": "conformance:neutral-boardroom-handoff:v1.7.34",
+      "surfaceId": "surface:neutral-boardroom-handoff",
+      "state": "D2_CONTRACT_TESTED",
+      "passed": [
+        "versioned export contract",
+        "owner-only route",
+        "nonconfidential field allowlist",
+        "prohibited data-class assertions",
+        "no live connection",
+        "no automatic writes",
+        "graceful independence"
+      ],
+      "notProven": [
+        "Neutral Boardroom producer-consumer adapter",
+        "staging interoperability",
+        "production interoperability"
+      ]
+    },
+    {
+      "conformanceRunId": "conformance:legal-network-action-center:v1.7.34",
+      "surfaceId": "surface:legal-network-action-center",
+      "state": "D2_CONTRACT_TESTED",
+      "passed": [
+        "deterministic rule order",
+        "stable action identifiers",
+        "fingerprint-based resurfacing",
+        "owner-only disposition route",
+        "nonconfidential data boundary",
+        "NOW/NEXT/WATCH/PRESERVE lanes",
+        "graceful no-state fallback"
+      ],
+      "notProven": [
+        "live portal adapters",
+        "automatic deployment",
+        "Neutral Boardroom ingestion",
+        "production monitoring"
+      ]
+    }
+  ],
+  "claimBoundary": "Do not say Neutral Boardroom and Smarter Justice are live-integrated. v1.7.33 proves an owner-only nonconfidential export contract and local rendering only."
+}

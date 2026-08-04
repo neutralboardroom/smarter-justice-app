@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0.0",
+  "releaseVersion": "1.7.44",
+  "generatedAt": "2026-07-29T13:26:00-04:00",
+  "nodeRequirement": "22.x",
+  "productionVersion": "1.6.1",
+  "deploymentStatus": "NOT_DEPLOYED",
+  "storage": "POSTGRESQL_REQUIRED_NOT_VERIFIED",
+  "smtp": "NOT_VERIFIED",
+  "stripe": "NOT_VERIFIED_LIVE_GATES_CLOSED",
+  "professionalGrowth": "IMPLEMENTED_CLOSED_BY_DEFAULT_COUNSEL_ACCEPTANCE_PENDING",
+  "livePortalConnections": 0,
+  "automaticPortalWrites": false,
+  "externalAi": false,
+  "dependencyInstall": "BLOCKED: configured registry returned HTTP 404 for xtend-4.0.2.tgz",
+  "vulnerabilityAudit": "BLOCKED: configured npm audit endpoint returned HTTP 404"
+}

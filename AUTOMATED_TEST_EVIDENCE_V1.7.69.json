@@ -1,0 +1,18 @@
+{
+  "schema": "smarter-justice-automated-test-evidence",
+  "releaseVersion": "1.7.69",
+  "generatedAt": "2026-08-02T11:24:00-04:00",
+  "state": "PASS_TWO_COMPLETE_RUNS_IDENTICAL_OUTPUT",
+  "commandsPerRun": 121,
+  "totalReadinessParts": 123,
+  "workingRuns": 2,
+  "workingLogSha256": "5d400c2ef6be3470ee525e02ce85f8327d7fdb976f77b1b0a84a15867a1844a7",
+  "identicalOutput": true,
+  "postgresDependentParts": 1,
+  "postgresAcceptanceClaimed": false,
+  "launchState": "NO_GO",
+  "frozenSourceTrees": 2,
+  "frozenSourceLogSha256": "5d400c2ef6be3470ee525e02ce85f8327d7fdb976f77b1b0a84a15867a1844a7",
+  "dependencyIndependentCommands": 122,
+  "testLogSha256": "de9eae5055e6e61facb891a3e942c88022ffdc67ccff9063ec64834ef78732e9"
+}

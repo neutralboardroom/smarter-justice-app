@@ -1,0 +1,55 @@
+{
+  "version": "1.7.37",
+  "date": "2026-07-27",
+  "items": [
+    {
+      "id": "watch-immigration-deployment",
+      "priority": "critical",
+      "state": "BLOCKED_DEDICATED_CONTEXT",
+      "nextAction": "Complete or verify the full-plus-lean deployment in the dedicated Immigration Oasis context and return a nonconfidential exact handoff."
+    },
+    {
+      "id": "watch-v1737-deployment",
+      "priority": "high",
+      "state": "CLOSED_GATE",
+      "nextAction": "Do not deploy v1.7.37 without separate owner authorization."
+    },
+    {
+      "id": "watch-dedicated-artifacts",
+      "priority": "high",
+      "state": "OWNER_RECORDED",
+      "nextAction": "Independently verify the 24 dedicated owner-recorded records in their portal contexts; seven currently lack exact artifact identity."
+    },
+    {
+      "id": "watch-unresolved-professional-portal-assignments",
+      "priority": "high",
+      "state": "OWNER_REVIEW_REQUIRED",
+      "count": 14,
+      "nextAction": "Review individually; do not infer a destination."
+    },
+    {
+      "id": "watch-professional-portal-staging-adapter",
+      "priority": "medium",
+      "state": "D3_LOCAL_ONLY",
+      "nextAction": "Choose one portal for an owner-approved D4 staging adapter after exact artifact and data-boundary review."
+    },
+    {
+      "id": "watch-browser-accessibility",
+      "priority": "medium",
+      "state": "OPEN",
+      "nextAction": "Complete graphical browser, keyboard, zoom, mobile, tablet, and assistive-technology acceptance."
+    },
+    {
+      "id": "watch-npm-audit",
+      "priority": "medium",
+      "state": "RETRY_REQUIRED",
+      "nextAction": "Retry clean install and vulnerability audit against an available registry and advisory endpoint."
+    },
+    {
+      "id": "watch-professional-network-activation",
+      "priority": "medium",
+      "state": "CLOSED_GATE",
+      "nextAction": "Complete infrastructure, terms, support, ethics, monitoring, and rollback gates before activation."
+    }
+  ]
+}

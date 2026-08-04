@@ -1,39 +1,62 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>Upload a Notice | Smarter Justice</title>
-<meta content="Upload a notice, letter, lawsuit, tax document, benefit denial, insurance letter, court paper, agency notice, or deadline and create a private starting file." name="description"/>
-<meta content="Upload a Notice | Smarter Justice" property="og:title"/>
-<meta content="Upload a notice, letter, lawsuit, tax document, benefit denial, insurance letter, court paper, agency notice, or deadline and create a private starting file." property="og:description"/>
-<meta content="website" property="og:type"/>
-<meta content="#123d5f" name="theme-color"/>
-<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
-<link href="/favicon.svg" rel="alternate icon"/>
-<link href="/styles.css" rel="stylesheet"/>
-<script defer="" src="/app.js"></script>
-<script defer="" src="/live-chat.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Describe a Notice or Document | Smarter Justice</title>
+  <meta name="description" content="Describe a notice or document in your own words and receive a starting-point suggestion. Secure confidential upload is not available yet.">
+  <meta property="og:title" content="Describe a Notice or Document | Smarter Justice">
+  <meta property="og:description" content="Use a redacted description to identify a possible focused legal or tax starting path.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#0b3356">
+  <link rel="canonical" href="https://smarterjustice.com/upload-notice.html">
+  <meta property="og:image" content="https://smarterjustice.com/images/brand/smarter-justice-social.png">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/images/brand/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="/images/brand/favicon-48.png" sizes="48x48" type="image/png">
+  <link rel="apple-touch-icon" href="/images/brand/apple-touch-icon.png" sizes="180x180">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/styles.css">
+  <script defer src="/app.js"></script>
+  <script defer src="/notice-route.js"></script>
+  <script defer src="/live-chat.js"></script>
 </head>
-<body>
+<body class="document-description-page">
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
-<a class="brand" href="/" aria-label="Smarter Justice home"><img src="/logo.svg" alt=""></a>
-<button aria-expanded="false" aria-label="Open menu" class="nav-toggle" data-nav-toggle="">Menu</button>
-<nav class="top-nav" data-nav=""><a href="/">Start Free</a><a href="/portals.html">Portals</a><a href="/upload-notice.html">Upload Notice</a><a href="/practice-areas.html">Practice Areas</a><a href="/professionals.html">Find Professionals</a><a href="/pricing.html">Pricing</a><a href="/how-it-works.html">How It Works</a><a href="/dashboard.html">Dashboard</a><a href="/contact.html">Contact</a><a class="mobile-only-nav" href="/professional-membership.html">For Professionals</a></nav>
-<a class="header-cta" href="/upload-notice.html">Upload Notice</a>
-<button class="language-toggle" data-lang-toggle="">Español</button>
+  <a class="brand" href="/" aria-label="Smarter Justice home"><img src="/logo.svg" alt="Smarter Justice"></a>
+  <button aria-expanded="false" aria-label="Open menu" class="nav-toggle" data-nav-toggle type="button">Menu</button>
+  <nav class="top-nav" data-nav aria-label="Main navigation"><a href="/professional-membership.html">Professionals</a><a href="/professionals.html">Profile Lookup</a><a href="/portals.html">Portals</a><a href="/#public-start">Public Start</a><a href="/pricing.html">Pricing</a><a href="/how-it-works.html">How It Works</a><a class="mobile-only-nav" href="/professional-login.html">Professional Sign In</a></nav>
+  <a class="header-signin" href="/professional-login.html">Sign In</a>
+  <a class="header-cta" href="/professional-signup.html?campaign=DOCUMENT-PAGE">Prepare Account</a>
 </header>
 <main id="main">
-<section class="page-hero notice-hero"><p class="eyebrow">Upload a Notice</p><h1>Got a letter, notice, lawsuit, denial, tax notice, or deadline?</h1><p class="lead">Upload it here. Smarter Justice saves a private starting file, asks only the details that help, and shows possible next steps and review options.</p></section>
-<section class="section narrow"><form class="question-card guided-form" data-email-required="" data-free-question-form="" id="noticeForm" novalidate=""><input name="practiceArea" type="hidden" value=""/><div class="error-summary" data-error-summary="" hidden="" tabindex="-1"></div><div class="form-grid three"><label>Document type<select id="documentType" name="documentType"><option value="">Choose document type</option></select></label><label>Date received<input name="dateReceived" type="date"/></label><label>Deadline/date shown<input name="deadlineDate" type="date"/></label></div><div class="form-grid three"><label>Practice area<select id="practiceArea" name="practiceArea"><option value="">Not sure — help me choose</option></select></label><label>State<select name="state"><option value="">Choose state if relevant</option><option>Alabama</option><option>Alaska</option><option>Arizona</option><option>Arkansas</option><option>California</option><option>Colorado</option><option>Connecticut</option><option>Delaware</option><option>District of Columbia</option><option>Florida</option><option>Georgia</option><option>Hawaii</option><option>Idaho</option><option>Illinois</option><option>Indiana</option><option>Iowa</option><option>Kansas</option><option>Kentucky</option><option>Louisiana</option><option>Maine</option><option>Maryland</option><option>Massachusetts</option><option>Michigan</option><option>Minnesota</option><option>Mississippi</option><option>Missouri</option><option>Montana</option><option>Nebraska</option><option>Nevada</option><option>New Hampshire</option><option>New Jersey</option><option>New Mexico</option><option>New York</option><option>North Carolina</option><option>North Dakota</option><option>Ohio</option><option>Oklahoma</option><option>Oregon</option><option>Pennsylvania</option><option>Rhode Island</option><option>South Carolina</option><option>South Dakota</option><option>Tennessee</option><option>Texas</option><option>Utah</option><option>Vermont</option><option>Virginia</option><option>Washington</option><option>West Virginia</option><option>Wisconsin</option><option>Wyoming</option></select></label><label>County or city<input name="county" placeholder="County/city if known"/></label></div><label>What does the document say, and what are you worried about?<textarea data-maxlength="2500" maxlength="2500" name="question" placeholder="Describe the sender, deadline, amount, hearing date, denial, demand, lawsuit, agency, form, or question if you can." required="" rows="8"></textarea><span class="counter">2500 characters left</span></label><div class="form-grid two"><label>Agency, court, company, or office<input name="agencyOrCourt" placeholder="Example: IRS, SSA, Family Court, landlord, insurer"/></label><label>Notice/deadline details<input name="noticeOrDeadline" placeholder="Example: CP504, appeal by date, hearing date"/></label></div><label class="upload-box">Upload the full document if you have it<input accept=".pdf,.png,.jpg,.jpeg,.webp,.txt,.eml,.doc,.docx,.heic,image/*,application/pdf,text/plain,message/rfc822" multiple="" name="attachments" type="file"/><small>Include every page, envelope, deadline page, and instruction page if possible. Do not upload anything you do not want reviewed.</small></label><div class="form-grid three"><label>Your name<input autocomplete="name" name="fullName"/></label><label>Email<input autocomplete="email" name="email" required="" type="email"/></label><label>Phone<input autocomplete="tel" name="phone"/></label></div><label class="check"><input name="consentToContact" type="checkbox"/> I agree Smarter Justice may contact me about this request.</label><button class="primary" type="submit">Create my private starting file</button><p class="fine-print">Smarter Justice is a private support service, not a law firm and not the government. No result is guaranteed. Attorney or professional review may be recommended.</p><div class="result-panel" hidden="" id="noticeResult"></div></form></section>
-<section class="section light-section"><div class="narrow"><h2>Documents people commonly upload</h2><div class="tile-grid"><div class="tile"><strong>Tax notices</strong><span>IRS, state, NYC, audit, balance due, lien, levy, or offer in compromise documents.</span></div><div class="tile"><strong>Court papers</strong><span>Summons, complaint, hearing notice, eviction paper, family court paper, small claims, or judgment notice.</span></div><div class="tile"><strong>Agency letters</strong><span>SSA, unemployment, SNAP, Medicaid, veterans benefits, housing benefits, immigration, or licensing notices.</span></div><div class="tile"><strong>Accident or insurance letters</strong><span>Police reports, denial letters, medical bills, demand letters, claim letters, and settlement papers.</span></div></div></div></section>
+  <section class="page-hero notice-hero safe-document-hero">
+    <p class="eyebrow">Describe a notice safely</p>
+    <h1>Describe the notice or document without uploading it.</h1>
+    <p class="lead">Tell us who sent it, what it says, and any date shown. Smarter Justice can suggest a focused starting path without creating an account or saving your description.</p>
+  </section>
+  <section class="section narrow">
+    <div class="notice secure-upload-notice"><strong>Confidential upload is not open yet.</strong><p>Do not upload or paste full confidential documents. Secure document upload is not available yet. Describe only the parts needed to identify a starting point, and leave out names, account numbers, Social Security numbers, passwords, and other sensitive details.</p></div>
+    <form class="card guided-form document-description-form" id="noticeRouteForm" novalidate>
+      <div class="form-grid two">
+        <label>Document or notice type<select id="noticeDocumentType" name="documentType"><option value="">Choose if known</option><option>Tax notice</option><option>Court paper or lawsuit</option><option>Agency or benefits letter</option><option>Landlord or housing notice</option><option>Employment or wage document</option><option>Contract, bill, or demand</option><option>Insurance or healthcare letter</option><option>Business or licensing notice</option><option>Other or not sure</option></select></label>
+        <label>Practice area, if known<select id="noticePracticeArea" name="practiceArea"><option value="other">Not sure — help me choose</option></select></label>
+        <label>Date received<input name="dateReceived" type="date"></label>
+        <label>Deadline or date shown<input name="deadlineDate" type="date"></label>
+      </div>
+      <label>Describe what it says and what concerns you<textarea id="noticeQuestion" name="question" maxlength="2500" rows="9" required placeholder="Example: The IRS sent a CP504 notice showing a balance and a deadline. I disagree with part of the amount and want to understand where to start." aria-describedby="noticePrivacy noticeCounter"></textarea></label>
+      <div class="story-form-meta"><small id="noticePrivacy">Use a summary or redacted excerpt. Do not include names, Social Security numbers, account numbers, passwords, medical record numbers, or other highly sensitive details.</small><span id="noticeCounter">2500 characters left</span></div>
+      <div class="form-grid two"><label>Sender, agency, court, or company<input name="sender" placeholder="Example: IRS, Housing Court, employer, insurer"></label><label>State or location<input name="location" placeholder="Example: New York, Kings County"></label></div>
+      <button class="primary" type="submit">Find a Starting Path</button>
+      <p class="routing-privacy-note"><strong>Not saved:</strong> this description is used only to suggest a starting point. It does not create an account or save your description.</p>
+    </form>
+    <div id="noticeRouteResult" class="story-route-result" hidden aria-live="polite"></div>
+  </section>
+  <section class="section narrow"><div class="card"><p class="eyebrow">Need to organize exact text first?</p><h2>Use the device-only review, comparison, and action-plan workspace.</h2><p>Open a supported text file or paste text in your browser tab to see exact line references, stated dates, action language, differences between versions, separate corrections, and a user-controlled next-step organizer. The text is not sent to Smarter Justice or saved to an account.</p><a class="secondary link-btn" href="/document-tools.html">Review, Compare, or Plan on This Device</a></div></section>
+  <section class="section light-section"><div class="narrow"><div class="section-heading"><p class="eyebrow">Before describing a document</p><h2>Gather the pages and confirm every date directly.</h2></div><div class="tile-grid"><div class="tile"><strong>Read every page</strong><span>Instructions and appeal rights may appear at the end or on a separate page.</span></div><div class="tile"><strong>Keep the envelope</strong><span>Mailing and receipt dates can matter, but only a qualified professional can determine how a rule applies.</span></div><div class="tile"><strong>Confirm deadlines</strong><span>Use the court, agency, notice, or qualified professional—not an automated suggestion—as the authoritative source.</span></div><div class="tile"><strong>Redact before sharing</strong><span>Remove identifiers and sensitive facts from any excerpt you choose to describe.</span></div></div></div></section>
 </main>
-<section class="footer-cta no-print"><div><strong>Not sure what category fits?</strong><span>Start free or upload the document that is worrying you.</span></div><div><a class="primary" href="/#start">Start Free</a><a class="secondary" href="/upload-notice.html">Upload Notice</a></div></section>
-<footer class="site-footer">
-<div><img alt="" class="footer-logo" src="/logo.svg"/><p><strong>Smarter Justice</strong><br/>Private support service. Not a law firm. Not the government. No guaranteed outcomes.</p></div>
-<div class="footer-links"><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/disclaimer.html">Disclaimer</a><a href="/security.html">Security</a><a href="/forms-roadmap.html">Forms Roadmap</a><a href="/review-delivery.html">Review Delivery</a><a href="/referral-program.html">Referral Program</a><a href="/community-partner-tools.html">Community Partner Tools</a><a href="/faq.html">FAQ</a></div>
-</footer>
+<section class="footer-cta no-print"><div><strong>Prefer to start with your whole situation?</strong><span>Use the main story box or browse focused portals.</span></div><div><a class="primary" href="/#public-start">Tell Us What Happened</a><a class="secondary" href="/portals.html">Browse Portals</a></div></section>
+<footer class="site-footer expanded-footer"><div class="footer-brand"><img src="/logo.svg" alt="Smarter Justice" class="footer-logo"><p>Free public starting help with one connected professional network. Smarter Justice is not a law firm, tax firm, accounting firm, or government agency.</p></div><div class="footer-column"><h2>Public Start</h2><a href="/#public-start">Tell Us What Happened</a><a href="/upload-notice.html">Describe a Notice</a><a href="/document-tools.html">Review, Compare, or Plan</a><a href="/portals.html">Focused Portals</a></div><div class="footer-column"><h2>Professionals</h2><a href="/professional-membership.html">Membership</a><a href="/professionals.html">Find or Claim a Profile</a><a href="/professional-login.html">Sign In</a></div><div class="footer-column"><h2>Trust</h2><a href="/privacy.html">Privacy</a><a href="/security.html">Security</a><a href="/terms.html">Terms</a><a href="/disclaimer.html">Disclaimer</a></div><div class="footer-bottom"><span>© 2026 Smarter Justice</span><span>No document is uploaded or saved through this page.</span></div></footer>
 </body>
 </html>

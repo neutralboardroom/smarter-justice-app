@@ -1,0 +1,55 @@
+'use strict';
+const assert=require('assert');
+const fs=require('fs');
+const os=require('os');
+const path=require('path');
+const tempStorage=fs.mkdtempSync(path.join(os.tmpdir(),'smarter-justice-v1749-'));
+process.env.SMARTER_JUSTICE_STORAGE_DIR=tempStorage;
+process.env.NODE_ENV='test';
+process.env.APP_BASE_URL='https://smarterjustice.example';
+process.env.LAUNCH_READINESS_LANE='free-professional-profiles';
+for(const key of ['PUBLIC_FREE_LAUNCH_APPROVED','ATTORNEY_APPLICATIONS_LAUNCH_APPROVED','PROFESSIONAL_GROWTH_LAUNCH_APPROVED','PROFESSIONAL_PILOT_ACTIVATION_APPROVED','ALLOW_TEST_PAID_PILOT_GATE'])delete process.env[key];
+(async()=>{let server;try{
+  const store=require('../lib/store');await store.init();
+  const readiness=require('../lib/serviceReadiness');
+  assert.equal(readiness.TARGET_RELEASE_VERSION,'1.7.75');
+  assert.equal(readiness.liveness().status,'alive');
+  const snapshot=readiness.readiness();
+  assert.equal(snapshot.selectedLane,'free-professional-profiles');
+  assert.equal(snapshot.ok,false);
+  assert.equal(snapshot.status,'not-ready');
+  assert(snapshot.blocked.length>0);
+  assert.equal(snapshot.failClosed,true);
+  assert.equal(snapshot.dependencies.database.healthy,false);
+  assert(!JSON.stringify(snapshot).includes(tempStorage),'public readiness must not expose storage paths');
+  const publicStatus=readiness.publicStatus();
+  assert.equal(publicStatus.ok,true);
+  assert.equal(publicStatus.privacy.exposesSecrets,false);
+  assert.equal(publicStatus.selectedReadinessLane.ready,false);
+  const owner=readiness.ownerDiagnostics();
+  assert.equal(owner.lanes.length,4);
+  assert.equal(owner.operatorBoundary.readinessDoesNotReplaceOwnerApproval,true);
+
+  server=require('../server');
+  await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));
+  const base=`http://127.0.0.1:${server.address().port}`;
+  const live=await fetch(base+'/livez');assert.equal(live.status,200);assert.equal((await live.json()).status,'alive');
+  const ready=await fetch(base+'/readyz?lane=free-professional-profiles');assert.equal(ready.status,503);assert.equal(ready.headers.get('retry-after'),'60');const readyJson=await ready.json();assert.equal(readyJson.failClosed,true);
+  const health=await fetch(base+'/health');assert.equal(health.status,200);const healthJson=await health.json();assert.equal(healthJson.ok,true);assert(!('readinessPath' in healthJson));
+  const service=await fetch(base+'/api/public/service-status');assert.equal(service.status,200);assert.equal((await service.json()).privacy.exposesPersonalInformation,false);
+  const ownerDenied=await fetch(base+'/api/owner/service-readiness');assert.equal(ownerDenied.status,403);
+
+  const root=path.join(__dirname,'..');
+  const source=fs.readFileSync(path.join(root,'server.js'),'utf8');
+  for(const route of ['/livez','/readyz','/api/public/service-status','/api/owner/service-readiness'])assert(source.includes(route),route);
+  const statusPage=fs.readFileSync(path.join(root,'public','launch-status.html'),'utf8');assert.match(statusPage,/data-service-readiness/);
+  const attorneyPage=fs.readFileSync(path.join(root,'public','attorney-launch.html'),'utf8');assert.match(attorneyPage,/professional account and profile-control readiness/i);
+  const activation=fs.readFileSync(path.join(root,'public','launch-activation.html'),'utf8');assert.match(activation,/Readiness probes and truthful service status/);
+  const app=fs.readFileSync(path.join(root,'public','app.js'),'utf8');assert.match(app,/api\/public\/service-status/);
+  const contract=JSON.parse(fs.readFileSync(path.join(root,'SERVICE_READINESS_CONTRACT_V1.7.50.json'),'utf8'));assert.equal(contract.deploymentAuthorized,false);assert.equal(contract.endpoints['/readyz'].blockedStatus,503);assert.equal(contract.endpoints['/readyz'].launchAuthority,false);
+  const acceptance=fs.readFileSync(path.join(root,'SERVICE_READINESS_ACCEPTANCE_V1.7.50.md'),'utf8');assert.match(acceptance,/Production acceptance is not complete/);
+  console.log('service-readiness-v1749.test.js passed');
+}finally{
+  if(server&&server.listening)await new Promise(resolve=>server.close(resolve));
+  fs.rmSync(tempStorage,{recursive:true,force:true});
+}})().catch(error=>{console.error(error);process.exitCode=1;});

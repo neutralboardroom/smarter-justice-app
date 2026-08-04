@@ -1,0 +1,92 @@
+{
+  "version": "1.7.32",
+  "date": "2026-07-26",
+  "status": "exact-artifact-tested development release; not deployed",
+  "sourceArtifact": {
+    "filename": "smarter-justice-v1.7.31.zip",
+    "sha256": "4c1f884cd21086687d5c1db3cc410f70af59ce061f4f4a8011570d461013fbee",
+    "sizeBytes": 3017722,
+    "entries": 507,
+    "files": 496,
+    "explicitDirectories": 11
+  },
+  "implementation": {
+    "preparationQualityCheck": true,
+    "preparationQualityCurrentTabOnly": true,
+    "preparationQualityLocalTextAndJsonReports": true,
+    "preparationQualityDeterminesTruth": false,
+    "preparationQualityDeterminesCredibility": false,
+    "preparationQualityDeterminesLegalMerit": false,
+    "preparationQualityDeterminesEvidenceSufficiency": false,
+    "preparationQualityScoresCaseStrength": false,
+    "preparationQualityCalculatesLegalDeadlines": false,
+    "preparationQualityTransmitsToServer": false,
+    "preparationQualityUsesExternalAi": false,
+    "preparationQualityFilesOrRoutes": false,
+    "portfolioTruthRegistry": true,
+    "attentionFirstOwnerControlCenter": true,
+    "dashboardContracts": true,
+    "dashboardConformanceHighestClaim": "D2_CONTRACT_TESTED",
+    "liveCrossPortalDashboardIntegration": false,
+    "centralizedPublicUserMatterData": false,
+    "automaticCrossRepositorySynchronization": false,
+    "storageConservation": true
+  },
+  "profileGrowth": {
+    "decision": "NO_WEAK_PADDING",
+    "newProfessionals": 0,
+    "newFirms": 0,
+    "newLinks": 0,
+    "regionsWorked": 0,
+    "publicDirectory": {
+      "professionals": 233,
+      "firms": 48,
+      "total": 281
+    },
+    "strictQualifying": {
+      "professionals": 232,
+      "firms": 46,
+      "total": 278
+    }
+  },
+  "storage": {
+    "removedFiles": 8,
+    "removedUncompressedBytes": 1775362,
+    "testOnlyCompatibilityModulesPackaged": false
+  },
+  "testing": {
+    "suiteParts": 82,
+    "workingTreePassed": true,
+    "freshExtractionAPassed": true,
+    "freshExtractionBPassed": true,
+    "javascriptSyntaxChecksPassed": true,
+    "jsonParseChecksPassed": true,
+    "zipCrcPassed": true,
+    "unsafeEntryChecksPassed": true,
+    "byteIdentityAcrossExtractionsPassed": true,
+    "currentVulnerabilityCountClaimed": false,
+    "note": "Exact counts and detached ZIP identity are recorded after final packaging because an archive cannot contain its own stable checksum.",
+    "javascriptSyntaxFiles": 188,
+    "jsonFiles": 101,
+    "dependencyInstallAttempt": "Timed out during npm registry access; no fresh install or vulnerability count claimed."
+  },
+  "deployment": {
+    "deployed": false,
+    "lastVerifiedProduction": "1.6.1",
+    "rollbackArtifact": "smarter-justice-v1.7.30.zip",
+    "rollbackSha256": "2293e9a6a19fcc1375cabadb5f9aa25a70c1eb3b11976accb628c7fc551927f4"
+  },
+  "activationGatesChanged": false,
+  "closedGates": [
+    "payments",
+    "subscriptions",
+    "booking",
+    "reviews",
+    "sensitive uploads",
+    "filing",
+    "unrestricted professional routing",
+    "AttorneyRide transfer",
+    "automatic cross-repository writes",
+    "centralized public-user matter storage"
+  ]
+}

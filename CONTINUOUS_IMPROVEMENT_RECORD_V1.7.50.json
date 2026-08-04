@@ -1,0 +1,31 @@
+{
+  "releaseVersion": "1.7.50",
+  "generatedAt": "2026-07-29T16:22:00-04:00",
+  "materialOpportunity": "Turn the free-profile attorney cohort into a personalized, measurable, privacy-minimized launch operation without weakening trust or collecting client matter facts.",
+  "implemented": [
+    "Expiring and revocable personalized invitations",
+    "One-time raw link display and hash-only token storage",
+    "Existing outreach-contact reuse",
+    "Invitation issued/opened/redeemed/revoked/expired states",
+    "Recognized campaign controls",
+    "Allowlisted aggregate public and attorney funnel events",
+    "Raw-token removal from browser URL after validation",
+    "Owner metrics and aggregate CSV export"
+  ],
+  "sharedLearning": [
+    "Personalized outreach should reuse a known contact rather than create duplicate professional records.",
+    "Invitation state is operational evidence, not professional verification, eligibility or endorsement.",
+    "Conversion measurement should answer launch questions with aggregate counters before collecting granular visitor data.",
+    "Bearer tokens should be random, time-limited, revocable, hash-only at rest, and removed from the visible URL after validation.",
+    "No public campaign measurement needs legal narratives, IP addresses, device fingerprints, email addresses or cross-site identifiers."
+  ],
+  "nextValidation": [
+    "Small real-attorney invitation rehearsal",
+    "Invitation expiry and revocation rehearsal",
+    "Public campaign and funnel-count rehearsal",
+    "Exact portal D4 staging",
+    "Support and incident drill",
+    "Rollback and restore drill",
+    "Device and accessibility acceptance"
+  ]
+}

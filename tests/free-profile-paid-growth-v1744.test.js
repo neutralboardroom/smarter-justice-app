@@ -1,0 +1,63 @@
+'use strict';
+const assert=require('assert');
+const fs=require('fs');
+const os=require('os');
+const path=require('path');
+process.env.NODE_ENV='test';
+process.env.SMARTER_JUSTICE_STORAGE_DIR=fs.mkdtempSync(path.join(os.tmpdir(),'sj-v1744-'));
+(async()=>{
+  const root=path.join(__dirname,'..');
+  const store=require('../lib/store'); await store.init();
+  const growth=require('../lib/professionalPromotionProgram');
+  const launch=require('../lib/launchCommandCenter');
+  const pkg=require('../package.json'); const lock=require('../package-lock.json'); const manifest=require('../portal-manifest.json');
+  assert.equal(pkg.version,'1.7.83'); assert.equal(lock.version,'1.7.83'); assert.equal(lock.packages[''].version,'1.7.83');
+  assert.equal(pkg.scripts.test.split(' && ').length,145); assert.equal(manifest.currentDevelopmentVersion,'1.7.83'); assert.equal(manifest.testSuiteParts,146);
+  assert.equal(fs.existsSync(path.join(root,'lib','foundingProfilePilot.js')),false);
+  assert.equal(fs.existsSync(path.join(root,'storage','foundingProfilePilot.json')),false);
+  const server=fs.readFileSync(path.join(root,'server.js'),'utf8');
+  const client=fs.readFileSync(path.join(root,'public','professional.js'),'utf8');
+  const owner=fs.readFileSync(path.join(root,'public','control-center.html'),'utf8');
+  assert(!server.includes('/api/professional/founding-profile-pilot'));
+  assert(!client.includes('Activate Complimentary Access'));
+  assert(!owner.includes('Founding Profile Pilot'));
+  assert(server.includes('/api/public/professional-growth-policy'));
+  assert(server.includes('/api/owner/professional-growth/controls'));
+  assert(owner.includes('Free basic profiles, paid sponsored visibility, and case opportunities'));
+
+  const policy=growth.publicPolicy();
+  assert.equal(policy.basicProfile.claimFree,true); assert.equal(policy.basicProfile.editFree,true); assert.equal(policy.basicProfile.verificationFree,true);
+  assert.equal(policy.boundaries.paymentDoesNotVerify,true); assert.equal(policy.boundaries.paymentDoesNotCreateSpecialtyEligibility,true); assert.equal(policy.boundaries.paymentDoesNotChangeOrganicRanking,true);
+  assert.equal(policy.paidProducts.caseOpportunityAccess.percentageOfLegalFees,false); assert.equal(policy.paidProducts.caseOpportunityAccess.outcomeContingent,false);
+
+  const base={id:'professional-1',claimStatus:'claimed',verificationStatus:'verified',ownerApprovalStatus:'approved',profileStatus:'claimed',portalEligibility:['divorce-law-aid'],marketplaceTermsAcceptedAt:'2026-07-29T00:00:00Z',independentProfessionalAcknowledgmentAt:'2026-07-29T00:00:00Z',conflictsPolicyAcceptedAt:'2026-07-29T00:00:00Z',membership:{status:'none'}};
+  let access=growth.evaluateProfessional(base,{portalId:'divorce-law-aid'});
+  assert.equal(access.basicProfileControl,true); assert.equal(access.basicProfilePriceCents,0); assert.equal(access.sponsoredPlacementEligible,false); assert.equal(access.caseOpportunityEligible,false);
+  let result=await growth.updateControls({sponsoredPlacementsOpen:true,caseOpportunityAccessOpen:true,legalComplianceApproved:true,jurisdictionCounselReviewRecorded:true,termsVersion:'v1',complianceReference:'test evidence',reason:'Open compliant paid growth for acceptance.',evidence:['test']});
+  assert(/OPEN PAID PROFESSIONAL GROWTH/.test(result.error));
+  result=await growth.upsertPromotion(base.id,{status:'approved',portalIds:['divorce-law-aid'],opportunityAccess:true,reason:'Independent eligibility and terms reviewed.'},'test-owner');
+  assert.equal(result.promotion.status,'approved');
+  access=growth.evaluateProfessional({...base,membership:{status:'active'}},{portalId:'divorce-law-aid'});
+  assert.equal(access.sponsoredPlacementEligible,false); assert.equal(access.caseOpportunityEligible,false);
+  result=await growth.updateControls({sponsoredPlacementsOpen:true,caseOpportunityAccessOpen:true,legalComplianceApproved:true,jurisdictionCounselReviewRecorded:true,termsVersion:'PROFESSIONAL-GROWTH-v1',complianceReference:'LEGAL_COMPLIANCE_REGISTER_V1.7.50.json',confirmation:'OPEN PAID PROFESSIONAL GROWTH',reason:'Open only after legal, payment, disclosure and owner acceptance.',evidence:['Counsel review reference','Sponsored label acceptance']},'test-owner');
+  assert.equal(result.controls.sponsoredPlacementsOpen,true); assert.equal(result.controls.caseOpportunityAccessOpen,true);
+  access=growth.evaluateProfessional({...base,membership:{status:'active'}},{portalId:'divorce-law-aid'});
+  assert.equal(access.sponsoredPlacementEligible,true); assert.equal(access.caseOpportunityEligible,true); assert.equal(access.sponsoredLabel,'Sponsored'); assert.equal(access.organicRankingNeutral,true);
+  const unverified={...base,verificationStatus:'unverified',membership:{status:'active'}};
+  access=growth.evaluateProfessional(unverified,{portalId:'divorce-law-aid'});
+  assert.equal(access.sponsoredPlacementEligible,false); assert.equal(access.caseOpportunityEligible,false);
+  const wrongPortal={...base,membership:{status:'active'}};
+  access=growth.evaluateProfessional(wrongPortal,{portalId:'estate-law-aid'});
+  assert.equal(access.caseOpportunityEligible,false);
+
+  const center=launch.ownerView();
+  assert.deepEqual(center.lanes.map(x=>x.id),['public-free','free-professional-profiles','paid-membership','paid-professional-growth']);
+  assert.equal(center.lanes.find(x=>x.id==='paid-professional-growth').status,'NO_GO');
+  const publicStatus=launch.publicStatus();
+  assert(publicStatus.professionalAccounts.detail.includes('free'));
+  assert.equal(publicStatus.professionalGrowth.available,true);
+  assert(publicStatus.boundaries.some(x=>/percentage of legal fees/i.test(x)));
+
+  for(const f of ['LEGAL_COMPLIANCE_STANDARD_V1.7.50.md','LEGAL_COMPLIANCE_REGISTER_V1.7.50.json','RELEASE_EVIDENCE_V1.7.50.json','OWNER_DECISION_REGISTER_V1.7.50.json','LAUNCH_GATE_REGISTER_V1.7.50.json']) assert(fs.existsSync(path.join(root,f)),f);
+  console.log('free-profile-paid-growth-v1744.test.js passed');
+})().catch(err=>{console.error(err);process.exit(1)});

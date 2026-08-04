@@ -1,0 +1,38 @@
+{
+  "releaseVersion": "1.7.57",
+  "generatedAt": "2026-07-30",
+  "implementation": "data/professionalLifecycleGovernanceV1754.js + lib/professionalLifecycleGovernance.js",
+  "ownerEndpoint": "/api/owner/professional-lifecycle-governance",
+  "profileLifecycleSeparated": true,
+  "firmOfficeSeatRosterAuthoritySeparated": true,
+  "freeBasicProfileControl": true,
+  "paymentSeparation": true,
+  "billingActivationGateOpen": false,
+  "opportunityDeliveryGateOpen": false,
+  "appointmentsOpen": false,
+  "reviewsOpen": false,
+  "automaticPortalWrites": false,
+  "notificationEnhancements": [
+    "classification",
+    "template version",
+    "minimum necessary redacted payload",
+    "idempotency hash",
+    "provider result receipt",
+    "workflow state independent from delivery"
+  ],
+  "healthSeparation": [
+    "liveness",
+    "readiness",
+    "dependency health",
+    "public status"
+  ],
+  "retentionTruthIncluded": true,
+  "acceptedTests": [
+    "projection ownership and conflict",
+    "correction packet receipt",
+    "billing fail-closed",
+    "opportunity forbidden inputs",
+    "notification redaction and idempotency",
+    "owner authorization"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "schema_id": "SJP-V14-DETACHED-FINAL-DELIVERY-RECEIPT-CONTRACT-2026-08-03-V1",
+  "receipt_schema_id": "SJP-V14-DETACHED-FINAL-DELIVERY-RECEIPT-2026-08-03-V1",
+  "release_version": "1.7.83",
+  "final_filename": "smarter-justice-v1.7.83.zip",
+  "governing_packet": {
+    "id": "SJP-LMP-UNIVERSAL-ONE-STEP-2026-08-03-V14-ALL-CHAT-MODES",
+    "sha256": "fce42ce0927748f94189692ef5b3bf8e0fe9f8d12273287f03a68eb7bccdad6f"
+  },
+  "exact_source_artifact": {
+    "filename": "smarter-justice-v1.7.82.zip",
+    "version": "1.7.82",
+    "sha256": "61fea278a69055915e9b4b916e4b64ec514614f1746cacf659a6931ccd0228b1"
+  },
+  "embedded_candidate_acceptance": "CANDIDATE_ARTIFACT_ACCEPTANCE_V1.7.83.json",
+  "embedded_owner_receipt": "OWNER_RECEIPT.txt",
+  "release_payload_inventory": "RELEASE_PAYLOAD_INVENTORY_SHA256.txt",
+  "legacy_inventory": "FILE_INVENTORY_SHA256.txt",
+  "required_comparison_fields": [
+    "release_version",
+    "final_filename",
+    "final_sha256",
+    "final_size_bytes",
+    "deterministic_twin_sha256",
+    "candidate_sha256",
+    "candidate_size_bytes",
+    "candidate_acceptance_state",
+    "starting_artifact_sha256",
+    "package_json_sha256",
+    "package_lock_sha256",
+    "sbom_sha256",
+    "payload_inventory_sha256",
+    "payload_inventory_record_count",
+    "legacy_inventory_sha256",
+    "legacy_inventory_record_count",
+    "test_log_sha256"
+  ],
+  "receipt_location": "DETACHED_OUTSIDE_FINAL_ZIP",
+  "embedded_outer_identity_prohibited": true,
+  "deployment_authorized": false,
+  "launch_state": "NO_GO"
+}

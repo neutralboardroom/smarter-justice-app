@@ -1,0 +1,119 @@
+{
+  "schemaVersion": "1.0.0",
+  "releaseVersion": "1.7.42",
+  "generatedAt": "2026-07-28T00:00:00-04:00",
+  "deploymentAuthorized": false,
+  "status": "EXACT_ARTIFACT_TESTED_NOT_DEPLOYED",
+  "artifact": {
+    "filename": "smarter-justice-v1.7.42.zip",
+    "sha256": "DETACHED_AFTER_PACKAGING",
+    "sizeBytes": 0,
+    "entryCount": 761,
+    "fileCount": 747,
+    "directoryCount": 14,
+    "inventoryRecords": 746
+  },
+  "baseline": {
+    "filename": "smarter-justice-v1.7.41.zip",
+    "sha256": "f7db1b271f3a88314095a471305ff4c913882e6e456be41f48312453064e8b15",
+    "sizeBytes": 2083467
+  },
+  "materialChanges": [
+    "Self-contained Smarter Justice Legal Portfolio Operating System",
+    "Neutral Boardroom removed as launch, runtime, management and source-of-truth dependency",
+    "Pilot order changed to Divorce, Estate and Personal Injury",
+    "Personal Injury pilot includes vehicle accidents while workers compensation remains separate",
+    "Persistent owner decision, artifact, gate, dependency, support, incident and receipt records",
+    "Dedicated pilot contracts, links, handoffs, receipts, builder prompts and acceptance materials",
+    "Current truth and rollback uncertainty corrected",
+    "Owner Control Center made operational and fail-closed"
+  ],
+  "tests": {
+    "officialParts": 98,
+    "dependencyIndependentExpected": 97,
+    "postgresqlDependent": 1,
+    "results": "97_DEPENDENCY_INDEPENDENT_PASSED;_1_POSTGRESQL_DEPENDENT_BLOCKED_BY_LEGITIMATE_PACKAGE_REGISTRY_ACCESS",
+    "dependencyIndependentPassed": 97,
+    "postgresqlDependentBlocked": 1,
+    "javascriptSyntaxPassed": 214,
+    "jsonParsePassed": 249,
+    "topLevelPublicHtmlAudited": 70,
+    "launchPreflight": "NO_GO"
+  },
+  "deployment": {
+    "deployed": false,
+    "authorized": false,
+    "lastVerifiedProduction": "1.6.1",
+    "livePortalConnections": 0,
+    "automaticPortalWrites": false,
+    "livePayments": false
+  },
+  "rollback": {
+    "status": "OWNER_APPROVAL_REQUIRED",
+    "artifact": "OWNER_APPROVAL_REQUIRED",
+    "reason": "Conflicting historical rollback records were not guessed."
+  },
+  "publicDirectoryTruth": {
+    "state": "TEMPORARY_NOINDEX_COMPATIBILITY_AND_CLAIM_LOOKUP",
+    "permanentSpecialtyDirectoryAuthority": "destination micro-portals",
+    "sitemapIncluded": false,
+    "navigationLabel": "temporary find-or-claim profile lookup"
+  },
+  "limitations": [
+    {
+      "priority": "P0",
+      "item": "Approve one exact rollback artifact",
+      "status": "BLOCKED_OWNER_DECISION"
+    },
+    {
+      "priority": "P0",
+      "item": "Legitimate clean install and vulnerability audit",
+      "status": "BLOCKED_REGISTRY"
+    },
+    {
+      "priority": "P0",
+      "item": "Production-like PostgreSQL, migrations, restart persistence and transactions",
+      "status": "NOT_VERIFIED"
+    },
+    {
+      "priority": "P0",
+      "item": "SMTP verification and recovery lifecycle",
+      "status": "NOT_VERIFIED"
+    },
+    {
+      "priority": "P0",
+      "item": "Stripe subscription lifecycle and support policy acceptance",
+      "status": "NOT_VERIFIED"
+    },
+    {
+      "priority": "P0",
+      "item": "Divorce, Estate and Personal Injury exact portal verification and D4 staging",
+      "status": "NOT_STARTED"
+    },
+    {
+      "priority": "P0",
+      "item": "Browser, mobile, keyboard, zoom and screen-reader acceptance",
+      "status": "NOT_COMPLETED"
+    },
+    {
+      "priority": "P0",
+      "item": "Monitoring, incident, backup and restore acceptance",
+      "status": "NOT_COMPLETED"
+    },
+    {
+      "priority": "P1",
+      "item": "Resolve 14 ambiguous legacy professional assignments",
+      "status": "OPEN"
+    },
+    {
+      "priority": "P1",
+      "item": "Narrow temporary Smarter Justice directory to claim/migration use and verify sitemap/navigation truth",
+      "status": "IMPLEMENTED_PARTIAL"
+    },
+    {
+      "priority": "P2",
+      "item": "Immigration Oasis and additional portal rollout after three pilots",
+      "status": "DEFERRED"
+    }
+  ]
+}

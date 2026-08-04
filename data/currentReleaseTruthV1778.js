@@ -1,0 +1,171 @@
+'use strict';
+module.exports={
+  "schema": "smarter-justice-current-release-truth",
+  "schemaVersion": "1.4.0",
+  "releaseVersion": "1.7.78",
+  "generatedAt": "2026-08-03T12:19:00-04:00",
+  "selectedBase": {
+    "filename": "smarter-justice-v1.7.77.zip",
+    "version": "1.7.77",
+    "sha256": "0df3fc34a27eccbd0f209d5479106d8f491549361e18d075b107ed87553b1ccf",
+    "sizeBytes": 8459920,
+    "entries": 2987,
+    "files": 2963,
+    "directories": 24,
+    "uncompressedBytes": 25384000,
+    "compressedBytes": 8007392,
+    "inventoryRecords": 2962,
+    "inventorySha256": "74135292d6f9f6c39bfdfb69db78de9efc6e3252e9a302f015d73f90bc736638",
+    "treeSha256": "74135292d6f9f6c39bfdfb69db78de9efc6e3252e9a302f015d73f90bc736638",
+    "packageJsonSha256": "f181e25011fea7fe48aa883e0b8008466c9f7c386bb8c2c6ba5a75748a164ad3",
+    "packageLockSha256": "1e586daf999a080c30a96ec280aa3e0414d5ad44e6d4ca1387fa343cb5798d89",
+    "sbomSha256": "58c24b6b6b1ddff28a80823c7397377fea210b7582ddd3e8cc04d03605e3c445",
+    "dependencyIndependentParts": 133,
+    "totalReadinessParts": 134,
+    "testLogSha256": "b0c0743c4eb031ada699d50f328d648f712deb4e9f23136cc15d4c255c023976"
+  },
+  "rollbackArtifact": {
+    "filename": "smarter-justice-v1.7.77.zip",
+    "version": "1.7.77",
+    "sha256": "0df3fc34a27eccbd0f209d5479106d8f491549361e18d075b107ed87553b1ccf",
+    "sizeBytes": 8459920,
+    "entries": 2987,
+    "files": 2963,
+    "directories": 24,
+    "uncompressedBytes": 25384000,
+    "compressedBytes": 8007392,
+    "inventoryRecords": 2962,
+    "inventorySha256": "74135292d6f9f6c39bfdfb69db78de9efc6e3252e9a302f015d73f90bc736638",
+    "treeSha256": "74135292d6f9f6c39bfdfb69db78de9efc6e3252e9a302f015d73f90bc736638",
+    "packageJsonSha256": "f181e25011fea7fe48aa883e0b8008466c9f7c386bb8c2c6ba5a75748a164ad3",
+    "packageLockSha256": "1e586daf999a080c30a96ec280aa3e0414d5ad44e6d4ca1387fa343cb5798d89",
+    "sbomSha256": "58c24b6b6b1ddff28a80823c7397377fea210b7582ddd3e8cc04d03605e3c445",
+    "dependencyIndependentParts": 133,
+    "totalReadinessParts": 134,
+    "testLogSha256": "b0c0743c4eb031ada699d50f328d648f712deb4e9f23136cc15d4c255c023976"
+  },
+  "sourcePackage": {
+    "filename": "smarter-justice-v1.7.78.zip",
+    "version": "1.7.78",
+    "dependencyIndependentParts": 135,
+    "totalReadinessParts": 136,
+    "identityState": "CANDIDATE_ACCEPTED_FINAL_SOURCE_SEALED",
+    "packageJsonSha256": "a5b18758ea301db10bbb826959ec2a531de55bb7bc3de419eef5ae794b9b8a37",
+    "packageLockSha256": "f3fced9c44334858328ed25783b6114fafd6060654cc549fe02afe6e8bb80fb7",
+    "sbomSha256": "6b0997aebc62a510b55f5c286d16bb410d5444a26a31ca18f03998e500a9e8b9"
+  },
+  "finalArchive": {
+    "filename": "smarter-justice-v1.7.78.zip",
+    "version": "1.7.78",
+    "identityState": "DETACHED_AFTER_IMMUTABLE_PACKAGING",
+    "sha256": null,
+    "sizeBytes": null
+  },
+  "activeMasterPair": {
+    "receiptId": "MPCR-2026-07-31-E1-R0-05F4296ED378",
+    "transactionId": "MPPT-2026-07-31-SJ8-FP26-304CB87BF174",
+    "pairEpoch": 1,
+    "pairRevision": 0,
+    "receiptSha256": "4dd826cb0f9d89e41528b9732f250899cab45ce89766ae7fdfdb8a44d48d906e",
+    "centralMasterSha256": "89f49e1433d05a937a31c2144e42e408a94c4502d8c388ad5f3a6eae7ad5aa68",
+    "portalFamilyMasterSha256": "fd9e66a351067b6c02891c9474a4bc52edcbde552ae5706738d00930e6d4573f",
+    "baselineId": "DRB-2026-07-31-DUR001-DUR043-V2",
+    "semanticCapsuleSha256": "3d5f7cc4b33980148510834f6b23f902fb5416dbdc9398f106a3b14e81713bf8"
+  },
+  "portalAuthority": {
+    "record": "INITIAL_PORTAL_AUTHORITY_V1.7.75.json",
+    "evidenceBoundary": "OWNER_RECORDED_OR_HANDOFF_RECORDED_NOT_CURRENT_CHAT_PORTAL_INSPECTION",
+    "liveConnectionsOpened": false,
+    "automaticWritesOpened": false
+  },
+  "ownerLaunchActionPacket": {
+    "record": "OWNER_LAUNCH_ACTION_PACKET_V1.7.75.json",
+    "state": "PRIVATE_VALIDATED_NONSECRET_EXECUTION_PACKET",
+    "readyNowCount": 4
+  },
+  "production": {
+    "lastVerifiedVersion": "1.6.1",
+    "deploymentAuthorized": false,
+    "deploymentState": "NOT_DEPLOYED",
+    "deployed": false
+  },
+  "launchState": "NO_GO",
+  "deploymentAuthorized": false,
+  "publicDisplay": {
+    "currentVersion": "1.7.78",
+    "sourceAndRollback": "smarter-justice-v1.7.77.zip",
+    "finalIdentity": "Detached receipt required after immutable packaging",
+    "promptPack": "V12 plus OpenAI launch batch 02 overlay accepted locally; protected key, deployment, live smoke, portal compatibility and stabilization remain separate.",
+    "launch": "NO_GO",
+    "deployment": "Not authorized",
+    "sourceVersion": "1.7.77"
+  },
+  "validationState": "CANDIDATE_ACCEPTED_FINAL_SOURCE_SEALED",
+  "currentPromptPack": {
+    "packId": "SJP-2026-08-02-C15-P37-D11-V13",
+    "packetId": "SJP-LMP-UNIVERSAL-ONE-STEP-2026-08-03-V12-CONTINUOUS-SELF-IMPROVEMENT",
+    "packetSha256": "37d90cab818b71613c388bf195b08d129eb569dd183de5358f32dd335975a1d5",
+    "canonicalCommitProven": false,
+    "baselineId": "DRB-2026-08-02-DUR001-DUR086-V13",
+    "ruleCount": 86,
+    "deploymentFile4State": "ACTIVE — INCLUDED — EXACTLY BOUND"
+  },
+  "candidateArtifact": {
+    "filename": "smarter-justice-v1.7.78-candidate-a.zip",
+    "sha256": "623b3081b1a6c5316b6c37dc2837d0b747389416941192cd0e932a829d3a3489",
+    "sizeBytes": 8503453,
+    "entries": 3010,
+    "files": 2986,
+    "directories": 24,
+    "inventoryRecords": 2985,
+    "inventorySha256": "e0436ee65d2df5183ed083cdad6043908e7d07db4f0fa091598c96cfdca8de7b",
+    "state": "CANDIDATE_ACCEPTED_NONCIRCULAR"
+  },
+  "deploymentReadiness": {
+    "record": "DEPLOYMENT_READINESS_V1.7.75.json",
+    "state": "LOCAL_LAUNCH_DAY_ORCHESTRATION_ACCEPTED_ALL_PRODUCT_PREFLIGHT_PENDING"
+  },
+  "packId": "SJP-2026-08-02-C15-P37-D11-V13",
+  "durableRuleBaseline": "DRB-2026-08-02-DUR001-DUR086-V13",
+  "presealArtifact": {
+    "candidateSha256": "623b3081b1a6c5316b6c37dc2837d0b747389416941192cd0e932a829d3a3489",
+    "candidateSizeBytes": 8503453,
+    "state": "CANDIDATE_ACCEPTED_NONCIRCULAR"
+  },
+  "recoveryLineage": {
+    "record": "RECOVERY_LINEAGE_RECEIPT_V1.7.75.json",
+    "inheritedExactRecoveryBase": "smarter-justice-v1.7.73.zip",
+    "unavailableIntermediate": "smarter-justice-v1.7.74.zip",
+    "byteExactIntermediateRecoveryClaimed": false,
+    "currentExactSource": "smarter-justice-v1.7.77.zip"
+  },
+  "v12ContinuousImprovement": {
+    "packetSha256": "37d90cab818b71613c388bf195b08d129eb569dd183de5358f32dd335975a1d5",
+    "innovationPlan": "CONTINUOUS_SELF_IMPROVEMENT_AND_INNOVATION_PLAN_V1.7.78.json",
+    "dualImprovementReport": "PRODUCT_AND_PROMPT_DUAL_IMPROVEMENT_REPORT_V1.7.78.json",
+    "crossVersionLearning": "CROSS_VERSION_LEARNING_LEDGER_V1.7.78.json",
+    "releaseEvidenceCoverageContract": "RELEASE_EVIDENCE_COVERAGE_CONTRACT_V1.7.78.json"
+  },
+  "workingTreeAcceptance": {
+    "record": "WORKING_TREE_ACCEPTANCE_V1.7.78.json",
+    "runs": 2,
+    "identicalOutput": true,
+    "testLogSha256": "da346ac79ed36e791091d0f6dcf355620d5e3ee875b58945475554a1a035cd58"
+  },
+  "candidateAcceptanceRecord": "CANDIDATE_ARTIFACT_ACCEPTANCE_V1.7.78.json",
+  "finalSourceAcceptanceRecord": "FINAL_SOURCE_ACCEPTANCE_V1.7.78.json",
+  "openAiLaunch": {
+    "launchBatchId": "SJP-OPENAI-LIVE-2026-08-03-BATCH-02",
+    "overlayCheckpoint": "OPENAI_LAUNCH_OVERLAY_CHECKPOINT_V1.7.78.json",
+    "gatewayContract": "AI_GATEWAY_CONTRACT_V1.7.78.json",
+    "modelConfiguration": "AI_MODEL_CONFIGURATION_V1.7.78.json",
+    "toolPromptRegistry": "AI_TOOL_AND_PROMPT_REGISTRY_V1.7.78.json",
+    "capabilityMatrix": "FIVE_PRODUCT_AI_CAPABILITY_MATRIX_V1.7.78.json",
+    "vendorPolicy": "OPENAI_ONLY",
+    "keyConfigured": false,
+    "liveSmokePassed": false,
+    "portalCompatibilityReceipts": 0,
+    "deploymentAuthorized": false,
+    "launchState": "NO_GO"
+  }
+};

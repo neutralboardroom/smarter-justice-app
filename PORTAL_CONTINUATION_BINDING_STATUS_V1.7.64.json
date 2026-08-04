@@ -1,0 +1,31 @@
+{
+  "schema": "smarter-justice-portal-continuation-binding-status",
+  "releaseVersion": "1.7.64",
+  "generatedAt": "2026-07-31T23:58:00-04:00",
+  "activePairReceiptId": "MPCR-2026-07-31-E1-R0-05F4296ED378",
+  "portals": [
+    {
+      "portalId": "divorce-law-aid",
+      "state": "REVALIDATION_REQUIRED_BEFORE_SHARED_D4_OR_LIVE_ACTION",
+      "reason": "No exact current portal continuation was supplied or inspected in this central build; ordinary owner-recorded coordination remains allowed within evidence scope."
+    },
+    {
+      "portalId": "estate-law-aid",
+      "state": "REVALIDATION_REQUIRED_BEFORE_SHARED_D4_OR_LIVE_ACTION",
+      "reason": "No exact current portal continuation was supplied or inspected in this central build; ordinary owner-recorded coordination remains allowed within evidence scope."
+    },
+    {
+      "portalId": "personal-injury-law-aid",
+      "state": "REVALIDATION_REQUIRED_BEFORE_SHARED_D4_OR_LIVE_ACTION",
+      "reason": "No exact current portal continuation was supplied or inspected in this central build; ordinary owner-recorded coordination remains allowed within evidence scope."
+    },
+    {
+      "portalId": "domestic-violence-aid",
+      "state": "REVALIDATION_REQUIRED_BEFORE_SHARED_D4_OR_LIVE_ACTION",
+      "reason": "No exact current portal continuation was supplied or inspected in this central build; ordinary owner-recorded coordination remains allowed within evidence scope."
+    }
+  ],
+  "affectedSharedBoundariesFailClosed": true,
+  "unrelatedCentralWorkMayContinue": true,
+  "liveConnectionsOpened": false
+}

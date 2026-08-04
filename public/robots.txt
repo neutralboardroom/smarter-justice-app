@@ -1,6 +1,8 @@
 User-agent: *
 Allow: /
 Disallow: /control-center.html
+Disallow: /owner-login.html
+Disallow: /internal-access.html
 Disallow: /staff.html
 Disallow: /admin.html
 Disallow: /dashboard.html

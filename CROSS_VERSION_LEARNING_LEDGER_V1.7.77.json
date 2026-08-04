@@ -1,0 +1,49 @@
+{
+  "schema_id": "SJP-LMP-CROSS-VERSION-LEARNING-LEDGER-2026-08-03-V1",
+  "product": {
+    "name": "Smarter Justice",
+    "current_version": "1.7.77",
+    "current_artifact_sha256": "DETACHED_FINAL_NOT_YET_BUILT"
+  },
+  "prior_versions_reviewed": [
+    "1.7.75",
+    "1.7.76"
+  ],
+  "lessons": [
+    {
+      "lesson_id": "SJ-LEARN-1777-001",
+      "source_version_or_wave": "1.7.76 device-only Journey Handoff Planner",
+      "observation": "Creation and export were safe, but a returning user could not verify a local file.",
+      "what_worked_or_failed": "The no-transfer boundary worked; continuity stopped before local reinspection.",
+      "root_cause_or_enabling_factor": "v1.7.76 intentionally implemented the smallest useful creation slice.",
+      "test_or_evidence_that_revealed_it": "tests/journey-handoff-planner-v1776.test.js and SAFE_RELEASE_CAPACITY_AND_SATURATION_RECEIPT_V1.7.76.json",
+      "product_change_made": "Added strict device-only import inspection, integrity/expiry checks, central compatibility guidance, and local reset.",
+      "builder_prompt_system_change_made": "Added a maturity rule distinguishing central local inspection from product-local portal import acceptance.",
+      "future_candidate_selection_effect": "Prefer local inspection and explicit compatibility states before proposing automatic or server-side transfer.",
+      "future_testing_or_recovery_effect": "Test malformed, oversized, unknown-field, tampered, expired, future-dated, and destination-mismatch files while asserting zero network/persistence primitives.",
+      "status": "ACTIVE"
+    },
+    {
+      "lesson_id": "SJ-LEARN-1777-002",
+      "source_version_or_wave": "v1.7.76 evidence reconciliation",
+      "observation": "The durable improvement backlog was briefly collapsed during evidence editing and had to be restored.",
+      "what_worked_or_failed": "Regression tests caught the issue, but only after the list had been altered.",
+      "root_cause_or_enabling_factor": "The dual-track gate checked report structure, not carry-forward completeness or evidence existence.",
+      "test_or_evidence_that_revealed_it": "v1.7.76 regression run and the preserved 21-item NEXT_VERSION_IMPROVEMENT_LIST.json",
+      "product_change_made": "Kept the full public/product readiness backlog visible and updated the Journey Handoff item without deleting its portal-local dependency.",
+      "builder_prompt_system_change_made": "Added a release-evidence coverage validator requiring all prior unresolved IDs, real files/tests, prior limitation dispositions, and exact source identity.",
+      "future_candidate_selection_effect": "Reject candidates that gain a new feature by losing unresolved obligations or unverifiable evidence.",
+      "future_testing_or_recovery_effect": "Run evidence coverage before candidate freeze and again after candidate sealing.",
+      "status": "ACTIVE"
+    }
+  ],
+  "unresolved_learning_questions": [
+    "Which exact portal will first accept the local plan schema and what product-local data-minimization changes will it require?",
+    "Can a QR representation meet real-device, shoulder-surfing, and accessibility standards without encouraging automatic transfer?"
+  ],
+  "next_version_learning_priorities": [
+    "Obtain one exact product-local adapter acceptance before enabling any portal import.",
+    "Measure inspector comprehension only through privacy-preserving, separately authorized methods.",
+    "Evaluate candidate scoring as advisory evidence only, never as a substitute for hard constraints or owner judgment."
+  ]
+}

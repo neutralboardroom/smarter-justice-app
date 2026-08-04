@@ -1,0 +1,198 @@
+{
+  "schemaVersion": "1.0.0",
+  "release": {
+    "project": "Smarter Justice",
+    "version": "1.7.20",
+    "title": "Portal Preparation, Sub-Platform Coordination, and Manhattan-Led Professional Growth",
+    "status": "exact artifact tested; not deployed",
+    "artifactName": "smarter-justice-v1.7.20.zip",
+    "artifactSha256Location": "External exact-artifact test record and final delivery summary",
+    "sourceBaseline": "smarter-justice-v1.7.19.zip \u2014 SHA-256 ce3a5785b85bb9e5407bbd11168cc7b610178fc1f7b3719564ca361a7f4ba45a",
+    "rollbackArtifact": "smarter-justice-v1.7.19.zip",
+    "deployment": {
+      "deployed": false,
+      "liveVerified": false,
+      "productionVersion": "1.6.1",
+      "sensitiveTrafficApproved": false,
+      "professionalPilotStatus": "paused",
+      "publicPaidHumanReviewStatus": "paused"
+    }
+  },
+  "completedImprovementItems": [
+    "SJ-NEXT-050",
+    "SJ-NEXT-051",
+    "SJ-NEXT-052",
+    "SJ-NEXT-053",
+    "SJ-NEXT-054"
+  ],
+  "materiallyAdvancedImprovementItems": [],
+  "carriedForwardImprovementItems": [
+    "SJ-NEXT-055"
+  ],
+  "changes": [
+    {
+      "id": "V1720-PORTAL-PREPARATION",
+      "problem": "Public users could choose a focused portal but lacked a privacy-preserving way to organize confirmed facts, materials, questions, goals, and access needs for the handoff.",
+      "implementation": "Added a device-only Portal Preparation Pack with portal scope/availability, local text and JSON exports, user-controlled clearing, and explicit no-upload/no-save/no-AI/no-routing/no-deadline boundaries.",
+      "tests": [
+        "tests/portal-preparation-v1720.test.js",
+        "tests/customer-facing-clarity.test.js",
+        "tests/public-ux.test.js"
+      ]
+    },
+    {
+      "id": "V1720-PORTAL-SNAPSHOT",
+      "problem": "The umbrella Control Center did not provide a concise current owner-recorded view of independently versioned sub-platform artifacts and next actions.",
+      "implementation": "Added a protected 21-record portal release snapshot with artifact names, relationships, deployment cautions, next actions, and JSON export while preserving dedicated-artifact authority.",
+      "tests": [
+        "tests/portal-release-snapshot-v1720.test.js",
+        "tests/release-governance-v1720.test.js"
+      ]
+    },
+    {
+      "id": "V1720-MANHATTAN-PROFILES",
+      "problem": "The required rotation called for Manhattan to lead the next accurate three-market profile batch.",
+      "implementation": "Added 17 source-tracked individual professionals, 1 firm, and 17 professional\u2013firm links: 8 Manhattan, 5 Brooklyn, and 4 Northern Metro New Jersey. All remain unclaimed, unverified, nonparticipating, unpaid, and inquiry-ineligible.",
+      "tests": [
+        "tests/three-market-profile-growth-v1720.test.js",
+        "tests/professional-directory-search-v1714.test.js",
+        "tests/marketplace.test.js"
+      ]
+    },
+    {
+      "id": "V1720-SBOM-IDENTITY",
+      "problem": "The inherited SBOM document name and namespace still identified v1.7.18 inside the v1.7.19 package.",
+      "implementation": "Regenerated the dependency SBOM from the v1.7.20 package and unchanged lockfile so the document identity matches the current release without changing dependencies.",
+      "tests": [
+        "tests/release-governance-v1720.test.js",
+        "tests/static-checks.test.js"
+      ]
+    }
+  ],
+  "profileGrowth": {
+    "schemaVersion": "1.0.0",
+    "project": "Smarter Justice",
+    "releaseVersion": "1.7.20",
+    "preparedDate": "2026-07-22",
+    "leadMarket": "Manhattan",
+    "nextLeadMarket": "Northern Metro New Jersey",
+    "targets": {
+      "individualProfessionals": 17,
+      "firms": 1,
+      "professionalFirmLinks": 17,
+      "markets": {
+        "Manhattan": 8,
+        "Brooklyn": 5,
+        "Northern Metro New Jersey": 4
+      }
+    },
+    "actual": {
+      "newIndividualProfessionals": 17,
+      "newFirms": 1,
+      "updatedFirms": 0,
+      "newProfessionalFirmLinks": 17,
+      "markets": {
+        "Manhattan": 8,
+        "Brooklyn": 5,
+        "Northern Metro New Jersey": 4
+      }
+    },
+    "finalDirectory": {
+      "publicProfessionals": 53,
+      "publicFirms": 22,
+      "publicTotal": 75,
+      "qualifyingProfessionals": 52,
+      "qualifyingFirms": 20,
+      "qualifyingTotal": 72
+    },
+    "marketDetails": [
+      {
+        "market": "Manhattan",
+        "county": "New York County",
+        "individualProfessionalsAdded": 8,
+        "firmsAdded": 1,
+        "firmsUpdated": 0
+      },
+      {
+        "market": "Brooklyn",
+        "county": "Kings County",
+        "individualProfessionalsAdded": 5,
+        "firmsAdded": 0,
+        "firmsUpdated": 0
+      },
+      {
+        "market": "Northern Metro New Jersey",
+        "county": "Hudson County",
+        "individualProfessionalsAdded": 4,
+        "firmsAdded": 0,
+        "firmsUpdated": 0
+      }
+    ],
+    "statusCounts": {
+      "publishedUnclaimedNewProfiles": 18,
+      "claimedNewProfiles": 0,
+      "credentialVerifiedNewProfiles": 0,
+      "inquiryEligibleNewProfiles": 0,
+      "paidNewProfiles": 0
+    },
+    "sourcePolicy": "Current professional-controlled firm and individual profile pages were used for public identity, role, business office, and conservatively summarized practice facts. Credential status remains unverified until an independent official licensing review. No testimonials, rankings, badges, case outcomes, ratings, or inferred specialties are copied.",
+    "excludedOrDeferred": [
+      "No new profile outside Manhattan, Brooklyn, or Hudson County.",
+      "Profiles without current individual-level role and practice evidence or a published business office were deferred.",
+      "Radius search remains closed until verified coordinates and distance rules exist.",
+      "Professional outreach, credential approval, claim approval, paid participation, and inquiry eligibility remain separate closed workflows."
+    ]
+  },
+  "tests": [
+    {
+      "id": "TEST-V1720-PORTAL-PREPARATION",
+      "path": "tests/portal-preparation-v1720.test.js",
+      "covers": "device-only boundaries, local exports, labels, and public discovery links"
+    },
+    {
+      "id": "TEST-V1720-PORTAL-SNAPSHOT",
+      "path": "tests/portal-release-snapshot-v1720.test.js",
+      "covers": "21-record owner snapshot, version truth, dedicated-artifact authority, and protected rendering/export"
+    },
+    {
+      "id": "TEST-V1720-PROFILES",
+      "path": "tests/three-market-profile-growth-v1720.test.js",
+      "covers": "batch counts, sources, firm links, market totals, strict profile totals, neutrality, and closed eligibility"
+    },
+    {
+      "id": "TEST-V1720-GOVERNANCE",
+      "path": "tests/release-governance-v1720.test.js",
+      "covers": "version consistency, runtime routes, owner protection, exact directory totals, SBOM identity, and closed gates"
+    },
+    {
+      "id": "TEST-FULL-REGRESSION",
+      "path": "npm test",
+      "covers": "37 sequential regression parts"
+    }
+  ],
+  "closedGates": [
+    "confidential production uploads",
+    "sensitive external AI without approved controls",
+    "professional membership applications and payments",
+    "public Human Review charges",
+    "public subscriptions",
+    "consultation booking",
+    "public reviews and ratings",
+    "unrestricted matching or routing",
+    "automatic filing",
+    "broad cross-portal sharing"
+  ],
+  "dependencyAdvisoryCheck": {
+    "status": "unavailable \u2014 HTTP 503",
+    "result": "A controlled npm advisory request on 2026-07-22 reached the configured package registry but the audit endpoint returned HTTP 503 Service Temporarily Unavailable.",
+    "claim": "No fresh v1.7.20 vulnerability count is claimed."
+  },
+  "dependencyVerification": {
+    "cleanInstallAttempted": true,
+    "cleanInstallSucceeded": false,
+    "cleanInstallResult": "The configured package registry did not complete a controlled clean install in the build environment; the advisory endpoint separately returned HTTP 503.",
+    "regressionMethod": "The complete 37-part suite passed in the working tree and again from fresh extraction using temporary external test-only pg and nodemailer compatibility modules outside the repository and excluded from the release ZIP.",
+    "lockfileComparison": "Dependency declarations remain unchanged; only the root package version is updated. The lockfile contains 15 approved public-registry dependency artifacts.",
+    "freshVulnerabilityCountClaimed": false
+  }
+}

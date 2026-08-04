@@ -1,0 +1,37 @@
+{
+  "schema": "smarter-justice-newest-artifact-learning-applied",
+  "releaseVersion": "1.7.61",
+  "generatedAt": "2026-07-31T17:14:00-04:00",
+  "source": {
+    "product": "Smarter Justice",
+    "artifact": "smarter-justice-v1.7.60.zip",
+    "version": "1.7.60",
+    "sha256": "832ec66ffda5acf0a2cb7f105cbf4c08d150b38d1582c30cea3599b3e1925e0f",
+    "evidenceState": "CURRENT_CHAT_REPRODUCED",
+    "testCommands": 114,
+    "baselineResult": "PASS_IDENTICAL_OUTPUT"
+  },
+  "revalidated": [
+    "central field ownership and conflict-safe projection",
+    "Attorney Partner Tour and public surface quality",
+    "owner-action readiness and protected owner controls",
+    "Matter Path deterministic fallback",
+    "exact-artifact and closed-gate truth"
+  ],
+  "improved": [
+    "version-neutral portal-authority discovery",
+    "fixed-portal-version prompt regression",
+    "binding monthly $15 commercial terms",
+    "one payer per attorney seat",
+    "public freemium floor and high-cost-service cost-recovery gates"
+  ],
+  "negativeLearningPrevented": [
+    "fixed current portal versions in reusable master",
+    "annual or volume-discount terms after supersession",
+    "claim/member conflation",
+    "paid AI dependency for Tier A",
+    "same-version continuation"
+  ],
+  "propagationEligibility": "TARGET_ACCEPTED_ONLY_AFTER_EXACT_V1.7.61_ARTIFACT_ACCEPTANCE",
+  "launchState": "NO_GO"
+}

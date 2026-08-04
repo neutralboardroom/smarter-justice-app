@@ -1,0 +1,58 @@
+{
+  "schema": "smarter-justice-current-research-and-competitive-learning",
+  "schemaVersion": "1.2.0",
+  "releaseVersion": "1.7.65",
+  "retrievedAt": "2026-08-01T00:35:00-04:00",
+  "researchClass": "EXTERNAL_STATE_DEPENDENT",
+  "selectedScope": "Detached final artifact identity, provenance, verification expectations, accessibility status-message preservation and lawful implementation adaptation.",
+  "sources": [
+    {
+      "id": "RES-1765-NIST-SSDF",
+      "authority": "NIST",
+      "url": "https://csrc.nist.gov/projects/ssdf",
+      "retrievedDate": "2026-08-01",
+      "finding": "SSDF retains explicit software release provenance and artifact practices.",
+      "disposition": "ADAPT_FOR_DETACHED_FINAL_IDENTITY_AND_RELEASE_EVIDENCE"
+    },
+    {
+      "id": "RES-1765-NIST-ATTESTATION",
+      "authority": "NIST",
+      "url": "https://www.nist.gov/itl/executive-order-14028-improving-nations-cybersecurity/software-supply-chain-security-guidance-11",
+      "retrievedDate": "2026-08-01",
+      "finding": "Attestation and artifact evidence remain distinct from underlying software operation.",
+      "disposition": "PRESERVE_SCOPE_LIMITS"
+    },
+    {
+      "id": "RES-1765-SLSA-PROVENANCE",
+      "authority": "SLSA specification 1.2",
+      "url": "https://slsa.dev/spec/v1.2/provenance",
+      "retrievedDate": "2026-08-01",
+      "finding": "Provenance describes where, when and how an artifact was produced.",
+      "disposition": "ADAPT_WITHOUT_CLAIMING_SLSA_LEVEL"
+    },
+    {
+      "id": "RES-1765-SLSA-VERIFY",
+      "authority": "SLSA specification 1.2",
+      "url": "https://slsa.dev/spec/v1.2/verifying-artifacts",
+      "retrievedDate": "2026-08-01",
+      "finding": "Artifact verification compares provenance and artifact against explicit expectations.",
+      "disposition": "ADOPT_EXPECTATION_AND_MISMATCH_FAILURE_PATTERN"
+    },
+    {
+      "id": "RES-1765-WCAG",
+      "authority": "W3C WAI",
+      "url": "https://www.w3.org/WAI/standards-guidelines/wcag/",
+      "retrievedDate": "2026-08-01",
+      "finding": "WCAG 2.2 remains the current W3C standard and status changes must remain accessible.",
+      "disposition": "PRESERVE_PRIVATE_STATUS_TEXT_AND_NO_VISUAL_CHURN"
+    }
+  ],
+  "lawfulCompetitiveLearning": {
+    "protectedImplementationCopied": false,
+    "brandingOrTradeDressCopied": false,
+    "accessControlsBypassed": false,
+    "result": "PRESERVATION_PLUS_INDEPENDENT_DETACHED_RECEIPT_VERIFIER"
+  },
+  "materialChangeSelected": "Detached final identity binding and verification; no public redesign.",
+  "launchState": "NO_GO"
+}

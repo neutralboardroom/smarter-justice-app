@@ -1,0 +1,25 @@
+{
+  "schema_id": "SJP-V14-MATERIAL-SCOPE-AND-MODE-2026-08-03-V1",
+  "release_version": "1.7.79",
+  "selected_mode": "MODE_B_EXISTING_CHAT_PACKET_ONLY",
+  "version_increment_reason": "Material connected product and builder improvements were justified after exact audit; the version was not incremented merely because V14 was uploaded.",
+  "product_platform_scope": [
+    "Unified owner-only live-operations state register across billing, AI, database, email, GitHub, Render, domains, health, sensitive AI, and deployment.",
+    "One exact owner action selected from explicit evidence states without claiming external services live."
+  ],
+  "builder_prompt_system_scope": [
+    "Mandatory exact artifact-binding receipt before edits.",
+    "Non-self-referential embedded owner receipt and release-payload inventory.",
+    "Automated validation of V14 packet identity, mode, identity boundaries, inventory scope, unsupported live claims, and outer-ZIP separation."
+  ],
+  "completed_prior_work_preserved": [
+    "OpenAI-only central gateway and all v1.7.78 safety controls",
+    "V12 dual-track continuous-improvement gates",
+    "Provider authorization lifecycle",
+    "Portfolio and launch-cohort readiness controls",
+    "Deterministic non-AI fallbacks and closed sensitive-document AI"
+  ],
+  "external_actions_performed": [],
+  "deployment_authorized": false,
+  "launch_state": "NO_GO"
+}

@@ -1,10 +1,10 @@
 # Smarter Justice Shared Platform Standard
 
-Version 1.3.3
+Version 1.4.0
 
 ## Operating model
 
-Use one Smarter Justice Master Coordination track for ecosystem strategy and a dedicated development chat for each portal’s detailed implementation. Keep each portal separately branded, deployable, versioned, testable, reversible, and capable of specialty-specific adaptation.
+Use the self-contained Smarter Justice Legal Portfolio Control Center and Master Coordination track for legal-network strategy, with Roger as final owner authority, and a dedicated development chat for each portal’s detailed implementation. Neutral Boardroom is dormant and non-blocking for the initial launch. Keep each portal separately branded, deployable, versioned, testable, reversible, and capable of specialty-specific adaptation.
 
 ## Strong defaults, not inflexible rules
 
@@ -71,3 +71,7 @@ Every release should produce a clean tested package, release notes, updated mani
 ## Directory completeness and firm-profile parity
 
 Public professional and firm searches must return a useful documented default page size, accurate totals, and pagination or show-more controls. Individual and firm records require source, claim, correction, approval, account-control, edit-authorization, and public-status safeguards appropriate to the record type. General website signups must not be silently attributed to a location-specific campaign. Narrow-phone acquisition flows must be checked for wrapping, overlap, clipped actions, and unusable search or checkout controls.
+
+## Cross-portal learning operating rule — v1.7.28
+Smarter Justice maintains a portable evidence-aware capability registry for all related portals. Every real ZIP audit contributes verified lessons and evaluates relevant lessons from other portals. Shared patterns are candidates, not mandates. Each target portal must classify and test the transfer under its own specialty, jurisdiction, users, privacy, security, professional, architecture, and deployment requirements.
+

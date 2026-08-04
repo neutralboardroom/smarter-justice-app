@@ -1,0 +1,417 @@
+const LEARNING_SYSTEM_VERSION = '1.0.0';
+const GENERATED_FOR_RELEASE = '1.7.28';
+const REVIEW_DATE = '2026-07-24';
+
+const ADOPTION_STATUSES = Object.freeze([
+  'adopted',
+  'adopt-now',
+  'adapt-specialty',
+  'verify-first',
+  'defer',
+  'reject',
+  'not-applicable'
+]);
+
+const SOURCE_ARTIFACTS = Object.freeze([
+  {
+    portalId:'general-smarter-justice-start',
+    portalName:'Smarter Justice',
+    role:'authoritative current development base',
+    version:'1.7.27',
+    artifactName:'smarter-justice-v1.7.27.zip',
+    sha256:'3a627d1c5775b79e309605c1d74582d995314e8229805e9b6a954283eb985b46',
+    sizeBytes:2894831,
+    zipEntries:439,
+    files:428,
+    explicitDirectories:11,
+    repositoryRoot:'root-level repository structure',
+    evidenceLevel:'exact artifact verified and source inspected',
+    deploymentStatus:'not deployed; last verified production remains v1.6.1',
+    sourceOfTruthRule:'The uploaded ZIP must be inspected and exact-tested before any later build supersedes this record.'
+  },
+  {
+    portalId:'business-launch-desk',
+    portalName:'Business Launch Desk',
+    role:'specialty reference artifact',
+    version:'0.2.39',
+    artifactName:'business-launch-desk-v0.2.39-compliance-calendar-continuous-improvement-phase-one-profile-growth-full-build.zip',
+    uploadedArtifactName:'business-launch-desk-v0.2.39-compliance-calendar-continuous-improvement-phase-one-profile-growth-full-build(1).zip',
+    sha256:'5c23d207366f96e5265e9f2adccaba7f7a5e8fa5cc7cf5955f38e10ea59ae52b',
+    sizeBytes:915417,
+    zipEntries:499,
+    files:499,
+    explicitDirectories:0,
+    uncompressedFileBytes:3956030,
+    repositoryRoot:'business-launch-desk-v0.2.39/',
+    evidenceLevel:'exact artifact identity verified; continuation prompt audited',
+    deploymentStatus:'not confirmed deployed',
+    continuationPrompt:{
+      artifactName:'Business_Launch_Desk_Complete_Audited_Expanded_Master_Continuation_Prompt_After_v0.2.39.txt',
+      sha256:'9011a8615cb7aa04ed7aafc15e63b0f0d7c9ea165e00ed3e9d4b075d3c5ca910',
+      sizeBytes:99645
+    }
+  },
+  {
+    portalId:'justice-tax-solutions',
+    portalName:'Justice Tax Solutions',
+    role:'specialty reference artifact',
+    version:'0.1.107',
+    artifactName:'justice-tax-solutions-v0.1.107.zip',
+    uploadedArtifactName:'justice-tax-solutions-v0.1.107(1).zip',
+    sha256:'f470ace7021230fdb286f5090b1244fd67df26851b212a2fef622da81463354c',
+    sizeBytes:41473044,
+    zipEntries:857,
+    files:822,
+    explicitDirectories:35,
+    uncompressedFileBytes:75143037,
+    repositoryRoot:'justice-tax-solutions-v0.1.107/',
+    evidenceLevel:'exact artifact identity and safety verified; continuation prompt audited',
+    deploymentStatus:'not confirmed deployed',
+    continuationPrompt:{
+      artifactName:'Justice_Tax_Solutions_Complete_Audited_Expanded_Master_Continuation_Prompt_After_v0.1.107.txt',
+      sha256:'f63d954f9552b534826582d14c2a3cbf76b6079fa149ce75d7312882cf32c8f9',
+      sizeBytes:93793
+    }
+  },
+  {
+    portalId:'immigration-oasis',
+    portalName:'Immigration Oasis',
+    role:'authoritative lean continuation overlay',
+    version:'1.10.254',
+    artifactName:'immigration-oasis-plus-humans-v1.10.254-LEAN-CONTINUATION-evidence-response-packet-profile-yield-do-not-clean-deploy.zip',
+    uploadedArtifactName:'immigration-oasis-plus-humans-v1.10.254-LEAN-CONTINUATION-evidence-response-packet-profile-yield-do-not-clean-deploy(1).zip',
+    sha256:'3d712aa342e66e272b49376d82517b099625222f135c2a94346693bbeb441ac4',
+    sizeBytes:18583502,
+    zipEntries:2249,
+    files:2249,
+    explicitDirectories:0,
+    uncompressedFileBytes:69729768,
+    repositoryRoot:'root-level lean overlay',
+    evidenceLevel:'exact artifact verified; overlay relationship and assembled full-source preflight verified',
+    deploymentStatus:'must never be clean-deployed by itself',
+    pairedArtifactId:'immigration-oasis-full-base-1.10.162',
+    continuationPrompt:{
+      artifactName:'Immigration_Oasis_Complete_Audited_Expanded_Master_Continuation_Prompt_After_v1.10.254.txt',
+      sha256:'a770377cf56764f8fb293094c6e53caf30498ca8fb462c3e3b685d4789468bfe',
+      sizeBytes:91162
+    }
+  },
+  {
+    artifactId:'immigration-oasis-full-base-1.10.162',
+    portalId:'immigration-oasis',
+    portalName:'Immigration Oasis',
+    role:'preserved full official-form asset backstop',
+    version:'1.10.162',
+    artifactName:'immigration-oasis-plus-humans-v1.10.162-first-base-full-archive.zip',
+    uploadedArtifactName:'immigration-oasis-plus-humans-v1.10.162-first-base-full-archive THIS IS THE FULL VERSION WE NEED(3).zip',
+    sha256:'5676cec930733131a83d6d347d2241812e7719b89c773a45e5c80053ba383661',
+    sizeBytes:263398342,
+    zipEntries:2680,
+    files:2680,
+    explicitDirectories:0,
+    uncompressedFileBytes:389600526,
+    repositoryRoot:'immigration-oasis-plus-humans-v1.10.162-first-base-full-archive/',
+    evidenceLevel:'exact artifact verified; non-destructive overlay preflight passed when paired with v1.10.254',
+    deploymentStatus:'asset base only; overlay latest lean source before build or deploy',
+    pairedArtifactId:'immigration-oasis-lean-1.10.254'
+  },
+  {
+    portalId:'smarter-ecosystem-control-center',
+    portalName:'Smarter Ecosystem Control Center',
+    role:'standalone private coordination starter',
+    version:'0.1.0',
+    artifactName:'smarter-ecosystem-control-center-v0.1.0.zip',
+    sha256:'7ed812580a9ea63bd9ebe6c4c82c722c1ab0628241c5e4536f685dabd96e3879',
+    sizeBytes:16485,
+    zipEntries:24,
+    files:18,
+    explicitDirectories:6,
+    uncompressedFileBytes:22457,
+    repositoryRoot:'smarter-ecosystem-control-center-v0.1.0/',
+    evidenceLevel:'exact artifact verified',
+    deploymentStatus:'not deployed; private metadata-only starter',
+    sourceOfTruthRule:'Sector artifacts remain independently authoritative; the Control Center coordinates metadata only.'
+  }
+]);
+
+const LEARNING_RECORDS = Object.freeze([
+  {
+    id:'artifact-first-continuation-handoff',
+    name:'Artifact-first complete continuation handoff',
+    category:'governance',
+    sourcePortal:'general-smarter-justice-start',
+    sourceVersion:'1.7.28',
+    evidenceStatus:'proven-in-release',
+    problemSolved:'Long build chats can lose implementation truth, decisions, unresolved work, and exact artifact identity.',
+    reusableValue:'Every portal continuation prompt begins with exact artifact inspection and preserves verified facts, plans, risks, and next work without converting discussion into implementation claims.',
+    requiredAdaptations:['portal mission and audience','specialty legal and compliance boundaries','actual repository and deployment architecture','current artifact facts','portal-specific next-version list'],
+    safeguards:['uploaded artifact controls implementation truth','planned work must remain labeled planned','exact final ZIP must be tested','working functionality and approved decisions must be preserved'],
+    testEvidence:['tests/cross-portal-learning-v1728.test.js','tests/continuation-learning-standard-v1728.test.js']
+  },
+  {
+    id:'cross-portal-capability-adoption-ledger',
+    name:'Cross-portal capability adoption ledger',
+    category:'governance',
+    sourcePortal:'general-smarter-justice-start',
+    sourceVersion:'1.7.28',
+    evidenceStatus:'proven-in-release',
+    problemSolved:'Useful features and safeguards can remain trapped inside one portal chat or spread without specialty review.',
+    reusableValue:'Records outbound learning, inbound adaptation, rejected transfers, exact source artifacts, evidence status, specialty changes, dependencies, tests, and owner approvals.',
+    requiredAdaptations:['portal-specific adoption decision','specialty acceptance tests','current artifact verification'],
+    safeguards:['no blind copying','no implementation claim from a roadmap','no cross-portal confidential data centralization'],
+    testEvidence:['tests/cross-portal-learning-v1728.test.js']
+  },
+  {
+    id:'full-lean-official-asset-overlay',
+    name:'Full-base plus lean-overlay official-asset architecture',
+    category:'deployment',
+    sourcePortal:'immigration-oasis',
+    sourceVersion:'1.10.254 overlay on 1.10.162 full base',
+    evidenceStatus:'artifact-pair-preflight-verified',
+    problemSolved:'Large official-form assets make every continuation artifact difficult to upload, download, and rebuild.',
+    reusableValue:'Preserves a verified heavy asset base while later source changes travel in smaller lean overlays.',
+    requiredAdaptations:['immutable asset inventory','overlay collision rules','full-source assembly preflight','do-not-clean-deploy protection','asset edition governance'],
+    safeguards:['never deploy the lean overlay alone','never delete heavy asset folders during overlay','test assembled full source before deployment'],
+    testEvidence:['Immigration Oasis assembled full-source overlay preflight passed for v1.10.254']
+  },
+  {
+    id:'business-compliance-calendar-evidence-organizer',
+    name:'Compliance calendar and evidence organizer',
+    category:'lifecycle',
+    sourcePortal:'business-launch-desk',
+    sourceVersion:'0.2.39',
+    evidenceStatus:'artifact-and-continuation-audited',
+    problemSolved:'Users lose track of recurring duties, evidence, sources, and follow-up work after a one-time transaction.',
+    reusableValue:'Turns recurring obligations into a browser-local calendar and evidence record rather than a one-time information page.',
+    requiredAdaptations:['authoritative deadline sources','specialty event taxonomy','uncertainty labels','no invented deadlines','privacy and retention rules'],
+    safeguards:['do not calculate unsupported legal deadlines','distinguish user-entered, official, calculated, and uncertain dates'],
+    testEvidence:['Business Launch Desk v0.2.39 package declares dedicated compliance-calendar regression']
+  },
+  {
+    id:'official-form-release-and-provenance-governance',
+    name:'Official-form release and provenance governance',
+    category:'forms',
+    sourcePortal:'justice-tax-solutions',
+    sourceVersion:'0.1.107',
+    evidenceStatus:'artifact-and-continuation-audited',
+    problemSolved:'Official forms, instructions, mappings, dependencies, and edition dates can silently become stale or incomplete.',
+    reusableValue:'Requires form-source identity, edition tracking, dependency evidence, operational gates, output QA, and explicit release truth.',
+    requiredAdaptations:['issuing authority','form family','edition and expiration rules','jurisdiction','signature and filing safeguards'],
+    safeguards:['official forms remain free where applicable','draft generation is not filing','no unsupported form or field claims'],
+    testEvidence:['Justice Tax Solutions v0.1.107 package includes official-form, dependency-provenance, and release tests']
+  },
+  {
+    id:'evidence-response-packet',
+    name:'Evidence response packet and user-controlled handoff',
+    category:'workflow',
+    sourcePortal:'immigration-oasis',
+    sourceVersion:'1.10.254',
+    evidenceStatus:'artifact-and-continuation-audited',
+    problemSolved:'Users need a coherent packet of facts, evidence, missing items, and next questions before review or response.',
+    reusableValue:'Combines preparation, evidence organization, and a review-ready export while preserving user control.',
+    requiredAdaptations:['matter-specific evidence categories','privilege and confidentiality notices','professional review scope','filing and submission boundaries'],
+    safeguards:['no automatic filing','no automatic professional routing','user reviews and controls exported content'],
+    testEvidence:['Immigration Oasis v1.10.254 release identity and audited continuation record']
+  },
+  {
+    id:'device-only-free-tool-pattern',
+    name:'Device-only free public tool pattern',
+    category:'public-experience',
+    sourcePortal:'general-smarter-justice-start',
+    sourceVersion:'1.7.12-1.7.27',
+    evidenceStatus:'source-and-regression-verified',
+    problemSolved:'Users need meaningful preparation tools before sensitive storage, AI transmission, or professional routing is operationally ready.',
+    reusableValue:'Delivers local review, comparison, planning, communication, binder, option, situation, and verification tools without collecting user facts.',
+    requiredAdaptations:['specialty inputs and outputs','plain-language boundaries','local export labels','shared-device clearing guidance'],
+    safeguards:['no server save','no analytics on user entries','no silent AI transmission','no lead creation'],
+    testEvidence:['multiple Smarter Justice exact-tested regression suites']
+  },
+  {
+    id:'neutral-source-tracked-professional-directory',
+    name:'Neutral source-tracked professional directory operations',
+    category:'marketplace',
+    sourcePortal:'general-smarter-justice-start',
+    sourceVersion:'1.7.14-1.7.27',
+    evidenceStatus:'source-and-regression-verified',
+    problemSolved:'Professional discovery can overstate participation, freshness, verification, or paid status.',
+    reusableValue:'Separates public source, claim, credential, participation, payment, availability, and inquiry-eligibility states while preserving neutral ordering and source review dates.',
+    requiredAdaptations:['eligible professional categories','jurisdictions','practice or service taxonomy','credential authorities','source-refresh cadence'],
+    safeguards:['paid status never changes organic relevance','no endorsement','no invented availability','correction and removal path'],
+    testEvidence:['Smarter Justice directory, freshness, comparison, profile-growth, and marketplace tests']
+  },
+  {
+    id:'whole-situation-cross-sector-map',
+    name:'Whole-situation cross-sector issue map',
+    category:'workflow',
+    sourcePortal:'general-smarter-justice-start',
+    sourceVersion:'1.7.24',
+    evidenceStatus:'source-and-regression-verified',
+    problemSolved:'Legal, housing, health, money, property, safety, family, and benefits problems often overlap.',
+    reusableValue:'Helps users recognize connected issues and prepare questions without transferring facts between sectors.',
+    requiredAdaptations:['sector taxonomy','specialty boundaries','public resource destinations','user-controlled export'],
+    safeguards:['no diagnosis or professional advice','no automatic sharing','no risk or case-value score'],
+    testEvidence:['tests/whole-situation-map-v1724.test.js']
+  },
+  {
+    id:'trust-and-verification-center',
+    name:'Trust and independent verification center',
+    category:'security',
+    sourcePortal:'general-smarter-justice-start',
+    sourceVersion:'1.7.25',
+    evidenceStatus:'source-and-regression-verified',
+    problemSolved:'Users face imposter communications and unverified AI-assisted legal material.',
+    reusableValue:'Organizes independent official-channel verification and source checking without making authenticity or scam verdicts.',
+    requiredAdaptations:['specialty impersonation risks','official verification sources','document and communication types'],
+    safeguards:['no authenticity verdict','no URL or caller reputation score','no automatic reporting','no uploaded confidential messages while gates are closed'],
+    testEvidence:['tests/trust-verification-center-v1725.test.js','tests/trust-verification-research-v1725.test.js']
+  },
+  {
+    id:'sensitive-traffic-server-gate',
+    name:'Server-enforced sensitive-traffic gate',
+    category:'security',
+    sourcePortal:'general-smarter-justice-start',
+    sourceVersion:'1.7.27',
+    evidenceStatus:'source-and-regression-verified',
+    problemSolved:'A disabled-looking form can still collect or store information when called directly unless the server enforces the same gate.',
+    reusableValue:'Rejects sensitive submissions before storage whenever the operational gate is closed and keeps public status truthful.',
+    requiredAdaptations:['identify every sensitive route','define safe alternatives','production storage and approval evidence'],
+    safeguards:['server enforcement is mandatory','rejected content is not persisted','public interface and API status remain synchronized'],
+    testEvidence:['tests/sensitive-public-forms-v1727.test.js']
+  },
+  {
+    id:'metadata-only-ecosystem-coordination',
+    name:'Metadata-only ecosystem coordination',
+    category:'operations',
+    sourcePortal:'smarter-ecosystem-control-center',
+    sourceVersion:'0.1.0 plus Smarter Justice 1.7.28 handoff',
+    evidenceStatus:'starter-and-release-verified',
+    problemSolved:'The portfolio needs shared artifact, release, capability, staffing, and readiness coordination without centralizing confidential user records.',
+    reusableValue:'Coordinates exact artifact identity, adoption decisions, deployment truth, and next actions while each portal remains independently authoritative.',
+    requiredAdaptations:['role-based access','artifact supersession history','portal import/export contract','audit logging'],
+    safeguards:['no confidential customer data by default','no gate activation from metadata import','no sector artifact supersession by the registry'],
+    testEvidence:['Smarter Ecosystem Control Center v0.1.0 exact artifact tests','tests/cross-portal-learning-v1728.test.js']
+  }
+]);
+
+const PORTAL_DECISIONS = Object.freeze([
+  {portalId:'general-smarter-justice-start',capabilityId:'cross-portal-capability-adoption-ledger',status:'adopted',reason:'Implemented in v1.7.28 as the coordinating registry and portable snapshot.',dependencies:[],ownerApprovalRequired:false},
+  {portalId:'general-smarter-justice-start',capabilityId:'full-lean-official-asset-overlay',status:'not-applicable',reason:'Current Smarter Justice artifact is small enough for a single authoritative ZIP; preserve the pattern for future large asset sets.',dependencies:['asset-size threshold or immutable large-form library'],ownerApprovalRequired:false},
+  {portalId:'general-smarter-justice-start',capabilityId:'business-compliance-calendar-evidence-organizer',status:'adapt-specialty',reason:'A legal matter lifecycle calendar may help users, but only after authoritative date rules and uncertainty controls are defined.',dependencies:['portal-specific event taxonomy','official-source rules','deadline safety review'],ownerApprovalRequired:false},
+  {portalId:'general-smarter-justice-start',capabilityId:'official-form-release-and-provenance-governance',status:'adapt-specialty',reason:'Focused legal portals with official forms should inherit provenance and edition controls; the umbrella should coordinate rather than duplicate specialty form engines.',dependencies:['focused portal form inventory'],ownerApprovalRequired:false},
+  {portalId:'business-launch-desk',capabilityId:'artifact-first-continuation-handoff',status:'adopt-now',reason:'The audited v0.2.39 continuation prompt already follows the artifact-first handoff pattern; future builds must contribute outbound learning records.',dependencies:['latest uploaded ZIP'],ownerApprovalRequired:false},
+  {portalId:'business-launch-desk',capabilityId:'trust-and-verification-center',status:'adapt-specialty',reason:'Useful for government, bank, vendor, and filing impersonation, with business-specific official verification sources.',dependencies:['current official sources','business-specific regression tests'],ownerApprovalRequired:false},
+  {portalId:'business-launch-desk',capabilityId:'full-lean-official-asset-overlay',status:'not-applicable',reason:'The current v0.2.39 artifact does not require a heavy immutable asset base.',dependencies:[],ownerApprovalRequired:false},
+  {portalId:'justice-tax-solutions',capabilityId:'artifact-first-continuation-handoff',status:'adopt-now',reason:'The audited v0.1.107 continuation prompt already follows the pattern and should receive the registry snapshot in its next release.',dependencies:['latest uploaded ZIP'],ownerApprovalRequired:false},
+  {portalId:'justice-tax-solutions',capabilityId:'full-lean-official-asset-overlay',status:'verify-first',reason:'The artifact is already large because of official tax forms; evaluate an immutable form-asset pack before changing deployment architecture.',dependencies:['form-asset inventory','collision and edition rules','deployment proof','owner approval for architecture change'],ownerApprovalRequired:true},
+  {portalId:'justice-tax-solutions',capabilityId:'business-compliance-calendar-evidence-organizer',status:'adapt-specialty',reason:'Tax notices, filing duties, payment plans, and recurring deadlines may benefit from a source-governed tax action calendar.',dependencies:['official IRS/state sources','deadline and payment safety review'],ownerApprovalRequired:false},
+  {portalId:'justice-tax-solutions',capabilityId:'trust-and-verification-center',status:'adapt-specialty',reason:'IRS, state tax, preparer, payment, refund, and identity-theft impersonation verification is directly relevant.',dependencies:['official IRS/state verification sources','tax privacy safeguards'],ownerApprovalRequired:false},
+  {portalId:'immigration-oasis',capabilityId:'full-lean-official-asset-overlay',status:'adopted',reason:'The v1.10.254 lean overlay plus v1.10.162 full asset base passed the documented assembled full-source preflight.',dependencies:['preserved full base','non-destructive overlay','full-asset preflight'],ownerApprovalRequired:false},
+  {portalId:'immigration-oasis',capabilityId:'artifact-first-continuation-handoff',status:'adopt-now',reason:'Future prompts must explain the two-artifact deployment relationship exactly and contribute new lessons to the shared registry.',dependencies:['both lean and full artifacts'],ownerApprovalRequired:false},
+  {portalId:'immigration-oasis',capabilityId:'official-form-release-and-provenance-governance',status:'adopted',reason:'Official form assets, tracks, and overlay preflight are already governed; continue edition and asset validation.',dependencies:['official form sources','asset manifests'],ownerApprovalRequired:false},
+  {portalId:'immigration-oasis',capabilityId:'sensitive-traffic-server-gate',status:'adapt-specialty',reason:'All confidential immigration intake and document routes should enforce operational gates server-side.',dependencies:['route inventory','production storage evidence'],ownerApprovalRequired:false},
+  {portalId:'smarter-ecosystem-control-center',capabilityId:'cross-portal-capability-adoption-ledger',status:'adopt-now',reason:'The standalone private platform should become the authoritative writable home for this registry after migration.',dependencies:['authenticated import/export','immutable artifact ledger','audit history'],ownerApprovalRequired:false},
+  {portalId:'smarter-ecosystem-control-center',capabilityId:'metadata-only-ecosystem-coordination',status:'adopted',reason:'This is the platform’s approved purpose and privacy boundary.',dependencies:['private deployment','MFA','least-privilege roles'],ownerApprovalRequired:false},
+  {portalId:'all-legal-micro-portals',capabilityId:'neutral-source-tracked-professional-directory',status:'adapt-specialty',reason:'Apply where a public professional directory belongs, using portal-specific eligibility, sources, credentials, and jurisdictions.',dependencies:['portal-specific profile standard','source register','claim and correction path'],ownerApprovalRequired:false},
+  {portalId:'all-legal-micro-portals',capabilityId:'artifact-first-continuation-handoff',status:'adopt-now',reason:'Every continuation prompt must receive and contribute cross-portal learning without weakening portal-specific authority.',dependencies:['latest authoritative portal artifact'],ownerApprovalRequired:false},
+  {portalId:'all-legal-micro-portals',capabilityId:'device-only-free-tool-pattern',status:'adapt-specialty',reason:'Prefer meaningful free local tools where sensitive infrastructure is not yet activated and the task can be completed safely in-browser.',dependencies:['specialty workflow design','accessibility tests','clear limitations'],ownerApprovalRequired:false}
+]);
+
+const CONTINUATION_PROMPT_CONTRACT = Object.freeze({
+  sectionTitle:'Cross-Portal Learning and Adaptation',
+  required:true,
+  requirements:[
+    'Identify proven capabilities originating in this portal that other portals should evaluate.',
+    'Identify relevant capabilities from other portals that this portal should evaluate.',
+    'State the source portal, exact source version, artifact identity when known, evidence status, and test status.',
+    'Classify each candidate as adopted, adopt now, adapt with specialty changes, verify first, defer, reject, or not applicable.',
+    'Explain specialty changes, dependencies, privacy and compliance boundaries, owner-approval needs, and completion criteria.',
+    'Record outbound learning, inbound adaptation, and deliberately rejected transfers.',
+    'Never label a roadmap, discussion, prompt statement, or recommendation as implemented unless the actual artifact verifies it.',
+    'Require the next chat to update both the portal-specific improvement list and the shared registry after inspecting the next exact artifact.',
+    'Preserve portal-specific branding, users, legal boundaries, architecture, deployment method, and authoritative release line.',
+    'Keep confidential public-user information out of registry snapshots and cross-portal metadata exports.'
+  ],
+  requiredPortableFiles:[
+    'CROSS_PORTAL_CAPABILITY_SNAPSHOT.json',
+    'CROSS_PORTAL_LEARNING.md',
+    'PORTAL_CAPABILITY_ADOPTION_STATUS.json'
+  ],
+  artifactTruthWarning:'The newest uploaded portal ZIP remains the source of truth. Registry snapshots and continuation prompts provide context but do not prove that a feature exists in the target artifact.',
+  nextChatWorkflow:[
+    'Inspect and verify the newest uploaded portal artifact first.',
+    'Compare actual implemented capabilities against the registry snapshot.',
+    'Implement safe relevant improvements rather than copying blindly.',
+    'Add regression tests for every adopted or adapted capability.',
+    'Update outbound, inbound, rejected, deferred, and not-applicable learning records.',
+    'Test the exact packaged ZIP after fresh extraction.',
+    'Export an updated portable registry snapshot for the next chat and the Smarter Ecosystem Control Center.'
+  ]
+});
+
+const LEARNING_POLICY = Object.freeze({
+  authorityOrder:[
+    'owner newest explicit instruction',
+    'actual newest authoritative portal artifact',
+    'safety, privacy, security, professional responsibility, legal and ethical requirements',
+    'approved portal-specific decisions and boundaries',
+    'shared cross-portal registry and standards',
+    'earlier prompts, roadmaps, summaries, and recommendations'
+  ],
+  implementationTruthRule:'A capability is implemented only when the target portal artifact contains the working implementation and appropriate evidence. A source-portal capability is only a candidate until the target artifact verifies its adoption.',
+  reuseRule:'Share the verified lesson and implementation pattern, not an unreviewed copy of code, language, branding, pricing, legal logic, or data handling.',
+  confidentialDataRule:'Registry and ecosystem exports contain product, artifact, release, evidence, and adoption metadata only. They do not centralize confidential public-user records.',
+  noChangeRule:'Do not change a portal merely for consistency. Adopt or adapt only when there is a clear evidence-based benefit and the complete journey can be tested responsibly.',
+  updateCadence:'Update after every real portal ZIP audit or exact-tested release.'
+});
+
+function validateDecision(decision){
+  return ADOPTION_STATUSES.includes(decision.status)
+    && Boolean(decision.portalId)
+    && Boolean(decision.capabilityId)
+    && Boolean(decision.reason);
+}
+
+function buildLearningSystem(capabilities=[],portals=[]){
+  const capabilityIds=new Set(capabilities.map(item=>item.id));
+  const decisions=PORTAL_DECISIONS.filter(validateDecision).map(item=>({
+    ...item,
+    sourceCapabilityPresent:capabilityIds.has(item.capabilityId) || LEARNING_RECORDS.some(record=>record.id===item.capabilityId)
+  }));
+  const statusCounts=Object.fromEntries(ADOPTION_STATUSES.map(status=>[status,decisions.filter(item=>item.status===status).length]));
+  const portalDecisionCounts=Object.fromEntries([...new Set(decisions.map(item=>item.portalId))].sort().map(portalId=>[portalId,decisions.filter(item=>item.portalId===portalId).length]));
+  return {
+    version:LEARNING_SYSTEM_VERSION,
+    generatedForRelease:GENERATED_FOR_RELEASE,
+    reviewedAt:REVIEW_DATE,
+    authority:'Portable snapshot coordinated by Smarter Justice until migrated into the private Smarter Ecosystem Control Center. Dedicated portal artifacts remain authoritative.',
+    sourceArtifacts:SOURCE_ARTIFACTS,
+    learningRecords:LEARNING_RECORDS,
+    adoptionStatuses:ADOPTION_STATUSES,
+    adoptionDecisions:decisions,
+    continuationPromptContract:CONTINUATION_PROMPT_CONTRACT,
+    learningPolicy:LEARNING_POLICY,
+    summary:{
+      sourceArtifacts:SOURCE_ARTIFACTS.length,
+      portalsRepresented:new Set(SOURCE_ARTIFACTS.map(item=>item.portalId)).size,
+      learningRecords:LEARNING_RECORDS.length,
+      adoptionDecisions:decisions.length,
+      statusCounts,
+      portalDecisionCounts,
+      registryCapabilities:capabilities.length,
+      currentPortfolioRecords:portals.length
+    }
+  };
+}
+
+module.exports={
+  LEARNING_SYSTEM_VERSION,
+  GENERATED_FOR_RELEASE,
+  REVIEW_DATE,
+  ADOPTION_STATUSES,
+  SOURCE_ARTIFACTS,
+  LEARNING_RECORDS,
+  PORTAL_DECISIONS,
+  CONTINUATION_PROMPT_CONTRACT,
+  LEARNING_POLICY,
+  buildLearningSystem
+};

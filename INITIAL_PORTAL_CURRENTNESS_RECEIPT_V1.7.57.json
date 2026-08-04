@@ -1,0 +1,79 @@
+{
+  "schema": "smarter-justice-initial-portal-currentness-receipt",
+  "schemaVersion": "1.1.0",
+  "releaseVersion": "1.7.57",
+  "recordedAt": "2026-07-30T17:58:00-04:00",
+  "authorityBoundary": "Roger owner-authoritative exact artifact identities from dedicated portal build contexts; owner-recorded here and not independently inspected in this Smarter Justice build.",
+  "sourceSmarterJustice": {
+    "filename": "smarter-justice-v1.7.56.zip",
+    "sha256": "fe178fc3befc303a1b3a3dd54646a96aafdd55cfb9e0388ed092491d98932681",
+    "sizeBytes": 4840702,
+    "evidenceState": "EXACT_VERIFIED"
+  },
+  "portals": [
+    {
+      "portalId": "divorce-law-aid",
+      "version": "0.27.0",
+      "artifactFilename": "divorce-law-aid-v0.27.0.zip",
+      "ownerRecordedSha256": "682f74fabaea243d155d49ed1c2c4c8d22b24037350f7e15347ea69faf93e7d5",
+      "ownerRecordedSizeBytes": 2942931,
+      "supersededOwnerRecordedVersion": "0.26.0",
+      "evidenceState": "OWNER_RECORDED",
+      "independentlyVerifiedInThisBuild": false,
+      "stagingState": "NOT_STAGED",
+      "deploymentState": "NOT_CONFIRMED",
+      "reviewedAt": "2026-07-30"
+    },
+    {
+      "portalId": "estate-law-aid",
+      "version": "1.1.55",
+      "artifactFilename": "estate-law-aid-v1.1.55.zip",
+      "ownerRecordedSha256": "78045efb66d83e9213fd9522d37f649d977c74f0780ed9f1a04774c96bb7b019",
+      "ownerRecordedSizeBytes": 11238558,
+      "supersededOwnerRecordedVersion": "1.1.55",
+      "evidenceState": "OWNER_RECORDED",
+      "independentlyVerifiedInThisBuild": false,
+      "stagingState": "NOT_STAGED",
+      "deploymentState": "NOT_CONFIRMED",
+      "reviewedAt": "2026-07-30"
+    },
+    {
+      "portalId": "personal-injury-law-aid",
+      "version": "0.50.0",
+      "artifactFilename": "personal-injury-law-aid-v0.50.0.zip",
+      "ownerRecordedSha256": "2e48e659b33b8bfae39fc53d0a55e9cf8d86397b2d944ae5d795ba597b20c4bc",
+      "ownerRecordedSizeBytes": 3605840,
+      "supersededOwnerRecordedVersion": "0.48.0",
+      "evidenceState": "OWNER_RECORDED",
+      "independentlyVerifiedInThisBuild": false,
+      "stagingState": "NOT_STAGED",
+      "deploymentState": "NOT_CONFIRMED",
+      "reviewedAt": "2026-07-30"
+    },
+    {
+      "portalId": "domestic-violence-aid",
+      "version": "0.43.0",
+      "artifactFilename": "domestic-violence-aid-v0.43.0.zip",
+      "ownerRecordedSha256": "1d7a6d8460d2097a17350b41e5f7a298107a6c73845c4243edd2ca96c63be795",
+      "ownerRecordedSizeBytes": 2526667,
+      "supersededOwnerRecordedVersion": "0.42.0",
+      "evidenceState": "OWNER_RECORDED",
+      "independentlyVerifiedInThisBuild": false,
+      "stagingState": "NOT_STAGED",
+      "deploymentState": "NOT_CONFIRMED",
+      "reviewedAt": "2026-07-30"
+    }
+  ],
+  "requiredConsistencySurfaces": [
+    "INITIAL_PORTAL_AUTHORITY_V1.7.57.json",
+    "PORTFOLIO_TRUTH_V1.7.57.json",
+    "ARTIFACT_REGISTRY_V1.7.57.json",
+    "PORTAL_EVIDENCE_STATE_REGISTER_V1.7.57.json",
+    "PORTAL_RELEASE_SNAPSHOT_V1.7.57.json",
+    "lib/legalPortfolioOperatingSystem.js"
+  ],
+  "liveConnectionsOpened": false,
+  "automaticWritesOpened": false,
+  "launchState": "NO_GO",
+  "authoritySource": "INITIAL_PORTAL_AUTHORITY_V1.7.57.json"
+}

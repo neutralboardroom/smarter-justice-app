@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "1.0.0",
+  "releaseVersion": "1.7.42",
+  "generatedAt": "2026-07-28T00:00:00-04:00",
+  "deploymentAuthorized": false,
+  "nodeRequired": "22.x",
+  "npmRequired": "10.x",
+  "baselineNodeTested": "v22.16.0",
+  "baselineNpmTested": "10.9.2",
+  "productionVersion": "1.6.1",
+  "currentDeployment": "NOT_DEPLOYED",
+  "deploymentAuthorization": "NOT_AUTHORIZED",
+  "rollbackArtifact": "OWNER_APPROVAL_REQUIRED",
+  "dependencyInstall": {
+    "status": "BLOCKED",
+    "reason": "Configured registry returned HTTP 404 for xtend-4.0.2.tgz during legitimate clean install; no shim or false pass used."
+  },
+  "postgresql": "NOT_PRODUCTION_VERIFIED",
+  "smtp": "NOT_PRODUCTION_VERIFIED",
+  "stripe": "NOT_PRODUCTION_VERIFIED",
+  "monitoring": "NOT_PRODUCTION_VERIFIED",
+  "backupRestore": "NOT_PRODUCTION_VERIFIED",
+  "browserAccessibility": "NOT_COMPLETED",
+  "livePortalConnections": 0,
+  "automaticPortalWrites": false
+}

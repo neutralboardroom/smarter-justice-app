@@ -1,0 +1,24 @@
+{
+  "releaseVersion": "1.7.55",
+  "generatedAt": "2026-07-30",
+  "decisions": [
+    {
+      "idea": "Parallel-safe exact-extraction acceptance",
+      "problem": "The fixed smoke-test port made simultaneous independent suite runs collide.",
+      "user": "release operator and future builder",
+      "evidence": "Concurrent v1.7.54 baseline produced EADDRINUSE on port 3961 while serial rerun passed.",
+      "expectedBenefit": "Independent extractions and CI workers can validate concurrently without false failures.",
+      "decision": "IMPLEMENT",
+      "acceptanceTest": "Two smoke tests run concurrently and both pass using distinct operating-system-assigned ports."
+    },
+    {
+      "idea": "Restyle or expand the Attorney Partner Tour",
+      "problem": "No material defect found in exact v1.7.54 public surfaces.",
+      "user": "attorneys and Roger",
+      "evidence": "Existing public UX, tour, field outreach, privacy and static tests pass; source hashes are preserved.",
+      "expectedBenefit": "None sufficient to justify visual churn.",
+      "decision": "REJECT",
+      "reason": "No changes for the sake of changes."
+    }
+  ]
+}

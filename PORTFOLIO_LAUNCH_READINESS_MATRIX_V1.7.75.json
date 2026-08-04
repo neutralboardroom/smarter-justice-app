@@ -1,0 +1,55 @@
+{
+  "schema_id": "SJP-PORTFOLIO-LAUNCH-READINESS-MATRIX-2026-08-02-V2-AGGREGATE",
+  "releaseVersion": "1.7.75",
+  "generatedAt": "2026-08-02T17:04:00-04:00",
+  "ownership": "SMARTER_JUSTICE_CENTRAL_OR_OWNER_PORTFOLIO_COORDINATION",
+  "input_contract": "VALIDATED_PRODUCT_LAUNCH_READINESS_RECEIPTS",
+  "initial_cutover_scope": [
+    {
+      "id": "smarter-justice-central",
+      "name": "Smarter Justice central"
+    },
+    {
+      "id": "divorce-law-aid",
+      "name": "Divorce Law Aid"
+    },
+    {
+      "id": "estate-law-aid",
+      "name": "Estate Law Aid"
+    },
+    {
+      "id": "personal-injury-law-aid",
+      "name": "Personal Injury Law Aid"
+    },
+    {
+      "id": "domestic-violence-aid",
+      "name": "Domestic Violence Aid"
+    }
+  ],
+  "current_candidate": {
+    "product_id": "smarter-justice-central",
+    "version": "1.7.75",
+    "state": "BUILD_IN_PROGRESS",
+    "artifact_identity_mode": "DETACHED_AFTER_IMMUTABLE_PACKAGING",
+    "exact_receipt_present": false
+  },
+  "product_receipt_files": [
+    "PRODUCT_LAUNCH_READINESS_RECEIPT_SMARTER_JUSTICE_SOURCE_V1.7.69.json"
+  ],
+  "missing_initial_cutover_receipts": [
+    "divorce-law-aid",
+    "estate-law-aid",
+    "personal-injury-law-aid",
+    "domestic-violence-aid"
+  ],
+  "aggregation_rules": [
+    "Do not infer a product state without a validated product receipt.",
+    "Missing unrelated product receipts do not block a product build.",
+    "A blocker for one product does not reduce another product's readiness state.",
+    "LAUNCH_READY_NOT_SCHEDULED is a successful readiness state for a qualified non-initial product.",
+    "The exact initial cutover remains five products but does not create permanent platform eligibility limits.",
+    "Receipt aggregation never authorizes deployment, exposes secrets or overwrites product-local authority."
+  ],
+  "portfolio_decision": "INDEPENDENT_PRODUCT_STATES_ONLY_NO_PRODUCTION_AUTHORIZATION",
+  "launch_state": "NO_GO"
+}

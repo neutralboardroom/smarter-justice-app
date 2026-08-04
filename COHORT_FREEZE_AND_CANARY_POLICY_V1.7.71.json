@@ -1,0 +1,20 @@
+{
+  "schema": "smarter-justice-cohort-freeze-and-canary-policy",
+  "releaseVersion": "1.7.71",
+  "generatedAt": "2026-08-02T16:19:00-04:00",
+  "exactInitialCutoverScope": [
+    "smarter-justice-central",
+    "divorce-law-aid",
+    "estate-law-aid",
+    "personal-injury-law-aid",
+    "domestic-violence-aid"
+  ],
+  "freezePolicy": "Freeze only after all five exact product receipts are valid, current, DISCOVERY_COMPLETE, blocker-free, and exact-identity matched.",
+  "canaryPolicy": "After freeze eligibility, select the lowest explicit risk score; break ties by exact initial-cutover order. Selection remains a recommendation and never authorizes deployment.",
+  "currentState": "DISCOVERY_RECEIPTS_PENDING_NOT_FROZEN",
+  "cohortFrozen": false,
+  "canarySelected": false,
+  "deploymentAuthorized": false,
+  "crossBlockingApplied": false,
+  "missingReceiptInferenceApplied": false
+}

@@ -1,0 +1,32 @@
+{
+  "schema": "smarter-justice-master-pair-replay-split-brain-acceptance",
+  "releaseVersion": "1.7.72",
+  "generatedAt": "2026-08-02T17:04:00-04:00",
+  "canonicalReceiptId": "MPCR-2026-07-31-E1-R0-05F4296ED378",
+  "pairEpoch": 1,
+  "pairRevision": 0,
+  "cases": [
+    {
+      "case": "identical-replay",
+      "expected": "MASTER_PAIR_COMMITTED_IDEMPOTENT_REPLAY"
+    },
+    {
+      "case": "lower-epoch",
+      "expected": "MASTER_PAIR_RECEIPT_REPLAY_REJECTED"
+    },
+    {
+      "case": "same-epoch-different-hash",
+      "expected": "MASTER_PAIR_COMMIT_CONFLICT"
+    },
+    {
+      "case": "higher-revision-unknown-predecessor",
+      "expected": "MASTER_PAIR_RECEIPT_REPLAY_REJECTED"
+    },
+    {
+      "case": "higher-revision-correct-predecessor",
+      "expected": "MASTER_PAIR_PREPARED_VALIDATION_REQUIRED"
+    }
+  ],
+  "state": "SOURCE_TEST_REQUIRED",
+  "launchEffect": "NONE"
+}

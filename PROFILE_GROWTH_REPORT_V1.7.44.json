@@ -1,0 +1,10 @@
+{
+  "releaseVersion": "1.7.44",
+  "newProfessionals": 0,
+  "updatedProfessionals": 0,
+  "totalProfessionals": 233,
+  "publicDirectory": {
+    "total": 281
+  },
+  "note": "No profile-growth batch was performed. This release changes profile-control and paid-growth architecture only."
+}

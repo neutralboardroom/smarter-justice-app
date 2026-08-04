@@ -1,0 +1,2 @@
+'use strict';
+module.exports=Object.freeze({releaseVersion:'1.7.82',expectedArtifact:Object.freeze({version:'1.7.82',filename:'smarter-justice-v1.7.82.zip'}),receiptSchema:'smarter-justice-detached-final-artifact-identity',schemaVersion:'1.0.0',hashAlgorithm:'SHA-256',maxReceiptBytes:262144,env:Object.freeze({receiptPath:'SMARTER_JUSTICE_FINAL_ARTIFACT_RECEIPT',artifactPath:'SMARTER_JUSTICE_FINAL_ARTIFACT_PATH'})});

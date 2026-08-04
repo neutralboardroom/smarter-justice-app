@@ -1,0 +1,16 @@
+{
+  "releaseVersion": "1.7.58",
+  "generatedAt": "2026-07-30",
+  "status": "PASS",
+  "dependencyIndependentParts": 112,
+  "postgresqlDependentParts": 1,
+  "totalReadinessParts": 113,
+  "workingTreeRuns": 2,
+  "workingTreeMode": "CONCURRENT_INDEPENDENT_FROZEN_TREES",
+  "workingTreeResult": "PASS_IDENTICAL_OUTPUT",
+  "testLogSha256": "3681f911574912eaa9ca08d2f066088e6d53a6cd9c1d304f6bf72ac225af65cd",
+  "publicHtmlPages": 76,
+  "practiceAreas": 69,
+  "catalogRows": 74,
+  "launchState": "NO_GO"
+}

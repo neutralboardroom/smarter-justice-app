@@ -1,0 +1,33 @@
+{
+  "schema": "smarter-justice-public-surface-preservation",
+  "releaseVersion": "1.7.62",
+  "generatedAt": "2026-07-31T22:24:00-04:00",
+  "decision": "PRESERVE_PUBLIC_EXPERIENCE_EXCEPT_ENGLISH_FIRST_LANGUAGE_CONTROL_CORRECTION",
+  "publicHtmlPages": 76,
+  "files": [
+    {
+      "path": "public/index.html",
+      "sha256": "07e118ce0d9f02e081924c0e7cf94564c26522c1d67510e1e0061ce6443b4924"
+    },
+    {
+      "path": "public/styles.css",
+      "sha256": "67661c6d9a411c1e0fa24afe50f9a42699500ebbe4cb6e6e8869796926378b54"
+    },
+    {
+      "path": "public/app.js",
+      "sha256": "348ad27f539d2371f26c32fb5723ecfedf24ff36c2c3c0012c40bd9afaec21f8"
+    },
+    {
+      "path": "public/attorney-partner-tour.html",
+      "sha256": "38c0a8d21083eb3c89263667521d737e14086fb46127d58811fbb8fa4efe3e68"
+    },
+    {
+      "path": "public/pricing.html",
+      "sha256": "aeeacbafa237596de3f061546692e6ed9c00550deb185a3b02d404ff1fd14d4a"
+    }
+  ],
+  "languageControlOccurrencesBefore": 33,
+  "languageControlOccurrencesAfter": 0,
+  "homepageRedesign": false,
+  "launchState": "NO_GO"
+}

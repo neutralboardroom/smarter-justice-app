@@ -1,0 +1,73 @@
+{
+  "schemaVersion": "1.0.0",
+  "project": "Smarter Justice",
+  "releaseVersion": "1.7.19",
+  "preparedDate": "2026-07-22",
+  "leadMarket": "Brooklyn",
+  "nextLeadMarket": "Manhattan",
+  "targets": {
+    "individualProfessionals": 25,
+    "firms": 5,
+    "professionalFirmLinks": 25,
+    "markets": {
+      "Brooklyn": 11,
+      "Manhattan": 7,
+      "Northern Metro New Jersey": 7
+    }
+  },
+  "actual": {
+    "newIndividualProfessionals": 25,
+    "newFirms": 5,
+    "updatedFirms": 1,
+    "newProfessionalFirmLinks": 25,
+    "markets": {
+      "Brooklyn": 11,
+      "Manhattan": 7,
+      "Northern Metro New Jersey": 7
+    }
+  },
+  "finalDirectory": {
+    "publicProfessionals": 36,
+    "publicFirms": 21,
+    "publicTotal": 57,
+    "qualifyingProfessionals": 35,
+    "qualifyingFirms": 19,
+    "qualifyingTotal": 54
+  },
+  "marketDetails": [
+    {
+      "market": "Brooklyn",
+      "county": "Kings County",
+      "individualProfessionalsAdded": 11,
+      "firmsAdded": 0,
+      "firmsUpdated": 1
+    },
+    {
+      "market": "Manhattan",
+      "county": "New York County",
+      "individualProfessionalsAdded": 7,
+      "firmsAdded": 2,
+      "firmsUpdated": 0
+    },
+    {
+      "market": "Northern Metro New Jersey",
+      "county": "Hudson County",
+      "individualProfessionalsAdded": 7,
+      "firmsAdded": 3,
+      "firmsUpdated": 0
+    }
+  ],
+  "statusCounts": {
+    "publishedUnclaimedNewProfiles": 30,
+    "claimedNewProfiles": 0,
+    "credentialVerifiedNewProfiles": 0,
+    "inquiryEligibleNewProfiles": 0,
+    "paidNewProfiles": 0
+  },
+  "sourcePolicy": "Professional-controlled official firm websites were used for current public identity, office, and service facts. Credential status remains unverified until official licensing review. No commercial ratings, reviews, outcome claims, or inferred specialties were copied.",
+  "excludedOrDeferred": [
+    "No new profile outside Brooklyn, Manhattan, or Northern Metro New Jersey.",
+    "Profiles without individual-level service evidence or a current published business office were deferred.",
+    "Radius search remains closed until verified coordinates and distance rules exist."
+  ]
+}

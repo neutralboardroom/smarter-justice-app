@@ -1,0 +1,22 @@
+{
+  "schema": "smarter-justice-rule-change-transaction-register",
+  "releaseVersion": "1.7.64",
+  "generatedAt": "2026-07-31T23:58:00-04:00",
+  "appendOnly": true,
+  "transactions": [
+    {
+      "transactionId": "DRC-2026-07-31-DUR043-BASELINE-EVOLUTION-205EC048A730",
+      "parentBaselineId": "DRB-2026-07-31-DUR001-DUR042-V1",
+      "type": "ADD",
+      "affectedRuleIds": [
+        "DUR-043"
+      ],
+      "successorBaselineId": "DRB-2026-07-31-DUR001-DUR043-V2",
+      "status": "ACCEPTED_HISTORICAL_TRANSACTION",
+      "productImplementationEffect": "NONE_BY_PROMPT_INCLUSION_ALONE"
+    }
+  ],
+  "forkMergeConflicts": [],
+  "tombstones": [],
+  "status": "PASS_APPEND_ONLY_LINEAGE"
+}

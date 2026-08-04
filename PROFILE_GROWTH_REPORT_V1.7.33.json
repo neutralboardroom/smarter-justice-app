@@ -1,0 +1,39 @@
+{
+  "version": "1.7.33",
+  "date": "2026-07-26",
+  "program": "Phase One six-region professional-profile program",
+  "leadRegion": "The Bronx",
+  "nextLeadRegion": "The Bronx",
+  "releaseDecision": "NO_WEAK_PADDING",
+  "researchPerformedInThisBuild": false,
+  "reason": "This architecture and operations release refocused Smarter Justice on its legal network and created the Neutral Boardroom handoff. No current public-source profile batch was independently researched; weak padding remains prohibited.",
+  "actual": {
+    "newIndividualProfessionals": 0,
+    "newFirms": 0,
+    "newProfessionalFirmLinks": 0,
+    "regionsWorked": 0
+  },
+  "directoryBefore": {
+    "professionals": 233,
+    "firms": 48,
+    "publicTotal": 281,
+    "strictQualifyingProfessionals": 232,
+    "strictQualifyingFirms": 46,
+    "strictQualifyingTotal": 278
+  },
+  "directoryAfter": {
+    "professionals": 233,
+    "firms": 48,
+    "publicTotal": 281,
+    "strictQualifyingProfessionals": 232,
+    "strictQualifyingFirms": 46,
+    "strictQualifyingTotal": 278
+  },
+  "statusBoundaries": {
+    "allExistingUnclaimedProfilesRemainSeparateFromVerification": true,
+    "paymentDoesNotAffectOrganicOrder": true,
+    "noParticipationOrAvailabilityInferred": true,
+    "noInquiryEligibilityActivated": true
+  },
+  "nextReleaseTrigger": "Resume Bronx-led research when current individual-level practice, office, contact, firm relationship, source date, and duplicate checks can be completed without displacing launch and deployment priorities."
+}

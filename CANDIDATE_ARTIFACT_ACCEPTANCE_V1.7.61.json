@@ -1,0 +1,38 @@
+{
+  "schema": "smarter-justice-candidate-artifact-acceptance",
+  "releaseVersion": "1.7.61",
+  "generatedAt": "2026-07-31T17:14:00-04:00",
+  "artifact": {
+    "filename": "smarter-justice-v1.7.61-candidate-a.zip",
+    "sha256": "38e1674cc95405c9e3de224a7fd5e883625e894c5198674e3f8d56848d62b895",
+    "sizeBytes": 5395340,
+    "entries": 1646,
+    "files": 1628,
+    "directories": 18,
+    "uncompressedBytes": 15255951,
+    "compressedBytes": 5154078,
+    "inventoryRecords": 1627,
+    "inventorySha256": "8a77a92da62f9b3226718207ec85c64f109cbd45e1634f4ae12e576f93f5c485"
+  },
+  "deterministicBuilds": 2,
+  "byteIdentical": true,
+  "crcPassed": true,
+  "safePathsPassed": true,
+  "duplicatePaths": 0,
+  "symlinks": 0,
+  "encryptedEntries": 0,
+  "forbiddenResidue": 0,
+  "sourceEqualityPassed": true,
+  "independentExtractions": 2,
+  "dependencyIndependentPartsPerExtraction": 115,
+  "results": [
+    "PASS",
+    "PASS"
+  ],
+  "identicalOutput": true,
+  "testLogSha256": "fff885cdbf303f31068fd8148cea31efc1ac3820acc1116cc23a2b36989a8675",
+  "postgresqlDependentPart": "BLOCKED_NOT_CLAIMED",
+  "launchState": "NO_GO",
+  "deploymentAuthorized": false,
+  "identityBoundary": "This candidate identity is embedded only as historical candidate evidence. The immutable final archive identity is detached after final packaging."
+}

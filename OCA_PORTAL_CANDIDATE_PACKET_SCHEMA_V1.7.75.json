@@ -1,0 +1,37 @@
+{
+  "schema": "smarter-justice-portal-specialty-candidate-packet",
+  "schemaVersion": "1.0.0",
+  "releaseVersion": "1.7.75",
+  "requiredFields": [
+    "packetId",
+    "portalId",
+    "generatedAt",
+    "sourceSnapshotId",
+    "candidates",
+    "conflicts",
+    "holds",
+    "rechecksRequired",
+    "suppressionState"
+  ],
+  "candidateFields": [
+    "centralProfessionalId",
+    "jurisdictionCredential",
+    "name",
+    "registrationObservation",
+    "businessContactProjection",
+    "specialtyEvidence",
+    "courtEvidence",
+    "currentness",
+    "recommendedDisposition"
+  ],
+  "receiptStates": [
+    "ACCEPTED",
+    "REJECTED",
+    "HELD",
+    "CORRECTED",
+    "PUBLISHED",
+    "SUPPRESSED"
+  ],
+  "automaticPortalWriteBack": false,
+  "publicationNotImplied": true
+}

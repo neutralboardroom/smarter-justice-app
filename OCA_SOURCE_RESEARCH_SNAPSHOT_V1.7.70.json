@@ -1,0 +1,21 @@
+{
+  "datasetId": "eqw2-r5nb",
+  "title": "NYS Attorney Registrations",
+  "provider": "NYS Unified Court System / NY Open Data",
+  "retrievedAt": "2026-08-01T12:56:00-04:00",
+  "observedLastUpdated": "2026-07-28",
+  "postingFrequencyLabel": "Quarterly",
+  "observedApproxRows": 432000,
+  "observedColumns": 20,
+  "fullSnapshotDownloadedInThisBuild": false,
+  "metadataState": "CURRENT_OFFICIAL_SOURCE_RESEARCH",
+  "targetedDirectoryRecheckRequiredFor": [
+    "FIRST_PUBLICATION",
+    "CLAIM_APPROVAL",
+    "OUTREACH",
+    "FEATURED_PLACEMENT",
+    "OPPORTUNITY_ELIGIBILITY",
+    "REINSTATEMENT_AFTER_HOLD",
+    "MATERIAL_DISCREPANCY"
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "schema": "smarter-justice-tamper-evident-evidence-manifest",
+  "schemaVersion": "1.0.0",
+  "releaseVersion": "1.7.59",
+  "generatedAt": "2026-07-31T15:53:00-04:00",
+  "selfReferenceBoundary": "This manifest does not prove its own hash or final ZIP identity. Those are detached after packaging.",
+  "entries": [
+    {
+      "evidenceId": "EV-BASE-ZIP",
+      "path": "smarter-justice-v1.7.58.zip",
+      "sha256": "6a362e8c55f0c60a4668df78b4656ce87a2e592d4f7f60b298cd4e5cbd1fe56e",
+      "scope": "exact source and immediate rollback",
+      "state": "CURRENT_CHAT_REPRODUCED",
+      "invalidationTriggers": [
+        "different source ZIP",
+        "inventory mismatch"
+      ]
+    },
+    {
+      "evidenceId": "EV-CONTROLLING-PROMPT",
+      "path": "Smarter_Justice_Reusable_Version_1.txt",
+      "sha256": "3951396dafb92a5d706cf0483000717a70d5f72c0ef84888a7d77f9163d5b8ac",
+      "scope": "owner build intent",
+      "state": "CURRENT_CHAT EXACTLY INSPECTED",
+      "invalidationTriggers": [
+        "newer owner command",
+        "prompt integrity failure"
+      ]
+    },
+    {
+      "evidenceId": "EV-BASE-TEST",
+      "path": "BASELINE_RECORD_V1.7.59.md",
+      "sha256": "1dd14a7a044837179e5054fc5071aaa50b0b3b0c7f00c829ede02e39439bf2aa",
+      "scope": "112-command source baseline twice",
+      "state": "CURRENT_CHAT_REPRODUCED",
+      "invalidationTriggers": [
+        "source or environment changes"
+      ]
+    },
+    {
+      "evidenceId": "EV-PORTAL-AUTHORITY",
+      "path": "INITIAL_PORTAL_AUTHORITY_V1.7.59.json",
+      "sha256": "dde01019cca5db64df0210436033c021d04ec54b6f7d4b55eacc0b4379716f6b",
+      "scope": "owner-recorded metadata only",
+      "state": "CURRENT_CHAT OWNER-RECORDED",
+      "invalidationTriggers": [
+        "newer portal artifact or owner correction"
+      ]
+    },
+    {
+      "evidenceId": "EV-LAUNCH-MATRIX",
+      "path": "LAUNCH_CAPABILITY_MATRIX_V1.7.59.json",
+      "sha256": "43fd0da9c772095e8662b06202ca34a1a8b3dc2a3bf2915867468afa94dfec79",
+      "scope": "capability-specific local/gated truth",
+      "state": "TARGET IMPLEMENTED",
+      "invalidationTriggers": [
+        "code/config/environment/approval/deployment changes"
+      ]
+    },
+    {
+      "evidenceId": "EV-WORKING-TREE",
+      "path": "WORKING_TREE_ACCEPTANCE_V1.7.59.json",
+      "sha256": "bf4998bdc57a29497fb47128d8e01ef3b620064d5d070f38d70b164c910e2582",
+      "scope": "two concurrent independent frozen-tree 113-command runs",
+      "state": "CURRENT_CHAT_REPRODUCED",
+      "invalidationTriggers": [
+        "any packaged source change before candidate acceptance"
+      ]
+    },
+    {
+      "evidenceId": "EV-CANDIDATE",
+      "path": "CANDIDATE_ARTIFACT_ACCEPTANCE_V1.7.59.json",
+      "sha256": "baf7737ca23815f1d36795e0806ad1fa8d910fec14727020f5fa84c0b5d2f81f",
+      "scope": "deterministic candidate acceptance",
+      "state": "CURRENT_CHAT_REPRODUCED",
+      "invalidationTriggers": [
+        "any source change after candidate testing"
+      ]
+    },
+    {
+      "evidenceId": "EV-FINAL",
+      "path": "FINAL_ARTIFACT_ACCEPTANCE_V1.7.59.json",
+      "sha256": "476e9ffadc13f425e97d7e4770f80ad009e7068b051e0f7e37c8eebd4304bb9c",
+      "scope": "sealed final source acceptance; detached ZIP identity follows",
+      "state": "SEALED_SOURCE_ACCEPTED_DETACHED_FINAL_IDENTITY_PENDING",
+      "invalidationTriggers": [
+        "any packaged file change"
+      ]
+    }
+  ],
+  "invalidatedEvidencePreservedHistorically": true,
+  "finalZipIdentityMode": "DETACHED_DELIVERY_RECEIPT",
+  "currentPackageEvidence": {
+    "packageJsonSha256": "4989e6fe8315ce1aefa7d6293e697ead2e529f4867c878ff7875254594b36a38",
+    "packageLockSha256": "0a57574b69b77be51de3b0b3473ca297f3871a9f5e4c3d20494826842d161743",
+    "sbomSha256": "655acf4a8b0ce9497a14f676015aec7d1dcf9a27957aeb21f39e13dc4a6f1fd1"
+  }
+}

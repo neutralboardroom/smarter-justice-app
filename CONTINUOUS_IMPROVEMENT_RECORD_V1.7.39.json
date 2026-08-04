@@ -1,0 +1,33 @@
+{
+  "version": "1.7.39",
+  "date": "2026-07-28",
+  "releaseWarrant": {
+    "material": true,
+    "coherent": true,
+    "safe": true,
+    "subject": "attorney signup, membership checkout, and professional profile-management refinement"
+  },
+  "improvements": [
+    "streamlined attorney and firm account creation",
+    "12-character password parity between browser and server",
+    "optional profile preparation separated from required signup fields",
+    "profile-completeness and unsaved-change feedback",
+    "clear recurring membership quote and renewal disclosure",
+    "authoritative firm seat count at checkout",
+    "exact approved-application target, plan, seat, and billing-cadence matching",
+    "four final checkout acknowledgments",
+    "Stripe checkout idempotency and duplicate-submit protection",
+    "firm and professional public-name integrity checks",
+    "95th regression test"
+  ],
+  "deferred": [
+    "production service verification",
+    "graphical and assistive acceptance",
+    "live payment lifecycle verification",
+    "deployment authorization",
+    "Immigration Oasis deployment verification",
+    "dedicated portal exact reconciliation"
+  ],
+  "ownerBenefit": "The attorney launch funnel is clearer, safer, and harder to misconfigure or underbill while every commercial gate remains explicit.",
+  "publicUserBenefit": "Professionals can create accounts and manage accurate profiles more easily without any implication that payment buys verification, ranking, or clients."
+}

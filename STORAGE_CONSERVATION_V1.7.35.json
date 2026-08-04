@@ -1,0 +1,21 @@
+{
+  "version": "1.7.35",
+  "date": "2026-07-27",
+  "policy": "Preserve exact source, tests, current truth, rollback, provenance, and continuation while excluding generated residue, runtime secrets, external test shims, and unnecessary companion artifacts.",
+  "removedFiles": [],
+  "removedBytes": 0,
+  "removedFileCount": 0,
+  "retained": [
+    "Current legal-network source, public tools, professional-network schemas and runtime, tests, package lock, SBOM, deployment and rollback records",
+    "Historical release evidence required for regression and provenance",
+    "v1.7.34 rollback records and continuation prompt",
+    "One current continuation prompt after v1.7.35",
+    "Current professional-network, action-center, portal-truth, dashboard-contract, and Neutral Boardroom handoff records",
+    "No dedicated portal ZIPs, user-matter data, credentials, npm logs, node_modules, or external test modules"
+  ],
+  "minimumNextChatWorkingSet": [
+    "smarter-justice-v1.7.35.zip",
+    "CONTINUATION_PROMPT_V1.7.35.md"
+  ],
+  "safeCleanupRule": "Do not remove the exact v1.7.34 rollback artifact or its current continuation record until v1.7.35 is safely downloaded, independently verified, and superseded by a later exact release."
+}

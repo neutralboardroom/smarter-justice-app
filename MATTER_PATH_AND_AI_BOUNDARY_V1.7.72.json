@@ -1,0 +1,76 @@
+{
+  "schema": "smarter-justice-matter-path-ai-boundary",
+  "schemaVersion": "1.0.0",
+  "releaseVersion": "1.7.72",
+  "generatedAt": "2026-08-02T17:04:00-04:00",
+  "matterPathEngine": {
+    "state": "PRESERVED_AND_GOVERNED",
+    "capabilities": [
+      "issue and portal routing",
+      "stage detection",
+      "dynamic missing-information checks",
+      "readiness scoring with limitations",
+      "one-question-at-a-time journeys where useful",
+      "back navigation and correction",
+      "user-controlled status/next-action workspace",
+      "staff why-this-path-was-chosen explanation",
+      "specialty-safe portal handoff"
+    ],
+    "prohibitedClaims": [
+      "legal advice",
+      "guaranteed deadline",
+      "guaranteed outcome",
+      "attorney review",
+      "court or agency acceptance",
+      "automatic representation",
+      "silent path changes"
+    ]
+  },
+  "aiAssistance": {
+    "externalProviderRequiredForTierA": false,
+    "liveExternalAi": false,
+    "allowedPreparationUses": [
+      "summaries",
+      "organization",
+      "question flows",
+      "missing-information checks",
+      "source tracking",
+      "draft support",
+      "comparison",
+      "suggested questions"
+    ],
+    "deterministicFallbacks": [
+      "rules-based routing",
+      "official resources",
+      "professional profiles",
+      "Document Help entry",
+      "organizers",
+      "checklists",
+      "device-local preparation"
+    ],
+    "activationPrerequisites": [
+      "exact use cases and tier",
+      "data-flow/minimization/consent/retention/deletion/training-use review",
+      "untrusted-content and prompt-injection isolation",
+      "auth/tenant/rate/cost/kill-switch controls",
+      "source attribution and uncertainty behavior",
+      "human review boundaries",
+      "monitoring/incident/support/rollback",
+      "sandbox acceptance",
+      "qualified review and scoped owner approval"
+    ],
+    "secretHandling": "Provider secrets only in approved secure store; never chat or artifacts.",
+    "ownerActionRequest": "SJOA-1760-P2-AI-PROVIDER"
+  },
+  "launchState": "NO_GO",
+  "memoryFirstPreparation": {
+    "questionsForAttorney": true,
+    "knownFacts": true,
+    "unknownFacts": true,
+    "datesNamesAmountsToVerify": true,
+    "missingRecords": true,
+    "userControlledExportDeletion": true,
+    "nonAiPath": true
+  },
+  "publicFreemiumManifest": "PUBLIC_FREEMIUM_AND_COST_RECOVERY_V1.7.72.json"
+}

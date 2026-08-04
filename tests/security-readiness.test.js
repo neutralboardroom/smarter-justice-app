@@ -1,3 +1,4 @@
+const { portForTest } = require('./test-port');
 const assert = require('assert');
 const { spawn } = require('child_process');
 const path = require('path');
@@ -5,7 +6,7 @@ const fs = require('fs');
 const os = require('os');
 const security = require('../lib/accountSecurity');
 
-const port = 3963;
+const port=portForTest(3963);
 const base = `http://127.0.0.1:${port}`;
 const tempStorage = fs.mkdtempSync(path.join(os.tmpdir(), 'smarter-justice-security-'));
 const ownerEmail = 'owner-security@example.test';
@@ -50,7 +51,19 @@ function cookieFrom(response){ return String(response.headers.get('set-cookie')|
 
     const signup=await result(`${base}/api/professional/auth/signup`,post({accountType:'individual',displayName:'Security Test Professional',email:'security-professional@example.test',password:'Professional!123',professionalType:'attorney',acceptTerms:true,acceptPrivacy:true}));
     assert.equal(signup.response.status,201,JSON.stringify(signup.data));
-    let professionalCookie=cookieFrom(signup.response);
+    assert.equal(signup.data.account.emailVerified,false);
+    assert(signup.data.verification.testToken,'test verification token should be exposed only in test mode');
+    assert.equal(cookieFrom(signup.response),'','unverified signup must not create an authenticated session');
+    let unverifiedLogin=await result(`${base}/api/professional/auth/login`,post({email:'security-professional@example.test',password:'Professional!123'}));
+    assert.equal(unverifiedLogin.response.status,401);
+    assert.equal(unverifiedLogin.data.emailVerificationRequired,true);
+    const verified=await result(`${base}/api/professional/auth/email-verification/confirm`,post({token:signup.data.verification.testToken}));
+    assert.equal(verified.response.status,200,JSON.stringify(verified.data));
+    assert.equal(verified.data.account.emailVerified,true);
+    let professionalCookie=cookieFrom(verified.response);
+    assert(/sj_professional_session=/.test(professionalCookie));
+    const replayVerification=await result(`${base}/api/professional/auth/email-verification/confirm`,post({token:signup.data.verification.testToken}));
+    assert.equal(replayVerification.response.status,400,'verification tokens must be single use');
     const firstResetRequest=await json(`${base}/api/professional/auth/password-reset/request`,post({email:'security-professional@example.test'}));
     assert(firstResetRequest.testToken,'test reset token should be exposed only in test mode');
     const resetRequest=await json(`${base}/api/professional/auth/password-reset/request`,post({email:'security-professional@example.test'}));

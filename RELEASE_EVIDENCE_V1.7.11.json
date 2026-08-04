@@ -1,0 +1,225 @@
+{
+  "schemaVersion": "1.0.0",
+  "release": {
+    "project": "Smarter Justice",
+    "version": "1.7.11",
+    "title": "Structured Profile Operations, Protected Communication Preferences, and Actionable Professional Onboarding",
+    "status": "exact artifact tested",
+    "artifactName": "smarter-justice-v1.7.11.zip",
+    "artifactSha256Location": "Smarter_Justice_v1.7.11_Exact_Artifact_Test_Record.json (external companion generated after final ZIP testing)",
+    "sourceBaseline": {
+      "artifact": "smarter-justice-v1.7.10.zip",
+      "sha256": "aa375fba1bd6ad14425ff8d497b213d873e589e9a8964903e75dbef3fc36c4f6",
+      "exactSizeBytes": 2174971,
+      "tests": "25-part regression passed before changes"
+    },
+    "rollbackArtifact": "smarter-justice-v1.7.10.zip",
+    "deployment": {
+      "deployed": false,
+      "liveVerified": false,
+      "lastVerifiedProductionVersion": "1.6.1",
+      "statement": "Code completion and exact-artifact testing do not change production status."
+    }
+  },
+  "completedImprovementItems": [],
+  "materiallyAdvancedImprovementItems": [
+    "SJ-NEXT-016",
+    "SJ-NEXT-018",
+    "SJ-NEXT-020",
+    "SJ-NEXT-039"
+  ],
+  "carriedForwardLaunchGates": [
+    "SJ-NEXT-001",
+    "SJ-NEXT-002",
+    "SJ-NEXT-003",
+    "SJ-NEXT-004",
+    "SJ-NEXT-005",
+    "SJ-NEXT-006",
+    "SJ-NEXT-007",
+    "SJ-NEXT-008",
+    "SJ-NEXT-009",
+    "SJ-NEXT-032",
+    "SJ-NEXT-033",
+    "SJ-NEXT-034"
+  ],
+  "changes": [
+    {
+      "id": "V1711-PROFILE-REQUESTS",
+      "problem": "Visible profile-reporting links still fell back to a generic contact message and did not create a governed, trackable profile-operations record.",
+      "implementation": "Added validated structured public profile requests for correction, duplicate review, suppression, removal, privacy, credential, firm-affiliation, and employment-change issues; safe public reference receipts; source URLs; privacy acknowledgement; audit history; and owner-workspace visibility.",
+      "preserved": "No instant claim, automatic correction, public requester data exposure, endorsement, ranking, routing, or production service-level promise.",
+      "tests": [
+        "tests/release-governance-v1711.test.js",
+        "tests/marketplace.test.js",
+        "tests/customer-facing-clarity.test.js"
+      ]
+    },
+    {
+      "id": "V1711-COMMUNICATION-PREFERENCES",
+      "problem": "Professional accounts lacked enforceable choices for optional messages and did not expressly protect essential notices from opt-out.",
+      "implementation": "Added audited account-level language and optional-message preferences while forcing essential security, legal, account, and billing notices to remain enabled.",
+      "preserved": "No claim of authenticated production email delivery, SMS readiness, billing activation, or provider-side unsubscribe acceptance.",
+      "tests": [
+        "tests/release-governance-v1711.test.js",
+        "tests/security-boundaries-v177.test.js"
+      ]
+    },
+    {
+      "id": "V1711-ACTIONABLE-ONBOARDING",
+      "problem": "The professional setup checklist described incomplete steps but did not consistently provide direct next actions.",
+      "implementation": "Added direct action links for unfinished profile, credential, firm, portal-interest, security, support, and communication-preference steps.",
+      "preserved": "Paused membership applications, payment, review-timing boundaries, and no-lead/no-revenue promises.",
+      "tests": [
+        "tests/release-governance-v1711.test.js",
+        "tests/customer-experience-v178.test.js"
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "id": "TEST-V1711-GOVERNANCE",
+      "path": "tests/release-governance-v1711.test.js",
+      "covers": [
+        "version truth",
+        "structured profile requests",
+        "safe public receipts",
+        "owner workflow visibility",
+        "communication preferences",
+        "essential-notice protection",
+        "actionable onboarding",
+        "closed enrollment/payment gates"
+      ]
+    },
+    {
+      "id": "TEST-FULL-REGRESSION",
+      "path": "npm test",
+      "covers": [
+        "all 25 regression parts"
+      ]
+    },
+    {
+      "id": "TEST-FINAL-ZIP",
+      "path": "fresh extraction, clean install/audit, npm test, syntax/JSON, public links, ZIP safety, source equality, local health and fail-closed boundaries",
+      "covers": [
+        "distributed artifact"
+      ]
+    }
+  ],
+  "immutableStatusHistory": [
+    {
+      "at": "2026-07-21",
+      "actor": "build",
+      "event": "v1.7.9 exact baseline verified",
+      "status": "baseline verified",
+      "evidence": "9bec35277e8f08d16520959e2162b4c16b623aac8e89826638f2ec24556f2b87"
+    },
+    {
+      "at": "2026-07-21",
+      "actor": "build",
+      "event": "v1.7.10 evidence-backed scope selected",
+      "status": "scope controlled",
+      "evidence": "Audit findings and maintained list"
+    },
+    {
+      "at": "2026-07-21",
+      "actor": "build",
+      "event": "v1.7.10 code and records completed",
+      "status": "code complete",
+      "evidence": "Release changes and targeted tests"
+    },
+    {
+      "at": "2026-07-21",
+      "actor": "build",
+      "event": "v1.7.10 final ZIP tested",
+      "status": "exact artifact tested",
+      "evidence": "External exact-artifact record"
+    },
+    {
+      "at": "2026-07-21",
+      "actor": "build",
+      "event": "v1.7.10 exact baseline independently verified",
+      "status": "baseline verified",
+      "evidence": "aa375fba1bd6ad14425ff8d497b213d873e589e9a8964903e75dbef3fc36c4f6"
+    },
+    {
+      "at": "2026-07-21",
+      "actor": "build",
+      "event": "v1.7.11 evidence-backed scope selected",
+      "status": "scope controlled",
+      "evidence": "SJ-NEXT-016, SJ-NEXT-018, SJ-NEXT-020, and SJ-NEXT-039"
+    },
+    {
+      "at": "2026-07-21",
+      "actor": "build",
+      "event": "v1.7.11 code and records completed",
+      "status": "code complete",
+      "evidence": "Release changes and targeted tests"
+    },
+    {
+      "at": "2026-07-21",
+      "actor": "build",
+      "event": "v1.7.11 final ZIP tested",
+      "status": "exact artifact tested",
+      "evidence": "External exact-artifact record"
+    }
+  ],
+  "privacySafeFunnelMeasurement": {
+    "runtimeCollectionStatus": "disabled pending privacy review and deployment configuration",
+    "allowedEvents": [
+      "homepage_audience_choice",
+      "public_start_opened",
+      "quick_start_selected",
+      "public_start_completed",
+      "starting_result_action_selected",
+      "focused_portal_details_viewed",
+      "professional_directory_viewed",
+      "professional_membership_viewed",
+      "professional_signup_started",
+      "professional_signup_completed",
+      "profile_claim_started",
+      "credential_step_completed",
+      "checkout_started",
+      "subscription_state_changed",
+      "support_requested"
+    ],
+    "allowedProperties": [
+      "event name",
+      "page or route identifier",
+      "coarse device class",
+      "coarse language",
+      "anonymous session identifier where legally approved",
+      "completion state",
+      "non-sensitive error category"
+    ],
+    "prohibitedProperties": [
+      "free-text legal description",
+      "document text",
+      "file name",
+      "person name",
+      "email",
+      "phone",
+      "street address",
+      "case number",
+      "notice number",
+      "medical information",
+      "immigration information",
+      "domestic-violence information",
+      "tax identifiers",
+      "payment-card data",
+      "professional-client communication"
+    ],
+    "rule": "No confidential description or document content may enter analytics. Consent, retention, access, deletion, and vendor settings require separate privacy approval."
+  },
+  "closedGates": [
+    "confidential production uploads",
+    "sensitive external AI without approved controls",
+    "professional membership applications and payments",
+    "public Human Review charges",
+    "public subscriptions",
+    "consultation booking",
+    "public reviews and ratings",
+    "unrestricted matching or routing",
+    "automatic filing",
+    "broad cross-portal sharing"
+  ]
+}

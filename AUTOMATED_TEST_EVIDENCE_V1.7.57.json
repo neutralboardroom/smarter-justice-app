@@ -1,0 +1,35 @@
+{
+  "releaseVersion": "1.7.57",
+  "generatedAt": "2026-07-30",
+  "dependencyIndependentCommands": 111,
+  "postgresDependentCommands": 1,
+  "totalReadinessParts": 112,
+  "sourceBaseline": {
+    "commands": 110,
+    "runs": 2,
+    "mode": "CONCURRENT_INDEPENDENT_TREES",
+    "result": "PASS",
+    "identicalOutput": true,
+    "testLogSha256": "60beb21f8a8b4b9e82e48e6eef68f0934867f120405f78ac163c00b363f61d2a"
+  },
+  "workingTreeStatus": "PASS",
+  "launchState": "NO_GO",
+  "workingTree": {
+    "commands": 111,
+    "runs": 2,
+    "mode": "CONCURRENT_INDEPENDENT_FROZEN_TREES",
+    "result": "PASS",
+    "identicalOutput": true,
+    "testLogSha256": "8adb4e8b3c6acd3a676d786e660ef1e7873c9726f8e21720d50c0ce96de08dfa"
+  },
+  "candidateStatus": "PASS",
+  "preSealFinalStatus": "PASS",
+  "preSealFinal": {
+    "commands": 111,
+    "runs": 2,
+    "mode": "CONCURRENT_INDEPENDENT_EXACT_EXTRACTIONS",
+    "result": "PASS",
+    "identicalOutput": true,
+    "testLogSha256": "8adb4e8b3c6acd3a676d786e660ef1e7873c9726f8e21720d50c0ce96de08dfa"
+  }
+}

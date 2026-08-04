@@ -1,0 +1,13 @@
+{
+  "schema": "smarter-justice-business-contact-privacy-and-professional-truth-policy",
+  "schemaVersion": "1.0.0",
+  "releaseVersion": "1.7.75",
+  "publishResidentialStreetAddress": false,
+  "goodStandingInferenceFromRegistrationProhibited": true,
+  "absenceOfDisciplineClaimProhibited": true,
+  "publicDisciplineRequiresOfficialOrderAndHumanReview": true,
+  "courtAppearanceIsEvidenceNotAutomaticExpertise": true,
+  "outcomeRankingProhibited": true,
+  "minimumPracticeMetadataOnly": true,
+  "clientFactHarvestingProhibited": true
+}

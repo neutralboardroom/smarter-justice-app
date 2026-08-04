@@ -1,0 +1,119 @@
+SMARTER JUSTICE + LEGAL MICRO-PORTALS
+CURRENT COORDINATED PROMPT PACK MANIFEST AND MASTER-PAIR RECEIPT
+CENTRAL THIRTEENTH PASS + PORTAL-FAMILY THIRTY-FIFTH PASS
+FINALIZED-PACK AUTHORITY, EXACT-FINAL CONTINUATIONS,
+MASTER-PACK STABILITY, AND NO-CHURN CONTROL
+
+PACK ID: SJP-2026-08-01-C13-P35-V11
+OWNER: ROGER GILLMAN
+PREPARED: AUGUST 1, 2026 AT APPROXIMATELY 12:23 PM — AMERICA/NEW_YORK
+TRANSACTION: MPPT-2026-08-01-SJ13-LMP35-PACK-33B6CA8B22DC
+PACK STATE: PACK FINALIZED — READY FOR USE
+CANONICAL ACTIVE-PAIR REGISTER STATE: COMMIT NOT PROVEN BY THIS PACK
+PRODUCT IMPLEMENTATION EFFECT: NONE
+DEPLOYMENT INSTRUCTION STATE: OWNER SOURCE PENDING — NOT INCLUDED IN THIS PACK
+
+PARENT PACK
+- Pack ID: SJP-2026-08-01-C12-P34-V10
+- manifest:
+  `Smarter_Justice_Coordinated_Prompt_Pack_Manifest_Central_Twelfth_Portal_Thirty_Fourth_2026-08-01.txt`
+- SHA-256: 6688c1c86bffc8b613c1641af8fc6223f2b1a3a5a5e0041cd172b604304af6a9
+- size: 4,841 bytes
+- lines: 107
+- disposition: HISTORICAL ROLLBACK PACK AND EXACT SOURCE FOR THIS REFINEMENT
+
+FILE 1 — SMARTER JUSTICE CENTRAL MASTER
+- filename: Smarter_Justice_Central_Master_Thirteenth_Pass_Current_Pack_Authority_Final_Continuation_and_No_Churn_Control_2026-08-01.txt
+- SHA-256: 2027379953b53b17eaafceb8aaf10871e0efc51282e0de095d42d2de0e253f4d
+- size: 366,579 bytes
+- lines: 7,920
+- role: central repository authority and portal shared-boundary constraint.
+- parent SHA-256: ade9cca7b5730906c3dd13c2c3616cded6027a81d44c4e415018d833bf4c4aff
+
+FILE 2 — UNIVERSAL LEGAL MICRO-PORTALS MASTER
+- filename: Legal_Micro_Portals_Master_Thirty_Fifth_Pass_Current_Pack_Authority_Final_Continuation_and_No_Churn_Control_2026-08-01.txt
+- SHA-256: fbf5b70ae2c9fcdd57ac0bbf51bbd57da2db1479e726f2a9dab4472558cdc28a
+- size: 729,484 bytes
+- lines: 14,951
+- role: one assigned portal repository authority and central shared-boundary
+  constraint.
+- parent SHA-256: 608fd26fcc44a042f97f55440144fb3274e46811d6a7d951cae92ecbafece545
+
+FILE 3 — THIS DETACHED MANIFEST
+- role: exact pair, baseline, pack state, parent and rollback binding;
+- does not replace either complete master;
+- detached full-file SHA-256 is supplied at delivery.
+
+DURABLE-RULE BASELINE
+- baseline: DRB-2026-08-01-DUR001-DUR074-V11
+- immediate parent: DRB-2026-08-01-DUR001-DUR071-V10
+- active rules: DUR-001 through DUR-074
+- semantic-capsule SHA-256: c6d6c7c95d3eeb9fb1d6f4daefaeebc7871568a6c7e02eb53ac405104f9d290a
+- parent semantic-capsule SHA-256: 02cc98b5cfe33ebd361df05d9b3d493edb800dc85fe13f80b45948975effe215
+- transaction: DRC-2026-08-01-DUR072-DUR074-PACK-STABILITY-C6D6C7C95D3E
+
+CURRENT USE TRUTH
+- This complete pack is finalized and ready for builder use.
+- Roger's supply or use of this pack authorizes repository-scoped application.
+- This manifest does not prove a canonical active-pair register commit.
+- It does not prove product implementation, deployment, D4/D5, billing, popup
+  permission, outreach, opportunity routing, live operation, or continued-live
+  acceptance.
+
+CONTINUATION FINALIZATION
+A product continuation becomes the current handoff only after it matches the
+exact final artifact, rollback, final tests, current Pack ID, evidence, gates,
+owner actions and next work. A later material change invalidates affected
+continuation statements.
+
+MASTER-PACK STABILITY
+Reuse this exact pack across ordinary Smarter Justice and portal product
+releases. Product releases update their own artifacts, continuations, evidence,
+rollback, deployment state and Next Version Improvement Lists. Do not create a
+new master-pack pass solely because a product version changes.
+
+NEW SMARTER JUSTICE CHAT:
+latest exact Smarter Justice artifact + latest exact-matched final Smarter
+Justice continuation + Files 1, 2 and 3 + accepted deployment instruction only
+when relevant.
+
+EXISTING SMARTER JUSTICE CHAT:
+reuse an exact accessible and verified latest artifact and continuation; add or
+reuse Files 1, 2 and 3; do not request duplicate uploads.
+
+NEW MICRO-PORTAL CHAT:
+latest exact assigned-portal artifact + latest exact-matched final portal
+continuation + Files 2, 1 and 3 + accepted deployment instruction only when
+relevant.
+
+EXISTING MICRO-PORTAL CHAT:
+reuse an exact accessible and verified latest portal artifact and continuation;
+add or reuse Files 2, 1 and 3; do not request duplicate uploads.
+
+DEPLOYMENT FILE 4
+After Roger supplies the existing deployment-instruction source, an accepted
+successor becomes File 4 for deployment-oriented packs. Current state:
+`OWNER SOURCE PENDING`.
+
+ROLLBACK
+- central parent SHA-256: ade9cca7b5730906c3dd13c2c3616cded6027a81d44c4e415018d833bf4c4aff
+- portal parent SHA-256: 608fd26fcc44a042f97f55440144fb3274e46811d6a7d951cae92ecbafece545
+- parent manifest SHA-256: 6688c1c86bffc8b613c1641af8fc6223f2b1a3a5a5e0041cd172b604304af6a9
+- product artifacts and environments remain product-specific.
+
+===============================================================================
+SELF-EXCLUDING PACK-MANIFEST INTEGRITY
+===============================================================================
+
+BEGIN SELF-EXCLUDING PACK MANIFEST INTEGRITY VALUE
+SELF_EXCLUDING_SHA256: 2f1d1fbfc1501143d366bbc962c624fbf82052dc9d489f14ebeb9f6bd1f18608
+SELF_EXCLUDING_CANONICAL_BYTES: 5202
+SELF_EXCLUDING_CANONICAL_LINES: 112
+ALGORITHM: SHA-256
+CANONICALIZATION: SJ-PACK-MANIFEST-CANON-2
+END SELF-EXCLUDING PACK MANIFEST INTEGRITY VALUE
+
+The detached full-file SHA-256 supplied at delivery remains the stronger exact
+identity.
+
+END OF CURRENT SMARTER JUSTICE COORDINATED PROMPT PACK MANIFEST

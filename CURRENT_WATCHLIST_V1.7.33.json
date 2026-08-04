@@ -1,0 +1,48 @@
+{
+  "version": "1.7.33",
+  "date": "2026-07-26",
+  "items": [
+    {
+      "area": "Neutral Boardroom handoff",
+      "reason": "v1.7.33 provides export-only D2 contract evidence, not live integration.",
+      "trigger": "The separate Neutral Boardroom Portfolio OS has a stable approved import contract.",
+      "action": "Run producer-consumer, permission, privacy, stale-data, malformed-data, conflict, and failure tests before claiming D3."
+    },
+    {
+      "area": "Dedicated legal portal artifacts",
+      "reason": "Most current portal identities remain owner-recorded rather than exact-verified in this umbrella artifact.",
+      "trigger": "A dedicated portal ZIP is supplied or an implementation claim is needed.",
+      "action": "Verify exact identity, implementation, deployment, rollback, and continuation truth."
+    },
+    {
+      "area": "Legal portal deployment",
+      "reason": "Smarter Justice must now concentrate on launch and operations, but v1.7.33 itself is not deployment-authorized.",
+      "trigger": "Roger approves a specific deployment.",
+      "action": "Use the dedicated portal chat, exact artifact, backup, rollback, and live verification."
+    },
+    {
+      "area": "Professional and revenue systems",
+      "reason": "Foundations exist but broad paid and sensitive gates remain closed.",
+      "trigger": "Owner approves a bounded pilot with legal, security, privacy, support, and operational evidence.",
+      "action": "Activate only the approved lane and keep payment separate from verification and organic rank."
+    },
+    {
+      "area": "Profile growth",
+      "reason": "No profile research was performed in v1.7.33.",
+      "trigger": "Bronx-led source-review time is available.",
+      "action": "Add only independently sourced, individual-level qualifying records."
+    },
+    {
+      "area": "Dependency audit",
+      "reason": "Current vulnerability status changes and registry access may fail.",
+      "trigger": "Registry access is reliable.",
+      "action": "Run npm ci and npm audit against the exact artifact and record exact results."
+    },
+    {
+      "area": "Real-device accessibility",
+      "reason": "Automated source checks do not prove physical-device and assistive-technology acceptance.",
+      "trigger": "A dependable test environment is available.",
+      "action": "Test keyboard, screen reader, zoom, forced colors, reflow, mobile, tablet, print, and downloads."
+    }
+  ]
+}

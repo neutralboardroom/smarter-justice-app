@@ -1,0 +1,15 @@
+{
+  "schema": "smarter-justice-working-tree-acceptance",
+  "releaseVersion": "1.7.63",
+  "generatedAt": "2026-07-31T23:40:00-04:00",
+  "dependencyIndependentParts": 117,
+  "result": "PASS_TWO_INDEPENDENT_FROZEN_SOURCE_TREES_IDENTICAL_OUTPUT",
+  "testLogSha256": "383eed1a10769c543acfdd963ee42042ccee16e2ebbddbe9882482443b09bb62",
+  "repeatedRuns": 2,
+  "runBoundary": "same finalized working tree before independent frozen-tree copies",
+  "node": "v22.16.0",
+  "npm": "10.9.2",
+  "sourceTrees": 2,
+  "commandsPerRun": 117,
+  "concurrent": true
+}

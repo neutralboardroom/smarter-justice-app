@@ -1,0 +1,101 @@
+{
+  "schemaVersion": "1.0.0",
+  "project": "Smarter Justice",
+  "releaseVersion": "1.7.19",
+  "overallState": "exact-artifact-tested predeployment development package; not deployed",
+  "dimensions": [
+    {
+      "id": "product",
+      "status": "exact-artifact foundation passed",
+      "evidence": "The complete v1.7.19 scope and 34-part regression suite pass against the final fresh extraction.",
+      "remaining": "Real-user and production acceptance remain pending."
+    },
+    {
+      "id": "customerLanguage",
+      "status": "automated foundation passed",
+      "evidence": "Public market, source, claim, verification, and availability language remains neutral and explicit.",
+      "remaining": "Real-user validation remains pending."
+    },
+    {
+      "id": "accessibility",
+      "status": "automated foundation passed",
+      "evidence": "Visible focus, touch targets, reduced motion, readable type, semantic controls, labels, responsive foundations, and automated desktop/narrow-mobile rendering are present.",
+      "remaining": "Screen-reader, keyboard-only, zoom, large-text, and physical-device acceptance remain pending."
+    },
+    {
+      "id": "mobile",
+      "status": "automated foundation passed",
+      "evidence": "Classic components and three-market cards pass automated narrow-mobile rendering without changing routes.",
+      "remaining": "Physical iPhone, Android, and tablet acceptance remain pending."
+    },
+    {
+      "id": "brand",
+      "status": "exact-artifact foundation passed",
+      "evidence": "Approved logo identity, required SVG/PNG/favicon/touch/manifest/social assets, 61-page metadata coverage, and automated desktop/narrow-mobile static rendering pass.",
+      "remaining": "Production cache, tab, bookmark, shortcut, manifest, and social-preview verification remain pending."
+    },
+    {
+      "id": "profileData",
+      "status": "source-tracked development batch",
+      "evidence": "25 new individuals, 5 new firms, 25 links, and one enriched Brooklyn firm cover Brooklyn, Manhattan, and Hudson County; 57 public records and 54 strict qualifying profiles result.",
+      "remaining": "Official credential checks, outreach operations, revalidation, and live profile acceptance remain pending."
+    },
+    {
+      "id": "security",
+      "status": "code foundation passed",
+      "evidence": "Protected routes and fail-closed gates remain unchanged; no secret or private data is introduced by visual or profile work.",
+      "remaining": "Production account, email, database, and operational acceptance remain pending."
+    },
+    {
+      "id": "privacy",
+      "status": "code foundation passed",
+      "evidence": "Only permitted public professional business facts and professional-controlled sources are packaged; no private contact or user data is added.",
+      "remaining": "Production privacy review and profile-request operations remain pending."
+    },
+    {
+      "id": "database",
+      "status": "external evidence required",
+      "evidence": "PostgreSQL, migrations, locking, reconnect, and fail-closed foundations exist.",
+      "remaining": "Production durability, backup, restore, and concurrency evidence remain pending."
+    },
+    {
+      "id": "email",
+      "status": "external evidence required",
+      "evidence": "Transactional-email and immutable essential-notice foundations remain unchanged.",
+      "remaining": "SPF, DKIM, DMARC, sender, delivery, bounce, complaint, reply, and support evidence remain pending."
+    },
+    {
+      "id": "payments",
+      "status": "closed",
+      "evidence": "Billing foundations exist but applications and payments remain paused.",
+      "remaining": "Provider lifecycle, legal review, support, and owner activation remain pending."
+    },
+    {
+      "id": "legal",
+      "status": "external review required",
+      "evidence": "Profile, advertising, source, subscription, independence, correction, and claim boundaries remain documented.",
+      "remaining": "Qualified legal and professional-responsibility review remains pending."
+    },
+    {
+      "id": "professionalOperations",
+      "status": "claim-ready foundation only",
+      "evidence": "Every new public record has source provenance, firm linkage, and a claim or correction path; owner batch accountability is available.",
+      "remaining": "Identity, authority, credential, outreach, support, service-level, billing, and inquiry operations remain pending."
+    },
+    {
+      "id": "deployment",
+      "status": "not deployed",
+      "evidence": "v1.7.19 exact artifact and rollback records identify the current release and exact-tested v1.7.18 rollback.",
+      "remaining": "Owner approval and controlled exact-artifact deployment remain pending."
+    },
+    {
+      "id": "liveVerification",
+      "status": "not verified",
+      "evidence": "No v1.7.19 production deployment or live crawl has occurred.",
+      "remaining": "DNS, SSL, health, visual/brand assets, three-market searches, profiles, cache, robots, logs, monitoring, mobile, and accessibility require live verification."
+    }
+  ],
+  "summary": "v1.7.19 broadly advances classic visual quality, approved brand assets, and accurate three-market professional growth while preserving every paid and sensitive gate as closed.",
+  "rule": "No polished page, profile count, or percentage proves operational readiness. Each dimension requires its own evidence and approval.",
+  "preparedDate": "2026-07-22"
+}

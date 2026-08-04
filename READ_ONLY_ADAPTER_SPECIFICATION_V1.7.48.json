@@ -1,0 +1,23 @@
+{
+  "schemaVersion": "1.0.0",
+  "releaseVersion": "1.7.48",
+  "contractVersion": "1.4.0",
+  "actions": [
+    "UPSERT_PRIVATE",
+    "UPSERT_PUBLIC",
+    "SUPPRESS"
+  ],
+  "requirements": [
+    "validate contract and destination",
+    "validate digest and records",
+    "stable IDs",
+    "preserve local specialty evidence",
+    "reject stale revisions",
+    "prevent duplicates",
+    "produce receipt",
+    "last-known-good",
+    "rollback"
+  ],
+  "writesBackToCentral": false,
+  "status": "SPECIFICATION_ONLY_D3_D4_PENDING"
+}

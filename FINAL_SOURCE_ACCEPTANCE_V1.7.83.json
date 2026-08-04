@@ -1,0 +1,20 @@
+{
+  "schema": "smarter-justice-final-source-acceptance",
+  "releaseVersion": "1.7.83",
+  "generatedAt": "2026-08-03T19:45:00-04:00",
+  "state": "FINAL_SOURCE_ACCEPTED_DETACHED_FINAL_PENDING",
+  "sourceAcceptance": {
+    "runs": 2,
+    "commandsPerRun": 145,
+    "identicalOutput": true,
+    "testLogSha256": "65997d8bb250b85b36c1c111f452a3b3caf4f044670fe01e276a21edb5240ef5",
+    "state": "FINAL_SOURCE_ACCEPTED"
+  },
+  "candidateAcceptance": {
+    "state": "CANDIDATE_ACCEPTED_FINAL_SOURCE_SEALED",
+    "sha256": "97ce078e17ccd96253f04e0300988680683a8dd8f8bf40177ff1d9db12f414cb",
+    "sizeBytes": 8886983,
+    "testLogSha256": "65997d8bb250b85b36c1c111f452a3b3caf4f044670fe01e276a21edb5240ef5"
+  },
+  "deploymentAuthorized": false
+}

@@ -1,0 +1,38 @@
+{
+  "schema_id": "SJP-V14-LIVE-EVIDENCE-CONNECTOR-CONTRACT-2026-08-03-V1",
+  "release_version": "1.7.80",
+  "governing_packet": {
+    "id": "SJP-LMP-UNIVERSAL-ONE-STEP-2026-08-03-V14-ALL-CHAT-MODES",
+    "sha256": "fce42ce0927748f94189692ef5b3bf8e0fe9f8d12273287f03a68eb7bccdad6f"
+  },
+  "exact_source_artifact": {
+    "filename": "smarter-justice-v1.7.79.zip",
+    "version": "1.7.79",
+    "sha256": "04ee062d54aff092b389fa90bfbf3beaaad7d849293bf848d44fab5f43fe783f"
+  },
+  "receipt_schema_id": "SJP-V14-LIVE-EVIDENCE-RECEIPT-2026-08-03-V1",
+  "maximum_receipt_age_hours": 24,
+  "maximum_receipt_bytes": 32768,
+  "accepted_environments": ["staging", "production"],
+  "accepted_evidence_types": ["REPOSITORY_OBSERVATION", "DEPLOYMENT_OBSERVATION", "PROVIDER_OBSERVATION", "DOMAIN_HEALTH_OBSERVATION", "CONTROLLED_SMOKE_OBSERVATION"],
+  "component_rules": [
+    {"component_id":"github-canonical-repository","evidence_type":"REPOSITORY_OBSERVATION","required_checks":["repository-resolved","commit-resolved","protected-branch-confirmed","secret-scan-pass"],"maximum_promotion":"VERIFIED_SANDBOX"},
+    {"component_id":"render-central-service","evidence_type":"DEPLOYMENT_OBSERVATION","required_checks":["service-resolved","deployment-resolved","artifact-bound","dark-state-confirmed","rollback-identified"],"maximum_promotion":"IMPLEMENTED_DEPLOYED_DARK"},
+    {"component_id":"postgres-database","evidence_type":"PROVIDER_OBSERVATION","required_checks":["provider-resolved","connection-verified","migration-state-verified","backup-state-verified","restore-evidence-recorded"],"maximum_promotion":"VERIFIED_SANDBOX"},
+    {"component_id":"transactional-email","evidence_type":"PROVIDER_OBSERVATION","required_checks":["provider-resolved","sender-domain-verified","authenticated-delivery-verified","bounce-path-verified","secret-absence-confirmed"],"maximum_promotion":"VERIFIED_SANDBOX"},
+    {"component_id":"domains-dns-tls-health","evidence_type":"DOMAIN_HEALTH_OBSERVATION","required_checks":["canonical-url-resolved","dns-resolved","tls-valid","health-check-pass","redirect-policy-pass"],"maximum_promotion":"VERIFIED_LIVE"},
+    {"component_id":"openai-central-gateway","evidence_type":"CONTROLLED_SMOKE_OBSERVATION","required_checks":["central-service-identity-verified","key-presence-masked","registered-tool-only","structured-output-pass","store-false-pass","kill-switch-pass","fallback-pass","no-portal-key-pass"],"maximum_promotion":"IMPLEMENTED_DEPLOYED_DARK"},
+    {"component_id":"neutral-boardroom-billing","evidence_type":"PROVIDER_OBSERVATION","required_checks":["seller-boundary-verified","entitlement-contract-verified","webhook-verification-pass","refund-path-verified","secret-absence-confirmed"],"maximum_promotion":"VERIFIED_SANDBOX"},
+    {"component_id":"production-deployment","evidence_type":"DEPLOYMENT_OBSERVATION","required_checks":["exact-commit-bound","exact-artifact-bound","deployment-health-pass","monitoring-active","rollback-tested","owner-go-recorded"],"maximum_promotion":"VERIFIED_LIVE"}
+  ],
+  "fail_closed_rules": {
+    "preview_only": true,
+    "mutates_live_register": false,
+    "persists_receipts": false,
+    "secrets_allowed": false,
+    "writes_allowed": false,
+    "production_activation_allowed": false,
+    "owner_go_inferred": false,
+    "deployment_authorized": false
+  }
+}
