@@ -1,6 +1,7 @@
 # Universal Pipeline Build Status
 
 Branch: `ops/universal-safe-deployment-v1`
+Draft review: pull request #5
 
 ## Completed foundation
 
@@ -14,6 +15,14 @@ Branch: `ops/universal-safe-deployment-v1`
 - Exact commit, version, authorization, migration-class, backup-receipt, and rollback inputs
 - Render deploy-hook contract restricted to protected caller environments
 - Live version verification, application rollback, and evidence artifact
+- Independent pipeline-foundation self-test
+
+## Current truthful test state
+
+- GitHub successfully parsed and started the reusable qualification workflow.
+- Repository identity, configuration, Node setup, lockfile installation, and the existing test suite ran.
+- The existing sealed v1.7.83 payload-inventory test rejected the added pipeline files as `payload-inventory-drift`.
+- This failure is correct: the live v1.7.83 release must not be silently rewritten. The pipeline must be integrated into a new exact Smarter Justice version with regenerated inventories and receipts.
 
 ## Deliberately not enabled yet
 
@@ -27,10 +36,11 @@ Branch: `ops/universal-safe-deployment-v1`
 
 ## Next gates
 
-1. Pin the Smarter Justice production caller to the accepted composite-action commit.
-2. Validate workflow and action syntax, permissions, and fail-closed behavior.
-3. Implement and verify complete Smarter Justice English/Spanish parity.
-4. Verify persistent database, durable document storage, payment-token handling, backup, restoration, and migration rehearsal.
-5. Add staging promotion before production.
-6. Merge only after independent review and successful qualification.
-7. Install version-pinned callers in each portal repository, one portal at a time.
+1. Pass the independent pipeline self-test.
+2. Add staging promotion before production.
+3. Integrate the accepted pipeline into the next exact Smarter Justice source version, not sealed v1.7.83.
+4. Regenerate exact payload inventories, owner receipts, full ZIP, checksums, and acceptance evidence.
+5. Implement and verify complete Smarter Justice English/Spanish parity.
+6. Verify persistent database, durable document storage, payment-token handling, backup, restoration, and migration rehearsal.
+7. Merge only after independent review and successful new-version qualification.
+8. Install version-pinned callers in each portal repository, one portal at a time.
