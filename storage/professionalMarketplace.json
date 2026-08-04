@@ -1,0 +1,28 @@
+{
+  "schemaVersion": "1.5.0",
+  "standardVersion": "1.3.2",
+  "revenueStandardVersion": "1.1.0",
+  "membershipPlans": [],
+  "revenuePrograms": [],
+  "firmVolumeDiscountTiers": [],
+  "firms": [],
+  "professionals": [],
+  "profileRequests": [],
+  "appointments": [],
+  "reviews": [],
+  "complaints": [],
+  "consentRecords": [],
+  "professionalOpportunities": [],
+  "outreachCampaigns": [],
+  "outreachProspects": [],
+  "pilotControls": {
+    "status": "paused",
+    "maxActiveProfessionalMemberships": 25,
+    "maxActiveFirmMemberships": 10,
+    "maxTotalFirmSeats": 100,
+    "ownerApprovalRequired": true,
+    "notes": "Open only after production persistence, owner MFA, Stripe test evidence, and first-cohort approval.",
+    "updatedAt": ""
+  },
+  "updatedAt": ""
+}
