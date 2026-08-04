@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": null,
+  "owner": "Roger Gillman",
+  "masterRepository": "neutralboardroom/smarter-justice-app",
+  "products": [
+    {
+      "productId": "smarter-justice",
+      "productName": "Smarter Justice",
+      "repository": "neutralboardroom/smarter-justice-app",
+      "latestExactZip": null,
+      "latestExactZipSha256": null,
+      "qualifiedCommit": null,
+      "qualifiedVersion": null,
+      "liveCommit": null,
+      "liveVersion": null,
+      "lastKnownGoodCommit": null,
+      "renderService": null,
+      "publicUrl": "https://smarterjustice.com",
+      "healthStatus": "UNVERIFIED_BY_UNIVERSAL_PIPELINE",
+      "spanishParity": "REQUIRED_NOT_YET_PROVEN",
+      "dataContinuity": "REQUIRED_NOT_YET_PROVEN",
+      "backupRestore": "REQUIRED_NOT_YET_PROVEN",
+      "productionAutomation": "DISABLED_PENDING_ACCEPTANCE"
+    }
+  ]
+}
