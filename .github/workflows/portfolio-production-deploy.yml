@@ -1,0 +1,48 @@
+name: Portfolio production deploy caller
+
+on:
+  workflow_dispatch:
+    inputs:
+      target_sha:
+        description: Exact qualified 40-character commit SHA.
+        required: true
+        type: string
+      target_version:
+        description: Exact authorized product version.
+        required: true
+        type: string
+      authorization_id:
+        description: Product-scoped owner authorization or approved automatic-release receipt ID.
+        required: true
+        type: string
+      migration_class:
+        description: Accepted migration class.
+        required: true
+        default: NO_MIGRATION
+        type: choice
+        options:
+          - NO_MIGRATION
+          - BACKWARD_COMPATIBLE_EXPAND
+          - STATEFUL_REVERSIBLE
+      backup_receipt_id:
+        description: Current backup or restore-readiness receipt ID.
+        required: true
+        type: string
+
+permissions:
+  contents: read
+  actions: read
+  checks: read
+
+jobs:
+  deploy:
+    uses: neutralboardroom/smarter-justice-app/.github/workflows/reusable-portfolio-production-deploy.yml@bb19ebd1b46a1332a75c838682025bd2a700d948
+    with:
+      config_path: deployment/product-deployment.json
+      target_sha: ${{ inputs.target_sha }}
+      target_version: ${{ inputs.target_version }}
+      authorization_id: ${{ inputs.authorization_id }}
+      migration_class: ${{ inputs.migration_class }}
+      backup_receipt_id: ${{ inputs.backup_receipt_id }}
+    secrets:
+      RENDER_DEPLOY_HOOK_URL: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}

@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "productId": "smarter-justice",
+  "productName": "Smarter Justice",
+  "repository": "neutralboardroom/smarter-justice-app",
+  "runtime": {
+    "node": "22.x"
+  },
+  "commands": {
+    "install": "npm ci --no-audit",
+    "test": "npm test",
+    "build": "npm run build --if-present",
+    "migrate": "npm run migrate --if-present",
+    "start": "npm start",
+    "spanishCheck": "npm run test:spanish-owner-rule",
+    "dataContinuityCheck": "npm run test:data-continuity-owner-rule",
+    "securityCheck": "npm run test:security",
+    "releaseCheck": "npm run deployment:validate"
+  },
+  "health": {
+    "publicBaseUrlVariable": "PUBLIC_BASE_URL",
+    "paths": ["/health", "/livez"],
+    "expectedProductName": "Smarter Justice"
+  },
+  "localization": {
+    "requiredLocales": ["en", "es"],
+    "toggleRequired": true,
+    "criticalJourneyReceiptRequired": true
+  },
+  "dataContinuity": {
+    "persistentStorageRequired": true,
+    "backupReceiptRequired": true,
+    "migrationClassRequired": true,
+    "rollbackMustPreserveNewData": true
+  },
+  "sensitiveCapabilities": {
+    "payments": "CLOSED",
+    "confidentialUploads": "CLOSED",
+    "professionalHandoff": "CLOSED",
+    "externalAI": "CLOSED"
+  }
+}

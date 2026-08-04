@@ -1,0 +1,17 @@
+name: Portfolio qualification caller
+
+on:
+  workflow_dispatch:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  qualification:
+    uses: neutralboardroom/smarter-justice-app/.github/workflows/reusable-portfolio-qualification.yml@bb19ebd1b46a1332a75c838682025bd2a700d948
+    with:
+      config_path: deployment/product-deployment.json
+      expected_repository: neutralboardroom/smarter-justice-app
