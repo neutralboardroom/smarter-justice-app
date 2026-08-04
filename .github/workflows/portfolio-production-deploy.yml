@@ -28,21 +28,50 @@ on:
         description: Current backup or restore-readiness receipt ID.
         required: true
         type: string
+      rollback_sha:
+        description: Exact last-known-good application commit SHA.
+        required: true
+        type: string
+      rollback_version:
+        description: Exact last-known-good application version.
+        required: true
+        type: string
 
 permissions:
   contents: read
   actions: read
   checks: read
 
+concurrency:
+  group: smarter-justice-production
+  cancel-in-progress: false
+
 jobs:
   deploy:
-    uses: neutralboardroom/smarter-justice-app/.github/workflows/reusable-portfolio-production-deploy.yml@bb19ebd1b46a1332a75c838682025bd2a700d948
-    with:
-      config_path: deployment/product-deployment.json
-      target_sha: ${{ inputs.target_sha }}
-      target_version: ${{ inputs.target_version }}
-      authorization_id: ${{ inputs.authorization_id }}
-      migration_class: ${{ inputs.migration_class }}
-      backup_receipt_id: ${{ inputs.backup_receipt_id }}
-    secrets:
-      RENDER_DEPLOY_HOOK_URL: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+    name: Deploy exact qualified Smarter Justice commit
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    environment: production
+    steps:
+      - name: Checkout exact authorized target
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+        with:
+          ref: ${{ inputs.target_sha }}
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Deploy through the version-pinned universal action
+        id: deployment
+        uses: neutralboardroom/smarter-justice-app/.github/actions/portfolio-production-deploy@945d9d0e798b7d7b9c12bc951d1230f601ddae06
+        with:
+          config-path: deployment/product-deployment.json
+          target-sha: ${{ inputs.target_sha }}
+          target-version: ${{ inputs.target_version }}
+          authorization-id: ${{ inputs.authorization_id }}
+          migration-class: ${{ inputs.migration_class }}
+          backup-receipt-id: ${{ inputs.backup_receipt_id }}
+          rollback-sha: ${{ inputs.rollback_sha }}
+          rollback-version: ${{ inputs.rollback_version }}
+          public-base-url: ${{ vars.PUBLIC_BASE_URL }}
+          render-deploy-hook-url: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+          github-token: ${{ github.token }}
