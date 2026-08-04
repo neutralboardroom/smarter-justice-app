@@ -1,0 +1,31 @@
+name: Temporary v1.7.85 exact source export
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - release/v1.7.85-all-portals
+
+permissions:
+  contents: read
+
+jobs:
+  export-exact-source:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout exact commit
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - name: Create exact source archive
+        run: git archive --format=zip --output=v1785-exact-source.zip HEAD
+      - name: Upload exact source archive
+        uses: actions/upload-artifact@v4
+        with:
+          name: v1785-exact-source
+          path: v1785-exact-source.zip
+          if-no-files-found: error
+          retention-days: 1
