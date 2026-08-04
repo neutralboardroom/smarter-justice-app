@@ -5,6 +5,7 @@ on:
   pull_request:
     paths:
       - '.github/actions/portfolio-exact-deploy/**'
+      - '.github/actions/verify-staging-promotion/**'
       - '.github/workflows/portfolio-*.yml'
       - '.github/workflows/reusable-portfolio-qualification.yml'
       - '.github/workflows/universal-pipeline-self-test.yml'
@@ -17,6 +18,7 @@ on:
       - ops/universal-safe-deployment-v1
     paths:
       - '.github/actions/portfolio-exact-deploy/**'
+      - '.github/actions/verify-staging-promotion/**'
       - '.github/workflows/portfolio-*.yml'
       - '.github/workflows/reusable-portfolio-qualification.yml'
       - '.github/workflows/universal-pipeline-self-test.yml'

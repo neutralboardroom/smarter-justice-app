@@ -11,6 +11,10 @@ on:
         description: Exact authorized product version.
         required: true
         type: string
+      staging_evidence_artifact_id:
+        description: GitHub artifact ID from the successful exact staging deployment.
+        required: true
+        type: string
       authorization_id:
         description: Product-scoped owner authorization or approved automatic-release receipt ID.
         required: true
@@ -60,6 +64,15 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
 
+      - name: Verify exact staging promotion evidence
+        id: staging
+        uses: neutralboardroom/smarter-justice-app/.github/actions/verify-staging-promotion@e93160da12ca680b572c739a1452b4dad4837554
+        with:
+          target-sha: ${{ inputs.target_sha }}
+          target-version: ${{ inputs.target_version }}
+          staging-evidence-artifact-id: ${{ inputs.staging_evidence_artifact_id }}
+          github-token: ${{ github.token }}
+
       - name: Deploy through the version-pinned universal action
         id: deployment
         uses: neutralboardroom/smarter-justice-app/.github/actions/portfolio-exact-deploy@c267bbad84297bf495fbf5f74c1e173fc5b273aa
@@ -76,3 +89,39 @@ jobs:
           public-base-url: ${{ vars.PUBLIC_BASE_URL }}
           render-deploy-hook-url: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
           github-token: ${{ github.token }}
+
+      - name: Bind staging and production evidence
+        if: ${{ success() }}
+        env:
+          TARGET_SHA: ${{ inputs.target_sha }}
+          TARGET_VERSION: ${{ inputs.target_version }}
+          STAGING_ARTIFACT_ID: ${{ inputs.staging_evidence_artifact_id }}
+          STAGING_RECEIPT_SHA256: ${{ steps.staging.outputs.staging-receipt-sha256 }}
+        run: |
+          node - <<'NODE'
+          const fs=require('fs');
+          const chain={
+            schemaVersion:1,
+            repository:process.env.GITHUB_REPOSITORY,
+            targetSha:process.env.TARGET_SHA,
+            targetVersion:process.env.TARGET_VERSION,
+            stagingEvidenceArtifactId:Number(process.env.STAGING_ARTIFACT_ID),
+            stagingReceiptSha256:process.env.STAGING_RECEIPT_SHA256,
+            productionReceiptPath:'deployment-receipt.json',
+            boundAt:new Date().toISOString()
+          };
+          fs.writeFileSync(process.env.RUNNER_TEMP+'/staging-production-promotion-chain.json',JSON.stringify(chain,null,2)+'\n');
+          NODE
+
+      - name: Upload bound promotion evidence
+        if: ${{ always() }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: smarter-justice-production-promotion-${{ inputs.target_sha }}
+          path: |
+            ${{ runner.temp }}/verified-staging-artifact-metadata.json
+            ${{ runner.temp }}/verified-staging-deployment-receipt.json
+            ${{ runner.temp }}/deployment-receipt.json
+            ${{ runner.temp }}/staging-production-promotion-chain.json
+          if-no-files-found: warn
+          retention-days: 30

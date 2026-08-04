@@ -12,6 +12,7 @@ const requiredFiles = [
   '.github/workflows/portfolio-staging-deploy.yml',
   '.github/workflows/portfolio-production-deploy.yml',
   '.github/actions/portfolio-exact-deploy/action.yml',
+  '.github/actions/verify-staging-promotion/action.yml',
   'deployment/product-deployment.json',
   'deployment/universal-pipeline/product-deployment.schema.json',
   'scripts/test-spanish-owner-rule.js',
@@ -45,7 +46,8 @@ const yamlFiles = [
   '.github/workflows/portfolio-staging-deploy.yml',
   '.github/workflows/portfolio-production-deploy.yml',
   '.github/workflows/universal-pipeline-self-test.yml',
-  '.github/actions/portfolio-exact-deploy/action.yml'
+  '.github/actions/portfolio-exact-deploy/action.yml',
+  '.github/actions/verify-staging-promotion/action.yml'
 ];
 for (const rel of yamlFiles) {
   const text = read(rel);
@@ -72,6 +74,9 @@ if (!/STAGING_RENDER_DEPLOY_HOOK_URL/.test(staging) || !/STAGING_BASE_URL/.test(
 const production = read('.github/workflows/portfolio-production-deploy.yml');
 if (!/environment:\s*production/.test(production)) fail('Production caller does not target the portal-local protected production environment');
 if (!/deployment-stage:\s*PRODUCTION/.test(production)) fail('Production caller does not bind the shared action to PRODUCTION');
+if (!/staging_evidence_artifact_id:/.test(production)) fail('Production caller does not require exact staging evidence');
+if (!/verify-staging-promotion@[0-9a-f]{40}/.test(production)) fail('Production caller lacks an immutable staging verification action');
+if (!/staging-production-promotion-chain\.json/.test(production)) fail('Production caller does not bind staging and production receipts');
 if (!/rollback_sha:/.test(production) || !/backup_receipt_id:/.test(production)) fail('Production caller lacks rollback or backup receipt inputs');
 if (/https:\/\/api\.render\.com\/deploy\//.test(production) || /https:\/\/api\.render\.com\/deploy\//.test(staging)) fail('Caller workflows must not contain Render deploy hook URLs');
 
@@ -83,6 +88,12 @@ if (!action.includes('qualification-gate')) fail('Deployment action does not ver
 if (!action.includes('Restore last-known-good application commit')) fail('Deployment action lacks application rollback');
 if (!action.includes('deployment-receipt.json')) fail('Deployment action lacks deployment receipt');
 if (!action.includes('api\\.render\\.com/deploy')) fail('Deployment action does not restrict the deploy hook host');
+
+const promotion = read('.github/actions/verify-staging-promotion/action.yml');
+for (const required of ['staging-evidence-artifact-id','deployment-receipt.json','portfolio-STAGING-evidence-','englishSpanishParity','persistentUserData']) {
+  if (!promotion.includes(required)) fail(`Staging promotion verifier lacks ${required}`);
+}
+if (!/actions\/artifacts\/\$ARTIFACT_ID\/zip/.test(promotion)) fail('Staging verifier does not download exact artifact evidence');
 
 for (const rel of ['scripts/test-spanish-owner-rule.js','scripts/test-data-continuity-owner-rule.js']) {
   const text = read(rel);
