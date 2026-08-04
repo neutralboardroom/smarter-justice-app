@@ -1,0 +1,1 @@
+Temporary qualification trigger for the inventory-clean Smarter Justice v1.7.83 branch head. Deleted immediately so the final source tree remains unchanged.
