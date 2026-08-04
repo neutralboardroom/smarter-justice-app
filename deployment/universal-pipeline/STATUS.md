@@ -5,14 +5,15 @@ Branch: `ops/universal-safe-deployment-v1`
 ## Completed foundation
 
 - Reusable portfolio qualification workflow
-- Reusable exact-commit Render production deployment workflow
+- Portal-local protected-environment production deployment design
+- Version-pinned central composite deployment action
 - Product deployment contract and schema
-- Smarter Justice caller workflows
+- Smarter Justice caller workflow foundation
 - Structural English/Spanish owner-rule gate
 - Structural persistent-user-data owner-rule gate
-- Exact commit, version, authorization, migration-class, and backup-receipt inputs
-- Protected production environment and Render deploy-hook contract
-- Live version verification and deployment evidence artifact
+- Exact commit, version, authorization, migration-class, backup-receipt, and rollback inputs
+- Render deploy-hook contract restricted to protected caller environments
+- Live version verification, application rollback, and evidence artifact
 
 ## Deliberately not enabled yet
 
@@ -26,9 +27,10 @@ Branch: `ops/universal-safe-deployment-v1`
 
 ## Next gates
 
-1. Validate workflow syntax and permissions on this branch.
-2. Implement and verify complete Smarter Justice English/Spanish parity.
-3. Verify persistent database, durable document storage, payment-token handling, backup, restoration, and migration rehearsal.
-4. Generalize rollback through a data-preserving last-known-good release record.
-5. Merge only after independent review and successful qualification.
-6. Install version-pinned callers in each portal repository, one portal at a time.
+1. Pin the Smarter Justice production caller to the accepted composite-action commit.
+2. Validate workflow and action syntax, permissions, and fail-closed behavior.
+3. Implement and verify complete Smarter Justice English/Spanish parity.
+4. Verify persistent database, durable document storage, payment-token handling, backup, restoration, and migration rehearsal.
+5. Add staging promotion before production.
+6. Merge only after independent review and successful qualification.
+7. Install version-pinned callers in each portal repository, one portal at a time.

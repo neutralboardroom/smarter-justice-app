@@ -4,9 +4,9 @@ This directory defines the central deployment standard for Smarter Justice and a
 
 ## Owner operating model
 
-Roger Gillman gives deployment instructions in the Smarter Justice master builder chat. The master chat coordinates the exact product release, while GitHub Actions and Render perform the technical deployment.
+Roger Gillman gives deployment instructions in the Smarter Justice master builder chat. The master chat coordinates the exact product release. GitHub Actions and Render perform the technical deployment.
 
-A chat statement that a build is complete is never by itself a production trigger. Production deployment requires an exact qualified Git commit, a product-scoped configuration, successful mandatory gates, and a protected Render deploy hook.
+A chat statement that a build is complete is never by itself a production trigger. Production deployment requires an exact qualified Git commit, a product-scoped configuration, successful mandatory gates, a portal-local protected GitHub environment, and that portal's protected Render deploy hook.
 
 ## Permanent owner rules
 
@@ -18,13 +18,14 @@ A chat statement that a build is complete is never by itself a production trigge
 
 ## Architecture
 
-Each product repository contains a small `deployment/product-deployment.json` file and two caller workflows:
+Each product repository contains:
 
-- qualification caller
-- production deployment caller
+- `deployment/product-deployment.json`
+- a qualification caller workflow
+- a portal-local production workflow whose job targets that repository's protected `production` environment
 
-The caller workflows invoke version-pinned reusable workflows maintained in this repository. Each product keeps its own repository, release history, Render service, domain, database, storage, secrets, rollback record, and exact ZIP lineage.
+Qualification uses a version-pinned reusable workflow maintained here. Production uses a version-pinned composite deployment action maintained here so the caller repository's own `production` environment, approvals, variables, and secrets remain authoritative. Each product keeps its own repository, release history, Render service, domain, database, storage, secrets, rollback record, and exact ZIP lineage.
 
 ## Safe rollout
 
-The first implementation is created on branch `ops/universal-safe-deployment-v1`. It does not modify or deploy the currently live Smarter Justice service. Production automation remains disabled until the reusable workflows, product configuration, environment protection, Render hook, migration policy, backup evidence, and live checks are independently accepted.
+The first implementation is on branch `ops/universal-safe-deployment-v1`. It does not modify or deploy the currently live Smarter Justice service. Production automation remains disabled until the workflows, product configuration, environment protection, Render hook, migration policy, backup evidence, full English/Spanish implementation, and live checks are independently accepted.
