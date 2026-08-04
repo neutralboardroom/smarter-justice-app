@@ -3073,7 +3073,7 @@ f046ac78f3d44f62fef2c1ed93bec3509bfe26096a3ca7bd50b9876c7e8dc58b  tests/v14-acce
 14357d67f4abf9c6df3eb8fc385f34a4340bfa49652631b5b208c592f2aa47b4  tests/v14-evidence-batch-workspace-v1781.test.js
 76a70539fe2dd1ebd19269bb69a12fecdcdb716e93d6c37cb362ba1d43314fee  tests/v14-evidence-collection-packet-v1783.test.js
 d235a07b3aaaec90c154b28a15bc8a1bcda4f21d5532b8c66ba9ed5d597e8689  tests/v14-evidence-readiness-planner-v1782.test.js
-552ab9f73f2fa188659b1683923e63208fcfa37c94fe23ca437e277c01805c51  tests/v14-live-evidence-connector-v1780.test.js
+b452f78e07704d04b8bd8d672400fd4fbc0ed2b06972347442df207d3e319c9a  tests/v14-live-evidence-connector-v1780.test.js
 780ce54ee4131d257c4af72d0d9fd49141b06b3da3898413ea25564ae0fc69e3  tests/v14-release-governance-v1779.test.js
 a172ded4e006c3dc6eae5372f6e258cad47192b163d065db17a0c05c36134e1e  tests/v14-release-receipt-automation-v1780.test.js
 7aec373ea219d395cf27eccd660e372e5ba2de7c938a7d3d5578efc9b811945a  tests/v14-segmented-acceptance-runner-v1782.test.js
