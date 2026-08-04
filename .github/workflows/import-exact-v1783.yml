@@ -138,20 +138,38 @@ jobs:
           node-version: '22.x'
           package-manager-cache: false
 
-      - name: Run complete clean-source acceptance
-        working-directory: ${{ steps.validate.outputs.acceptance }}
+      - name: Install dependencies outside source tree
+        id: dependencies
         env:
+          SOURCE: ${{ steps.validate.outputs.acceptance }}
           npm_config_registry: https://registry.npmjs.org/
           npm_config_audit: 'false'
         run: |
           set -euo pipefail
-          npm ci --no-audit
+          deps="$RUNNER_TEMP/smarter-justice-v1.7.83-dependencies"
+          rm -rf "$deps"
+          mkdir -p "$deps"
+          cp "$SOURCE/package.json" "$SOURCE/package-lock.json" "$deps/"
+          npm ci --prefix "$deps" --no-audit
+          echo "node_path=$deps/node_modules" >> "$GITHUB_OUTPUT"
+
+      - name: Run complete clean-source acceptance
+        working-directory: ${{ steps.validate.outputs.acceptance }}
+        env:
+          NODE_PATH: ${{ steps.dependencies.outputs.node_path }}
+          npm_config_registry: https://registry.npmjs.org/
+          npm_config_audit: 'false'
+          ORIGINAL_SOURCE: ${{ steps.validate.outputs.stage }}
+        run: |
+          set -euo pipefail
           npm test
           npm run sbom
           npm run deployment:validate
           npm run v14:validate
           npm run v14:receipts
           npm run v14:acceptance-evidence-bundle
+          node tests/v14-release-receipt-automation-v1780.test.js
+          diff -qr "$ORIGINAL_SOURCE" .
 
       - name: Upload exact import evidence
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
@@ -160,7 +178,7 @@ jobs:
           path: |
             ${{ steps.archive.outputs.archive }}
             ${{ steps.validate.outputs.report }}
-            ${{ steps.validate.outputs.acceptance }}/sbom.cdx.json
+            ${{ steps.validate.outputs.acceptance }}/SBOM.spdx.json
           if-no-files-found: error
           retention-days: 14
 
