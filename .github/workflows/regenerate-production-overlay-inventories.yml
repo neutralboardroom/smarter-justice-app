@@ -83,9 +83,9 @@ jobs:
           const fileRecords=fileInventory.trimEnd().split('\n').filter(Boolean).length;
           const result={payloadSha,payloadRecords,fileSha,fileRecords};
           console.log(JSON.stringify(result,null,2));
-          if(payloadSha!=='d297ef9786be9a66733d987a9927ca5a07d2038328faae19184b8416e6880426') throw new Error('Unexpected payload inventory identity.');
+          if(payloadSha!=='fe58265f9763061b446651eadf0ef267715b63779e7d781d1244175b325a91d3') throw new Error('Unexpected payload inventory identity.');
           if(payloadRecords!==3145) throw new Error('Unexpected payload inventory record count.');
-          if(fileSha!=='da37e447563a36fce6c1a04ecbc32675a459672057b06f8ec8f524b15210d625') throw new Error('Unexpected file inventory identity.');
+          if(fileSha!=='b79982cc0fe574413c84eab8efe46debeeccb990337528ae76d28854b53baca2') throw new Error('Unexpected file inventory identity.');
           if(fileRecords!==3147) throw new Error('Unexpected file inventory record count.');
           NODE
       - name: Commit only regenerated receipt and inventories
