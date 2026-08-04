@@ -43,12 +43,15 @@ jobs:
           npm init -y >/dev/null
           npm install --no-audit --no-fund playwright@1.55.0 @axe-core/playwright@4.10.2
           npx playwright install --with-deps chromium
+          cp "$GITHUB_WORKSPACE/.github/scripts/live-user-audit.mjs" "$audit/live-user-audit.mjs"
 
       - name: Audit uncached production pages, controls, layouts, and funnels
         env:
           AUDIT_OUTPUT: ${{ runner.temp }}/sj-live-audit-output
-          NODE_PATH: ${{ runner.temp }}/sj-live-audit/node_modules
-        run: node .github/scripts/live-user-audit.mjs
+        run: |
+          set -euo pipefail
+          cd "$RUNNER_TEMP/sj-live-audit"
+          node live-user-audit.mjs
 
       - name: Publish audit summary
         if: always()
