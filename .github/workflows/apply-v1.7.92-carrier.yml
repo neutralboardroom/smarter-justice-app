@@ -34,7 +34,10 @@ jobs:
           test -d .deployment-import
           mapfile -t PARTS < <(find .deployment-import -maxdepth 1 -type f -name 'patch-*.b64' | sort)
           test "${#PARTS[@]}" -gt 0
-          cat "${PARTS[@]}" | base64 --decode > "$RUNNER_TEMP/v1.7.92-carrier.zst"
+          : > "$RUNNER_TEMP/v1.7.92-carrier.zst"
+          for part in "${PARTS[@]}"; do
+            base64 --decode "$part" >> "$RUNNER_TEMP/v1.7.92-carrier.zst"
+          done
           sha256sum "$RUNNER_TEMP/v1.7.92-carrier.zst" | tee "$RUNNER_TEMP/v1.7.92-carrier.sha256"
           zstd --test "$RUNNER_TEMP/v1.7.92-carrier.zst"
           zstd --decompress --stdout "$RUNNER_TEMP/v1.7.92-carrier.zst" > "$RUNNER_TEMP/v1.7.92-carrier.decoded"
