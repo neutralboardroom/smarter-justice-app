@@ -1,0 +1,94 @@
+name: Apply exact Smarter Justice v1.7.92 carrier
+
+on:
+  push:
+    branches:
+      - agent/deploy-smarter-justice-v1.7.92
+    paths:
+      - '.github/workflows/apply-v1.7.92-carrier.yml'
+      - '.deployment-import/**'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: apply-smarter-justice-v1.7.92-carrier
+  cancel-in-progress: false
+
+jobs:
+  apply-and-verify:
+    if: ${{ !contains(github.event.head_commit.message, '[source-imported]') }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Checkout carrier branch
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Reconstruct and apply carrier
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -d .deployment-import
+          mapfile -t PARTS < <(find .deployment-import -maxdepth 1 -type f -name 'patch-*.b64' | sort)
+          test "${#PARTS[@]}" -gt 0
+          cat "${PARTS[@]}" | base64 --decode > "$RUNNER_TEMP/v1.7.92-carrier.zst"
+          sha256sum "$RUNNER_TEMP/v1.7.92-carrier.zst" | tee "$RUNNER_TEMP/v1.7.92-carrier.sha256"
+          zstd --test "$RUNNER_TEMP/v1.7.92-carrier.zst"
+          zstd --decompress --stdout "$RUNNER_TEMP/v1.7.92-carrier.zst" > "$RUNNER_TEMP/v1.7.92-carrier.decoded"
+
+          if grep -q '^diff --git ' "$RUNNER_TEMP/v1.7.92-carrier.decoded"; then
+            git apply --check "$RUNNER_TEMP/v1.7.92-carrier.decoded"
+            git apply "$RUNNER_TEMP/v1.7.92-carrier.decoded"
+          else
+            mkdir -p "$RUNNER_TEMP/v1.7.92-carrier-extract"
+            tar -tf "$RUNNER_TEMP/v1.7.92-carrier.decoded" >/dev/null
+            tar -xf "$RUNNER_TEMP/v1.7.92-carrier.decoded" -C "$RUNNER_TEMP/v1.7.92-carrier-extract"
+            SOURCE_ROOT="$RUNNER_TEMP/v1.7.92-carrier-extract"
+            mapfile -t ROOTS < <(find "$SOURCE_ROOT" -mindepth 1 -maxdepth 1 -type d -printf '%p\n' | sort)
+            if [ ! -f "$SOURCE_ROOT/package.json" ] && [ "${#ROOTS[@]}" -eq 1 ] && [ -f "${ROOTS[0]}/package.json" ]; then
+              SOURCE_ROOT="${ROOTS[0]}"
+            fi
+            test -f "$SOURCE_ROOT/package.json"
+            cp -a "$SOURCE_ROOT"/. .
+          fi
+
+          rm -rf .deployment-import .github/workflows/apply-v1.7.92-carrier.yml
+          test "$(node -p "require('./package.json').version")" = '1.7.92'
+          test -f CURRENT_RELEASE_TRUTH_V1.7.92.json
+          test -f V24_BUILDER_SELECTION_DECLARATION_V1.7.92.json
+
+      - name: Install dependencies
+        env:
+          NPM_CONFIG_REGISTRY: https://registry.npmjs.org
+          NPM_CONFIG_AUDIT: 'false'
+        run: npm ci --ignore-scripts --no-audit
+
+      - name: Run complete acceptance suite
+        run: npm test
+
+      - name: Validate deployment kit
+        run: npm run deployment:validate
+
+      - name: Commit exact verified source
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          test -n "$(git status --porcelain)"
+          git commit -m 'Import exact Smarter Justice v1.7.92 source [source-imported]'
+          git push origin HEAD:agent/deploy-smarter-justice-v1.7.92
+
+      - name: Upload carrier evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: smarter-justice-v1.7.92-carrier-${{ github.sha }}
+          path: |
+            ${{ runner.temp }}/v1.7.92-carrier.sha256
+          if-no-files-found: warn
+          retention-days: 14
