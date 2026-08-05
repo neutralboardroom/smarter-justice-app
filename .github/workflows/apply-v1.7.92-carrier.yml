@@ -32,12 +32,28 @@ jobs:
         run: |
           set -euo pipefail
           test -d .deployment-import
-          mapfile -t PARTS < <(find .deployment-import -maxdepth 1 -type f -name 'patch-*.b64' | sort)
-          test "${#PARTS[@]}" -gt 0
-          : > "$RUNNER_TEMP/v1.7.92-carrier.zst"
-          for part in "${PARTS[@]}"; do
-            base64 --decode "$part" >> "$RUNNER_TEMP/v1.7.92-carrier.zst"
-          done
+          python3 - <<'PY'
+          import base64, pathlib, re, os
+          parts=sorted(pathlib.Path('.deployment-import').glob('patch-*.b64'))
+          if not parts:
+              raise SystemExit('no carrier fragments')
+          out=bytearray()
+          for part in parts:
+              raw=part.read_text(errors='strict')
+              clean=''.join(re.findall(r'[A-Za-z0-9+/=]', raw))
+              clean += '=' * ((-len(clean)) % 4)
+              try:
+                  decoded=base64.b64decode(clean, validate=False)
+              except Exception as exc:
+                  raise SystemExit(f'{part}: base64 decode failed: {exc}')
+              if not decoded:
+                  raise SystemExit(f'{part}: decoded empty fragment')
+              print(f'{part}: {len(clean)} base64 chars -> {len(decoded)} bytes')
+              out.extend(decoded)
+          target=pathlib.Path(os.environ['RUNNER_TEMP'])/'v1.7.92-carrier.zst'
+          target.write_bytes(out)
+          print(f'reconstructed {len(out)} bytes')
+          PY
           sha256sum "$RUNNER_TEMP/v1.7.92-carrier.zst" | tee "$RUNNER_TEMP/v1.7.92-carrier.sha256"
           zstd --test "$RUNNER_TEMP/v1.7.92-carrier.zst"
           zstd --decompress --stdout "$RUNNER_TEMP/v1.7.92-carrier.zst" > "$RUNNER_TEMP/v1.7.92-carrier.decoded"
