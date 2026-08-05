@@ -1,0 +1,62 @@
+name: Import exact Smarter Justice v1.7.92
+
+on:
+  push:
+    branches:
+      - agent/manual-import-smarter-justice-v1.7.92
+    paths:
+      - smarter-justice-v1.7.92.zip
+
+permissions:
+  contents: write
+
+jobs:
+  import-exact-source:
+    if: ${{ !contains(github.event.head_commit.message, '[source-imported]') }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out import branch
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Verify exact ZIP and archive integrity
+        shell: bash
+        run: |
+          set -euo pipefail
+          ZIP='smarter-justice-v1.7.92.zip'
+          test -f "$ZIP"
+          echo 'd3c967220597281d72e27e67d9a55fafccb3ae532508bdba4e66b6d1602078ec  smarter-justice-v1.7.92.zip' | sha256sum -c -
+          unzip -tq "$ZIP"
+
+      - name: Replace branch with exact qualified source
+        shell: bash
+        run: |
+          set -euo pipefail
+          ZIP='smarter-justice-v1.7.92.zip'
+          IMPORT_DIR="$RUNNER_TEMP/smarter-justice-import"
+          rm -rf "$IMPORT_DIR"
+          mkdir -p "$IMPORT_DIR"
+          unzip -q "$ZIP" -d "$IMPORT_DIR"
+          mapfile -t ROOTS < <(find "$IMPORT_DIR" -mindepth 1 -maxdepth 1 -type d -printf '%f\n' | sort)
+          test "${#ROOTS[@]}" -eq 1
+          SOURCE_ROOT="$IMPORT_DIR/${ROOTS[0]}"
+          test -f "$SOURCE_ROOT/package.json"
+          test "$(node -p "require('$SOURCE_ROOT/package.json').version")" = '1.7.92'
+          find . -mindepth 1 -maxdepth 1 ! -name .git ! -name "$ZIP" -exec rm -rf {} +
+          cp -a "$SOURCE_ROOT"/. .
+          rm -f "$ZIP"
+          test "$(node -p "require('./package.json').version")" = '1.7.92'
+          test -f CURRENT_RELEASE_TRUTH_V1.7.92.json
+          test -f V24_BUILDER_SELECTION_DECLARATION_V1.7.92.json
+
+      - name: Commit exact imported source
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m 'Import exact Smarter Justice v1.7.92 source [source-imported]'
+          git push origin HEAD:agent/manual-import-smarter-justice-v1.7.92
