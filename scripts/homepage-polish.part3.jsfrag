@@ -1,0 +1,73 @@
+if (css.includes(cssMarker)) throw new Error('homepage polish already applied');
+css += `
+
+${cssMarker}
+.section-heading.centered-heading{display:block!important;text-align:center}
+.section-heading.centered-heading>.eyebrow{display:block;width:auto;max-width:none;margin-left:auto;margin-right:auto;overflow-wrap:normal;word-break:normal}
+.community-welcome-row,.community-commitments,.v20-proof-band{list-style:none;padding-left:0}
+.community-welcome-row{display:flex;flex-wrap:wrap;gap:.65rem;margin:1.15rem 0 .45rem}
+.community-welcome-row li{display:block;background:#fff;border:1px solid #bfd5d0;border-radius:8px;padding:.48rem .68rem;color:#214c55;font-weight:800;font-size:.82rem}
+.entry-link-list{display:flex;flex-wrap:wrap;gap:.65rem;align-items:center}
+.entry-link-list a{display:inline-flex;padding:.45rem .65rem;border:1px solid #b9d6d1;border-radius:8px;background:#fff;text-decoration:none}
+.community-commitments{margin-top:0}
+.community-commitments li{padding:.9rem;border-right:1px solid #cbdce1;text-align:center;font-size:.92rem;color:#35515d}
+.community-commitments li:last-child{border-right:0}
+.v20-proof-band{margin:0}
+.v20-proof-band li{background:#fff;padding:.9rem 1rem;text-align:center;color:#435563}
+.v20-proof-band li strong{color:var(--navy)}
+.professional-banner-links{display:flex;gap:.9rem;flex-wrap:wrap;justify-content:center}
+.professional-banner-links a{display:inline-flex;padding:.25rem .35rem}
+.compact-network-snapshot{padding-top:clamp(2.5rem,5vw,4rem);padding-bottom:clamp(2.5rem,5vw,4rem)}
+.domain-count-context{max-width:1050px;margin:1rem auto 1.25rem;padding:.9rem 1rem;border-left:4px solid var(--teal);background:#eef8f5;color:#294b53}
+.home-featured-domain-grid{grid-template-columns:repeat(4,minmax(0,1fr));max-width:1320px;margin-inline:auto}
+.domain-card-subtitle{margin:-.05rem 0 .35rem!important;color:#294b53!important;font-weight:800;font-size:.9rem}
+.domain-network-card{min-width:0}
+.domain-card-actions .link-btn{white-space:normal;min-height:48px}
+.live-chat-fallback{right:max(18px,env(safe-area-inset-right));bottom:max(18px,env(safe-area-inset-bottom));max-width:calc(100vw - 36px)}
+.live-chat-fallback.near-footer{bottom:92px;transform:none}
+.expanded-footer{padding-bottom:clamp(5.5rem,9vw,7rem)}
+@media(max-width:1120px){.home-featured-domain-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:1050px){.community-commitments li{border-bottom:1px solid #cbdce1}.community-commitments li:nth-child(even){border-right:0}}
+@media(max-width:720px){.section-heading.centered-heading>.eyebrow{font-size:.76rem;letter-spacing:.1em}.professional-banner-links{width:100%}.professional-banner-links a{width:100%;justify-content:center}.home-featured-domain-grid{grid-template-columns:1fr}.domain-network-heading .secondary{width:100%;justify-content:center}.domain-card-actions{display:grid;grid-template-columns:1fr}.domain-card-actions .link-btn{width:100%}}
+@media(max-width:650px){.community-welcome-row{display:grid;grid-template-columns:1fr}.community-welcome-row li{text-align:center}.community-commitments li{border-right:0}.v20-proof-band li{text-align:left}}
+`;
+write('public/styles.css', css);
+
+const focusedTest = `"use strict";
+const assert=require('assert');const fs=require('fs');const path=require('path');
+const root=path.join(__dirname,'..');
+const home=fs.readFileSync(path.join(root,'public/index.html'),'utf8');
+const css=fs.readFileSync(path.join(root,'public/styles.css'),'utf8');
+const js=fs.readFileSync(path.join(root,'public/home.js'),'utf8');
+assert(home.includes('styles.css?v=1.7.98-homepage-polish-1'));
+assert(home.includes('class="community-welcome-row" role="list"'));
+assert(home.includes('class="community-commitments" role="list"'));
+assert(home.includes('class="v20-proof-band" role="list"'));
+assert(home.includes('The portfolio recognizes 25 products'));
+assert(home.includes('11 public-facing domain records'));
+assert(home.includes('Business Law Aid is shown as in development'));
+assert(home.includes('Domestic Violence Aid, including the Stop Sign Project'));
+assert(!home.includes('section professional-value-section'));
+assert(!home.includes('section demand-flow-section'));
+assert(home.includes('compact-network-snapshot'));
+assert(css.includes('.section-heading.centered-heading{display:block!important'));
+assert(css.includes('.live-chat-fallback.near-footer{bottom:92px'));
+assert(js.includes("'DOMAIN-STOP-SIGN-001'"));
+assert(js.includes('Business Law Aid'));
+assert(js.includes('Public-facing website records'));
+assert(js.includes('Recognized portfolio products'));
+const hrefs=[...home.matchAll(/href="([^"]+)"/g)].map(x=>x[1]).filter(x=>x.startsWith('/')&&!x.startsWith('//'));
+for(const href of hrefs){const pathname=href.split(/[?#]/)[0];if(pathname==='/'||pathname===''||pathname.startsWith('/api/'))continue;let file=path.join(root,'public',pathname.replace(/^\\//,''));if(pathname.endsWith('/'))file=path.join(file,'index.html');assert(fs.existsSync(file),\`Missing homepage link target: \${href}\`);}
+console.log('homepage-launch-polish-v1798.test.js passed');
+`;
+write('tests/homepage-launch-polish-v1798.test.js', focusedTest);
+write('HOMEPAGE_LAUNCH_POLISH_V1.7.98.json', JSON.stringify({
+  releaseLabel:'v1.7.98 homepage launch polish 1',
+  coreApplicationVersion:'1.7.98',
+  baselineArtifact:'smarter-justice-v1.7.98-comprehensive-community-value.zip',
+  scope:['semantic spacing and collision correction','11 website records versus 25 portfolio products clarification','Domestic Violence Aid and Stop Sign Project naming alignment','Business Law Aid visible as in development with domain pending','homepage repetition reduction','responsive heading correction','floating Help control footer clearance','homepage link-target validation'],
+  deploymentState:'DEPLOYMENT_CANDIDATE',
+  createdAt:'2026-08-06T14:04:00-04:00'
+}, null, 2) + '\n');
+
+console.log('[homepage-polish] applied focused v1.7.98 homepage launch polish');
