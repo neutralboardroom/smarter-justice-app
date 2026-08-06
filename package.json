@@ -7,7 +7,7 @@
     "node": "22.x"
   },
   "scripts": {
-    "postinstall": "node scripts/bootstrap-exact-release.js && node scripts/apply-sitewide-polish.js .runtime/smarter-justice-v1.7.98 && node --check .runtime/smarter-justice-v1.7.98/public/home.js && npm --prefix .runtime/smarter-justice-v1.7.98 test && node .runtime/smarter-justice-v1.7.98/tests/homepage-launch-polish-v1798.test.js && node .runtime/smarter-justice-v1.7.98/tests/sitewide-visual-polish-v1798.test.js",
+    "postinstall": "node scripts/bootstrap-sitewide-release.js",
     "migrate": "npm --prefix .runtime/smarter-justice-v1.7.98 run migrate",
     "start": "npm --prefix .runtime/smarter-justice-v1.7.98 start"
   }
