@@ -18,7 +18,8 @@ const homepagePartPaths = [
   'homepage-polish.part2.jsfrag',
   'homepage-polish.part3.jsfrag'
 ].map((name) => path.join(repositoryRoot, 'scripts', name));
-const sitewideOverlayPath = path.join(repositoryRoot, 'scripts', 'apply-sitewide-polish.js');
+const sitewideOverlayPath = path.join(repositoryRoot, 'scripts', 'apply-sitewide-polish-safe.js');
+const originalSitewideOverlayPath = path.join(repositoryRoot, 'scripts', 'apply-sitewide-polish.js');
 
 function fail(message) {
   console.error(`[sitewide-release-bootstrap] ${message}`);
@@ -61,7 +62,8 @@ if (digest !== expectedSha256) fail(`SHA-256 mismatch: ${digest}`);
 for (const partPath of homepagePartPaths) {
   if (!fs.existsSync(partPath)) fail(`missing homepage overlay part ${path.basename(partPath)}`);
 }
-if (!fs.existsSync(sitewideOverlayPath)) fail('missing site-wide overlay script');
+if (!fs.existsSync(originalSitewideOverlayPath)) fail('missing original site-wide overlay script');
+if (!fs.existsSync(sitewideOverlayPath)) fail('missing corrected site-wide overlay wrapper');
 
 fs.rmSync(runtimeRoot, { recursive: true, force: true });
 fs.mkdirSync(runtimeRoot, { recursive: true });
