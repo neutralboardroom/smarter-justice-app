@@ -1,0 +1,119 @@
+name: Import exact Smarter Justice v1.7.98 source
+
+on:
+  push:
+    branches:
+      - deploy/smarter-justice-v1.7.98-exact
+    paths:
+      - smarter-justice-v1.7.98-comprehensive-community-value.zip
+
+permissions:
+  contents: write
+
+concurrency:
+  group: import-exact-smarter-justice-v1.7.98
+  cancel-in-progress: false
+
+jobs:
+  import-qualify-commit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Checkout import branch
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Verify exact uploaded ZIP
+        shell: bash
+        run: |
+          set -euo pipefail
+          file='smarter-justice-v1.7.98-comprehensive-community-value.zip'
+          test -f "$file"
+          test "$(stat -c '%s' "$file")" = '12891048'
+          echo '0611f1082bf30244d5ec08a97ccc0de538b3248f19362466389feeb5bc672260  smarter-justice-v1.7.98-comprehensive-community-value.zip' | sha256sum --check --strict
+          unzip -t "$file"
+
+      - name: Safely extract and replace staging branch source
+        shell: bash
+        run: |
+          set -euo pipefail
+          file='smarter-justice-v1.7.98-comprehensive-community-value.zip'
+          extract="$RUNNER_TEMP/smarter-justice-v1798-exact"
+          rm -rf "$extract"
+          mkdir -p "$extract"
+          python3 - <<'PY'
+          import pathlib, zipfile
+          archive=pathlib.Path('smarter-justice-v1.7.98-comprehensive-community-value.zip')
+          target=pathlib.Path(__import__('os').environ['RUNNER_TEMP'])/'smarter-justice-v1798-exact'
+          with zipfile.ZipFile(archive) as z:
+              for info in z.infolist():
+                  name=info.filename.replace('\\','/')
+                  p=pathlib.PurePosixPath(name)
+                  if p.is_absolute() or '..' in p.parts:
+                      raise SystemExit(f'unsafe ZIP member: {name}')
+              z.extractall(target)
+          PY
+          mapfile -t roots < <(find "$extract" -mindepth 1 -maxdepth 1 -type d -printf '%p\n' | sort)
+          test "${#roots[@]}" -eq 1
+          source_root="${roots[0]}"
+          test -f "$source_root/package.json"
+          test "$(node -p "require('$source_root/package.json').version")" = '1.7.98'
+          test -f "$source_root/CURRENT_RELEASE_TRUTH_V1.7.98.json"
+          test -f "$source_root/V34_COMPREHENSIVE_PACKET_BINDING_V1.7.98.json"
+          find . -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
+          cp -a "$source_root"/. .
+
+      - name: Lock extracted source identity before qualification
+        shell: bash
+        run: |
+          set -euo pipefail
+          find . -type f -not -path './.git/*' -not -path './node_modules/*' -print0 \
+            | sort -z \
+            | xargs -0 sha256sum > "$RUNNER_TEMP/source-before.sha256"
+          test "$(node -p "require('./package.json').version")" = '1.7.98'
+          test "$(wc -l < FILE_INVENTORY_SHA256_V1.7.98.txt)" -ge 4000
+
+      - name: Use Node 22
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+        with:
+          node-version: '22.x'
+          package-manager-cache: false
+          registry-url: https://registry.npmjs.org
+
+      - name: Install locked dependencies
+        env:
+          NPM_CONFIG_REGISTRY: https://registry.npmjs.org
+          NPM_CONFIG_AUDIT: 'false'
+        run: npm ci --ignore-scripts --no-audit
+
+      - name: Run complete exact-source qualification
+        run: npm test
+
+      - name: Validate deterministic evidence and deployment kit
+        run: |
+          npm run sbom
+          npm run deployment:validate
+          npm run deployment:doctor
+
+      - name: Prove qualification did not alter sealed source
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf node_modules
+          find . -type f -not -path './.git/*' -not -path './node_modules/*' -print0 \
+            | sort -z \
+            | xargs -0 sha256sum > "$RUNNER_TEMP/source-after.sha256"
+          diff -u "$RUNNER_TEMP/source-before.sha256" "$RUNNER_TEMP/source-after.sha256"
+
+      - name: Commit exact qualified source
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          test -n "$(git status --porcelain)"
+          git commit -m 'Import exact qualified Smarter Justice v1.7.98 source [source-imported]'
+          git push origin HEAD:deploy/smarter-justice-v1.7.98-exact
