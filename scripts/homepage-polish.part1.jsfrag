@@ -1,0 +1,85 @@
+'use strict';
+
+const fs = require('node:fs');
+const path = require('node:path');
+
+const applicationRoot = path.resolve(process.argv[2] || '.');
+
+function read(rel) { return fs.readFileSync(path.join(applicationRoot, rel), 'utf8'); }
+function write(rel, value) { fs.writeFileSync(path.join(applicationRoot, rel), value); }
+function replaceExact(text, from, to, label) {
+  if (!text.includes(from)) throw new Error(`homepage polish source mismatch: ${label}`);
+  return text.replace(from, to);
+}
+function replaceRegex(text, regex, to, label) {
+  if (!regex.test(text)) throw new Error(`homepage polish source mismatch: ${label}`);
+  return text.replace(regex, to);
+}
+
+let home = read('public/index.html');
+home = replaceExact(home, 'href="/styles.css"', 'href="/styles.css?v=1.7.98-homepage-polish-1"', 'homepage stylesheet');
+home = replaceExact(home, 'src="/home.js"', 'src="/home.js?v=1.7.98-homepage-polish-1"', 'homepage script');
+home = replaceExact(home, 'src="/live-chat.js"', 'src="/live-chat.js?v=1.7.98-homepage-polish-1"', 'live chat script');
+home = replaceExact(home,
+`<div aria-label="People Smarter Justice serves" class="community-welcome-row">
+<span>People and families</span><span>Community organizations</span><span>Attorneys and firms</span>
+</div>`,
+`<ul aria-label="People Smarter Justice serves" class="community-welcome-row" role="list">
+<li>People and families</li><li>Community organizations</li><li>Attorneys and firms</li>
+</ul>`, 'audience row');
+home = replaceExact(home,
+'<div class="entry-links"><a href="/attorney-partner-tour.html">Professional network</a><a href="/community-partner-tools.html">Community partner tools</a></div>',
+'<nav aria-label="Professional and community organization paths" class="entry-link-list"><a href="/attorney-partner-tour.html">Professional network</a><a href="/community-partner-tools.html">Community partner tools</a></nav>', 'entry links');
+home = replaceExact(home,
+'<div aria-label="Community access commitments" class="community-commitments"><span><strong>No account</strong> for resource navigation</span><span><strong>No private facts</strong> requested</span><span><strong>Official or primary</strong> starting points</span><span><strong>English and Spanish</strong> access</span><span><strong>Easy to share</strong> with someone else</span></div></section><section aria-label="Smarter Justice community network highlights" class="v20-proof-band"><span><strong>Free</strong> ways to begin</span><span><strong>Community</strong> resource navigation</span><span><strong>Ten</strong> equal legal and tax areas</span><span><strong>One</strong> professional network</span></section>',
+'<ul aria-label="Community access commitments" class="community-commitments" role="list"><li><strong>No account</strong> for resource navigation</li><li><strong>No private facts</strong> requested</li><li><strong>Official or primary</strong> starting points</li><li><strong>English and Spanish</strong> access</li><li><strong>Easy to share</strong> with someone else</li></ul></section><ul aria-label="Smarter Justice community network highlights" class="v20-proof-band" role="list"><li><strong>Free</strong> ways to begin</li><li><strong>Community</strong> resource navigation</li><li><strong>Ten</strong> equal legal and tax areas</li><li><strong>One</strong> professional network</li></ul>', 'commitments and proof band');
+home = replaceExact(home,
+'<section aria-label="Professional membership" class="professional-launch-banner v20-professional-banner"><div><strong>Attorneys and law firms are community partners.</strong><span data-professional-program-headline="">Free basic profile control and one Smarter Justice account help attorneys and firms prepare portal presence across all ten equal practice areas.</span></div><a href="/attorney-partner-tour.html">See the Community Network</a><a href="/professional-membership.html">Membership details</a></section>',
+'<section aria-label="Professional membership" class="professional-launch-banner v20-professional-banner"><div><strong>Attorneys and law firms are community partners.</strong><span data-professional-program-headline="">Free basic profile control and one Smarter Justice account help attorneys and firms prepare portal presence across all ten equal practice areas.</span></div><nav aria-label="Professional participation links" class="professional-banner-links"><a href="/attorney-partner-tour.html">See the Community Network</a><a href="/professional-membership.html">Membership details</a></nav></section>', 'professional banner');
+home = replaceExact(home,
+'See how all 25 recognized products connect people to practical help while the ten equal legal and tax launch areas remain unchanged.',
+'The portfolio recognizes 25 products across legal, tax, safety, community, and shared-platform work. The website snapshot below separately tracks 11 public-facing domain records; Business Law Aid is shown as in development but is not counted there until an official domain is selected.', 'count clarification');
+home = replaceExact(home,
+'<strong>Community safety pathway:</strong> Domestic Violence Aid remains a dedicated privacy-first site and is also available through Community Resource Aid. It is not counted as one of the ten equal legal and tax practice areas.',
+'<strong>Community safety pathway:</strong> Domestic Violence Aid, including the Stop Sign Project, remains a dedicated privacy-first pathway and is also available through Community Resource Aid. It is not counted as one of the ten equal legal and tax practice areas.', 'domestic violence naming');
+home = replaceRegex(home, /\n<section class="section professional-value-section">[\s\S]*?<\/section>\n<section class="section dashboard-preview-section">/, '\n<section class="section dashboard-preview-section">', 'repetitive professional section');
+home = replaceExact(home,
+'Professionals should never have to guess whether a profile is claimed, verified, participating, paid, or eligible. The dashboard keeps those states separate and provides direct next actions.',
+'Professionals should never have to guess whether a profile is claimed, verified, participating, paid, or eligible. The dashboard keeps those states separate and provides direct next actions. Paid membership remains separate and paused.', 'membership boundary');
+const oldDirectory = `<section class="section domain-network-section" id="professional-network-status">
+<div class="section-heading domain-network-heading">
+<div>
+<p class="eyebrow">Growing Smarter Justice portal network — a community of focused websites</p>
+<h2>See where public help is available and where the network is still being prepared.</h2>
+<p>Every portal keeps its focused identity while sharing Smarter Justice’s community-access, transparency, privacy, and professional-account standards.</p>
+</div>
+<a class="secondary link-btn" href="/professional-membership.html">How professional participation works</a>
+</div>
+<div aria-live="polite" class="domain-network-summary" id="domainNetworkSummary"></div>
+<div aria-label="Filter official portal domains" class="domain-network-toolbar">
+<button class="domain-filter active" data-domain-filter="all" type="button">All portals</button>
+<button class="domain-filter" data-domain-filter="live" type="button">Available now</button>
+<button class="domain-filter" data-domain-filter="building" type="button">Being prepared</button>
+<button class="domain-filter" data-domain-filter="planned" type="button">Planned</button>
+</div>
+<div class="domain-network-grid" id="domainNetworkGrid"><p class="fine-print">Loading the portal network…</p></div>
+<details class="domain-status-explainer">
+<summary>What these availability labels mean</summary>
+<div class="domain-status-legend">
+<p><span class="network-status live">Available now</span> The website is available for the public or its stated audience.</p>
+<p><span class="network-status building">Being prepared</span> The website is being built or checked and is not yet presented as available.</p>
+<p><span class="network-status planned">Planned</span> The focused website is part of the network plan but is not yet available.</p>
+<p><span class="network-status participation">Professional participation</span> Applications or participation are available only when the page says they are open.</p>
+</div>
+</details>
+<div class="center-actions"><a class="primary link-btn" href="/professional-signup.html?campaign=DOMAIN-NETWORK">Prepare a Professional Account</a><a class="secondary link-btn" href="/founding-portals.html">View Priority Areas</a></div>
+</section>`;
+const newDirectory = `<section class="section domain-network-section compact-network-snapshot" id="professional-network-status">
+<div class="section-heading domain-network-heading">
+<div>
+<p class="eyebrow">A concise network snapshot</p>
+<h2>Live websites, specialized safety help, and the next product being prepared.</h2>
+<p>The broader portfolio recognizes 25 products. This compact homepage snapshot highlights the two live websites, Domestic Violence Aid including the Stop Sign Project, and Business Law Aid with its official domain still pending.</p>
+</div>
+<a class="secondary link-btn" href="/community-network.html">View the complete 25-product network</a>
+</div>

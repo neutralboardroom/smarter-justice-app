@@ -1,0 +1,85 @@
+<div aria-live="polite" class="domain-network-summary" id="domainNetworkSummary"></div>
+<p class="domain-count-context">The 11 public-facing website records are a domain-status count, not the full portfolio count. Business Law Aid appears below as an in-development product and will join that website count only after its official domain is selected and verified.</p>
+<div class="domain-network-grid home-featured-domain-grid" id="domainNetworkGrid"><p class="fine-print">Loading the network snapshot…</p></div>
+<details class="domain-status-explainer">
+<summary>What these availability labels mean</summary>
+<div class="domain-status-legend">
+<p><span class="network-status live">Available now</span> The website is available for the public or its stated audience.</p>
+<p><span class="network-status building">Being prepared</span> The product or website is being built or checked and is not yet presented as available.</p>
+<p><span class="network-status planned">Official domain pending</span> The product is recognized, but its public domain has not been selected and verified.</p>
+<p><span class="network-status participation">Professional participation</span> Applications or participation are available only when the page says they are open.</p>
+</div>
+</details>
+<div class="center-actions"><a class="primary link-btn" href="/community-network.html">View Complete Network</a><a class="secondary link-btn" href="/professional-signup.html?campaign=DOMAIN-NETWORK">Prepare a Professional Account</a></div>
+</section>`;
+home = replaceExact(home, oldDirectory, newDirectory, 'compact domain directory');
+home = replaceRegex(home, /\n<section class="section demand-flow-section">[\s\S]*?<\/section>\n<section class="section home-story-section">/, '\n<section class="section home-story-section">', 'repetitive demand flow section');
+write('public/index.html', home);
+
+let spanish = read('public/es/index.html');
+spanish = replaceExact(spanish, 'href="/styles.css"', 'href="/styles.css?v=1.7.98-homepage-polish-1"', 'Spanish stylesheet');
+spanish = replaceExact(spanish,
+'<div aria-label="Compromisos de acceso comunitario" class="community-commitments"><span><strong>Sin cuenta</strong> para recursos</span><span><strong>Sin hechos privados</strong></span><span><strong>Fuentes oficiales o primarias</strong></span><span><strong>Acceso en inglés y español</strong></span><span><strong>Fácil de compartir</strong></span></div></section><section aria-label="Características" class="v20-proof-band"><span><strong>Gratis</strong> para empezar</span><span><strong>Recursos</strong> comunitarios</span><span><strong>Diez</strong> áreas legales y tributarias iguales</span><span><strong>Una</strong> red profesional</span></section>',
+'<ul aria-label="Compromisos de acceso comunitario" class="community-commitments" role="list"><li><strong>Sin cuenta</strong> para recursos</li><li><strong>Sin hechos privados</strong></li><li><strong>Fuentes oficiales o primarias</strong></li><li><strong>Acceso en inglés y español</strong></li><li><strong>Fácil de compartir</strong></li></ul></section><ul aria-label="Características" class="v20-proof-band" role="list"><li><strong>Gratis</strong> para empezar</li><li><strong>Recursos</strong> comunitarios</li><li><strong>Diez</strong> áreas legales y tributarias iguales</li><li><strong>Una</strong> red profesional</li></ul>', 'Spanish commitments');
+spanish = replaceExact(spanish, 'Domestic Violence Aid continúa como una ruta especializada de seguridad.', 'Domestic Violence Aid, incluido el Stop Sign Project, continúa como una ruta especializada de seguridad.', 'Spanish safety naming');
+write('public/es/index.html', spanish);
+
+let script = read('public/home.js');
+const scriptStart = script.indexOf('  function renderDomainCard(item){');
+const scriptEnd = script.indexOf('\n  async function loadPublicServiceInitiatives()', scriptStart);
+if (scriptStart < 0 || scriptEnd < 0) throw new Error('homepage polish source mismatch: home.js domain block');
+const domainBlock = `  function domainDisplay(item){
+    if(item.id==='DOMAIN-STOP-SIGN-001') return {brandName:'Domestic Violence Aid',domainLabel:'stopsignproject.org',subLabel:'Including the Stop Sign Project'};
+    return {brandName:item.brandName,domainLabel:item.domain||'Official domain pending',subLabel:''};
+  }
+  function renderDomainCard(item){
+    const group=networkGroup(item);
+    const display=domainDisplay(item);
+    const portalSlug=item.participationPortalSlug||item.portalSlug||'general-smarter-justice-start';
+    const interestHref=\`/professional-signup.html?campaign=DOMAIN-NETWORK&portal=\${encodeURIComponent(portalSlug)}\`;
+    const liveAction=item.liveUrl?\`<a class="secondary link-btn" href="\${esc(item.liveUrl)}" rel="noopener">Visit Website</a>\`:\`<a class="secondary link-btn" href="/professional-membership.html">Participation Details</a>\`;
+    const domainMark=item.ownershipStatus==='owned'?'Official Smarter Justice domain':'Official domain pending';
+    return \`<article class="domain-network-card" data-domain-group="\${group}">
+      <div class="domain-card-top"><span class="network-status \${group}">\${esc(networkStatus(item))}</span><span class="official-domain-mark">\${esc(domainMark)}</span></div>
+      <h3>\${esc(display.brandName)}</h3>
+      \${display.subLabel?\`<p class="domain-card-subtitle">\${esc(display.subLabel)}</p>\`:''}
+      <p class="domain-name">\${esc(display.domainLabel)}</p>
+      <p>\${esc(item.publicSummary||'A focused portal in the Smarter Justice network.')}</p>
+      <dl class="domain-card-facts">
+        <div><dt>Domain</dt><dd>\${item.ownershipStatus==='owned'?'Official network domain':'Selection pending'}</dd></div>
+        <div><dt>Focused service</dt><dd>\${esc(networkStatus(item))}</dd></div>
+        <div><dt>Website</dt><dd>\${esc(networkStatus(item))}</dd></div>
+        <div><dt>Professional participation</dt><dd>\${esc(participationText(item.professionalParticipationStatus))}</dd></div>
+      </dl>
+      <div class="domain-card-actions">\${liveAction}<a class="primary link-btn" href="\${esc(interestHref)}">Add to My Interests</a></div>
+    </article>\`;
+  }
+  function businessLawCard(){
+    return renderDomainCard({
+      id:'DOMAIN-BUSINESS-LAW-AID-PENDING',portalSlug:'business-law-aid',participationPortalSlug:'business-law-aid',brandName:'Business Law Aid',domain:'',ownershipStatus:'domain pending',portalStatus:'in development',deploymentStatus:'development package',professionalParticipationStatus:'applications only',publicSummary:'Formation, contracts, governance, compliance, commercial transactions and disputes, financing, employment coordination, intellectual-property coordination, succession, and dissolution.',liveUrl:'',isLive:false
+    });
+  }
+  async function loadDomainNetwork(){
+    const grid=document.getElementById('domainNetworkGrid');
+    if(!grid)return;
+    const summary=document.getElementById('domainNetworkSummary');
+    try{
+      const response=await fetch('/api/public/domain-network',{headers:{'Accept':'application/json'}});
+      const data=await response.json();
+      if(!response.ok||!data.ok)throw new Error(data.error||'The portal information is temporarily unavailable.');
+      const stats=data.summary||{};
+      summary.innerHTML=\`<div><strong>\${esc(stats.publicVisible||data.domains.length)}</strong><span>Public-facing website records</span></div><div><strong>\${esc(stats.liveWebsites||0)}</strong><span>Available now</span></div><div><strong>\${esc(stats.inDevelopment||0)}</strong><span>Being prepared</span></div><div><strong>25</strong><span>Recognized portfolio products</span></div>\`;
+      const featuredIds=['DOMAIN-SJ-001','DOMAIN-IO-001','DOMAIN-STOP-SIGN-001'];
+      const featured=featuredIds.map(id=>(data.domains||[]).find(item=>item.id===id)).filter(Boolean);
+      grid.innerHTML=featured.map(renderDomainCard).join('')+businessLawCard();
+    }catch(error){
+      summary.innerHTML='';
+      grid.innerHTML=\`<div class="notice"><strong>Network snapshot unavailable</strong><p>\${esc(error.message)}</p><p><a href="/community-network.html">Review the complete network</a></p></div>\`;
+    }
+  }
+`;
+script = script.slice(0, scriptStart) + domainBlock + script.slice(scriptEnd);
+write('public/home.js', script);
+
+let css = read('public/styles.css');
+const cssMarker = '/* v1.7.98 homepage launch polish — semantic spacing, compact network, responsive clearance */';
