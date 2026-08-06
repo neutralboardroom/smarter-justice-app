@@ -12,6 +12,11 @@ const expectedSha256 = '0611f1082bf30244d5ec08a97ccc0de538b3248f19362466389feeb5
 const expectedSize = 12891048;
 const runtimeRoot = path.join(repositoryRoot, '.runtime');
 const applicationRoot = path.join(runtimeRoot, 'smarter-justice-v1.7.98');
+const polishPartPaths = [
+  'homepage-polish.part1.jsfrag',
+  'homepage-polish.part2.jsfrag',
+  'homepage-polish.part3.jsfrag'
+].map((name) => path.join(repositoryRoot, 'scripts', name));
 
 function fail(message) {
   console.error(`[exact-release-bootstrap] ${message}`);
@@ -35,6 +40,10 @@ if (stat.size !== expectedSize) fail(`size mismatch: expected ${expectedSize}, r
 
 const digest = crypto.createHash('sha256').update(fs.readFileSync(archivePath)).digest('hex');
 if (digest !== expectedSha256) fail(`SHA-256 mismatch: ${digest}`);
+
+for (const partPath of polishPartPaths) {
+  if (!fs.existsSync(partPath)) fail(`missing homepage polish overlay part ${path.basename(partPath)}`);
+}
 
 fs.rmSync(runtimeRoot, { recursive: true, force: true });
 fs.mkdirSync(runtimeRoot, { recursive: true });
@@ -69,6 +78,16 @@ if (applicationPackage.version !== '1.7.98') {
   fail(`extracted package version is ${applicationPackage.version || 'missing'}, not 1.7.98`);
 }
 
+const combinedPolishPath = path.join(runtimeRoot, 'apply-homepage-polish.js');
+const combinedPolish = polishPartPaths.map((partPath) => fs.readFileSync(partPath, 'utf8')).join('\n');
+fs.writeFileSync(combinedPolishPath, combinedPolish, 'utf8');
+
+const polish = run(process.execPath, [combinedPolishPath, applicationRoot]);
+if (!polish.ok) fail(`homepage polish overlay failed with status ${polish.status ?? 'unknown'}`);
+
+const syntaxCheck = run(process.execPath, ['--check', path.join(applicationRoot, 'public', 'home.js')]);
+if (!syntaxCheck.ok) fail(`polished homepage JavaScript syntax check failed with status ${syntaxCheck.status ?? 'unknown'}`);
+
 const install = run('npm', ['ci', '--omit=dev', '--ignore-scripts', '--no-audit', '--no-fund'], {
   cwd: applicationRoot,
   env: {
@@ -79,5 +98,14 @@ const install = run('npm', ['ci', '--omit=dev', '--ignore-scripts', '--no-audit'
 });
 if (!install.ok) fail(`locked application dependency installation failed with status ${install.status ?? 'unknown'}`);
 
-console.log(`[exact-release-bootstrap] prepared Smarter Justice v${applicationPackage.version}`);
+const inheritedTests = run('npm', ['test'], { cwd: applicationRoot });
+if (!inheritedTests.ok) fail(`complete inherited qualification failed with status ${inheritedTests.status ?? 'unknown'}`);
+
+const polishTest = run(process.execPath, [path.join(applicationRoot, 'tests', 'homepage-launch-polish-v1798.test.js')], {
+  cwd: applicationRoot
+});
+if (!polishTest.ok) fail(`homepage polish acceptance failed with status ${polishTest.status ?? 'unknown'}`);
+
+console.log(`[exact-release-bootstrap] prepared Smarter Justice v${applicationPackage.version} homepage launch polish 1`);
 console.log(`[exact-release-bootstrap] sealed source SHA-256 ${digest}`);
+console.log('[exact-release-bootstrap] complete inherited suite and homepage polish acceptance passed');
