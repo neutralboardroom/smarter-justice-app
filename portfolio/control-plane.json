@@ -1,0 +1,116 @@
+{
+  "schema_version": "1.0.0",
+  "control_plane": "Smarter Justice",
+  "control_plane_domain": "https://smarterjustice.com",
+  "authority": {
+    "universal_packet": "UNIVERSAL_SMARTER_JUSTICE_AND_ALL_LEGAL_MICRO_PORTALS__ONE_STEP_BUILDER__V43__NATIONWIDE_50_STATES_DC_PLAIN_LANGUAGE_PORTFOLIO_UX_BILINGUAL_AUTONOMOUS_DEPLOYMENT_AND_NO_DRIFT__2026-08-07.zip",
+    "packet_sha256": "2abcb4db287dce4003983dedb663c954941b709a02181b4e196ef9d311ff08fd",
+    "owner_rule_count": 155,
+    "owner_rule_sha256": "74a1ed7d67b0cebb764fdb41e4546f578948d0004b7f00fd8e996dd67c795a1f"
+  },
+  "operating_model": {
+    "central_coordination": "smarter-justice-app",
+    "product_release_ownership": "each product retains its own exact artifact, repo, domain, release history and rollback state",
+    "deployment_policy": "builder-executed whenever authorized capability exists; owner intervention only for irreducible human-only actions",
+    "integration_policy": "shared Smarter Justice auth/payments/routing/control-plane capabilities stay centralized where architecture assigns them; product-specific public experience remains independent",
+    "evidence_policy": "never claim live/deployed/integrated/bilingual/nationwide/verified beyond current evidence"
+  },
+  "portfolio_requirements": {
+    "nationwide": "meaningful usable public entry for all 50 states plus DC; New York/NYC deepest first while every jurisdiction advances continuously",
+    "languages": "English/Espanol control on every applicable public human-facing route; route context and locale persistence where practical; translation parity reported honestly",
+    "plain_language": "customer-facing copy must avoid unnecessary internal technical/governance/deployment jargon",
+    "ux_learning": "Estate Law Aid is current proven UX reference, not a ceiling; compare live products and propagate superior patterns only when user benefit is real",
+    "profiles": "source-tracked, conservative, unclaimed unless actually claimed; no fabricated registration/specialty/availability/participation",
+    "no_drift": true
+  },
+  "products": [
+    {
+      "product_id": "smarter-justice-app",
+      "name": "Smarter Justice",
+      "repo": "neutralboardroom/smarter-justice-app",
+      "canonical_domain": "https://smarterjustice.com",
+      "latest_qualified_artifact": "smarter-justice-v1.7.101-v43-nationwide-bilingual-plain-language-live-ux.zip",
+      "latest_qualified_version": "1.7.101",
+      "latest_qualified_sha256": "af4523a2d2b9635dd8824141d7e2e4aac9327f28d7ce56d7f2fa50429d2a158e",
+      "known_repo_carrier_version": "1.7.98",
+      "live_version": "VERIFY_BEFORE_CHANGE",
+      "deployment_state": "SUCCESSOR_QUALIFIED_DEPLOYMENT_PATH_RECONCILIATION_REQUIRED",
+      "integration_role": "CENTRAL_CONTROL_PLANE"
+    },
+    {
+      "product_id": "estate-law-aid",
+      "name": "Estate Law Aid",
+      "repo": "neutralboardroom/estate-law-aid-app",
+      "canonical_domain": "https://estatelawaid.com",
+      "known_repo_version": "1.3.4",
+      "deployment_state": "LIVE_EVIDENCE_PRESENT_REAUDIT_REQUIRED",
+      "integration_role": "LEGAL_MICRO_PORTAL",
+      "current_reference_role": "PROVEN_UX_REFERENCE_BASELINE_NOT_CEILING"
+    },
+    {
+      "product_id": "divorce-law-aid",
+      "name": "Divorce Law Aid",
+      "repo": "neutralboardroom/divorce-law-aid-app",
+      "canonical_domain": "https://divorcelawaid.com",
+      "known_repo_carrier_version": "0.87.0",
+      "deployment_state": "VERIFY_LIVE_AND_RECONCILE_WITH_LATEST_QUALIFIED_ARTIFACT",
+      "integration_role": "LEGAL_MICRO_PORTAL"
+    },
+    {
+      "product_id": "medical-malpractice-law-aid",
+      "name": "Medical Malpractice Law Aid",
+      "repo": "neutralboardroom/medical-malpractice-law-aid-app",
+      "canonical_domain": "https://medicalmalpracticeaid.com",
+      "known_repo_version": "0.62.0",
+      "deployment_state": "VERIFY_LIVE_AND_RECONCILE_WITH_LATEST_QUALIFIED_ARTIFACT",
+      "integration_role": "LEGAL_MICRO_PORTAL"
+    },
+    {
+      "product_id": "disability-law-aid",
+      "name": "Disability Law Aid",
+      "repo": "neutralboardroom/disability-law-aid-app",
+      "canonical_domain": "https://disabilitylawaid.com",
+      "deployment_state": "REPO_AND_LIVE_STATE_DISCOVERY_REQUIRED",
+      "integration_role": "LEGAL_MICRO_PORTAL"
+    },
+    {
+      "product_id": "justice-tax-solutions",
+      "name": "Justice Tax Solutions",
+      "repo": "neutralboardroom/justice-tax-solutions-app",
+      "canonical_domain": "https://justicetaxsolutions.com",
+      "deployment_state": "VERIFY_LIVE_AND_RECONCILE_WITH_LATEST_QUALIFIED_ARTIFACT",
+      "integration_role": "SPECIALTY_PRODUCT"
+    },
+    {
+      "product_id": "coverednyc",
+      "name": "CoveredNYC",
+      "repo": "neutralboardroom/coverednyc-app",
+      "canonical_domain": "https://coverednyc.com",
+      "deployment_state": "DISCOVERY_REQUIRED",
+      "integration_role": "RELATED_PRODUCT"
+    },
+    {
+      "product_id": "justice-truck",
+      "name": "Justice Truck",
+      "repo": "neutralboardroom/justice-truck-app",
+      "canonical_domain": "https://justicetruck.com",
+      "deployment_state": "DISCOVERY_REQUIRED",
+      "integration_role": "RELATED_PRODUCT"
+    },
+    {"product_id":"personal-injury-law-aid","name":"Personal Injury Law Aid","repo":null,"canonical_domain":"https://personalinjurylawaid.com","deployment_state":"REPO_AND_LIVE_STATE_DISCOVERY_REQUIRED","integration_role":"LEGAL_MICRO_PORTAL"},
+    {"product_id":"domestic-violence-aid","name":"Domestic Violence Aid","repo":null,"canonical_domain":"https://domesticviolenceaid.com","deployment_state":"REPO_AND_LIVE_STATE_DISCOVERY_REQUIRED","integration_role":"LEGAL_MICRO_PORTAL"},
+    {"product_id":"employment-law-aid","name":"Employment Law Aid","repo":null,"canonical_domain":"https://employmentlawaid.com","deployment_state":"REPO_AND_LIVE_STATE_DISCOVERY_REQUIRED","integration_role":"LEGAL_MICRO_PORTAL"},
+    {"product_id":"insurance-claim-law-aid","name":"Insurance Claims, Denials & Bad Faith Law Aid","repo":null,"canonical_domain":"https://insuranceclaimlawaid.com","deployment_state":"REPO_AND_LIVE_STATE_DISCOVERY_REQUIRED","integration_role":"LEGAL_MICRO_PORTAL"},
+    {"product_id":"criminal-law-aid","name":"Criminal Law Aid","repo":null,"canonical_domain":"https://criminallawaid.com","deployment_state":"REPO_AND_LIVE_STATE_DISCOVERY_REQUIRED","integration_role":"LEGAL_MICRO_PORTAL"},
+    {"product_id":"civil-rights-law-aid","name":"Civil Rights & Police Misconduct Law Aid","repo":null,"canonical_domain":"https://civilrightslawaid.com","deployment_state":"REPO_AND_LIVE_STATE_DISCOVERY_REQUIRED","integration_role":"LEGAL_MICRO_PORTAL"},
+    {"product_id":"consumer-protection-law-aid","name":"Consumer Protection, Fraud & Scam Law Aid","repo":null,"canonical_domain":"https://consumerprotectionlawaid.com","deployment_state":"REPO_AND_LIVE_STATE_DISCOVERY_REQUIRED","integration_role":"LEGAL_MICRO_PORTAL"},
+    {"product_id":"trademark-patent-ip-law-aid","name":"Trademark, Patent & IP Law Aid","repo":null,"canonical_domain":"https://trademarkpatentiplawaid.com","deployment_state":"REPO_AND_LIVE_STATE_DISCOVERY_REQUIRED","integration_role":"LEGAL_MICRO_PORTAL"},
+    {"product_id":"workers-compensation-law-aid","name":"Workers Compensation Law Aid","repo":null,"canonical_domain":"https://workerscompensationlawaid.com","deployment_state":"REPO_AND_LIVE_STATE_DISCOVERY_REQUIRED","integration_role":"LEGAL_MICRO_PORTAL"},
+    {"product_id":"bankruptcy-debt-law-aid","name":"Bankruptcy & Debt Law Aid","repo":null,"canonical_domain":"https://bankruptcylawaid.com","deployment_state":"REPO_AND_LIVE_STATE_DISCOVERY_REQUIRED","integration_role":"LEGAL_MICRO_PORTAL"},
+    {"product_id":"real-estate-law-aid","name":"Real Estate Law Aid","repo":null,"canonical_domain":"https://realestatelawaid.com","deployment_state":"REPO_AND_LIVE_STATE_DISCOVERY_REQUIRED","integration_role":"LEGAL_MICRO_PORTAL"},
+    {"product_id":"elder-care-law-aid","name":"Elder Care Law Aid","repo":null,"canonical_domain":"https://eldercarelawaid.com","deployment_state":"REPO_AND_LIVE_STATE_DISCOVERY_REQUIRED","integration_role":"LEGAL_MICRO_PORTAL"},
+    {"product_id":"name-records-education-law-aid","name":"Name, Records & Education Law Aid","repo":null,"canonical_domain":"https://namerecordseducationlawaid.com","deployment_state":"REPO_AND_LIVE_STATE_DISCOVERY_REQUIRED","integration_role":"LEGAL_MICRO_PORTAL"},
+    {"product_id":"car-accident-law-aid","name":"Car Accident Law Aid","repo":null,"canonical_domain":"https://caraccidentlawaid.com","deployment_state":"REPO_AND_LIVE_STATE_DISCOVERY_REQUIRED","integration_role":"LEGAL_MICRO_PORTAL"},
+    {"product_id":"veterans-law-aid","name":"Veterans Benefits & Military Law Aid","repo":null,"canonical_domain":"https://veteranslawaid.com","deployment_state":"REPO_AND_LIVE_STATE_DISCOVERY_REQUIRED","integration_role":"LEGAL_MICRO_PORTAL"}
+  ]
+}
