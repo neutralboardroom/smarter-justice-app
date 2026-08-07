@@ -1,0 +1,47 @@
+name: Smarter Justice V43 control-plane qualification
+
+on:
+  push:
+    branches: [portfolio-control-v43]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: smarter-justice-v43-control-plane-qualification
+  cancel-in-progress: true
+
+jobs:
+  qualification-gate:
+    name: qualification-gate
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Checkout exact candidate
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+      - name: Use Node 22
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e
+        with:
+          node-version: '22.x'
+          package-manager-cache: false
+      - name: Reconstruct and qualify exact v1.7.101 runtime
+        run: npm ci --omit=dev --no-audit --no-fund
+      - name: Verify exact target identity
+        run: |
+          set -euo pipefail
+          test "$(node -p \"require('./package.json').version\")" = "1.7.101"
+          test "$(node -p \"require('./.runtime/smarter-justice-v1.7.101/package.json').version\")" = "1.7.101"
+          test -f .runtime/smarter-justice-v1.7.101/RELEASE_PAYLOAD_INVENTORY_SHA256.txt -o -f .runtime/smarter-justice-v1.7.101/FILE_INVENTORY_SHA256.txt
+      - name: Record candidate summary
+        run: |
+          printf 'commit=%s\nversion=1.7.101\nqualification=PASS\n' "$GITHUB_SHA" > "$RUNNER_TEMP/v43-control-plane-qualification.txt"
+      - name: Upload qualification evidence
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: v43-control-plane-qualification-${{ github.sha }}
+          path: ${{ runner.temp }}/v43-control-plane-qualification.txt
+          retention-days: 30
