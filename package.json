@@ -3,10 +3,12 @@
   "version": "1.7.101",
   "private": true,
   "description": "Production carrier for the qualified Smarter Justice v1.7.101 runtime projection, reconstructed from the retained exact v1.7.98 production base plus a verified deterministic runtime delta.",
-  "engines": { "node": "22.x" },
+  "engines": {
+    "node": "22.x"
+  },
   "scripts": {
-    "postinstall": "node scripts/bootstrap-v17101-runtime-projection.js",
-    "reconstruct": "node scripts/bootstrap-v17101-runtime-projection.js",
+    "postinstall": "node scripts/bootstrap-v17101-runtime-patch.js",
+    "reconstruct": "node scripts/bootstrap-v17101-runtime-patch.js",
     "test:runtime:v43": "node .runtime/smarter-justice-v1.7.101/tests/v43-live-ux-nationwide-plain-language-v17101.test.js",
     "test:runtime:smoke": "node .runtime/smarter-justice-v1.7.101/tests/smoke.test.js",
     "test:runtime:static": "node .runtime/smarter-justice-v1.7.101/tests/static-checks.test.js",
