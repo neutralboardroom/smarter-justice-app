@@ -1,0 +1,3 @@
+Smarter Justice V43 central-control candidate
+Purpose: qualify the exact v1.7.101 carrier, central portfolio registry, autonomous deploy-request workflow, and owner-action-minimized operating model before any production promotion.
+Production mutation authorized only after qualification, exact live rollback binding, and deployment-request validation pass.
