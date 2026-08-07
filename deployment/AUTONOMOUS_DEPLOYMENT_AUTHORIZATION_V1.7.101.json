@@ -1,0 +1,18 @@
+{
+  "schema": "smarter-justice-owner-autonomous-deployment-authorization-v1",
+  "authorizationId": "SJ-AUTONOMOUS-CENTRAL-DEPLOYMENT-2026-08-07",
+  "status": "AUTHORIZED",
+  "scope": "SMARTER_JUSTICE_CENTRAL",
+  "targetVersion": "1.7.101",
+  "targetArtifact": "smarter-justice-v1.7.101-v43-nationwide-bilingual-plain-language-live-ux.zip",
+  "targetArtifactSha256": "af4523a2d2b9635dd8824141d7e2e4aac9327f28d7ce56d7f2fa50429d2a158e",
+  "executeDontDelegate": true,
+  "humanOnlyEscalation": true,
+  "technicalDeploymentAuthorized": true,
+  "productionVerificationAuthorized": true,
+  "safeRollbackAuthorized": true,
+  "destructiveDataChangeAuthorized": false,
+  "billingChangeAuthorized": false,
+  "secretDisclosureAuthorized": false,
+  "notes": "Owner directed the Smarter Justice central chat to control the platform and integrations, perform as much technical work automatically as possible, and involve the owner only for irreducible human-only actions."
+}
