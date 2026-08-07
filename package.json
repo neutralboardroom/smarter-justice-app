@@ -1,14 +1,16 @@
 {
   "name": "smarter-justice-exact-release-bootstrap",
-  "version": "1.7.98",
+  "version": "1.7.101",
   "private": true,
-  "description": "Verified runtime bootstrap and coordinated site-wide visual polish for the exact sealed Smarter Justice v1.7.98 source artifact.",
-  "engines": {
-    "node": "22.x"
-  },
+  "description": "Production carrier for the qualified Smarter Justice v1.7.101 runtime projection, reconstructed from the retained exact v1.7.98 production base plus a verified deterministic runtime delta.",
+  "engines": { "node": "22.x" },
   "scripts": {
-    "postinstall": "node scripts/bootstrap-sitewide-release.js",
-    "migrate": "npm --prefix .runtime/smarter-justice-v1.7.98 run migrate",
-    "start": "npm --prefix .runtime/smarter-justice-v1.7.98 start"
+    "postinstall": "node scripts/bootstrap-v17101-runtime-projection.js",
+    "reconstruct": "node scripts/bootstrap-v17101-runtime-projection.js",
+    "test:runtime:v43": "node .runtime/smarter-justice-v1.7.101/tests/v43-live-ux-nationwide-plain-language-v17101.test.js",
+    "test:runtime:smoke": "node .runtime/smarter-justice-v1.7.101/tests/smoke.test.js",
+    "test:runtime:static": "node .runtime/smarter-justice-v1.7.101/tests/static-checks.test.js",
+    "migrate": "npm --prefix .runtime/smarter-justice-v1.7.101 run migrate",
+    "start": "npm --prefix .runtime/smarter-justice-v1.7.101 start"
   }
 }
