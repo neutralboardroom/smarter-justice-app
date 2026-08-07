@@ -1,14 +1,14 @@
 {
   "name": "smarter-justice-exact-release-bootstrap",
-  "version": "1.7.98",
+  "version": "1.7.101",
   "private": true,
-  "description": "Verified runtime bootstrap and coordinated site-wide visual polish for the exact sealed Smarter Justice v1.7.98 source artifact.",
+  "description": "Fail-closed production carrier for exact qualified Smarter Justice v1.7.101 under the V43 nationwide, bilingual, plain-language and autonomous-deployment authority.",
   "engines": {
     "node": "22.x"
   },
   "scripts": {
-    "postinstall": "node scripts/bootstrap-sitewide-release.js",
-    "migrate": "npm --prefix .runtime/smarter-justice-v1.7.98 run migrate",
-    "start": "npm --prefix .runtime/smarter-justice-v1.7.98 start"
+    "postinstall": "node scripts/bootstrap-v17101-control-plane.js",
+    "migrate": "npm --prefix .runtime/smarter-justice-v1.7.101 run migrate",
+    "start": "npm --prefix .runtime/smarter-justice-v1.7.101 start"
   }
 }
