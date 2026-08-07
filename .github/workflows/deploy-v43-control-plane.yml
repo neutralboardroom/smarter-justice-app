@@ -1,0 +1,188 @@
+name: Smarter Justice V43 control-plane production deploy
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - deployment/deploy-request.json
+      - deployment/deployable-artifact.json
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: smarter-justice-v43-production
+  cancel-in-progress: false
+
+env:
+  PUBLIC_BASE_URL: https://smarterjustice.com
+
+jobs:
+  deploy-exact-request:
+    name: deploy-exact-request
+    runs-on: ubuntu-latest
+    environment: production
+    timeout-minutes: 45
+    steps:
+      - name: Checkout exact request commit
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+
+      - name: Use Node 22
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e
+        with:
+          node-version: '22.x'
+          package-manager-cache: false
+
+      - name: Validate deployment request and exact artifact binding
+        id: request
+        run: |
+          set -euo pipefail
+          node - <<'NODE'
+          const fs=require('fs');
+          const crypto=require('crypto');
+          const req=JSON.parse(fs.readFileSync('deployment/deploy-request.json','utf8'));
+          const bind=JSON.parse(fs.readFileSync('deployment/deployable-artifact.json','utf8'));
+          function fail(m){console.error(m);process.exit(1)}
+          if(req.product_id!=='smarter-justice-app') fail('wrong product_id');
+          if(req.requested_state!=='DEPLOY_AND_VERIFY') fail('requested_state is not DEPLOY_AND_VERIFY');
+          if(req.production_domain!=='https://smarterjustice.com') fail('wrong production_domain');
+          if(!/^[0-9]+\.[0-9]+\.[0-9]+$/.test(req.target_version||'')) fail('invalid target_version');
+          if(!/^[a-f0-9]{64}$/.test(req.artifact_sha256||'')) fail('invalid artifact_sha256');
+          if(!['NO_MIGRATION','BACKWARD_COMPATIBLE_EXPAND','STATEFUL_REVERSIBLE'].includes(req.migration_class)) fail('unsupported migration_class');
+          if(req.authorization_basis!=='CURRENT_OWNER_DIRECTION') fail('missing current owner authorization basis');
+          if(!/^[A-Za-z0-9][A-Za-z0-9._:-]{7,127}$/.test(req.authorization_id||'')) fail('invalid authorization_id');
+          if(req.target_commit && req.target_commit!=='SELF' && req.target_commit!==process.env.GITHUB_SHA) fail('target_commit does not match this commit');
+          if(bind.product_id!==req.product_id || bind.version!==req.target_version || bind.artifact_filename!==req.artifact_filename || bind.artifact_sha256!==req.artifact_sha256) fail('deployable artifact binding does not match request');
+          if(bind.deployable!==true || bind.qualification_state!=='QUALIFIED') fail('artifact is not marked qualified/deployable');
+          const pkg=JSON.parse(fs.readFileSync('package.json','utf8'));
+          if(pkg.version!==req.target_version) fail(`carrier package version ${pkg.version} does not equal target ${req.target_version}`);
+          if(!req.rollback || !/^[a-f0-9]{40}$/.test(req.rollback.previous_commit||'') || !/^[0-9]+\.[0-9]+\.[0-9]+$/.test(req.rollback.previous_version||'')) fail('invalid rollback binding');
+          fs.appendFileSync(process.env.GITHUB_OUTPUT,`version=${req.target_version}\n`);
+          fs.appendFileSync(process.env.GITHUB_OUTPUT,`artifact_sha256=${req.artifact_sha256}\n`);
+          fs.appendFileSync(process.env.GITHUB_OUTPUT,`migration_class=${req.migration_class}\n`);
+          fs.appendFileSync(process.env.GITHUB_OUTPUT,`authorization_id=${req.authorization_id}\n`);
+          fs.appendFileSync(process.env.GITHUB_OUTPUT,`previous_commit=${req.rollback.previous_commit}\n`);
+          fs.appendFileSync(process.env.GITHUB_OUTPUT,`previous_version=${req.rollback.previous_version}\n`);
+          fs.writeFileSync(process.env.RUNNER_TEMP+'/validated-request.json',JSON.stringify({request:req,binding:bind,commit:process.env.GITHUB_SHA},null,2));
+          NODE
+
+      - name: Provider-equivalent sealed carrier preflight
+        run: |
+          set -euo pipefail
+          npm ci --omit=dev --no-audit --no-fund
+          test -f .runtime/smarter-justice-v${{ steps.request.outputs.version }}/package.json
+          runtime_version="$(node -p "require('./.runtime/smarter-justice-v${{ steps.request.outputs.version }}/package.json').version")"
+          test "$runtime_version" = "${{ steps.request.outputs.version }}"
+          test -z "$(git status --porcelain --untracked-files=no)"
+
+      - name: Capture previous live evidence
+        run: |
+          set +e
+          curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/health" > "$RUNNER_TEMP/previous-health.json"
+          curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/livez" > "$RUNNER_TEMP/previous-livez.json"
+          set -e
+          node - <<'NODE'
+          const fs=require('fs');
+          const wanted=process.env.PREVIOUS_VERSION;
+          try {
+            const h=JSON.parse(fs.readFileSync(process.env.RUNNER_TEMP+'/previous-health.json','utf8'));
+            if(h.version && wanted && h.version!==wanted) {
+              console.error(`previous live version ${h.version} does not match rollback binding ${wanted}`);
+              process.exit(1);
+            }
+          } catch(e) {
+            console.error('could not prove previous live health/version');
+            process.exit(1);
+          }
+          NODE
+        env:
+          PREVIOUS_VERSION: ${{ steps.request.outputs.previous_version }}
+
+      - name: Confirm protected Render deploy hook
+        env:
+          RENDER_DEPLOY_HOOK_URL: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+        run: test -n "$RENDER_DEPLOY_HOOK_URL"
+
+      - name: Request exact-commit Render deployment
+        id: deploy
+        env:
+          RENDER_DEPLOY_HOOK_URL: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+          TARGET_SHA: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          sep='?'; [[ "$RENDER_DEPLOY_HOOK_URL" == *'?'* ]] && sep='&'
+          curl --fail --silent --show-error --location --max-time 30 "${RENDER_DEPLOY_HOOK_URL}${sep}ref=${TARGET_SHA}" > "$RUNNER_TEMP/render-deploy-response.json"
+
+      - name: Verify uncached live target and critical public behavior
+        id: smoke
+        env:
+          TARGET_VERSION: ${{ steps.request.outputs.version }}
+        run: |
+          set -euo pipefail
+          delay=10
+          for attempt in $(seq 1 18); do
+            nonce="sjv43-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}-${attempt}"
+            echo "Live verification attempt $attempt"
+            if curl --fail --silent --show-error --max-time 20 -H 'Cache-Control: no-cache' "$PUBLIC_BASE_URL/health?verify=$nonce" > "$RUNNER_TEMP/health.json" \
+              && curl --fail --silent --show-error --max-time 20 -H 'Cache-Control: no-cache' "$PUBLIC_BASE_URL/livez?verify=$nonce" > "$RUNNER_TEMP/livez.json" \
+              && curl --fail --silent --show-error --max-time 20 -H 'Cache-Control: no-cache' "$PUBLIC_BASE_URL/?verify=$nonce" > "$RUNNER_TEMP/home.html" \
+              && HEALTH="$RUNNER_TEMP/health.json" LIVEZ="$RUNNER_TEMP/livez.json" HOME_HTML="$RUNNER_TEMP/home.html" TARGET_VERSION="$TARGET_VERSION" node - <<'NODE'
+          const fs=require('fs');
+          const health=JSON.parse(fs.readFileSync(process.env.HEALTH,'utf8'));
+          const livez=JSON.parse(fs.readFileSync(process.env.LIVEZ,'utf8'));
+          const home=fs.readFileSync(process.env.HOME_HTML,'utf8');
+          if(health.ok!==true || health.version!==process.env.TARGET_VERSION || health.app!=='Smarter Justice') process.exit(1);
+          if(health.sensitiveTrafficApproved!==false) process.exit(1);
+          if(livez.ok!==true || livez.status!=='alive' || livez.version!==process.env.TARGET_VERSION || livez.app!=='Smarter Justice') process.exit(1);
+          if(!/Smarter Justice/i.test(home)) process.exit(1);
+          if(!/(English|Espa(?:ñ|n)ol)/i.test(home)) process.exit(1);
+          NODE
+            then
+              cp "$RUNNER_TEMP/health.json" "$RUNNER_TEMP/production-smoke-evidence.json"
+              exit 0
+            fi
+            sleep "$delay"
+            if [ "$delay" -lt 60 ]; then delay=$((delay * 2)); [ "$delay" -gt 60 ] && delay=60; fi
+          done
+          exit 1
+
+      - name: Restore exact last-known-good commit after failed live verification
+        if: failure() && steps.deploy.outcome == 'success'
+        env:
+          RENDER_DEPLOY_HOOK_URL: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+          PREVIOUS_COMMIT: ${{ steps.request.outputs.previous_commit }}
+          PREVIOUS_VERSION: ${{ steps.request.outputs.previous_version }}
+        run: |
+          set -euo pipefail
+          sep='?'; [[ "$RENDER_DEPLOY_HOOK_URL" == *'?'* ]] && sep='&'
+          curl --fail --silent --show-error --location --max-time 30 "${RENDER_DEPLOY_HOOK_URL}${sep}ref=${PREVIOUS_COMMIT}" > "$RUNNER_TEMP/render-rollback-response.json"
+          delay=10
+          for attempt in $(seq 1 18); do
+            live="$(curl --fail --silent --show-error --max-time 20 -H 'Cache-Control: no-cache' "$PUBLIC_BASE_URL/health?rollback=${GITHUB_RUN_ID}-${attempt}" | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{try{process.stdout.write(String(JSON.parse(s).version||''))}catch{}})")" || true
+            test "$live" = "$PREVIOUS_VERSION" && exit 0
+            sleep "$delay"
+            if [ "$delay" -lt 60 ]; then delay=$((delay * 2)); [ "$delay" -gt 60 ] && delay=60; fi
+          done
+          exit 1
+
+      - name: Upload immutable deployment evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: smarter-justice-v43-production-evidence-${{ github.sha }}
+          path: |
+            ${{ runner.temp }}/validated-request.json
+            ${{ runner.temp }}/previous-health.json
+            ${{ runner.temp }}/previous-livez.json
+            ${{ runner.temp }}/render-deploy-response.json
+            ${{ runner.temp }}/render-rollback-response.json
+            ${{ runner.temp }}/health.json
+            ${{ runner.temp }}/livez.json
+            ${{ runner.temp }}/home.html
+            ${{ runner.temp }}/production-smoke-evidence.json
+          if-no-files-found: warn
+          retention-days: 30
