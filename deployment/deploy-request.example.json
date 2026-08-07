@@ -1,0 +1,17 @@
+{
+  "product_id": "smarter-justice-app",
+  "target_version": "REPLACE_WITH_EXACT_VERSION",
+  "target_commit": "REPLACE_WITH_EXACT_40_CHAR_COMMIT_SHA",
+  "artifact_filename": "REPLACE_WITH_EXACT_ARTIFACT_FILENAME",
+  "artifact_sha256": "REPLACE_WITH_EXACT_64_CHAR_SHA256",
+  "migration_class": "NO_MIGRATION",
+  "authorization_basis": "CURRENT_OWNER_DIRECTION",
+  "authorization_id": "REPLACE_WITH_RELEASE_SCOPED_AUTHORIZATION_ID",
+  "requested_state": "DEPLOY_AND_VERIFY",
+  "production_domain": "https://smarterjustice.com",
+  "rollback": {
+    "required": true,
+    "previous_commit": "REPLACE_WITH_LAST_VERIFIED_LIVE_COMMIT",
+    "previous_version": "REPLACE_WITH_LAST_VERIFIED_LIVE_VERSION"
+  }
+}
