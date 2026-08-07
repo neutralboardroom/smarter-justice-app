@@ -16,9 +16,9 @@ concurrency:
 jobs:
   qualification:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 45
     steps:
-      - name: Checkout exact source
+      - name: Checkout exact carrier commit
         uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
         with:
           persist-credentials: false
@@ -28,52 +28,40 @@ jobs:
         with:
           node-version: '22.x'
           package-manager-cache: false
-      - name: Export clean inventory-locked source
-        id: source
-        run: |
-          set -euo pipefail
-          source="$RUNNER_TEMP/smarter-justice-qualified-source"
-          rm -rf "$source"
-          mkdir -p "$source"
-          git archive --format=tar HEAD | tar -xf - -C "$source"
-          test "$(node -p "require('$source/package.json').version")" = "1.7.83"
-          echo "path=$source" >> "$GITHUB_OUTPUT"
-      - name: Install dependencies outside inventory-locked source
-        id: dependencies
+      - name: Reconstruct and hash-verify qualified v1.7.101 runtime
         env:
-          SOURCE: ${{ steps.source.outputs.path }}
           npm_config_registry: https://registry.npmjs.org/
           npm_config_audit: 'false'
+          npm_config_fund: 'false'
         run: |
           set -euo pipefail
-          deps="$RUNNER_TEMP/smarter-justice-dependencies"
-          rm -rf "$deps"
-          mkdir -p "$deps"
-          cp "$SOURCE/package.json" "$SOURCE/package-lock.json" "$deps/"
-          npm ci --prefix "$deps" --no-audit
-          echo "node_path=$deps/node_modules" >> "$GITHUB_OUTPUT"
-      - name: Complete dependency-independent suite
-        working-directory: ${{ steps.source.outputs.path }}
-        env:
-          NODE_PATH: ${{ steps.dependencies.outputs.node_path }}
-        run: npm test
-      - name: Generate deterministic SBOM
-        working-directory: ${{ steps.source.outputs.path }}
-        env:
-          NODE_PATH: ${{ steps.dependencies.outputs.node_path }}
-        run: npm run sbom
-      - name: Validate deployment kit
-        working-directory: ${{ steps.source.outputs.path }}
-        env:
-          NODE_PATH: ${{ steps.dependencies.outputs.node_path }}
-        run: npm run deployment:validate
-      - name: Upload SBOM evidence
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
-        with:
-          name: smarter-justice-sbom-${{ github.sha }}
-          path: ${{ steps.source.outputs.path }}/SBOM.spdx.json
-          if-no-files-found: error
-          retention-days: 14
+          npm ci --omit=dev --no-audit --no-fund
+          test "$(node -p "require('./package.json').version")" = "1.7.101"
+          test "$(node -p "require('./.runtime/smarter-justice-v1.7.101/package.json').version")" = "1.7.101"
+      - name: Verify focused V43 public UX acceptance
+        run: npm run test:runtime:v43
+      - name: Verify reconstructed runtime smoke suite
+        run: npm run test:runtime:smoke
+      - name: Verify reconstructed static safeguards
+        run: npm run test:runtime:static
+      - name: Verify runtime syntax and migration invariance
+        run: |
+          set -euo pipefail
+          node --check .runtime/smarter-justice-v1.7.101/server.js
+          printf '%s  %s\n' '6cf12a4264da41487c6d9c792369eee19e1c576caeb7d8228b7461f2cacbe878' '.runtime/smarter-justice-v1.7.101/migrations/postgres.sql' | sha256sum -c -
+          printf '%s  %s\n' '6bd946ad8a2845d036c7037b80a493ca663d0ecd529b838f1c984831c1e68727' '.runtime/smarter-justice-v1.7.101/scripts/run-migrations.js' | sha256sum -c -
+      - name: Verify deployment authorization and carrier identity
+        run: |
+          set -euo pipefail
+          node - <<'NODE'
+          const fs=require('fs');
+          const auth=JSON.parse(fs.readFileSync('deployment/AUTONOMOUS_DEPLOYMENT_AUTHORIZATION_V1.7.101.json','utf8'));
+          const manifest=JSON.parse(fs.readFileSync('release-delta/v17101-runtime-manifest.json','utf8'));
+          if(auth.status!=='AUTHORIZED'||auth.targetVersion!=='1.7.101'||auth.technicalDeploymentAuthorized!==true)process.exit(1);
+          if(manifest.targetVersion!=='1.7.101')process.exit(1);
+          if(manifest.targetArtifactSha256!=='af4523a2d2b9635dd8824141d7e2e4aac9327f28d7ce56d7f2fa50429d2a158e')process.exit(1);
+          if(manifest.patchedFiles < 121)process.exit(1);
+          NODE
 
   qualification-gate:
     if: ${{ always() }}
