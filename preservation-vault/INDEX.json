@@ -1,16 +1,18 @@
 {
-  "schemaVersion": "1.1.0",
-  "updatedAt": "2026-08-08T18:15:00-04:00",
+  "schemaVersion": "1.2.0",
+  "updatedAt": "2026-08-08",
   "policy": {
     "activeArtifact": "One lean Universal Smarter Justice ACTIVE ZIP containing current runnable/working platform and module source, current registries/data, profiles, routes, tools, tests, branding/assets, schemas and provenance receipts.",
-    "bulkPreservation": "Exact donor and predecessor bulk archives are stored outside the normal ACTIVE ZIP. This index remains in GitHub and is copied into future ACTIVE artifacts.",
+    "bulkPreservation": "Exact donor and predecessor bulk archives are stored outside the normal ACTIVE ZIP. This index remains in GitHub and is copied or snapshotted into future ACTIVE artifacts.",
     "normalUserWorkflow": "Latest lean Universal Smarter Justice ACTIVE ZIP + latest universal builder ZIP + START NOW.",
+    "repeatDonorUploadDefault": false,
     "noLoss": "A preserved artifact may be removed from ACTIVE only after exact filename, byte size, SHA-256 and storage/recovery state are recorded here and its current functional value is retained or explicitly superseded in the Universal Smarter Justice runtime."
   },
   "storageBackends": {
     "canonicalIndex": "github:neutralboardroom/smarter-justice-app/preservation-vault/INDEX.json",
     "bulkPrimary": "chatgpt_library:/Smarter Justice Preservation Vault",
-    "normalGitHistory": "metadata/provenance only; do not commit giant donor ZIP binaries"
+    "normalGitHistory": "metadata/provenance only; do not commit giant donor ZIP binaries",
+    "futureCompatibleBackends": ["github_release_assets", "git_lfs", "object_storage"]
   },
   "artifacts": [
     {
@@ -101,8 +103,19 @@
       "sizeBytes": 15441980,
       "sha256": "51236bea08813204e3f74db6b6862aa4b2ec34f273e8535436bb36e8b64f5f79",
       "storage": "chatgpt_library:/Smarter Justice Preservation Vault/Builder Authorities/UNIVERSAL_SMARTER_JUSTICE__START_NOW__J13__SINGLE_RELEASE_TRAIN_V43_OWNER_RULE_CONTINUITY_SPECIALTY_DOMAIN_DEEP_LINK_FIDELITY_NO_DRIFT__2026-08-08.zip",
-      "status": "CURRENT_BUILDER_AUTHORITY_UNTIL_SUPERSEDED",
-      "role": "universal builder authority"
+      "status": "SUPERSEDED_BY_J14",
+      "role": "preserved predecessor builder authority"
+    },
+    {
+      "product": "Universal Smarter Justice",
+      "artifactType": "builder_authority",
+      "filename": "UNIVERSAL_SMARTER_JUSTICE__START_NOW__J14__LEAN_ACTIVE_PRESERVATION_VAULT_NO_REPEAT_DONOR_UPLOAD_SIZE_GUARDRAILS_NO_LOSS__2026-08-08.zip",
+      "version": "J14",
+      "sizeBytes": 16187561,
+      "sha256": "9465441c26a2b3ba400366ad191a16805f5f02b08cc86ad8632f8830d5375b38",
+      "storage": "chatgpt_library:/Smarter Justice Preservation Vault/Builder Authorities/UNIVERSAL_SMARTER_JUSTICE__START_NOW__J14__LEAN_ACTIVE_PRESERVATION_VAULT_NO_REPEAT_DONOR_UPLOAD_SIZE_GUARDRAILS_NO_LOSS__2026-08-08.zip",
+      "status": "CURRENT_BUILDER_AUTHORITY",
+      "role": "universal builder authority; lean ACTIVE and preservation-vault workflow binding"
     }
   ]
 }
