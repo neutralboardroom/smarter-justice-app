@@ -1,8 +1,8 @@
 {
-  "schemaVersion": "1.0.0",
-  "updatedAt": "2026-08-08T17:50:00-04:00",
+  "schemaVersion": "1.1.0",
+  "updatedAt": "2026-08-08T18:15:00-04:00",
   "policy": {
-    "activeArtifact": "One lean Universal Smarter Justice ACTIVE ZIP containing current runnable platform/module source, current registries/data, tests, branding/assets, routes, schemas and provenance receipts.",
+    "activeArtifact": "One lean Universal Smarter Justice ACTIVE ZIP containing current runnable/working platform and module source, current registries/data, profiles, routes, tools, tests, branding/assets, schemas and provenance receipts.",
     "bulkPreservation": "Exact donor and predecessor bulk archives are stored outside the normal ACTIVE ZIP. This index remains in GitHub and is copied into future ACTIVE artifacts.",
     "normalUserWorkflow": "Latest lean Universal Smarter Justice ACTIVE ZIP + latest universal builder ZIP + START NOW.",
     "noLoss": "A preserved artifact may be removed from ACTIVE only after exact filename, byte size, SHA-256 and storage/recovery state are recorded here and its current functional value is retained or explicitly superseded in the Universal Smarter Justice runtime."
@@ -78,9 +78,20 @@
       "version": "2.0.0-pre18",
       "sizeBytes": 445420382,
       "sha256": "e300516f88abca14e80b8c1ab25a8d73d3caa8d9f632e924c29fbf8322a15779",
-      "storage": "current build-session predecessor; too large for available Library capacity; to be superseded by lean successor",
-      "status": "RECORDED_PENDING_LEAN_SUCCESSOR",
+      "storage": "qualified predecessor identity recorded; superseded for routine continuation by lean pre19",
+      "status": "SUPERSEDED_BY_LEAN_PRE19",
       "role": "qualified predecessor containing Immigration + Divorce + Family Law consolidation"
+    },
+    {
+      "product": "Universal Smarter Justice",
+      "artifactType": "platform_active_release",
+      "filename": "smarter-justice-comprehensive-consolidation-workspace-v2.0.0-pre19-LEAN-ACTIVE.zip",
+      "version": "2.0.0-pre19",
+      "sizeBytes": 124536207,
+      "sha256": "78f9ae36cedd18bb588dd22787cbd3b1c32eaf0f40430108722c6e4ad23981fc",
+      "storage": "chatgpt_library:/Smarter Justice Preservation Vault/Platform Releases/smarter-justice-comprehensive-consolidation-workspace-v2.0.0-pre19-LEAN-ACTIVE.zip",
+      "status": "CURRENT_LEAN_ACTIVE",
+      "role": "normal Universal Smarter Justice continuation artifact; Estate v1.3.7 module contract bound; vault externalization enabled"
     },
     {
       "product": "Universal Smarter Justice",
@@ -90,8 +101,8 @@
       "sizeBytes": 15441980,
       "sha256": "51236bea08813204e3f74db6b6862aa4b2ec34f273e8535436bb36e8b64f5f79",
       "storage": "chatgpt_library:/Smarter Justice Preservation Vault/Builder Authorities/UNIVERSAL_SMARTER_JUSTICE__START_NOW__J13__SINGLE_RELEASE_TRAIN_V43_OWNER_RULE_CONTINUITY_SPECIALTY_DOMAIN_DEEP_LINK_FIDELITY_NO_DRIFT__2026-08-08.zip",
-      "status": "PRESERVED",
-      "role": "current universal builder authority until explicitly superseded"
+      "status": "CURRENT_BUILDER_AUTHORITY_UNTIL_SUPERSEDED",
+      "role": "universal builder authority"
     }
   ]
 }
