@@ -1,0 +1,97 @@
+{
+  "schemaVersion": "1.0.0",
+  "updatedAt": "2026-08-08T17:50:00-04:00",
+  "policy": {
+    "activeArtifact": "One lean Universal Smarter Justice ACTIVE ZIP containing current runnable platform/module source, current registries/data, tests, branding/assets, routes, schemas and provenance receipts.",
+    "bulkPreservation": "Exact donor and predecessor bulk archives are stored outside the normal ACTIVE ZIP. This index remains in GitHub and is copied into future ACTIVE artifacts.",
+    "normalUserWorkflow": "Latest lean Universal Smarter Justice ACTIVE ZIP + latest universal builder ZIP + START NOW.",
+    "noLoss": "A preserved artifact may be removed from ACTIVE only after exact filename, byte size, SHA-256 and storage/recovery state are recorded here and its current functional value is retained or explicitly superseded in the Universal Smarter Justice runtime."
+  },
+  "storageBackends": {
+    "canonicalIndex": "github:neutralboardroom/smarter-justice-app/preservation-vault/INDEX.json",
+    "bulkPrimary": "chatgpt_library:/Smarter Justice Preservation Vault",
+    "normalGitHistory": "metadata/provenance only; do not commit giant donor ZIP binaries"
+  },
+  "artifacts": [
+    {
+      "product": "Immigration Oasis",
+      "artifactType": "donor_full_source",
+      "filename": "immigration-oasis-plus-humans-v1.10.162-first-base-full-archive THIS IS THE FULL VERSION WE NEED(3).zip",
+      "version": "1.10.162",
+      "sizeBytes": 263398342,
+      "sha256": "5676cec930733131a83d6d347d2241812e7719b89c773a45e5c80053ba383661",
+      "storage": "chatgpt_library:/Smarter Justice Preservation Vault/Donor Archives/immigration-oasis-plus-humans-v1.10.162-first-base-full-archive THIS IS THE FULL VERSION WE NEED(3).zip",
+      "status": "PRESERVED",
+      "role": "full donor preservation base"
+    },
+    {
+      "product": "Immigration Oasis",
+      "artifactType": "historical_combined_source",
+      "filename": "Immigration Oasis Final last combined version Completed v1.10.160(2).zip",
+      "version": "1.10.160",
+      "sizeBytes": 264231791,
+      "sha256": "699d8bddf38a95d01bee925131ce8c0f724e267cf2364deefd8cb5a8a3fa2e2e",
+      "storage": "chatgpt_library:/Smarter Justice Preservation Vault/Donor Archives/Immigration Oasis Final last combined version Completed v1.10.160(2).zip",
+      "status": "PRESERVED_SECONDARY",
+      "role": "historical backstop; v1.10.162 is preferred full donor base"
+    },
+    {
+      "product": "Immigration Oasis",
+      "artifactType": "later_verified_artifact_identity",
+      "filename": "immigration-oasis-plus-humans-v1.10.292-FULL-PLATFORM-AUTOMATION-SOURCE.zip",
+      "version": "1.10.292",
+      "sizeBytes": 271808964,
+      "sha256": "bc5f56d3172652a5c8b15baa6d348300af9e31fd7a8722ab76b75b5f36827122",
+      "storage": "artifact bytes not recovered in current vault; identity and current GitHub source state preserved",
+      "sourceRepository": "neutralboardroom/immigration-oasis-app",
+      "sourceCommit": "40565bced898233f4851505839a7fe116fe5d243",
+      "status": "IDENTITY_VERIFIED_BYTES_NOT_VAULTED",
+      "role": "later current source/data truth"
+    },
+    {
+      "product": "Divorce Law Aid",
+      "artifactType": "donor_full_source",
+      "filename": "divorce-law-aid-v0.90.0.zip",
+      "version": "0.90.0",
+      "sizeBytes": 46761324,
+      "sha256": "35d00e17ea59ad5054b7c60a6cc583139996c653d441c323830bed809d430973",
+      "storage": "chatgpt_library:/Smarter Justice Preservation Vault/Donor Archives/divorce-law-aid-v0.90.0.zip",
+      "sourceRepository": "neutralboardroom/divorce-law-aid-app",
+      "status": "PRESERVED",
+      "role": "exact full Divorce donor source"
+    },
+    {
+      "product": "Estate Law Aid",
+      "artifactType": "donor_full_source",
+      "filename": "estate-law-aid-v1.3.7.zip",
+      "version": "1.3.7",
+      "sizeBytes": 104248883,
+      "sha256": "000241c53814f94084bc0a76c4310da1b04a85a972a09fa1515918cb3cbb68c8",
+      "storage": "chatgpt_library:/Smarter Justice Preservation Vault/Donor Archives/estate-law-aid-v1.3.7.zip",
+      "status": "PRESERVED",
+      "role": "exact Estate donor source"
+    },
+    {
+      "product": "Universal Smarter Justice",
+      "artifactType": "platform_predecessor_release",
+      "filename": "smarter-justice-comprehensive-consolidation-workspace-v2.0.0-pre18-ACTIVE.zip",
+      "version": "2.0.0-pre18",
+      "sizeBytes": 445420382,
+      "sha256": "e300516f88abca14e80b8c1ab25a8d73d3caa8d9f632e924c29fbf8322a15779",
+      "storage": "current build-session predecessor; too large for available Library capacity; to be superseded by lean successor",
+      "status": "RECORDED_PENDING_LEAN_SUCCESSOR",
+      "role": "qualified predecessor containing Immigration + Divorce + Family Law consolidation"
+    },
+    {
+      "product": "Universal Smarter Justice",
+      "artifactType": "builder_authority",
+      "filename": "UNIVERSAL_SMARTER_JUSTICE__START_NOW__J13__SINGLE_RELEASE_TRAIN_V43_OWNER_RULE_CONTINUITY_SPECIALTY_DOMAIN_DEEP_LINK_FIDELITY_NO_DRIFT__2026-08-08.zip",
+      "version": "J13",
+      "sizeBytes": 15441980,
+      "sha256": "51236bea08813204e3f74db6b6862aa4b2ec34f273e8535436bb36e8b64f5f79",
+      "storage": "chatgpt_library:/Smarter Justice Preservation Vault/Builder Authorities/UNIVERSAL_SMARTER_JUSTICE__START_NOW__J13__SINGLE_RELEASE_TRAIN_V43_OWNER_RULE_CONTINUITY_SPECIALTY_DOMAIN_DEEP_LINK_FIDELITY_NO_DRIFT__2026-08-08.zip",
+      "status": "PRESERVED",
+      "role": "current universal builder authority until explicitly superseded"
+    }
+  ]
+}
