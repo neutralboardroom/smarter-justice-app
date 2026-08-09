@@ -1,0 +1,13 @@
+'use strict';
+const fs=require('node:fs');
+const path=require('node:path');
+const root=path.resolve(process.argv[2]||'.');
+const testPath=path.join(root,'tests','universal-navigation-polish-v1.test.js');
+if(!fs.existsSync(testPath))throw new Error('[navigation-polish-test-scope] generated test missing');
+let test=fs.readFileSync(testPath,'utf8');
+const broad=`if((home.match(/href=\\\"\\/portals\\.html\\\"/g)||[]).length>0)throw new Error('homepage still routes specialty cards to generic portals page');`;
+const narrow=`if(home.includes('href="/portals.html"><div class="u-icon">'))throw new Error('homepage still routes a specialty card to generic portals page');`;
+if(!test.includes(broad))throw new Error('[navigation-polish-test-scope] expected broad assertion not found');
+test=test.replace(broad,narrow);
+fs.writeFileSync(testPath,test,'utf8');
+console.log('[navigation-polish-test-scope] narrowed generic-portals assertion to homepage specialty cards only');
