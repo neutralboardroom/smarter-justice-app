@@ -12,13 +12,11 @@
     "canonicalIndex": "github:neutralboardroom/smarter-justice-app/preservation-vault/INDEX.json",
     "bulkPrimary": "chatgpt_library:/Smarter Justice Preservation Vault",
     "normalGitHistory": "metadata/provenance only; do not commit giant donor ZIP binaries",
-    "futureCompatibleBackends": ["github_release_assets", "git_lfs", "object_storage"]
-  },
-  "currentPointers": {
-    "activeProduct": "smarter-justice-comprehensive-consolidation-workspace-v2.0.0-pre25-LEAN-ACTIVE.zip",
-    "builderAuthority": "UNIVERSAL_SMARTER_JUSTICE__START_NOW__J17__ATOMIC_RELEASE_CLOSE_ALL_PROMPTS_CURRENT_STATE_FIDELITY_NO_LOSS__2026-08-09.zip",
-    "acceptedSourceSlots": 17,
-    "expectedSourceSlots": 25
+    "futureCompatibleBackends": [
+      "github_release_assets",
+      "git_lfs",
+      "object_storage"
+    ]
   },
   "artifacts": [
     {
@@ -180,14 +178,14 @@
     },
     {
       "product": "Universal Smarter Justice",
-      "artifactType": "platform_active_release",
+      "artifactType": "platform_predecessor_release",
       "filename": "smarter-justice-comprehensive-consolidation-workspace-v2.0.0-pre25-LEAN-ACTIVE.zip",
       "version": "2.0.0-pre25",
       "sizeBytes": 111493720,
       "sha256": "2e23e5df223394bd832406f26fee791661b8906c42117d2a108587e7ce233388",
       "storage": "chatgpt_library:/Smarter Justice Preservation Vault/Platform Releases/smarter-justice-comprehensive-consolidation-workspace-v2.0.0-pre25-LEAN-ACTIVE.zip",
-      "status": "CURRENT_LEAN_ACTIVE",
-      "role": "current Universal product; Real Estate v0.37.0 and Bankruptcy & Debt v0.67.0 fully integrated; 17/25 source slots accepted"
+      "status": "SUPERSEDED_BY_PRE28",
+      "role": "pre25 preserved predecessor; Real Estate v0.37.0 and Bankruptcy & Debt v0.67.0 fully integrated; 17/25 source slots accepted"
     },
     {
       "product": "Real Estate Law Aid",
@@ -265,6 +263,23 @@
       "storage": "chatgpt_library:/Smarter Justice Preservation Vault/Builder Authorities/UNIVERSAL_SMARTER_JUSTICE__START_NOW__J17__ATOMIC_RELEASE_CLOSE_ALL_PROMPTS_CURRENT_STATE_FIDELITY_NO_LOSS__2026-08-09.zip",
       "status": "CURRENT_BUILDER_AUTHORITY",
       "role": "current Universal builder authority; exact J16 preservation, atomic release close, all-prompt successorship, current-state refresh discipline, specialty-fidelity evidence and concise handoff contract"
+    },
+    {
+      "product": "Universal Smarter Justice",
+      "artifactType": "platform_active_release",
+      "filename": "smarter-justice-comprehensive-consolidation-workspace-v2.0.0-pre28-LEAN-ACTIVE.zip",
+      "version": "2.0.0-pre28",
+      "sizeBytes": 132743756,
+      "sha256": "de14a191ec265061494498997b749b01cca78be0e8cbf566562c0e187071bbc2",
+      "storage": "chatgpt_library:/Smarter Justice Preservation Vault/Platform Releases/smarter-justice-comprehensive-consolidation-workspace-v2.0.0-pre28-LEAN-ACTIVE.zip",
+      "status": "CURRENT_LEAN_ACTIVE",
+      "role": "current Universal product under J17; Estate Law Aid v1.3.7 full-fidelity /estate runtime projection qualified; exact pre27 predecessor bound internally; 17/25 source slots accepted; not a production deployment receipt"
     }
-  ]
+  ],
+  "currentPointers": {
+    "activeProduct": "smarter-justice-comprehensive-consolidation-workspace-v2.0.0-pre28-LEAN-ACTIVE.zip",
+    "builderAuthority": "UNIVERSAL_SMARTER_JUSTICE__START_NOW__J17__ATOMIC_RELEASE_CLOSE_ALL_PROMPTS_CURRENT_STATE_FIDELITY_NO_LOSS__2026-08-09.zip",
+    "acceptedSourceSlots": 17,
+    "expectedSourceSlots": 25
+  }
 }
