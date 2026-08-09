@@ -2,12 +2,12 @@
   "name": "smarter-justice-exact-release-bootstrap",
   "version": "1.7.98",
   "private": true,
-  "description": "Verified runtime bootstrap and coordinated site-wide visual polish for the exact sealed Smarter Justice v1.7.98 source artifact.",
+  "description": "Verified runtime bootstrap and coordinated site-wide visual polish for the exact sealed Smarter Justice v1.7.98 source artifact, with the Universal Smarter Justice pre22 provider-agnostic AI gateway projection.",
   "engines": {
     "node": "22.x"
   },
   "scripts": {
-    "postinstall": "node scripts/bootstrap-sitewide-release.js",
+    "postinstall": "node scripts/bootstrap-sitewide-release.js && node scripts/apply-provider-agnostic-ai-gateway.js .runtime/smarter-justice-v1.7.98 && node --check .runtime/smarter-justice-v1.7.98/lib/centralAiGateway.js && node .runtime/smarter-justice-v1.7.98/tests/provider-agnostic-ai-gateway-pre22.test.js",
     "migrate": "npm --prefix .runtime/smarter-justice-v1.7.98 run migrate",
     "start": "npm --prefix .runtime/smarter-justice-v1.7.98 start"
   }
