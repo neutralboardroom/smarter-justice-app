@@ -23,12 +23,14 @@ jobs:
         with:
           persist-credentials: false
           fetch-depth: 0
+
       - name: Use Node 22
         uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
         with:
           node-version: '22.x'
           package-manager-cache: false
-      - name: Export clean inventory-locked source
+
+      - name: Export clean inventory-locked bootstrap source
         id: source
         run: |
           set -euo pipefail
@@ -36,42 +38,74 @@ jobs:
           rm -rf "$source"
           mkdir -p "$source"
           git archive --format=tar HEAD | tar -xf - -C "$source"
-          test "$(node -p "require('$source/package.json').version")" = "1.7.83"
+
+          root_version="$(node -p "require('$source/package.json').version")"
+          lock_version="$(node -p "require('$source/package-lock.json').version")"
+          test -n "$root_version"
+          test "$root_version" = "$lock_version"
+
           echo "path=$source" >> "$GITHUB_OUTPUT"
-      - name: Install dependencies outside inventory-locked source
-        id: dependencies
+          echo "version=$root_version" >> "$GITHUB_OUTPUT"
+          echo "Qualifying Smarter Justice bootstrap version $root_version"
+
+      - name: Install bootstrap package without lifecycle scripts
         env:
           SOURCE: ${{ steps.source.outputs.path }}
           npm_config_registry: https://registry.npmjs.org/
           npm_config_audit: 'false'
+          npm_config_fund: 'false'
         run: |
           set -euo pipefail
-          deps="$RUNNER_TEMP/smarter-justice-dependencies"
-          rm -rf "$deps"
-          mkdir -p "$deps"
-          cp "$SOURCE/package.json" "$SOURCE/package-lock.json" "$deps/"
-          npm ci --prefix "$deps" --no-audit
-          echo "node_path=$deps/node_modules" >> "$GITHUB_OUTPUT"
-      - name: Complete dependency-independent suite
+          npm ci --prefix "$SOURCE" --ignore-scripts --no-audit --no-fund
+
+      - name: Execute sealed runtime bootstrap and overlay acceptance
         working-directory: ${{ steps.source.outputs.path }}
         env:
-          NODE_PATH: ${{ steps.dependencies.outputs.node_path }}
-        run: npm test
-      - name: Generate deterministic SBOM
-        working-directory: ${{ steps.source.outputs.path }}
+          CI: 'true'
+          npm_config_registry: https://registry.npmjs.org/
+          npm_config_audit: 'false'
+          npm_config_fund: 'false'
+        run: npm run postinstall
+
+      - name: Resolve qualified runtime
+        id: runtime
         env:
-          NODE_PATH: ${{ steps.dependencies.outputs.node_path }}
+          SOURCE: ${{ steps.source.outputs.path }}
+          VERSION: ${{ steps.source.outputs.version }}
+        run: |
+          set -euo pipefail
+          runtime="$SOURCE/.runtime/smarter-justice-v$VERSION"
+          test -f "$runtime/package.json"
+          test -f "$runtime/package-lock.json"
+
+          runtime_version="$(node -p "require('$runtime/package.json').version")"
+          test "$runtime_version" = "$VERSION"
+
+          RUNTIME="$runtime" node - <<'NODE'
+          const pkg = require(process.env.RUNTIME + '/package.json');
+          for (const script of ['test', 'sbom', 'deployment:validate']) {
+            if (!pkg.scripts || !pkg.scripts[script]) {
+              throw new Error(`Qualified runtime is missing required script: ${script}`);
+            }
+          }
+          NODE
+
+          echo "path=$runtime" >> "$GITHUB_OUTPUT"
+          echo "Qualified runtime version $runtime_version matches bootstrap version $VERSION"
+
+      - name: Generate deterministic runtime SBOM
+        working-directory: ${{ steps.runtime.outputs.path }}
         run: npm run sbom
-      - name: Validate deployment kit
-        working-directory: ${{ steps.source.outputs.path }}
-        env:
-          NODE_PATH: ${{ steps.dependencies.outputs.node_path }}
+
+      - name: Validate runtime deployment kit
+        working-directory: ${{ steps.runtime.outputs.path }}
         run: npm run deployment:validate
-      - name: Upload SBOM evidence
+
+      - name: Upload runtime SBOM evidence
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
           name: smarter-justice-sbom-${{ github.sha }}
-          path: ${{ steps.source.outputs.path }}/SBOM.spdx.json
+          path: ${{ steps.runtime.outputs.path }}/SBOM.spdx.json
           if-no-files-found: error
           retention-days: 14
 
