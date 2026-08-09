@@ -1,0 +1,74 @@
+name: Inspect Smarter Justice AI production gate
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/inspect-ai-production-gate.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  TARGET_SHA: a092cbeb6df761c1ec71279b72969d614084db91
+
+jobs:
+  inspect-ai-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository history
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+        with:
+          fetch-depth: 0
+
+      - name: Extract exact sealed v1.7.98 runtime
+        run: |
+          set -euo pipefail
+          git checkout --detach "$TARGET_SHA"
+          test -f smarter-justice-v1.7.98-comprehensive-community-value.zip
+          rm -rf "$RUNNER_TEMP/sj-inspect"
+          mkdir -p "$RUNNER_TEMP/sj-inspect"
+          python3 - <<'PY'
+          import pathlib, zipfile, os
+          src=pathlib.Path('smarter-justice-v1.7.98-comprehensive-community-value.zip')
+          dst=pathlib.Path(os.environ['RUNNER_TEMP'])/'sj-inspect'
+          with zipfile.ZipFile(src) as z:
+              for info in z.infolist():
+                  name=info.filename.replace('\\','/')
+                  parts=pathlib.PurePosixPath(name).parts
+                  if pathlib.PurePosixPath(name).is_absolute() or '..' in parts:
+                      raise SystemExit(f'unsafe member {name}')
+              z.extractall(dst)
+          print('extracted', len(z.infolist()), 'members')
+          PY
+
+      - name: Locate production AI launch gates
+        run: |
+          set -euo pipefail
+          ROOT="$RUNNER_TEMP/sj-inspect/smarter-justice-v1.7.98"
+          test -d "$ROOT"
+          OUT="$RUNNER_TEMP/ai-production-gate-diagnostic.txt"
+          {
+            echo '=== exact source identity ==='
+            sha256sum smarter-justice-v1.7.98-comprehensive-community-value.zip
+            echo
+            echo '=== PRODUCTION_SOURCE_NOT_VERIFIED_OPEN ==='
+            grep -R -n -C 12 --exclude='*.map' 'PRODUCTION_SOURCE_NOT_VERIFIED_OPEN' "$ROOT" || true
+            echo
+            echo '=== production source verification tokens ==='
+            grep -R -n -C 8 --exclude='*.map' -E 'PRODUCTION_SOURCE|SOURCE_VERIFIED|VERIFIED_OPEN|AI_.*VERIF|OPENAI_.*VERIF' "$ROOT/lib" "$ROOT/server.js" "$ROOT/.env.example" 2>/dev/null || true
+            echo
+            echo '=== AI enable / launch controls ==='
+            grep -R -n -C 6 --exclude='*.map' -E 'OPENAI_AI_ENABLED|AI_GLOBAL_KILL_SWITCH|AI_ANONYMOUS_ENABLED|AI_TOOL_SJ_STARTING_POINT_ENABLED|liveSmoke|launchState|controlState|controlReason' "$ROOT/lib" "$ROOT/server.js" "$ROOT/.env.example" 2>/dev/null || true
+          } > "$OUT"
+          cat "$OUT"
+
+      - name: Upload gate diagnostic
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: smarter-justice-ai-production-gate-diagnostic-${{ github.run_id }}
+          path: ${{ runner.temp }}/ai-production-gate-diagnostic.txt
+          if-no-files-found: error
+          retention-days: 7
