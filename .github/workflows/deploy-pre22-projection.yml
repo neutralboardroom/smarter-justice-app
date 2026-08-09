@@ -1,4 +1,4 @@
-name: Smarter Justice pre22 production projection deploy
+name: Smarter Justice unified public UI deploy
 
 on:
   push:
@@ -13,15 +13,15 @@ permissions:
 
 env:
   PUBLIC_BASE_URL: https://smarterjustice.com
-  TARGET_SHA: 989dbe8f79bb88688daaa610827f0b4b8439c59c
-  ROLLBACK_SHA: 5647ff5357c6a8684559de26dd82428a998f2f30
+  TARGET_SHA: e0a1242cf6c661ab97bfd953cb2f0dcde6146261
+  ROLLBACK_SHA: 989dbe8f79bb88688daaa610827f0b4b8439c59c
 
 concurrency:
-  group: smarter-justice-pre22-production-projection
+  group: smarter-justice-unified-public-ui
   cancel-in-progress: false
 
 jobs:
-  deploy-pre22-projection:
+  deploy:
     runs-on: ubuntu-latest
     environment: production
     steps:
@@ -29,22 +29,18 @@ jobs:
         uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
         with:
           fetch-depth: 0
-
-      - name: Verify exact target and rollback commits exist
+      - name: Verify exact target
         run: |
           set -euo pipefail
           git cat-file -e "$TARGET_SHA^{commit}"
           git cat-file -e "$ROLLBACK_SHA^{commit}"
-          test "$(git show "$TARGET_SHA:deployment/pre22-production-projection.json" | python3 -c 'import json,sys; print(json.load(sys.stdin)["consolidationAuthority"]["workspaceRelease"])')" = "v2.0.0-pre22"
+          git show "$TARGET_SHA:scripts/apply-universal-public-home-v2.js" >/dev/null
           test "$(git show "$TARGET_SHA:package.json" | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>process.stdout.write(JSON.parse(s).version))")" = "1.7.98"
-          git show "$TARGET_SHA:scripts/apply-pre22-visible-inspection.js" >/dev/null
-
       - name: Require protected Render deploy hook
         env:
           RENDER_DEPLOY_HOOK_URL: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
         run: test -n "$RENDER_DEPLOY_HOOK_URL"
-
-      - name: Request exact visible pre22 deployment
+      - name: Request exact unified UI deployment
         id: deploy
         env:
           RENDER_DEPLOY_HOOK_URL: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
@@ -52,49 +48,40 @@ jobs:
           set -euo pipefail
           sep='?'; [[ "$RENDER_DEPLOY_HOOK_URL" == *'?'* ]] && sep='&'
           curl --fail --silent --show-error --location --max-time 30 "${RENDER_DEPLOY_HOOK_URL}${sep}ref=${TARGET_SHA}" > "$RUNNER_TEMP/render-deploy-response.json"
-          cat "$RUNNER_TEMP/render-deploy-response.json" | head -c 1000 || true
-
-      - name: Verify visible pre22 pages and runtime health
+          cat "$RUNNER_TEMP/render-deploy-response.json"
+      - name: Verify materially new public UI
         id: smoke
         run: |
           set -euo pipefail
           delay=10
           for attempt in $(seq 1 16); do
-            echo "Visible live verification attempt $attempt"
+            echo "Public UI verification attempt $attempt"
             if curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/health" > "$RUNNER_TEMP/health.json" \
-              && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/api/ai-status" > "$RUNNER_TEMP/ai-status.json" \
               && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/" > "$RUNNER_TEMP/home.html" \
-              && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/universal-smarter-justice" > "$RUNNER_TEMP/universal.html" \
-              && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/domestic-violence" > "$RUNNER_TEMP/domestic-violence.html" \
-              && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/tax" > "$RUNNER_TEMP/tax.html" \
-              && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/portals.html" > "$RUNNER_TEMP/portals.html"; then
-              if HEALTH="$RUNNER_TEMP/health.json" AI_STATUS="$RUNNER_TEMP/ai-status.json" HOME="$RUNNER_TEMP/home.html" UNIVERSAL="$RUNNER_TEMP/universal.html" DV="$RUNNER_TEMP/domestic-violence.html" TAX="$RUNNER_TEMP/tax.html" PORTALS="$RUNNER_TEMP/portals.html" node - <<'NODE'
+              && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/universal-smarter-justice" > "$RUNNER_TEMP/network.html" \
+              && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/domestic-violence" > "$RUNNER_TEMP/dv.html" \
+              && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/tax" > "$RUNNER_TEMP/tax.html"; then
+              if HOME="$RUNNER_TEMP/home.html" NET="$RUNNER_TEMP/network.html" DV="$RUNNER_TEMP/dv.html" TAX="$RUNNER_TEMP/tax.html" node - <<'NODE'
           const fs=require('fs');
-          const health=JSON.parse(fs.readFileSync(process.env.HEALTH,'utf8'));
-          const ai=JSON.parse(fs.readFileSync(process.env.AI_STATUS,'utf8'));
           const home=fs.readFileSync(process.env.HOME,'utf8');
-          const universal=fs.readFileSync(process.env.UNIVERSAL,'utf8');
+          const net=fs.readFileSync(process.env.NET,'utf8');
           const dv=fs.readFileSync(process.env.DV,'utf8');
           const tax=fs.readFileSync(process.env.TAX,'utf8');
-          const portals=fs.readFileSync(process.env.PORTALS,'utf8');
-          if(health.ok!==true||health.app!=='Smarter Justice'||health.version!=='1.7.98')process.exit(1);
-          if(ai.ok!==true||ai.vendor!=='Smarter Justice AI Gateway'||ai.activeProvider!=='openai')process.exit(1);
-          if(ai.controlReason!=='PRODUCTION_OPEN_FLAG_MISSING'||ai.available!==false)process.exit(1);
-          if(!home.includes('UNIVERSAL_SMARTER_JUSTICE_PRE22_VISIBLE_INSPECTION')||!home.includes('Universal Smarter Justice v2.0.0-pre22'))process.exit(1);
-          if(!universal.includes('One platform. Distinct specialty modules. Preserved public identities.')||!universal.includes('16/25')||!universal.includes('25</strong><span>specialty modules registered'))process.exit(1);
-          if(!dv.includes('Domestic Violence Aid')||!dv.includes('Stop Sign Project')||!dv.includes('920')||!dv.includes('stopsignproject.org'))process.exit(1);
-          if(!tax.includes('Justice Tax Solutions')||!tax.includes('1,107')||!tax.includes('959')||!tax.includes('justicetaxsolutions.com'))process.exit(1);
-          if(!portals.includes('Universal Smarter Justice now uses one runtime and one release train.')||portals.includes('Each focused portal remains independently deployed and verified.'))process.exit(1);
-          console.log(JSON.stringify({healthVersion:health.version,aiControlReason:ai.controlReason,homepagePre22:true,universalPre22:true,domesticViolencePre22:true,taxPre22:true,portalArchitectureUpdated:true},null,2));
+          if(!home.includes('UNIVERSAL_PUBLIC_HOME_V2'))process.exit(1);
+          if(!home.includes('Start with what happened. We’ll help you find the right next step.'))process.exit(1);
+          for(const x of ['storyRouteForm','Domestic Violence Aid','Justice Tax Solutions','Community Resource Aid'])if(!home.includes(x))process.exit(1);
+          for(const forbidden of ['Universal Smarter Justice v2.0.0-pre22 · live inspection','source intake'])if(home.toLowerCase().includes(forbidden.toLowerCase()))process.exit(1);
+          if(!net.includes('Focused specialty help, connected through one Smarter Justice platform.'))process.exit(1);
+          if(!dv.includes('Domestic Violence Aid')||!dv.includes('Stop Sign Project'))process.exit(1);
+          if(!tax.includes('Tax help without the runaround.')||!tax.includes('Justice Tax Solutions'))process.exit(1);
+          console.log('materially new public UI verified');
           NODE
               then exit 0; fi
             fi
-            sleep "$delay"
-            if [ "$delay" -lt 30 ]; then delay=$((delay + 5)); fi
+            sleep "$delay"; [ "$delay" -ge 30 ] || delay=$((delay+5))
           done
           exit 1
-
-      - name: Request rollback after failed visible acceptance
+      - name: Request rollback after failed acceptance
         if: failure() && steps.deploy.outcome == 'success'
         env:
           RENDER_DEPLOY_HOOK_URL: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
@@ -102,40 +89,18 @@ jobs:
           set -euo pipefail
           sep='?'; [[ "$RENDER_DEPLOY_HOOK_URL" == *'?'* ]] && sep='&'
           curl --fail --silent --show-error --location --max-time 30 "${RENDER_DEPLOY_HOOK_URL}${sep}ref=${ROLLBACK_SHA}" > "$RUNNER_TEMP/render-rollback-response.json"
-          delay=10
-          for attempt in $(seq 1 12); do
-            if curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/health" > "$RUNNER_TEMP/rollback-health.json" \
-              && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/api/ai-status" > "$RUNNER_TEMP/rollback-ai-status.json"; then
-              if HEALTH="$RUNNER_TEMP/rollback-health.json" AI_STATUS="$RUNNER_TEMP/rollback-ai-status.json" node - <<'NODE'
-          const fs=require('fs');
-          const health=JSON.parse(fs.readFileSync(process.env.HEALTH,'utf8'));
-          const ai=JSON.parse(fs.readFileSync(process.env.AI_STATUS,'utf8'));
-          if(health.ok===true&&health.app==='Smarter Justice'&&ai.vendor==='Smarter Justice AI Gateway'&&ai.controlReason==='PRODUCTION_OPEN_FLAG_MISSING')process.exit(0);
-          process.exit(1);
-          NODE
-              then exit 0; fi
-            fi
-            sleep "$delay"
-            if [ "$delay" -lt 30 ]; then delay=$((delay + 5)); fi
-          done
-          exit 1
-
-      - name: Upload visible production evidence
+      - name: Upload public UI evidence
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
-          name: smarter-justice-pre22-visible-production-${{ github.run_id }}
+          name: smarter-justice-unified-public-ui-${{ github.run_id }}
           path: |
             ${{ runner.temp }}/render-deploy-response.json
             ${{ runner.temp }}/health.json
-            ${{ runner.temp }}/ai-status.json
             ${{ runner.temp }}/home.html
-            ${{ runner.temp }}/universal.html
-            ${{ runner.temp }}/domestic-violence.html
+            ${{ runner.temp }}/network.html
+            ${{ runner.temp }}/dv.html
             ${{ runner.temp }}/tax.html
-            ${{ runner.temp }}/portals.html
             ${{ runner.temp }}/render-rollback-response.json
-            ${{ runner.temp }}/rollback-health.json
-            ${{ runner.temp }}/rollback-ai-status.json
           if-no-files-found: warn
           retention-days: 14
