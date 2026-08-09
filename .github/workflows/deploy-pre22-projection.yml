@@ -1,4 +1,4 @@
-name: Smarter Justice unified public UI deploy
+name: Smarter Justice navigation polish deploy
 
 on:
   push:
@@ -13,11 +13,11 @@ permissions:
 
 env:
   PUBLIC_BASE_URL: https://smarterjustice.com
-  TARGET_SHA: e0a1242cf6c661ab97bfd953cb2f0dcde6146261
-  ROLLBACK_SHA: 989dbe8f79bb88688daaa610827f0b4b8439c59c
+  TARGET_SHA: 96177835180ddd28b392c3c358c4938d55160eda
+  ROLLBACK_SHA: e0a1242cf6c661ab97bfd953cb2f0dcde6146261
 
 concurrency:
-  group: smarter-justice-unified-public-ui
+  group: smarter-justice-navigation-polish
   cancel-in-progress: false
 
 jobs:
@@ -34,13 +34,13 @@ jobs:
           set -euo pipefail
           git cat-file -e "$TARGET_SHA^{commit}"
           git cat-file -e "$ROLLBACK_SHA^{commit}"
-          git show "$TARGET_SHA:scripts/apply-universal-public-home-v2.js" >/dev/null
+          git show "$TARGET_SHA:scripts/apply-universal-navigation-polish-v1.js" >/dev/null
           test "$(git show "$TARGET_SHA:package.json" | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>process.stdout.write(JSON.parse(s).version))")" = "1.7.98"
       - name: Require protected Render deploy hook
         env:
           RENDER_DEPLOY_HOOK_URL: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
         run: test -n "$RENDER_DEPLOY_HOOK_URL"
-      - name: Request exact unified UI deployment
+      - name: Request exact navigation-polish deployment
         id: deploy
         env:
           RENDER_DEPLOY_HOOK_URL: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
@@ -49,32 +49,38 @@ jobs:
           sep='?'; [[ "$RENDER_DEPLOY_HOOK_URL" == *'?'* ]] && sep='&'
           curl --fail --silent --show-error --location --max-time 30 "${RENDER_DEPLOY_HOOK_URL}${sep}ref=${TARGET_SHA}" > "$RUNNER_TEMP/render-deploy-response.json"
           cat "$RUNNER_TEMP/render-deploy-response.json"
-      - name: Verify materially new public UI
+      - name: Verify mobile navigation and direct specialty entrances
         id: smoke
         run: |
           set -euo pipefail
           delay=10
           for attempt in $(seq 1 16); do
-            echo "Public UI verification attempt $attempt"
+            echo "Navigation-polish verification attempt $attempt"
             if curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/health" > "$RUNNER_TEMP/health.json" \
+              && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/api/ai-status" > "$RUNNER_TEMP/ai-status.json" \
               && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/" > "$RUNNER_TEMP/home.html" \
-              && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/universal-smarter-justice" > "$RUNNER_TEMP/network.html" \
-              && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/domestic-violence" > "$RUNNER_TEMP/dv.html" \
-              && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/tax" > "$RUNNER_TEMP/tax.html"; then
-              if HOME="$RUNNER_TEMP/home.html" NET="$RUNNER_TEMP/network.html" DV="$RUNNER_TEMP/dv.html" TAX="$RUNNER_TEMP/tax.html" node - <<'NODE'
+              && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/family-law" > "$RUNNER_TEMP/family.html" \
+              && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/injury" > "$RUNNER_TEMP/injury.html" \
+              && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/rights-defense" > "$RUNNER_TEMP/rights.html" \
+              && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/work-business" > "$RUNNER_TEMP/work.html" \
+              && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/property-debt" > "$RUNNER_TEMP/property.html" \
+              && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/estate-benefits-records" > "$RUNNER_TEMP/estatehub.html" \
+              && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/divorce" > "$RUNNER_TEMP/divorce.html" \
+              && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/personal-injury" > "$RUNNER_TEMP/pi.html" \
+              && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/employment" > "$RUNNER_TEMP/employment.html"; then
+              if HOME="$RUNNER_TEMP/home.html" FAMILY="$RUNNER_TEMP/family.html" INJURY="$RUNNER_TEMP/injury.html" RIGHTS="$RUNNER_TEMP/rights.html" WORK="$RUNNER_TEMP/work.html" PROPERTY="$RUNNER_TEMP/property.html" ESTATEHUB="$RUNNER_TEMP/estatehub.html" DIVORCE="$RUNNER_TEMP/divorce.html" PI="$RUNNER_TEMP/pi.html" EMP="$RUNNER_TEMP/employment.html" AI="$RUNNER_TEMP/ai-status.json" node - <<'NODE'
           const fs=require('fs');
           const home=fs.readFileSync(process.env.HOME,'utf8');
-          const net=fs.readFileSync(process.env.NET,'utf8');
-          const dv=fs.readFileSync(process.env.DV,'utf8');
-          const tax=fs.readFileSync(process.env.TAX,'utf8');
-          if(!home.includes('UNIVERSAL_PUBLIC_HOME_V2'))process.exit(1);
-          if(!home.includes('Start with what happened. We’ll help you find the right next step.'))process.exit(1);
-          for(const x of ['storyRouteForm','Domestic Violence Aid','Justice Tax Solutions','Community Resource Aid'])if(!home.includes(x))process.exit(1);
-          for(const forbidden of ['Universal Smarter Justice v2.0.0-pre22 · live inspection','source intake'])if(home.toLowerCase().includes(forbidden.toLowerCase()))process.exit(1);
-          if(!net.includes('Focused specialty help, connected through one Smarter Justice platform.'))process.exit(1);
-          if(!dv.includes('Domestic Violence Aid')||!dv.includes('Stop Sign Project'))process.exit(1);
-          if(!tax.includes('Tax help without the runaround.')||!tax.includes('Justice Tax Solutions'))process.exit(1);
-          console.log('materially new public UI verified');
+          const docs=['FAMILY','INJURY','RIGHTS','WORK','PROPERTY','ESTATEHUB','DIVORCE','PI','EMP'].map(k=>fs.readFileSync(process.env[k],'utf8'));
+          if(!home.includes('UNIVERSAL_PUBLIC_HOME_V2')||!home.includes('UNIVERSAL_NAVIGATION_POLISH_V1'))process.exit(1);
+          if(!home.includes('u-menu-toggle')||!home.includes('u-mobile-menu'))process.exit(1);
+          for(const href of ['/family-law','/injury','/rights-defense','/work-business','/property-debt','/estate-benefits-records'])if(!home.includes(`href="${href}"`))process.exit(1);
+          if(home.includes('href="/portals.html"><div class="u-icon">'))process.exit(1);
+          for(const doc of docs)if(!doc.includes('u-menu-toggle')||!doc.includes('u-mobile-menu'))process.exit(1);
+          if(!docs[0].includes('Divorce Law Aid')||!docs[1].includes('Personal Injury Law Aid')||!docs[2].includes('Civil Rights & Police Misconduct Law Aid')||!docs[3].includes('Employment Law Aid')||!docs[4].includes('Real Estate Law Aid')||!docs[5].includes('Estate Law Aid'))process.exit(1);
+          if(!docs[6].includes('Divorce Law Aid')||!docs[7].includes('Personal Injury Law Aid')||!docs[8].includes('Employment Law Aid'))process.exit(1);
+          const ai=JSON.parse(fs.readFileSync(process.env.AI,'utf8'));if(ai.vendor!=='Smarter Justice AI Gateway'||ai.activeProvider!=='openai')process.exit(1);
+          console.log('mobile navigation and direct specialty entrances verified');
           NODE
               then exit 0; fi
             fi
@@ -89,18 +95,25 @@ jobs:
           set -euo pipefail
           sep='?'; [[ "$RENDER_DEPLOY_HOOK_URL" == *'?'* ]] && sep='&'
           curl --fail --silent --show-error --location --max-time 30 "${RENDER_DEPLOY_HOOK_URL}${sep}ref=${ROLLBACK_SHA}" > "$RUNNER_TEMP/render-rollback-response.json"
-      - name: Upload public UI evidence
+      - name: Upload navigation-polish evidence
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
-          name: smarter-justice-unified-public-ui-${{ github.run_id }}
+          name: smarter-justice-navigation-polish-${{ github.run_id }}
           path: |
             ${{ runner.temp }}/render-deploy-response.json
             ${{ runner.temp }}/health.json
+            ${{ runner.temp }}/ai-status.json
             ${{ runner.temp }}/home.html
-            ${{ runner.temp }}/network.html
-            ${{ runner.temp }}/dv.html
-            ${{ runner.temp }}/tax.html
+            ${{ runner.temp }}/family.html
+            ${{ runner.temp }}/injury.html
+            ${{ runner.temp }}/rights.html
+            ${{ runner.temp }}/work.html
+            ${{ runner.temp }}/property.html
+            ${{ runner.temp }}/estatehub.html
+            ${{ runner.temp }}/divorce.html
+            ${{ runner.temp }}/pi.html
+            ${{ runner.temp }}/employment.html
             ${{ runner.temp }}/render-rollback-response.json
           if-no-files-found: warn
           retention-days: 14
