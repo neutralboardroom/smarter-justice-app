@@ -13,7 +13,7 @@ permissions:
 
 env:
   PUBLIC_BASE_URL: https://smarterjustice.com
-  TARGET_SHA: 96177835180ddd28b392c3c358c4938d55160eda
+  TARGET_SHA: d23d92d341683b8cb7c53f659f56bca49264ca7e
   ROLLBACK_SHA: e0a1242cf6c661ab97bfd953cb2f0dcde6146261
 
 concurrency:
@@ -35,6 +35,7 @@ jobs:
           git cat-file -e "$TARGET_SHA^{commit}"
           git cat-file -e "$ROLLBACK_SHA^{commit}"
           git show "$TARGET_SHA:scripts/apply-universal-navigation-polish-v1.js" >/dev/null
+          git show "$TARGET_SHA:scripts/fix-navigation-polish-test-scope-v1.js" >/dev/null
           test "$(git show "$TARGET_SHA:package.json" | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>process.stdout.write(JSON.parse(s).version))")" = "1.7.98"
       - name: Require protected Render deploy hook
         env:
