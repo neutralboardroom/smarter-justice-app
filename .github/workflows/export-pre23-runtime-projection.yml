@@ -56,5 +56,6 @@ jobs:
         with:
           name: smarter-justice-pre23-runtime-projection-${{ github.sha }}
           path: ${{ runner.temp }}/pre23-runtime-projection
+          include-hidden-files: true
           if-no-files-found: error
           retention-days: 14
