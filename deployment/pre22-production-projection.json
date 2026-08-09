@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "1.0.0",
+  "createdAt": "2026-08-08T20:25:00-04:00",
+  "targetHost": "https://smarterjustice.com",
+  "consolidationAuthority": {
+    "artifact": "smarter-justice-comprehensive-consolidation-workspace-v2.0.0-pre22-LEAN-ACTIVE.zip",
+    "workspaceRelease": "v2.0.0-pre22",
+    "sha256": "7a6a5886ac9afa79cd25803448345359d1e36557baefaddbd2323ee9673838e9",
+    "sizeBytes": 107035347,
+    "manifestTrackedFiles": 30006,
+    "status": "QUALIFIED_LEAN_ACTIVE"
+  },
+  "executableShell": {
+    "repository": "neutralboardroom/smarter-justice-app",
+    "sealedRuntimeVersion": "1.7.98",
+    "strategy": "QUALIFIED_RUNTIME_PROJECTION",
+    "reason": "The pre22 LEAN-ACTIVE artifact is a consolidation workspace and source-of-truth package, not a directly deployable Render web-server package. Production uses the known-good sealed Smarter Justice web runtime and layers accepted pre22 projection changes onto it."
+  },
+  "pre22Projection": {
+    "domesticViolenceModule": "domestic-violence-aid",
+    "domesticViolenceLegacyBrand": "Stop Sign Project",
+    "domesticViolenceLegacyHosts": ["stopsignproject.org", "www.stopsignproject.org"],
+    "domesticViolenceProductionHostCutover": false,
+    "justiceTaxSolutionsModule": "justice-tax-solutions",
+    "justiceTaxSolutionsLegacyHost": "justicetaxsolutions.com",
+    "specialtyModuleCount": 25,
+    "acceptedSourceCount": 16,
+    "remainingSourceCount": 9
+  },
+  "aiGateway": {
+    "architecture": "PROVIDER_AGNOSTIC_GATEWAY",
+    "productionActiveProvider": "openai",
+    "registeredDisabledProviders": ["google-gemini", "anthropic-claude", "xai-grok"],
+    "automaticFallback": false,
+    "multiModelComparison": false,
+    "secretPolicy": "Server-side environment secrets only; no key values in GitHub, artifacts, logs, screenshots, public pages, or chat."
+  },
+  "rollback": {
+    "preChangeMainCommit": "f01f0eb181efa7793b4f56f6bf1ce04903b2022e",
+    "preserve": true
+  }
+}
