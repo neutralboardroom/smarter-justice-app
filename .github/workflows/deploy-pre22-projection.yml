@@ -13,8 +13,8 @@ permissions:
 
 env:
   PUBLIC_BASE_URL: https://smarterjustice.com
-  TARGET_SHA: a092cbeb6df761c1ec71279b72969d614084db91
-  ROLLBACK_SHA: f01f0eb181efa7793b4f56f6bf1ce04903b2022e
+  TARGET_SHA: 5647ff5357c6a8684559de26dd82428a998f2f30
+  ROLLBACK_SHA: a092cbeb6df761c1ec71279b72969d614084db91
 
 concurrency:
   group: smarter-justice-pre22-production-projection
@@ -37,6 +37,7 @@ jobs:
           git cat-file -e "$ROLLBACK_SHA^{commit}"
           test "$(git show "$TARGET_SHA:deployment/pre22-production-projection.json" | python3 -c 'import json,sys; print(json.load(sys.stdin)["consolidationAuthority"]["workspaceRelease"])')" = "v2.0.0-pre22"
           test "$(git show "$TARGET_SHA:package.json" | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>process.stdout.write(JSON.parse(s).version))")" = "1.7.98"
+          git show "$TARGET_SHA:scripts/apply-pre22-ai-production-control.js" >/dev/null
 
       - name: Require protected Render deploy hook
         env:
@@ -57,7 +58,7 @@ jobs:
           print(p.read_text(errors='replace')[:1000])
           PY
 
-      - name: Verify live health and provider-agnostic gateway
+      - name: Verify live health and narrow AI source promotion
         id: smoke
         run: |
           set -euo pipefail
@@ -77,8 +78,9 @@ jobs:
           const ids=Array.isArray(ai.supportedProviderIds)?ai.supportedProviderIds:[];
           for(const id of ['openai','google-gemini','anthropic-claude','xai-grok'])if(!ids.includes(id))process.exit(1);
           if(ai.providerFallbackEnabled!==false||ai.multiProviderComparisonEnabled!==false)process.exit(1);
+          if(ai.controlReason!=='PRODUCTION_OPEN_FLAG_MISSING'||ai.available!==false)process.exit(1);
           if(!/Smarter Justice/i.test(home)||!/Tell us what happened/i.test(home))process.exit(1);
-          console.log(JSON.stringify({healthVersion:health.version,aiAvailable:Boolean(ai.available),activeProvider:ai.activeProvider,supportedProviderIds:ids,providerFallbackEnabled:ai.providerFallbackEnabled,multiProviderComparisonEnabled:ai.multiProviderComparisonEnabled},null,2));
+          console.log(JSON.stringify({healthVersion:health.version,aiAvailable:ai.available,controlState:ai.controlState,controlReason:ai.controlReason,activeProvider:ai.activeProvider,supportedProviderIds:ids},null,2));
           NODE
               then
                 cp "$RUNNER_TEMP/ai-status.json" "$RUNNER_TEMP/pre22-live-ai-status.json"
@@ -106,7 +108,7 @@ jobs:
           const fs=require('fs');
           const health=JSON.parse(fs.readFileSync(process.env.HEALTH,'utf8'));
           const ai=JSON.parse(fs.readFileSync(process.env.AI_STATUS,'utf8'));
-          if(health.ok===true&&health.app==='Smarter Justice'&&ai.vendor!=='Smarter Justice AI Gateway')process.exit(0);
+          if(health.ok===true&&health.app==='Smarter Justice'&&ai.vendor==='Smarter Justice AI Gateway'&&ai.controlReason==='PRODUCTION_SOURCE_NOT_VERIFIED_OPEN')process.exit(0);
           process.exit(1);
           NODE
               then exit 0; fi
