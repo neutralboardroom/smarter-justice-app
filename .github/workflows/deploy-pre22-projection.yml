@@ -1,0 +1,134 @@
+name: Smarter Justice pre22 production projection deploy
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/deploy-pre22-projection.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  PUBLIC_BASE_URL: https://smarterjustice.com
+  TARGET_SHA: a092cbeb6df761c1ec71279b72969d614084db91
+  ROLLBACK_SHA: f01f0eb181efa7793b4f56f6bf1ce04903b2022e
+
+concurrency:
+  group: smarter-justice-pre22-production-projection
+  cancel-in-progress: false
+
+jobs:
+  deploy-pre22-projection:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: Checkout deployment workflow commit
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+        with:
+          fetch-depth: 0
+
+      - name: Verify exact target and rollback commits exist
+        run: |
+          set -euo pipefail
+          git cat-file -e "$TARGET_SHA^{commit}"
+          git cat-file -e "$ROLLBACK_SHA^{commit}"
+          test "$(git show "$TARGET_SHA:deployment/pre22-production-projection.json" | python3 -c 'import json,sys; print(json.load(sys.stdin)["consolidationAuthority"]["workspaceRelease"])')" = "v2.0.0-pre22"
+          test "$(git show "$TARGET_SHA:package.json" | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>process.stdout.write(JSON.parse(s).version))")" = "1.7.98"
+
+      - name: Require protected Render deploy hook
+        env:
+          RENDER_DEPLOY_HOOK_URL: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+        run: test -n "$RENDER_DEPLOY_HOOK_URL"
+
+      - name: Request exact pre22 projection deployment
+        id: deploy
+        env:
+          RENDER_DEPLOY_HOOK_URL: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+        run: |
+          set -euo pipefail
+          sep='?'; [[ "$RENDER_DEPLOY_HOOK_URL" == *'?'* ]] && sep='&'
+          curl --fail --silent --show-error --location --max-time 30 "${RENDER_DEPLOY_HOOK_URL}${sep}ref=${TARGET_SHA}" > "$RUNNER_TEMP/render-deploy-response.json"
+          python3 - <<'PY'
+          import os, pathlib
+          p=pathlib.Path(os.environ['RUNNER_TEMP'])/'render-deploy-response.json'
+          print(p.read_text(errors='replace')[:1000])
+          PY
+
+      - name: Verify live health and provider-agnostic gateway
+        id: smoke
+        run: |
+          set -euo pipefail
+          delay=10
+          for attempt in $(seq 1 14); do
+            echo "Live verification attempt $attempt"
+            if curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/health" > "$RUNNER_TEMP/health.json" \
+              && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/api/ai-status" > "$RUNNER_TEMP/ai-status.json" \
+              && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/" > "$RUNNER_TEMP/home.html"; then
+              if HEALTH="$RUNNER_TEMP/health.json" AI_STATUS="$RUNNER_TEMP/ai-status.json" HOME="$RUNNER_TEMP/home.html" node - <<'NODE'
+          const fs=require('fs');
+          const health=JSON.parse(fs.readFileSync(process.env.HEALTH,'utf8'));
+          const ai=JSON.parse(fs.readFileSync(process.env.AI_STATUS,'utf8'));
+          const home=fs.readFileSync(process.env.HOME,'utf8');
+          if(health.ok!==true||health.app!=='Smarter Justice'||health.version!=='1.7.98')process.exit(1);
+          if(ai.ok!==true||ai.vendor!=='Smarter Justice AI Gateway'||ai.activeProvider!=='openai')process.exit(1);
+          const ids=Array.isArray(ai.supportedProviderIds)?ai.supportedProviderIds:[];
+          for(const id of ['openai','google-gemini','anthropic-claude','xai-grok'])if(!ids.includes(id))process.exit(1);
+          if(ai.providerFallbackEnabled!==false||ai.multiProviderComparisonEnabled!==false)process.exit(1);
+          if(!/Smarter Justice/i.test(home)||!/Tell us what happened/i.test(home))process.exit(1);
+          console.log(JSON.stringify({healthVersion:health.version,aiAvailable:Boolean(ai.available),activeProvider:ai.activeProvider,supportedProviderIds:ids,providerFallbackEnabled:ai.providerFallbackEnabled,multiProviderComparisonEnabled:ai.multiProviderComparisonEnabled},null,2));
+          NODE
+              then
+                cp "$RUNNER_TEMP/ai-status.json" "$RUNNER_TEMP/pre22-live-ai-status.json"
+                exit 0
+              fi
+            fi
+            sleep "$delay"
+            if [ "$delay" -lt 30 ]; then delay=$((delay + 5)); fi
+          done
+          exit 1
+
+      - name: Request rollback after failed live acceptance
+        if: failure() && steps.deploy.outcome == 'success'
+        env:
+          RENDER_DEPLOY_HOOK_URL: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+        run: |
+          set -euo pipefail
+          sep='?'; [[ "$RENDER_DEPLOY_HOOK_URL" == *'?'* ]] && sep='&'
+          curl --fail --silent --show-error --location --max-time 30 "${RENDER_DEPLOY_HOOK_URL}${sep}ref=${ROLLBACK_SHA}" > "$RUNNER_TEMP/render-rollback-response.json"
+          delay=10
+          for attempt in $(seq 1 12); do
+            if curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/health" > "$RUNNER_TEMP/rollback-health.json" \
+              && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/api/ai-status" > "$RUNNER_TEMP/rollback-ai-status.json"; then
+              if HEALTH="$RUNNER_TEMP/rollback-health.json" AI_STATUS="$RUNNER_TEMP/rollback-ai-status.json" node - <<'NODE'
+          const fs=require('fs');
+          const health=JSON.parse(fs.readFileSync(process.env.HEALTH,'utf8'));
+          const ai=JSON.parse(fs.readFileSync(process.env.AI_STATUS,'utf8'));
+          if(health.ok===true&&health.app==='Smarter Justice'&&ai.vendor!=='Smarter Justice AI Gateway')process.exit(0);
+          process.exit(1);
+          NODE
+              then exit 0; fi
+            fi
+            sleep "$delay"
+            if [ "$delay" -lt 30 ]; then delay=$((delay + 5)); fi
+          done
+          exit 1
+
+      - name: Upload production projection evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: smarter-justice-pre22-production-projection-${{ github.run_id }}
+          path: |
+            ${{ runner.temp }}/render-deploy-response.json
+            ${{ runner.temp }}/health.json
+            ${{ runner.temp }}/ai-status.json
+            ${{ runner.temp }}/pre22-live-ai-status.json
+            ${{ runner.temp }}/home.html
+            ${{ runner.temp }}/render-rollback-response.json
+            ${{ runner.temp }}/rollback-health.json
+            ${{ runner.temp }}/rollback-ai-status.json
+          if-no-files-found: warn
+          retention-days: 14
