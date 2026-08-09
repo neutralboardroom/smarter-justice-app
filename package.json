@@ -2,12 +2,12 @@
   "name": "smarter-justice-exact-release-bootstrap",
   "version": "1.7.98",
   "private": true,
-  "description": "Verified runtime bootstrap and coordinated site-wide visual polish for the exact sealed Smarter Justice v1.7.98 source artifact, with the Universal Smarter Justice pre22 provider-agnostic AI gateway and narrow AI runtime-control projection.",
+  "description": "Verified sealed Smarter Justice v1.7.98 runtime with the Universal Smarter Justice v2.0.0-pre22 provider gateway, narrow AI runtime control, and visible consolidation inspection projection.",
   "engines": {
     "node": "22.x"
   },
   "scripts": {
-    "postinstall": "node scripts/bootstrap-sitewide-release.js && node scripts/apply-provider-agnostic-ai-gateway.js .runtime/smarter-justice-v1.7.98 && node --check .runtime/smarter-justice-v1.7.98/lib/centralAiGateway.js && node .runtime/smarter-justice-v1.7.98/tests/provider-agnostic-ai-gateway-pre22.test.js && node scripts/apply-pre22-ai-production-control.js .runtime/smarter-justice-v1.7.98 && node --check .runtime/smarter-justice-v1.7.98/lib/featureControlPlane.js && node .runtime/smarter-justice-v1.7.98/tests/ai-production-control-pre22.test.js",
+    "postinstall": "node scripts/bootstrap-sitewide-release.js && node scripts/apply-provider-agnostic-ai-gateway.js .runtime/smarter-justice-v1.7.98 && node --check .runtime/smarter-justice-v1.7.98/lib/centralAiGateway.js && node .runtime/smarter-justice-v1.7.98/tests/provider-agnostic-ai-gateway-pre22.test.js && node scripts/apply-pre22-ai-production-control.js .runtime/smarter-justice-v1.7.98 && node --check .runtime/smarter-justice-v1.7.98/lib/featureControlPlane.js && node .runtime/smarter-justice-v1.7.98/tests/ai-production-control-pre22.test.js && node scripts/apply-pre22-visible-inspection.js .runtime/smarter-justice-v1.7.98 && node .runtime/smarter-justice-v1.7.98/tests/visible-pre22-inspection.test.js",
     "migrate": "npm --prefix .runtime/smarter-justice-v1.7.98 run migrate",
     "start": "npm --prefix .runtime/smarter-justice-v1.7.98 start"
   }
