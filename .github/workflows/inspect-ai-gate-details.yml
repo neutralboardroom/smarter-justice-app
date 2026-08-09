@@ -1,0 +1,63 @@
+name: Inspect exact Smarter Justice AI gate details
+
+on:
+  push:
+    branches:
+      - ops/inspect-ai-gate-details
+    paths:
+      - '.github/workflows/inspect-ai-gate-details.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  TARGET_SHA: a092cbeb6df761c1ec71279b72969d614084db91
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+        with:
+          fetch-depth: 0
+      - name: Extract exact sealed runtime and report AI gate only
+        run: |
+          set -euo pipefail
+          git checkout --detach "$TARGET_SHA"
+          ROOT="$RUNNER_TEMP/runtime"
+          mkdir -p "$ROOT"
+          python3 - <<'PY'
+          import os, pathlib, zipfile
+          src=pathlib.Path('smarter-justice-v1.7.98-comprehensive-community-value.zip')
+          dst=pathlib.Path(os.environ['RUNNER_TEMP'])/'runtime'
+          with zipfile.ZipFile(src) as z:
+              for i in z.infolist():
+                  p=pathlib.PurePosixPath(i.filename.replace('\\','/'))
+                  if p.is_absolute() or '..' in p.parts: raise SystemExit('unsafe zip')
+              z.extractall(dst)
+          PY
+          APP="$ROOT/smarter-justice-v1.7.98"
+          OUT="$RUNNER_TEMP/ai-gate-details.json"
+          APP="$APP" OUT="$OUT" python3 - <<'PY'
+          import json, os, pathlib
+          app=pathlib.Path(os.environ['APP'])
+          reg=json.loads((app/'FEATURE_FLAG_AND_KILL_SWITCH_REGISTER_V1.7.98.json').read_text())
+          gate=json.loads((app/'RELEASE_GATE_SUMMARY_V1.7.98.json').read_text())
+          row=(reg.get('capabilities') or {}).get('ai')
+          if row is None: raise SystemExit('missing ai capability row')
+          out={
+            'aiCapability': row,
+            'releaseGateSummary': gate,
+            'registerSchemaVersion': reg.get('schemaVersion'),
+            'registerReleaseVersion': reg.get('releaseVersion') or reg.get('version')
+          }
+          pathlib.Path(os.environ['OUT']).write_text(json.dumps(out,indent=2)+'\n')
+          print(json.dumps(out,indent=2))
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: smarter-justice-ai-gate-details-${{ github.run_id }}
+          path: ${{ runner.temp }}/ai-gate-details.json
+          if-no-files-found: error
+          retention-days: 7
