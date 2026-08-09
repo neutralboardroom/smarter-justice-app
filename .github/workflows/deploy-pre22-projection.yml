@@ -13,7 +13,7 @@ permissions:
 
 env:
   PUBLIC_BASE_URL: https://smarterjustice.com
-  TARGET_SHA: d23d92d341683b8cb7c53f659f56bca49264ca7e
+  TARGET_SHA: 13aecb0968c6c8b6b14ba61e5d314b32fee2492b
   ROLLBACK_SHA: e0a1242cf6c661ab97bfd953cb2f0dcde6146261
 
 concurrency:
