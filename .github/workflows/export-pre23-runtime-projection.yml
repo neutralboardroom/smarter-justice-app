@@ -1,0 +1,60 @@
+name: Export pre23 runtime projection
+
+on:
+  push:
+    branches:
+      - build/pre23-runtime-projection-export
+    paths:
+      - '.github/workflows/export-pre23-runtime-projection.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact source
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - name: Export canonical runtime projection
+        run: |
+          set -euo pipefail
+          out="$RUNNER_TEMP/pre23-runtime-projection"
+          mkdir -p "$out"
+          files=(
+            package.json
+            package-lock.json
+            .env.example
+            deployment/pre22-production-projection.json
+            preservation-vault/INDEX.json
+            docs/CI_MODERNIZATION_V1798.md
+            scripts/bootstrap-sitewide-release.js
+            scripts/apply-provider-agnostic-ai-gateway.js
+            scripts/apply-pre22-ai-production-control.js
+            scripts/apply-pre22-visible-inspection.js
+            scripts/apply-universal-public-home-v2.js
+            scripts/apply-universal-navigation-polish-v1.js
+            scripts/fix-navigation-polish-test-scope-v1.js
+            .github/workflows/deploy-pre22-projection.yml
+            .github/workflows/production-qualification.yml
+            .github/workflows/export-pre23-runtime-projection.yml
+          )
+          for f in "${files[@]}"; do
+            test -f "$f"
+            mkdir -p "$out/$(dirname "$f")"
+            cp "$f" "$out/$f"
+          done
+          git rev-parse HEAD > "$out/GITHUB_EXPORT_COMMIT.txt"
+          (cd "$out" && find . -type f -print0 | sort -z | xargs -0 sha256sum > SHA256SUMS.txt)
+          find "$out" -type f -print | sort
+      - name: Upload exact projection
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: smarter-justice-pre23-runtime-projection-${{ github.sha }}
+          path: ${{ runner.temp }}/pre23-runtime-projection
+          if-no-files-found: error
+          retention-days: 14
