@@ -96,7 +96,7 @@ jobs:
               && curl --fail --silent --show-error --max-time 20 "$RENDER_BASE_URL/.well-known/smarter-justice-pre42-deployment.json" > "$RUNNER_TEMP/pre42.json" \
               && curl --fail --silent --show-error --max-time 20 "$RENDER_BASE_URL/api/ai-status" > "$RUNNER_TEMP/ai-status.json" \
               && curl --fail --silent --show-error --max-time 20 "$RENDER_BASE_URL/" > "$RUNNER_TEMP/home.html"; then
-              HEALTH="$RUNNER_TEMP/health.json" PRE42="$RUNNER_TEMP/pre42.json" AI="$RUNNER_TEMP/ai-status.json" HOME="$RUNNER_TEMP/home.html" PRE42_ARTIFACT_SHA="$PRE42_ARTIFACT_SHA" node - <<'NODE'
+              if HEALTH="$RUNNER_TEMP/health.json" PRE42="$RUNNER_TEMP/pre42.json" AI="$RUNNER_TEMP/ai-status.json" HOME="$RUNNER_TEMP/home.html" PRE42_ARTIFACT_SHA="$PRE42_ARTIFACT_SHA" node - <<'NODE'
           const fs=require('fs');
           const health=JSON.parse(fs.readFileSync(process.env.HEALTH,'utf8'));
           const p=JSON.parse(fs.readFileSync(process.env.PRE42,'utf8'));
