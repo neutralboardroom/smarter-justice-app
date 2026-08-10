@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "1.0.0",
+  "projection": "PRE42_RENDER_CONTROLLED_ACCEPTANCE_V1",
+  "authoritativeProduct": {
+    "name": "smarter-justice-comprehensive-consolidation-workspace-v2.0.0-pre42-LEAN-ACTIVE.zip",
+    "sha256": "9956c52237ebc09bb6e4474c7c0a9863af6d952cabc3e030ee42942cc75cc4f5",
+    "canonicalSourceTreeSha256": "bf18c5895cddb43ab3d0a43e88f883102941bbcdf21fa913a0d0f2032a98cda9"
+  },
+  "exactComponents": {
+    "openai_provider_pre42.py": "ffd68a7913b3cd3e859308ffb99fefe2c885503484342f74992ab4cdce93e80c",
+    "ai_usage_meter_pre42.py": "618f35b30397727d4eefe5d4922c5ced76a62c3863590bb3c7169da6d35ca2f0",
+    "navigator_pre42.py": "e19776d3d67e1a71c2ef7ba6edf98245867bea1527e0fddc21a6565ec8871f77"
+  },
+  "deploymentBoundary": {
+    "publicAiEnabledByProjection": false,
+    "outboundActionsEnabledByProjection": false,
+    "automaticOverageBillingEnabledByProjection": false,
+    "existingV1798PublicRuntimeRetainedAsRollback": true,
+    "secretStorage": "Render environment only"
+  }
+}
