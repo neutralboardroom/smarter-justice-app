@@ -2,7 +2,7 @@ name: Pre43 public Navigator branch qualification
 
 on:
   push:
-    branches: [pre43-navigator-preview]
+    branches: [pre43-navigator-preview, pre43-navigator-live-fix]
 
 permissions:
   contents: read
@@ -29,5 +29,33 @@ jobs:
           grep -q 'Available to everyone' "$root/public/navigator.html"
           grep -q 'SMARTER_JUSTICE_PRE43_PUBLIC_NAVIGATOR' "$root/server.js"
           grep -q "'/api/navigator/chat'" "$root/server.js"
-          ! grep -R --fixed-strings 'OPENAI_API_KEY=' "$root/public" deployment/pre43 scripts/apply-pre43-navigator-preview.js
+          grep -q "path.resolve(__dirname,'..','..')" "$root/server.js"
+          ! grep -R --fixed-strings 'OPENAI_API_KEY=' "$root/public" deployment/pre43 scripts/apply-pre43-navigator-preview.js scripts/fix-pre43-navigator-runtime-path.js
           python3 -m py_compile deployment/pre43/navigator_preview_cli.py deployment/pre43/test_pre43_navigator.py
+      - name: Exercise Render-style npm-prefix Node to Python bridge over HTTP
+        env:
+          NODE_ENV: test
+          PORT: '8099'
+          SJ_NAVIGATOR_TEST_MODE: '1'
+          OPENAI_API_KEY: qualification-not-a-live-secret
+          OPENAI_API_MODEL: gpt-5-mini
+          OPENAI_PROJECT_ID: proj_qualification
+        run: |
+          set -euo pipefail
+          npm --prefix .runtime/smarter-justice-v1.7.98 start > "$RUNNER_TEMP/pre43-http.log" 2>&1 &
+          pid=$!
+          trap 'kill $pid 2>/dev/null || true; cat "$RUNNER_TEMP/pre43-http.log" || true' EXIT
+          for attempt in $(seq 1 30); do
+            if curl --fail --silent --show-error --max-time 5 http://127.0.0.1:8099/health >/tmp/health.json; then break; fi
+            sleep 1
+          done
+          jar="$RUNNER_TEMP/cookies.txt"
+          curl --fail --silent --show-error --max-time 10 -c "$jar" http://127.0.0.1:8099/api/navigator/status > /tmp/nav-status.json
+          curl --fail --silent --show-error --max-time 15 -b "$jar" -c "$jar" -H 'Content-Type: application/json' -d '{"message":"Bridge test","toolMode":"NAVIGATOR","inputMode":"TEXT"}' http://127.0.0.1:8099/api/navigator/chat > /tmp/nav-chat.json
+          node - <<'NODE'
+          const fs=require('fs');
+          const s=JSON.parse(fs.readFileSync('/tmp/nav-status.json','utf8'));
+          const c=JSON.parse(fs.readFileSync('/tmp/nav-chat.json','utf8'));
+          if(s.ok!==true||s.providerReadiness?.ready!==true||s.publicAiEnabled!==true)process.exit(1);
+          if(c.ok!==true||c.answer!=='PRE43 NAVIGATOR TEST READY'||c.usageLedgerRecorded!==true||c.externalActionsExecuted!==false)process.exit(1);
+          NODE
