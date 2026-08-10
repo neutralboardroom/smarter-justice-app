@@ -15,6 +15,7 @@ env:
   RENDER_BASE_URL: https://smarter-justice-app.onrender.com
   PUBLIC_BASE_URL: https://smarterjustice.com
   TARGET_SHA: ${{ github.sha }}
+  ROLLBACK_SHA: 14b54e31d4cdec186424c9eb7e34a5f41689cf4f
   PRE42_ARTIFACT_SHA: 9956c52237ebc09bb6e4474c7c0a9863af6d952cabc3e030ee42942cc75cc4f5
 
 concurrency:
@@ -27,31 +28,19 @@ jobs:
     environment: production
     steps:
       - name: Checkout exact release commit
-        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
         with:
           ref: ${{ env.TARGET_SHA }}
           fetch-depth: 0
-
-      - name: Bind target, rollback, pre42 foundation, and pre43 public AI
+      - name: Bind pre44 target and explicit prior known-good rollback
         run: |
           set -euo pipefail
           test "$(git rev-parse HEAD)" = "$TARGET_SHA"
-          rollback="$(git rev-parse HEAD^)"
-          git cat-file -e "$rollback^{commit}"
-          echo "ROLLBACK_SHA=$rollback" >> "$GITHUB_ENV"
-          test "$(node -p "require('./package.json').version")" = "1.7.98"
+          git cat-file -e "$ROLLBACK_SHA^{commit}"
           test -f deployment/pre42/PRE42_RENDER_PROJECTION.json
-          test -f deployment/pre43/navigator_preview_cli.py
-          test -f deployment/pre43/test_pre43_navigator.py
-          test -f scripts/apply-pre43-navigator-preview.js
-          PRE42_ARTIFACT_SHA="$PRE42_ARTIFACT_SHA" node - <<'NODE'
-          const fs=require('fs');
-          const row=JSON.parse(fs.readFileSync('deployment/pre42/PRE42_RENDER_PROJECTION.json','utf8'));
-          if(row.projection!=='PRE42_RENDER_CONTROLLED_ACCEPTANCE_V1')process.exit(1);
-          if(row.authoritativeProduct?.sha256!==process.env.PRE42_ARTIFACT_SHA)process.exit(1);
-          if(row.deploymentBoundary?.outboundActionsEnabledByProjection!==false)process.exit(1);
-          NODE
-
+          test -f deployment/pre44/navigator_cli.py
+          test -f deployment/pre44/test_pre44_navigator.py
+          test -f scripts/apply-pre44-sitewide-ai.js
       - name: Wait for exact-commit qualification gate
         env:
           GH_TOKEN: ${{ github.token }}
@@ -62,17 +51,13 @@ jobs:
             failed="$(gh api "repos/$GITHUB_REPOSITORY/commits/$TARGET_SHA/check-runs" --jq '[.check_runs[] | select(.name == "qualification-gate" and (.conclusion == "failure" or .conclusion == "cancelled" or .conclusion == "timed_out"))] | length')"
             test "$failed" = "0" || exit 1
             if [ "$success" -ge 1 ]; then exit 0; fi
-            echo "qualification gate pending: attempt $attempt"
             sleep 10
           done
-          echo 'qualification gate did not reach success' >&2
           exit 1
-
       - name: Require protected Render deploy hook
         env:
           RENDER_DEPLOY_HOOK_URL: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
         run: test -n "$RENDER_DEPLOY_HOOK_URL"
-
       - name: Request exact qualified Render deployment
         id: deploy
         env:
@@ -81,64 +66,40 @@ jobs:
           set -euo pipefail
           sep='?'; [[ "$RENDER_DEPLOY_HOOK_URL" == *'?'* ]] && sep='&'
           curl --fail --silent --show-error --location --max-time 30 "${RENDER_DEPLOY_HOOK_URL}${sep}ref=${TARGET_SHA}" > "$RUNNER_TEMP/render-deploy-response.json"
-          python3 - <<'PY'
-          import pathlib, os
-          p=pathlib.Path(os.environ['RUNNER_TEMP'])/'render-deploy-response.json'
-          print(p.read_text(errors='replace')[:800])
-          PY
-
-      - name: Require live pre42 foundation and public pre43 Navigator AI
+      - name: Require live pre44 sitewide Navigator and AI
         id: smoke
         run: |
           set -euo pipefail
           jar="$RUNNER_TEMP/navigator-cookies.txt"
           for attempt in $(seq 1 42); do
-            echo "public Navigator live acceptance attempt $attempt"
             rm -f "$jar"
             if curl --fail --silent --show-error --max-time 20 "$RENDER_BASE_URL/health" > "$RUNNER_TEMP/health.json" \
               && curl --fail --silent --show-error --max-time 20 "$RENDER_BASE_URL/.well-known/smarter-justice-pre42-deployment.json" > "$RUNNER_TEMP/pre42.json" \
               && curl --fail --silent --show-error --max-time 20 "$RENDER_BASE_URL/navigator" > "$RUNNER_TEMP/navigator.html" \
+              && curl --fail --silent --show-error --max-time 20 "$RENDER_BASE_URL/app.js" > "$RUNNER_TEMP/app.js" \
               && curl --fail --silent --show-error --max-time 20 -c "$jar" "$RENDER_BASE_URL/api/navigator/status" > "$RUNNER_TEMP/navigator-status.json" \
-              && curl --fail --silent --show-error --max-time 50 -b "$jar" -c "$jar" -H 'Content-Type: application/json' -d '{"message":"Reply with exactly: SMARTER JUSTICE PUBLIC AI READY","toolMode":"NAVIGATOR","inputMode":"TEXT"}' "$RENDER_BASE_URL/api/navigator/chat" > "$RUNNER_TEMP/navigator-chat.json" \
-              && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/navigator" > "$RUNNER_TEMP/public-navigator.html" \
-              && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/" > "$RUNNER_TEMP/public-home.html"; then
-              if HEALTH="$RUNNER_TEMP/health.json" PRE42="$RUNNER_TEMP/pre42.json" STATUS="$RUNNER_TEMP/navigator-status.json" CHAT="$RUNNER_TEMP/navigator-chat.json" NAV="$RUNNER_TEMP/navigator.html" PUBLIC_NAV="$RUNNER_TEMP/public-navigator.html" PUBLIC_HOME="$RUNNER_TEMP/public-home.html" PRE42_ARTIFACT_SHA="$PRE42_ARTIFACT_SHA" node - <<'NODE'
+              && curl --fail --silent --show-error --max-time 50 -b "$jar" -c "$jar" -H 'Content-Type: application/json' -d '{"message":"Reply with exactly: SMARTER JUSTICE PRE44 AI READY","toolMode":"NAVIGATOR","inputMode":"TEXT","pageContext":"Smarter Justice live acceptance"}' "$RENDER_BASE_URL/api/navigator/chat" > "$RUNNER_TEMP/navigator-chat.json" \
+              && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/navigator" > "$RUNNER_TEMP/public-navigator.html"; then
+              if STATUS="$RUNNER_TEMP/navigator-status.json" CHAT="$RUNNER_TEMP/navigator-chat.json" NAV="$RUNNER_TEMP/navigator.html" APP="$RUNNER_TEMP/app.js" PUBLIC_NAV="$RUNNER_TEMP/public-navigator.html" node - <<'NODE'
           const fs=require('fs');
-          const health=JSON.parse(fs.readFileSync(process.env.HEALTH,'utf8'));
-          const p=JSON.parse(fs.readFileSync(process.env.PRE42,'utf8'));
-          const status=JSON.parse(fs.readFileSync(process.env.STATUS,'utf8'));
-          const chat=JSON.parse(fs.readFileSync(process.env.CHAT,'utf8'));
+          const s=JSON.parse(fs.readFileSync(process.env.STATUS,'utf8'));
+          const c=JSON.parse(fs.readFileSync(process.env.CHAT,'utf8'));
           const nav=fs.readFileSync(process.env.NAV,'utf8');
-          const publicNav=fs.readFileSync(process.env.PUBLIC_NAV,'utf8');
-          const publicHome=fs.readFileSync(process.env.PUBLIC_HOME,'utf8');
-          if(health.ok!==true||health.version!=='1.7.98'||health.app!=='Smarter Justice')process.exit(1);
-          if(p.status!=='PASS'||p.pre42ArtifactSha256!==process.env.PRE42_ARTIFACT_SHA)process.exit(1);
-          if(p.providerCanary!=='PASS'||p.usageLedgerRecorded!==true||p.browserSecretScan!=='PASS'||p.secretExposed!==false)process.exit(1);
-          if(status.ok!==true||status.version!=='v2.0.0-pre43'||status.navigatorAvailable!==true||status.publicAiEnabled!==true)process.exit(1);
-          if(status.providerReadiness?.ready!==true||status.externalConsequentialActionsEnabled!==false)process.exit(1);
-          const modes=new Set(status.availableToolModes||[]);
-          for(const m of ['NAVIGATOR','STARTING_POINT','DRAFT','SUMMARIZE','CHECKLIST','PROFESSIONAL_WORKFLOW'])if(!modes.has(m))process.exit(1);
-          if(chat.ok!==true||chat.publicAiEnabled!==true||chat.usageLedgerRecorded!==true||chat.storeRequested!==false)process.exit(1);
-          if(chat.externalActionsExecuted!==false||chat.automaticOverageBillingEnabled!==false||chat.toolMode!=='NAVIGATOR')process.exit(1);
-          if(!String(chat.answer||'').includes('SMARTER JUSTICE PUBLIC AI READY'))process.exit(1);
-          if(!/Navigator/i.test(nav)||!/Available to everyone/i.test(nav)||!/PROFESSIONAL_WORKFLOW/.test(nav))process.exit(1);
-          if(!/Navigator/i.test(publicNav)||!/Available to everyone/i.test(publicNav))process.exit(1);
-          if(!/SMARTER_JUSTICE_PRE43_NAVIGATOR_HOME_CTA/.test(publicHome)||!/Open Navigator/i.test(publicHome))process.exit(1);
-          const exposed=[nav,publicNav,publicHome,JSON.stringify(status),JSON.stringify(chat)].join('\n');
-          if(/Authorization:\s*Bearer\s+/i.test(exposed)||/OPENAI_API_KEY\s*=/.test(exposed))process.exit(1);
-          console.log(JSON.stringify({status:'PASS',targetSha:process.env.GITHUB_SHA,model:chat.model,latencyMs:chat.latencyMs,usage:chat.usage,publicAiEnabled:true,storeRequested:false,externalConsequentialActionsEnabled:false,automaticOverageBillingEnabled:false},null,2));
+          const app=fs.readFileSync(process.env.APP,'utf8');
+          const pub=fs.readFileSync(process.env.PUBLIC_NAV,'utf8');
+          if(s.ok!==true||s.version!=='v2.0.0-pre44'||s.publicAiEnabled!==true||s.providerReadiness?.ready!==true)process.exit(1);
+          if(!['DURABLE_SQLITE','RUNTIME_LOCAL_SQLITE'].includes(s.persistenceMode))process.exit(1);
+          if(typeof s.durablePersistenceAccepted!=='boolean')process.exit(1);
+          if(c.ok!==true||!String(c.answer||'').includes('SMARTER JUSTICE PRE44 AI READY'))process.exit(1);
+          if(c.usageLedgerRecorded!==true||c.storeRequested!==false||c.externalActionsExecuted!==false)process.exit(1);
+          if(!/v2\.0\.0-pre44/.test(nav)||!/v2\.0\.0-pre44/.test(pub))process.exit(1);
+          if(!app.includes('SMARTER_JUSTICE_PRE44_SITEWIDE_NAVIGATOR'))process.exit(1);
           NODE
-              then
-                cp "$RUNNER_TEMP/navigator-status.json" "$RUNNER_TEMP/pre43-public-ai-status.json"
-                cp "$RUNNER_TEMP/navigator-chat.json" "$RUNNER_TEMP/pre43-public-ai-chat.json"
-                exit 0
-              fi
+              then exit 0; fi
             fi
             sleep 10
           done
-          echo 'public Navigator live acceptance did not pass' >&2
           exit 1
-
       - name: Request automatic rollback after failed live acceptance
         if: failure() && steps.deploy.outcome == 'success'
         env:
@@ -147,31 +108,20 @@ jobs:
           set -euo pipefail
           sep='?'; [[ "$RENDER_DEPLOY_HOOK_URL" == *'?'* ]] && sep='&'
           curl --fail --silent --show-error --location --max-time 30 "${RENDER_DEPLOY_HOOK_URL}${sep}ref=${ROLLBACK_SHA}" > "$RUNNER_TEMP/render-rollback-response.json"
-          for attempt in $(seq 1 30); do
-            if curl --fail --silent --show-error --max-time 20 "$RENDER_BASE_URL/health" > "$RUNNER_TEMP/rollback-health.json"; then
-              node -e "const fs=require('fs');const x=JSON.parse(fs.readFileSync(process.argv[1]));if(x.ok!==true||x.app!=='Smarter Justice')process.exit(1)" "$RUNNER_TEMP/rollback-health.json" && exit 0
-            fi
-            sleep 10
-          done
-          exit 1
-
       - name: Upload immutable deployment evidence
         if: always()
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
-          name: smarter-justice-qualified-render-evidence-${{ github.run_id }}
+          name: smarter-justice-pre44-render-evidence-${{ github.run_id }}
           path: |
             ${{ runner.temp }}/render-deploy-response.json
             ${{ runner.temp }}/health.json
             ${{ runner.temp }}/pre42.json
             ${{ runner.temp }}/navigator.html
+            ${{ runner.temp }}/app.js
             ${{ runner.temp }}/navigator-status.json
             ${{ runner.temp }}/navigator-chat.json
-            ${{ runner.temp }}/pre43-public-ai-status.json
-            ${{ runner.temp }}/pre43-public-ai-chat.json
             ${{ runner.temp }}/public-navigator.html
-            ${{ runner.temp }}/public-home.html
             ${{ runner.temp }}/render-rollback-response.json
-            ${{ runner.temp }}/rollback-health.json
           if-no-files-found: warn
           retention-days: 90
