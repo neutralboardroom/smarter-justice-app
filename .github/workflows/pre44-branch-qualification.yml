@@ -1,0 +1,67 @@
+name: Pre44 sitewide Navigator and persistence qualification
+
+on:
+  push:
+    branches: [pre44-sitewide-ai-persistence]
+
+permissions:
+  contents: read
+
+jobs:
+  qualify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+      - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e
+        with:
+          node-version: '22.x'
+      - name: Reconstruct and qualify exact runtime plus pre44 sitewide AI
+        run: |
+          set -euo pipefail
+          npm install --ignore-scripts --no-audit --no-fund
+          npm run postinstall
+      - name: Require pre44 sitewide and persistence markers
+        run: |
+          set -euo pipefail
+          root='.runtime/smarter-justice-v1.7.98'
+          grep -q 'SMARTER_JUSTICE_PRE44_SITEWIDE_NAVIGATOR' "$root/server.js"
+          grep -q 'SMARTER_JUSTICE_PRE44_SITEWIDE_NAVIGATOR' "$root/public/app.js"
+          grep -q 'v2.0.0-pre44' "$root/public/navigator.html"
+          grep -q 'Conversation storage' "$root/public/navigator.js"
+          grep -q "deployment','pre44','navigator_cli.py" "$root/server.js"
+          ! grep -R --fixed-strings 'OPENAI_API_KEY=' "$root/public" deployment/pre44 scripts/apply-pre44-sitewide-ai.js
+          python3 -m py_compile deployment/pre44/navigator_cli.py deployment/pre44/test_pre44_navigator.py
+      - name: Exercise restart persistence through Render-style HTTP bridge
+        env:
+          NODE_ENV: test
+          PORT: '8100'
+          SJ_NAVIGATOR_TEST_MODE: '1'
+          OPENAI_API_KEY: qualification-not-a-live-secret
+          OPENAI_API_MODEL: gpt-5-mini
+          OPENAI_PROJECT_ID: proj_qualification
+          SJ_NAVIGATOR_DURABLE_STORAGE: 'true'
+        run: |
+          set -euo pipefail
+          export SJ_NAVIGATOR_DATA_DIR="$RUNNER_TEMP/pre44-navdata"
+          jar="$RUNNER_TEMP/pre44-cookies.txt"
+          start_server(){ npm --prefix .runtime/smarter-justice-v1.7.98 start > "$RUNNER_TEMP/pre44-http.log" 2>&1 & echo $!; }
+          wait_health(){ for attempt in $(seq 1 30); do curl --fail --silent --show-error --max-time 5 http://127.0.0.1:8100/health >/tmp/health.json && return 0; sleep 1; done; return 1; }
+          pid=$(start_server); trap 'kill $pid 2>/dev/null || true; cat "$RUNNER_TEMP/pre44-http.log" || true' EXIT
+          wait_health
+          curl --fail --silent --show-error --max-time 10 -c "$jar" http://127.0.0.1:8100/api/navigator/status > /tmp/pre44-status1.json
+          curl --fail --silent --show-error --max-time 15 -b "$jar" -c "$jar" -H 'Content-Type: application/json' -d '{"message":"Persistence bridge test","toolMode":"NAVIGATOR","inputMode":"TEXT","pageContext":"Smarter Justice test page"}' http://127.0.0.1:8100/api/navigator/chat > /tmp/pre44-chat.json
+          kill "$pid"; wait "$pid" 2>/dev/null || true
+          pid=$(start_server); wait_health
+          curl --fail --silent --show-error --max-time 10 -b "$jar" -c "$jar" http://127.0.0.1:8100/api/navigator/status > /tmp/pre44-status2.json
+          curl --fail --silent --show-error --max-time 10 http://127.0.0.1:8100/app.js > /tmp/pre44-app.js
+          node - <<'NODE'
+          const fs=require('fs');
+          const s1=JSON.parse(fs.readFileSync('/tmp/pre44-status1.json','utf8'));
+          const c=JSON.parse(fs.readFileSync('/tmp/pre44-chat.json','utf8'));
+          const s2=JSON.parse(fs.readFileSync('/tmp/pre44-status2.json','utf8'));
+          const app=fs.readFileSync('/tmp/pre44-app.js','utf8');
+          if(s1.ok!==true||s1.version!=='v2.0.0-pre44'||s1.durablePersistenceAccepted!==true)process.exit(1);
+          if(c.ok!==true||c.answer!=='PRE44 NAVIGATOR TEST READY'||c.usageLedgerRecorded!==true||c.durablePersistenceAccepted!==true)process.exit(1);
+          if(!Array.isArray(s2.threads)||!s2.threads.some(x=>x.threadId===c.threadId))process.exit(1);
+          if(!app.includes('SMARTER_JUSTICE_PRE44_SITEWIDE_NAVIGATOR'))process.exit(1);
+          NODE
