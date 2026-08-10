@@ -1,12 +1,11 @@
-name: Verify controlled Smarter Justice AI smoke
+name: Verify pre42 controlled Render acceptance
 
 on:
   push:
     branches: [main]
     paths:
       - 'package.json'
-      - 'scripts/run-controlled-openai-smoke.js'
-      - 'scripts/apply-controlled-ai-smoke-status.js'
+      - 'deployment/pre42/**'
       - '.github/workflows/verify-controlled-ai-smoke.yml'
   workflow_dispatch:
 
@@ -14,32 +13,31 @@ permissions:
   contents: read
 
 jobs:
-  verify-controlled-ai-smoke:
+  verify-pre42-render-acceptance:
     runs-on: ubuntu-latest
     steps:
-      - name: Wait for Render and require redacted PASS receipt
+      - name: Wait for Render and require exact pre42 redacted PASS receipt
         run: |
           set -euo pipefail
-          url='https://smarter-justice-app.onrender.com/.well-known/smarter-justice-ai-smoke.json'
-          for attempt in $(seq 1 30); do
+          url='https://smarter-justice-app.onrender.com/.well-known/smarter-justice-pre42-deployment.json'
+          for attempt in $(seq 1 36); do
             echo "Attempt $attempt"
             if body="$(curl --fail --silent --show-error --max-time 20 "$url" 2>/dev/null)"; then
-              echo "$body" > /tmp/ai-smoke.json
+              echo "$body" > /tmp/pre42.json
               if node - <<'NODE'
           const fs=require('fs');
-          const row=JSON.parse(fs.readFileSync('/tmp/ai-smoke.json','utf8'));
-          if(row.status!=='PASS')process.exit(1);
-          if(row.provider!=='openai')process.exit(1);
-          if(row.publicAiEnabled!==false)process.exit(1);
-          if(row.secretExposed!==false)process.exit(1);
-          if(typeof row.checkedAt!=='string'||!row.checkedAt)process.exit(1);
+          const row=JSON.parse(fs.readFileSync('/tmp/pre42.json','utf8'));
+          const exact='9956c52237ebc09bb6e4474c7c0a9863af6d952cabc3e030ee42942cc75cc4f5';
+          if(row.status!=='PASS'||row.pre42ArtifactSha256!==exact)process.exit(1);
+          if(row.providerCanary!=='PASS'||row.usageLedgerRecorded!==true)process.exit(1);
+          if(row.allowanceNegativeTest!=='PASS'||row.providerFailurePath!=='PASS')process.exit(1);
+          if(row.navigatorIsolation!=='PASS'||row.navigatorConfirmationGate!=='PASS')process.exit(1);
+          if(row.browserSecretScan!=='PASS'||row.publicAiEnabled!==false||row.secretExposed!==false)process.exit(1);
           console.log(JSON.stringify(row,null,2));
           NODE
-              then
-                exit 0
-              fi
+              then exit 0; fi
             fi
             sleep 10
           done
-          echo 'Controlled AI smoke did not reach PASS within the verification window.' >&2
+          echo 'Exact pre42 controlled Render acceptance did not reach PASS.' >&2
           exit 1
