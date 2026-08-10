@@ -1,4 +1,4 @@
-name: Smarter Justice navigation polish deploy
+name: Smarter Justice pre42 controlled Render deploy
 
 on:
   push:
@@ -10,14 +10,18 @@ on:
 
 permissions:
   contents: read
+  actions: read
+  checks: read
 
 env:
+  RENDER_BASE_URL: https://smarter-justice-app.onrender.com
   PUBLIC_BASE_URL: https://smarterjustice.com
-  TARGET_SHA: 13aecb0968c6c8b6b14ba61e5d314b32fee2492b
-  ROLLBACK_SHA: e0a1242cf6c661ab97bfd953cb2f0dcde6146261
+  TARGET_SHA: ${{ github.sha }}
+  ROLLBACK_SHA: 13aecb0968c6c8b6b14ba61e5d314b32fee2492b
+  PRE42_ARTIFACT_SHA: 9956c52237ebc09bb6e4474c7c0a9863af6d952cabc3e030ee42942cc75cc4f5
 
 concurrency:
-  group: smarter-justice-navigation-polish
+  group: smarter-justice-pre42-render-deploy
   cancel-in-progress: false
 
 jobs:
@@ -25,23 +29,50 @@ jobs:
     runs-on: ubuntu-latest
     environment: production
     steps:
-      - name: Checkout deployment workflow commit
+      - name: Checkout exact deployment commit
         uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
         with:
+          ref: ${{ env.TARGET_SHA }}
           fetch-depth: 0
-      - name: Verify exact target
+
+      - name: Verify exact pre42 projection binding
         run: |
           set -euo pipefail
-          git cat-file -e "$TARGET_SHA^{commit}"
+          test "$(git rev-parse HEAD)" = "$TARGET_SHA"
           git cat-file -e "$ROLLBACK_SHA^{commit}"
-          git show "$TARGET_SHA:scripts/apply-universal-navigation-polish-v1.js" >/dev/null
-          git show "$TARGET_SHA:scripts/fix-navigation-polish-test-scope-v1.js" >/dev/null
-          test "$(git show "$TARGET_SHA:package.json" | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>process.stdout.write(JSON.parse(s).version))")" = "1.7.98"
+          test "$(node -p "require('./package.json').version")" = "1.7.98"
+          test -f deployment/pre42/PRE42_RENDER_PROJECTION.json
+          PRE42_ARTIFACT_SHA="$PRE42_ARTIFACT_SHA" node - <<'NODE'
+          const fs=require('fs');
+          const row=JSON.parse(fs.readFileSync('deployment/pre42/PRE42_RENDER_PROJECTION.json','utf8'));
+          if(row.projection!=='PRE42_RENDER_CONTROLLED_ACCEPTANCE_V1')process.exit(1);
+          if(row.authoritativeProduct?.sha256!==process.env.PRE42_ARTIFACT_SHA)process.exit(1);
+          if(row.deploymentBoundary?.publicAiEnabledByProjection!==false)process.exit(1);
+          if(row.deploymentBoundary?.outboundActionsEnabledByProjection!==false)process.exit(1);
+          NODE
+
+      - name: Wait for exact-commit qualification gate
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          for attempt in $(seq 1 36); do
+            success="$(gh api "repos/$GITHUB_REPOSITORY/commits/$TARGET_SHA/check-runs" --jq '[.check_runs[] | select(.name == "qualification-gate" and .conclusion == "success")] | length')"
+            failed="$(gh api "repos/$GITHUB_REPOSITORY/commits/$TARGET_SHA/check-runs" --jq '[.check_runs[] | select(.name == "qualification-gate" and (.conclusion == "failure" or .conclusion == "cancelled" or .conclusion == "timed_out"))] | length')"
+            test "$failed" = "0" || exit 1
+            if [ "$success" -ge 1 ]; then exit 0; fi
+            echo "qualification gate pending: attempt $attempt"
+            sleep 10
+          done
+          echo 'qualification gate did not reach success' >&2
+          exit 1
+
       - name: Require protected Render deploy hook
         env:
           RENDER_DEPLOY_HOOK_URL: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
         run: test -n "$RENDER_DEPLOY_HOOK_URL"
-      - name: Request exact navigation-polish deployment
+
+      - name: Request exact pre42 Render deployment
         id: deploy
         env:
           RENDER_DEPLOY_HOOK_URL: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
@@ -49,46 +80,50 @@ jobs:
           set -euo pipefail
           sep='?'; [[ "$RENDER_DEPLOY_HOOK_URL" == *'?'* ]] && sep='&'
           curl --fail --silent --show-error --location --max-time 30 "${RENDER_DEPLOY_HOOK_URL}${sep}ref=${TARGET_SHA}" > "$RUNNER_TEMP/render-deploy-response.json"
-          cat "$RUNNER_TEMP/render-deploy-response.json"
-      - name: Verify mobile navigation and direct specialty entrances
+          python3 - <<'PY'
+          import pathlib, os
+          p=pathlib.Path(os.environ['RUNNER_TEMP'])/'render-deploy-response.json'
+          print(p.read_text(errors='replace')[:800])
+          PY
+
+      - name: Require exact pre42 live acceptance while public AI stays closed
         id: smoke
         run: |
           set -euo pipefail
-          delay=10
-          for attempt in $(seq 1 16); do
-            echo "Navigation-polish verification attempt $attempt"
-            if curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/health" > "$RUNNER_TEMP/health.json" \
-              && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/api/ai-status" > "$RUNNER_TEMP/ai-status.json" \
-              && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/" > "$RUNNER_TEMP/home.html" \
-              && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/family-law" > "$RUNNER_TEMP/family.html" \
-              && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/injury" > "$RUNNER_TEMP/injury.html" \
-              && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/rights-defense" > "$RUNNER_TEMP/rights.html" \
-              && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/work-business" > "$RUNNER_TEMP/work.html" \
-              && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/property-debt" > "$RUNNER_TEMP/property.html" \
-              && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/estate-benefits-records" > "$RUNNER_TEMP/estatehub.html" \
-              && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/divorce" > "$RUNNER_TEMP/divorce.html" \
-              && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/personal-injury" > "$RUNNER_TEMP/pi.html" \
-              && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/employment" > "$RUNNER_TEMP/employment.html"; then
-              if HOME="$RUNNER_TEMP/home.html" FAMILY="$RUNNER_TEMP/family.html" INJURY="$RUNNER_TEMP/injury.html" RIGHTS="$RUNNER_TEMP/rights.html" WORK="$RUNNER_TEMP/work.html" PROPERTY="$RUNNER_TEMP/property.html" ESTATEHUB="$RUNNER_TEMP/estatehub.html" DIVORCE="$RUNNER_TEMP/divorce.html" PI="$RUNNER_TEMP/pi.html" EMP="$RUNNER_TEMP/employment.html" AI="$RUNNER_TEMP/ai-status.json" node - <<'NODE'
+          for attempt in $(seq 1 30); do
+            echo "pre42 live acceptance attempt $attempt"
+            if curl --fail --silent --show-error --max-time 20 "$RENDER_BASE_URL/health" > "$RUNNER_TEMP/health.json" \
+              && curl --fail --silent --show-error --max-time 20 "$RENDER_BASE_URL/.well-known/smarter-justice-pre42-deployment.json" > "$RUNNER_TEMP/pre42.json" \
+              && curl --fail --silent --show-error --max-time 20 "$RENDER_BASE_URL/api/ai-status" > "$RUNNER_TEMP/ai-status.json" \
+              && curl --fail --silent --show-error --max-time 20 "$RENDER_BASE_URL/" > "$RUNNER_TEMP/home.html"; then
+              HEALTH="$RUNNER_TEMP/health.json" PRE42="$RUNNER_TEMP/pre42.json" AI="$RUNNER_TEMP/ai-status.json" HOME="$RUNNER_TEMP/home.html" PRE42_ARTIFACT_SHA="$PRE42_ARTIFACT_SHA" node - <<'NODE'
           const fs=require('fs');
+          const health=JSON.parse(fs.readFileSync(process.env.HEALTH,'utf8'));
+          const p=JSON.parse(fs.readFileSync(process.env.PRE42,'utf8'));
+          const ai=JSON.parse(fs.readFileSync(process.env.AI,'utf8'));
           const home=fs.readFileSync(process.env.HOME,'utf8');
-          const docs=['FAMILY','INJURY','RIGHTS','WORK','PROPERTY','ESTATEHUB','DIVORCE','PI','EMP'].map(k=>fs.readFileSync(process.env[k],'utf8'));
-          if(!home.includes('UNIVERSAL_PUBLIC_HOME_V2')||!home.includes('UNIVERSAL_NAVIGATION_POLISH_V1'))process.exit(1);
-          if(!home.includes('u-menu-toggle')||!home.includes('u-mobile-menu'))process.exit(1);
-          for(const href of ['/family-law','/injury','/rights-defense','/work-business','/property-debt','/estate-benefits-records'])if(!home.includes(`href="${href}"`))process.exit(1);
-          if(home.includes('href="/portals.html"><div class="u-icon">'))process.exit(1);
-          for(const doc of docs)if(!doc.includes('u-menu-toggle')||!doc.includes('u-mobile-menu'))process.exit(1);
-          if(!docs[0].includes('Divorce Law Aid')||!docs[1].includes('Personal Injury Law Aid')||!docs[2].includes('Civil Rights & Police Misconduct Law Aid')||!docs[3].includes('Employment Law Aid')||!docs[4].includes('Real Estate Law Aid')||!docs[5].includes('Estate Law Aid'))process.exit(1);
-          if(!docs[6].includes('Divorce Law Aid')||!docs[7].includes('Personal Injury Law Aid')||!docs[8].includes('Employment Law Aid'))process.exit(1);
-          const ai=JSON.parse(fs.readFileSync(process.env.AI,'utf8'));if(ai.vendor!=='Smarter Justice AI Gateway'||ai.activeProvider!=='openai')process.exit(1);
-          console.log('mobile navigation and direct specialty entrances verified');
+          if(health.ok!==true||health.version!=='1.7.98'||health.app!=='Smarter Justice')process.exit(1);
+          if(p.status!=='PASS'||p.pre42ArtifactSha256!==process.env.PRE42_ARTIFACT_SHA)process.exit(1);
+          if(p.providerCanary!=='PASS'||p.usageLedgerRecorded!==true)process.exit(1);
+          if(p.allowanceNegativeTest!=='PASS'||p.providerFailurePath!=='PASS')process.exit(1);
+          if(p.navigatorIsolation!=='PASS'||p.navigatorConfirmationGate!=='PASS')process.exit(1);
+          if(p.browserSecretScan!=='PASS'||p.secretExposed!==false||p.publicAiEnabled!==false)process.exit(1);
+          if(p.outboundActionsEnabled!==false||p.automaticOverageBillingEnabled!==false)process.exit(1);
+          if(ai.vendor!=='Smarter Justice AI Gateway'||ai.activeProvider!=='openai')process.exit(1);
+          if(!/Smarter Justice/i.test(home))process.exit(1);
+          console.log(JSON.stringify(p,null,2));
           NODE
-              then exit 0; fi
+              then
+                cp "$RUNNER_TEMP/pre42.json" "$RUNNER_TEMP/pre42-live-acceptance.json"
+                exit 0
+              fi
             fi
-            sleep "$delay"; [ "$delay" -ge 30 ] || delay=$((delay+5))
+            sleep 10
           done
+          echo 'pre42 live acceptance did not pass' >&2
           exit 1
-      - name: Request rollback after failed acceptance
+
+      - name: Request rollback after failed pre42 acceptance
         if: failure() && steps.deploy.outcome == 'success'
         env:
           RENDER_DEPLOY_HOOK_URL: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
@@ -96,25 +131,28 @@ jobs:
           set -euo pipefail
           sep='?'; [[ "$RENDER_DEPLOY_HOOK_URL" == *'?'* ]] && sep='&'
           curl --fail --silent --show-error --location --max-time 30 "${RENDER_DEPLOY_HOOK_URL}${sep}ref=${ROLLBACK_SHA}" > "$RUNNER_TEMP/render-rollback-response.json"
-      - name: Upload navigation-polish evidence
+          for attempt in $(seq 1 24); do
+            if curl --fail --silent --show-error --max-time 20 "$RENDER_BASE_URL/health" > "$RUNNER_TEMP/rollback-health.json"; then
+              version="$(node -e "const fs=require('fs');const x=JSON.parse(fs.readFileSync(process.argv[1]));process.stdout.write(String(x.version||''))" "$RUNNER_TEMP/rollback-health.json")"
+              test "$version" = "1.7.98" && exit 0
+            fi
+            sleep 10
+          done
+          exit 1
+
+      - name: Upload pre42 deployment evidence
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
-          name: smarter-justice-navigation-polish-${{ github.run_id }}
+          name: smarter-justice-pre42-render-evidence-${{ github.run_id }}
           path: |
             ${{ runner.temp }}/render-deploy-response.json
             ${{ runner.temp }}/health.json
+            ${{ runner.temp }}/pre42.json
+            ${{ runner.temp }}/pre42-live-acceptance.json
             ${{ runner.temp }}/ai-status.json
             ${{ runner.temp }}/home.html
-            ${{ runner.temp }}/family.html
-            ${{ runner.temp }}/injury.html
-            ${{ runner.temp }}/rights.html
-            ${{ runner.temp }}/work.html
-            ${{ runner.temp }}/property.html
-            ${{ runner.temp }}/estatehub.html
-            ${{ runner.temp }}/divorce.html
-            ${{ runner.temp }}/pi.html
-            ${{ runner.temp }}/employment.html
             ${{ runner.temp }}/render-rollback-response.json
+            ${{ runner.temp }}/rollback-health.json
           if-no-files-found: warn
-          retention-days: 14
+          retention-days: 30
