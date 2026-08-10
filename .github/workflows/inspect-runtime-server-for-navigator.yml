@@ -21,17 +21,22 @@ jobs:
           set -euo pipefail
           npm install --ignore-scripts --no-audit --no-fund
           npm run postinstall
-      - name: Inspect runtime entry point and safe route seams
+      - name: Inspect owner auth and AI route seams only
         run: |
           set -euo pipefail
           root='.runtime/smarter-justice-v1.7.98'
-          echo '--- RUNTIME PACKAGE ---'
-          cat "$root/package.json"
-          echo '--- SERVER CANDIDATES ---'
-          find "$root" -maxdepth 3 -type f \( -name 'server.js' -o -name 'index.js' -o -name 'app.js' \) -print
-          entry="$(node -e "const p=require('./$root/package.json');process.stdout.write(String((p.scripts&&p.scripts.start)||''))")"
-          echo "START_SCRIPT=$entry"
-          echo '--- ROUTE/HTTP SEAMS ---'
-          grep -RInE "createServer|app\\.(get|post|use)|req\\.url|pathname|/health|/livez|/api/ai-status|centralAiGateway|express\\(" "$root" --include='*.js' | head -n 350 || true
-          echo '--- AUTH/TOKEN SEAMS ---'
-          grep -RInE "authorization|bearer|token|AI_PORTAL_SERVICE_TOKENS_JSON|timingSafeEqual|crypto" "$root" --include='*.js' | head -n 250 || true
+          echo '--- OWNER AUTH FUNCTIONS ---'
+          grep -nE "function requireOwner|function internalPageRole|function redirectToInternalAccess|OWNER_CONTROL_CENTER_TOKEN|owner-login" "$root/server.js" | head -n 120 || true
+          echo '--- SERVER AUTH REGION ---'
+          sed -n '160,270p' "$root/server.js"
+          echo '--- AI API REGION ---'
+          sed -n '1080,1145p' "$root/server.js"
+          echo '--- OWNER API REGION ---'
+          sed -n '1600,1840p' "$root/server.js"
+          echo '--- STATIC ROUTING REGION ---'
+          sed -n '2218,2250p' "$root/server.js"
+          echo '--- OWNER LOGIN FILES ---'
+          find "$root/public" -maxdepth 1 -type f -iname '*owner*' -print | sort
+          for f in "$root/public/owner-login.html" "$root/public/owner-login.js"; do
+            if [ -f "$f" ]; then echo "--- $f ---"; sed -n '1,260p' "$f"; fi
+          done
