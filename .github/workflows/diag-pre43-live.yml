@@ -1,0 +1,26 @@
+name: Diagnose pre43 live endpoints
+
+on:
+  push:
+    branches: [diag-pre43-live]
+
+permissions:
+  contents: read
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Probe Render and public Navigator endpoints
+        run: |
+          set -u
+          for base in https://smarter-justice-app.onrender.com https://smarterjustice.com; do
+            echo "=== BASE $base ==="
+            for path in /health /navigator /api/navigator/status /; do
+              echo "--- $base$path"
+              code=$(curl -L -sS -o /tmp/body --max-time 25 -w '%{http_code}' "$base$path" || true)
+              echo "HTTP $code"
+              head -c 1200 /tmp/body 2>/dev/null || true
+              echo
+            done
+          done
