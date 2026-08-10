@@ -21,16 +21,12 @@ jobs:
           set -euo pipefail
           npm install --ignore-scripts --no-audit --no-fund
           npm run postinstall
-      - name: Inspect owner session and login browser seams only
+      - name: Inspect CSRF contract only
         run: |
           set -euo pipefail
           root='.runtime/smarter-justice-v1.7.98'
-          echo '--- REQUIRE OWNER ---'
-          sed -n '395,440p' "$root/server.js"
-          echo '--- OWNER LOGIN API ---'
-          sed -n '1345,1415p' "$root/server.js"
-          echo '--- INTERNAL PAGE ROLE ---'
-          sed -n '2208,2230p' "$root/server.js"
-          echo '--- APP OWNER LOGIN HANDLER ---'
-          grep -nE "ownerLoginForm|owner-login|ownerSession|OWNER" "$root/public/app.js" | head -n 120 || true
-          for n in $(grep -n "ownerLoginForm" "$root/public/app.js" | cut -d: -f1 | head -n 3); do start=$((n-15)); [ $start -lt 1 ] && start=1; end=$((n+80)); sed -n "${start},${end}p" "$root/public/app.js"; done
+          grep -nE "csrf|CSRF|x-csrf|requestUsesAuthenticatedCookie|mutation" "$root/server.js" | head -n 220 || true
+          echo '--- SECURITY MODULE CSRF ---'
+          grep -RInE "csrf|CSRF|x-csrf" "$root/lib" --include='*.js' | head -n 180 || true
+          echo '--- BROWSER CSRF HELPERS ---'
+          grep -nE "csrf|CSRF|x-csrf" "$root/public/app.js" | head -n 180 || true
