@@ -1,0 +1,33 @@
+name: Pre43 public Navigator branch qualification
+
+on:
+  push:
+    branches: [pre43-navigator-preview]
+
+permissions:
+  contents: read
+
+jobs:
+  qualify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+      - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e
+        with:
+          node-version: '22.x'
+      - name: Reconstruct and qualify exact runtime plus pre43 public AI
+        run: |
+          set -euo pipefail
+          npm install --ignore-scripts --no-audit --no-fund
+          npm run postinstall
+      - name: Require public Navigator safety markers
+        run: |
+          set -euo pipefail
+          root='.runtime/smarter-justice-v1.7.98'
+          test -f "$root/public/navigator.html"
+          test -f "$root/public/navigator.js"
+          grep -q 'Available to everyone' "$root/public/navigator.html"
+          grep -q 'SMARTER_JUSTICE_PRE43_PUBLIC_NAVIGATOR' "$root/server.js"
+          grep -q "'/api/navigator/chat'" "$root/server.js"
+          ! grep -R --fixed-strings 'OPENAI_API_KEY=' "$root/public" deployment/pre43 scripts/apply-pre43-navigator-preview.js
+          python3 -m py_compile deployment/pre43/navigator_preview_cli.py deployment/pre43/test_pre43_navigator.py
