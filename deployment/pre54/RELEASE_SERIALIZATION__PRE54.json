@@ -1,0 +1,10 @@
+{
+  "schemaVersion":"1.0.0",
+  "release":"v2.0.0-pre54",
+  "builder":"J43",
+  "predecessorRelease":"v2.0.0-pre53",
+  "acceptedLiveRelease":"v2.0.0-pre53",
+  "parallelReleaseDetected":false,
+  "state":"QUALIFIED_SOURCE_NOT_MERGED_NOT_DEPLOYED",
+  "rule":"Only one successor release may advance from this authoritative pre53 accepted-live baseline."
+}

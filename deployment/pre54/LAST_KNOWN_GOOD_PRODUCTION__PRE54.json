@@ -1,0 +1,6 @@
+{
+  "schemaVersion":"1.0.0",
+  "release":"v2.0.0-pre54",
+  "lastKnownGood":{"release":"v2.0.0-pre53","builder":"J42","gitCommit":"39337e204b974f85e4690a97ef85ad30932fee30","renderServiceId":"srv-d8ps9jgjs32c73918vvg","renderDeployId":"dep-d9tnna2d0e5s739kogg0","liveMarker":"SMARTER_JUSTICE_PRE53_RENDER_STARTUP_AND_LIVE_GATE","acceptedAtUtc":"2026-08-11T19:46:23.858Z"},
+  "policy":"Rollback targets the exact newest accepted-live production deploy and commit and verifies provider terminal status plus public release identity."
+}

@@ -5,7 +5,9 @@ repo=Path(__file__).resolve().parents[2]
 runtime=repo/'.runtime'/'smarter-justice-v1.7.98'
 pkg=json.loads((repo/'package.json').read_text())
 start=pkg['scripts']['start']
-assert start == 'node scripts/check-pre52-data-continuity.js && node scripts/check-pre53-production-startup.js && npm --prefix .runtime/smarter-justice-v1.7.98 start'
+pre53_start='node scripts/check-pre52-data-continuity.js && node scripts/check-pre53-production-startup.js && npm --prefix .runtime/smarter-justice-v1.7.98 start'
+pre54_start='node scripts/check-pre52-data-continuity.js && node scripts/check-pre54-production-startup.js && npm --prefix .runtime/smarter-justice-v1.7.98 start'
+assert start in [pre53_start,pre54_start]
 for forbidden in ['run_pre42_acceptance.py','test_pre45_public_alignment.py','test_pre46_growth_operations_compliance_story.py','test_pre47_professional_growth.py','test_pre48_marketing_compliance_expansion.py','test_pre49_marketing_currentness.py','test_pre50_attorney_demo_path.py','test_pre51_public_domain_release_identity.py','test_pre52_attorney_value_clarity.py','test_pre52_mobile_navigation.py']:
     assert forbidden not in start, forbidden
 server=(runtime/'server.js').read_text(errors='replace')
@@ -13,7 +15,10 @@ for marker in ["release:'v2.0.0-pre53'","demoPathRelease:'v2.0.0-pre52'","deploy
     assert marker in server, marker
 assert (repo/'scripts'/'check-pre53-production-startup.js').is_file()
 
-workflow=(repo/'.github'/'workflows'/'deploy-current-pre53.yml').read_text(errors='replace')
+workflow_path=repo/'.github'/'workflows'/'deploy-current-pre53.yml'
+if not workflow_path.exists():
+    workflow_path=repo/'.github'/'workflow-history'/'deploy-current-pre53.yml'
+workflow=workflow_path.read_text(errors='replace')
 assert not (repo/'.github'/'workflows'/'deploy-pre22-projection.yml').exists()
 for required in [
     'Bind pre53 authority, owner authorization, rollback and continuity gate',
@@ -44,7 +49,13 @@ env['PORT']='0'
 with tempfile.TemporaryDirectory(prefix='sj-pre53-start-') as storage:
     env['SMARTER_JUSTICE_STORAGE_DIR']=storage
     started=time.monotonic()
-    proc=subprocess.Popen(['npm','start'],cwd=repo,env=env,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,text=True,bufsize=1)
+    if start==pre54_start:
+        precheck=subprocess.run(['node','scripts/check-pre53-production-startup.js'],cwd=repo,env=env,text=True,capture_output=True)
+        assert precheck.returncode==0, precheck.stdout+precheck.stderr
+        command=['npm','--prefix','.runtime/smarter-justice-v1.7.98','start']
+    else:
+        command=['npm','start']
+    proc=subprocess.Popen(command,cwd=repo,env=env,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,text=True,bufsize=1)
     sel=selectors.DefaultSelector(); sel.register(proc.stdout,selectors.EVENT_READ)
     output=[]; listening=False
     try:
