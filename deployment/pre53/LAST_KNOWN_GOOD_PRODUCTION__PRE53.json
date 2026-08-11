@@ -1,0 +1,11 @@
+{
+  "schemaVersion":"1.0.0",
+  "release":"v2.0.0-pre53",
+  "lastKnownGood":{"release":"v2.0.0-pre49","builder":"J37","gitCommit":"eea506b94ed890b7e85dcdd8aa61a473ba11b356","liveMarker":"SMARTER_JUSTICE_PRE49_SOURCE_CURRENTNESS_GATE"},
+  "interveningSourceHistory":[
+    {"release":"v2.0.0-pre50","gitCommit":"f884fbd06522489a00ddaaf5a0513b1223c372b9","state":"QUALIFIED_SOURCE_LIVE_REJECTED_ROLLED_BACK"},
+    {"release":"v2.0.0-pre51","gitCommit":"1dc965afa16030fad4cd61bd15e7cbf8daa6b2a7","state":"QUALIFIED_SOURCE_NOT_DEPLOYED"},
+    {"release":"v2.0.0-pre52","qualifiedHead":"a79f20a32074182908b850faa6d522b6913a1219","mainMerge":"8ad67af4bb2b2d429f87a9267dac169e94933f30","state":"QUALIFIED_SOURCE; TWO LIVE_CUTOVER_ATTEMPTS_REJECTED; NOT_ACCEPTED_LIVE"}
+  ],
+  "policy":"Rollback targets the newest accepted-live production commit and verifies the actual accepted-live marker, never an inferred or mistyped marker."
+}
