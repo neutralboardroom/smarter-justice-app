@@ -1,0 +1,9 @@
+{
+  "schemaVersion":"1.0.0",
+  "release":"v2.0.0-pre52",
+  "builder":"J40",
+  "predecessor":{"release":"v2.0.0-pre51","builder":"J39","gitCommit":"1dc965afa16030fad4cd61bd15e7cbf8daa6b2a7"},
+  "branch":"agent/pre52-attorney-value-clarity",
+  "state":"ACTIVE_SINGLE_SUCCESSOR",
+  "rule":"No competing pre52 successor may supersede this release without explicit convergence and successorship evidence."
+}
