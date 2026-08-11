@@ -27,14 +27,16 @@ jobs:
           ref: ${{ env.TARGET_SHA }}
           fetch-depth: 0
 
-      - name: Bind exact pre49 release and rollback target
+      - name: Bind exact pre49 release and accepted-live rollback target
         run: |
           set -euo pipefail
           test "$(git rev-parse HEAD)" = "$TARGET_SHA"
           test -f deployment/pre49/CURRENTNESS_SOURCE_CONTRACT__PRE49.json
           test -f deployment/pre49/test_pre49_marketing_currentness.py
           test -f public/professional-growth-pre49-currentness.js
-          rollback="$(git rev-parse "$TARGET_SHA^")"
+          test -f deployment/pre51/LAST_KNOWN_GOOD_PRODUCTION__PRE51.json
+          rollback="$(node -p "require('./deployment/pre51/LAST_KNOWN_GOOD_PRODUCTION__PRE51.json').lastKnownGood.gitCommit")"
+          test "$rollback" = "eea506b94ed890b7e85dcdd8aa61a473ba11b356"
           git cat-file -e "$rollback^{commit}"
           echo "ROLLBACK_SHA=$rollback" >> "$GITHUB_ENV"
 
