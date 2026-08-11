@@ -1,0 +1,32 @@
+{
+  "schemaVersion": "1.0.0",
+  "release": "v2.0.0-pre49",
+  "researchedAt": "2026-08-11",
+  "purpose": "Current primary-source and adjacent-product research for automated marketing-ruleset source currentness and fail-closed downgrade behavior.",
+  "liveAudit": {
+    "currentGitHubMain": "a01a4d5502dad194288c135ad85eeb2c0419b266",
+    "currentProductionRelease": "v2.0.0-pre48",
+    "productionQualificationWorkflowRunId": 31458284117,
+    "productionDeploymentWorkflowRunId": 31458284093,
+    "liveAcceptance": "PASS",
+    "note": "External search indexing still does not reliably surface every newest Smarter Justice page; exact GitHub main plus immutable deployment evidence remains the source-code/deployment authority."
+  },
+  "primarySources": [
+    {"jurisdiction":"NY","url":"https://www.nycourts.gov/rules/amendments-joint-rules-departments-appellate-division","currentSignal":"May 27, 2026 Joint Appellate Division order amended Rules 1.0, 7.1, 7.3 and 7.4 effective June 1, 2026."},
+    {"jurisdiction":"FL","url":"https://www.floridabar.org/ethics/etad/","currentSignal":"Advertising regulation page states July 1, 2026 fee/current filing information."},
+    {"jurisdiction":"FL","url":"https://www.floridabar.org/etopinions/opinion-24-1/","currentSignal":"Opinion 24-1 continues to state AI chatbot advertising disclosure requirements."},
+    {"jurisdiction":"TX","url":"https://www.texasbar.com/Content/NavigationMenu/ForLawyers/AdvertisingReview/default.htm","currentSignal":"Advertising Review page currently states $100 application fee and Part VII review authority."},
+    {"jurisdiction":"TX","url":"https://www.texasbar.com/Content/NavigationMenu/ForLawyers/MembershipInformation/AdvertisingReview2/TypesOfAds.htm","currentSignal":"Types page states most public marketing efforts require submission unless exempt."},
+    {"jurisdiction":"CA","url":"https://www.calbar.ca.gov/Attorneys/Conduct-Discipline/Rules/Rules-of-Professional-Conduct/Current-Rules/Chapter-7-Information-About-Legal-Services","currentSignal":"Current Rule 7.3 includes DVRO respondent solicitation restriction and targeted-solicitation labeling."},
+    {"jurisdiction":"CA","url":"https://www.calbar.ca.gov/About-Us/News/Ethics-News","currentSignal":"State Bar ethics news states Rule 7.3 amendment effective June 1, 2026."},
+    {"jurisdiction":"NJ","url":"https://www.njcourts.gov/notices/committee-attorney-advertising-opinion-49-use-of-client-endorsements-and-testimonials","currentSignal":"CAA Opinion 49 testimonial identity, results disclaimer, comparison, and no-payment guidance."},
+    {"jurisdiction":"NJ","url":"https://www.njcourts.gov/notices/advisory-committee-professional-ethics-acpe-opinion-735-supplement-lawyers-use-of-internet","currentSignal":"ACPE 735 supplement requires landing-page disclaimer for competitive keyword campaigns."},
+    {"jurisdiction":"NJ","url":"https://www.njcourts.gov/attorneys/rules-of-court/advertising","currentSignal":"Current advertising rules include retention and website backup obligations."}
+  ],
+  "adjacentProductResearch": [
+    {"vendor":"Clio Grow","url":"https://www.clio.com/grow/","signal":"Current product emphasizes organized intake, automated intake tasks, reputation management, pipeline tracking, and email marketing."},
+    {"vendor":"Lawmatics","url":"https://www.lawmatics.com/","signal":"Current platform emphasizes legal CRM, intake, marketing automation, reporting, and integrations."}
+  ],
+  "decision": "Differentiate by making source currentness itself a first-class compliance control. Generic CRM/marketing automation does not substitute for a sourced, fail-closed legal-marketing preflight whose deterministic scope can automatically downgrade when authority cannot be verified.",
+  "implementationBoundary": ["No new jurisdiction added in pre49.","No automatic publication or outbound solicitation.","No blanket legal-compliance approval.","Ruleset source checks transmit no marketing draft or client data.","Unavailable, changed, or unverifiable source state disables deterministic use for the affected jurisdiction and requires human review."]
+}
