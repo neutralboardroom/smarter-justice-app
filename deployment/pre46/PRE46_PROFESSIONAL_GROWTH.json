@@ -1,0 +1,11 @@
+{
+  "schemaVersion":"1.0.0",
+  "release":"v2.0.0-pre46",
+  "slice":"PROFESSIONAL_GROWTH_WORKSPACE_AND_JURISDICTION_AWARE_MARKETING_PREFLIGHT",
+  "date":"2026-08-10",
+  "publicRoutes":["/professional-growth.html","/professional-membership.html","/attorney-partner-tour.html"],
+  "workingNow":["browser-local marketing draft issue spotting","source-linked NY/FL/TX partial rule mapping","downloadable hash-based preflight receipt","Professional Navigator link","profile claim link"],
+  "closedOrHumanReview":["blanket compliance approval","unsupported jurisdiction determination","filing/exemption determination where facts are incomplete","automatic marketing publication","outbound solicitation","guaranteed leads or results"],
+  "privacyBoundary":"The preflight sends no draft text; receipt stores the SHA-256 content hash and findings, not the draft itself.",
+  "coverageBoundary":"PARTIAL primary-source mapping. Unmapped, uncertain, stale, exemption-sensitive, or conflicting authority fails closed to human review."
+}
