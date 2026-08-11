@@ -1,0 +1,9 @@
+{
+  "schemaVersion":"1.0.0",
+  "release":"v2.0.0-pre52",
+  "authorized":true,
+  "authorizedAt":"2026-08-11",
+  "scope":"After the three exact physical deliverables are finished, qualified, sealed, preserved and handed to the owner, automatically deploy this exact pre52 release, run live acceptance, roll back to the last accepted-live release on failure, and preserve deployment evidence.",
+  "supersedesForThisRelease":"The pre51/J39 owner deployment hold is satisfied by this explicit owner authorization for pre52 only.",
+  "mustPreserve":["physical-files-first","exact-artifact preservation","qualification","serialization","data-continuity gate","live smarterjustice.com audit","automatic rollback","deployment evidence"]
+}
