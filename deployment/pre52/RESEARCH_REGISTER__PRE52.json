@@ -1,0 +1,25 @@
+{
+  "schemaVersion":"1.0.0",
+  "release":"v2.0.0-pre52",
+  "researchedAt":"2026-08-11",
+  "purpose":"Current online/competitor research plus sealed-product/GitHub/live-state triangulation for the attorney-value-clarity release.",
+  "observedState":{
+    "sealedSource":"v2.0.0-pre51 / J39 qualified handoff",
+    "githubQualifiedHead":"1dc965afa16030fad4cd61bd15e7cbf8daa6b2a7",
+    "githubBranch":"agent/pre51-public-domain-release-convergence",
+    "lastAcceptedLive":"v2.0.0-pre49 @ eea506b94ed890b7e85dcdd8aa61a473ba11b356",
+    "liveAuditConstraint":"The independent web-reading channel did not resolve smarterjustice.com reliably during this build; do not claim a fresh public-domain page-body inspection. GitHub and sealed source were inspected, and pre51 remains qualified but undeployed under owner hold."
+  },
+  "competitorEvidence":[
+    {"vendor":"Clio Grow","observed":"Leads with concrete attorney benefits: organized intake, fewer missed follow-ups, appointment booking, source tracking, reputation and growth rather than internal architecture terms.","decision":"ADAPT_PATTERN_NOT_COPY","use":"Lead Smarter Justice attorney pages with outcomes attorneys immediately understand."},
+    {"vendor":"MyCase","observed":"Explains lead management through visible pipeline outcomes, intake forms, follow-up, appointments and source/channel tracking.","decision":"ADAPT_PATTERN_NOT_COPY","use":"Describe firm workflow as practical next-step visibility rather than data-model terminology."}
+  ],
+  "buildDecisions":[
+    {"decision":"BUILD","item":"Rewrite attorney demo surfaces in simple benefit-first language while preserving truth labels."},
+    {"decision":"BUILD","item":"Replace internal terms such as suppression, native/external-primary and purpose-limited access on attorney-visible tour surfaces."},
+    {"decision":"BUILD","item":"Keep compliance explanation concrete: mapped rules, reasons, sources and human review when uncertain."},
+    {"decision":"PRESERVE","item":"One-platform legal-area model; no return to public micro-portal navigation."},
+    {"decision":"PRESERVE","item":"Owner deployment hold and last accepted-live pre49 rollback authority."},
+    {"decision":"AVOID","item":"Competitor trade-dress copying, guaranteed-growth claims or presentation of gated features as live."}
+  ]
+}
