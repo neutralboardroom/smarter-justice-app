@@ -1,0 +1,11 @@
+{
+  "schemaVersion":"1.0.0",
+  "release":"v2.0.0-pre52",
+  "slice":"ATTORNEY_VALUE_CLARITY_AND_DEMO_LANGUAGE",
+  "deploymentAuthorized":false,
+  "predecessor":"v2.0.0-pre51",
+  "preserves":["pre51 dual-surface release identity and no-store demo protection","pre50 coherent attorney demonstration pathway","pre49 marketing-source currentness fail-closed behavior","Navigator/OpenAI","Growth + Operations + Compliance","one-platform Smarter Justice legal-area model"],
+  "improves":["plain-English attorney value proposition","benefit-first tour labels","nontechnical firm-workflow language","clearer attorney-marketing guardrail explanation","attorney-tour scanability"],
+  "explicitlyNotClaimed":["deployment of pre52","blanket nationwide marketing compliance","guaranteed clients or revenue","automatic CRM migration","unrestricted outbound campaigns","unfinished feature availability"],
+  "authorityRules":["SJ-SP-269","SJ-SP-271","SJ-SP-282","SJ-SP-291"]
+}
