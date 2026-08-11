@@ -6,8 +6,9 @@ visible=['attorney-call-tour.html','attorney-partner-tour.html','professionals.h
 for name in visible:
     p=P/name
     assert p.is_file(), name
-    text=p.read_text(errors='replace')
-    assert 'SMARTER_JUSTICE_PRE50_ATTORNEY_DEMO_PATH' in text, name
+# Pre50 marker belongs to the pages that pre50 actually transformed. Do not invent ancestry requirements for later/other pages.
+for name in ['attorney-call-tour.html','attorney-partner-tour.html','professionals.html','attorney-launch.html','professional-signup.html']:
+    assert 'SMARTER_JUSTICE_PRE50_ATTORNEY_DEMO_PATH' in (P/name).read_text(errors='replace'), name
 combined='\n'.join((P/n).read_text(errors='replace') for n in visible)
 assert 'SMARTER_JUSTICE_PRE52_ATTORNEY_VALUE_CLARITY' in combined
 # Clear, attorney-facing language only; future/internal feature names are not public sales copy.
