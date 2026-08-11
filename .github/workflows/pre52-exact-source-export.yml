@@ -1,0 +1,30 @@
+name: Pre52 exact qualified source export
+on:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact qualified pre52 source
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          ref: a79f20a32074182908b850faa6d522b6913a1219
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Verify and archive exact source
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "a79f20a32074182908b850faa6d522b6913a1219"
+          mkdir -p "$RUNNER_TEMP/pre52-source"
+          git archive --format=tar --prefix=smarter-justice-app-a79f20a/ HEAD | tar -xf - -C "$RUNNER_TEMP/pre52-source"
+          printf '%s\n' 'a79f20a32074182908b850faa6d522b6913a1219' > "$RUNNER_TEMP/pre52-source/QUALIFIED_COMMIT.txt"
+      - name: Upload exact source snapshot
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: smarter-justice-pre52-exact-source-a79f20a
+          path: ${{ runner.temp }}/pre52-source
+          if-no-files-found: error
+          retention-days: 1
