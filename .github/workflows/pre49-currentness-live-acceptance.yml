@@ -1,0 +1,108 @@
+name: Smarter Justice pre49 currentness live acceptance
+
+on:
+  workflow_run:
+    workflows:
+      - Smarter Justice qualified automatic Render deploy
+    types:
+      - completed
+
+permissions:
+  contents: read
+
+env:
+  RENDER_BASE_URL: https://smarter-justice-app.onrender.com
+  PUBLIC_BASE_URL: https://smarterjustice.com
+  TARGET_SHA: ${{ github.event.workflow_run.head_sha }}
+
+jobs:
+  currentness-live-acceptance:
+    if: ${{ github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_branch == 'main' }}
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: Checkout exact deployed commit
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+        with:
+          ref: ${{ env.TARGET_SHA }}
+          fetch-depth: 0
+
+      - name: Bind exact pre49 release and rollback target
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$TARGET_SHA"
+          test -f deployment/pre49/CURRENTNESS_SOURCE_CONTRACT__PRE49.json
+          test -f deployment/pre49/test_pre49_marketing_currentness.py
+          test -f public/professional-growth-pre49-currentness.js
+          rollback="$(git rev-parse "$TARGET_SHA^")"
+          git cat-file -e "$rollback^{commit}"
+          echo "ROLLBACK_SHA=$rollback" >> "$GITHUB_ENV"
+
+      - name: Require live pre49 currentness fail-closed contract
+        id: currentness
+        run: |
+          set -euo pipefail
+          for attempt in $(seq 1 24); do
+            echo "pre49 currentness live acceptance attempt $attempt"
+            if curl --fail --silent --show-error --max-time 35 "$RENDER_BASE_URL/api/marketing-compliance/currentness" > "$RUNNER_TEMP/currentness.json" \
+              && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/professional-growth.html" > "$RUNNER_TEMP/professional-growth.html"; then
+              if CURRENTNESS="$RUNNER_TEMP/currentness.json" GROWTH="$RUNNER_TEMP/professional-growth.html" TARGET_SHA="$TARGET_SHA" node - <<'NODE'
+          const fs=require('fs');
+          const c=JSON.parse(fs.readFileSync(process.env.CURRENTNESS,'utf8'));
+          const growth=fs.readFileSync(process.env.GROWTH,'utf8');
+          if(c.failClosed!==true||c.draftOrClientDataTransmitted!==false)process.exit(1);
+          if(c.currentnessVersion!=='sj-marketing-currentness-2026-08-11-pre49')process.exit(1);
+          if(c.rulesetVersion!=='sj-marketing-compliance-2026-08-10-pre48-five-jurisdiction-partial')process.exit(1);
+          const codes=Object.keys(c.jurisdictions||{}).sort();
+          if(JSON.stringify(codes)!==JSON.stringify(['CA','FL','NJ','NY','TX']))process.exit(1);
+          for(const code of codes){
+            const row=c.jurisdictions[code];
+            if(typeof row.deterministicAllowed!=='boolean')process.exit(1);
+            if(row.deterministicAllowed&&row.status!=='VERIFIED_CURRENT')process.exit(1);
+            if(!row.deterministicAllowed&&row.status!=='HUMAN_REVIEW_ONLY_SOURCE_CURRENTNESS_UNVERIFIED')process.exit(1);
+          }
+          if(!growth.includes('SMARTER_JUSTICE_PRE49_SOURCE_CURRENTNESS_GATE'))process.exit(1);
+          if(!growth.includes('professional-growth-pre49-currentness.js'))process.exit(1);
+          console.log(JSON.stringify({status:'PASS',targetSha:process.env.TARGET_SHA,allVerified:Boolean(c.allVerified),failClosed:true,jurisdictions:codes},null,2));
+          NODE
+              then exit 0; fi
+            fi
+            sleep 10
+          done
+          echo 'pre49 currentness live acceptance did not pass' >&2
+          exit 1
+
+      - name: Require protected Render deploy hook for rollback
+        if: failure() && steps.currentness.outcome == 'failure'
+        env:
+          RENDER_DEPLOY_HOOK_URL: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+        run: test -n "$RENDER_DEPLOY_HOOK_URL"
+
+      - name: Automatic rollback after failed pre49 acceptance
+        if: failure() && steps.currentness.outcome == 'failure'
+        env:
+          RENDER_DEPLOY_HOOK_URL: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+        run: |
+          set -euo pipefail
+          sep='?'; [[ "$RENDER_DEPLOY_HOOK_URL" == *'?'* ]] && sep='&'
+          curl --fail --silent --show-error --location --max-time 30 "${RENDER_DEPLOY_HOOK_URL}${sep}ref=${ROLLBACK_SHA}" > "$RUNNER_TEMP/render-rollback-response.json"
+          for attempt in $(seq 1 30); do
+            if curl --fail --silent --show-error --max-time 20 "$RENDER_BASE_URL/health" > "$RUNNER_TEMP/rollback-health.json"; then
+              node -e "const fs=require('fs');const x=JSON.parse(fs.readFileSync(process.argv[1]));if(x.ok!==true||x.app!=='Smarter Justice')process.exit(1)" "$RUNNER_TEMP/rollback-health.json" && exit 0
+            fi
+            sleep 10
+          done
+          exit 1
+
+      - name: Upload immutable pre49 currentness evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: smarter-justice-pre49-currentness-live-evidence-${{ github.run_id }}
+          path: |
+            ${{ runner.temp }}/currentness.json
+            ${{ runner.temp }}/professional-growth.html
+            ${{ runner.temp }}/render-rollback-response.json
+            ${{ runner.temp }}/rollback-health.json
+          if-no-files-found: warn
+          retention-days: 90

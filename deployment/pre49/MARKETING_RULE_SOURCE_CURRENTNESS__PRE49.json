@@ -1,0 +1,9 @@
+{
+  "schemaVersion": "1.0.0",
+  "release": "v2.0.0-pre49",
+  "slice": "MARKETING_RULE_SOURCE_CURRENTNESS_GATE",
+  "preserves": ["NY/FL/TX/CA/NJ partial rule mappings","pre48 deterministic checks","browser-local draft review","Navigator/OpenAI","Growth + Operations + Compliance story"],
+  "adds": ["server-side official-source currentness endpoint","6-hour source-status cache","browser fail-closed currentness gate","downloadable source-currentness receipt","daily GitHub source-currentness monitor","live acceptance for currentness endpoint"],
+  "closed": ["automatic publication","outbound solicitation","blanket nationwide compliance approval","legal compliance certification","sending marketing draft to source-currentness service"],
+  "currentnessPolicy": "If any required official source for a mapped jurisdiction is unreachable or no longer contains its rule-specific semantic markers, deterministic checks for that jurisdiction must not be relied on; require human review until re-verified."
+}
