@@ -1,0 +1,10 @@
+{
+  "schemaVersion":"1.0.0",
+  "release":"v2.0.0-pre51",
+  "state":"QUALIFY_AND_HANDOFF_ONLY",
+  "deploymentAuthorized":false,
+  "ownerInstructionDate":"2026-08-11",
+  "instruction":"Do not automatically deploy new versions. Deliver the three finished release artifacts only. Deployment resumes only after explicit owner authorization.",
+  "lastAcceptedLive":{"release":"v2.0.0-pre49","gitCommit":"eea506b94ed890b7e85dcdd8aa61a473ba11b356"},
+  "sourceStatus":{"pre50":"QUALIFIED_SOURCE_BUT_LIVE_REJECTED_AND_ROLLED_BACK","pre51":"QUALIFICATION_PENDING"}
+}

@@ -1,0 +1,33 @@
+{
+  "schemaVersion":"1.1.0",
+  "release":"v2.0.0-pre52",
+  "researchedAt":"2026-08-11",
+  "purpose":"Current online/competitor research plus sealed-product/GitHub/live-state triangulation for attorney launch readiness.",
+  "observedState":{
+    "sealedSource":"v2.0.0-pre51 / J39 qualified handoff",
+    "githubQualifiedPredecessor":"1dc965afa16030fad4cd61bd15e7cbf8daa6b2a7",
+    "workingBranch":"agent/pre52-attorney-value-clarity",
+    "lastAcceptedLive":"v2.0.0-pre49 @ eea506b94ed890b7e85dcdd8aa61a473ba11b356",
+    "ownerDeploymentAuthorization":"EXPLICIT_PRE52_AUTHORIZATION_RECEIVED_2026-08-11_AFTER_THREE_PHYSICAL_FILES",
+    "liveAuditConstraint":"The independent web-reading channel did not reliably resolve smarterjustice.com before deployment. Do not fabricate a fresh page-body audit; exact public live acceptance is mandatory after deployment."
+  },
+  "competitorEvidence":[
+    {"vendor":"Clio Grow","officialSource":"https://www.clio.com/grow/","observed":"Leads with concrete outcomes attorneys understand: organized intake, less manual work, progress visibility, reputation, source/channel insight and client experience.","decision":"ADAPT_PATTERN_NOT_COPY","use":"Lead Smarter Justice attorney pages with immediate outcomes and demonstrable value rather than internal architecture terms."},
+    {"vendor":"Clio Grow intake","officialSource":"https://www.clio.com/features/online-intake-forms/","observed":"Explains intake through simple actions and benefits: collect information, reduce re-entry, see who needs follow-up and track lead source.","decision":"ADAPT_PATTERN_NOT_COPY","use":"Keep attorney-facing language concrete and task-oriented."},
+    {"vendor":"MyCase","officialSource":"https://www.mycase.com/products/client-intake-lead-management/","observed":"Explains lead management through a visible prospective-client pipeline, online forms, follow-up, consultations and marketing-channel tracking.","decision":"ADAPT_PATTERN_NOT_COPY","use":"Show a clear attorney journey and next action without promising unqualified operating functions."},
+    {"vendor":"Scorpion","officialSource":"https://www.scorpion.co/law-firms/marketing-solutions/","observed":"Uses direct growth language and emphasizes knowing what happened to leads, revenue intelligence and one-place visibility.","decision":"ADAPT_PATTERN_NOT_COPY","use":"Make Smarter Justice differentiation understandable at a glance while avoiding guaranteed-growth claims and avoiding features not yet qualified."},
+    {"vendor":"Scorpion + Clio","officialSource":"https://www.scorpion.co/about-us/partnerships/clio/","observed":"Emphasizes connecting marketing-related source/status data while avoiding sensitive case-file content in the marketing integration.","decision":"ADAPT_PRIVACY_PATTERN","use":"Preserve privacy-minimized attribution principles; do not require a private matter narrative merely to understand source."}
+  ],
+  "buildDecisions":[
+    {"decision":"BUILD","item":"Rewrite attorney demo surfaces in simple benefit-first language while preserving truth labels."},
+    {"decision":"BUILD","item":"Replace internal terms such as suppression, native/external-primary and purpose-limited access on attorney-visible tour surfaces."},
+    {"decision":"BUILD","item":"Make the 7-step attorney demonstration prove working public legal areas, Navigator, professional profile path, preparation tools and fail-closed marketing preflight rather than advertising unfinished future modules."},
+    {"decision":"BUILD","item":"Repair mobile Menu behavior and make phone navigation a release acceptance surface."},
+    {"decision":"BUILD","item":"Slightly reduce oversized desktop/laptop hero typography without redesigning working visual identity."},
+    {"decision":"BUILD","item":"Add working-only public publication gate and remove ordinary links to preserved unfinished routes."},
+    {"decision":"BUILD","item":"Add zero-loss operational data continuity, backup/restore and migration fail-closed requirements."},
+    {"decision":"PRESERVE","item":"One-platform Smarter Justice legal-area model; no return to public micro-portal navigation."},
+    {"decision":"PRESERVE","item":"Pre49 remains last accepted-live rollback authority until pre52 passes live acceptance."},
+    {"decision":"AVOID","item":"Competitor trade-dress copying, guaranteed-growth claims, blanket compliance claims, or presentation of gated features as live."}
+  ]
+}

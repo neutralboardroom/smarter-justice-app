@@ -1,9 +1,8 @@
-name: Smarter Justice qualified automatic Render deploy
+name: Smarter Justice current automatic Render deploy
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -11,15 +10,15 @@ permissions:
   actions: read
   checks: read
 
+concurrency:
+  group: smarter-justice-current-production
+  cancel-in-progress: false
+
 env:
   RENDER_BASE_URL: https://smarter-justice-app.onrender.com
   PUBLIC_BASE_URL: https://smarterjustice.com
   TARGET_SHA: ${{ github.sha }}
-  PRE42_ARTIFACT_SHA: 9956c52237ebc09bb6e4474c7c0a9863af6d952cabc3e030ee42942cc75cc4f5
-
-concurrency:
-  group: smarter-justice-qualified-render-deploy
-  cancel-in-progress: false
+  LAST_ACCEPTED_LIVE_SHA: eea506b94ed890b7e85dcdd8aa61a473ba11b356
 
 jobs:
   deploy:
@@ -32,33 +31,27 @@ jobs:
           ref: ${{ env.TARGET_SHA }}
           fetch-depth: 0
 
-      - name: Bind target, rollback, pre42 foundation, and pre43 public AI
+      - name: Bind pre52 authority, owner authorization, rollback and working-only gate
         run: |
           set -euo pipefail
           test "$(git rev-parse HEAD)" = "$TARGET_SHA"
-          rollback="$(git rev-parse HEAD^)"
-          git cat-file -e "$rollback^{commit}"
-          echo "ROLLBACK_SHA=$rollback" >> "$GITHUB_ENV"
           test "$(node -p "require('./package.json').version")" = "1.7.98"
-          test -f deployment/pre42/PRE42_RENDER_PROJECTION.json
-          test -f deployment/pre43/navigator_preview_cli.py
-          test -f deployment/pre43/test_pre43_navigator.py
-          test -f scripts/apply-pre43-navigator-preview.js
-          test -f scripts/apply-pre46-growth-operations-compliance-story.js
-          test -f deployment/pre46/test_pre46_growth_operations_compliance_story.py
-          test -f scripts/apply-pre47-professional-growth.js
-          test -f deployment/pre47/test_pre47_professional_growth.py
-          test -f scripts/apply-pre48-marketing-compliance-expansion.js
-          test -f deployment/pre48/test_pre48_marketing_compliance_expansion.py
-          PRE42_ARTIFACT_SHA="$PRE42_ARTIFACT_SHA" node - <<'NODE'
+          test -f deployment/pre52/OWNER_DEPLOYMENT_AUTHORIZATION__PRE52.json
+          test -f deployment/pre52/LAST_KNOWN_GOOD_PRODUCTION__PRE52.json
+          test -f deployment/pre52/DATA_CONTINUITY_AND_PUBLICATION_GATE__PRE52.json
+          test -f deployment/pre52/test_pre52_attorney_value_clarity.py
+          test -f deployment/pre52/test_pre52_mobile_navigation.py
+          AUTH=deployment/pre52/OWNER_DEPLOYMENT_AUTHORIZATION__PRE52.json LAST=deployment/pre52/LAST_KNOWN_GOOD_PRODUCTION__PRE52.json node - <<'NODE'
           const fs=require('fs');
-          const row=JSON.parse(fs.readFileSync('deployment/pre42/PRE42_RENDER_PROJECTION.json','utf8'));
-          if(row.projection!=='PRE42_RENDER_CONTROLLED_ACCEPTANCE_V1')process.exit(1);
-          if(row.authoritativeProduct?.sha256!==process.env.PRE42_ARTIFACT_SHA)process.exit(1);
-          if(row.deploymentBoundary?.outboundActionsEnabledByProjection!==false)process.exit(1);
+          const auth=JSON.parse(fs.readFileSync(process.env.AUTH,'utf8'));
+          const last=JSON.parse(fs.readFileSync(process.env.LAST,'utf8'));
+          if(auth.release!=='v2.0.0-pre52'||auth.authorized!==true)process.exit(1);
+          if(last.lastKnownGood?.gitCommit!==process.env.LAST_ACCEPTED_LIVE_SHA)process.exit(1);
           NODE
+          git cat-file -e "$LAST_ACCEPTED_LIVE_SHA^{commit}"
+          echo "ROLLBACK_SHA=$LAST_ACCEPTED_LIVE_SHA" >> "$GITHUB_ENV"
 
-      - name: Wait for exact-commit qualification gate
+      - name: Require successful qualification gate for exact commit
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
@@ -71,8 +64,22 @@ jobs:
             echo "qualification gate pending: attempt $attempt"
             sleep 10
           done
-          echo 'qualification gate did not reach success' >&2
           exit 1
+
+      - name: Capture previous live state and protect active persistent data
+        env:
+          BACKUP_RECEIPT: ${{ vars.SJ_PREDEPLOY_BACKUP_RECEIPT }}
+          RESTORE_VERIFICATION: ${{ vars.SJ_RESTORE_PATH_VERIFICATION }}
+        run: |
+          set -euo pipefail
+          curl --fail --silent --show-error --max-time 25 "$RENDER_BASE_URL/health" > "$RUNNER_TEMP/previous-health.json"
+          HEALTH="$RUNNER_TEMP/previous-health.json" BACKUP_RECEIPT="$BACKUP_RECEIPT" RESTORE_VERIFICATION="$RESTORE_VERIFICATION" node - <<'NODE'
+          const fs=require('fs');
+          const h=JSON.parse(fs.readFileSync(process.env.HEALTH,'utf8'));
+          if(h.ok!==true||h.app!=='Smarter Justice')process.exit(1);
+          // If sensitive production writes are already open, deployment requires explicit current backup + recovery evidence.
+          if(h.sensitiveTrafficApproved===true && (!String(process.env.BACKUP_RECEIPT||'').trim() || !String(process.env.RESTORE_VERIFICATION||'').trim())) process.exit(1);
+          NODE
 
       - name: Require protected Render deploy hook
         env:
@@ -87,90 +94,74 @@ jobs:
           set -euo pipefail
           sep='?'; [[ "$RENDER_DEPLOY_HOOK_URL" == *'?'* ]] && sep='&'
           curl --fail --silent --show-error --location --max-time 30 "${RENDER_DEPLOY_HOOK_URL}${sep}ref=${TARGET_SHA}" > "$RUNNER_TEMP/render-deploy-response.json"
-          python3 - <<'PY'
-          import pathlib, os
-          p=pathlib.Path(os.environ['RUNNER_TEMP'])/'render-deploy-response.json'
-          print(p.read_text(errors='replace')[:800])
-          PY
 
-      - name: Require live core Navigator and pre46/pre47 professional story plus pre48 five-jurisdiction marketing-preflight routes
-        id: smoke
+      - name: Pre52 origin and public live acceptance
+        id: live
         run: |
           set -euo pipefail
           jar="$RUNNER_TEMP/navigator-cookies.txt"
           for attempt in $(seq 1 42); do
-            echo "public live acceptance attempt $attempt"
+            echo "pre52 live acceptance attempt $attempt"
+            stamp="${TARGET_SHA}-${attempt}-$(date +%s)"
             rm -f "$jar"
-            if curl --fail --silent --show-error --max-time 20 "$RENDER_BASE_URL/health" > "$RUNNER_TEMP/health.json" \
-              && curl --fail --silent --show-error --max-time 20 "$RENDER_BASE_URL/.well-known/smarter-justice-pre42-deployment.json" > "$RUNNER_TEMP/pre42.json" \
-              && curl --fail --silent --show-error --max-time 20 "$RENDER_BASE_URL/navigator" > "$RUNNER_TEMP/navigator.html" \
-              && curl --fail --silent --show-error --max-time 20 -c "$jar" "$RENDER_BASE_URL/api/navigator/status" > "$RUNNER_TEMP/navigator-status.json" \
-              && curl --fail --silent --show-error --max-time 50 -b "$jar" -c "$jar" -H 'Content-Type: application/json' -d '{"message":"Reply with exactly: SMARTER JUSTICE PUBLIC AI READY","toolMode":"NAVIGATOR","inputMode":"TEXT"}' "$RENDER_BASE_URL/api/navigator/chat" > "$RUNNER_TEMP/navigator-chat.json" \
-              && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/navigator" > "$RUNNER_TEMP/public-navigator.html" \
-              && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/" > "$RUNNER_TEMP/public-home.html" \
-              && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/growth-operations-compliance.html" > "$RUNNER_TEMP/public-growth-operations-compliance.html" \
-              && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/attorney-call-tour.html" > "$RUNNER_TEMP/public-attorney-call-tour.html" \
-              && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/professional-growth.html" > "$RUNNER_TEMP/public-professional-growth.html" \
-              && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/professional-membership.html" > "$RUNNER_TEMP/public-professional-membership.html" \
-              && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/attorney-partner-tour.html" > "$RUNNER_TEMP/public-attorney-tour.html" \
-              && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/marketing-compliance-pre48-data.js" > "$RUNNER_TEMP/public-marketing-rules-pre48.js"; then
-              if HEALTH="$RUNNER_TEMP/health.json" PRE42="$RUNNER_TEMP/pre42.json" STATUS="$RUNNER_TEMP/navigator-status.json" CHAT="$RUNNER_TEMP/navigator-chat.json" NAV="$RUNNER_TEMP/navigator.html" PUBLIC_NAV="$RUNNER_TEMP/public-navigator.html" PUBLIC_HOME="$RUNNER_TEMP/public-home.html" GOC="$RUNNER_TEMP/public-growth-operations-compliance.html" QUICK="$RUNNER_TEMP/public-attorney-call-tour.html" GROWTH="$RUNNER_TEMP/public-professional-growth.html" MEMBERSHIP="$RUNNER_TEMP/public-professional-membership.html" TOUR="$RUNNER_TEMP/public-attorney-tour.html" RULES="$RUNNER_TEMP/public-marketing-rules-pre48.js" PRE42_ARTIFACT_SHA="$PRE42_ARTIFACT_SHA" node - <<'NODE'
-          const fs=require('fs');
-          const health=JSON.parse(fs.readFileSync(process.env.HEALTH,'utf8'));
-          const p=JSON.parse(fs.readFileSync(process.env.PRE42,'utf8'));
-          const status=JSON.parse(fs.readFileSync(process.env.STATUS,'utf8'));
-          const chat=JSON.parse(fs.readFileSync(process.env.CHAT,'utf8'));
-          const nav=fs.readFileSync(process.env.NAV,'utf8');
-          const publicNav=fs.readFileSync(process.env.PUBLIC_NAV,'utf8');
-          const publicHome=fs.readFileSync(process.env.PUBLIC_HOME,'utf8');
-          const goc=fs.readFileSync(process.env.GOC,'utf8');
-          const quick=fs.readFileSync(process.env.QUICK,'utf8');
-          const growth=fs.readFileSync(process.env.GROWTH,'utf8');
-          const membership=fs.readFileSync(process.env.MEMBERSHIP,'utf8');
-          const tour=fs.readFileSync(process.env.TOUR,'utf8');
-          const rules=fs.readFileSync(process.env.RULES,'utf8');
+            if curl --fail --silent --show-error --max-time 25 "$RENDER_BASE_URL/health" > "$RUNNER_TEMP/health.json" \
+              && curl --fail --silent --show-error --max-time 25 "$RENDER_BASE_URL/api/release-identity?sj_release_probe=$stamp" > "$RUNNER_TEMP/origin-identity.json" \
+              && curl --fail --silent --show-error --max-time 25 "$PUBLIC_BASE_URL/api/release-identity?sj_release_probe=$stamp" > "$RUNNER_TEMP/public-identity.json" \
+              && curl --fail --silent --show-error --max-time 25 "$PUBLIC_BASE_URL/" > "$RUNNER_TEMP/public-home.html" \
+              && curl --fail --silent --show-error --max-time 25 "$PUBLIC_BASE_URL/navigator" > "$RUNNER_TEMP/public-navigator.html" \
+              && curl --fail --silent --show-error --max-time 25 "$PUBLIC_BASE_URL/attorney-call-tour.html?sj_release_probe=$stamp" > "$RUNNER_TEMP/public-attorney-call-tour.html" \
+              && curl --fail --silent --show-error --max-time 25 "$PUBLIC_BASE_URL/attorney-partner-tour.html?sj_release_probe=$stamp" > "$RUNNER_TEMP/public-attorney-tour.html" \
+              && curl --fail --silent --show-error --max-time 25 "$PUBLIC_BASE_URL/professionals.html?sj_release_probe=$stamp" > "$RUNNER_TEMP/public-professionals.html" \
+              && curl --fail --silent --show-error --max-time 25 "$PUBLIC_BASE_URL/professional-growth.html?sj_release_probe=$stamp" > "$RUNNER_TEMP/public-professional-growth.html" \
+              && curl --fail --silent --show-error --max-time 25 "$PUBLIC_BASE_URL/professional-membership.html?sj_release_probe=$stamp" > "$RUNNER_TEMP/public-professional-membership.html" \
+              && curl --fail --silent --show-error --max-time 25 "$PUBLIC_BASE_URL/practice-areas.html?sj_release_probe=$stamp" > "$RUNNER_TEMP/public-practice-areas.html" \
+              && curl --fail --silent --show-error --max-time 25 "$PUBLIC_BASE_URL/app.js?sj_release_probe=$stamp" > "$RUNNER_TEMP/public-app.js" \
+              && curl --fail --silent --show-error --max-time 25 "$PUBLIC_BASE_URL/styles.css?sj_release_probe=$stamp" > "$RUNNER_TEMP/public-styles.css" \
+              && curl --fail --silent --show-error --max-time 25 "$PUBLIC_BASE_URL/marketing-compliance-pre48-data.js?sj_release_probe=$stamp" > "$RUNNER_TEMP/public-marketing-rules.js" \
+              && curl --fail --silent --show-error --max-time 25 -c "$jar" "$RENDER_BASE_URL/api/navigator/status" > "$RUNNER_TEMP/navigator-status.json" \
+              && curl --fail --silent --show-error --max-time 55 -b "$jar" -c "$jar" -H 'Content-Type: application/json' -d '{"message":"Reply with exactly: SMARTER JUSTICE PUBLIC AI READY","toolMode":"NAVIGATOR","inputMode":"TEXT"}' "$RENDER_BASE_URL/api/navigator/chat" > "$RUNNER_TEMP/navigator-chat.json"; then
+              hidden_goc="$(curl --silent --output /dev/null --write-out '%{http_code}' --max-time 25 "$PUBLIC_BASE_URL/growth-operations-compliance.html?sj_release_probe=$stamp" || true)"
+              hidden_portals="$(curl --silent --output /dev/null --write-out '%{http_code}' --max-time 25 "$PUBLIC_BASE_URL/portals.html?sj_release_probe=$stamp" || true)"
+              if [ "$hidden_goc" = 404 ] && [ "$hidden_portals" = 404 ] && \
+                ROOT="$RUNNER_TEMP" TARGET_SHA="$TARGET_SHA" node - <<'NODE'
+          const fs=require('fs'),path=require('path');
+          const root=process.env.ROOT,target=process.env.TARGET_SHA;
+          const read=n=>fs.readFileSync(path.join(root,n),'utf8');
+          const health=JSON.parse(read('health.json'));
+          const origin=JSON.parse(read('origin-identity.json'));
+          const pubId=JSON.parse(read('public-identity.json'));
+          const status=JSON.parse(read('navigator-status.json'));
+          const chat=JSON.parse(read('navigator-chat.json'));
           if(health.ok!==true||health.version!=='1.7.98'||health.app!=='Smarter Justice')process.exit(1);
-          if(p.status!=='PASS'||p.pre42ArtifactSha256!==process.env.PRE42_ARTIFACT_SHA)process.exit(1);
-          if(p.providerCanary!=='PASS'||p.usageLedgerRecorded!==true||p.browserSecretScan!=='PASS'||p.secretExposed!==false)process.exit(1);
-          if(status.ok!==true||status.version!=='v2.0.0-pre43'||status.navigatorAvailable!==true||status.publicAiEnabled!==true)process.exit(1);
-          if(status.providerReadiness?.ready!==true||status.externalConsequentialActionsEnabled!==false)process.exit(1);
-          const modes=new Set(status.availableToolModes||[]);
-          for(const m of ['NAVIGATOR','STARTING_POINT','DRAFT','SUMMARIZE','CHECKLIST','PROFESSIONAL_WORKFLOW'])if(!modes.has(m))process.exit(1);
-          if(chat.ok!==true||chat.publicAiEnabled!==true||chat.usageLedgerRecorded!==true||chat.storeRequested!==false)process.exit(1);
-          if(chat.externalActionsExecuted!==false||chat.automaticOverageBillingEnabled!==false||chat.toolMode!=='NAVIGATOR')process.exit(1);
+          for(const id of [origin,pubId]){
+            if(id.ok!==true||id.release!=='v2.0.0-pre52'||id.demoPathRelease!=='v2.0.0-pre52')process.exit(1);
+            if(id.gitCommit!==target||id.demoHtmlCachePolicy!=='NO_STORE'||id.marker!=='SMARTER_JUSTICE_PRE52_ATTORNEY_VALUE_CLARITY')process.exit(1);
+          }
+          if(status.ok!==true||status.navigatorAvailable!==true||status.publicAiEnabled!==true||status.externalConsequentialActionsEnabled!==false)process.exit(1);
+          if(chat.ok!==true||chat.publicAiEnabled!==true||chat.storeRequested!==false||chat.externalActionsExecuted!==false||chat.automaticOverageBillingEnabled!==false)process.exit(1);
           if(!String(chat.answer||'').includes('SMARTER JUSTICE PUBLIC AI READY'))process.exit(1);
-          if(!/Navigator/i.test(nav)||!/Available to everyone/i.test(nav)||!/PROFESSIONAL_WORKFLOW/.test(nav))process.exit(1);
-          if(!/Navigator/i.test(publicNav)||!/Available to everyone/i.test(publicNav))process.exit(1);
-          if(!/SMARTER_JUSTICE_PRE43_NAVIGATOR_HOME_CTA/.test(publicHome)||!/Open Navigator/i.test(publicHome))process.exit(1);
-          const pre46='SMARTER_JUSTICE_PRE46_GROWTH_OPERATIONS_COMPLIANCE_STORY';
-          if(!goc.includes(pre46)||!/Grow your firm\. Run it better\. Market with guardrails\./.test(goc))process.exit(1);
-          if(!tour.includes(pre46)||!/Growth \+ operations \+ compliance/i.test(tour))process.exit(1);
-          if(!quick.includes(pre46)||!/under one roof/i.test(quick))process.exit(1);
-          if(!membership.includes(pre46)||!/More than membership/i.test(membership))process.exit(1);
-          if(!publicHome.includes(pre46)||!/Growth, operations, and compliance/i.test(publicHome))process.exit(1);
-          if(!/SMARTER_JUSTICE_PRE47_WORKING_PREFLIGHT_LINK/.test(goc)||!/professional-growth\.html/.test(goc))process.exit(1);
-          if(!/SMARTER_JUSTICE_PRE47_PROFESSIONAL_GROWTH/.test(growth)||!/SMARTER_JUSTICE_PRE48_COMPLIANCE_EXPANSION/.test(growth)||!/Jurisdiction-aware marketing compliance preflight/i.test(growth))process.exit(1);
-          if(!/SMARTER_JUSTICE_PRE48_FIVE_JURISDICTIONS/.test(goc)||!/California/.test(goc)||!/New Jersey/.test(goc))process.exit(1);
-          if(!/SMARTER_JUSTICE_PRE47_PROFESSIONAL_GROWTH_CTA/.test(membership)||!/professional-growth\.html/.test(membership))process.exit(1);
-          if(!/SMARTER_JUSTICE_PRE47_GROWTH_LINK/.test(tour)||!/professional-growth\.html/.test(tour))process.exit(1);
-          for(const marker of ['PARTIAL_PRIMARY_SOURCE_RULESET_NO_BLANKET_COMPLIANCE_APPROVAL','NY-7.1-D-RESPONSIBLE','FL-OP-24-1-AI-DISCLOSURE','TX-PART-VII-REVIEW','CA-7.3-F-DVRO','CA-7.3-ADVERTISEMENT-LABEL','NJ-CAA-49-RESULTS-DISCLAIMER','NJ-CAA-49-NO-PAYMENT','NJ-ACPE-735-KEYWORD-DISCLAIMER','calbar.ca.gov','njcourts.gov'])if(!rules.includes(marker))process.exit(1);
-          const exposed=[nav,publicNav,publicHome,goc,quick,growth,membership,tour,rules,JSON.stringify(status),JSON.stringify(chat)].join('\n');
-          if(/Authorization:\s*Bearer\s+/i.test(exposed)||/OPENAI_API_KEY\s*=/.test(exposed))process.exit(1);
-          if(/guaranteed compliance|50-state compliant|all jurisdictions compliant/i.test([goc,quick,growth,membership,tour].join('\n')))process.exit(1);
-          console.log(JSON.stringify({status:'PASS',targetSha:process.env.GITHUB_SHA,model:chat.model,latencyMs:chat.latencyMs,usage:chat.usage,publicAiEnabled:true,pre47ProfessionalGrowth:true,pre48FiveJurisdictionPartialCompliance:true,storeRequested:false,externalConsequentialActionsEnabled:false,automaticOverageBillingEnabled:false},null,2));
+          const home=read('public-home.html'), nav=read('public-navigator.html'), quick=read('public-attorney-call-tour.html'), tour=read('public-attorney-tour.html'), pros=read('public-professionals.html'), growth=read('public-professional-growth.html'), member=read('public-professional-membership.html'), areas=read('public-practice-areas.html'), app=read('public-app.js'), css=read('public-styles.css'), rules=read('public-marketing-rules.js');
+          const publicText=[home,quick,tour,pros,growth,member,areas].join('\n').toLowerCase();
+          for(const required of ['smarter_justice_pre52_attorney_value_clarity','help more of the right people find your firm','four things you can demonstrate on the live platform','why smarter justice is different'])if(!publicText.includes(required))process.exit(1);
+          if(!/Navigator/i.test(nav)||!/Available to everyone/i.test(nav))process.exit(1);
+          if(!app.includes('SMARTER_JUSTICE_PRE52_MOBILE_NAVIGATION')||!css.includes('SMARTER_JUSTICE_PRE52_MOBILE_NAVIGATION'))process.exit(1);
+          for(const bad of ['href="/portals.html"','href="/growth-operations-compliance.html"','full nationwide marketing-compliance automation','unrestricted outbound campaigns','ai front desk','automatic crm migration'])if(publicText.includes(bad)||app.toLowerCase().includes(bad))process.exit(1);
+          for(const marker of ['PARTIAL_PRIMARY_SOURCE_RULESET_NO_BLANKET_COMPLIANCE_APPROVAL','NY-7.1-D-RESPONSIBLE','FL-OP-24-1-AI-DISCLOSURE','TX-PART-VII-REVIEW','CA-7.3-ADVERTISEMENT-LABEL','NJ-CAA-49-NO-PAYMENT'])if(!rules.includes(marker))process.exit(1);
+          if(/guaranteed compliance|50-state compliant|all jurisdictions compliant/i.test(publicText))process.exit(1);
+          console.log(JSON.stringify({status:'PASS',release:'v2.0.0-pre52',targetSha:target,workingOnlyPublicationGate:true,mobileNavigation:true,navigator:true,marketingPreflight:true},null,2));
           NODE
               then
-                cp "$RUNNER_TEMP/navigator-status.json" "$RUNNER_TEMP/pre43-public-ai-status.json"
-                cp "$RUNNER_TEMP/navigator-chat.json" "$RUNNER_TEMP/pre43-public-ai-chat.json"
+                printf '%s\n' "$hidden_goc" > "$RUNNER_TEMP/hidden-growth-route-status.txt"
+                printf '%s\n' "$hidden_portals" > "$RUNNER_TEMP/hidden-portals-route-status.txt"
                 exit 0
               fi
             fi
             sleep 10
           done
-          echo 'public live acceptance did not pass' >&2
+          echo 'pre52 live acceptance did not pass' >&2
           exit 1
 
-      - name: Request automatic rollback after failed live acceptance
+      - name: Automatic rollback to last accepted-live production after failed pre52 acceptance
         if: failure() && steps.deploy.outcome == 'success'
         env:
           RENDER_DEPLOY_HOOK_URL: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
@@ -179,36 +170,46 @@ jobs:
           sep='?'; [[ "$RENDER_DEPLOY_HOOK_URL" == *'?'* ]] && sep='&'
           curl --fail --silent --show-error --location --max-time 30 "${RENDER_DEPLOY_HOOK_URL}${sep}ref=${ROLLBACK_SHA}" > "$RUNNER_TEMP/render-rollback-response.json"
           for attempt in $(seq 1 30); do
-            if curl --fail --silent --show-error --max-time 20 "$RENDER_BASE_URL/health" > "$RUNNER_TEMP/rollback-health.json"; then
-              node -e "const fs=require('fs');const x=JSON.parse(fs.readFileSync(process.argv[1]));if(x.ok!==true||x.app!=='Smarter Justice')process.exit(1)" "$RUNNER_TEMP/rollback-health.json" && exit 0
+            if curl --fail --silent --show-error --max-time 25 "$RENDER_BASE_URL/health" > "$RUNNER_TEMP/rollback-health.json" \
+              && curl --fail --silent --show-error --max-time 25 "$PUBLIC_BASE_URL/professional-growth.html" > "$RUNNER_TEMP/rollback-professional-growth.html"; then
+              if HEALTH="$RUNNER_TEMP/rollback-health.json" GROWTH="$RUNNER_TEMP/rollback-professional-growth.html" node - <<'NODE'
+          const fs=require('fs');const h=JSON.parse(fs.readFileSync(process.env.HEALTH,'utf8'));const g=fs.readFileSync(process.env.GROWTH,'utf8');
+          if(h.ok!==true||h.app!=='Smarter Justice'||!g.includes('SMARTER_JUSTICE_PRE49_RULE_SOURCE_CURRENTNESS'))process.exit(1);
+          NODE
+              then exit 0; fi
             fi
             sleep 10
           done
           exit 1
 
-      - name: Upload immutable deployment evidence
+      - name: Upload immutable pre52 deployment evidence
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
-          name: smarter-justice-qualified-render-evidence-${{ github.run_id }}
+          name: smarter-justice-pre52-live-evidence-${{ github.run_id }}
           path: |
+            ${{ runner.temp }}/previous-health.json
             ${{ runner.temp }}/render-deploy-response.json
             ${{ runner.temp }}/health.json
-            ${{ runner.temp }}/pre42.json
-            ${{ runner.temp }}/navigator.html
-            ${{ runner.temp }}/navigator-status.json
-            ${{ runner.temp }}/navigator-chat.json
-            ${{ runner.temp }}/pre43-public-ai-status.json
-            ${{ runner.temp }}/pre43-public-ai-chat.json
-            ${{ runner.temp }}/public-navigator.html
+            ${{ runner.temp }}/origin-identity.json
+            ${{ runner.temp }}/public-identity.json
             ${{ runner.temp }}/public-home.html
-            ${{ runner.temp }}/public-growth-operations-compliance.html
+            ${{ runner.temp }}/public-navigator.html
             ${{ runner.temp }}/public-attorney-call-tour.html
+            ${{ runner.temp }}/public-attorney-tour.html
+            ${{ runner.temp }}/public-professionals.html
             ${{ runner.temp }}/public-professional-growth.html
             ${{ runner.temp }}/public-professional-membership.html
-            ${{ runner.temp }}/public-attorney-tour.html
-            ${{ runner.temp }}/public-marketing-rules-pre48.js
+            ${{ runner.temp }}/public-practice-areas.html
+            ${{ runner.temp }}/public-app.js
+            ${{ runner.temp }}/public-styles.css
+            ${{ runner.temp }}/public-marketing-rules.js
+            ${{ runner.temp }}/navigator-status.json
+            ${{ runner.temp }}/navigator-chat.json
+            ${{ runner.temp }}/hidden-growth-route-status.txt
+            ${{ runner.temp }}/hidden-portals-route-status.txt
             ${{ runner.temp }}/render-rollback-response.json
             ${{ runner.temp }}/rollback-health.json
+            ${{ runner.temp }}/rollback-professional-growth.html
           if-no-files-found: warn
           retention-days: 90

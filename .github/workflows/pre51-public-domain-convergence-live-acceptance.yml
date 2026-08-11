@@ -1,0 +1,143 @@
+name: Smarter Justice pre51 public-domain release convergence
+
+on:
+  workflow_run:
+    workflows:
+      - Smarter Justice qualified automatic Render deploy
+    types:
+      - completed
+
+permissions:
+  contents: read
+
+env:
+  RENDER_BASE_URL: https://smarter-justice-app.onrender.com
+  PUBLIC_BASE_URL: https://smarterjustice.com
+  TARGET_SHA: ${{ github.event.workflow_run.head_sha }}
+
+jobs:
+  public-domain-convergence:
+    if: ${{ github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_branch == 'main' }}
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: Checkout exact deployed commit
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+        with:
+          ref: ${{ env.TARGET_SHA }}
+          fetch-depth: 0
+
+      - name: Bind pre51 convergence contract and accepted-live rollback
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$TARGET_SHA"
+          test -f deployment/pre51/PUBLIC_DOMAIN_RELEASE_CONVERGENCE__PRE51.json
+          test -f deployment/pre51/LAST_KNOWN_GOOD_PRODUCTION__PRE51.json
+          test -f deployment/pre51/test_pre51_public_domain_release_identity.py
+          rollback="$(node -p "require('./deployment/pre51/LAST_KNOWN_GOOD_PRODUCTION__PRE51.json').lastKnownGood.gitCommit")"
+          test "$rollback" = "eea506b94ed890b7e85dcdd8aa61a473ba11b356"
+          git cat-file -e "$rollback^{commit}"
+          echo "ROLLBACK_SHA=$rollback" >> "$GITHUB_ENV"
+
+      - name: Require origin and public-domain release identity plus attorney-demo convergence
+        id: convergence
+        run: |
+          set -euo pipefail
+          pages=(attorney-call-tour attorney-partner-tour professionals attorney-launch professional-membership professional-signup)
+          for attempt in $(seq 1 30); do
+            echo "pre51 public-domain convergence attempt $attempt"
+            stamp="${TARGET_SHA}-${attempt}-$(date +%s)"
+            ok=1
+            for surface in origin public; do
+              if [ "$surface" = origin ]; then base="$RENDER_BASE_URL"; else base="$PUBLIC_BASE_URL"; fi
+              if ! curl --fail --silent --show-error --max-time 25 -D "$RUNNER_TEMP/${surface}-identity.headers" \
+                "$base/api/release-identity?sj_release_probe=$stamp" > "$RUNNER_TEMP/${surface}-identity.json"; then ok=0; fi
+              for page in "${pages[@]}"; do
+                if ! curl --fail --silent --show-error --max-time 25 -D "$RUNNER_TEMP/${surface}-${page}-normal.headers" \
+                  "$base/${page}.html" > "$RUNNER_TEMP/${surface}-${page}-normal.html"; then ok=0; fi
+                if ! curl --fail --silent --show-error --max-time 25 -D "$RUNNER_TEMP/${surface}-${page}-bust.headers" \
+                  "$base/${page}.html?sj_release_probe=$stamp" > "$RUNNER_TEMP/${surface}-${page}-bust.html"; then ok=0; fi
+              done
+            done
+            if [ "$ok" = 1 ]; then
+              if ROOT="$RUNNER_TEMP" TARGET_SHA="$TARGET_SHA" node - <<'NODE'
+          const fs=require('fs'),path=require('path');
+          const root=process.env.ROOT,target=process.env.TARGET_SHA;
+          const pages=['attorney-call-tour','attorney-partner-tour','professionals','attorney-launch','professional-membership','professional-signup'];
+          function read(n){return fs.readFileSync(path.join(root,n),'utf8')}
+          for(const surface of ['origin','public']){
+            const id=JSON.parse(read(`${surface}-identity.json`));
+            if(id.ok!==true||id.release!=='v2.0.0-pre51'||id.demoPathRelease!=='v2.0.0-pre50')process.exit(1);
+            if(id.gitCommit!==target||id.demoHtmlCachePolicy!=='NO_STORE')process.exit(1);
+            if(id.marker!=='SMARTER_JUSTICE_PRE51_PUBLIC_DOMAIN_RELEASE_IDENTITY')process.exit(1);
+            for(const page of pages){
+              for(const mode of ['normal','bust']){
+                const html=read(`${surface}-${page}-${mode}.html`);
+                const headers=read(`${surface}-${page}-${mode}.headers`).toLowerCase();
+                if(!html.includes('SMARTER_JUSTICE_PRE50_ATTORNEY_DEMO_PATH'))process.exit(1);
+                if(!headers.includes('cache-control: no-store'))process.exit(1);
+                if(!headers.includes('cdn-cache-control: no-store'))process.exit(1);
+                if(!headers.includes(`x-smarter-justice-release-commit: ${target}`.toLowerCase()))process.exit(1);
+                if(!headers.includes('x-smarter-justice-demo-path: v2.0.0-pre50'))process.exit(1);
+              }
+            }
+          }
+          const pub=Object.fromEntries(pages.map(p=>[p,read(`public-${p}-bust.html`)]));
+          if(!pub['attorney-call-tour'].includes('/attorney-partner-tour.html?mode=presenter&practice=divorce'))process.exit(1);
+          if(!/Start 7-step demonstration/i.test(pub['attorney-partner-tour']))process.exit(1);
+          if(!/Search My Profile/i.test(pub.professionals)||!/Create or Claim a Profile/i.test(pub.professionals))process.exit(1);
+          if(!/Search for My Profile/i.test(pub['attorney-launch']))process.exit(1);
+          if(!/Return to Attorney Demonstration/i.test(pub['professional-membership']))process.exit(1);
+          if(!/One account across Smarter Justice legal areas/i.test(pub['professional-signup']))process.exit(1);
+          if(/value="annual"/i.test(pub['professional-signup']))process.exit(1);
+          const all=Object.values(pub).join('\n').toLowerCase();
+          for(const bad of ['temporary profile lookup','compatibility lookup','legacy lookup','focused legal portals','focused micro-portal','view initial launch portals'])if(all.includes(bad))process.exit(1);
+          console.log(JSON.stringify({status:'PASS',targetSha:target,surfaces:['origin','public'],pages},null,2));
+          NODE
+              then exit 0; fi
+            fi
+            sleep 10
+          done
+          echo 'pre51 origin/public-domain release convergence did not pass' >&2
+          exit 1
+
+      - name: Require protected Render deploy hook for accepted-live rollback
+        if: failure() && steps.convergence.outcome == 'failure'
+        env:
+          RENDER_DEPLOY_HOOK_URL: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+        run: test -n "$RENDER_DEPLOY_HOOK_URL"
+
+      - name: Automatic rollback to last accepted-live production after convergence failure
+        if: failure() && steps.convergence.outcome == 'failure'
+        env:
+          RENDER_DEPLOY_HOOK_URL: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+        run: |
+          set -euo pipefail
+          sep='?'; [[ "$RENDER_DEPLOY_HOOK_URL" == *'?'* ]] && sep='&'
+          curl --fail --silent --show-error --location --max-time 30 "${RENDER_DEPLOY_HOOK_URL}${sep}ref=${ROLLBACK_SHA}" > "$RUNNER_TEMP/render-rollback-response.json"
+          for attempt in $(seq 1 30); do
+            if curl --fail --silent --show-error --max-time 20 "$RENDER_BASE_URL/health" > "$RUNNER_TEMP/rollback-health.json"; then
+              node -e "const fs=require('fs');const x=JSON.parse(fs.readFileSync(process.argv[1]));if(x.ok!==true||x.app!=='Smarter Justice')process.exit(1)" "$RUNNER_TEMP/rollback-health.json" && exit 0
+            fi
+            sleep 10
+          done
+          exit 1
+
+      - name: Upload immutable pre51 dual-surface convergence evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: smarter-justice-pre51-public-domain-convergence-${{ github.run_id }}
+          path: |
+            ${{ runner.temp }}/origin-identity.json
+            ${{ runner.temp }}/origin-identity.headers
+            ${{ runner.temp }}/public-identity.json
+            ${{ runner.temp }}/public-identity.headers
+            ${{ runner.temp }}/origin-*.html
+            ${{ runner.temp }}/origin-*.headers
+            ${{ runner.temp }}/public-*.html
+            ${{ runner.temp }}/public-*.headers
+            ${{ runner.temp }}/render-rollback-response.json
+            ${{ runner.temp }}/rollback-health.json
+          if-no-files-found: warn
+          retention-days: 90

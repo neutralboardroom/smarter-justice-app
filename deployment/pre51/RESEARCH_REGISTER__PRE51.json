@@ -1,0 +1,24 @@
+{
+  "schemaVersion":"1.0.0",
+  "release":"v2.0.0-pre51",
+  "researchedAt":"2026-08-11",
+  "purpose":"Close the public-domain deployment divergence exposed by the pre50 attorney-demo live gate without weakening the qualified demo pathway.",
+  "observedFailure":{
+    "productionCommit":"f884fbd06522489a00ddaaf5a0513b1223c372b9",
+    "mainQualificationRun":31506948600,
+    "coreRenderDeployRun":31506948505,
+    "pre49CurrentnessRun":31507071439,
+    "pre50AttorneyDemoRun":31507071469,
+    "pre50AttorneyDemoArtifactId":9107629014,
+    "pre50AttorneyDemoArtifactSha256":"1fa0f8e46f59853b1d5de5ecd2593c678bb1aa10cbfda6432088ff2cbcb5e2fe",
+    "result":"PUBLIC_DOMAIN_DID_NOT_SERVE_PRE50_DEMO_PATH_AFTER_24_ATTEMPTS; AUTOMATIC_RENDER_ROLLBACK_PASS"
+  },
+  "officialRenderSources":[
+    {"url":"https://render.com/docs/custom-domains","finding":"Custom domains must be added to the Render service, DNS configured, and domain verified; the service also retains its onrender.com hostname."},
+    {"url":"https://render.com/docs/deploy-hooks","finding":"Deploy hooks support an exact Git commit through the ref query parameter."},
+    {"url":"https://render.com/docs/environment-variables","finding":"RENDER_GIT_COMMIT, RENDER_GIT_BRANCH, RENDER_GIT_REPO_SLUG, RENDER_EXTERNAL_HOSTNAME, and RENDER_EXTERNAL_URL are available for runtime identity."},
+    {"url":"https://render.com/docs/web-service-caching","finding":"Web-service edge caching can cache eligible 200 responses by default; no-store disables caching; successful deploys invalidate Render edge cache entries."},
+    {"url":"https://render.com/docs/configure-other-dns","finding":"Root custom domains must point to Render and AAAA records can cause unexpected behavior because Render uses IPv4."}
+  ],
+  "decision":"Add runtime release identity, no-store demo HTML, explicit last-known-good rollback authority, and dual-surface origin/public-domain convergence evidence. Do not weaken the pre50 attorney-demo content contract."
+}

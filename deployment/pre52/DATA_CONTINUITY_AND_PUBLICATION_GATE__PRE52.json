@@ -1,0 +1,35 @@
+{
+  "schemaVersion":"1.0.0",
+  "release":"v2.0.0-pre52",
+  "policy":"NO_LOSS_SEAMLESS_RELEASE_CONTINUITY_FAIL_CLOSED",
+  "deploymentAuthorizedByOwner":true,
+  "ownerAuthorizationDate":"2026-08-11",
+  "dataPlanes":{
+    "sourceReleaseArtifacts":{"mayContainLiveUserData":false,"rule":"Release ZIPs contain code, schemas, migrations, fixtures, synthetic data and non-sensitive registries only."},
+    "transactionalUserAndFirmData":{"durableExternalStoreRequiredBeforeProductionEnablement":true,"examples":["accounts","saved work","matter progress","professional and firm records","permissions","internal operational statistics"]},
+    "billing":{"providerAndDurableStoreContinuityRequired":true,"examples":["customer IDs","subscription IDs","billing status","invoice/payment references"],"secretOrCardDataInReleaseArtifacts":false},
+    "documentsAndUploads":{"encryptedDurableObjectStorageRequiredBeforeProductionEnablement":true,"backupAndRestoreEvidenceRequired":true},
+    "browserLocalWork":{"deploymentMustNotClearOrRenameAcceptedStorageKeysWithoutVersionedMigration":true,"userExportRestorePathShouldRemainAvailableWhereImplemented":true},
+    "immutableReleaseEvidence":{"separateFromLiveTransactionalData":true}
+  },
+  "preDeploymentRequirements":[
+    "Identify every production data plane affected by the release.",
+    "For any server-persistent user, firm, billing, document, analytics or operational data plane, require an external durable store rather than runtime-local ephemeral storage.",
+    "Require a current successful backup/snapshot receipt and a tested restore or provider recovery path before applying a state-changing migration.",
+    "Classify migrations. Destructive or irreversible migration requires an explicit data-preservation plan, verified backup and rollback/forward-recovery instructions.",
+    "Record non-sensitive continuity fingerprints/counts where feasible before and after migration; do not export private row contents into release or CI artifacts.",
+    "Do not delete, reset, reseed, truncate or replace production user data merely because a new application version is deployed.",
+    "Keep the last accepted-live application commit and the compatible data recovery point separately identifiable."
+  ],
+  "currentReleaseTruth":{
+    "navigatorPersistence":"runtime-local SQLite remains a reference implementation and is not accepted as durable production persistence",
+    "productionPostgresRls":"NOT_YET_ACCEPTED",
+    "serverPersistentCustomerDataEnablement":"FAIL_CLOSED_UNTIL_EXTERNAL_DURABLE_STORE_BACKUP_RESTORE_AND_ISOLATION_ACCEPT",
+    "codeOnlyDeployment":"must not claim migration of live user data"
+  },
+  "publicationGate":{
+    "rule":"Preserve unfinished capability source internally, but do not show ordinary public links, modules, controls, calls-to-action or sales claims until the capability is satisfactorily implemented and tested.",
+    "pre52HiddenPreservedRoutes":["/growth-operations-compliance.html","/portals.html"],
+    "internalOrFutureCapabilitiesMustNotBeUsedAsPublicSalesProof":true
+  }
+}
