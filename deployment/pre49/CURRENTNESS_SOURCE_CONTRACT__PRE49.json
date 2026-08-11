@@ -1,0 +1,46 @@
+{
+  "schemaVersion": "1.0.0",
+  "release": "v2.0.0-pre49",
+  "contractId": "SMARTER_JUSTICE_PRE49_MARKETING_RULE_SOURCE_CURRENTNESS_V1",
+  "rulesetVersion": "sj-marketing-compliance-2026-08-10-pre48-five-jurisdiction-partial",
+  "currentnessVersion": "sj-marketing-currentness-2026-08-11-pre49",
+  "cacheTtlSeconds": 21600,
+  "timeoutMs": 12000,
+  "coverageBoundary": "PARTIAL_PRIMARY_SOURCE_RULESET_NO_BLANKET_COMPLIANCE_APPROVAL",
+  "failClosed": true,
+  "jurisdictions": {
+    "NY": {
+      "label": "New York",
+      "sources": [{"id":"NY-JOINT-APPELLATE-AMENDMENTS","url":"https://www.nycourts.gov/rules/amendments-joint-rules-departments-appellate-division","markers":["May 27, 2026","effective June 1, 2026","Rules 1.0, 7.1, 7.3 and 7.4"]}]
+    },
+    "FL": {
+      "label": "Florida",
+      "sources": [
+        {"id":"FL-ADVERTISING-REGULATION","url":"https://www.floridabar.org/ethics/etad/","markers":["effective July 1, 2026","$250","$750","Advertising Rules"]},
+        {"id":"FL-ETHICS-OPINION-24-1","url":"https://www.floridabar.org/etopinions/opinion-24-1/","markers":["OPINION 24-1","AI program and not a lawyer or employee of the law firm"]}
+      ]
+    },
+    "TX": {
+      "label": "Texas",
+      "sources": [
+        {"id":"TX-ADVERTISING-REVIEW","url":"https://www.texasbar.com/Content/NavigationMenu/ForLawyers/AdvertisingReview/default.htm","markers":["Advertising Review application fee is $100","Part VII of the Texas Disciplinary Rules of Professional Conduct"]},
+        {"id":"TX-AD-TYPES","url":"https://www.texasbar.com/Content/NavigationMenu/ForLawyers/MembershipInformation/AdvertisingReview2/TypesOfAds.htm","markers":["Most public marketing efforts must be submitted","Part VII"]}
+      ]
+    },
+    "CA": {
+      "label": "California",
+      "sources": [
+        {"id":"CA-CHAPTER-7-CURRENT-RULES","url":"https://www.calbar.ca.gov/Attorneys/Conduct-Discipline/Rules/Rules-of-Professional-Conduct/Current-Rules/Chapter-7-Information-About-Legal-Services","markers":["Rule 7.3 Solicitation of Clients","domestic violence restraining order proceeding","proof of service appears on the court docket"]},
+        {"id":"CA-ETHICS-NEWS-RULE-7-3","url":"https://www.calbar.ca.gov/About-Us/News/Ethics-News","markers":["Rule revisions to rule 7.3","effective June 1, 2026"]}
+      ]
+    },
+    "NJ": {
+      "label": "New Jersey",
+      "sources": [
+        {"id":"NJ-CAA-OPINION-49","url":"https://www.njcourts.gov/notices/committee-attorney-advertising-opinion-49-use-of-client-endorsements-and-testimonials","markers":["OPINION 49","Results may vary depending on your particular facts and legal circumstances","cannot pay for endorsements or testimonials"]},
+        {"id":"NJ-ACPE-735-SUPPLEMENT","url":"https://www.njcourts.gov/notices/advisory-committee-professional-ethics-acpe-opinion-735-supplement-lawyers-use-of-internet","markers":["competitive keyword advertising","paid advertisement","affiliated only with"]},
+        {"id":"NJ-ADVERTISING-RULES","url":"https://www.njcourts.gov/attorneys/rules-of-court/advertising","markers":["three years after its dissemination","capture all material on their websites"]}
+      ]
+    }
+  }
+}
