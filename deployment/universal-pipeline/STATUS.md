@@ -1,0 +1,49 @@
+# Universal Pipeline Build Status
+
+Branch: `ops/universal-safe-deployment-v1`
+Draft review: pull request #5
+
+## Completed foundation
+
+- Reusable portfolio qualification workflow
+- Portal-local protected staging and production workflows
+- Version-pinned central exact-commit deployment action shared by both environments
+- Exact staging evidence artifact verification before production
+- Staging and production receipt binding in a promotion-chain artifact
+- Product deployment contract and schema
+- Smarter Justice caller workflow foundation
+- Structural English/Spanish owner-rule gate
+- Structural persistent-user-data owner-rule gate
+- Exact commit, version, authorization, migration-class, backup-receipt, and rollback inputs
+- Render deploy-hook contracts restricted to protected caller environments
+- Live version verification, application rollback, and evidence artifacts
+- Independent pipeline-foundation self-test
+
+## Current truthful test state
+
+- GitHub successfully parsed and started the reusable qualification workflow.
+- Universal pipeline self-test run #4 passed on commit `7bc593ceea2bd6553e174392ce4da60ef26f034d` before the staging-evidence enhancement.
+- Repository identity, configuration, Node setup, lockfile installation, and the existing test suite ran.
+- The existing sealed v1.7.83 payload-inventory test rejected the added pipeline files as `payload-inventory-drift`.
+- This failure is correct: the live v1.7.83 release must not be silently rewritten. The pipeline must be integrated into a new exact Smarter Justice version with regenerated inventories and receipts.
+
+## Deliberately not enabled yet
+
+- No staging or production deployment has been triggered.
+- No live Render setting has been changed.
+- The branch has not been merged to `main`.
+- Automatic production deployment is not enabled.
+- Smarter Justice does not yet pass the new full English/Spanish gate.
+- Backup restoration and migration rehearsal receipts have not yet been supplied to this pipeline.
+- Micro-portal repositories have not yet received caller workflows and product configurations.
+
+## Next gates
+
+1. Pass the updated independent pipeline self-test.
+2. Integrate the accepted pipeline into the next exact Smarter Justice source version, not sealed v1.7.83.
+3. Regenerate exact payload inventories, owner receipts, full ZIP, checksums, and acceptance evidence.
+4. Implement and verify complete Smarter Justice English/Spanish parity.
+5. Verify persistent database, durable document storage, payment-token handling, backup, restoration, and migration rehearsal.
+6. Configure protected staging and production environments and Render services without exposing secrets.
+7. Merge only after independent review and successful new-version qualification.
+8. Install version-pinned callers in each portal repository, one portal at a time.

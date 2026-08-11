@@ -1,0 +1,78 @@
+name: Portfolio staging deploy caller
+
+on:
+  workflow_dispatch:
+    inputs:
+      target_sha:
+        description: Exact qualified 40-character commit SHA.
+        required: true
+        type: string
+      target_version:
+        description: Exact staging candidate version.
+        required: true
+        type: string
+      authorization_id:
+        description: Product-scoped staging authorization receipt ID.
+        required: true
+        type: string
+      migration_class:
+        description: Accepted staging migration class.
+        required: true
+        default: NO_MIGRATION
+        type: choice
+        options:
+          - NO_MIGRATION
+          - BACKWARD_COMPATIBLE_EXPAND
+          - STATEFUL_REVERSIBLE
+      backup_receipt_id:
+        description: Current staging backup or restore-readiness receipt ID.
+        required: true
+        type: string
+      rollback_sha:
+        description: Exact last-known-good staging application commit SHA.
+        required: true
+        type: string
+      rollback_version:
+        description: Exact last-known-good staging application version.
+        required: true
+        type: string
+
+permissions:
+  contents: read
+  actions: read
+  checks: read
+
+concurrency:
+  group: smarter-justice-staging
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: Deploy exact qualified Smarter Justice commit to staging
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    environment: staging
+    steps:
+      - name: Checkout exact authorized target
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+        with:
+          ref: ${{ inputs.target_sha }}
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Deploy through the version-pinned universal action
+        id: deployment
+        uses: neutralboardroom/smarter-justice-app/.github/actions/portfolio-exact-deploy@c267bbad84297bf495fbf5f74c1e173fc5b273aa
+        with:
+          deployment-stage: STAGING
+          config-path: deployment/product-deployment.json
+          target-sha: ${{ inputs.target_sha }}
+          target-version: ${{ inputs.target_version }}
+          authorization-id: ${{ inputs.authorization_id }}
+          migration-class: ${{ inputs.migration_class }}
+          backup-receipt-id: ${{ inputs.backup_receipt_id }}
+          rollback-sha: ${{ inputs.rollback_sha }}
+          rollback-version: ${{ inputs.rollback_version }}
+          public-base-url: ${{ vars.STAGING_BASE_URL }}
+          render-deploy-hook-url: ${{ secrets.STAGING_RENDER_DEPLOY_HOOK_URL }}
+          github-token: ${{ github.token }}

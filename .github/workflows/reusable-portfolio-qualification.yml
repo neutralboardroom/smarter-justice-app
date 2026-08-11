@@ -1,0 +1,162 @@
+name: Reusable portfolio qualification
+
+on:
+  workflow_call:
+    inputs:
+      config_path:
+        description: Repository-relative product deployment configuration.
+        required: false
+        default: deployment/product-deployment.json
+        type: string
+      expected_repository:
+        description: Exact owner/repository expected to call this workflow.
+        required: true
+        type: string
+    outputs:
+      qualified_sha:
+        description: Exact commit SHA that passed qualification.
+        value: ${{ jobs.qualification.outputs.qualified_sha }}
+      product_version:
+        description: Version read from package.json.
+        value: ${{ jobs.qualification.outputs.product_version }}
+
+permissions:
+  contents: read
+
+concurrency:
+  group: portfolio-qualification-${{ github.repository }}-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  qualification:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    outputs:
+      qualified_sha: ${{ steps.identity.outputs.sha }}
+      product_version: ${{ steps.identity.outputs.version }}
+    steps:
+      - name: Checkout exact source
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+
+      - name: Reject wrong caller repository
+        env:
+          EXPECTED_REPOSITORY: ${{ inputs.expected_repository }}
+        run: |
+          set -euo pipefail
+          test "$GITHUB_REPOSITORY" = "$EXPECTED_REPOSITORY"
+
+      - name: Read and validate product configuration
+        id: config
+        env:
+          CONFIG_PATH: ${{ inputs.config_path }}
+        run: |
+          set -euo pipefail
+          test -f "$CONFIG_PATH"
+          node - <<'NODE'
+          const fs = require('fs');
+          const p = process.env.CONFIG_PATH;
+          const c = JSON.parse(fs.readFileSync(p, 'utf8'));
+          const required = ['schemaVersion','productId','productName','repository','runtime','commands','health','localization','dataContinuity','sensitiveCapabilities'];
+          for (const key of required) if (!(key in c)) throw new Error(`Missing ${key}`);
+          if (c.schemaVersion !== 1) throw new Error('Unsupported schemaVersion');
+          if (c.repository !== process.env.GITHUB_REPOSITORY) throw new Error('Configuration repository mismatch');
+          if (!['22.x','24.x'].includes(c.runtime.node)) throw new Error('Unsupported Node runtime');
+          if (JSON.stringify(c.localization.requiredLocales) !== JSON.stringify(['en','es'])) throw new Error('English/Spanish locales required');
+          if (c.localization.toggleRequired !== true || c.localization.criticalJourneyReceiptRequired !== true) throw new Error('Spanish parity owner rule not enabled');
+          for (const key of ['persistentStorageRequired','backupReceiptRequired','migrationClassRequired','rollbackMustPreserveNewData']) {
+            if (c.dataContinuity[key] !== true) throw new Error(`Data continuity owner rule not enabled: ${key}`);
+          }
+          for (const [name, value] of Object.entries(c.sensitiveCapabilities)) {
+            if (!['CLOSED','VERIFIED_OPEN'].includes(value)) throw new Error(`Invalid sensitive capability state: ${name}`);
+          }
+          fs.appendFileSync(process.env.GITHUB_OUTPUT, `node=${c.runtime.node}\n`);
+          fs.appendFileSync(process.env.GITHUB_OUTPUT, `install=${c.commands.install}\n`);
+          fs.appendFileSync(process.env.GITHUB_OUTPUT, `test=${c.commands.test}\n`);
+          fs.appendFileSync(process.env.GITHUB_OUTPUT, `build=${c.commands.build || ''}\n`);
+          fs.appendFileSync(process.env.GITHUB_OUTPUT, `spanish=${c.commands.spanishCheck || ''}\n`);
+          fs.appendFileSync(process.env.GITHUB_OUTPUT, `continuity=${c.commands.dataContinuityCheck || ''}\n`);
+          fs.appendFileSync(process.env.GITHUB_OUTPUT, `security=${c.commands.securityCheck || ''}\n`);
+          fs.appendFileSync(process.env.GITHUB_OUTPUT, `release=${c.commands.releaseCheck || ''}\n`);
+          NODE
+
+      - name: Use configured Node runtime
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+        with:
+          node-version: ${{ steps.config.outputs.node }}
+          package-manager-cache: false
+
+      - name: Resolve exact identity
+        id: identity
+        run: |
+          set -euo pipefail
+          test -f package.json
+          test -f package-lock.json
+          version="$(node -p "require('./package.json').version")"
+          test -n "$version"
+          test -z "$(git status --porcelain)"
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+
+      - name: Install locked dependencies
+        env:
+          INSTALL_COMMAND: ${{ steps.config.outputs.install }}
+          npm_config_registry: https://registry.npmjs.org/
+          npm_config_audit: 'false'
+        run: |
+          set -euo pipefail
+          bash -o pipefail -c "$INSTALL_COMMAND"
+
+      - name: Run full product test suite
+        env:
+          TEST_COMMAND: ${{ steps.config.outputs.test }}
+        run: bash -o pipefail -c "$TEST_COMMAND"
+
+      - name: Run build verification
+        if: ${{ steps.config.outputs.build != '' }}
+        env:
+          BUILD_COMMAND: ${{ steps.config.outputs.build }}
+        run: bash -o pipefail -c "$BUILD_COMMAND"
+
+      - name: Enforce English and Spanish parity gate
+        env:
+          CHECK_COMMAND: ${{ steps.config.outputs.spanish }}
+        run: |
+          set -euo pipefail
+          test -n "$CHECK_COMMAND" || { echo 'Missing Spanish parity check command.'; exit 1; }
+          bash -o pipefail -c "$CHECK_COMMAND"
+
+      - name: Enforce persistent user data continuity gate
+        env:
+          CHECK_COMMAND: ${{ steps.config.outputs.continuity }}
+        run: |
+          set -euo pipefail
+          test -n "$CHECK_COMMAND" || { echo 'Missing data continuity check command.'; exit 1; }
+          bash -o pipefail -c "$CHECK_COMMAND"
+
+      - name: Run security gate
+        if: ${{ steps.config.outputs.security != '' }}
+        env:
+          CHECK_COMMAND: ${{ steps.config.outputs.security }}
+        run: bash -o pipefail -c "$CHECK_COMMAND"
+
+      - name: Validate release and deployment evidence
+        if: ${{ steps.config.outputs.release != '' }}
+        env:
+          CHECK_COMMAND: ${{ steps.config.outputs.release }}
+        run: bash -o pipefail -c "$CHECK_COMMAND"
+
+      - name: Require clean source after qualification
+        run: test -z "$(git status --porcelain)"
+
+  qualification-gate:
+    if: ${{ always() }}
+    needs: [qualification]
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Require qualification success
+        env:
+          RESULT: ${{ needs.qualification.result }}
+        run: test "$RESULT" = success

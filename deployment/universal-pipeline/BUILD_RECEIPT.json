@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "branch": "ops/universal-safe-deployment-v1",
+  "foundationCommit": "bb19ebd1b46a1332a75c838682025bd2a700d948",
+  "status": "FOUNDATION_BUILT_NOT_MERGED_NOT_DEPLOYED",
+  "liveProductionChanged": false,
+  "productionAutomationEnabled": false,
+  "ownerRules": {
+    "persistentUserData": true,
+    "englishSpanishParity": true,
+    "failClosed": true
+  }
+}
