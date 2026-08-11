@@ -1,0 +1,196 @@
+name: Pre52 exact Render cutover diagnostic
+
+on:
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: smarter-justice-pre52-exact-diagnostic
+  cancel-in-progress: false
+
+env:
+  TARGET_SHA: 8ad67af4bb2b2d429f87a9267dac169e94933f30
+  ROLLBACK_SHA: eea506b94ed890b7e85dcdd8aa61a473ba11b356
+  RENDER_BASE_URL: https://smarter-justice-app.onrender.com
+  PUBLIC_BASE_URL: https://smarterjustice.com
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: Bind diagnosis to immutable pre52 and accepted-live pre49
+        run: |
+          set -euo pipefail
+          test "$TARGET_SHA" = "8ad67af4bb2b2d429f87a9267dac169e94933f30"
+          test "$ROLLBACK_SHA" = "eea506b94ed890b7e85dcdd8aa61a473ba11b356"
+
+      - name: Require protected Render deploy hook
+        env:
+          RENDER_DEPLOY_HOOK_URL: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+        run: test -n "$RENDER_DEPLOY_HOOK_URL"
+
+      - name: Request exact existing pre52 deployment
+        id: deploy
+        env:
+          RENDER_DEPLOY_HOOK_URL: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+        run: |
+          set -euo pipefail
+          sep='?'; [[ "$RENDER_DEPLOY_HOOK_URL" == *'?'* ]] && sep='&'
+          curl --fail --silent --show-error --location --max-time 30 "${RENDER_DEPLOY_HOOK_URL}${sep}ref=${TARGET_SHA}" > "$RUNNER_TEMP/render-deploy-response.json"
+          RESPONSE="$RUNNER_TEMP/render-deploy-response.json" node - <<'NODE'
+          const fs=require('fs');
+          const row=JSON.parse(fs.readFileSync(process.env.RESPONSE,'utf8'));
+          const id=String(row.deploy?.id||'');
+          if(!/^dep-[a-z0-9]+$/i.test(id)) process.exit(1);
+          console.log(`diagnostic Render deploy id: ${id}`);
+          NODE
+
+      - name: Wait beyond Render promotion window for exact pre52 identity
+        id: cutover
+        continue-on-error: true
+        run: |
+          set -euo pipefail
+          # Diagnosis-only: give the exact existing pre52 commit more than 15 minutes to promote.
+          for attempt in $(seq 1 100); do
+            stamp="diag-${TARGET_SHA}-${attempt}-$(date +%s)"
+            health_code="$(curl --silent --output "$RUNNER_TEMP/health.json" --write-out '%{http_code}' --max-time 15 "$RENDER_BASE_URL/health" || true)"
+            origin_code="$(curl --silent --output "$RUNNER_TEMP/origin-identity.json" --write-out '%{http_code}' --max-time 15 "$RENDER_BASE_URL/api/release-identity?sj_release_probe=$stamp" || true)"
+            printf '%s\t%s\t%s\t%s\n' "$(date -u +%FT%TZ)" "$attempt" "$health_code" "$origin_code" >> "$RUNNER_TEMP/cutover-attempts.tsv"
+            if [ "$health_code" = 200 ] && [ "$origin_code" = 200 ]; then
+              if IDENTITY="$RUNNER_TEMP/origin-identity.json" TARGET_SHA="$TARGET_SHA" node - <<'NODE'
+          const fs=require('fs');
+          const x=JSON.parse(fs.readFileSync(process.env.IDENTITY,'utf8'));
+          if(x.ok!==true||x.release!=='v2.0.0-pre52'||x.demoPathRelease!=='v2.0.0-pre52')process.exit(1);
+          if(x.gitCommit!==process.env.TARGET_SHA||x.marker!=='SMARTER_JUSTICE_PRE52_ATTORNEY_VALUE_CLARITY'||x.demoHtmlCachePolicy!=='NO_STORE')process.exit(1);
+          NODE
+              then
+                printf '%s\n' "$attempt" > "$RUNNER_TEMP/pre52-cutover-attempt.txt"
+                exit 0
+              fi
+            fi
+            sleep 10
+          done
+          echo 'exact pre52 origin identity did not promote during extended diagnosis window' >&2
+          exit 1
+
+      - name: Exact pre52 public working-only acceptance
+        id: live
+        if: steps.cutover.outcome == 'success'
+        continue-on-error: true
+        run: |
+          set -euo pipefail
+          stamp="accept-${TARGET_SHA}-$(date +%s)"
+          jar="$RUNNER_TEMP/navigator-cookies.txt"
+          curl --fail --silent --show-error --max-time 25 "$PUBLIC_BASE_URL/api/release-identity?sj_release_probe=$stamp" > "$RUNNER_TEMP/public-identity.json"
+          curl --fail --silent --show-error --max-time 25 "$PUBLIC_BASE_URL/" > "$RUNNER_TEMP/public-home.html"
+          curl --fail --silent --show-error --max-time 25 "$PUBLIC_BASE_URL/navigator" > "$RUNNER_TEMP/public-navigator.html"
+          curl --fail --silent --show-error --max-time 25 "$PUBLIC_BASE_URL/attorney-call-tour.html?sj_release_probe=$stamp" > "$RUNNER_TEMP/public-attorney-call-tour.html"
+          curl --fail --silent --show-error --max-time 25 "$PUBLIC_BASE_URL/attorney-partner-tour.html?sj_release_probe=$stamp" > "$RUNNER_TEMP/public-attorney-tour.html"
+          curl --fail --silent --show-error --max-time 25 "$PUBLIC_BASE_URL/professionals.html?sj_release_probe=$stamp" > "$RUNNER_TEMP/public-professionals.html"
+          curl --fail --silent --show-error --max-time 25 "$PUBLIC_BASE_URL/professional-growth.html?sj_release_probe=$stamp" > "$RUNNER_TEMP/public-professional-growth.html"
+          curl --fail --silent --show-error --max-time 25 "$PUBLIC_BASE_URL/professional-membership.html?sj_release_probe=$stamp" > "$RUNNER_TEMP/public-professional-membership.html"
+          curl --fail --silent --show-error --max-time 25 "$PUBLIC_BASE_URL/practice-areas.html?sj_release_probe=$stamp" > "$RUNNER_TEMP/public-practice-areas.html"
+          curl --fail --silent --show-error --max-time 25 "$PUBLIC_BASE_URL/app.js?sj_release_probe=$stamp" > "$RUNNER_TEMP/public-app.js"
+          curl --fail --silent --show-error --max-time 25 "$PUBLIC_BASE_URL/styles.css?sj_release_probe=$stamp" > "$RUNNER_TEMP/public-styles.css"
+          curl --fail --silent --show-error --max-time 25 "$PUBLIC_BASE_URL/marketing-compliance-pre48-data.js?sj_release_probe=$stamp" > "$RUNNER_TEMP/public-marketing-rules.js"
+          curl --fail --silent --show-error --max-time 25 -c "$jar" "$RENDER_BASE_URL/api/navigator/status" > "$RUNNER_TEMP/navigator-status.json"
+          curl --fail --silent --show-error --max-time 55 -b "$jar" -c "$jar" -H 'Content-Type: application/json' -d '{"message":"Reply with exactly: SMARTER JUSTICE PUBLIC AI READY","toolMode":"NAVIGATOR","inputMode":"TEXT"}' "$RENDER_BASE_URL/api/navigator/chat" > "$RUNNER_TEMP/navigator-chat.json"
+          hidden_goc="$(curl --silent --output /dev/null --write-out '%{http_code}' --max-time 25 "$PUBLIC_BASE_URL/growth-operations-compliance.html?sj_release_probe=$stamp" || true)"
+          hidden_portals="$(curl --silent --output /dev/null --write-out '%{http_code}' --max-time 25 "$PUBLIC_BASE_URL/portals.html?sj_release_probe=$stamp" || true)"
+          printf '%s\n' "$hidden_goc" > "$RUNNER_TEMP/hidden-growth-route-status.txt"
+          printf '%s\n' "$hidden_portals" > "$RUNNER_TEMP/hidden-portals-route-status.txt"
+          test "$hidden_goc" = 404
+          test "$hidden_portals" = 404
+          ROOT="$RUNNER_TEMP" TARGET_SHA="$TARGET_SHA" node - <<'NODE'
+          const fs=require('fs'),path=require('path');
+          const root=process.env.ROOT,target=process.env.TARGET_SHA;
+          const read=n=>fs.readFileSync(path.join(root,n),'utf8');
+          const id=JSON.parse(read('public-identity.json'));
+          if(id.ok!==true||id.release!=='v2.0.0-pre52'||id.demoPathRelease!=='v2.0.0-pre52'||id.gitCommit!==target||id.marker!=='SMARTER_JUSTICE_PRE52_ATTORNEY_VALUE_CLARITY'||id.demoHtmlCachePolicy!=='NO_STORE')process.exit(1);
+          const status=JSON.parse(read('navigator-status.json')),chat=JSON.parse(read('navigator-chat.json'));
+          if(status.ok!==true||status.navigatorAvailable!==true||status.publicAiEnabled!==true||status.externalConsequentialActionsEnabled!==false)process.exit(1);
+          if(chat.ok!==true||chat.publicAiEnabled!==true||chat.storeRequested!==false||chat.externalActionsExecuted!==false||chat.automaticOverageBillingEnabled!==false||!String(chat.answer||'').includes('SMARTER JUSTICE PUBLIC AI READY'))process.exit(1);
+          const home=read('public-home.html'),nav=read('public-navigator.html'),quick=read('public-attorney-call-tour.html'),tour=read('public-attorney-tour.html'),pros=read('public-professionals.html'),growth=read('public-professional-growth.html'),member=read('public-professional-membership.html'),areas=read('public-practice-areas.html'),app=read('public-app.js'),css=read('public-styles.css'),rules=read('public-marketing-rules.js');
+          const publicText=[home,quick,tour,pros,growth,member,areas].join('\n').toLowerCase();
+          for(const required of ['smarter_justice_pre52_attorney_value_clarity','help more of the right people find your firm','four things you can demonstrate on the live platform','why smarter justice is different'])if(!publicText.includes(required))process.exit(1);
+          if(!/Navigator/i.test(nav)||!/Available to everyone/i.test(nav))process.exit(1);
+          if(!app.includes('SMARTER_JUSTICE_PRE52_MOBILE_NAVIGATION')||!css.includes('SMARTER_JUSTICE_PRE52_MOBILE_NAVIGATION'))process.exit(1);
+          if(!home.includes('data-nav-toggle')||!home.includes('data-nav'))process.exit(1);
+          for(const bad of ['href="/portals.html"','href="/growth-operations-compliance.html"','full nationwide marketing-compliance automation','unrestricted outbound campaigns','ai front desk','automatic crm migration'])if(publicText.includes(bad)||app.toLowerCase().includes(bad))process.exit(1);
+          for(const marker of ['PARTIAL_PRIMARY_SOURCE_RULESET_NO_BLANKET_COMPLIANCE_APPROVAL','NY-7.1-D-RESPONSIBLE','FL-OP-24-1-AI-DISCLOSURE','TX-PART-VII-REVIEW','CA-7.3-ADVERTISEMENT-LABEL','NJ-CAA-49-NO-PAYMENT'])if(!rules.includes(marker))process.exit(1);
+          if(/guaranteed compliance|50-state compliant|all jurisdictions compliant/i.test(publicText))process.exit(1);
+          NODE
+
+      - name: Roll back to accepted-live pre49 when exact pre52 is not accepted
+        if: steps.cutover.outcome != 'success' || steps.live.outcome != 'success'
+        env:
+          RENDER_DEPLOY_HOOK_URL: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+        run: |
+          set -euo pipefail
+          sep='?'; [[ "$RENDER_DEPLOY_HOOK_URL" == *'?'* ]] && sep='&'
+          curl --fail --silent --show-error --location --max-time 30 "${RENDER_DEPLOY_HOOK_URL}${sep}ref=${ROLLBACK_SHA}" > "$RUNNER_TEMP/render-rollback-response.json"
+          for attempt in $(seq 1 100); do
+            current_code="$(curl --silent --output "$RUNNER_TEMP/rollback-currentness.json" --write-out '%{http_code}' --max-time 20 "$RENDER_BASE_URL/api/marketing-compliance/currentness?rollback_probe=$attempt" || true)"
+            growth_code="$(curl --silent --output "$RUNNER_TEMP/rollback-professional-growth.html" --write-out '%{http_code}' --max-time 20 "$PUBLIC_BASE_URL/professional-growth.html?rollback_probe=$attempt" || true)"
+            if [ "$current_code" = 200 ] && [ "$growth_code" = 200 ]; then
+              if CURRENT="$RUNNER_TEMP/rollback-currentness.json" GROWTH="$RUNNER_TEMP/rollback-professional-growth.html" node - <<'NODE'
+          const fs=require('fs');
+          const c=JSON.parse(fs.readFileSync(process.env.CURRENT,'utf8'));
+          const g=fs.readFileSync(process.env.GROWTH,'utf8');
+          if(c.currentnessVersion!=='sj-marketing-currentness-2026-08-11-pre49'||c.failClosed!==true)process.exit(1);
+          if(!g.includes('SMARTER_JUSTICE_PRE49_SOURCE_CURRENTNESS_GATE'))process.exit(1);
+          NODE
+              then
+                printf '%s\n' "$attempt" > "$RUNNER_TEMP/rollback-confirmed-attempt.txt"
+                exit 0
+              fi
+            fi
+            sleep 10
+          done
+          echo 'rollback to accepted-live pre49 could not be independently confirmed' >&2
+          exit 1
+
+      - name: Require exact pre52 acceptance for diagnostic success
+        if: always()
+        run: |
+          test "${{ steps.cutover.outcome }}" = success
+          test "${{ steps.live.outcome }}" = success
+
+      - name: Upload immutable diagnostic evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: smarter-justice-pre52-exact-cutover-diagnostic-${{ github.run_id }}
+          path: |
+            ${{ runner.temp }}/render-deploy-response.json
+            ${{ runner.temp }}/cutover-attempts.tsv
+            ${{ runner.temp }}/pre52-cutover-attempt.txt
+            ${{ runner.temp }}/health.json
+            ${{ runner.temp }}/origin-identity.json
+            ${{ runner.temp }}/public-identity.json
+            ${{ runner.temp }}/public-home.html
+            ${{ runner.temp }}/public-navigator.html
+            ${{ runner.temp }}/public-attorney-call-tour.html
+            ${{ runner.temp }}/public-attorney-tour.html
+            ${{ runner.temp }}/public-professionals.html
+            ${{ runner.temp }}/public-professional-growth.html
+            ${{ runner.temp }}/public-professional-membership.html
+            ${{ runner.temp }}/public-practice-areas.html
+            ${{ runner.temp }}/public-app.js
+            ${{ runner.temp }}/public-styles.css
+            ${{ runner.temp }}/public-marketing-rules.js
+            ${{ runner.temp }}/navigator-status.json
+            ${{ runner.temp }}/navigator-chat.json
+            ${{ runner.temp }}/hidden-growth-route-status.txt
+            ${{ runner.temp }}/hidden-portals-route-status.txt
+            ${{ runner.temp }}/render-rollback-response.json
+            ${{ runner.temp }}/rollback-currentness.json
+            ${{ runner.temp }}/rollback-professional-growth.html
+            ${{ runner.temp }}/rollback-confirmed-attempt.txt
+          if-no-files-found: warn
+          retention-days: 90
