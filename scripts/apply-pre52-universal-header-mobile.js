@@ -7,23 +7,21 @@ const MARK='SMARTER_JUSTICE_PRE52_UNIVERSAL_HEADER_MOBILE';
 for(const name of fs.readdirSync(pub).filter(n=>n.endsWith('.html'))){
   const p=path.join(pub,name); let s=fs.readFileSync(p,'utf8');
   const hasUniversal=/class=["'][^"']*\bu-nav\b/i.test(s)&&/class=["'][^"']*\bu-links\b/i.test(s);
-  const hasSiteHeader=/class=["'][^"']*\bsite-header\b/i.test(s);
-  if(!hasUniversal&&!hasSiteHeader)continue;
+  const headerMatch=s.match(/<header\b[^>]*>[\s\S]*?<\/header>/i);
+  const hasHeaderNav=Boolean(headerMatch&&/<nav\b/i.test(headerMatch[0]));
+  if(!hasUniversal&&!hasHeaderNav)continue;
   if(hasUniversal){
     if(!/data-nav-toggle/i.test(s))s=s.replace(/(<nav[^>]*class=["'][^"']*\bu-links\b[^"']*["'][^>]*>)/i,`<button class="nav-toggle u-nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" data-nav-toggle>Menu</button>$1`);
     s=s.replace(/<nav([^>]*class=["'][^"']*\bu-links\b[^"']*["'][^>]*)>/i,(m,attrs)=>/data-nav(?:\s|=|$)/i.test(attrs)?m:`<nav${attrs} data-nav>`);
   }
-  if(hasSiteHeader){
-    const headerMatch=s.match(/<header[^>]*class=["'][^"']*\bsite-header\b[^"']*["'][^>]*>[\s\S]*?<\/header>/i);
-    if(headerMatch&&/<nav\b/i.test(headerMatch[0])){
-      let header=headerMatch[0];
-      if(!/data-nav-toggle/i.test(header)){
-        const navAt=header.search(/<nav\b/i);
-        header=header.slice(0,navAt)+`<button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" data-nav-toggle>Menu</button>`+header.slice(navAt);
-      }
-      header=header.replace(/<nav([^>]*)>/i,(m,attrs)=>/data-nav(?:\s|=|$)/i.test(attrs)?m:`<nav${attrs} data-nav>`);
-      s=s.replace(headerMatch[0],header);
+  if(hasHeaderNav){
+    let header=headerMatch[0];
+    if(!/data-nav-toggle/i.test(header)){
+      const navAt=header.search(/<nav\b/i);
+      header=header.slice(0,navAt)+`<button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" data-nav-toggle>Menu</button>`+header.slice(navAt);
     }
+    header=header.replace(/<nav([^>]*)>/i,(m,attrs)=>/data-nav(?:\s|=|$)/i.test(attrs)?m:`<nav${attrs} data-nav>`);
+    s=s.replace(headerMatch[0],header);
   }
   if(!/src=["']\/app\.js/i.test(s))s=s.replace('</head>','<script defer src="/app.js"></script></head>');
   if(!s.includes(MARK))s=s.replace('<body','<!-- '+MARK+' --><body');
