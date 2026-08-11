@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1.0.0",
+  "release": "v2.0.0-pre47",
+  "researchedAt": "2026-08-10",
+  "purpose": "Current market and primary-source research for the professional growth workspace and jurisdiction-aware marketing preflight.",
+  "marketSources": [
+    {"source":"https://www.clio.com/grow/","signal":"Legal CRM/intake, automation, scheduling, reputation/marketing attribution and growth workflow."},
+    {"source":"https://www.lawmatics.com/","signal":"Legal CRM, intake and marketing automation with follow-up, scheduling, segmentation and analytics."},
+    {"source":"https://www.mycase.com/products/client-intake-lead-management/","signal":"Lead/intake pipeline connected to broader law-firm operational workflows."}
+  ],
+  "primaryComplianceSources": [
+    {"jurisdiction":"NY","source":"https://www.nycourts.gov/LegacyPDFS/RULES/jointappellate/Signed%20Letter%20to%20DOS-Joint%20Order.pdf","effectiveDate":"2026-06-01","scope":"Selected Rules 7.1 and 7.3 advertising/solicitation issues."},
+    {"jurisdiction":"FL","source":"https://www.floridabar.org/ethics/etad/advertising-filing-requirements/","scope":"Advertising filing requirements and current filing fee information."},
+    {"jurisdiction":"FL","source":"https://www.floridabar.org/etopinions/opinion-24-1/","scope":"Generative-AI chatbot disclosure guidance."},
+    {"jurisdiction":"TX","source":"https://www.texasbar.com/Content/NavigationMenu/ForLawyers/AdvertisingReview/default.htm","scope":"Attorney advertising review administration and current application fee."},
+    {"jurisdiction":"TX","source":"https://www.texasbar.com/Content/NavigationMenu/ForLawyers/MembershipInformation/AdvertisingReview2/TypesOfAds.htm","scope":"Submission and exemption overview."}
+  ],
+  "boundary": "Research supports a partial, sourced issue-spotting ruleset. It does not establish blanket jurisdictional compliance, every exemption, every filing/retention duty, or future currentness."
+}
