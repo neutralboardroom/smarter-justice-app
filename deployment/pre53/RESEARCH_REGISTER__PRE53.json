@@ -1,0 +1,28 @@
+{
+  "schemaVersion":"1.0.0",
+  "release":"v2.0.0-pre53",
+  "researchedAt":"2026-08-11",
+  "purpose":"Diagnose two rejected pre52 Render cutover attempts and correct deployment/startup behavior without altering the qualified pre52 public feature layer.",
+  "observedEvidence":{
+    "mainCommit":"8ad67af4bb2b2d429f87a9267dac169e94933f30",
+    "qualificationRun":31521154325,
+    "deploymentRun":31521154428,
+    "attempts":[1,2],
+    "bothAttempts":"Render deploy hook returned a deploy id but /api/release-identity for pre52 never became active before the approximately seven-minute workflow gate expired.",
+    "rollbackEvidence":"Health remained OK and the captured professional-growth page contained SMARTER_JUSTICE_PRE49_SOURCE_CURRENTNESS_GATE. The workflow incorrectly checked SMARTER_JUSTICE_PRE49_RULE_SOURCE_CURRENTNESS, causing false rollback-verification failure."
+  },
+  "officialRenderEvidence":[
+    {"url":"https://render.com/docs/health-checks","finding":"A new web-service deploy must pass health checks before receiving traffic; Render can wait up to 15 minutes before canceling a new deploy that does not become healthy."},
+    {"url":"https://render.com/docs/web-services","finding":"A web service must bind to a port reachable on 0.0.0.0 and should use the PORT environment variable."},
+    {"url":"https://render.com/docs/deploy-hooks","finding":"A deploy hook can deploy a specific commit with the ref query parameter and returns a deploy id when a deploy starts."},
+    {"url":"https://render.com/docs/deploys","finding":"The old instance continues serving until the new instance builds, starts, passes health checks, and is promoted."}
+  ],
+  "decisions":[
+    {"decision":"BUILD","item":"Keep exhaustive inherited/overlay qualification in build/CI, not in the production start command before port binding."},
+    {"decision":"BUILD","item":"Add a fast fail-closed startup guard that verifies exact pre53 runtime identity, runtime version and PORT compatibility, then starts the server immediately."},
+    {"decision":"BUILD","item":"Separate exact release cutover waiting from the heavier public/AI acceptance suite."},
+    {"decision":"BUILD","item":"Wait beyond Render's documented 15-minute promotion ceiling before declaring cutover failure."},
+    {"decision":"BUILD","item":"Verify rollback with the actual accepted pre49 marker."},
+    {"decision":"PRESERVE","item":"All pre52 public, attorney, mobile, working-only and data-continuity behavior remains intact."}
+  ]
+}

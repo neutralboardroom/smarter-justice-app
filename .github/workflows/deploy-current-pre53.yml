@@ -31,22 +31,23 @@ jobs:
           ref: ${{ env.TARGET_SHA }}
           fetch-depth: 0
 
-      - name: Bind pre52 authority, owner authorization, rollback and working-only gate
+      - name: Bind pre53 authority, owner authorization, rollback and continuity gate
         run: |
           set -euo pipefail
           test "$(git rev-parse HEAD)" = "$TARGET_SHA"
           test "$(node -p "require('./package.json').version")" = "1.7.98"
-          test -f deployment/pre52/OWNER_DEPLOYMENT_AUTHORIZATION__PRE52.json
-          test -f deployment/pre52/LAST_KNOWN_GOOD_PRODUCTION__PRE52.json
+          test -f deployment/pre53/OWNER_DEPLOYMENT_AUTHORIZATION__PRE53.json
+          test -f deployment/pre53/LAST_KNOWN_GOOD_PRODUCTION__PRE53.json
+          test -f deployment/pre53/RENDER_STARTUP_AND_LIVE_CUTOVER__PRE53.json
+          test -f deployment/pre53/test_pre53_render_startup.py
           test -f deployment/pre52/DATA_CONTINUITY_AND_PUBLICATION_GATE__PRE52.json
-          test -f deployment/pre52/test_pre52_attorney_value_clarity.py
-          test -f deployment/pre52/test_pre52_mobile_navigation.py
-          AUTH=deployment/pre52/OWNER_DEPLOYMENT_AUTHORIZATION__PRE52.json LAST=deployment/pre52/LAST_KNOWN_GOOD_PRODUCTION__PRE52.json node - <<'NODE'
+          AUTH=deployment/pre53/OWNER_DEPLOYMENT_AUTHORIZATION__PRE53.json LAST=deployment/pre53/LAST_KNOWN_GOOD_PRODUCTION__PRE53.json node - <<'NODE'
           const fs=require('fs');
           const auth=JSON.parse(fs.readFileSync(process.env.AUTH,'utf8'));
           const last=JSON.parse(fs.readFileSync(process.env.LAST,'utf8'));
-          if(auth.release!=='v2.0.0-pre52'||auth.authorized!==true)process.exit(1);
+          if(auth.release!=='v2.0.0-pre53'||auth.authorized!==true)process.exit(1);
           if(last.lastKnownGood?.gitCommit!==process.env.LAST_ACCEPTED_LIVE_SHA)process.exit(1);
+          if(last.lastKnownGood?.liveMarker!=='SMARTER_JUSTICE_PRE49_SOURCE_CURRENTNESS_GATE')process.exit(1);
           NODE
           git cat-file -e "$LAST_ACCEPTED_LIVE_SHA^{commit}"
           echo "ROLLBACK_SHA=$LAST_ACCEPTED_LIVE_SHA" >> "$GITHUB_ENV"
@@ -77,7 +78,6 @@ jobs:
           const fs=require('fs');
           const h=JSON.parse(fs.readFileSync(process.env.HEALTH,'utf8'));
           if(h.ok!==true||h.app!=='Smarter Justice')process.exit(1);
-          // If sensitive production writes are already open, deployment requires explicit current backup + recovery evidence.
           if(h.sensitiveTrafficApproved===true && (!String(process.env.BACKUP_RECEIPT||'').trim() || !String(process.env.RESTORE_VERIFICATION||'').trim())) process.exit(1);
           NODE
 
@@ -94,20 +94,56 @@ jobs:
           set -euo pipefail
           sep='?'; [[ "$RENDER_DEPLOY_HOOK_URL" == *'?'* ]] && sep='&'
           curl --fail --silent --show-error --location --max-time 30 "${RENDER_DEPLOY_HOOK_URL}${sep}ref=${TARGET_SHA}" > "$RUNNER_TEMP/render-deploy-response.json"
+          RESPONSE="$RUNNER_TEMP/render-deploy-response.json" node - <<'NODE'
+          const fs=require('fs');
+          const row=JSON.parse(fs.readFileSync(process.env.RESPONSE,'utf8'));
+          if(!row.deploy || !/^dep-[a-z0-9]+$/i.test(String(row.deploy.id||''))) process.exit(1);
+          console.log(`Render deploy id ${row.deploy.id}`);
+          NODE
 
-      - name: Pre52 origin and public live acceptance
+      - name: Wait for exact pre53 release cutover
+        id: cutover
+        run: |
+          set -euo pipefail
+          # Render can keep a new web-service deploy in health-check promotion for up to 15 minutes.
+          # Wait beyond that ceiling before declaring cutover failure.
+          for attempt in $(seq 1 96); do
+            echo "pre53 exact-cutover attempt $attempt"
+            stamp="${TARGET_SHA}-${attempt}-$(date +%s)"
+            if curl --fail --silent --show-error --max-time 15 "$RENDER_BASE_URL/health" > "$RUNNER_TEMP/health.json" \
+              && curl --fail --silent --show-error --max-time 15 "$RENDER_BASE_URL/api/release-identity?sj_release_probe=$stamp" > "$RUNNER_TEMP/origin-identity.json" \
+              && curl --fail --silent --show-error --max-time 15 "$PUBLIC_BASE_URL/api/release-identity?sj_release_probe=$stamp" > "$RUNNER_TEMP/public-identity.json"; then
+              if ROOT="$RUNNER_TEMP" TARGET_SHA="$TARGET_SHA" node - <<'NODE'
+          const fs=require('fs'),path=require('path');
+          const root=process.env.ROOT,target=process.env.TARGET_SHA;
+          const read=n=>JSON.parse(fs.readFileSync(path.join(root,n),'utf8'));
+          const health=read('health.json'), origin=read('origin-identity.json'), pub=read('public-identity.json');
+          if(health.ok!==true||health.app!=='Smarter Justice'||health.version!=='1.7.98')process.exit(1);
+          for(const id of [origin,pub]){
+            if(id.ok!==true||id.release!=='v2.0.0-pre53'||id.demoPathRelease!=='v2.0.0-pre52'||id.deploymentControlRelease!=='v2.0.0-pre53')process.exit(1);
+            if(id.gitCommit!==target||id.demoHtmlCachePolicy!=='NO_STORE'||id.marker!=='SMARTER_JUSTICE_PRE53_RENDER_STARTUP_AND_LIVE_GATE')process.exit(1);
+          }
+          NODE
+              then
+                printf '%s\n' "$attempt" > "$RUNNER_TEMP/pre53-cutover-attempt.txt"
+                exit 0
+              fi
+            fi
+            sleep 10
+          done
+          echo 'pre53 exact release identity did not cut over within the Render-aligned window' >&2
+          exit 1
+
+      - name: Pre53 public, AI, mobile and working-only live acceptance
         id: live
         run: |
           set -euo pipefail
           jar="$RUNNER_TEMP/navigator-cookies.txt"
-          for attempt in $(seq 1 42); do
-            echo "pre52 live acceptance attempt $attempt"
+          for attempt in $(seq 1 12); do
+            echo "pre53 full live acceptance attempt $attempt"
             stamp="${TARGET_SHA}-${attempt}-$(date +%s)"
             rm -f "$jar"
-            if curl --fail --silent --show-error --max-time 25 "$RENDER_BASE_URL/health" > "$RUNNER_TEMP/health.json" \
-              && curl --fail --silent --show-error --max-time 25 "$RENDER_BASE_URL/api/release-identity?sj_release_probe=$stamp" > "$RUNNER_TEMP/origin-identity.json" \
-              && curl --fail --silent --show-error --max-time 25 "$PUBLIC_BASE_URL/api/release-identity?sj_release_probe=$stamp" > "$RUNNER_TEMP/public-identity.json" \
-              && curl --fail --silent --show-error --max-time 25 "$PUBLIC_BASE_URL/" > "$RUNNER_TEMP/public-home.html" \
+            if curl --fail --silent --show-error --max-time 25 "$PUBLIC_BASE_URL/" > "$RUNNER_TEMP/public-home.html" \
               && curl --fail --silent --show-error --max-time 25 "$PUBLIC_BASE_URL/navigator" > "$RUNNER_TEMP/public-navigator.html" \
               && curl --fail --silent --show-error --max-time 25 "$PUBLIC_BASE_URL/attorney-call-tour.html?sj_release_probe=$stamp" > "$RUNNER_TEMP/public-attorney-call-tour.html" \
               && curl --fail --silent --show-error --max-time 25 "$PUBLIC_BASE_URL/attorney-partner-tour.html?sj_release_probe=$stamp" > "$RUNNER_TEMP/public-attorney-tour.html" \
@@ -125,18 +161,10 @@ jobs:
               if [ "$hidden_goc" = 404 ] && [ "$hidden_portals" = 404 ] && \
                 ROOT="$RUNNER_TEMP" TARGET_SHA="$TARGET_SHA" node - <<'NODE'
           const fs=require('fs'),path=require('path');
-          const root=process.env.ROOT,target=process.env.TARGET_SHA;
+          const root=process.env.ROOT;
           const read=n=>fs.readFileSync(path.join(root,n),'utf8');
-          const health=JSON.parse(read('health.json'));
-          const origin=JSON.parse(read('origin-identity.json'));
-          const pubId=JSON.parse(read('public-identity.json'));
           const status=JSON.parse(read('navigator-status.json'));
           const chat=JSON.parse(read('navigator-chat.json'));
-          if(health.ok!==true||health.version!=='1.7.98'||health.app!=='Smarter Justice')process.exit(1);
-          for(const id of [origin,pubId]){
-            if(id.ok!==true||id.release!=='v2.0.0-pre52'||id.demoPathRelease!=='v2.0.0-pre52')process.exit(1);
-            if(id.gitCommit!==target||id.demoHtmlCachePolicy!=='NO_STORE'||id.marker!=='SMARTER_JUSTICE_PRE52_ATTORNEY_VALUE_CLARITY')process.exit(1);
-          }
           if(status.ok!==true||status.navigatorAvailable!==true||status.publicAiEnabled!==true||status.externalConsequentialActionsEnabled!==false)process.exit(1);
           if(chat.ok!==true||chat.publicAiEnabled!==true||chat.storeRequested!==false||chat.externalActionsExecuted!==false||chat.automaticOverageBillingEnabled!==false)process.exit(1);
           if(!String(chat.answer||'').includes('SMARTER JUSTICE PUBLIC AI READY'))process.exit(1);
@@ -145,10 +173,10 @@ jobs:
           for(const required of ['smarter_justice_pre52_attorney_value_clarity','help more of the right people find your firm','four things you can demonstrate on the live platform','why smarter justice is different'])if(!publicText.includes(required))process.exit(1);
           if(!/Navigator/i.test(nav)||!/Available to everyone/i.test(nav))process.exit(1);
           if(!app.includes('SMARTER_JUSTICE_PRE52_MOBILE_NAVIGATION')||!css.includes('SMARTER_JUSTICE_PRE52_MOBILE_NAVIGATION'))process.exit(1);
+          if(!home.includes('data-nav-toggle')||!home.includes('data-nav'))process.exit(1);
           for(const bad of ['href="/portals.html"','href="/growth-operations-compliance.html"','full nationwide marketing-compliance automation','unrestricted outbound campaigns','ai front desk','automatic crm migration'])if(publicText.includes(bad)||app.toLowerCase().includes(bad))process.exit(1);
           for(const marker of ['PARTIAL_PRIMARY_SOURCE_RULESET_NO_BLANKET_COMPLIANCE_APPROVAL','NY-7.1-D-RESPONSIBLE','FL-OP-24-1-AI-DISCLOSURE','TX-PART-VII-REVIEW','CA-7.3-ADVERTISEMENT-LABEL','NJ-CAA-49-NO-PAYMENT'])if(!rules.includes(marker))process.exit(1);
           if(/guaranteed compliance|50-state compliant|all jurisdictions compliant/i.test(publicText))process.exit(1);
-          console.log(JSON.stringify({status:'PASS',release:'v2.0.0-pre52',targetSha:target,workingOnlyPublicationGate:true,mobileNavigation:true,navigator:true,marketingPreflight:true},null,2));
           NODE
               then
                 printf '%s\n' "$hidden_goc" > "$RUNNER_TEMP/hidden-growth-route-status.txt"
@@ -158,10 +186,10 @@ jobs:
             fi
             sleep 10
           done
-          echo 'pre52 live acceptance did not pass' >&2
+          echo 'pre53 public live acceptance did not pass after exact cutover' >&2
           exit 1
 
-      - name: Automatic rollback to last accepted-live production after failed pre52 acceptance
+      - name: Automatic rollback to last accepted-live production after failed pre53 acceptance
         if: failure() && steps.deploy.outcome == 'success'
         env:
           RENDER_DEPLOY_HOOK_URL: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
@@ -169,12 +197,18 @@ jobs:
           set -euo pipefail
           sep='?'; [[ "$RENDER_DEPLOY_HOOK_URL" == *'?'* ]] && sep='&'
           curl --fail --silent --show-error --location --max-time 30 "${RENDER_DEPLOY_HOOK_URL}${sep}ref=${ROLLBACK_SHA}" > "$RUNNER_TEMP/render-rollback-response.json"
-          for attempt in $(seq 1 30); do
-            if curl --fail --silent --show-error --max-time 25 "$RENDER_BASE_URL/health" > "$RUNNER_TEMP/rollback-health.json" \
-              && curl --fail --silent --show-error --max-time 25 "$PUBLIC_BASE_URL/professional-growth.html" > "$RUNNER_TEMP/rollback-professional-growth.html"; then
+          RESPONSE="$RUNNER_TEMP/render-rollback-response.json" node - <<'NODE'
+          const fs=require('fs');const row=JSON.parse(fs.readFileSync(process.env.RESPONSE,'utf8'));
+          if(!row.deploy || !/^dep-[a-z0-9]+$/i.test(String(row.deploy.id||''))) process.exit(1);
+          NODE
+          for attempt in $(seq 1 96); do
+            if curl --fail --silent --show-error --max-time 20 "$RENDER_BASE_URL/health" > "$RUNNER_TEMP/rollback-health.json" \
+              && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/professional-growth.html?sj_rollback_probe=$attempt" > "$RUNNER_TEMP/rollback-professional-growth.html"; then
               if HEALTH="$RUNNER_TEMP/rollback-health.json" GROWTH="$RUNNER_TEMP/rollback-professional-growth.html" node - <<'NODE'
-          const fs=require('fs');const h=JSON.parse(fs.readFileSync(process.env.HEALTH,'utf8'));const g=fs.readFileSync(process.env.GROWTH,'utf8');
-          if(h.ok!==true||h.app!=='Smarter Justice'||!g.includes('SMARTER_JUSTICE_PRE49_RULE_SOURCE_CURRENTNESS'))process.exit(1);
+          const fs=require('fs');
+          const h=JSON.parse(fs.readFileSync(process.env.HEALTH,'utf8'));
+          const g=fs.readFileSync(process.env.GROWTH,'utf8');
+          if(h.ok!==true||h.app!=='Smarter Justice'||!g.includes('SMARTER_JUSTICE_PRE49_SOURCE_CURRENTNESS_GATE'))process.exit(1);
           NODE
               then exit 0; fi
             fi
@@ -182,14 +216,15 @@ jobs:
           done
           exit 1
 
-      - name: Upload immutable pre52 deployment evidence
+      - name: Upload immutable pre53 deployment evidence
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
-          name: smarter-justice-pre52-live-evidence-${{ github.run_id }}
+          name: smarter-justice-pre53-live-evidence-${{ github.run_id }}-${{ github.run_attempt }}
           path: |
             ${{ runner.temp }}/previous-health.json
             ${{ runner.temp }}/render-deploy-response.json
+            ${{ runner.temp }}/pre53-cutover-attempt.txt
             ${{ runner.temp }}/health.json
             ${{ runner.temp }}/origin-identity.json
             ${{ runner.temp }}/public-identity.json
