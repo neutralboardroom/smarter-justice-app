@@ -1,0 +1,24 @@
+name: All-approved-portals policy gate
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - release/v1.7.85-all-portals
+
+permissions:
+  contents: read
+
+jobs:
+  validate-all-approved-portals-policy:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout exact commit
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - name: Validate all-approved-portals launch policy
+        run: node tests/all-approved-portals-launch-v1785.test.js

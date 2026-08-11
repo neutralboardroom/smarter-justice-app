@@ -1,0 +1,278 @@
+name: Live Smarter Justice user audit
+
+on:
+  push:
+    branches:
+      - release/v1.7.85-all-portals
+    paths:
+      - '.github/workflows/live-site-user-audit.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: smarter-justice-live-user-audit
+  cancel-in-progress: false
+
+jobs:
+  audit-live-site:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      PRIMARY_URL: https://www.smarterjustice.com
+      APEX_URL: https://smarterjustice.com
+      MAX_PAGES: '250'
+    steps:
+      - name: Checkout audit definition
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+        with:
+          persist-credentials: false
+
+      - name: Use Node 22
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+        with:
+          node-version: '22.x'
+          package-manager-cache: false
+
+      - name: Install browser audit dependencies
+        run: |
+          set -euo pipefail
+          audit="$RUNNER_TEMP/sj-live-audit"
+          mkdir -p "$audit"
+          cd "$audit"
+          npm init -y >/dev/null
+          npm install --no-audit --no-fund playwright@1.55.0 @axe-core/playwright@4.10.2
+          npx playwright install --with-deps chromium
+
+      - name: Crawl live pages, controls, layouts, and funnels
+        id: audit
+        run: |
+          set -euo pipefail
+          audit="$RUNNER_TEMP/sj-live-audit"
+          out="$RUNNER_TEMP/sj-live-audit-output"
+          mkdir -p "$out/screenshots/desktop" "$out/screenshots/mobile"
+          cat > "$audit/audit.mjs" <<'NODE'
+          import fs from 'node:fs';
+          import path from 'node:path';
+          import crypto from 'node:crypto';
+          import { chromium } from 'playwright';
+          import AxeBuilder from '@axe-core/playwright';
+
+          const primary = process.env.PRIMARY_URL;
+          const apex = process.env.APEX_URL;
+          const maxPages = Number(process.env.MAX_PAGES || 250);
+          const output = process.env.AUDIT_OUTPUT;
+          const runId = `${Date.now()}-${crypto.randomBytes(5).toString('hex')}`;
+          const noCacheHeaders = {
+            'Cache-Control': 'no-cache, no-store, max-age=0',
+            'Pragma': 'no-cache',
+            'X-Smarter-Justice-Audit': runId
+          };
+          const risky = /delete|remove|purchase|pay|checkout|subscribe|send|submit|file|upload|sign out|log out|publish|deploy|activate|approve|authorize/i;
+          const allowedProtocols = new Set(['http:', 'https:', 'mailto:', 'tel:']);
+          const normalize = (raw, base) => {
+            try {
+              const u = new URL(raw, base);
+              u.hash = '';
+              for (const key of [...u.searchParams.keys()]) {
+                if (/^(utm_|fbclid|gclid|_audit)/i.test(key)) u.searchParams.delete(key);
+              }
+              return u.toString();
+            } catch { return null; }
+          };
+          const slug = (url) => {
+            const u = new URL(url);
+            const raw = `${u.hostname}${u.pathname === '/' ? '/home' : u.pathname}`;
+            return raw.replace(/[^a-z0-9]+/gi, '-').replace(/^-|-$/g, '').slice(0, 160) || 'home';
+          };
+          const cacheBust = (url) => {
+            const u = new URL(url);
+            u.searchParams.set('_audit', runId);
+            return u.toString();
+          };
+          const sameProductHost = (url) => {
+            try {
+              const h = new URL(url).hostname.replace(/^www\./, '');
+              return h === new URL(primary).hostname.replace(/^www\./, '');
+            } catch { return false; }
+          };
+          const result = {
+            auditVersion: 'SJ-LIVE-USER-AUDIT-1',
+            runId,
+            startedAt: new Date().toISOString(),
+            primary,
+            apex,
+            pages: [],
+            hostChecks: [],
+            critical: [],
+            warnings: [],
+            stats: {}
+          };
+
+          const browser = await chromium.launch({ headless: true });
+          const desktop = await browser.newContext({ viewport: { width: 1440, height: 1000 }, extraHTTPHeaders: noCacheHeaders, ignoreHTTPSErrors: false });
+          const mobile = await browser.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true, extraHTTPHeaders: noCacheHeaders, ignoreHTTPSErrors: false });
+
+          for (const host of [primary, apex]) {
+            const page = await desktop.newPage();
+            const failures = [];
+            page.on('requestfailed', req => failures.push({ url: req.url(), error: req.failure()?.errorText || 'request failed' }));
+            try {
+              const response = await page.goto(cacheBust(host), { waitUntil: 'networkidle', timeout: 45000 });
+              result.hostChecks.push({ requested: host, finalUrl: page.url(), status: response?.status() || null, title: await page.title(), failures });
+            } catch (error) {
+              result.hostChecks.push({ requested: host, finalUrl: page.url(), status: null, error: String(error), failures });
+              result.critical.push({ type: 'HOST_UNREACHABLE', url: host, detail: String(error) });
+            } finally { await page.close(); }
+          }
+
+          const queue = [normalize(primary, primary)];
+          const visited = new Set();
+          while (queue.length && visited.size < maxPages) {
+            const requested = queue.shift();
+            if (!requested || visited.has(requested) || !sameProductHost(requested)) continue;
+            visited.add(requested);
+            const page = await desktop.newPage();
+            const consoleErrors = [];
+            const pageErrors = [];
+            const requestFailures = [];
+            page.on('console', msg => { if (msg.type() === 'error') consoleErrors.push(msg.text()); });
+            page.on('pageerror', error => pageErrors.push(String(error)));
+            page.on('requestfailed', req => requestFailures.push({ url: req.url(), method: req.method(), error: req.failure()?.errorText || 'request failed' }));
+            const record = { requested, status: null, finalUrl: null, title: null, h1: [], headings: [], text: null, links: [], buttons: [], forms: [], consoleErrors, pageErrors, requestFailures, axe: null, desktopScreenshot: null, mobileScreenshot: null, errors: [] };
+            try {
+              const response = await page.goto(cacheBust(requested), { waitUntil: 'networkidle', timeout: 45000 });
+              record.status = response?.status() || null;
+              record.finalUrl = page.url().replace(/([?&])_audit=[^&]+&?/, '$1').replace(/[?&]$/, '');
+              record.title = await page.title();
+              record.h1 = await page.locator('h1').allTextContents();
+              record.headings = await page.locator('h1,h2,h3,h4,h5,h6').evaluateAll(nodes => nodes.map(n => ({ level: Number(n.tagName.slice(1)), text: (n.textContent || '').trim() })).filter(x => x.text));
+              record.text = (await page.locator('body').innerText()).replace(/\s+/g, ' ').trim().slice(0, 12000);
+              record.links = await page.locator('a').evaluateAll((nodes) => nodes.map((n, index) => ({ index, text: (n.innerText || n.getAttribute('aria-label') || '').trim(), href: n.getAttribute('href'), visible: !!(n.offsetWidth || n.offsetHeight || n.getClientRects().length), target: n.getAttribute('target'), rel: n.getAttribute('rel') })));
+              record.buttons = await page.locator('button,input[type=button],input[type=submit],[role=button]').evaluateAll(nodes => nodes.map((n, index) => ({ index, tag: n.tagName.toLowerCase(), type: n.getAttribute('type'), text: (n.innerText || n.getAttribute('value') || n.getAttribute('aria-label') || '').trim(), visible: !!(n.offsetWidth || n.offsetHeight || n.getClientRects().length), disabled: !!n.disabled || n.getAttribute('aria-disabled') === 'true', formAction: n.formAction || null })));
+              record.forms = await page.locator('form').evaluateAll(forms => forms.map((f, index) => ({ index, action: f.getAttribute('action') || '', method: (f.getAttribute('method') || 'get').toLowerCase(), controls: [...f.querySelectorAll('input,select,textarea,button')].map(c => ({ tag: c.tagName.toLowerCase(), type: c.getAttribute('type'), name: c.getAttribute('name'), id: c.id, required: c.required, label: c.id ? document.querySelector(`label[for="${CSS.escape(c.id)}"]`)?.innerText?.trim() || null : null })) })));
+              const axe = await new AxeBuilder({ page }).analyze();
+              record.axe = { violations: axe.violations.map(v => ({ id: v.id, impact: v.impact, description: v.description, nodes: v.nodes.length })) };
+
+              if (!record.status || record.status >= 400) result.critical.push({ type: 'PAGE_STATUS', url: requested, status: record.status });
+              if (record.h1.length !== 1) result.warnings.push({ type: 'H1_COUNT', url: requested, count: record.h1.length });
+              if (!record.title?.trim()) result.warnings.push({ type: 'MISSING_TITLE', url: requested });
+              for (let i = 1; i < record.headings.length; i++) {
+                if (record.headings[i].level > record.headings[i - 1].level + 1) result.warnings.push({ type: 'HEADING_SKIP', url: requested, from: record.headings[i - 1], to: record.headings[i] });
+              }
+              if (consoleErrors.length || pageErrors.length) result.critical.push({ type: 'RUNTIME_ERROR', url: requested, consoleErrors, pageErrors });
+              if (record.axe.violations.some(v => ['critical', 'serious'].includes(v.impact))) result.warnings.push({ type: 'ACCESSIBILITY', url: requested, violations: record.axe.violations.filter(v => ['critical', 'serious'].includes(v.impact)) });
+
+              for (const link of record.links) {
+                if (!link.href) {
+                  if (link.visible) result.warnings.push({ type: 'LINK_WITHOUT_HREF', url: requested, text: link.text });
+                  continue;
+                }
+                const normalized = normalize(link.href, record.finalUrl || requested);
+                if (!normalized) continue;
+                const protocol = new URL(normalized).protocol;
+                if (!allowedProtocols.has(protocol)) result.warnings.push({ type: 'UNSUPPORTED_LINK_PROTOCOL', url: requested, href: link.href, protocol });
+                if (sameProductHost(normalized) && !visited.has(normalized) && !queue.includes(normalized)) queue.push(normalized);
+              }
+
+              // Safely exercise non-destructive visible controls on a fresh page clone.
+              const safeButtons = record.buttons.filter(b => b.visible && !b.disabled && !risky.test(`${b.text} ${b.formAction || ''}`)).slice(0, 40);
+              for (const button of safeButtons) {
+                const probe = await desktop.newPage();
+                const probeErrors = [];
+                probe.on('pageerror', e => probeErrors.push(String(e)));
+                try {
+                  await probe.goto(cacheBust(requested), { waitUntil: 'networkidle', timeout: 45000 });
+                  const locator = probe.locator('button,input[type=button],input[type=submit],[role=button]').nth(button.index);
+                  if (!await locator.isVisible()) continue;
+                  const before = probe.url();
+                  await locator.click({ timeout: 8000 });
+                  await probe.waitForTimeout(800);
+                  const after = probe.url();
+                  const expanded = await locator.getAttribute('aria-expanded').catch(() => null);
+                  const dialogVisible = await probe.locator('[role=dialog]:visible,dialog[open]').count();
+                  button.probe = { before, after, changedUrl: before !== after, expanded, dialogVisible, pageErrors: probeErrors };
+                  if (probeErrors.length) result.critical.push({ type: 'BUTTON_RUNTIME_ERROR', url: requested, button: button.text, errors: probeErrors });
+                  if (!button.probe.changedUrl && expanded === null && dialogVisible === 0 && !/menu|search|filter|toggle|show|hide|open|close|copy|download/i.test(button.text)) {
+                    result.warnings.push({ type: 'BUTTON_NO_OBSERVED_EFFECT', url: requested, button: button.text || `[${button.index}]` });
+                  }
+                } catch (error) {
+                  button.probe = { error: String(error) };
+                  result.warnings.push({ type: 'BUTTON_PROBE_FAILED', url: requested, button: button.text || `[${button.index}]`, detail: String(error) });
+                } finally { await probe.close(); }
+              }
+
+              const pageSlug = slug(record.finalUrl || requested);
+              const desktopPath = path.join(output, 'screenshots', 'desktop', `${pageSlug}.png`);
+              await page.screenshot({ path: desktopPath, fullPage: true });
+              record.desktopScreenshot = path.relative(output, desktopPath);
+
+              const mobilePage = await mobile.newPage();
+              try {
+                await mobilePage.goto(cacheBust(requested), { waitUntil: 'networkidle', timeout: 45000 });
+                const overflow = await mobilePage.evaluate(() => ({ scrollWidth: document.documentElement.scrollWidth, clientWidth: document.documentElement.clientWidth }));
+                if (overflow.scrollWidth > overflow.clientWidth + 2) result.warnings.push({ type: 'MOBILE_HORIZONTAL_OVERFLOW', url: requested, ...overflow });
+                const mobilePath = path.join(output, 'screenshots', 'mobile', `${pageSlug}.png`);
+                await mobilePage.screenshot({ path: mobilePath, fullPage: true });
+                record.mobileScreenshot = path.relative(output, mobilePath);
+              } finally { await mobilePage.close(); }
+            } catch (error) {
+              record.errors.push(String(error));
+              result.critical.push({ type: 'PAGE_LOAD_FAILURE', url: requested, detail: String(error) });
+            } finally {
+              result.pages.push(record);
+              await page.close();
+            }
+          }
+
+          await desktop.close();
+          await mobile.close();
+          await browser.close();
+          result.finishedAt = new Date().toISOString();
+          result.stats = {
+            pagesVisited: result.pages.length,
+            linksInspected: result.pages.reduce((n, p) => n + p.links.length, 0),
+            buttonsInspected: result.pages.reduce((n, p) => n + p.buttons.length, 0),
+            formsInspected: result.pages.reduce((n, p) => n + p.forms.length, 0),
+            criticalCount: result.critical.length,
+            warningCount: result.warnings.length
+          };
+          fs.writeFileSync(path.join(output, 'live-user-audit.json'), JSON.stringify(result, null, 2) + '\n');
+          const rows = result.pages.map(p => `<tr><td>${escapeHtml(p.finalUrl || p.requested)}</td><td>${p.status ?? ''}</td><td>${escapeHtml(p.title || '')}</td><td>${p.h1.length}</td><td>${p.links.length}</td><td>${p.buttons.length}</td><td>${p.forms.length}</td><td>${p.consoleErrors.length + p.pageErrors.length}</td></tr>`).join('');
+          const html = `<!doctype html><meta charset="utf-8"><title>Smarter Justice live audit</title><style>body{font-family:system-ui;margin:2rem;line-height:1.45}table{border-collapse:collapse;width:100%}th,td{border:1px solid #ccc;padding:.45rem;text-align:left;vertical-align:top}pre{white-space:pre-wrap;background:#f5f5f5;padding:1rem}</style><h1>Smarter Justice live user audit</h1><p>Run ${runId}</p><pre>${escapeHtml(JSON.stringify(result.stats, null, 2))}</pre><h2>Critical findings</h2><pre>${escapeHtml(JSON.stringify(result.critical, null, 2))}</pre><h2>Warnings</h2><pre>${escapeHtml(JSON.stringify(result.warnings, null, 2))}</pre><h2>Pages</h2><table><thead><tr><th>URL</th><th>Status</th><th>Title</th><th>H1</th><th>Links</th><th>Buttons</th><th>Forms</th><th>Runtime errors</th></tr></thead><tbody>${rows}</tbody></table>`;
+          fs.writeFileSync(path.join(output, 'live-user-audit.html'), html);
+          console.log(JSON.stringify(result.stats, null, 2));
+          if (result.critical.length) process.exitCode = 2;
+
+          function escapeHtml(value) { return String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+          NODE
+          AUDIT_OUTPUT="$out" node "$audit/audit.mjs"
+
+      - name: Publish audit summary
+        if: always()
+        run: |
+          set -euo pipefail
+          report="$RUNNER_TEMP/sj-live-audit-output/live-user-audit.json"
+          if [ -f "$report" ]; then
+            node - "$report" >> "$GITHUB_STEP_SUMMARY" <<'NODE'
+          const fs=require('fs');
+          const r=JSON.parse(fs.readFileSync(process.argv[2]));
+          console.log('# Smarter Justice live user audit');
+          console.log(`- Pages visited: ${r.stats.pagesVisited}`);
+          console.log(`- Links inspected: ${r.stats.linksInspected}`);
+          console.log(`- Buttons inspected: ${r.stats.buttonsInspected}`);
+          console.log(`- Forms inspected: ${r.stats.formsInspected}`);
+          console.log(`- Critical findings: ${r.stats.criticalCount}`);
+          console.log(`- Warnings: ${r.stats.warningCount}`);
+          NODE
+          fi
+
+      - name: Upload live audit evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: smarter-justice-live-user-audit-${{ github.sha }}
+          path: ${{ runner.temp }}/sj-live-audit-output
+          if-no-files-found: error
+          retention-days: 14

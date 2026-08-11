@@ -1,0 +1,68 @@
+{
+  "schema_id": "SJP-ALL-APPROVED-LEGAL-PORTALS-LAUNCH-POLICY-2026-08-04-V1",
+  "releaseVersion": "1.7.85",
+  "effective_at": "2026-08-04T16:15:00-04:00",
+  "owner_decision": "ALL_APPROVED_LEGAL_MICRO_PORTALS_ONE_COORDINATED_LAUNCH_PORTFOLIO",
+  "central_product": {
+    "id": "smarter-justice-central",
+    "name": "Smarter Justice",
+    "role": "PORTFOLIO_COORDINATOR"
+  },
+  "approved_legal_portals": [
+    {"id":"justice-tax-solutions","name":"Justice Tax Solutions","specialty":"Tax preparation and tax resolution"},
+    {"id":"estate-law-aid","name":"Estate Law Aid","specialty":"Estate planning, probate and estate administration"},
+    {"id":"business-launch-desk","name":"Business Launch Desk","specialty":"Business formation and compliance"},
+    {"id":"contract-creator","name":"ContractCreator","specialty":"Contracts and agreement preparation","exact_blocker":"Canonical owned replacement domain remains pending."},
+    {"id":"employment-law-aid","name":"Employment Law Aid","specialty":"Employment, wage and workplace matters"},
+    {"id":"divorce-law-aid","name":"Divorce Law Aid","specialty":"Divorce and family law"},
+    {"id":"landlord-tenant-aid","name":"Housing and Landlord-Tenant Law Aid","specialty":"Housing and landlord-tenant matters"},
+    {"id":"real-estate-law-aid","name":"Real Estate Law Aid","specialty":"Real estate transactions and disputes"},
+    {"id":"personal-injury-law-aid","name":"Personal Injury Law Aid","specialty":"Personal injury matters"},
+    {"id":"car-accident-law-aid","name":"Car Accident Law Aid","specialty":"Vehicle accidents"},
+    {"id":"criminal-law-aid","name":"Criminal Law Aid","specialty":"Criminal defense preparation"},
+    {"id":"civil-rights-law-aid","name":"Civil Rights and Police Misconduct Law Aid","specialty":"Civil rights and police misconduct"},
+    {"id":"disability-law-aid","name":"Disability Law Aid","specialty":"Disability benefits and accommodations"},
+    {"id":"workers-compensation-law-aid","name":"Workers’ Compensation Law Aid","specialty":"Workers’ compensation"},
+    {"id":"consumer-protection-law-aid","name":"Consumer Protection, Fraud and Scam Law Aid","specialty":"Consumer protection, fraud and scams"},
+    {"id":"veterans-law-aid","name":"Veterans Benefits and Military Law Aid","specialty":"Veterans benefits and military law"},
+    {"id":"trademark-patent-ip-law-aid","name":"Trademark, Patent and Intellectual Property Law Aid","specialty":"Intellectual property"},
+    {"id":"medical-malpractice-law-aid","name":"Medical Malpractice Law Aid","specialty":"Medical malpractice"},
+    {"id":"insurance-claim-law-aid","name":"Insurance Claims, Denials and Bad Faith Law Aid","specialty":"Insurance claims and bad faith"},
+    {"id":"education-law-aid","name":"Education and Special Education Law Aid","specialty":"Education and special education"},
+    {"id":"bankruptcy-debt-law-aid","name":"Bankruptcy and Debt Law Aid","specialty":"Bankruptcy and debt"},
+    {"id":"domestic-violence-aid","name":"Domestic Violence Aid","specialty":"Domestic violence preparation and survivor-safe resources","enhanced_safety":true}
+  ],
+  "separately_governed_products_and_initiatives": [
+    {"id":"immigration-oasis","reason":"Separate immigration-only platform and brand."},
+    {"id":"coverednyc","reason":"Separate healthcare-coverage identity and licensing boundaries."},
+    {"id":"justice-truck","reason":"Field initiative, not an independent legal specialty portal."},
+    {"id":"stop-sign-project","reason":"Embedded survivor-safety initiative within Domestic Violence Aid."},
+    {"id":"attorneyride","reason":"Professional delivery infrastructure, not a public legal specialty portal."}
+  ],
+  "binding_rules": {
+    "initial_four_or_five_priority_rule": false,
+    "independent_product_readiness": true,
+    "cross_blocking_between_portals": false,
+    "parallel_preparation_allowed": true,
+    "production_release_one_product_at_a_time": true,
+    "truthful_maturity_differences_allowed": true,
+    "exact_artifact_and_verified_readiness_required": true,
+    "automatic_sensitive_data_transfer": false,
+    "automatic_professional_routing": false,
+    "explicit_user_consent_for_cross_portal_handoff": true,
+    "minimum_necessary_handoff_only": true,
+    "separate_product_brands_domains_repositories_versions": true
+  },
+  "readiness_states": [
+    "EVIDENCE_REQUIRED",
+    "BUILDING",
+    "EXACT_TESTED",
+    "DEPLOYMENT_REVIEW_READY",
+    "DEPLOYED_DARK",
+    "VERIFIED_LIVE",
+    "BLOCKED_WITH_EXACT_REASON",
+    "PAUSED"
+  ],
+  "deployment_authorized": false,
+  "production_request_sent": false
+}
