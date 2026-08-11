@@ -1,0 +1,29 @@
+{
+  "schemaVersion": "1.0.0",
+  "release": "v2.0.0-pre48",
+  "slice": "MARKETING_COMPLIANCE_ENGINE_CA_NJ_EXPANSION",
+  "jurisdictionCoverage": [
+    "NY",
+    "FL",
+    "TX",
+    "CA",
+    "NJ"
+  ],
+  "coverageBoundary": "PARTIAL_PRIMARY_SOURCE_RULESET_NO_BLANKET_COMPLIANCE_APPROVAL",
+  "privacyBoundary": "Draft remains browser-local; downloadable receipt contains findings and SHA-256 content hash, not draft text.",
+  "automaticPublicationEnabled": false,
+  "outboundSolicitationEnabled": false,
+  "newDecisionContext": [
+    "California DVRO respondent/service context",
+    "New Jersey competitive-keyword context",
+    "testimonial endorser identity",
+    "testimonial payment status"
+  ],
+  "newRuleMarkers": [
+    "CA-7.3-F-DVRO",
+    "CA-7.3-ADVERTISEMENT-LABEL",
+    "NJ-CAA-49-RESULTS-DISCLAIMER",
+    "NJ-CAA-49-NO-PAYMENT",
+    "NJ-ACPE-735-KEYWORD-DISCLAIMER"
+  ]
+}

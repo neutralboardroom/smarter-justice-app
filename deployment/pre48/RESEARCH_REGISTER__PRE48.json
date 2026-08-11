@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "1.0.0",
+  "release": "v2.0.0-pre48",
+  "researchedAt": "2026-08-10",
+  "purpose": "Primary-source and current adjacent-product research supporting the California and New Jersey expansion of the jurisdiction-aware attorney-marketing preflight.",
+  "liveAudit": {
+    "authority": "Current GitHub main fa2dc8276f7181af9adefb2ebebc5bf6299c46cf plus immutable successful production evidence from workflow 31455793494",
+    "limitation": "External public search indexing did not surface every newest pre47 page; immutable deployment captures and unchanged current main were used instead of guessing."
+  },
+  "primarySources": [
+    {
+      "jurisdiction": "California",
+      "source": "https://www.calbar.ca.gov/Attorneys/Conduct-Discipline/Rules/Rules-of-Professional-Conduct/Current-Rules/Chapter-7-Information-About-Legal-Services",
+      "supports": [
+        "Rule 7.1 truthfulness",
+        "Rule 7.2 responsible lawyer/firm identity",
+        "Rule 7.3 live solicitation",
+        "no-contact/harassment",
+        "targeted solicitation Advertisement labeling",
+        "Rule 7.3(f) DVRO restriction"
+      ]
+    },
+    {
+      "jurisdiction": "California",
+      "source": "https://www.calbar.ca.gov/About-Us/News/Ethics-News",
+      "supports": [
+        "Rule 7.3(f) amendment approved April 23, 2026 and effective June 1, 2026"
+      ]
+    },
+    {
+      "jurisdiction": "New Jersey",
+      "source": "https://www.njcourts.gov/notices/committee-attorney-advertising-opinion-49-use-of-client-endorsements-and-testimonials",
+      "supports": [
+        "testimonial identity",
+        "past-performance disclaimer",
+        "comparative testimonial restriction",
+        "no paid endorsements/testimonials"
+      ]
+    },
+    {
+      "jurisdiction": "New Jersey",
+      "source": "https://www.njcourts.gov/notices/advisory-committee-professional-ethics-acpe-opinion-735-supplement-lawyers-use-of-internet",
+      "supports": [
+        "competitive keyword advertising landing-page disclaimer"
+      ]
+    },
+    {
+      "jurisdiction": "New Jersey",
+      "source": "https://www.njcourts.gov/attorneys/rules-of-court/advertising",
+      "supports": [
+        "RPC 7.1/7.2 advertising framework and record/website preservation requirements"
+      ]
+    }
+  ],
+  "marketResearch": [
+    {
+      "source": "https://www.clio.com/grow/",
+      "signal": "Legal CRM/intake, automation, reputation and growth workflows remain a leading professional-platform pattern."
+    },
+    {
+      "source": "https://www.lawmatics.com/",
+      "signal": "Legal CRM, intake and marketing automation remain a leading growth-workflow pattern."
+    }
+  ],
+  "productInference": "Smarter Justice should differentiate through a sourced, fail-closed pre-publication compliance gate tied to professional growth workflows rather than by duplicating generic CRM marketing automation."
+}
