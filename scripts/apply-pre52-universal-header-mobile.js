@@ -6,11 +6,17 @@ const cssPath=path.join(pub,'styles.css');
 const MARK='SMARTER_JUSTICE_PRE52_UNIVERSAL_HEADER_MOBILE';
 for(const name of fs.readdirSync(pub).filter(n=>n.endsWith('.html'))){
   const p=path.join(pub,name); let s=fs.readFileSync(p,'utf8');
-  if(!/class=["'][^"']*\bu-nav\b/i.test(s)||!/class=["'][^"']*\bu-links\b/i.test(s))continue;
-  if(!/data-nav-toggle/i.test(s)){
-    s=s.replace(/(<nav[^>]*class=["'][^"']*\bu-links\b[^"']*["'][^>]*>)/i,`<button class="nav-toggle u-nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" data-nav-toggle>Menu</button>$1`);
+  const hasUniversal=/class=["'][^"']*\bu-nav\b/i.test(s)&&/class=["'][^"']*\bu-links\b/i.test(s);
+  const hasStandard=/class=["'][^"']*\bsite-header\b/i.test(s)&&/class=["'][^"']*\btop-nav\b/i.test(s);
+  if(!hasUniversal&&!hasStandard)continue;
+  if(hasUniversal){
+    if(!/data-nav-toggle/i.test(s))s=s.replace(/(<nav[^>]*class=["'][^"']*\bu-links\b[^"']*["'][^>]*>)/i,`<button class="nav-toggle u-nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" data-nav-toggle>Menu</button>$1`);
+    s=s.replace(/<nav([^>]*class=["'][^"']*\bu-links\b[^"']*["'][^>]*)>/i,(m,attrs)=>/data-nav(?:\s|=|$)/i.test(attrs)?m:`<nav${attrs} data-nav>`);
   }
-  s=s.replace(/<nav([^>]*class=["'][^"']*\bu-links\b[^"']*["'][^>]*)>/i,(m,attrs)=>/data-nav(?:\s|=|$)/i.test(attrs)?m:`<nav${attrs} data-nav>`);
+  if(hasStandard){
+    if(!/data-nav-toggle/i.test(s))s=s.replace(/(<nav[^>]*class=["'][^"']*\btop-nav\b[^"']*["'][^>]*>)/i,`<button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" data-nav-toggle>Menu</button>$1`);
+    s=s.replace(/<nav([^>]*class=["'][^"']*\btop-nav\b[^"']*["'][^>]*)>/i,(m,attrs)=>/data-nav(?:\s|=|$)/i.test(attrs)?m:`<nav${attrs} data-nav>`);
+  }
   if(!/src=["']\/app\.js/i.test(s))s=s.replace('</head>','<script defer src="/app.js"></script></head>');
   if(!s.includes(MARK))s=s.replace('<body','<!-- '+MARK+' --><body');
   fs.writeFileSync(p,s,'utf8');
