@@ -1,0 +1,33 @@
+name: Pre44 attorney page audit export
+
+on:
+  push:
+    branches: [pre44-qualified-source-export]
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+      - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e
+        with:
+          node-version: '22.x'
+      - name: Reconstruct runtime and export attorney-facing pages
+        run: |
+          set -euo pipefail
+          npm install --ignore-scripts --no-audit --no-fund
+          npm run postinstall
+          root='.runtime/smarter-justice-v1.7.98/public'
+          out="$RUNNER_TEMP/attorney-pages"
+          mkdir -p "$out"
+          find "$root" -maxdepth 1 -type f -printf '%f\n' | grep -Ei '(attorney|professional|firm|partner|enroll|pricing|membership)' | sort > "$out/FILES.txt" || true
+          while IFS= read -r name; do cp "$root/$name" "$out/$name"; done < "$out/FILES.txt"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: pre44-attorney-page-audit
+          path: ${{ runner.temp }}/attorney-pages
+          if-no-files-found: error
+          retention-days: 7
