@@ -1,0 +1,36 @@
+name: Pre44 qualified source export
+
+on:
+  push:
+    branches: [pre44-qualified-source-export]
+
+permissions:
+  contents: read
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          fetch-depth: 2
+      - name: Require qualified parent source and stage exact release files
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD^)" = "04eb9b543c6ddf7ceeed8733d1ad49e6dc3e5a2d"
+          mkdir -p "$RUNNER_TEMP/pre44-qualified-source/deployment/pre44" "$RUNNER_TEMP/pre44-qualified-source/scripts" "$RUNNER_TEMP/pre44-qualified-source/.github/workflows"
+          cp deployment/pre44/navigator_cli.py "$RUNNER_TEMP/pre44-qualified-source/deployment/pre44/"
+          cp deployment/pre44/test_pre44_navigator.py "$RUNNER_TEMP/pre44-qualified-source/deployment/pre44/"
+          cp scripts/apply-pre44-sitewide-ai.js "$RUNNER_TEMP/pre44-qualified-source/scripts/"
+          cp package.json "$RUNNER_TEMP/pre44-qualified-source/"
+          cp .github/workflows/deploy-pre22-projection.yml "$RUNNER_TEMP/pre44-qualified-source/.github/workflows/"
+          cp .github/workflows/pre44-branch-qualification.yml "$RUNNER_TEMP/pre44-qualified-source/.github/workflows/"
+          printf '%s\n' '04eb9b543c6ddf7ceeed8733d1ad49e6dc3e5a2d' > "$RUNNER_TEMP/pre44-qualified-source/QUALIFIED_SOURCE_COMMIT.txt"
+          (cd "$RUNNER_TEMP/pre44-qualified-source" && sha256sum deployment/pre44/navigator_cli.py deployment/pre44/test_pre44_navigator.py scripts/apply-pre44-sitewide-ai.js package.json .github/workflows/deploy-pre22-projection.yml .github/workflows/pre44-branch-qualification.yml > SHA256SUMS.txt)
+      - name: Upload exact qualified pre44 source
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: smarter-justice-pre44-qualified-source-04eb9b54
+          path: ${{ runner.temp }}/pre44-qualified-source
+          if-no-files-found: error
+          retention-days: 30
