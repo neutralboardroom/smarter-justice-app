@@ -1,0 +1,25 @@
+{
+  "schemaVersion": "1.0.0",
+  "release": "v2.0.0-pre45",
+  "purpose": "Public and professional language/navigation alignment layered after the qualified pre43 Navigator/OpenAI runtime.",
+  "preserves": [
+    "pre43 Navigator/OpenAI runtime",
+    "broad 69-area practice directory",
+    "existing professional/account functionality"
+  ],
+  "changes": [
+    "replace stale public portal chooser with in-house legal-area entry",
+    "rewrite attorney tour in benefit-first public language",
+    "add short attorney tour",
+    "humanize attorney-tour dynamic status language",
+    "replace obsolete Portals navigation label with Legal areas"
+  ],
+  "sourceSha256": {
+    "public/portals.html": "e8928e0de531f08345601a00d4489b81fc8ee43b8dd7edfdc5f4902cd974d776",
+    "public/attorney-partner-tour.html": "f5db4e9e2aa5d55c2c7ee059c27f7f4e5005f7208d275622e5176c689042a0b7",
+    "public/attorney-partner-tour.js": "a0aceec095a5e271805c8c0942e445f238923cbe9241341744634c450eb2a30f",
+    "public/attorney-call-tour.html": "3f26289d5690b91c2150073cf3cdb7a3aca74a0a17169a3f4b218c501194a810",
+    "scripts/apply-pre45-public-alignment.js": "37ce17932b9e30d3456880d06752c9184421273c89bb97e7e5ccf3c838d9347d",
+    "deployment/pre45/test_pre45_public_alignment.py": "0b7a13805cae605c2125c840baee65037973b55bcb7b5ed1b07f76df665cda2b"
+  }
+}
