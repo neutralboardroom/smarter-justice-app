@@ -1,5 +1,5 @@
 from pathlib import Path
-import json, os, selectors, shutil, subprocess, tempfile, time
+import json, os, selectors, subprocess, tempfile, time
 
 repo=Path(__file__).resolve().parents[2]
 runtime=repo/'.runtime'/'smarter-justice-v1.7.98'
@@ -12,6 +12,28 @@ server=(runtime/'server.js').read_text(errors='replace')
 for marker in ["release:'v2.0.0-pre53'","demoPathRelease:'v2.0.0-pre52'","deploymentControlRelease:'v2.0.0-pre53'",'SMARTER_JUSTICE_PRE53_RENDER_STARTUP_AND_LIVE_GATE','process.env.PORT','server.listen(port']:
     assert marker in server, marker
 assert (repo/'scripts'/'check-pre53-production-startup.js').is_file()
+
+workflow=(repo/'.github'/'workflows'/'deploy-current-pre53.yml').read_text(errors='replace')
+assert not (repo/'.github'/'workflows'/'deploy-pre22-projection.yml').exists()
+for required in [
+    'Bind pre53 authority, owner authorization, rollback and continuity gate',
+    'Wait for exact pre53 release cutover',
+    'for attempt in $(seq 1 96)',
+    "id.release!=='v2.0.0-pre53'",
+    "id.demoPathRelease!=='v2.0.0-pre52'",
+    "id.deploymentControlRelease!=='v2.0.0-pre53'",
+    'SMARTER_JUSTICE_PRE53_RENDER_STARTUP_AND_LIVE_GATE',
+    'SMARTER_JUSTICE_PRE49_SOURCE_CURRENTNESS_GATE',
+    'smarter-justice-pre53-live-evidence-${{ github.run_id }}-${{ github.run_attempt }}',
+    'Render deploy id'
+]:
+    assert required in workflow, required
+assert 'SMARTER_JUSTICE_PRE49_RULE_SOURCE_CURRENTNESS' not in workflow
+
+contract=json.loads((repo/'deployment'/'pre53'/'RENDER_STARTUP_AND_LIVE_CUTOVER__PRE53.json').read_text())
+assert contract['release']=='v2.0.0-pre53'
+assert contract['builder']=='J41'
+assert contract['deploymentPolicy'].startswith('Do not merge/deploy pre53 until')
 
 env=os.environ.copy()
 for key in list(env):
@@ -47,4 +69,4 @@ with tempfile.TemporaryDirectory(prefix='sj-pre53-start-') as storage:
             try: proc.wait(timeout=5)
             except subprocess.TimeoutExpired:
                 proc.kill(); proc.wait(timeout=5)
-print(f'PASS PRE53 production startup binds before full-suite replay; local startup {elapsed:.2f}s')
+print(f'PASS PRE53 fast startup, Render-aligned exact cutover gate, and corrected rollback marker; local startup {elapsed:.2f}s')
