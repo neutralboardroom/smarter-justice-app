@@ -1,0 +1,36 @@
+{
+  "schemaVersion": "1.0.0",
+  "release": "v2.0.0-pre47",
+  "recordedAt": "2026-08-10",
+  "reason": "Two independently qualified J34/pre46 branches were produced from J33/pre45 before either builder observed the other's final state. The Growth + Operations + Compliance branch reached production first. Pre47 converges both without overwriting either rule branch.",
+  "productionPredecessor": {
+    "productSha256": "184052e896a7cc35f7d9cc506f5d6e431e681e26fe51e5beffab09b1c3667351",
+    "productCanonicalTreeSha256": "3c37b7f2f294ad5920aa93f717d5397bab2586d042ddbe4c84b68fea331c03d7",
+    "builderSha256": "825f9ada824a85721571c2621db2f6e7b9d787690488beb5dc7e64856cfbd94a",
+    "builderPacket": "J34 PRE46 Growth Operations Compliance One Roof Capability Truth",
+    "activeRuleCount": 355,
+    "activeRuleSha256": "8dfe98725de9b2f592b4a456f425e5ea10f18639eeb500929150122df0bec68b",
+    "durableCorpusSha256": "248fbbfda0760653394b17a34198f86b7ef1bd46cca1268c0cad61a1a491dfee",
+    "qualifiedSourceCommit": "77ccd5f7cfb2870d77f46a7fa40df964d28ea5df",
+    "productionCommit": "3ba250e2d6a8fc59a22c45debbb8907cde23a57e",
+    "deploymentWorkflowRunId": 31453626102,
+    "status": "LIVE_ACCEPTED"
+  },
+  "parallelQualifiedBranch": {
+    "productSha256": "933b028d0d71560da8680024c8c35ca65dcd6706169fc241e6508564b5a8732d",
+    "productCanonicalTreeSha256": "339864dd266e98da5f76e2a4a1a43e7417714e546ba54184a67269a504e783bd",
+    "builderSha256": "8967d8d776876542b687fc3ba12c0bac4c180d6b626c92f272a396361db69c3e",
+    "builderPacket": "J34 PRE46 Professional Growth Jurisdiction Marketing Preflight Live Route Acceptance",
+    "activeRuleCount": 353,
+    "activeRuleSha256": "dc5cefaac5aae2a30b28e343b09eb57412da58ca921e6457b1be45bcc6b621d3",
+    "durableCorpusSha256": "4968c8c2599683f998cc2cf7e98ce23b7cc2a9663373fa922871cb4f1e65ef51",
+    "qualifiedSourceCommit": "67155dc71127c62dcb155e8017031bc62b810c07",
+    "qualificationWorkflowRunId": 31452446746,
+    "status": "QUALIFIED_NOT_DEPLOYED_DUE_INTERVENING_ACCEPTED_RELEASE"
+  },
+  "collision": {
+    "conflictingIds": ["SJ-SP-283", "SJ-SP-284"],
+    "resolution": "Use the live 355-rule J34 as the exact active prefix. Preserve the alternate J34 rule file and builder as recovery evidence. Append reconciled successor rules under new IDs only; never rewrite either J34 branch in place."
+  },
+  "pre47ReleaseSerialization": "Immediately before final handoff and immediately before merge, re-read current main/deployed authority. If another accepted release advanced the lineage, stop the merge, rebase into a new successor version, requalify, and reseal the physical artifacts."
+}
