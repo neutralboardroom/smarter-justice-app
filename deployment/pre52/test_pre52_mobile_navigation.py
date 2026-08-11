@@ -29,10 +29,10 @@ for name in ['professional-membership.html','professional-signup.html']:
 membership=(P/'professional-membership.html').read_text(errors='replace')
 for href in ['/professional-signup.html','/professionals.html','/professional-login.html']:
     assert href in membership, href
-# Homepage is one Smarter Justice platform with in-house legal-area language, not separate micro-portal brands.
+# Homepage is one Smarter Justice platform with in-house legal-area language, not separate micro-portal brands or routes.
 home=(P/'index.html').read_text(errors='replace')
 for bad in ['focused legal portal','focused micro-portal','Browse focused portals','Divorce Law Aid','Estate Law Aid','Personal Injury Law Aid','Domestic Violence Aid','href="/portals.html"']:
     assert bad.lower() not in home.lower(), bad
-for good in ['Legal areas','Divorce & Family Law','Estate & Probate','Personal Injury','Domestic Violence & Safety']:
+for good in ['Legal areas','Divorce & family','Injury & accidents','Criminal & civil rights','Work & business','Housing, property & debt','Estate, benefits & records']:
     assert good.lower() in home.lower(), good
 print('PASS PRE52 mobile navigation, membership phone actions, and one-platform public wording')
