@@ -18,9 +18,19 @@ if(contract.release!=='v2.0.0-pre52')failures.push('CONTRACT_RELEASE_MISMATCH');
 if(persistentUserData){
   if(!db)failures.push('DATABASE_URL_REQUIRED_FOR_PERSISTENT_USER_DATA');
   if(storeClass!=='EXTERNAL_DURABLE')failures.push('EXTERNAL_DURABLE_STORE_REQUIRED');
+  if(!backupReceipt)failures.push('PERSISTENT_USER_DATA_REQUIRES_CURRENT_BACKUP_RECEIPT');
+  if(!restoreReceipt)failures.push('PERSISTENT_USER_DATA_REQUIRES_VERIFIED_RECOVERY_PATH');
 }
-if(liveBilling && (!persistentUserData || !db))failures.push('LIVE_BILLING_REQUIRES_DURABLE_TRANSACTIONAL_STORE');
-if(durableDocuments && !objectStore)failures.push('DURABLE_DOCUMENT_STORAGE_REQUIRES_EXTERNAL_OBJECT_STORE');
+if(liveBilling){
+  if(!persistentUserData || !db)failures.push('LIVE_BILLING_REQUIRES_DURABLE_TRANSACTIONAL_STORE');
+  if(!backupReceipt)failures.push('LIVE_BILLING_REQUIRES_CURRENT_BACKUP_RECEIPT');
+  if(!restoreReceipt)failures.push('LIVE_BILLING_REQUIRES_VERIFIED_RECOVERY_PATH');
+}
+if(durableDocuments){
+  if(!objectStore)failures.push('DURABLE_DOCUMENT_STORAGE_REQUIRES_EXTERNAL_OBJECT_STORE');
+  if(!backupReceipt)failures.push('DURABLE_DOCUMENT_STORAGE_REQUIRES_CURRENT_BACKUP_RECEIPT');
+  if(!restoreReceipt)failures.push('DURABLE_DOCUMENT_STORAGE_REQUIRES_VERIFIED_RECOVERY_PATH');
+}
 if(stateChangingMigration && !backupReceipt)failures.push('STATE_CHANGING_MIGRATION_REQUIRES_CURRENT_BACKUP_RECEIPT');
 if(stateChangingMigration && !restoreReceipt)failures.push('STATE_CHANGING_MIGRATION_REQUIRES_RESTORE_PATH_VERIFICATION');
 if(destructiveMigration && !flag('SJ_DESTRUCTIVE_MIGRATION_EXPLICITLY_AUTHORIZED',false))failures.push('DESTRUCTIVE_MIGRATION_NOT_EXPLICITLY_AUTHORIZED');
