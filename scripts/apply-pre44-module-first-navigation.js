@@ -14,16 +14,19 @@ for(const name of files){
    const re=new RegExp(`https?:\\/\\/(?:www\\.)?${domainPattern(domain)}(?:\\/[^"'\\s<]*)?`,'ig');
    h=h.replace(re,()=>{converted++;return dest});
  }
- h=h.replaceAll('Open focused website','Open Smarter Justice module')
-    .replaceAll('Focused website','Smarter Justice module')
-    .replaceAll('Focused specialty experience','Smarter Justice module')
-    .replaceAll('The specialty identity and its focused tools remain available while deeper migration into the universal runtime continues.','Stay inside Smarter Justice for this legal area. Navigator and the in-house tools are connected to the same Smarter Justice experience.');
+ h=h.replace(/open\s+focused\s+website/ig,'Open Smarter Justice module')
+    .replace(/focused\s+website/ig,'Smarter Justice module')
+    .replace(/focused\s+specialty\s+experience/ig,'Smarter Justice module')
+    .replace(/focused\s+portal/ig,'Smarter Justice module')
+    .replace(/deeper\s+migration\s+into\s+the\s+universal\s+runtime/ig,'continued improvement inside Smarter Justice')
+    .replace(/The specialty identity and its focused tools remain available while continued improvement inside Smarter Justice continues\./ig,'Stay inside Smarter Justice for this legal area. Navigator and the in-house tools are connected to the same Smarter Justice experience.');
  h=h.replace(/<a[^>]+href=["']https?:\/\/[^"']+["'][^>]*>(?:Visit|Open)[^<]*(?:portal|website)[^<]*<\/a>/ig,'');
  if(!h.includes(marker))h=h.replace('</body>',`<!-- ${marker} --></body>`);
  fs.writeFileSync(p,h,'utf8');
 }
 const legacy=new RegExp(`https?://(?:www\\.)?(?:${routes.map(([d])=>domainPattern(d)).join('|')})`,'i');
+const staleLanguage=/open\s+focused\s+website|focused\s+website|focused\s+portal|deeper\s+migration\s+into\s+the\s+universal\s+runtime/i;
 const remaining=[];
-for(const name of files){const h=fs.readFileSync(path.join(pub,name),'utf8');if(legacy.test(h))remaining.push(name);}
-if(remaining.length)throw new Error('legacy micro-portal destinations remain in public HTML: '+remaining.join(','));
+for(const name of files){const h=fs.readFileSync(path.join(pub,name),'utf8');if(legacy.test(h)||staleLanguage.test(h))remaining.push(name);}
+if(remaining.length)throw new Error('legacy micro-portal destinations/language remain in public HTML: '+remaining.join(','));
 console.log(`[pre44-module-first] internal Smarter Justice module navigation enforced across ${files.length} HTML files; ${converted} legacy URL occurrences converted`);
