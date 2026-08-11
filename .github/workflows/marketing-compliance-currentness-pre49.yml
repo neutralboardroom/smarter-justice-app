@@ -1,0 +1,40 @@
+name: Marketing compliance official-source currentness
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 12 * * *'
+
+permissions:
+  contents: read
+
+env:
+  RECEIPT: marketing-currentness-receipt.json
+
+jobs:
+  source-currentness:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout current main authority
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+      - name: Use Node 22
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: '22'
+      - name: Check mapped official rule sources
+        id: currentness
+        continue-on-error: true
+        run: node deployment/pre49/check-marketing-currentness.mjs --output "$RECEIPT"
+      - name: Upload currentness evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: smarter-justice-marketing-currentness-${{ github.run_id }}
+          path: ${{ env.RECEIPT }}
+          if-no-files-found: error
+          retention-days: 90
+      - name: Fail closed on source drift or unverifiable authority
+        if: steps.currentness.outcome != 'success'
+        run: |
+          echo 'One or more mapped official marketing-rule sources could not be verified. Deterministic checks for affected jurisdictions must remain human-review-only.' >&2
+          exit 1
