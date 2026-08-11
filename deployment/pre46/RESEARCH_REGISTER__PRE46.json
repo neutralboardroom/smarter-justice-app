@@ -1,0 +1,39 @@
+{
+  "schemaVersion": "1.0.0",
+  "release": "v2.0.0-pre46",
+  "researchedAt": "2026-08-10",
+  "purpose": "Current competitor and primary-rule research supporting the Growth + Operations + Compliance story and compliance delta.",
+  "marketSignals": [
+    {
+      "source": "https://www.clio.com/grow/",
+      "observation": "Clio Grow presents intake/CRM, automation, reputation and marketing-source reporting as a connected growth workflow."
+    },
+    {
+      "source": "https://www.clio.com/manage/",
+      "observation": "Clio Manage presents cases, clients, billing, documents, communication and firm operations in one practice-management platform."
+    },
+    {
+      "source": "https://www.lawmatics.com/client-intake",
+      "observation": "Lawmatics presents legal CRM, client intake and marketing automation as one growth platform."
+    },
+    {
+      "source": "https://www.mycase.com/products/client-intake-lead-management/",
+      "observation": "MyCase connects intake/lead management to broader law-firm operational workflows."
+    }
+  ],
+  "primaryComplianceSources": [
+    {
+      "source": "https://www.americanbar.org/groups/professional_responsibility/publications/model_rules_of_professional_conduct/rule_7_1_communication_concerning_a_lawyer_s_services/",
+      "status": "MODEL_BASELINE",
+      "observation": "Model Rule 7.1 prohibits false or misleading communications about lawyer services."
+    },
+    {
+      "source": "https://www.nycourts.gov/LegacyPDFS/rules/comments/orders/AdministrativeOrder-JointAppDivOrder-RulesOfProfessionalConduct-AttorneyAdvertising-052726f-r.pdf",
+      "jurisdiction": "NY",
+      "effectiveDate": "2026-06-01",
+      "status": "PRIMARY_CURRENT",
+      "observation": "New York replaced Rules 7.1 and 7.3 effective June 1, 2026; current Rule 7.1 includes truthfulness, specialist-certification conditions and responsible-lawyer/firm contact information; Rule 7.3 defines and restricts solicitation."
+    }
+  ],
+  "productPositioningInference": "Competitors commonly connect growth or operations. Smarter Justice should tell its accepted product story as Growth + Operations + Compliance under one roof, while making capability state and jurisdictional limitations explicit."
+}

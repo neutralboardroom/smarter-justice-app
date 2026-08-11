@@ -32,7 +32,7 @@ jobs:
           ref: ${{ env.TARGET_SHA }}
           fetch-depth: 0
 
-      - name: Bind target, rollback, pre42 foundation, and pre43 public AI
+      - name: Bind target, rollback, pre42 foundation, pre43 public AI, and pre46 professional story
         run: |
           set -euo pipefail
           test "$(git rev-parse HEAD)" = "$TARGET_SHA"
@@ -44,6 +44,8 @@ jobs:
           test -f deployment/pre43/navigator_preview_cli.py
           test -f deployment/pre43/test_pre43_navigator.py
           test -f scripts/apply-pre43-navigator-preview.js
+          test -f scripts/apply-pre46-growth-operations-compliance-story.js
+          test -f deployment/pre46/test_pre46_growth_operations_compliance_story.py
           PRE42_ARTIFACT_SHA="$PRE42_ARTIFACT_SHA" node - <<'NODE'
           const fs=require('fs');
           const row=JSON.parse(fs.readFileSync('deployment/pre42/PRE42_RENDER_PROJECTION.json','utf8'));
@@ -87,13 +89,13 @@ jobs:
           print(p.read_text(errors='replace')[:800])
           PY
 
-      - name: Require live pre42 foundation and public pre43 Navigator AI
+      - name: Require live core AI and pre46 professional surfaces
         id: smoke
         run: |
           set -euo pipefail
           jar="$RUNNER_TEMP/navigator-cookies.txt"
           for attempt in $(seq 1 42); do
-            echo "public Navigator live acceptance attempt $attempt"
+            echo "public live acceptance attempt $attempt"
             rm -f "$jar"
             if curl --fail --silent --show-error --max-time 20 "$RENDER_BASE_URL/health" > "$RUNNER_TEMP/health.json" \
               && curl --fail --silent --show-error --max-time 20 "$RENDER_BASE_URL/.well-known/smarter-justice-pre42-deployment.json" > "$RUNNER_TEMP/pre42.json" \
@@ -101,8 +103,12 @@ jobs:
               && curl --fail --silent --show-error --max-time 20 -c "$jar" "$RENDER_BASE_URL/api/navigator/status" > "$RUNNER_TEMP/navigator-status.json" \
               && curl --fail --silent --show-error --max-time 50 -b "$jar" -c "$jar" -H 'Content-Type: application/json' -d '{"message":"Reply with exactly: SMARTER JUSTICE PUBLIC AI READY","toolMode":"NAVIGATOR","inputMode":"TEXT"}' "$RENDER_BASE_URL/api/navigator/chat" > "$RUNNER_TEMP/navigator-chat.json" \
               && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/navigator" > "$RUNNER_TEMP/public-navigator.html" \
-              && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/" > "$RUNNER_TEMP/public-home.html"; then
-              if HEALTH="$RUNNER_TEMP/health.json" PRE42="$RUNNER_TEMP/pre42.json" STATUS="$RUNNER_TEMP/navigator-status.json" CHAT="$RUNNER_TEMP/navigator-chat.json" NAV="$RUNNER_TEMP/navigator.html" PUBLIC_NAV="$RUNNER_TEMP/public-navigator.html" PUBLIC_HOME="$RUNNER_TEMP/public-home.html" PRE42_ARTIFACT_SHA="$PRE42_ARTIFACT_SHA" node - <<'NODE'
+              && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/" > "$RUNNER_TEMP/public-home.html" \
+              && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/growth-operations-compliance.html" > "$RUNNER_TEMP/public-growth-operations-compliance.html" \
+              && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/attorney-partner-tour.html" > "$RUNNER_TEMP/public-attorney-tour.html" \
+              && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/attorney-call-tour.html" > "$RUNNER_TEMP/public-attorney-call-tour.html" \
+              && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/professional-membership.html" > "$RUNNER_TEMP/public-professional-membership.html"; then
+              if HEALTH="$RUNNER_TEMP/health.json" PRE42="$RUNNER_TEMP/pre42.json" STATUS="$RUNNER_TEMP/navigator-status.json" CHAT="$RUNNER_TEMP/navigator-chat.json" NAV="$RUNNER_TEMP/navigator.html" PUBLIC_NAV="$RUNNER_TEMP/public-navigator.html" PUBLIC_HOME="$RUNNER_TEMP/public-home.html" GOC="$RUNNER_TEMP/public-growth-operations-compliance.html" TOUR="$RUNNER_TEMP/public-attorney-tour.html" QUICK="$RUNNER_TEMP/public-attorney-call-tour.html" MEMBER="$RUNNER_TEMP/public-professional-membership.html" PRE42_ARTIFACT_SHA="$PRE42_ARTIFACT_SHA" node - <<'NODE'
           const fs=require('fs');
           const health=JSON.parse(fs.readFileSync(process.env.HEALTH,'utf8'));
           const p=JSON.parse(fs.readFileSync(process.env.PRE42,'utf8'));
@@ -111,6 +117,10 @@ jobs:
           const nav=fs.readFileSync(process.env.NAV,'utf8');
           const publicNav=fs.readFileSync(process.env.PUBLIC_NAV,'utf8');
           const publicHome=fs.readFileSync(process.env.PUBLIC_HOME,'utf8');
+          const goc=fs.readFileSync(process.env.GOC,'utf8');
+          const tour=fs.readFileSync(process.env.TOUR,'utf8');
+          const quick=fs.readFileSync(process.env.QUICK,'utf8');
+          const member=fs.readFileSync(process.env.MEMBER,'utf8');
           if(health.ok!==true||health.version!=='1.7.98'||health.app!=='Smarter Justice')process.exit(1);
           if(p.status!=='PASS'||p.pre42ArtifactSha256!==process.env.PRE42_ARTIFACT_SHA)process.exit(1);
           if(p.providerCanary!=='PASS'||p.usageLedgerRecorded!==true||p.browserSecretScan!=='PASS'||p.secretExposed!==false)process.exit(1);
@@ -124,9 +134,16 @@ jobs:
           if(!/Navigator/i.test(nav)||!/Available to everyone/i.test(nav)||!/PROFESSIONAL_WORKFLOW/.test(nav))process.exit(1);
           if(!/Navigator/i.test(publicNav)||!/Available to everyone/i.test(publicNav))process.exit(1);
           if(!/SMARTER_JUSTICE_PRE43_NAVIGATOR_HOME_CTA/.test(publicHome)||!/Open Navigator/i.test(publicHome))process.exit(1);
-          const exposed=[nav,publicNav,publicHome,JSON.stringify(status),JSON.stringify(chat)].join('\n');
+          const pre46='SMARTER_JUSTICE_PRE46_GROWTH_OPERATIONS_COMPLIANCE_STORY';
+          if(!goc.includes(pre46)||!/Grow your firm\. Run it better\. Market with guardrails\./.test(goc))process.exit(1);
+          if(!tour.includes(pre46)||!/Growth \+ operations \+ compliance/i.test(tour))process.exit(1);
+          if(!quick.includes(pre46)||!/under one roof/i.test(quick))process.exit(1);
+          if(!member.includes(pre46)||!/More than membership/i.test(member))process.exit(1);
+          if(!publicHome.includes(pre46)||!/Growth, operations, and compliance/i.test(publicHome))process.exit(1);
+          const exposed=[nav,publicNav,publicHome,goc,tour,quick,member,JSON.stringify(status),JSON.stringify(chat)].join('\n');
           if(/Authorization:\s*Bearer\s+/i.test(exposed)||/OPENAI_API_KEY\s*=/.test(exposed))process.exit(1);
-          console.log(JSON.stringify({status:'PASS',targetSha:process.env.GITHUB_SHA,model:chat.model,latencyMs:chat.latencyMs,usage:chat.usage,publicAiEnabled:true,storeRequested:false,externalConsequentialActionsEnabled:false,automaticOverageBillingEnabled:false},null,2));
+          if(/guaranteed compliance|50-state compliant|all jurisdictions compliant/i.test([goc,tour,quick,member].join('\n')))process.exit(1);
+          console.log(JSON.stringify({status:'PASS',targetSha:process.env.GITHUB_SHA,model:chat.model,latencyMs:chat.latencyMs,usage:chat.usage,publicAiEnabled:true,pre46ProfessionalStory:true,storeRequested:false,externalConsequentialActionsEnabled:false,automaticOverageBillingEnabled:false},null,2));
           NODE
               then
                 cp "$RUNNER_TEMP/navigator-status.json" "$RUNNER_TEMP/pre43-public-ai-status.json"
@@ -136,7 +153,7 @@ jobs:
             fi
             sleep 10
           done
-          echo 'public Navigator live acceptance did not pass' >&2
+          echo 'public live acceptance did not pass' >&2
           exit 1
 
       - name: Request automatic rollback after failed live acceptance
@@ -171,6 +188,10 @@ jobs:
             ${{ runner.temp }}/pre43-public-ai-chat.json
             ${{ runner.temp }}/public-navigator.html
             ${{ runner.temp }}/public-home.html
+            ${{ runner.temp }}/public-growth-operations-compliance.html
+            ${{ runner.temp }}/public-attorney-tour.html
+            ${{ runner.temp }}/public-attorney-call-tour.html
+            ${{ runner.temp }}/public-professional-membership.html
             ${{ runner.temp }}/render-rollback-response.json
             ${{ runner.temp }}/rollback-health.json
           if-no-files-found: warn

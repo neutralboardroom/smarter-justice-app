@@ -1,0 +1,58 @@
+{
+  "schemaVersion": "1.0.0",
+  "release": "v2.0.0-pre46",
+  "rulesetVersion": "sj-marketing-compliance-2026-08-10-pre46-ny-delta",
+  "coverageClaim": "CURRENT_NY_PRIMARY_DELTA_NO_BLANKET_NATIONWIDE_COMPLIANCE",
+  "source": "https://www.nycourts.gov/LegacyPDFS/rules/comments/orders/AdministrativeOrder-JointAppDivOrder-RulesOfProfessionalConduct-AttorneyAdvertising-052726f-r.pdf",
+  "effectiveDate": "2026-06-01",
+  "rules": [
+    {
+      "id": "NY-2026-7.1-A-TRUTH",
+      "jurisdiction": "NY",
+      "type": "FALSE_OR_MISLEADING",
+      "automation": "ADVISORY_PLUS_HUMAN_REVIEW",
+      "summary": "A lawyer shall not make a false or misleading communication about the lawyer or the lawyer services."
+    },
+    {
+      "id": "NY-2026-7.1-C-SPECIALIST",
+      "jurisdiction": "NY",
+      "type": "SPECIALIST_CLAIM",
+      "automation": "DETERMINISTIC_EVIDENCE_CHECK_PLUS_HUMAN_REVIEW",
+      "summary": "A specialist claim requires qualifying certification and clear identification of the certifying organization."
+    },
+    {
+      "id": "NY-2026-7.1-D-RESPONSIBLE-CONTACT",
+      "jurisdiction": "NY",
+      "type": "RESPONSIBLE_LAWYER_OR_FIRM_IDENTIFICATION",
+      "automation": "DETERMINISTIC_REQUIRED_FIELD_CHECK",
+      "summary": "A Rule 7.1 communication must include name and contact information of at least one lawyer or law firm responsible for its content."
+    },
+    {
+      "id": "NY-2026-7.3-A-SOLICITATION-DEFINITION",
+      "jurisdiction": "NY",
+      "type": "SOLICITATION_CLASSIFICATION",
+      "automation": "HUMAN_REVIEW_REQUIRED",
+      "summary": "Solicitation is a lawyer-initiated communication directed to a specific person known or reasonably known to need legal services in a particular matter and offering legal services for that matter."
+    },
+    {
+      "id": "NY-2026-7.3-B-LIVE-CONTACT",
+      "jurisdiction": "NY",
+      "type": "LIVE_PERSON_TO_PERSON_SOLICITATION",
+      "automation": "BLOCK_OR_HUMAN_REVIEW",
+      "summary": "Live person-to-person solicitation for pecuniary gain is prohibited except for specified relationships."
+    },
+    {
+      "id": "NY-2026-7.3-C-OPTOUT-COERCION",
+      "jurisdiction": "NY",
+      "type": "SOLICITATION_SUPPRESSION",
+      "automation": "DETERMINISTIC_SUPPRESSION_PLUS_HUMAN_REVIEW",
+      "summary": "Solicitation is prohibited after a target indicates a desire not to be solicited and when it involves coercion, duress or harassment."
+    }
+  ],
+  "fallback": {
+    "UNMAPPED_REQUIREMENT": "HUMAN_REVIEW_REQUIRED",
+    "STALE_SOURCE": "HUMAN_REVIEW_REQUIRED",
+    "CONFLICTING_AUTHORITY": "BLOCK_OR_HUMAN_REVIEW"
+  },
+  "supersessionNote": "This delta replaces pre39 NY placeholder status for these mapped current provisions only; it does not claim complete New York or nationwide advertising/solicitation compliance."
+}
