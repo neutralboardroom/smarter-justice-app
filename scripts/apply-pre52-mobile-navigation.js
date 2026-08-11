@@ -24,13 +24,11 @@ const attorneyPages=['attorney-call-tour.html','attorney-partner-tour.html','pro
 for(const name of attorneyPages){
   const p=path.join(pub,name); let s=fs.readFileSync(p,'utf8');
   if(name==='attorney-partner-tour.html') s=s.replace('>5. Operations<','>5. Working today<').replace('>5. Firm workspace<','>5. Working today<');
-  // Future modules stay preserved in source/governance, not advertised in the public attorney sales path.
   s=s.replace(/<li[^>]*>[\s\S]*?(?:full nationwide marketing-compliance automation|unrestricted outbound campaigns|AI front[- ]desk|automatic CRM migration)[\s\S]*?<\/li>/gi,'');
   s=s.replace(/<p[^>]*>[\s\S]*?(?:full nationwide marketing-compliance automation|unrestricted outbound campaigns|AI front[- ]desk|automatic CRM migration)[\s\S]*?<\/p>/gi,'');
   fs.writeFileSync(p,s,'utf8');
 }
 
-// One public Smarter Justice: remove stale separate-portal presentation while preserving the in-house legal-area routes.
 for(const name of fs.readdirSync(pub).filter(n=>n.endsWith('.html'))){
   const p=path.join(pub,name); let s=fs.readFileSync(p,'utf8');
   s=s.replace(/focused legal portals/gi,'Smarter Justice legal areas');
@@ -50,6 +48,15 @@ for(const name of fs.readdirSync(pub).filter(n=>n.endsWith('.html'))){
   s=s.replace(/Estate Law Aid/g,'Estate & Probate');
   s=s.replace(/Personal Injury Law Aid/g,'Personal Injury');
   s=s.replace(/Domestic Violence Aid/g,'Domestic Violence & Safety');
+  // Older homepage generators sometimes preserve visible Menu markup but strip the JS hooks. Re-wire the final rendered structure on every page.
+  s=s.replace(/<button([^>]*class=["'][^"']*\bnav-toggle\b[^"']*["'][^>]*)>/gi,(m,attrs)=>{
+    let a=attrs;
+    if(!/data-nav-toggle/i.test(a))a+=' data-nav-toggle';
+    if(!/aria-expanded=/i.test(a))a+=' aria-expanded="false"';
+    if(!/aria-label=/i.test(a))a+=' aria-label="Open menu"';
+    return `<button${a}>`;
+  });
+  s=s.replace(/<nav([^>]*class=["'][^"']*\btop-nav\b[^"']*["'][^>]*)>/gi,(m,attrs)=>/data-nav(?:\s|>|=)/i.test(attrs)?m:`<nav${attrs} data-nav>`);
   fs.writeFileSync(p,s,'utf8');
 }
 
