@@ -26,6 +26,10 @@ jobs:
           else
             test_status=$install_status
           fi
+          echo "--- SURVIVING FUTURE-FEATURE LANGUAGE ---" >> "$RUNNER_TEMP/pre52-diagnostic.log"
+          grep -Rni -C 2 -E 'full nationwide marketing-compliance automation|unrestricted outbound campaigns|AI front[- ]desk|automatic CRM migration' .runtime/smarter-justice-v1.7.98/public >> "$RUNNER_TEMP/pre52-diagnostic.log" 2>&1 || true
+          echo "--- ATTORNEY STEP 5 LABELS ---" >> "$RUNNER_TEMP/pre52-diagnostic.log"
+          grep -n -E '5\. (Operations|Firm workspace|Working today)' .runtime/smarter-justice-v1.7.98/public/attorney-partner-tour.html >> "$RUNNER_TEMP/pre52-diagnostic.log" 2>&1 || true
           echo "EXIT_STATUS=$test_status" >> "$RUNNER_TEMP/pre52-diagnostic.log"
           exit 0
       - name: Upload diagnostic log
