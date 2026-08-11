@@ -74,4 +74,26 @@ function mark(x,label,needle){if(!x.s.includes(MARK)){if(!x.s.includes(needle))t
  ['Public specialty profiles stay on the legal portals','One account across Smarter Justice legal areas'],['Publication on a focused micro-portal','Public participation in Smarter Justice legal areas'],['firm authority, and portal participation','firm authority, and practice-area participation'],['selected Smarter Justice practice areas','selected Smarter Justice legal areas'],['Initial legal portals that fit your work','Legal areas that fit your work'],['Full public profiles remain on the focused portal.','Public participation is reviewed separately.'],['Need another specialty later? Your central account can request additional portals after this initial pilot is proven.','Need another area? Your professional account can request additional Smarter Justice legal areas as coverage expands.'],['Current internal pilot preview only; final terms require owner approval.','Monthly is the currently approved pilot cadence. Final checkout terms are shown before any payment.'],['focused-portal platform','Smarter Justice legal-area platform'],['membership, payment, participation, and optional opportunities remain separate.','membership, payment, practice-area participation, and optional opportunities remain separate.']
  ]; for(const [a,b] of pairs)r(x,a,b); save(x);
 }
+// Final demo-path language scrub across attorney-visible surfaces only.
+for(const name of ['attorney-call-tour.html','attorney-partner-tour.html','professionals.html','attorney-launch.html','professional-membership.html','professional-signup.html']){
+  const x=page(name);
+  const clean=[
+    [/publication on a focused micro-portal/gi,'public participation in a Smarter Justice legal area'],
+    [/temporary noindexed lookup/gi,'source-backed profile search'],
+    [/temporary profile lookup/gi,'professional profile search'],
+    [/compatibility lookup/gi,'professional profile lookup'],
+    [/legacy lookup/gi,'profile lookup'],
+    [/view initial launch portals/gi,'Return to Attorney Demonstration'],
+    [/initial four-portal network/gi,'professional pathway'],
+    [/micro-portal owns/gi,'Smarter Justice review controls govern'],
+    [/focused legal portals/gi,'Smarter Justice legal areas'],
+    [/focused legal portal/gi,'Smarter Justice legal area'],
+    [/focused micro-portals/gi,'Smarter Justice legal areas'],
+    [/focused micro-portal/gi,'Smarter Justice legal area'],
+    [/focused portals/gi,'legal areas'],
+    [/focused portal/gi,'legal area']
+  ];
+  for(const [re,to] of clean)x.s=x.s.replace(re,to);
+  save(x);
+}
 console.log('PRE50_ATTORNEY_DEMO_PATH_APPLIED');
