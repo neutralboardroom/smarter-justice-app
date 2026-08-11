@@ -1,0 +1,96 @@
+name: Render deploy status only diagnostic
+
+on:
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: smarter-justice-render-status-only
+  cancel-in-progress: true
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: Confirm no-deploy diagnostic boundary
+        run: |
+          set -euo pipefail
+          echo 'STATUS_ONLY_NO_DEPLOY_NO_ROLLBACK_NO_PRODUCT_CHANGE'
+
+      - name: Inspect exact Render deployment records when protected API access already exists
+        env:
+          RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }}
+          RENDER_SERVICE_ID: ${{ secrets.RENDER_SERVICE_ID }}
+          RENDER_DEPLOY_HOOK_URL: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+        run: |
+          set -euo pipefail
+          out="$RUNNER_TEMP/render-status-summary.json"
+          if [ -z "${RENDER_API_KEY:-}" ]; then
+            printf '%s\n' '{"apiKeyConfigured":false,"status":"RENDER_API_KEY_NOT_PRESENT_IN_GITHUB_PRODUCTION_ENVIRONMENT","noDeployPerformed":true}' > "$out"
+            cat "$out"
+            exit 0
+          fi
+          service="${RENDER_SERVICE_ID:-}"
+          if [ -z "$service" ] && [ -n "${RENDER_DEPLOY_HOOK_URL:-}" ]; then
+            service="$(printf '%s' "$RENDER_DEPLOY_HOOK_URL" | grep -oE 'srv-[a-z0-9]+' | head -n 1 || true)"
+          fi
+          if [ -z "$service" ]; then
+            printf '%s\n' '{"apiKeyConfigured":true,"status":"RENDER_SERVICE_ID_UNAVAILABLE","noDeployPerformed":true}' > "$out"
+            cat "$out"
+            exit 0
+          fi
+          ids=(
+            dep-d9tmamfavr4c73c5kf40
+            dep-d9tme49t0dsc73bl9tpg
+            dep-d9tmhg2jobas73dc9kb0
+            dep-d9tmkr2d0e5s739i9gl0
+            dep-d9tn30ajobas73ddj9vg
+            dep-d9tnb2vavr4c73c7rkd0
+          )
+          mkdir -p "$RUNNER_TEMP/render-deploy-records"
+          printf '{"apiKeyConfigured":true,"serviceId":"%s","noDeployPerformed":true,"deploys":[' "$service" > "$out"
+          first=1
+          for id in "${ids[@]}"; do
+            code="$(curl --silent --show-error --output "$RUNNER_TEMP/render-deploy-records/$id.json" --write-out '%{http_code}' --max-time 25 \
+              -H 'Accept: application/json' -H "Authorization: Bearer $RENDER_API_KEY" \
+              "https://api.render.com/v1/services/$service/deploys/$id" || true)"
+            if [ "$first" = 0 ]; then printf ',' >> "$out"; fi; first=0
+            if [ "$code" = 200 ]; then
+              DEPLOY_FILE="$RUNNER_TEMP/render-deploy-records/$id.json" DEPLOY_ID="$id" node - <<'NODE' >> "$out"
+          const fs=require('fs');
+          const x=JSON.parse(fs.readFileSync(process.env.DEPLOY_FILE,'utf8'));
+          const c=x.commit||{};
+          const row={
+            id:process.env.DEPLOY_ID,
+            status:x.status||null,
+            createdAt:x.createdAt||null,
+            updatedAt:x.updatedAt||null,
+            finishedAt:x.finishedAt||null,
+            commitId:c.id||x.commitId||null,
+            commitMessage:c.message||null,
+            trigger:x.trigger||null
+          };
+          process.stdout.write(JSON.stringify(row));
+NODE
+            else
+              printf '{"id":"%s","httpStatus":%s,"retrieval":"FAILED"}' "$id" "${code:-0}" >> "$out"
+            fi
+          done
+          printf ']}' >> "$out"
+          cat "$out"
+
+      - name: Upload status-only evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: smarter-justice-render-status-only-${{ github.run_id }}
+          path: |
+            ${{ runner.temp }}/render-status-summary.json
+            ${{ runner.temp }}/render-deploy-records/*.json
+          if-no-files-found: warn
+          retention-days: 90
