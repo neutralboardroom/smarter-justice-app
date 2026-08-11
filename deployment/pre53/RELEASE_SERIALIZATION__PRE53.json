@@ -1,0 +1,9 @@
+{
+  "schemaVersion":"1.0.0",
+  "release":"v2.0.0-pre53",
+  "builder":"J41",
+  "predecessor":{"release":"v2.0.0-pre52","builder":"J40","qualifiedHead":"a79f20a32074182908b850faa6d522b6913a1219","mainMerge":"8ad67af4bb2b2d429f87a9267dac169e94933f30"},
+  "branch":"agent/pre53-render-startup-and-live-gate",
+  "state":"ACTIVE_SINGLE_SUCCESSOR",
+  "rule":"No competing pre53 successor may supersede this release without explicit convergence and successorship evidence."
+}
