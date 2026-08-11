@@ -34,8 +34,18 @@ jobs:
           grep -q 'What you can use Smarter Justice for' "$root/public/attorney-partner-tour.html"
           grep -q 'One affordable membership. A growing set of tools for your practice.' "$root/public/professional-membership.html"
           grep -q 'SMARTER_JUSTICE_PRE44_MODULE_FIRST_NAVIGATION' "$root/public/divorce.html"
-          ! grep -R -Ei 'href=["'"']https?://(www\.)?(divorcelawaid|personalinjurylawaid|medicalmalpractice(law)?aid|civilrightslawaid|employmentlawaid|businesslawaid|realestatelawaid|consumerprotectionlawaid|estatelawaid|eldercarelawaid|disabilitylawaid|veteranslawaid|immigrationoasis)\.com' "$root/public" --include='*.html'
-          ! grep -R -Ei 'Open focused website|Focused website|deeper migration into the universal runtime' "$root/public" --include='*.html'
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          root=Path('.runtime/smarter-justice-v1.7.98/public')
+          banned=re.compile(r'href=["\']https?://(?:www\.)?(?:divorcelawaid|personalinjurylawaid|medicalmalpractice(?:law)?aid|civilrightslawaid|employmentlawaid|businesslawaid|realestatelawaid|consumerprotectionlawaid|estatelawaid|eldercarelawaid|disabilitylawaid|veteranslawaid|immigrationoasis)\.com',re.I)
+          bad=[]
+          phrases=('Open focused website','Focused website','deeper migration into the universal runtime')
+          for p in root.glob('*.html'):
+              text=p.read_text(errors='ignore')
+              if banned.search(text) or any(x.lower() in text.lower() for x in phrases): bad.append(p.name)
+          if bad: raise SystemExit('legacy public portal destinations/language remain: '+','.join(sorted(bad)))
+          PY
           ! grep -R --fixed-strings 'OPENAI_API_KEY=' "$root/public" deployment/pre44 scripts/apply-pre44-sitewide-ai.js scripts/apply-pre44-attorney-presentation.js scripts/apply-pre44-module-first-navigation.js
           python3 -m py_compile deployment/pre44/navigator_cli.py deployment/pre44/test_pre44_navigator.py
       - name: Exercise restart persistence through Render-style HTTP bridge
