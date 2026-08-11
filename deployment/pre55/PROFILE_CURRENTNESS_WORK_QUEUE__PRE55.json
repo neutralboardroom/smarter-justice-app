@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "1.0.0",
+  "release": "v2.0.0-pre55",
+  "state": "PROTECTED_QUEUE_NOT_PUBLICATION",
+  "qualifiedPublicDirectoryBaseline": {
+    "professionals": 25,
+    "firms": 5
+  },
+  "queue": {
+    "professionalIdentityRechecksRequired": 25,
+    "firmSourceRechecksRequired": 5,
+    "totalProtectedRechecks": 30,
+    "individualAuthoritativeRecheckRequiredBefore": [
+      "publication change",
+      "outreach",
+      "featuring",
+      "opportunity eligibility",
+      "claim approval"
+    ]
+  },
+  "requiredEvidence": [
+    "source URL",
+    "retrieval timestamp",
+    "facts supported",
+    "registration or entity status where applicable",
+    "reviewer or automated-source identifier",
+    "correction, suppression or no-change disposition"
+  ],
+  "notEstablishedByQueue": [
+    "practice-area fit",
+    "quality",
+    "availability",
+    "participation",
+    "endorsement",
+    "consultation eligibility"
+  ],
+  "newAcceptedProfessionalProfiles": 0,
+  "newAcceptedFirmProfiles": 0,
+  "reason": "Pre55 creates a protected currentness work queue but does not treat unrechecked records as new or newly qualified public profiles.",
+  "ordinaryPublicExposureChanged": false,
+  "noLoss": true
+}

@@ -1,0 +1,39 @@
+{
+  "schemaVersion": "1.0.0",
+  "release": "v2.0.0-pre55",
+  "checkedAt": "2026-08-11",
+  "sources": [
+    {
+      "url": "https://render.com/docs/api",
+      "authority": "OFFICIAL_RENDER",
+      "applied": "Render API keys are secret credentials managed in Account Settings; revoke and recreate a key believed compromised."
+    },
+    {
+      "url": "https://render.com/docs/cli",
+      "authority": "OFFICIAL_RENDER",
+      "applied": "Render API keys do not periodically expire, so automation needs an explicit time-bounded rotation and revocation drill."
+    },
+    {
+      "url": "https://api-docs.render.com/reference/create-deploy",
+      "authority": "OFFICIAL_RENDER",
+      "applied": "POST /services/{serviceId}/deploys accepts an exact commitId, allowing current deployment control to avoid deploy-hook reliance."
+    },
+    {
+      "url": "https://render.com/docs/deploy-hooks",
+      "authority": "OFFICIAL_RENDER",
+      "applied": "Deploy-hook URLs are secrets and Render directs regeneration when compromise is suspected."
+    },
+    {
+      "url": "https://docs.github.com/en/actions/reference/security/secure-use",
+      "authority": "OFFICIAL_GITHUB",
+      "applied": "Secrets remain outside workflow source, redaction is defense in depth, and exposed secrets must be rotated."
+    },
+    {
+      "url": "https://docs.github.com/en/code-security/tutorials/remediate-leaked-secrets/remediating-a-leaked-secret",
+      "authority": "OFFICIAL_GITHUB",
+      "applied": "Verify replacement use before revoking the predecessor where continuity matters, then confirm revocation."
+    }
+  ],
+  "inference": "Because Render API keys are long-lived, a protected candidate-access, retired-denial and active-access drill provides stronger continuity evidence than a calendar reminder alone.",
+  "secretHandling": "No provider credential, derived fingerprint, authorization header or private deploy-hook URL is stored in source, receipts, logs or handoff artifacts."
+}

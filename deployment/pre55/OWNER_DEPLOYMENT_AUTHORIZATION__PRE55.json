@@ -1,0 +1,15 @@
+{
+  "schemaVersion": "1.0.0",
+  "release": "v2.0.0-pre55",
+  "authorized": true,
+  "authorizedAtUtc": "2026-08-11T22:30:00Z",
+  "authoritySource": "Owner instruction in the active Smarter Justice build conversation",
+  "scope": "After the exact pre55 product, J44 builder and matched evidence ZIP are sealed and preserved, publish the exact qualified source, deploy it to the existing Render service, run complete live acceptance and automatically roll back to accepted-live pre54 on failure.",
+  "constraints": [
+    "No deployment before the exact three-file handoff is preserved.",
+    "No provider credential creation, copying, rotation or revocation is authorized by this file.",
+    "No external consequential actions or automatic overage billing.",
+    "No public exposure of held routes or unqualified profiles.",
+    "Exact commit, provider deploy and accepted-live rollback identities are mandatory."
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "1.0.0",
+  "release": "v2.0.0-pre55",
+  "reviewState": "PASS_PRESERVED_AND_REGRESSION_GATED",
+  "visibleChange": "NONE; sitemap acquisition continuity is nonvisual",
+  "protectedExperience": [
+    "story-first Tell us what happened entry",
+    "one connected Justice network with specialty and community paths",
+    "safety-first Domestic Violence path",
+    "public Navigator modes and boundaries",
+    "attorney quick and seven-step demonstration",
+    "navy teal mint and gold trust palette",
+    "rounded cards calm gradients and visible focus states",
+    "responsive mobile and keyboard navigation",
+    "English Spanish privacy and professional-independence boundaries"
+  ],
+  "heldVisibility": {
+    "ordinaryPublic404": [
+      "/growth-operations-compliance.html",
+      "/portals.html"
+    ],
+    "searchDiscovery": "REMOVED_FROM_RUNTIME_SITEMAP"
+  }
+}
