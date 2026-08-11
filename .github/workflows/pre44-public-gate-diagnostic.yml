@@ -1,0 +1,57 @@
+name: Pre44 public gate diagnostic
+
+on:
+  push:
+    branches: [pre44-public-gate-diagnostic]
+
+permissions:
+  contents: read
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+      - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e
+        with:
+          node-version: '22.x'
+      - name: Reconstruct runtime
+        run: |
+          npm install --ignore-scripts --no-audit --no-fund
+          npm run postinstall
+      - name: Produce redacted public-gate diagnostic
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import json,re
+          root=Path('.runtime/smarter-justice-v1.7.98/public')
+          domains=['divorcelawaid','personalinjurylawaid','medicalmalpracticeaid','medicalmalpracticelawaid','civilrightslawaid','employmentlawaid','businesslawaid','realestatelawaid','consumerprotectionlawaid','estatelawaid','eldercarelawaid','disabilitylawaid','veteranslawaid','immigrationoasis']
+          banned=re.compile(r'https?://(?:www\.)?(?:'+('|'.join(domains))+r')\.com',re.I)
+          phrases=re.compile(r'open\s+focused\s+website|focused\s+website|focused\s+portal|deeper\s+migration\s+into\s+the\s+universal\s+runtime',re.I)
+          rows=[]
+          for p in sorted(root.glob('*.html')):
+              t=p.read_text(errors='ignore')
+              hits=[]
+              for rx,label in [(banned,'legacy_url'),(phrases,'legacy_language')]:
+                  for m in rx.finditer(t):
+                      start=max(0,m.start()-100); end=min(len(t),m.end()+140)
+                      hits.append({'type':label,'match':m.group(0),'context':t[start:end].replace('\n',' ')})
+              if hits: rows.append({'file':p.name,'hits':hits[:20]})
+          secret=[]
+          for base in [root,Path('deployment/pre44'),Path('scripts')]:
+              if not base.exists(): continue
+              for p in base.rglob('*'):
+                  if p.is_file():
+                      try:t=p.read_text(errors='ignore')
+                      except:continue
+                      if 'OPENAI_API_KEY=' in t: secret.append(str(p))
+          out={'legacyFindings':rows,'literalSecretAssignmentFindings':secret}
+          Path('pre44-public-gate-diagnostic.json').write_text(json.dumps(out,indent=2))
+          print(json.dumps(out,indent=2))
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: pre44-public-gate-diagnostic
+          path: pre44-public-gate-diagnostic.json
+          if-no-files-found: error
+          retention-days: 7
