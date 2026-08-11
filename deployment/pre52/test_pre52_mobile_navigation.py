@@ -18,4 +18,10 @@ for name in ['index.html','attorney-call-tour.html','attorney-partner-tour.html'
     text=(P/name).read_text(errors='replace')
     assert 'data-nav-toggle' in text, name
     assert 'data-nav' in text, name
-print('PASS PRE52 mobile menu reliability and one-platform wording')
+# Homepage is one Smarter Justice platform with in-house legal-area language, not separate micro-portal brands.
+home=(P/'index.html').read_text(errors='replace')
+for bad in ['focused legal portal','focused micro-portal','Browse focused portals','Divorce Law Aid','Estate Law Aid','Personal Injury Law Aid','Domestic Violence Aid','href="/portals.html"']:
+    assert bad.lower() not in home.lower(), bad
+for good in ['Legal areas','Divorce & Family Law','Estate & Probate','Personal Injury','Domestic Violence & Safety']:
+    assert good.lower() in home.lower(), good
+print('PASS PRE52 mobile menu reliability and one-platform public wording')
