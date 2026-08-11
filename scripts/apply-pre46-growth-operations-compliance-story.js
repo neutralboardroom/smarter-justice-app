@@ -13,6 +13,12 @@ if(!hs.includes(marker)){
   hs=hs.replace('Manage profile, firm, credentials, security, and participation from one Smarter Justice account while keeping specialty-area fit clear.','Smarter Justice connects professional visibility and better-prepared prospects with firm operations and jurisdiction-aware marketing safeguards—so growth, intake, follow-up, firm administration, and responsible marketing can work from one professional platform.');
   hs=hs.replace(/<a([^>]+)href="\/professional-membership\.html"([^>]*)>See the professional network<\/a>/,`<a$1href="/growth-operations-compliance.html"$2>See the law-firm platform</a>`);
   if(!/Growth, operations, and compliance/.test(hs))throw new Error('PRE46 home professional story did not apply');
+  if(!hs.includes('/growth-operations-compliance.html')){
+    const fallback='<section class="section soft" id="professional-platform"><div class="section-heading"><p class="eyebrow">For attorneys and firms</p><h2>Growth, operations, and compliance—under one roof.</h2><p>See how Smarter Justice connects professional visibility, firm operating foundations, and jurisdiction-aware marketing guardrails.</p></div><div class="hero-actions"><a class="primary link-btn" href="/growth-operations-compliance.html">See the law-firm platform</a><a class="secondary link-btn" href="/attorney-call-tour.html">Open the attorney tour</a></div></section>';
+    if(!hs.includes('</main>'))throw new Error('PRE46 home fallback insertion anchor missing');
+    hs=hs.replace('</main>',fallback+'</main>');
+  }
+  if(!hs.includes('/growth-operations-compliance.html'))throw new Error('PRE46 home law-firm platform route missing');
   hs=hs.replace('</body>',`<!-- ${marker} --></body>`); fs.writeFileSync(home,hs);
 }
 const member=path.join(pub,'professional-membership.html');
