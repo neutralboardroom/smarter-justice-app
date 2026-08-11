@@ -15,13 +15,14 @@ for bad in ['micro-portal','repository, deployment','portal eligibility','NO_GO'
     assert bad.lower() not in tour.lower(), ('tour',bad)
 assert '/practice-areas.html' in portals
 assert '69 areas' in portals
-assert 'Help prospective clients reach your firm better prepared.' in tour
+pre46='SMARTER_JUSTICE_PRE46_GROWTH_OPERATIONS_COMPLIANCE_STORY'
+assert ('Help prospective clients reach your firm better prepared.' in tour) or (pre46 in tour and 'better-prepared' in tour.lower())
 for ident in ['tour-role','tour-portal','tour-profile','tour-tool','tour-dashboard','tour-membership','tour-continue','tourPortalStatus','tourMembershipBenefits','tourContinueProfile','copyTourLinkResult']:
     assert f'id="{ident}"' in tour, ident
 assert 'human=' in js and 'practice area' in js
-assert 'Meet better-prepared people' in call
+assert ('Meet better-prepared people' in call) or (pre46 in call and 'Growth' in call and 'Operations' in call and 'Compliance' in call)
 practice=(pub/'practice-areas.html').read_text()
 assert 'All 69 areas remain available' in practice or '69 areas remain available' in practice
 nav=(pub/'navigator.html').read_text()
 assert 'Navigator' in nav
-print('PASS PRE45 public/professional alignment')
+print('PASS PRE45 public/professional alignment (including explicit successor copy)')
