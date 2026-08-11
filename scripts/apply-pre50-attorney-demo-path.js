@@ -56,7 +56,13 @@ function mark(x,label,needle){if(!x.s.includes(MARK)){if(!x.s.includes(needle))t
  const x=mark(page('professional-membership.html'),'MEMBERSHIP','<body class="professional-membership-page">');
  const pairs=[
  ['Attorney and law-firm network','Attorneys and law firms'],['Control your basic profile free. Add paid growth only when it fits your practice.','Start with free profile control. Add paid growth only when it is open and useful.'],['Profile Lookup','Find My Profile'],['portal participation','practice-area participation'],['portal interests','legal-area interests'],['Initial legal launch portals','Continue the attorney demonstration'],['See the initial four-portal network','See the professional pathway in context'],['View Initial Launch Portals','Return to Attorney Demonstration'],['participating specialty portals','Smarter Justice legal areas']
- ]; for(const [a,b] of pairs)r(x,a,b); save(x);
+ ]; for(const [a,b] of pairs)r(x,a,b);
+ if(!x.s.includes('Return to Attorney Demonstration')){
+   const cta='<section class="section light-section"><div class="narrow center"><p class="eyebrow">Continue the attorney demonstration</p><h2>See the professional pathway in context</h2><p>Return to the attorney demonstration to see how public starting help, professional presence, preparation, firm workflow, and marketing guardrails connect.</p><a class="secondary button-link" href="/attorney-partner-tour.html?mode=presenter&practice=divorce">Return to Attorney Demonstration</a></div></section>';
+   if(!x.s.includes('</main>'))throw new Error('PRE50 membership main seam missing');
+   x.s=x.s.replace('</main>',cta+'</main>');
+ }
+ save(x);
 }
 
 // Signup: one-platform language and monthly-only pilot consistency.
