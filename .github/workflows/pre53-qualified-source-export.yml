@@ -1,0 +1,34 @@
+name: Pre53 exact qualified source export
+
+on:
+  push:
+    branches: [artifact/pre53-qualified-source-export]
+
+permissions:
+  contents: read
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact qualified pre53 source
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          ref: c95b5d5a1d06226b6e86285e3113f687ca5aeaa5
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Bind exact commit and export
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "c95b5d5a1d06226b6e86285e3113f687ca5aeaa5"
+          git archive --format=zip --prefix=smarter-justice-app-c95b5d5/ HEAD > "$RUNNER_TEMP/smarter-justice-pre53-exact-source-c95b5d5.zip"
+          sha256sum "$RUNNER_TEMP/smarter-justice-pre53-exact-source-c95b5d5.zip" > "$RUNNER_TEMP/smarter-justice-pre53-exact-source-c95b5d5.zip.sha256"
+      - name: Upload exact source export
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: smarter-justice-pre53-exact-source-c95b5d5
+          path: |
+            ${{ runner.temp }}/smarter-justice-pre53-exact-source-c95b5d5.zip
+            ${{ runner.temp }}/smarter-justice-pre53-exact-source-c95b5d5.zip.sha256
+          if-no-files-found: error
+          retention-days: 90
