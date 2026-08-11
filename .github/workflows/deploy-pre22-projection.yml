@@ -110,74 +110,105 @@ jobs:
               && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/" > "$RUNNER_TEMP/public-home.html" \
               && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/growth-operations-compliance.html" > "$RUNNER_TEMP/public-growth-operations-compliance.html" \
               && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/attorney-call-tour.html" > "$RUNNER_TEMP/public-attorney-call-tour.html" \
-              && curl --fail --silent --show-error --max-time 20 "$PUP“P×ÐTÑWÕT“Ü›Ù™\ÜÚ[Û˜[YÜ›ÝÝš[ˆˆ‰•S“‘T—ÕSTÜX›XË\›Ù™\ÜÚ[Û˜[YÜ›ÝÝš[ˆˆ	‰ˆÝ\›KY˜Z[K\Ú[[K\ÚÝËY\œ›ÜˆK[X^][YHŒ‰P“P×ÐTÑWÕT“Ü›Ù™\ÜÚ[Û˜[[Y[X™\œÚ\š[ˆˆ‰•S“‘T—ÕSTÜX›XË\›Ù™\ÜÚ[Û˜[[Y[X™\œÚ\š[ˆˆ	‰ˆÝ\›KY˜Z[K\Ú[[K\ÚÝËY\œ›ÜˆK[X^][YHŒ‰P“P×ÐTÑWÕT“Ø]Ü›™^K\\™\‹]Ý\‹š[ˆˆ‰•S“‘T—ÕSTÜX›XËX]Ü›™^K]Ý\‹š[ˆˆ	‰ˆÝ\›KY˜Z[K\Ú[[K\ÚÝËY\œ›ÜˆK[X^][YHŒ‰P“P×ÐTÑWÕT“ÛX\šÙ][™ËXÛÛ\X[˜ÙK\™MY]KšœÈˆˆ‰•S“‘T—ÕSTÜX›XË[X\šÙ][™Ë\[\Ë\™MšœÈŽÈ[‚ˆYˆPSH‰•S“‘T—ÕSTÚX[šœÛÛˆˆ‘MH‰•S“‘T—ÕSTÜ™M‹šœÛÛˆˆÕUTÏH‰•S“‘T—ÕSTÛ˜]šYØ]Ü‹\Ý]\ËšœÛÛˆˆÒUH‰•S“‘T—ÕSTÛ˜]šYØ]Ü‹XÚ]šœÛÛˆˆUH‰•S“‘T—ÕSTÛ˜]šYØ]Ü‹š[ˆP“P×ÓUH‰•S“‘T—ÕSTÜX›XË[˜]šYØ]Ü‹š[ˆP“P×ÒÓQOH‰•S“‘T—ÕSTÜX›XËZÛYKš[ˆÓÐÏH‰•S“‘T—ÕSTÜX›XËYÜ›ÝÝ[Ü\˜][ÛœËXÛÛ\X[˜ÙKš[ˆURPÒÏH‰•S“‘T—ÕSTÜX›XËX]Ü›™^KXØ[]Ý\‹š[ˆÔ“ÕÕH‰•S“‘T—ÕSTÜX›XË\›Ù™\ÜÚ[Û˜[YÜ›ÝÝš[ˆQSP‘T”ÒTH‰•S“‘T—ÕSTÜX›XË\›Ù™\ÜÚ[Û˜[[Y[X™\œÚ\š[ˆÕTH‰•S“‘T—ÕSTÜX›XËX]Ü›™^K]Ý\‹š[ˆ•STÏH‰•S“‘T—ÕSTÜX›XË[X\šÙ][™Ë\[\Ë\™MšœÈˆ‘M—ÐT•QPÕÔÒOH‰‘M—ÐT•QPÕÔÒHˆ›ÙHH	Ó“ÑIÂˆÛÛœÝœÏ\™\]Z\™J	ÙœÉÊNÂˆÛÛœÝX[R”ÓÓ‹œ\œÙJœËœ™XYš[TÞ[˜Ê›ØÙ\ÜË™[‹’PS	Ý]Ž	ÊJNÂˆÛÛœÝR”ÓÓ‹œ\œÙJœËœ™XYš[TÞ[˜Ê›ØÙ\ÜË™[‹”‘M‹	Ý]Ž	ÊJNÂˆÛÛœÝÝ]\ÏR”ÓÓ‹œ\œÙJœËœ™XYš[TÞ[˜Ê›ØÙ\ÜË™[‹”ÕUTË	Ý]Ž	ÊJNÂˆÛÛœÝÚ]R”ÓÓ‹œ\œÙJœËœ™XYš[TÞ[˜Ê›ØÙ\ÜË™[‹ÒU	Ý]Ž	ÊJNÂˆÛÛœÝ˜]YœËœ™XYš[TÞ[˜Ê›ØÙ\ÜË™[‹“U‹	Ý]Ž	ÊNÂˆÛÛœÝX›XÓ˜]YœËœ™XYš[TÞ[˜Ê›ØÙ\ÜË™[‹”P“P×ÓU‹	Ý]Ž	ÊNÂˆÛÛœÝX›XÒÛYOYœËœ™XYš[TÞ[˜Ê›ØÙ\ÜË™[‹”P“P×ÒÓQK	Ý]Ž	ÊNÂˆÛÛœÝÛØÏYœËœ™XYš[TÞ[˜Ê›ØÙ\ÜË™[‹‘ÓÐË	Ý]Ž	ÊNÂˆÛÛœÝ]ZXÚÏYœËœ™XYš[TÞ[˜Ê›ØÙ\ÜË™[‹”URPÒË	Ý]Ž	ÊNÂˆÛÛœÝÜ›ÝÝYœËœ™XYš[TÞ[˜Ê›ØÙ\ÜË™[‹‘Ô“ÕÕ	Ý]Ž	ÊNÂˆÛÛœÝY[X™\œÚ\YœËœ™XYš[TÞ[˜Ê›ØÙ\ÜË™[‹“QSP‘T”ÒT	Ý]Ž	ÊNÂˆÛÛœÝÝ\YœËœ™XYš[TÞ[˜Ê›ØÙ\ÜË™[‹•ÕT‹	Ý]Ž	ÊNÂˆÛÛœÝ[\ÏYœËœ™XYš[TÞ[˜Ê›ØÙ\ÜË™[‹”•STË	Ý]Ž	ÊNÂˆYŠX[›ÚÈOO]Y_X[™\œÚ[ÛˆOOIÌKËŽN	ßX[˜\OOIÔÛX\\ˆ\ÝXÙIÊ\›ØÙ\ÜË™^]
-JNÂˆYŠœÝ]\ÈOOIÔTÔÉßœ™M\Y˜XÝÚLMˆOO\›ØÙ\ÜË™[‹”‘M—ÐT•QPÕÔÒJ\›ØÙ\ÜË™^]
-JNÂˆYŠœ›ÝšY\Ø[˜\žHOOIÔTÔÉß\ØYÙSYÙ\”™XÛÜ™YOO]Y_˜œ›ÝÜÙ\”ÙXÜ™]ØØ[ˆOOIÔTÔÉßœÙXÜ™]^ÜÙYOOY˜[ÙJ\›ØÙ\ÜË™^]
-JNÂˆYŠÝ]\Ë›ÚÈOO]Y_Ý]\Ë™\œÚ[ÛˆOOIÝŒ‹ŒŒ\™MÉßÝ]\Ë›˜]šYØ]Ü]˜Z[X›HOO]Y_Ý]\ËœX›XÐZQ[˜X›YOO]YJ\›ØÙ\ÜË™^]
-JNÂˆYŠÝ]\Ëœ›ÝšY\”™XY[™\ÜÏËœ™XYHOO]Y_Ý]\Ë™^\›˜[ÛÛœÙ\]Y[X[XÝ[ÛœÑ[˜X›YOOY˜[ÙJ\›ØÙ\ÜË™^]
-JNÂˆÛÛœÝ[Ù\Ï[™]ÈÙ]
-Ý]\Ë˜]˜Z[X›UÛÛ[Ù\ß×JNÂˆ›ÜŠÛÛœÝHÙˆÉÓU’QÐUÔ‰Ë	ÔÕT•S‘×ÔÒS•	Ë	ÑQ•	Ë	ÔÕSSPT’V‘IË	ÐÒPÒÓTÕ	Ë	Ô“Ñ‘TÔÒSÓSÕÓÔ’Ñ“ÕÉ×JZYŠ[[Ù\Ëš\ÊJJ\›ØÙ\ÜË™^]
-JNÂˆYŠÚ]›ÚÈOO]Y_Ú]œX›XÐZQ[˜X›YOO]Y_Ú]\ØYÙSYÙ\”™XÛÜ™YOO]Y_Ú]œÝÜ™T™\]Y\ÝYOOY˜[ÙJ\›ØÙ\ÜË™^]
-JNÂˆYŠÚ]™^\›˜[XÝ[ÛœÑ^XÝ]YOOY˜[Ù_Ú]˜]]ÛX]XÓÝ™\˜YÙPš[[™Ñ[˜X›YOOY˜[Ù_Ú]ÛÛ[ÙHOOIÓU’QÐUÔ‰Ê\›ØÙ\ÜË™^]
-JNÂˆYŠTÝš[™ÊÚ]˜[œÝÙ\Ÿ	ÉÊKš[˜ÛY\Ê	ÔÓPT•Tˆ•TÕPÑHP“PÈRH‘PQIÊJ\›ØÙ\ÜË™^]
-JNÂˆYŠKÓ˜]šYØ]Ü‹ÚK\Ý
-˜]Š_KÐ]˜Z[X›HÈ]™\ž[Û™KÚK\Ý
-˜]Š_KÔ“Ñ‘TÔÒSÓSÕÓÔ’Ñ“ÕËË\Ý
-˜]ŠJ\›ØÙ\ÜË™^]
-JNÂˆYŠKÓ˜]šYØ]Ü‹ÚK\Ý
-X›XÓ˜]Š_KÐ]˜Z[X›HÈ]™\ž[Û™KÚK\Ý
-X›XÓ˜]ŠJ\›ØÙ\ÜË™^]
-JNÂˆYŠKÔÓPT•T—Ò•TÕPÑWÔ‘M×ÓU’QÐUÔ—ÒÓQWÐÕKË\Ý
-X›XÒÛYJ_KÓÜ[ˆ˜]šYØ]Ü‹ÚK\Ý
-X›XÒÛYJJ\›ØÙ\ÜË™^]
-JNÂˆÛÛœÝ™MIÔÓPT•T—Ò•TÕPÑWÔ‘M—ÑÔ“ÕÕÓÔTUSÓ”×ÐÓÓTPSÑWÔÕÔ–IÎÂˆYŠYÛØËš[˜ÛY\Ê™MŠ_KÑÜ›ÝÈ[Ý\ˆš\›Wˆ[ˆ]™]\—ˆX\šÙ]Ú]ÝX\™˜Z[×‹Ë\Ý
-ÛØÊJ\›ØÙ\ÜË™^]
-JNÂˆYŠ]Ý\‹š[˜ÛY\Ê™MŠ_KÑÜ›ÝÝ
-ÈÜ\˜][ÛœÈ
-ÈÛÛ\X[˜ÙKÚK\Ý
-Ý\ŠJ\›ØÙ\ÜË™^]
-JNÂˆYŠ\]ZXÚËš[˜ÛY\Ê™MŠ_KÝ[™\ˆÛ™H›ÛÙ‹ÚK\Ý
-]ZXÚÊJ\›ØÙ\ÜË™^]
-JNÂˆYŠ[Y[X™\œÚ\š[˜ÛY\Ê™MŠ_KÓ[Ü™H[ˆY[X™\œÚ\ÚK\Ý
-Y[X™\œÚ\
-J\›ØÙ\ÜË™^]
-JNÂˆYŠ\X›XÒÛYKš[˜ÛY\Ê™MŠ_KÑÜ›ÝÝÜ\˜][ÛœË[™ÛÛ\X[˜ÙKÚK\Ý
-X›XÒÛYJJ\›ØÙ\ÜË™^]
-JNÂˆYŠKÔÓPT•T—Ò•TÕPÑWÔ‘M×ÕÓÔ’ÒS‘×Ô‘Q“QÒÓS’ËË\Ý
-ÛØÊ_KÜ›Ù™\ÜÚ[Û˜[YÜ›ÝÝ‹š[Ë\Ý
-ÛØÊJ\›ØÙ\ÜË™^]
-JNÂˆYŠKÔÓPT•T—Ò•TÕPÑWÔ‘M×Ô“Ñ‘TÔÒSÓSÑÔ“ÕÕË\Ý
-Ü›ÝÝ
-_KÔÓPT•T—Ò•TÕPÑWÔ‘MÐÓÓTPSÑWÑVS”ÒSÓ‹Ë\Ý
-Ü›ÝÝ
-_KÒ\š\ÙXÝ[Û‹X]Ø\™HX\šÙ][™ÈÛÛ\X[˜ÙH™Y›YÚÚK\Ý
-Ü›ÝÝ
-J\›ØÙ\ÜË™^]
-JNÂˆYŠKÔÓPT•T—Ò•TÕPÑWÔ‘MÑ’U‘WÒ•T’TÑPÕSÓ”ËË\Ý
-ÛØÊ_KÐØ[Y›Ü›šXKË\Ý
-ÛØÊ_KÓ™]È™\œÙ^KË\Ý
-ÛØÊJ\›ØÙ\ÜË™^]
-JNÂˆYŠKÔÓPT•T—Ò•TÕPÑWÔ‘M×Ô“Ñ‘TÔÒSÓSÑÔ“ÕÕÐÕKË\Ý
-Y[X™\œÚ\
-_KÜ›Ù™\ÜÚ[Û˜[YÜ›ÝÝš[Ë\Ý
-Y[X™\œÚ\
-J\›ØÙ\ÜË™^]
-JNÂˆYŠKÔÓPT•T—Ò•TÕPÑWÔ‘M×ÑÔ“ÕÕÓS’ËË\Ý
-Ý\Š_KÜ›Ù™\ÜÚ[Û˜[YÜ›ÝÝËš[Ë\Ý
-Ý\ŠJ\›ØÙ\ÜË™^]
-JNÂˆ›ÜŠÛÛœÝX\šÙ\ˆÙˆÉÔT•PSÔ’SPT–WÔÓÕTÑWÔ•STÑUÓ“×Ð“S’ÑUÐÓÓTPSÑWÐT“ÕS	Ë	Ó–KMËŒKQT‘TÔÓ”ÒP“IË	Ñ“SÔLLKPRKQTÐÓÔÕT‘IË	ÕTT•U’RKT‘U’QUÉË	ÐÐKMËŒËQ‹Q”“ÉË	ÐÐKMËŒËPQ‘T•TÑSQS•SP‘S	Ë	Ó’‹PÐPKMKT‘TÕSËQTÐÓRSQT‰Ë	Ó’‹PÐPKMKS“ËTVSQS•	Ë	Ó’‹PPÔKMÌÍKRÑVUÓÔ‘QTÐÓRSQT‰Ë	ØØ[˜\‹˜ØK™ÛÝ‰Ë	Ûš˜ÛÝ\Ë™ÛÝ‰×JZYŠ\[\Ëš[˜ÛY\ÊX\šÙ\ŠJ\›ØÙ\ÜË™^]
-JNÂˆÛÛœÝ^ÜÙYVÛ˜]‹X›XÓ˜]‹X›XÒÛYKÛØË]ZXÚËÜ›ÝÝY[X™\œÚ\Ý\‹[\Ë”ÓÓ‹œÝš[™ÚYžJÝ]\ÊK”ÓÓ‹œÝš[™ÚYžJÚ]
-WKš›Ú[Š	×‰ÊNÂˆYŠÐ]]Üš^˜][ÛŽ—Ê™X\™\—ÊËÚK\Ý
-^ÜÙY
-_ÓÔSRWÐTWÒÑVWÊKË\Ý
-^ÜÙY
-J\›ØÙ\ÜË™^]
-JNÂˆYŠÙÝX\˜[YYÛÛ\X[˜Ù_L\Ý]HÛÛ\X[[\š\ÙXÝ[ÛœÈÛÛ\X[ÚK\Ý
-ÙÛØË]ZXÚËÜ›ÝÝY[X™\œÚ\Ý\—Kš›Ú[Š	×‰ÊJJ\›ØÙ\ÜË™^]
-JNÂˆÛÛœÛÛK›ÙÊ”ÓÓ‹œÝš[™ÚYžJÜÝ]\Î‰ÔTÔÉË\™Ù]ÚNœ›ØÙ\ÜË™[‹‘ÒUP—ÔÒK[Ù[˜Ú]›[Ù[][˜ÞS\Î˜Ú]›][˜ÞS\Ë\ØYÙN˜Ú]\ØYÙKX›XÐZQ[˜X›YYK™MÔ›Ù™\ÜÚ[Û˜[Ü›ÝÝYK™Mš]™R\š\ÙXÝ[Û”\X[ÛÛ\X[˜ÙNYKÝÜ™T™\]Y\ÝY™˜[ÙK^\›˜[ÛÛœÙ\]Y[X[XÝ[ÛœÑ[˜X›Y™˜[ÙK]]ÛX]XÓÝ™\˜YÙPš[[™Ñ[˜X›Y™˜[Ù_K[ŠJNÂˆ“ÑBˆ[‚ˆÜ‰•S“‘T—ÕSTÛ˜]šYØ]Ü‹\Ý]\ËšœÛÛˆˆ‰•S“‘T—ÕSTÜ™MË\X›XËXZK\Ý]\ËšœÛÛˆ‚ˆÜ‰•S“‘T—ÕSTÛ˜]šYØ]Ü‹XÚ]šœÛÛˆˆ‰•S“‘T—ÕSTÜ™MË\X›XËXZKXÚ]šœÛÛˆ‚ˆ^]ˆšBˆšBˆÛY\LˆÛ™BˆXÚÈ	ÜX›XÈ]™HXØÙ\[˜ÙHY›Ý\ÜÉÈ‰Œ‚ˆ^]B‚ˆH˜[YNˆ™\]Y\Ý]]ÛX]XÈ›Û˜XÚÈY\ˆ˜Z[Y]™HXØÙ\[˜ÙBˆYŽˆ˜Z[\™J
-H	‰ˆÝ\Ë™\ÞK›Ý]ÛÛYHOH	ÜÝXØÙ\ÜÉÂˆ[Ž‚ˆ‘S‘T—ÑTÖWÒÓÒ×ÕT“ˆ	ÞÈÙXÜ™]Ë”‘S‘T—ÑTÖWÒÓÒ×ÕT“_Bˆ[ŽˆˆÙ]Y][È\Y˜Z[ˆÙ\IÏÉÎÈÖÈ‰‘S‘T—ÑTÖWÒÓÒ×ÕT“ˆOH
-‰ÏÉÊˆWH	‰ˆÙ\IÉ‰ÂˆÝ\›KY˜Z[K\Ú[[K\ÚÝËY\œ›ÜˆK[ØØ][ÛˆK[X^][YHÌ‰Ô‘S‘T—ÑTÖWÒÓÒ×ÕT“IÜÙ\\™YIÔ“ÓPÒ×ÔÒ_Hˆˆ‰•S“‘T—ÕSTÜ™[™\‹\›Û˜XÚË\™\ÜÛœÙKšœÛÛˆ‚ˆ›Üˆ][\[ˆ	
-Ù\HHÌ
-NÈÂˆYˆÝ\›KY˜Z[K\Ú[[K\ÚÝËY\œ›ÜˆK[X^][YHŒ‰‘S‘T—ÐTÑWÕT“ÚX[ˆˆ‰•S“‘T—ÕSTÜ›Û˜XÚËZX[šœÛÛˆŽÈ[‚ˆ›ÙHYH˜ÛÛœÝœÏ\™\]Z\™J	ÙœÉÊNØÛÛœÝR”ÓÓ‹œ\œÙJœËœ™XYš[TÞ[˜Ê›ØÙ\ÜË˜\™Ý–ÌWJJNÚYŠ›ÚÈOO]Y_˜\OOIÔÛX\\ˆ\ÝXÙIÊ\›ØÙ\ÜË™^]
-JHˆ‰•S“‘T—ÕSTÜ›Û˜XÚËZX[šœÛÛˆˆ	‰ˆ^]ˆšBˆÛY\LˆÛ™Bˆ^]B‚ˆH˜[YNˆ\ØY[[]]X›H\Þ[Y[]šY[˜ÙBˆYŽˆ[Ø^\Ê
-Bˆ\Ù\ÎˆXÝ[ÛœËÝ\ØYX\Y˜XÝXLMYŽX™MÍXMYNL˜™ÍŒÙ˜LˆÈ‹Œ‚ˆÚ]‚ˆ˜[YNˆÛX\\‹Z\ÝXÙK\]X[YšYY\™[™\‹Y]šY[˜ÙKIÞÈÚ]X‹œ[—ÚY_Bˆ]ˆˆ	ÞÈ[›™\‹[\_KÜ™[™\‹Y\ÞK\™\ÜÛœÙKšœÛÛ‚ˆ	ÞÈ[›™\‹[\_KÚX[šœÛÛ‚ˆ	ÞÈ[›™\‹[\_KÜ™M‹šœÛÛ‚ˆ	ÞÈ[›™\‹[\_KÛ˜]šYØ]Ü‹š[ˆ	ÞÈ[›™\‹[\_KÛ˜]šYØ]Ü‹\Ý]\ËšœÛÛ‚ˆ	ÞÈ[›™\‹[\_KÛ˜]šYØ]Ü‹XÚ]šœÛÛ‚ˆ	ÞÈ[›™\‹[\_KÜ™MË\X›XËXZK\Ý]\ËšœÛÛ‚ˆ	ÞÈ[›™\‹[\_KÜ™MË\X›XËXZKXÚ]šœÛÛ‚ˆ	ÞÈ[›™\‹[\_KÜX›XË[˜]šYØ]Ü‹š[ˆ	ÞÈ[›™\‹[\_KÜX›XËZÛYKš[ˆ	ÞÈ[›™\‹[\_KÜX›XËYÜ›ÝÝ[Ü\˜][ÛœËXÛÛ\X[˜ÙKš[ˆ	ÞÈ[›™\‹[\_KÜX›XËX]Ü›™^KXØ[]Ý\‹š[ˆ	ÞÈ[›™\‹[\_KÜX›XË\›Ù™\ÜÚ[Û˜[YÜ›ÝÝš[ˆ	ÞÈ[›™\‹[\_KÜX›XË\›Ù™\ÜÚ[Û˜[[Y[X™\œÚ\š[ˆ	ÞÈ[›™\‹[\_KÜX›XËX]Ü›™^K]Ý\‹š[ˆ	ÞÈ[›™\‹[\_KÜX›XË[X\šÙ][™Ë\[\Ë\™MšœÂˆ	ÞÈ[›™\‹[\_KÜ™[™\‹\›Û˜XÚË\™\ÜÛœÙKšœÛÛ‚ˆ	ÞÈ[›™\‹[\_KÜ›Û˜XÚËZX[šœÛÛ‚ˆY‹[›ËYš[\ËY›Ý[™ˆØ\›‚ˆ™][[Û‹Y^\ÎˆL
+              && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/professional-growth.html" > "$RUNNER_TEMP/public-professional-growth.html" \
+              && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/professional-membership.html" > "$RUNNER_TEMP/public-professional-membership.html" \
+              && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/attorney-partner-tour.html" > "$RUNNER_TEMP/public-attorney-tour.html" \
+              && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/marketing-compliance-pre48-data.js" > "$RUNNER_TEMP/public-marketing-rules-pre48.js"; then
+              if HEALTH="$RUNNER_TEMP/health.json" PRE42="$RUNNER_TEMP/pre42.json" STATUS="$RUNNER_TEMP/navigator-status.json" CHAT="$RUNNER_TEMP/navigator-chat.json" NAV="$RUNNER_TEMP/navigator.html" PUBLIC_NAV="$RUNNER_TEMP/public-navigator.html" PUBLIC_HOME="$RUNNER_TEMP/public-home.html" GOC="$RUNNER_TEMP/public-growth-operations-compliance.html" QUICK="$RUNNER_TEMP/public-attorney-call-tour.html" GROWTH="$RUNNER_TEMP/public-professional-growth.html" MEMBERSHIP="$RUNNER_TEMP/public-professional-membership.html" TOUR="$RUNNER_TEMP/public-attorney-tour.html" RULES="$RUNNER_TEMP/public-marketing-rules-pre48.js" PRE42_ARTIFACT_SHA="$PRE42_ARTIFACT_SHA" node - <<'NODE'
+          const fs=require('fs');
+          const health=JSON.parse(fs.readFileSync(process.env.HEALTH,'utf8'));
+          const p=JSON.parse(fs.readFileSync(process.env.PRE42,'utf8'));
+          const status=JSON.parse(fs.readFileSync(process.env.STATUS,'utf8'));
+          const chat=JSON.parse(fs.readFileSync(process.env.CHAT,'utf8'));
+          const nav=fs.readFileSync(process.env.NAV,'utf8');
+          const publicNav=fs.readFileSync(process.env.PUBLIC_NAV,'utf8');
+          const publicHome=fs.readFileSync(process.env.PUBLIC_HOME,'utf8');
+          const goc=fs.readFileSync(process.env.GOC,'utf8');
+          const quick=fs.readFileSync(process.env.QUICK,'utf8');
+          const growth=fs.readFileSync(process.env.GROWTH,'utf8');
+          const membership=fs.readFileSync(process.env.MEMBERSHIP,'utf8');
+          const tour=fs.readFileSync(process.env.TOUR,'utf8');
+          const rules=fs.readFileSync(process.env.RULES,'utf8');
+          if(health.ok!==true||health.version!=='1.7.98'||health.app!=='Smarter Justice')process.exit(1);
+          if(p.status!=='PASS'||p.pre42ArtifactSha256!==process.env.PRE42_ARTIFACT_SHA)process.exit(1);
+          if(p.providerCanary!=='PASS'||p.usageLedgerRecorded!==true||p.browserSecretScan!=='PASS'||p.secretExposed!==false)process.exit(1);
+          if(status.ok!==true||status.version!=='v2.0.0-pre43'||status.navigatorAvailable!==true||status.publicAiEnabled!==true)process.exit(1);
+          if(status.providerReadiness?.ready!==true||status.externalConsequentialActionsEnabled!==false)process.exit(1);
+          const modes=new Set(status.availableToolModes||[]);
+          for(const m of ['NAVIGATOR','STARTING_POINT','DRAFT','SUMMARIZE','CHECKLIST','PROFESSIONAL_WORKFLOW'])if(!modes.has(m))process.exit(1);
+          if(chat.ok!==true||chat.publicAiEnabled!==true||chat.usageLedgerRecorded!==true||chat.storeRequested!==false)process.exit(1);
+          if(chat.externalActionsExecuted!==false||chat.automaticOverageBillingEnabled!==false||chat.toolMode!=='NAVIGATOR')process.exit(1);
+          if(!String(chat.answer||'').includes('SMARTER JUSTICE PUBLIC AI READY'))process.exit(1);
+          if(!/Navigator/i.test(nav)||!/Available to everyone/i.test(nav)||!/PROFESSIONAL_WORKFLOW/.test(nav))process.exit(1);
+          if(!/Navigator/i.test(publicNav)||!/Available to everyone/i.test(publicNav))process.exit(1);
+          if(!/SMARTER_JUSTICE_PRE43_NAVIGATOR_HOME_CTA/.test(publicHome)||!/Open Navigator/i.test(publicHome))process.exit(1);
+          const pre46='SMARTER_JUSTICE_PRE46_GROWTH_OPERATIONS_COMPLIANCE_STORY';
+          if(!goc.includes(pre46)||!/Grow your firm\. Run it better\. Market with guardrails\./.test(goc))process.exit(1);
+          if(!tour.includes(pre46)||!/Growth \+ operations \+ compliance/i.test(tour))process.exit(1);
+          if(!quick.includes(pre46)||!/under one roof/i.test(quick))process.exit(1);
+          if(!membership.includes(pre46)||!/More than membership/i.test(membership))process.exit(1);
+          if(!publicHome.includes(pre46)||!/Growth, operations, and compliance/i.test(publicHome))process.exit(1);
+          if(!/SMARTER_JUSTICE_PRE47_WORKING_PREFLIGHT_LINK/.test(goc)||!/professional-growth\.html/.test(goc))process.exit(1);
+          if(!/SMARTER_JUSTICE_PRE47_PROFESSIONAL_GROWTH/.test(growth)||!/SMARTER_JUSTICE_PRE48_COMPLIANCE_EXPANSION/.test(growth)||!/Jurisdiction-aware marketing compliance preflight/i.test(growth))process.exit(1);
+          if(!/SMARTER_JUSTICE_PRE48_FIVE_JURISDICTIONS/.test(goc)||!/California/.test(goc)||!/New Jersey/.test(goc))process.exit(1);
+          if(!/SMARTER_JUSTICE_PRE47_PROFESSIONAL_GROWTH_CTA/.test(membership)||!/professional-growth\.html/.test(membership))process.exit(1);
+          if(!/SMARTER_JUSTICE_PRE47_GROWTH_LINK/.test(tour)||!/professional-growth\.html/.test(tour))process.exit(1);
+          for(const marker of ['PARTIAL_PRIMARY_SOURCE_RULESET_NO_BLANKET_COMPLIANCE_APPROVAL','NY-7.1-D-RESPONSIBLE','FL-OP-24-1-AI-DISCLOSURE','TX-PART-VII-REVIEW','CA-7.3-F-DVRO','CA-7.3-ADVERTISEMENT-LABEL','NJ-CAA-49-RESULTS-DISCLAIMER','NJ-CAA-49-NO-PAYMENT','NJ-ACPE-735-KEYWORD-DISCLAIMER','calbar.ca.gov','njcourts.gov'])if(!rules.includes(marker))process.exit(1);
+          const exposed=[nav,publicNav,publicHome,goc,quick,growth,membership,tour,rules,JSON.stringify(status),JSON.stringify(chat)].join('\n');
+          if(/Authorization:\s*Bearer\s+/i.test(exposed)||/OPENAI_API_KEY\s*=/.test(exposed))process.exit(1);
+          if(/guaranteed compliance|50-state compliant|all jurisdictions compliant/i.test([goc,quick,growth,membership,tour].join('\n')))process.exit(1);
+          console.log(JSON.stringify({status:'PASS',targetSha:process.env.GITHUB_SHA,model:chat.model,latencyMs:chat.latencyMs,usage:chat.usage,publicAiEnabled:true,pre47ProfessionalGrowth:true,pre48FiveJurisdictionPartialCompliance:true,storeRequested:false,externalConsequentialActionsEnabled:false,automaticOverageBillingEnabled:false},null,2));
+          NODE
+              then
+                cp "$RUNNER_TEMP/navigator-status.json" "$RUNNER_TEMP/pre43-public-ai-status.json"
+                cp "$RUNNER_TEMP/navigator-chat.json" "$RUNNER_TEMP/pre43-public-ai-chat.json"
+                exit 0
+              fi
+            fi
+            sleep 10
+          done
+          echo 'public live acceptance did not pass' >&2
+          exit 1
+
+      - name: Request automatic rollback after failed live acceptance
+        if: failure() && steps.deploy.outcome == 'success'
+        env:
+          RENDER_DEPLOY_HOOK_URL: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+        run: |
+          set -euo pipefail
+          sep='?'; [[ "$RENDER_DEPLOY_HOOK_URL" == *'?'* ]] && sep='&'
+          curl --fail --silent --show-error --location --max-time 30 "${RENDER_DEPLOY_HOOK_URL}${sep}ref=${ROLLBACK_SHA}" > "$RUNNER_TEMP/render-rollback-response.json"
+          for attempt in $(seq 1 30); do
+            if curl --fail --silent --show-error --max-time 20 "$RENDER_BASE_URL/health" > "$RUNNER_TEMP/rollback-health.json"; then
+              node -e "const fs=require('fs');const x=JSON.parse(fs.readFileSync(process.argv[1]));if(x.ok!==true||x.app!=='Smarter Justice')process.exit(1)" "$RUNNER_TEMP/rollback-health.json" && exit 0
+            fi
+            sleep 10
+          done
+          exit 1
+
+      - name: Upload immutable deployment evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: smarter-justice-qualified-render-evidence-${{ github.run_id }}
+          path: |
+            ${{ runner.temp }}/render-deploy-response.json
+            ${{ runner.temp }}/health.json
+            ${{ runner.temp }}/pre42.json
+            ${{ runner.temp }}/navigator.html
+            ${{ runner.temp }}/navigator-status.json
+            ${{ runner.temp }}/navigator-chat.json
+            ${{ runner.temp }}/pre43-public-ai-status.json
+            ${{ runner.temp }}/pre43-public-ai-chat.json
+            ${{ runner.temp }}/public-navigator.html
+            ${{ runner.temp }}/public-home.html
+            ${{ runner.temp }}/public-growth-operations-compliance.html
+            ${{ runner.temp }}/public-attorney-call-tour.html
+            ${{ runner.temp }}/public-professional-growth.html
+            ${{ runner.temp }}/public-professional-membership.html
+            ${{ runner.temp }}/public-attorney-tour.html
+            ${{ runner.temp }}/public-marketing-rules-pre48.js
+            ${{ runner.temp }}/render-rollback-response.json
+            ${{ runner.temp }}/rollback-health.json
+          if-no-files-found: warn
+          retention-days: 90
