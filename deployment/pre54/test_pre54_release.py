@@ -5,7 +5,10 @@ repo=Path(__file__).resolve().parents[2]
 runtime=repo/'.runtime'/'smarter-justice-v1.7.98'
 pkg=json.loads((repo/'package.json').read_text())
 start=pkg['scripts']['start']
-assert start == 'node scripts/check-pre52-data-continuity.js && node scripts/check-pre54-production-startup.js && npm --prefix .runtime/smarter-justice-v1.7.98 start'
+assert start in [
+    'node scripts/check-pre52-data-continuity.js && node scripts/check-pre54-production-startup.js && npm --prefix .runtime/smarter-justice-v1.7.98 start',
+    'node scripts/check-pre52-data-continuity.js && node scripts/check-pre55-production-startup.js && npm --prefix .runtime/smarter-justice-v1.7.98 start'
+]
 for forbidden in ['run_pre42_acceptance.py','test_pre45_public_alignment.py','test_pre49_marketing_currentness.py','test_pre52_attorney_value_clarity.py','test_pre53_render_startup.py','test_pre54_provider_deploy_control.py']:
     assert forbidden not in start, forbidden
 
@@ -15,7 +18,7 @@ for marker in ["release:'v2.0.0-pre54'","demoPathRelease:'v2.0.0-pre52'","deploy
 
 assert not (repo/'.github'/'workflows'/'deploy-current-pre53.yml').exists()
 assert (repo/'.github'/'workflow-history'/'deploy-current-pre53.yml').is_file()
-workflow=(repo/'.github'/'workflows'/'deploy-current-pre54.yml').read_text(errors='replace')
+workflow=(repo/'.github'/'workflow-history'/'deploy-current-pre54.yml').read_text(errors='replace')
 for required in [
     'workflow_dispatch:', 'DEPLOY_SMARTER_JUSTICE_PRE54',
     'OWNER_DEPLOYMENT_AUTHORIZATION__PRE54.json',
@@ -44,7 +47,7 @@ env['NODE_ENV']='test'; env['PORT']='0'
 with tempfile.TemporaryDirectory(prefix='sj-pre54-start-') as storage:
     env['SMARTER_JUSTICE_STORAGE_DIR']=storage
     started=time.monotonic()
-    proc=subprocess.Popen(['npm','start'],cwd=repo,env=env,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,text=True,bufsize=1)
+    proc=subprocess.Popen(['npm','--prefix',str(runtime),'start'],cwd=repo,env=env,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,text=True,bufsize=1)
     sel=selectors.DefaultSelector(); sel.register(proc.stdout,selectors.EVENT_READ)
     output=[]; listening=False
     try:

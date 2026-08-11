@@ -1,0 +1,15 @@
+{
+  "schemaVersion": "1.0.0",
+  "release": "v2.0.0-pre55",
+  "lastKnownGood": {
+    "release": "v2.0.0-pre54",
+    "gitCommit": "a98c9adf8b34ed5acce188769d53be6f56d6587b",
+    "gitTree": "0b5da95b83deb17fc76486a7961a6684affc4b74",
+    "renderServiceId": "srv-d8ps9jgjs32c73918vvg",
+    "renderDeployId": "dep-d9tov2jncjis739p3s8g",
+    "liveMarker": "SMARTER_JUSTICE_PRE54_PROVIDER_NATIVE_DEPLOY_CONTROL",
+    "acceptedAtUtc": "2026-08-11T21:16:07.970Z"
+  },
+  "autoDeploy": "off",
+  "rollbackMustPreserveNewerValidProductionData": true
+}

@@ -1,0 +1,30 @@
+{
+  "schemaVersion": "1.0.0",
+  "release": "v2.0.0-pre55",
+  "improvement": "Remove the held legacy portals route from the runtime sitemap and add current working public, professional and bilingual entry paths.",
+  "requiredWorkingSitemapPaths": [
+    "/",
+    "/navigator",
+    "/practice-areas.html",
+    "/community-resources.html",
+    "/free-tools.html",
+    "/professionals.html",
+    "/professional-growth.html",
+    "/professional-membership.html",
+    "/attorney-call-tour.html",
+    "/attorney-partner-tour.html",
+    "/referral-program.html",
+    "/es/"
+  ],
+  "forbiddenSitemapPaths": [
+    "/portals.html",
+    "/growth-operations-compliance.html"
+  ],
+  "lawfulGrowthBoundaries": [
+    "No spam or unrestricted automated outreach.",
+    "No sale of a public user's story as a lead.",
+    "No guaranteed clients, rankings, revenue, eligibility or outcomes.",
+    "No public registration or payment control presented as open when gated."
+  ],
+  "visualUxChange": false
+}
