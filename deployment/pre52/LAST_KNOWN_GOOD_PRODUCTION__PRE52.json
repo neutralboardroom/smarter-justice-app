@@ -1,0 +1,10 @@
+{
+  "schemaVersion":"1.0.0",
+  "release":"v2.0.0-pre52",
+  "lastKnownGood":{"release":"v2.0.0-pre49","builder":"J37","gitCommit":"eea506b94ed890b7e85dcdd8aa61a473ba11b356"},
+  "interveningSourceHistory":[
+    {"release":"v2.0.0-pre50","gitCommit":"f884fbd06522489a00ddaaf5a0513b1223c372b9","state":"QUALIFIED_SOURCE_LIVE_REJECTED_ROLLED_BACK"},
+    {"release":"v2.0.0-pre51","gitCommit":"1dc965afa16030fad4cd61bd15e7cbf8daa6b2a7","state":"QUALIFIED_SOURCE_NOT_DEPLOYED"}
+  ],
+  "policy":"Rollback targets the newest accepted-live production commit, never merely the Git parent when those differ."
+}
