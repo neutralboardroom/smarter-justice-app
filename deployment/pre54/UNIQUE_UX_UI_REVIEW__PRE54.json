@@ -1,0 +1,17 @@
+{
+  "schemaVersion":"1.0.0",
+  "release":"v2.0.0-pre54",
+  "reviewState":"PASS_PRESERVED_AND_REGRESSION_GATED",
+  "visibleChange":"NONE_IN_THIS_DEPLOYMENT_CONTROL_RELEASE",
+  "distinctiveExperience":[
+    {"surface":"public home","identity":"Story-first legal navigation instead of requiring the user to name a practice area","evidence":"Tell us what happened; Find my starting point"},
+    {"surface":"connected pathways","identity":"One Justice network joining legal specialties, community resources, safety-first help, free tools and independent professional profiles","evidence":"Popular starting paths; Domestic Violence & Safety; Community Resource Aid"},
+    {"surface":"Navigator","identity":"Public and professional AI tools with plain-language entry, visible safety boundaries and no consequential external actions","evidence":"Navigator; Starting Point; Draft; Summarize; Checklist; Professional Workflow"},
+    {"surface":"professional journey","identity":"Attorney value demonstration is integrated with the public-access mission instead of presented as an unrelated sales site","evidence":"For attorneys and firms; See the law-firm platform"},
+    {"surface":"visual system","identity":"Navy, teal, mint and warm-gold trust palette; generous editorial typography; rounded cards; calm gradients; clear focus states","evidence":"--navy #123d5f; --teal #0f7d7a; --mint #e9f7f4; --gold #bd8b2f"},
+    {"surface":"responsive access","identity":"Keyboard skip links, focus-visible treatment, mobile navigation, single-column small-screen layouts and full-width mobile actions","evidence":"data-nav-toggle; aria-expanded; :focus-visible; max-width breakpoints"},
+    {"surface":"language and trust","identity":"English/Spanish entry and visible non-law-firm, privacy and sensitive-data boundaries","evidence":"Español; No account required to explore; avoid highly sensitive details"}
+  ],
+  "preservationDecision":"The UX/UI is already product-distinctive and coherent. Pre54 codifies it as a no-loss gate while limiting the release's material change to deployment safety; visual experimentation is deferred until it can be previewed and compared without weakening this experience.",
+  "heldVisibility":{"ordinaryPublic404":["/growth-operations-compliance.html","/portals.html"],"reason":"Source presence is not publication qualification."}
+}

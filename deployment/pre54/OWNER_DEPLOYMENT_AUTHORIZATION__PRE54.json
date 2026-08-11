@@ -1,0 +1,9 @@
+{
+  "schemaVersion":"1.0.0",
+  "release":"v2.0.0-pre54",
+  "authorized":false,
+  "authorizedAt":null,
+  "scope":"The owner authorized starting the next-version build, qualification, sealing and three-ZIP handoff only.",
+  "deploymentState":"HOLD_UNTIL_SEPARATE_EXACT_RELEASE_DEPLOY_AUTHORIZATION",
+  "doesNotAuthorize":"Merging, triggering a Render deploy, changing provider configuration, or rolling back production."
+}

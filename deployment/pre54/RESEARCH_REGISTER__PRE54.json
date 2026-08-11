@@ -1,0 +1,12 @@
+{
+  "schemaVersion":"1.0.0",
+  "release":"v2.0.0-pre54",
+  "checkedAt":"2026-08-11",
+  "sources":[
+    {"url":"https://render.com/docs/api","authority":"OFFICIAL_RENDER","applied":"Use the protected Render API for exact service and deploy observation."},
+    {"url":"https://api-docs.render.com/reference/retrieve-deploy","authority":"OFFICIAL_RENDER","applied":"Require exact deploy identity, terminal status and commit identity."},
+    {"url":"https://api-docs.render.com/reference/rollback-deploy","authority":"OFFICIAL_RENDER","applied":"Rollback by exact accepted-live deploy ID; require Auto-Deploy off before rollback."}
+  ],
+  "accountEvidence":{"method":"SIGNED_IN_RENDER_DASHBOARD_READ_ONLY","serviceId":"srv-d8ps9jgjs32c73918vvg","repository":"neutralboardroom/smarter-justice-app","branch":"main","autoDeploy":"off","healthCheckPath":"/health","acceptedLiveDeployId":"dep-d9tnna2d0e5s739kogg0","acceptedLiveCommit":"39337e204b974f85e4690a97ef85ad30932fee30"},
+  "secretHandling":"No credential or private deploy-hook value is stored in source, receipts, logs, or handoff artifacts."
+}
