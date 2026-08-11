@@ -1,0 +1,7 @@
+{
+  "schemaVersion":"1.0.0",
+  "release":"v2.0.0-pre51",
+  "lastKnownGood":{"release":"v2.0.0-pre49","builder":"J37","gitCommit":"eea506b94ed890b7e85dcdd8aa61a473ba11b356"},
+  "failedSuccessor":{"release":"v2.0.0-pre50","gitCommit":"f884fbd06522489a00ddaaf5a0513b1223c372b9","failure":"PUBLIC_DOMAIN_ATTORNEY_DEMO_DID_NOT_CONVERGE","rollback":"PASS"},
+  "policy":"Rollback targets the newest accepted-live commit, never merely the Git parent when those differ."
+}
