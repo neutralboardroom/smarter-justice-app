@@ -1,0 +1,111 @@
+name: Smarter Justice pre50 attorney demo live acceptance
+
+on:
+  workflow_run:
+    workflows:
+      - Smarter Justice qualified automatic Render deploy
+    types:
+      - completed
+
+permissions:
+  contents: read
+
+env:
+  RENDER_BASE_URL: https://smarter-justice-app.onrender.com
+  PUBLIC_BASE_URL: https://smarterjustice.com
+  TARGET_SHA: ${{ github.event.workflow_run.head_sha }}
+
+jobs:
+  attorney-demo-live-acceptance:
+    if: ${{ github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_branch == 'main' }}
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: Checkout exact deployed commit
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+        with:
+          ref: ${{ env.TARGET_SHA }}
+          fetch-depth: 0
+
+      - name: Bind exact pre50 release and rollback target
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$TARGET_SHA"
+          test -f deployment/pre50/test_pre50_attorney_demo_path.py
+          test -f deployment/pre50/ATTORNEY_DEMONSTRATION_PATH__PRE50.json
+          rollback="$(git rev-parse "$TARGET_SHA^")"
+          git cat-file -e "$rollback^{commit}"
+          echo "ROLLBACK_SHA=$rollback" >> "$GITHUB_ENV"
+
+      - name: Require live coherent attorney demonstration pathway
+        id: demo
+        run: |
+          set -euo pipefail
+          for attempt in $(seq 1 24); do
+            echo "pre50 attorney demo live acceptance attempt $attempt"
+            ok=1
+            for page in attorney-call-tour attorney-partner-tour professionals attorney-launch professional-membership professional-signup; do
+              if ! curl --fail --silent --show-error --max-time 25 "$PUBLIC_BASE_URL/${page}.html" > "$RUNNER_TEMP/${page}.html"; then ok=0; fi
+            done
+            if [ "$ok" = 1 ]; then
+              if ROOT="$RUNNER_TEMP" node - <<'NODE'
+          const fs=require('fs'),path=require('path'),root=process.env.ROOT;
+          const names=['attorney-call-tour','attorney-partner-tour','professionals','attorney-launch','professional-membership','professional-signup'];
+          const x=Object.fromEntries(names.map(n=>[n,fs.readFileSync(path.join(root,n+'.html'),'utf8')]));
+          for(const n of names)if(!x[n].includes('SMARTER_JUSTICE_PRE50_ATTORNEY_DEMO_PATH'))process.exit(1);
+          if(!x['attorney-call-tour'].includes('/attorney-partner-tour.html?mode=presenter&practice=divorce'))process.exit(1);
+          if(!/Start 7-step demonstration/i.test(x['attorney-partner-tour']))process.exit(1);
+          if(!/Search My Profile/i.test(x.professionals)||!/Create or Claim a Profile/i.test(x.professionals))process.exit(1);
+          if(!/Search for My Profile/i.test(x['attorney-launch']))process.exit(1);
+          if(!/Return to Attorney Demonstration/i.test(x['professional-membership']))process.exit(1);
+          if(!/One account across Smarter Justice legal areas/i.test(x['professional-signup']))process.exit(1);
+          if(/value="annual"/i.test(x['professional-signup']))process.exit(1);
+          const all=Object.values(x).join('\n').toLowerCase();
+          for(const bad of ['temporary profile lookup','compatibility lookup','legacy lookup','focused legal portals','focused micro-portal','view initial launch portals'])if(all.includes(bad))process.exit(1);
+          console.log(JSON.stringify({status:'PASS',targetSha:process.env.TARGET_SHA,pages:names},null,2));
+          NODE
+              then exit 0; fi
+            fi
+            sleep 10
+          done
+          echo 'pre50 attorney demonstration pathway did not pass live acceptance' >&2
+          exit 1
+
+      - name: Require protected Render deploy hook for rollback
+        if: failure() && steps.demo.outcome == 'failure'
+        env:
+          RENDER_DEPLOY_HOOK_URL: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+        run: test -n "$RENDER_DEPLOY_HOOK_URL"
+
+      - name: Automatic rollback after failed pre50 acceptance
+        if: failure() && steps.demo.outcome == 'failure'
+        env:
+          RENDER_DEPLOY_HOOK_URL: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+        run: |
+          set -euo pipefail
+          sep='?'; [[ "$RENDER_DEPLOY_HOOK_URL" == *'?'* ]] && sep='&'
+          curl --fail --silent --show-error --location --max-time 30 "${RENDER_DEPLOY_HOOK_URL}${sep}ref=${ROLLBACK_SHA}" > "$RUNNER_TEMP/render-rollback-response.json"
+          for attempt in $(seq 1 30); do
+            if curl --fail --silent --show-error --max-time 20 "$RENDER_BASE_URL/health" > "$RUNNER_TEMP/rollback-health.json"; then
+              node -e "const fs=require('fs');const x=JSON.parse(fs.readFileSync(process.argv[1]));if(x.ok!==true||x.app!=='Smarter Justice')process.exit(1)" "$RUNNER_TEMP/rollback-health.json" && exit 0
+            fi
+            sleep 10
+          done
+          exit 1
+
+      - name: Upload immutable pre50 attorney demo evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: smarter-justice-pre50-attorney-demo-live-evidence-${{ github.run_id }}
+          path: |
+            ${{ runner.temp }}/attorney-call-tour.html
+            ${{ runner.temp }}/attorney-partner-tour.html
+            ${{ runner.temp }}/professionals.html
+            ${{ runner.temp }}/attorney-launch.html
+            ${{ runner.temp }}/professional-membership.html
+            ${{ runner.temp }}/professional-signup.html
+            ${{ runner.temp }}/render-rollback-response.json
+            ${{ runner.temp }}/rollback-health.json
+          if-no-files-found: warn
+          retention-days: 90

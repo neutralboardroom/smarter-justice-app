@@ -1,0 +1,8 @@
+{
+  "schemaVersion":"1.0.0","release":"v2.0.0-pre50","slice":"ATTORNEY_DEMONSTRATION_END_TO_END_PATHWAY",
+  "primaryPath":["Attorney Quick Tour","7-step Attorney Demonstration","Public-side legal-area and preparation value","Synthetic professional record","Growth + Operations + Compliance workspace","Find / claim / create professional profile","Professional membership truth","Professional account creation","Clear next action"],
+  "requiredLanguageModel":"ONE_SMARTER_JUSTICE_PLATFORM_WITH_LEGAL_AREAS",
+  "legacyPublicLanguageRejected":["temporary profile lookup","compatibility lookup","legacy lookup","focused portal","micro-portal"],
+  "pricingConsistency":{"approvedPilotCadence":"MONTHLY_ONLY","annualSignupChoiceRemoved":true},
+  "preservedBoundaries":{"freeBasicProfileControl":true,"paidGrowthSeparate":true,"credentialReviewSeparate":true,"practiceFitSeparate":true,"noGuaranteedClientsRevenueRankingOrCompliance":true,"marketingCurrentnessFailClosed":true}
+}

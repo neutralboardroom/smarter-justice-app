@@ -1,0 +1,12 @@
+{
+  "schemaVersion":"1.0.0","release":"v2.0.0-pre50","researchedAt":"2026-08-11","purpose":"Attorney demonstration and tour pathway coherence audit.",
+  "liveAuthority":{"githubMain":"eea506b94ed890b7e85dcdd8aa61a473ba11b356","acceptedProduct":"v2.0.0-pre49","acceptedBuilder":"J37"},
+  "materialFindings":[
+    "The current full attorney tour is substantially newer and clearer than downstream professional profile/account pages.",
+    "professionals.html still exposes temporary, compatibility, legacy, and focused-portal migration language inconsistent with the one-platform public model.",
+    "attorney-launch.html still frames the professional record around four focused portals rather than the broader Smarter Justice legal-area model.",
+    "professional-signup.html still exposes focused micro-portal terminology and an annual billing option that conflicts with the membership page's monthly-only approved pilot cadence.",
+    "The demonstration should use one coherent path and one vocabulary from first screen through profile/account next action."
+  ],
+  "decision":"Prioritize the attorney demonstration pathway ahead of additional jurisdiction expansion or non-demo currentness refinements for pre50."
+}
