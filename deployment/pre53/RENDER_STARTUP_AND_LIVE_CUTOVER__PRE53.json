@@ -1,0 +1,26 @@
+{
+  "schemaVersion":"1.0.0",
+  "release":"v2.0.0-pre53",
+  "builder":"J41",
+  "slice":"RENDER_FAST_START_EXACT_COMMIT_LIVE_CUTOVER_AND_ROLLBACK_VERIFICATION",
+  "predecessor":"v2.0.0-pre52",
+  "failedDeploymentEvidence":[
+    {"runId":31521154428,"attempt":1,"result":"QUALIFIED_MAIN_COMMIT; DEPLOY_HOOK_ACCEPTED; PRE52_RELEASE_IDENTITY_NEVER_BECAME_LIVE_WITHIN_7_MINUTE_GATE; ROLLBACK_VERIFICATION_USED_WRONG_PRE49_MARKER"},
+    {"runId":31521154428,"attempt":2,"result":"SAME_EXACT_MAIN_COMMIT RETRIED; LIVE CUTOVER AGAIN FAILED UNDER PRE52 GATE"}
+  ],
+  "rootCauseCorrections":[
+    "Move the full inherited and overlay acceptance suite out of the production runtime start command. Full qualification remains mandatory in build/CI postinstall before deployment.",
+    "Production start performs only the fail-closed data-continuity check and a fast runtime identity/port-binding guard before starting the already-qualified sealed runtime.",
+    "Live acceptance waits beyond Render's documented 15-minute new-deploy health-check promotion window before declaring cutover failure.",
+    "Rollback verification uses the actual accepted pre49 marker SMARTER_JUSTICE_PRE49_SOURCE_CURRENTNESS_GATE and verifies healthy service state.",
+    "The deploy-hook response must include a Render deploy ID before live acceptance begins."
+  ],
+  "preserves":[
+    "all qualified pre52 attorney-launch and mobile behavior",
+    "pre52 working-only publication gate",
+    "pre52 data continuity fail-closed requirements",
+    "pre49 as last accepted-live rollback authority until a successor passes live acceptance",
+    "exact-commit qualification before deployment"
+  ],
+  "deploymentPolicy":"Do not merge/deploy pre53 until the exact pre53 product ZIP, J41 builder ZIP, and matched predeployment receipt are physically finished, sealed, preserved, and handed to the owner."
+}
