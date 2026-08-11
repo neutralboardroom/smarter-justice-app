@@ -50,6 +50,10 @@ jobs:
           test -f deployment/pre47/test_pre47_professional_growth.py
           test -f scripts/apply-pre48-marketing-compliance-expansion.js
           test -f deployment/pre48/test_pre48_marketing_compliance_expansion.py
+          test -f scripts/apply-pre49-marketing-currentness.js
+          test -f deployment/pre49/test_pre49_marketing_currentness.py
+          test -f deployment/pre49/CURRENTNESS_SOURCE_CONTRACT__PRE49.json
+          test -f public/professional-growth-pre49-currentness.js
           PRE42_ARTIFACT_SHA="$PRE42_ARTIFACT_SHA" node - <<'NODE'
           const fs=require('fs');
           const row=JSON.parse(fs.readFileSync('deployment/pre42/PRE42_RENDER_PROJECTION.json','utf8'));
@@ -93,7 +97,7 @@ jobs:
           print(p.read_text(errors='replace')[:800])
           PY
 
-      - name: Require live core Navigator and pre46/pre47 professional story plus pre48 five-jurisdiction marketing-preflight routes
+      - name: Require live Navigator and professional stack plus pre49 fail-closed official-source currentness gate
         id: smoke
         run: |
           set -euo pipefail
@@ -113,8 +117,9 @@ jobs:
               && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/professional-growth.html" > "$RUNNER_TEMP/public-professional-growth.html" \
               && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/professional-membership.html" > "$RUNNER_TEMP/public-professional-membership.html" \
               && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/attorney-partner-tour.html" > "$RUNNER_TEMP/public-attorney-tour.html" \
-              && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/marketing-compliance-pre48-data.js" > "$RUNNER_TEMP/public-marketing-rules-pre48.js"; then
-              if HEALTH="$RUNNER_TEMP/health.json" PRE42="$RUNNER_TEMP/pre42.json" STATUS="$RUNNER_TEMP/navigator-status.json" CHAT="$RUNNER_TEMP/navigator-chat.json" NAV="$RUNNER_TEMP/navigator.html" PUBLIC_NAV="$RUNNER_TEMP/public-navigator.html" PUBLIC_HOME="$RUNNER_TEMP/public-home.html" GOC="$RUNNER_TEMP/public-growth-operations-compliance.html" QUICK="$RUNNER_TEMP/public-attorney-call-tour.html" GROWTH="$RUNNER_TEMP/public-professional-growth.html" MEMBERSHIP="$RUNNER_TEMP/public-professional-membership.html" TOUR="$RUNNER_TEMP/public-attorney-tour.html" RULES="$RUNNER_TEMP/public-marketing-rules-pre48.js" PRE42_ARTIFACT_SHA="$PRE42_ARTIFACT_SHA" node - <<'NODE'
+              && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/marketing-compliance-pre48-data.js" > "$RUNNER_TEMP/public-marketing-rules-pre48.js" \
+              && curl --fail --silent --show-error --max-time 30 "$RENDER_BASE_URL/api/marketing-compliance/currentness" > "$RUNNER_TEMP/marketing-currentness-pre49.json"; then
+              if HEALTH="$RUNNER_TEMP/health.json" PRE42="$RUNNER_TEMP/pre42.json" STATUS="$RUNNER_TEMP/navigator-status.json" CHAT="$RUNNER_TEMP/navigator-chat.json" NAV="$RUNNER_TEMP/navigator.html" PUBLIC_NAV="$RUNNER_TEMP/public-navigator.html" PUBLIC_HOME="$RUNNER_TEMP/public-home.html" GOC="$RUNNER_TEMP/public-growth-operations-compliance.html" QUICK="$RUNNER_TEMP/public-attorney-call-tour.html" GROWTH="$RUNNER_TEMP/public-professional-growth.html" MEMBERSHIP="$RUNNER_TEMP/public-professional-membership.html" TOUR="$RUNNER_TEMP/public-attorney-tour.html" RULES="$RUNNER_TEMP/public-marketing-rules-pre48.js" CURRENTNESS="$RUNNER_TEMP/marketing-currentness-pre49.json" PRE42_ARTIFACT_SHA="$PRE42_ARTIFACT_SHA" node - <<'NODE'
           const fs=require('fs');
           const health=JSON.parse(fs.readFileSync(process.env.HEALTH,'utf8'));
           const p=JSON.parse(fs.readFileSync(process.env.PRE42,'utf8'));
@@ -129,6 +134,7 @@ jobs:
           const membership=fs.readFileSync(process.env.MEMBERSHIP,'utf8');
           const tour=fs.readFileSync(process.env.TOUR,'utf8');
           const rules=fs.readFileSync(process.env.RULES,'utf8');
+          const currentness=JSON.parse(fs.readFileSync(process.env.CURRENTNESS,'utf8'));
           if(health.ok!==true||health.version!=='1.7.98'||health.app!=='Smarter Justice')process.exit(1);
           if(p.status!=='PASS'||p.pre42ArtifactSha256!==process.env.PRE42_ARTIFACT_SHA)process.exit(1);
           if(p.providerCanary!=='PASS'||p.usageLedgerRecorded!==true||p.browserSecretScan!=='PASS'||p.secretExposed!==false)process.exit(1);
@@ -151,13 +157,19 @@ jobs:
           if(!/SMARTER_JUSTICE_PRE47_WORKING_PREFLIGHT_LINK/.test(goc)||!/professional-growth\.html/.test(goc))process.exit(1);
           if(!/SMARTER_JUSTICE_PRE47_PROFESSIONAL_GROWTH/.test(growth)||!/SMARTER_JUSTICE_PRE48_COMPLIANCE_EXPANSION/.test(growth)||!/Jurisdiction-aware marketing compliance preflight/i.test(growth))process.exit(1);
           if(!/SMARTER_JUSTICE_PRE48_FIVE_JURISDICTIONS/.test(goc)||!/California/.test(goc)||!/New Jersey/.test(goc))process.exit(1);
+          if(!/SMARTER_JUSTICE_PRE49_SOURCE_CURRENTNESS_GATE/.test(growth)||!/marketingCurrentnessSummary/.test(growth)||!/professional-growth-pre49-currentness\.js/.test(growth))process.exit(1);
+          if(!/SMARTER_JUSTICE_PRE49_SOURCE_CURRENTNESS/.test(goc)||!/human review only/i.test(goc))process.exit(1);
+          if(currentness.failClosed!==true||currentness.draftOrClientDataTransmitted!==false||currentness.currentnessVersion!=='sj-marketing-currentness-2026-08-11-pre49')process.exit(1);
+          if(currentness.rulesetVersion!=='sj-marketing-compliance-2026-08-10-pre48-five-jurisdiction-partial')process.exit(1);
+          const currentCodes=Object.keys(currentness.jurisdictions||{}).sort();if(JSON.stringify(currentCodes)!==JSON.stringify(['CA','FL','NJ','NY','TX']))process.exit(1);
+          for(const code of currentCodes){const row=currentness.jurisdictions[code];if(typeof row.deterministicAllowed!=='boolean'||!Number.isInteger(row.attemptedSources)||!Number.isInteger(row.verifiedSources)||!Array.isArray(row.sources))process.exit(1);if(row.deterministicAllowed&&row.status!=='VERIFIED_CURRENT')process.exit(1);if(!row.deterministicAllowed&&row.status!=='HUMAN_REVIEW_ONLY_SOURCE_CURRENTNESS_UNVERIFIED')process.exit(1);}
           if(!/SMARTER_JUSTICE_PRE47_PROFESSIONAL_GROWTH_CTA/.test(membership)||!/professional-growth\.html/.test(membership))process.exit(1);
           if(!/SMARTER_JUSTICE_PRE47_GROWTH_LINK/.test(tour)||!/professional-growth\.html/.test(tour))process.exit(1);
           for(const marker of ['PARTIAL_PRIMARY_SOURCE_RULESET_NO_BLANKET_COMPLIANCE_APPROVAL','NY-7.1-D-RESPONSIBLE','FL-OP-24-1-AI-DISCLOSURE','TX-PART-VII-REVIEW','CA-7.3-F-DVRO','CA-7.3-ADVERTISEMENT-LABEL','NJ-CAA-49-RESULTS-DISCLAIMER','NJ-CAA-49-NO-PAYMENT','NJ-ACPE-735-KEYWORD-DISCLAIMER','calbar.ca.gov','njcourts.gov'])if(!rules.includes(marker))process.exit(1);
           const exposed=[nav,publicNav,publicHome,goc,quick,growth,membership,tour,rules,JSON.stringify(status),JSON.stringify(chat)].join('\n');
           if(/Authorization:\s*Bearer\s+/i.test(exposed)||/OPENAI_API_KEY\s*=/.test(exposed))process.exit(1);
           if(/guaranteed compliance|50-state compliant|all jurisdictions compliant/i.test([goc,quick,growth,membership,tour].join('\n')))process.exit(1);
-          console.log(JSON.stringify({status:'PASS',targetSha:process.env.GITHUB_SHA,model:chat.model,latencyMs:chat.latencyMs,usage:chat.usage,publicAiEnabled:true,pre47ProfessionalGrowth:true,pre48FiveJurisdictionPartialCompliance:true,storeRequested:false,externalConsequentialActionsEnabled:false,automaticOverageBillingEnabled:false},null,2));
+          console.log(JSON.stringify({status:'PASS',targetSha:process.env.GITHUB_SHA,model:chat.model,latencyMs:chat.latencyMs,usage:chat.usage,publicAiEnabled:true,pre47ProfessionalGrowth:true,pre48FiveJurisdictionPartialCompliance:true,pre49SourceCurrentnessGate:true,currentnessAllVerified:Boolean(currentness.allVerified),storeRequested:false,externalConsequentialActionsEnabled:false,automaticOverageBillingEnabled:false},null,2));
           NODE
               then
                 cp "$RUNNER_TEMP/navigator-status.json" "$RUNNER_TEMP/pre43-public-ai-status.json"
@@ -208,6 +220,7 @@ jobs:
             ${{ runner.temp }}/public-professional-membership.html
             ${{ runner.temp }}/public-attorney-tour.html
             ${{ runner.temp }}/public-marketing-rules-pre48.js
+            ${{ runner.temp }}/marketing-currentness-pre49.json
             ${{ runner.temp }}/render-rollback-response.json
             ${{ runner.temp }}/rollback-health.json
           if-no-files-found: warn
