@@ -1,0 +1,9 @@
+{
+  "schemaVersion":"1.0.0",
+  "release":"v2.0.0-pre53",
+  "authorized":true,
+  "authorizedAt":"2026-08-11",
+  "scope":"Continue and fix the active Smarter Justice release/deployment path. After the exact pre53 product ZIP, J41 universal builder ZIP, and matched predeployment receipt are finished, qualified, sealed, preserved and handed to the owner, merge and deploy this exact pre53 release, run exact live acceptance, and roll back to the last accepted-live release on failure.",
+  "mustPreserve":["physical-files-first","exact-artifact immutability","no-loss data continuity","full CI qualification","fast production port binding","exact-commit live identity","working-only public visibility","mobile navigation acceptance","automatic rollback","immutable evidence"],
+  "doesNotAuthorize":"Changing or overwriting the already delivered exact pre52/J40 artifacts."
+}
