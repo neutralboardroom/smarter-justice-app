@@ -21,8 +21,6 @@ env:
   TARGET_SHA: eb823f46525b72d5c9faa49fe844f84d787f524d
   TARGET_TREE: 10e19b679707b73f8e162e4eed437bbe60c2a1a4
   RENDER_SERVICE_ID: srv-d8ps9jgjs32c73918vvg
-  RENDER_BASE_URL: https://smarter-justice-app.onrender.com
-  PUBLIC_BASE_URL: https://smarterjustice.com
   LAST_ACCEPTED_LIVE_SHA: a98c9adf8b34ed5acce188769d53be6f56d6587b
   LAST_ACCEPTED_LIVE_DEPLOY_ID: dep-d9tov2jncjis739p3s8g
 
@@ -124,6 +122,9 @@ jobs:
 
       - name: Require both-domain pre57 identity, privacy boundary, held routes, and public UX
         shell: bash
+        env:
+          RENDER_BASE_URL: https://smarter-justice-app.onrender.com
+          PUBLIC_BASE_URL: https://smarterjustice.com
         run: |
           set -euo pipefail
           for attempt in $(seq 1 96); do
