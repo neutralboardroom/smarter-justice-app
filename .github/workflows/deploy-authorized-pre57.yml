@@ -105,7 +105,7 @@ jobs:
           PUBLIC_BASE_URL: https://smarterjustice.com
         run: |
           set -euo pipefail
-          for attempt in $(seq 1 96); do
+          for attempt in $(seq 1 180); do
             stamp="${TARGET_SHA}-${attempt}-$(date +%s)"
             if curl --fail --silent --show-error --max-time 20 "$RENDER_BASE_URL/api/release-identity?sj_release_probe=$stamp" > "$RUNNER_TEMP/origin-identity.json" \
               && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/api/release-identity?sj_release_probe=$stamp" > "$RUNNER_TEMP/public-identity.json" \
