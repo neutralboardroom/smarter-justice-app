@@ -125,7 +125,7 @@ jobs:
           }
           const status=JSON.parse(read('measurement-status.json'));
           if(status.consentRequired!==true||status.defaultConsent!=='not-granted'||status.retentionDays!==30||status.measurementBoundary?.thirdPartyTrackers!==false)process.exit(1);
-          if(!/Start with what happened/i.test(read('home.html'))||!/Navigator/i.test(read('navigator.html'))||!/Smarter Justice Profile Lookup/i.test(read('professionals.html'))||!/Attorney Partner Tour/i.test(read('attorney-tour.html')))process.exit(1);
+          if(!/Start with what happened/i.test(read('home.html'))||!/Navigator/i.test(read('navigator.html'))||!/Smarter Justice Profile Lookup/i.test(read('professionals.html'))||!/Attorney demonstration/i.test(read('attorney-tour.html')))process.exit(1);
           NODE
               then
                 exit 0
