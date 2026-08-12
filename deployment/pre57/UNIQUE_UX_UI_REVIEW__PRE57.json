@@ -1,0 +1,25 @@
+{
+  "schemaVersion": "1.0.0",
+  "release": "v2.0.0-pre57",
+  "reviewState": "PASS_NO_ORDINARY_PUBLIC_UI_CHANGE",
+  "materialChangeLocation": "OWNER_ONLY_CURRENTNESS_RECEIPT_AND_RELEASE_CONTROL",
+  "publicUxPreserved": [
+    "story-first starting-help flow",
+    "Navigator starting path",
+    "attorney quick tour and partner demonstration",
+    "responsive header and mobile navigation",
+    "English and Spanish public continuity",
+    "navy, teal, mint and gold visual language"
+  ],
+  "ordinaryPublicFilesWrittenByPre57Overlay": 0,
+  "ordinaryPublicRoutesAdded": [],
+  "ordinaryPublicRoutesRemoved": [],
+  "heldRoutesStillAbsent": [
+    "/growth-operations-compliance.html",
+    "/portals.html"
+  ],
+  "privacyMeasurementContinuity": "Pre56 remains off by default and consent-first.",
+  "reason": "The material work is a protected evidence and release-control improvement. Adding a public badge or currentness claim before official credential matching would create UX noise and a misleading trust signal.",
+  "noLoss": true
+}
+

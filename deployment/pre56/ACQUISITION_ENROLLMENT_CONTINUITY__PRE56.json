@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "1.0.0",
+  "release": "v2.0.0-pre56",
+  "materialImprovement": "Consent-first, first-party daily aggregate discovery and enrollment measurement with a bounded retention window and truthful ratio thresholds.",
+  "requiredWorkingSitemapPaths": [
+    "/",
+    "/navigator",
+    "/practice-areas.html",
+    "/community-resources.html",
+    "/free-tools.html",
+    "/professionals.html",
+    "/professional-growth.html",
+    "/professional-membership.html",
+    "/attorney-call-tour.html",
+    "/attorney-partner-tour.html",
+    "/referral-program.html",
+    "/measurement-privacy.html",
+    "/es/"
+  ],
+  "forbiddenSitemapPaths": [
+    "/portals.html",
+    "/growth-operations-compliance.html"
+  ],
+  "measurementActivationIsSeparateFromEnrollment": true,
+  "measurementConsentIsSeparateFromContactConsent": true,
+  "measurementDoesNotOpenGatedPrograms": true
+}

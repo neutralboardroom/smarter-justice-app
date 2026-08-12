@@ -5,7 +5,10 @@ repo = Path(__file__).resolve().parents[2]
 runtime = repo / '.runtime' / 'smarter-justice-v1.7.98'
 pkg = json.loads((repo / 'package.json').read_text())
 start = pkg['scripts']['start']
-assert start == 'node scripts/check-pre52-data-continuity.js && node scripts/check-pre55-production-startup.js && npm --prefix .runtime/smarter-justice-v1.7.98 start'
+pre55_start = 'node scripts/check-pre52-data-continuity.js && node scripts/check-pre55-production-startup.js && npm --prefix .runtime/smarter-justice-v1.7.98 start'
+pre56_start = 'node scripts/check-pre52-data-continuity.js && node scripts/check-pre56-production-startup.js && npm --prefix .runtime/smarter-justice-v1.7.98 start'
+pre57_start = 'node scripts/check-pre52-data-continuity.js && node scripts/check-pre57-production-startup.js && npm --prefix .runtime/smarter-justice-v1.7.98 start'
+assert start in [pre55_start, pre56_start, pre57_start]
 for forbidden in ['run_pre42_acceptance.py', 'test_pre45_public_alignment.py', 'test_pre49_marketing_currentness.py', 'test_pre54_provider_deploy_control.py', 'test_pre55_credential_rotation_drill.py']:
     assert forbidden not in start, forbidden
 
@@ -15,7 +18,12 @@ for marker in ["release:'v2.0.0-pre55'", "demoPathRelease:'v2.0.0-pre52'", "depl
 
 assert not (repo / '.github' / 'workflows' / 'deploy-current-pre54.yml').exists()
 assert (repo / '.github' / 'workflow-history' / 'deploy-current-pre54.yml').is_file()
-deploy = (repo / '.github' / 'workflows' / 'deploy-current-pre55.yml').read_text(errors='replace')
+current_pre55 = repo / '.github' / 'workflows' / 'deploy-current-pre55.yml'
+archived_pre55 = repo / '.github' / 'workflow-history' / 'deploy-current-pre55.yml'
+deploy = current_pre55.read_text(errors='replace')
+if 'workflow_dispatch:' not in deploy:
+    assert archived_pre55.is_file()
+    deploy = archived_pre55.read_text(errors='replace')
 for required in [
     'workflow_dispatch:', 'DEPLOY_SMARTER_JUSTICE_PRE55',
     'OWNER_DEPLOYMENT_AUTHORIZATION__PRE55.json',
@@ -55,7 +63,13 @@ env['PORT'] = '0'
 with tempfile.TemporaryDirectory(prefix='sj-pre55-start-') as storage:
     env['SMARTER_JUSTICE_STORAGE_DIR'] = storage
     started = time.monotonic()
-    proc = subprocess.Popen(['npm', 'start'], cwd=repo, env=env, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True, bufsize=1)
+    if start in [pre56_start, pre57_start]:
+        precheck = subprocess.run(['node', 'scripts/check-pre55-production-startup.js'], cwd=repo, env=env, text=True, capture_output=True)
+        assert precheck.returncode == 0, precheck.stdout + precheck.stderr
+        command = ['npm', '--prefix', '.runtime/smarter-justice-v1.7.98', 'start']
+    else:
+        command = ['npm', 'start']
+    proc = subprocess.Popen(command, cwd=repo, env=env, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True, bufsize=1)
     sel = selectors.DefaultSelector()
     sel.register(proc.stdout, selectors.EVENT_READ)
     output = []

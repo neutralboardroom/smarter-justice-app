@@ -1,6 +1,16 @@
-name: Smarter Justice pre55 protected manual Render deploy (disabled; archived after pre56)
+name: Smarter Justice pre55 protected manual Render deploy (archived after pre56 qualification)
 
-on: []
+on:
+  workflow_dispatch:
+    inputs:
+      release:
+        description: Exact release to deploy
+        required: true
+        type: string
+      confirmation:
+        description: Type DEPLOY_SMARTER_JUSTICE_PRE55
+        required: true
+        type: string
 
 permissions:
   contents: read

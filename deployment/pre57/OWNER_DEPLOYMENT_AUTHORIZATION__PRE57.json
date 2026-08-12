@@ -1,0 +1,11 @@
+{
+  "schemaVersion": "1.0.0",
+  "release": "v2.0.0-pre57",
+  "authorized": false,
+  "qualifiedArtifactRequired": true,
+  "exactProductScopedOwnerCommandRequired": true,
+  "credentialsMayNotBePrintedStoredOrTransmitted": true,
+  "providerMutationPerformed": false,
+  "nextAllowedState": "SEALED_QUALIFIED_HANDOFF_ONLY"
+}
+

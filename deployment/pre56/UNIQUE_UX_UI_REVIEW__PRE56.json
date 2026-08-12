@@ -1,0 +1,32 @@
+{
+  "schemaVersion": "1.0.0",
+  "release": "v2.0.0-pre56",
+  "reviewState": "PASS_PRESERVED_WITH_PURPOSEFUL_PRIVACY_CONTROL",
+  "visibleChange": "A dedicated privacy-choice page and compact footer Privacy choices link are added on measured working paths. No banner, interstitial, layout takeover or third-party tracker is added.",
+  "protectedExperience": [
+    "story-first Tell us what happened entry",
+    "one connected Justice network with specialty and community paths",
+    "safety-first Domestic Violence path",
+    "public Navigator modes and boundaries",
+    "attorney quick and seven-step demonstration",
+    "navy teal mint and gold trust palette",
+    "rounded cards calm gradients and visible focus states",
+    "responsive mobile and keyboard navigation",
+    "English Spanish privacy and professional-independence boundaries"
+  ],
+  "privacyChoiceUx": {
+    "default": "OFF",
+    "acceptAndDeclineProminence": "EQUAL_DECISION_CONTEXT",
+    "withdrawalAvailable": true,
+    "choiceStoredOnlyOnDevice": true,
+    "noConsentWall": true,
+    "noDarkPattern": true
+  },
+  "heldVisibility": {
+    "ordinaryPublic404": [
+      "/growth-operations-compliance.html",
+      "/portals.html"
+    ],
+    "searchDiscovery": "ABSENT_FROM_RUNTIME_SITEMAP"
+  }
+}
