@@ -37,4 +37,4 @@ if(!server.includes(MARK)){
   fs.writeFileSync(serverPath,server,'utf8');
 }
 console.log('PRE57_PROTECTED_PROFILE_CURRENTNESS_EXECUTION_APPLIED');
-
+require('./apply-pre58-ny-credential-reconciliation');

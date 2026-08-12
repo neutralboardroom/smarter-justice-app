@@ -7,7 +7,8 @@ pkg = json.loads((repo / 'package.json').read_text())
 start = pkg['scripts']['start']
 pre56_start = 'node scripts/check-pre52-data-continuity.js && node scripts/check-pre56-production-startup.js && npm --prefix .runtime/smarter-justice-v1.7.98 start'
 pre57_start = 'node scripts/check-pre52-data-continuity.js && node scripts/check-pre57-production-startup.js && npm --prefix .runtime/smarter-justice-v1.7.98 start'
-assert start in [pre56_start, pre57_start]
+pre58_start = 'node scripts/check-pre52-data-continuity.js && node scripts/check-pre58-production-startup.js && npm --prefix .runtime/smarter-justice-v1.7.98 start'
+assert start in [pre56_start, pre57_start, pre58_start]
 for forbidden in ['run_pre42_acceptance.py', 'test_pre45_public_alignment.py', 'test_pre49_marketing_currentness.py', 'test_pre54_provider_deploy_control.py', 'test_pre55_credential_rotation_drill.py', 'test_pre56_private_measurement.py']:
     assert forbidden not in start, forbidden
 
@@ -31,7 +32,11 @@ trigger = (repo / 'scripts' / 'render-trigger-deploy-pre56.js').read_text(errors
 assert "release:'v2.0.0-pre56'" in trigger and 'credentialMaterialPresent:false' in trigger and 'deployHookUsed:false' in trigger
 
 server = (runtime / 'server.js').read_text(errors='replace')
-release_markers = ["release:'v2.0.0-pre56'", "deploymentControlRelease:'v2.0.0-pre56'"] if start == pre56_start else ["release:'v2.0.0-pre57'", "deploymentControlRelease:'v2.0.0-pre57'"]
+release_markers = {
+    pre56_start: ["release:'v2.0.0-pre56'", "deploymentControlRelease:'v2.0.0-pre56'"],
+    pre57_start: ["release:'v2.0.0-pre57'", "deploymentControlRelease:'v2.0.0-pre57'"],
+    pre58_start: ["release:'v2.0.0-pre58'", "deploymentControlRelease:'v2.0.0-pre58'"]
+}[start]
 for marker in release_markers + ["demoPathRelease:'v2.0.0-pre52'", 'SMARTER_JUSTICE_PRE56_PRIVACY_MINIMIZED_MEASUREMENT', 'process.env.PORT', 'server.listen(port']:
     assert marker in server, marker
 

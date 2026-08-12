@@ -12,6 +12,8 @@ assert (
     "release:'v2.0.0-pre56'" in server_source and "deploymentControlRelease:'v2.0.0-pre56'" in server_source
 ) or (
     "release:'v2.0.0-pre57'" in server_source and "deploymentControlRelease:'v2.0.0-pre57'" in server_source
+) or (
+    "release:'v2.0.0-pre58'" in server_source and "deploymentControlRelease:'v2.0.0-pre58'" in server_source
 )
 for marker in [
     'SMARTER_JUSTICE_PRE56_PRIVACY_MINIMIZED_MEASUREMENT',
@@ -123,7 +125,7 @@ with tempfile.TemporaryDirectory(prefix='sj-pre56-http-') as storage:
         owner_code, owner = request_json(base + '/api/owner/private-acquisition-measurement')
         assert owner_code == 403 and owner['ok'] is False
         identity_code, identity = request_json(base + '/api/release-identity')
-        assert identity_code == 200 and identity['release'] in ['v2.0.0-pre56', 'v2.0.0-pre57'] and identity['demoPathRelease'] == 'v2.0.0-pre52'
+        assert identity_code == 200 and identity['release'] in ['v2.0.0-pre56', 'v2.0.0-pre57', 'v2.0.0-pre58'] and identity['demoPathRelease'] == 'v2.0.0-pre52'
         with urllib.request.urlopen(base + '/measurement-privacy.html', timeout=10) as response:
             page = response.read().decode()
         assert 'SMARTER_JUSTICE_PRE56_PRIVACY_MINIMIZED_MEASUREMENT' in page
