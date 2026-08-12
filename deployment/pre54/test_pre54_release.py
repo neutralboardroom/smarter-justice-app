@@ -7,7 +7,9 @@ pkg=json.loads((repo/'package.json').read_text())
 start=pkg['scripts']['start']
 assert start in [
     'node scripts/check-pre52-data-continuity.js && node scripts/check-pre54-production-startup.js && npm --prefix .runtime/smarter-justice-v1.7.98 start',
-    'node scripts/check-pre52-data-continuity.js && node scripts/check-pre55-production-startup.js && npm --prefix .runtime/smarter-justice-v1.7.98 start'
+    'node scripts/check-pre52-data-continuity.js && node scripts/check-pre55-production-startup.js && npm --prefix .runtime/smarter-justice-v1.7.98 start',
+    'node scripts/check-pre52-data-continuity.js && node scripts/check-pre56-production-startup.js && npm --prefix .runtime/smarter-justice-v1.7.98 start',
+    'node scripts/check-pre52-data-continuity.js && node scripts/check-pre57-production-startup.js && npm --prefix .runtime/smarter-justice-v1.7.98 start'
 ]
 for forbidden in ['run_pre42_acceptance.py','test_pre45_public_alignment.py','test_pre49_marketing_currentness.py','test_pre52_attorney_value_clarity.py','test_pre53_render_startup.py','test_pre54_provider_deploy_control.py']:
     assert forbidden not in start, forbidden

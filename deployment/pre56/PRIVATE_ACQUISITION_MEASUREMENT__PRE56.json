@@ -1,0 +1,89 @@
+{
+  "schemaVersion": "1.0.0",
+  "release": "v2.0.0-pre56",
+  "state": "QUALIFIED_DEFAULT_OFF",
+  "purpose": "Understand which working public discovery, attorney-tour and professional-enrollment paths are useful without building person-level behavioral records.",
+  "activation": {
+    "browserChoice": "EXPLICIT_OPT_IN_REQUIRED",
+    "serverFlag": "SJ_PRIVACY_MINIMIZED_MEASUREMENT_ENABLED",
+    "defaultBrowserChoice": "NOT_GRANTED",
+    "defaultServerFlag": false,
+    "productionDurabilityRequirement": "CURRENT_POSTGRES_DATABASE_AND_MIGRATIONS",
+    "failClosedWhenDurabilityUnavailable": true
+  },
+  "storage": {
+    "form": "UTC daily aggregate counts",
+    "retentionDays": 30,
+    "minimumRatioDenominator": 20,
+    "personLevelAttribution": false,
+    "sessionLevelAttribution": false,
+    "crossPageCohortJoin": false,
+    "thirdPartyAnalytics": false
+  },
+  "acceptedDimensions": {
+    "pages": [
+      "/",
+      "/navigator",
+      "/navigator.html",
+      "/professionals.html",
+      "/professional-growth.html",
+      "/attorney-call-tour.html",
+      "/attorney-partner-tour.html",
+      "/professional-membership.html",
+      "/professional-signup.html",
+      "/referral-program.html"
+    ],
+    "channels": [
+      "direct",
+      "organic",
+      "partner",
+      "qr",
+      "email",
+      "social",
+      "community",
+      "internal"
+    ],
+    "events": [
+      "landing-view",
+      "navigator-view",
+      "professional-directory-view",
+      "professional-growth-view",
+      "attorney-quick-tour-view",
+      "attorney-tour-view",
+      "membership-view",
+      "navigator-opened",
+      "professional-directory-opened",
+      "professional-growth-opened",
+      "attorney-quick-tour-opened",
+      "attorney-tour-opened",
+      "membership-opened",
+      "enrollment-started"
+    ]
+  },
+  "neverStoredInMeasurementRows": [
+    "legal narratives",
+    "Navigator messages",
+    "search terms",
+    "query strings",
+    "referrers",
+    "names",
+    "emails",
+    "telephone numbers",
+    "IP addresses",
+    "user agents",
+    "cookies",
+    "device fingerprints",
+    "device identifiers",
+    "session identifiers",
+    "precise location",
+    "professional or public account identifiers"
+  ],
+  "truthfulReporting": {
+    "smallDenominatorRatio": "WITHHELD",
+    "ratiosAreDirectionalOnly": true,
+    "ratiosAreNotPersonOrCohortAttribution": true,
+    "zeroCountsMustRemainZero": true,
+    "conversionGuaranteesAllowed": false
+  },
+  "securityDisclosure": "Request rate limiting may process a source network address transiently for abuse prevention, but that address is not written to a measurement row."
+}

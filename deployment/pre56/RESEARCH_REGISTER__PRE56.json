@@ -1,0 +1,32 @@
+{
+  "schemaVersion": "1.0.0",
+  "release": "v2.0.0-pre56",
+  "researchedAtUtc": "2026-08-12T00:00:00Z",
+  "sources": [
+    {
+      "authority": "Federal Trade Commission",
+      "title": "Protecting Personal Information: A Guide for Business",
+      "url": "https://www.ftc.gov/business-guidance/resources/protecting-personal-information-guide-business",
+      "appliedPrinciple": "Collect only what is needed, keep it only as long as necessary, protect it and dispose of it under a written retention approach."
+    },
+    {
+      "authority": "Federal Trade Commission",
+      "title": "Collecting, Using, or Sharing Consumer Health Information? Look to HIPAA, the FTC Act, and the Health Breach Notification Rule",
+      "url": "https://www.ftc.gov/business-guidance/resources/collecting-using-or-sharing-consumer-health-information-look-hipaa-ftc-act-health-breach",
+      "appliedPrinciple": "Take a broad view of sensitive health-related information, make data flows and retention truthful, and require meaningful consent rather than deceptive or coercive interfaces."
+    },
+    {
+      "authority": "World Wide Web Consortium",
+      "title": "Privacy Principles",
+      "url": "https://www.w3.org/TR/privacy-principles/",
+      "appliedPrinciple": "Use the stable W3C privacy principles as a technical design reference for purpose limitation, data minimization and user control."
+    },
+    {
+      "authority": "National Institute of Standards and Technology",
+      "title": "Privacy Framework",
+      "url": "https://www.nist.gov/privacy-framework",
+      "appliedPrinciple": "Treat privacy as an ongoing risk-management system with clear governance, control, communication and protection outcomes."
+    }
+  ],
+  "implementationDecision": "Pre56 uses an explicit opt-in plus a separate server enablement flag, allowlisted dimensions, aggregate-only storage, 30-day retention, minimum-denominator reporting and no third-party analytics. This is a product design control, not a claim of blanket legal compliance."
+}

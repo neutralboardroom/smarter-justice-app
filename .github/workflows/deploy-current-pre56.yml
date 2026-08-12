@@ -1,0 +1,145 @@
+name: Smarter Justice pre56 protected manual Render deploy
+
+on:
+  workflow_dispatch:
+    inputs:
+      release:
+        description: Exact release to deploy
+        required: true
+        type: string
+      confirmation:
+        description: Type DEPLOY_SMARTER_JUSTICE_PRE56
+        required: true
+        type: string
+
+permissions:
+  contents: read
+  actions: read
+  checks: read
+
+concurrency:
+  group: smarter-justice-current-production
+  cancel-in-progress: false
+
+env:
+  RENDER_BASE_URL: https://smarter-justice-app.onrender.com
+  PUBLIC_BASE_URL: https://smarterjustice.com
+  TARGET_SHA: ${{ github.sha }}
+  RENDER_SERVICE_ID: srv-d8ps9jgjs32c73918vvg
+  LAST_ACCEPTED_LIVE_SHA: a98c9adf8b34ed5acce188769d53be6f56d6587b
+  LAST_ACCEPTED_LIVE_DEPLOY_ID: dep-d9tov2jncjis739p3s8g
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: Checkout exact release commit
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+        with:
+          ref: ${{ env.TARGET_SHA }}
+          fetch-depth: 0
+
+      - name: Bind exact owner authorization and rollback authority
+        run: |
+          set -euo pipefail
+          test "${{ inputs.release }}" = "v2.0.0-pre56"
+          test "${{ inputs.confirmation }}" = "DEPLOY_SMARTER_JUSTICE_PRE56"
+          test "$(git rev-parse HEAD)" = "$TARGET_SHA"
+          AUTH=deployment/pre56/OWNER_DEPLOYMENT_AUTHORIZATION__PRE56.json LIVE=deployment/pre56/LIVE_STATE_AND_DEPLOYMENT_BOUNDARY__PRE56.json node - <<'NODE'
+          const fs=require('fs');
+          const auth=JSON.parse(fs.readFileSync(process.env.AUTH,'utf8'));
+          const live=JSON.parse(fs.readFileSync(process.env.LIVE,'utf8'));
+          if(auth.release!=='v2.0.0-pre56'||auth.authorized!==true)process.exit(1);
+          if(live.acceptedLiveRollback?.gitCommit!==process.env.LAST_ACCEPTED_LIVE_SHA)process.exit(1);
+          if(live.acceptedLiveRollback?.renderDeployId!==process.env.LAST_ACCEPTED_LIVE_DEPLOY_ID)process.exit(1);
+          NODE
+          git cat-file -e "$LAST_ACCEPTED_LIVE_SHA^{commit}"
+
+      - name: Require exact successful qualification gate
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          for attempt in $(seq 1 48); do
+            success="$(gh api "repos/$GITHUB_REPOSITORY/commits/$TARGET_SHA/check-runs" --jq '[.check_runs[] | select(.name == "qualification-gate" and .conclusion == "success")] | length')"
+            failed="$(gh api "repos/$GITHUB_REPOSITORY/commits/$TARGET_SHA/check-runs" --jq '[.check_runs[] | select(.name == "qualification-gate" and (.conclusion == "failure" or .conclusion == "cancelled" or .conclusion == "timed_out"))] | length')"
+            test "$failed" = "0" || exit 1
+            if [ "$success" -ge 1 ]; then exit 0; fi
+            sleep 10
+          done
+          exit 1
+
+      - name: Require protected provider credential and exact service preflight
+        env:
+          RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }}
+          RENDER_DEPLOY_EVIDENCE_PATH: ${{ runner.temp }}/render-provider-control.jsonl
+        run: |
+          set -euo pipefail
+          test -n "$RENDER_API_KEY"
+          node scripts/render-deploy-control-pre54.js service-preflight
+
+      - name: Request exact pre56 deployment through provider API
+        id: deploy
+        env:
+          RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }}
+          RENDER_DEPLOY_EVIDENCE_PATH: ${{ runner.temp }}/render-provider-control.jsonl
+        run: node scripts/render-trigger-deploy-pre56.js
+
+      - name: Require exact provider terminal-live status
+        env:
+          RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }}
+          RENDER_DEPLOY_EVIDENCE_PATH: ${{ runner.temp }}/render-provider-control.jsonl
+        run: node scripts/render-deploy-control-pre54.js observe
+
+      - name: Require both-domain release identity, privacy boundary and held routes
+        run: |
+          set -euo pipefail
+          for attempt in $(seq 1 96); do
+            stamp="${TARGET_SHA}-${attempt}-$(date +%s)"
+            if curl --fail --silent --show-error --max-time 20 "$RENDER_BASE_URL/api/release-identity?sj_release_probe=$stamp" > "$RUNNER_TEMP/origin-identity.json" \
+              && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/api/release-identity?sj_release_probe=$stamp" > "$RUNNER_TEMP/public-identity.json" \
+              && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/api/public/private-measurement/status" > "$RUNNER_TEMP/measurement-status.json" \
+              && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/measurement-privacy.html?sj_release_probe=$stamp" > "$RUNNER_TEMP/measurement-privacy.html" \
+              && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/navigator?sj_release_probe=$stamp" > "$RUNNER_TEMP/navigator.html" \
+              && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/professionals.html?sj_release_probe=$stamp" > "$RUNNER_TEMP/professionals.html"; then
+              held_growth="$(curl --silent --output /dev/null --write-out '%{http_code}' --max-time 20 "$PUBLIC_BASE_URL/growth-operations-compliance.html?sj_release_probe=$stamp" || true)"
+              held_portals="$(curl --silent --output /dev/null --write-out '%{http_code}' --max-time 20 "$PUBLIC_BASE_URL/portals.html?sj_release_probe=$stamp" || true)"
+              if [ "$held_growth" = 404 ] && [ "$held_portals" = 404 ] && ROOT="$RUNNER_TEMP" TARGET_SHA="$TARGET_SHA" node - <<'NODE'
+          const fs=require('fs'),path=require('path');const root=process.env.ROOT;const read=n=>fs.readFileSync(path.join(root,n),'utf8');
+          for(const name of ['origin-identity.json','public-identity.json']){const id=JSON.parse(read(name));if(id.release!=='v2.0.0-pre56'||id.demoPathRelease!=='v2.0.0-pre52'||id.deploymentControlRelease!=='v2.0.0-pre56'||id.gitCommit!==process.env.TARGET_SHA||id.marker!=='SMARTER_JUSTICE_PRE56_PRIVACY_MINIMIZED_MEASUREMENT')process.exit(1);}
+          const status=JSON.parse(read('measurement-status.json'));if(status.consentRequired!==true||status.defaultConsent!=='not-granted'||status.retentionDays!==30||status.measurementBoundary?.thirdPartyTrackers!==false)process.exit(1);
+          if(!read('measurement-privacy.html').includes('The default is off.'))process.exit(1);
+          if(!/Navigator/i.test(read('navigator.html'))||!/Smarter Justice Profile Lookup/i.test(read('professionals.html')))process.exit(1);
+          NODE
+              then exit 0; fi
+            fi
+            sleep 10
+          done
+          exit 1
+
+      - name: Provider-native rollback to exact accepted-live pre54 after failure
+        if: failure() && steps.deploy.outcome == 'success'
+        env:
+          RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }}
+          RENDER_ACCEPTED_LIVE_DEPLOY_ID: ${{ env.LAST_ACCEPTED_LIVE_DEPLOY_ID }}
+          RENDER_ACCEPTED_LIVE_SHA: ${{ env.LAST_ACCEPTED_LIVE_SHA }}
+          RENDER_DEPLOY_EVIDENCE_PATH: ${{ runner.temp }}/render-rollback-control.jsonl
+        run: node scripts/render-deploy-control-pre54.js rollback
+
+      - name: Upload immutable pre56 deployment evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: smarter-justice-pre56-live-evidence-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            ${{ runner.temp }}/render-provider-control.jsonl
+            ${{ runner.temp }}/origin-identity.json
+            ${{ runner.temp }}/public-identity.json
+            ${{ runner.temp }}/measurement-status.json
+            ${{ runner.temp }}/measurement-privacy.html
+            ${{ runner.temp }}/navigator.html
+            ${{ runner.temp }}/professionals.html
+            ${{ runner.temp }}/render-rollback-control.jsonl
+          if-no-files-found: warn
+          retention-days: 90

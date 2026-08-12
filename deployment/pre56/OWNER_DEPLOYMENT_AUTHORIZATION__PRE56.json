@@ -1,0 +1,25 @@
+{
+  "schemaVersion": "1.0.0",
+  "release": "v2.0.0-pre56",
+  "authorized": false,
+  "authorizedAtUtc": "",
+  "authoritySource": "No exact owner deployment instruction for pre56 is included in the active build request.",
+  "scope": "Build, qualify, seal and preserve the exact pre56 three-file handoff only.",
+  "requiredBeforeAnyLaterDeployment": [
+    "A new exact owner command authorizes deployment of v2.0.0-pre56.",
+    "The exact source commit has a successful qualification gate.",
+    "The protected Render API credential is present without exposure.",
+    "The provider service preflight confirms the exact service and Auto-Deploy off.",
+    "Exact provider terminal-live status and both-domain release identity pass.",
+    "Complete live UX, Navigator, working-only sitemap and held-route acceptance pass.",
+    "Failure automatically restores the accepted-live pre54 provider deployment."
+  ],
+  "notAuthorized": [
+    "production deployment",
+    "provider credential creation, copying, rotation or revocation",
+    "production measurement activation",
+    "publication or outreach",
+    "external consequential actions",
+    "automatic overage billing"
+  ]
+}

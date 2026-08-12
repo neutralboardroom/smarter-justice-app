@@ -1,0 +1,96 @@
+{
+  "schemaVersion": "1.0.0",
+  "release": "v2.0.0-pre57",
+  "marker": "SMARTER_JUSTICE_PRE57_PROTECTED_PROFILE_CURRENTNESS_EXECUTION",
+  "executedOn": "2026-08-12",
+  "state": "SOURCE_CURRENTNESS_EXECUTED_CREDENTIAL_AUTHORITY_REVIEW_PENDING",
+  "purpose": "Execute the protected pre56 queue at the professional-controlled and firm-controlled source layer without misrepresenting self-published information as licensing proof.",
+  "observationMethod": {
+    "type": "PUBLIC_WEB_RETRIEVAL_WITH_INDEXED_CRAWL_TIMESTAMP",
+    "meaning": "The named page and relevant identity or firm content were present in current indexed retrieval on the execution date.",
+    "limitation": "This establishes source presence and self-published identity or affiliation only. It does not independently establish bar admission, registration status, discipline status, insurance, quality, availability, or endorsement."
+  },
+  "qualifiedPublicDirectoryBaseline": {
+    "professionals": 25,
+    "firms": 5
+  },
+  "centralGraphContinuity": {
+    "canonicalIdentities": 9484,
+    "professionalExtensions": 1299,
+    "firmRelationships": 7033
+  },
+  "summary": {
+    "protectedRecordsAttempted": 30,
+    "professionalSourceObservations": 25,
+    "professionalSourcePresenceConfirmed": 25,
+    "firmSourceObservations": 5,
+    "firmSourcePresenceConfirmed": 5,
+    "officialCredentialMatchesCompleted": 0,
+    "newAcceptedProfessionalProfiles": 0,
+    "newAcceptedFirmProfiles": 0,
+    "ordinaryPublicExposureChanged": false
+  },
+  "consequentialActionGates": {
+    "publicationChangeEligible": false,
+    "outreachEligible": false,
+    "featuringEligible": false,
+    "opportunityEligible": false,
+    "claimApprovalEligible": false,
+    "reason": "The current professional-controlled and firm-controlled sources were observed, but individual licensing-authority matching is not complete."
+  },
+  "credentialAuthorityQueue": {
+    "primaryMarketRecords": {
+      "New York": 18,
+      "New Jersey": 7
+    },
+    "status": "PENDING_INDIVIDUAL_MATCH_AND_COLLISION_REVIEW",
+    "newYorkAuthority": {
+      "name": "NYS Attorney Registrations",
+      "provider": "NYS Unified Court System",
+      "url": "https://data.ny.gov/Transparency/NYS-Attorney-Registrations/eqw2-r5nb",
+      "datasetCurrentnessObserved": "2026-07-28"
+    },
+    "newJerseyAuthority": {
+      "name": "New Jersey Judiciary attorney registration and public attorney-status resources",
+      "url": "https://www.njcourts.gov/attorneys/cams.html",
+      "status": "AUTHORITATIVE_INDIVIDUAL_PUBLIC_MATCH_PATH_REQUIRES_OPERATOR_REVIEW"
+    },
+    "crossJurisdictionRule": "Every jurisdiction claimed by a record must be independently matched before any credential-dependent gate opens."
+  },
+  "professionalObservations": [
+    {"id":"professional-alex-shulman","name":"Alex Shulman","firmId":"firm-shulman-hill","sourceUrl":"https://shulman-hill.com/our-team/alex-shulman/","indexedCrawlRecency":"2 days before execution","sourceResult":"IDENTITY_ROLE_AND_FIRM_PAGE_PRESENT","credentialResult":"NOT_INDEPENDENTLY_VERIFIED"},
+    {"id":"professional-jj-hill","name":"JJ Hill","firmId":"firm-shulman-hill","sourceUrl":"https://shulman-hill.com/our-team/jj-hill/","indexedCrawlRecency":"5 days before execution","sourceResult":"IDENTITY_ROLE_AND_FIRM_PAGE_PRESENT","credentialResult":"NOT_INDEPENDENTLY_VERIFIED"},
+    {"id":"professional-david-schleider","name":"David Schleider","firmId":"firm-shulman-hill","sourceUrl":"https://shulman-hill.com/our-team/david-schleider/","indexedCrawlRecency":"5 days before execution","sourceResult":"IDENTITY_ROLE_AND_FIRM_PAGE_PRESENT","credentialResult":"NOT_INDEPENDENTLY_VERIFIED"},
+    {"id":"professional-christine-colvert","name":"Christine Colvert","firmId":"firm-shulman-hill","sourceUrl":"https://shulman-hill.com/our-team/christine-colvert/","indexedCrawlRecency":"5 days before execution","sourceResult":"IDENTITY_ROLE_AND_FIRM_PAGE_PRESENT","credentialResult":"NOT_INDEPENDENTLY_VERIFIED"},
+    {"id":"professional-jonathan-wachlarz","name":"Jonathan Wachlarz","firmId":"firm-shulman-hill","sourceUrl":"https://shulman-hill.com/our-team/jonathan-wachlarz/","indexedCrawlRecency":"5 days before execution","sourceResult":"IDENTITY_ROLE_AND_FIRM_PAGE_PRESENT","credentialResult":"NOT_INDEPENDENTLY_VERIFIED"},
+    {"id":"professional-noah-passer","name":"Noah Passer","firmId":"firm-shulman-hill","sourceUrl":"https://shulman-hill.com/our-team/noah-passer/","indexedCrawlRecency":"5 days before execution","sourceResult":"IDENTITY_ROLE_AND_FIRM_PAGE_PRESENT","credentialResult":"NOT_INDEPENDENTLY_VERIFIED"},
+    {"id":"professional-cary-london","name":"Cary London","firmId":"firm-shulman-hill","sourceUrl":"https://shulman-hill.com/our-team/cary-london/","indexedCrawlRecency":"1 day before execution","sourceResult":"IDENTITY_ROLE_AND_FIRM_PAGE_PRESENT","credentialResult":"NOT_INDEPENDENTLY_VERIFIED"},
+    {"id":"professional-michael-kusz","name":"Michael Kusz","firmId":"firm-shulman-hill","sourceUrl":"https://shulman-hill.com/our-team/michael-kusz/","indexedCrawlRecency":"5 days before execution","sourceResult":"IDENTITY_ROLE_AND_FIRM_PAGE_PRESENT","credentialResult":"NOT_INDEPENDENTLY_VERIFIED"},
+    {"id":"professional-angela-nicolosi","name":"Angela Nicolosi","firmId":"firm-shulman-hill","sourceUrl":"https://shulman-hill.com/our-team/angela-nicolosi/","indexedCrawlRecency":"2 days before execution","sourceResult":"IDENTITY_ROLE_AND_FIRM_PAGE_PRESENT","credentialResult":"NOT_INDEPENDENTLY_VERIFIED"},
+    {"id":"professional-ari-lieberman","name":"Ari R. Lieberman","firmId":"firm-shulman-hill","sourceUrl":"https://shulman-hill.com/our-team/ari-r-lieberman/","indexedCrawlRecency":"1 day before execution","sourceResult":"IDENTITY_ROLE_AND_FIRM_PAGE_PRESENT","credentialResult":"NOT_INDEPENDENTLY_VERIFIED"},
+    {"id":"professional-michael-zogala","name":"Michael Zogala","firmId":"firm-shulman-hill","sourceUrl":"https://shulman-hill.com/our-team/michael-zogala/","indexedCrawlRecency":"2 days before execution","sourceResult":"IDENTITY_ROLE_AND_FIRM_PAGE_PRESENT","credentialResult":"NOT_INDEPENDENTLY_VERIFIED"},
+    {"id":"professional-kenneth-katz","name":"Kenneth J. Katz","firmId":"firm-katz-melinger","sourceUrl":"https://katzmelinger.com/attorney/kenneth-j-katz/","indexedCrawlRecency":"execution day","sourceResult":"IDENTITY_ROLE_AND_FIRM_PAGE_PRESENT","credentialResult":"NOT_INDEPENDENTLY_VERIFIED"},
+    {"id":"professional-nicole-grunfeld","name":"Nicole D. Grunfeld","firmId":"firm-katz-melinger","sourceUrl":"https://katzmelinger.com/attorney/nicole-d-grunfeld/","indexedCrawlRecency":"execution day","sourceResult":"IDENTITY_ROLE_AND_FIRM_PAGE_PRESENT","credentialResult":"NOT_INDEPENDENTLY_VERIFIED"},
+    {"id":"professional-adam-sackowitz","name":"Adam J. Sackowitz","firmId":"firm-katz-melinger","sourceUrl":"https://katzmelinger.com/attorney/adam-j-sackowitz/","indexedCrawlRecency":"execution day","sourceResult":"IDENTITY_ROLE_AND_FIRM_PAGE_PRESENT","credentialResult":"NOT_INDEPENDENTLY_VERIFIED"},
+    {"id":"professional-joseph-nohavicka","name":"Joseph D. Nohavicka","firmId":"firm-pardalis-nohavicka","sourceUrl":"https://www.pnlawyers.com/team-members/joseph-d-nohavicka/","indexedCrawlRecency":"5 days before execution","sourceResult":"IDENTITY_ROLE_AND_FIRM_PAGE_PRESENT","credentialResult":"NOT_INDEPENDENTLY_VERIFIED"},
+    {"id":"professional-taso-pardalis","name":"Taso Pardalis","firmId":"firm-pardalis-nohavicka","sourceUrl":"https://www.pnlawyers.com/team-members/taso-pardalis/","indexedCrawlRecency":"5 days before execution","sourceResult":"IDENTITY_ROLE_AND_FIRM_PAGE_PRESENT","credentialResult":"NOT_INDEPENDENTLY_VERIFIED"},
+    {"id":"professional-todd-sherman","name":"Todd Sherman","firmId":"firm-pardalis-nohavicka","sourceUrl":"https://www.pnlawyers.com/team-members/todd-sherman/","indexedCrawlRecency":"within 7 days before execution","sourceResult":"IDENTITY_ROLE_AND_FIRM_PAGE_PRESENT","credentialResult":"NOT_INDEPENDENTLY_VERIFIED"},
+    {"id":"professional-orion-karagiannis","name":"Orion Karagiannis","firmId":"firm-pardalis-nohavicka","sourceUrl":"https://www.pnlawyers.com/team-members/orion-karagiannis/","indexedCrawlRecency":"6 days before execution","sourceResult":"IDENTITY_ROLE_AND_FIRM_PAGE_PRESENT","credentialResult":"NOT_INDEPENDENTLY_VERIFIED"},
+    {"id":"professional-jay-bhatt","name":"Jay Bhatt","firmId":"firm-bhatt-law-group","sourceUrl":"https://www.bhattlawgroup.com/attorney-jay-bhatt/","indexedCrawlRecency":"3 days before execution","sourceResult":"IDENTITY_ROLE_AND_FIRM_PAGE_PRESENT","credentialResult":"NOT_INDEPENDENTLY_VERIFIED"},
+    {"id":"professional-austin-burnett","name":"Austin Burnett","firmId":"firm-bhatt-law-group","sourceUrl":"https://www.bhattlawgroup.com/attorney-austin-burnett/","indexedCrawlRecency":"4 days before execution","sourceResult":"IDENTITY_ROLE_AND_FIRM_PAGE_PRESENT","credentialResult":"NOT_INDEPENDENTLY_VERIFIED"},
+    {"id":"professional-sean-doyle","name":"Sean Doyle","firmId":"firm-bhatt-law-group","sourceUrl":"https://www.bhattlawgroup.com/attorney-sean-doyle/","indexedCrawlRecency":"execution day","sourceResult":"IDENTITY_ROLE_AND_FIRM_PAGE_PRESENT","credentialResult":"NOT_INDEPENDENTLY_VERIFIED"},
+    {"id":"professional-bill-matsikoudis","name":"Bill Matsikoudis","firmId":"firm-matsikoudis-fanciullo","sourceUrl":"https://mf-legal.com/","indexedCrawlRecency":"1 day before execution","sourceResult":"IDENTITY_ROLE_AND_FIRM_PAGE_PRESENT","credentialResult":"NOT_INDEPENDENTLY_VERIFIED"},
+    {"id":"professional-derek-fanciullo","name":"Derek Fanciullo","firmId":"firm-matsikoudis-fanciullo","sourceUrl":"https://mf-legal.com/","indexedCrawlRecency":"1 day before execution","sourceResult":"IDENTITY_ROLE_AND_FIRM_PAGE_PRESENT","credentialResult":"NOT_INDEPENDENTLY_VERIFIED"},
+    {"id":"professional-mekhail-sarofiem","name":"Mekhail Sarofiem","firmId":"firm-sarofiem-antoun","sourceUrl":"https://njcrash.com/","indexedCrawlRecency":"1 day before execution","sourceResult":"IDENTITY_ROLE_AND_FIRM_PAGE_PRESENT","credentialResult":"NOT_INDEPENDENTLY_VERIFIED"},
+    {"id":"professional-kerollos-antoun","name":"Kerollos Antoun","firmId":"firm-sarofiem-antoun","sourceUrl":"https://njcrash.com/","indexedCrawlRecency":"1 day before execution","sourceResult":"IDENTITY_ROLE_AND_FIRM_PAGE_PRESENT","credentialResult":"NOT_INDEPENDENTLY_VERIFIED"}
+  ],
+  "firmObservations": [
+    {"id":"firm-katz-melinger","name":"Katz Melinger PLLC","sourceUrl":"https://katzmelinger.com/","indexedCrawlRecency":"execution day","sourceResult":"FIRM_IDENTITY_SERVICES_AND_TEAM_PRESENT"},
+    {"id":"firm-pardalis-nohavicka","name":"Pardalis & Nohavicka LLP","sourceUrl":"https://www.pnlawyers.com/","indexedCrawlRecency":"execution day","sourceResult":"FIRM_IDENTITY_SERVICES_AND_TEAM_PRESENT"},
+    {"id":"firm-bhatt-law-group","name":"Bhatt Law Group","sourceUrl":"https://www.bhattlawgroup.com/","indexedCrawlRecency":"execution day","sourceResult":"FIRM_IDENTITY_SERVICES_AND_TEAM_PRESENT"},
+    {"id":"firm-matsikoudis-fanciullo","name":"Matsikoudis & Fanciullo, LLC","sourceUrl":"https://mf-legal.com/","indexedCrawlRecency":"1 day before execution","sourceResult":"FIRM_IDENTITY_SERVICES_AND_TEAM_PRESENT"},
+    {"id":"firm-sarofiem-antoun","name":"Sarofiem & Antoun, LLC","sourceUrl":"https://njcrash.com/","indexedCrawlRecency":"1 day before execution","sourceResult":"FIRM_IDENTITY_SERVICES_AND_TEAM_PRESENT"}
+  ],
+  "noGrowthReason": "This release materially closes the named 30-record source-currentness queue, but source presence alone cannot safely add or promote a profile. Growth remains at zero until official credential matching and collision review complete.",
+  "noLoss": true
+}

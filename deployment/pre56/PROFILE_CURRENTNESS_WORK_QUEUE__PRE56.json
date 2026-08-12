@@ -1,0 +1,31 @@
+{
+  "schemaVersion": "1.0.0",
+  "release": "v2.0.0-pre56",
+  "state": "PROTECTED_QUEUE_CARRIED_FORWARD_NOT_PUBLICATION",
+  "qualifiedPublicDirectoryBaseline": {
+    "professionals": 25,
+    "firms": 5
+  },
+  "centralGraphContinuity": {
+    "canonicalIdentities": 9484,
+    "professionalExtensions": 1299,
+    "firmRelationships": 7033
+  },
+  "queue": {
+    "professionalIdentityRechecksRequired": 25,
+    "firmSourceRechecksRequired": 5,
+    "totalProtectedRechecks": 30,
+    "individualAuthoritativeRecheckRequiredBefore": [
+      "publication change",
+      "outreach",
+      "featuring",
+      "opportunity eligibility",
+      "claim approval"
+    ]
+  },
+  "newAcceptedProfessionalProfiles": 0,
+  "newAcceptedFirmProfiles": 0,
+  "reason": "Pre56 improves consent-first aggregate acquisition measurement. It does not execute the individual authoritative-source profile currentness queue and does not convert unrechecked records into accepted profiles.",
+  "ordinaryPublicExposureChanged": false,
+  "noLoss": true
+}

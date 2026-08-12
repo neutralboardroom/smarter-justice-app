@@ -1,0 +1,13 @@
+{
+  "schemaVersion": "1.0.0",
+  "release": "v2.0.0-pre56",
+  "sourcePredecessor": "v2.0.0-pre55",
+  "sourcePredecessorQualificationCommit": "8ea043ac3e9b1b818aed216b3c08c4589beffd1e",
+  "sourcePredecessorGitTree": "7055789e2870ddafafb9286cf42268d05cccc37c",
+  "sourcePredecessorProductTreeSha256": "e746865c53b7d3120a8944afea21c56d2133fc99e9f19335bcd1eeace1bf2db0",
+  "acceptedLivePredecessor": "v2.0.0-pre54",
+  "acceptedLiveCommit": "a98c9adf8b34ed5acce188769d53be6f56d6587b",
+  "acceptedLiveDeployId": "dep-d9tov2jncjis739p3s8g",
+  "serializationRule": "Pre56 may advance qualified source from the exact Library pre55 product while accepted-live rollback remains pre54 until complete provider and public acceptance proof exists.",
+  "statusAtBuildStart": "PASS"
+}

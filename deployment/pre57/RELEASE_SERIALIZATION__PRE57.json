@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0.0",
+  "release": "v2.0.0-pre57",
+  "carrierVersion": "v1.7.98",
+  "marker": "SMARTER_JUSTICE_PRE57_PROTECTED_PROFILE_CURRENTNESS_EXECUTION",
+  "normalHandoffZipCount": 3,
+  "requiredArtifacts": [
+    "smarter-justice-comprehensive-consolidation-workspace-v2.0.0-pre57-LEAN-ACTIVE.zip",
+    "SMARTER_JUSTICE_PRE57_EVIDENCE_RECEIPTS.zip",
+    "UNIVERSAL_SMARTER_JUSTICE__START_NOW__J46__PRE57_PROTECTED_PROFILE_CURRENTNESS_EXECUTION_CREDENTIAL_GATES_CLOSED_NO_DRIFT__2026-08-12.zip"
+  ],
+  "freshExtractionValidationRequired": true,
+  "productZipQualifiedSourceRequired": true,
+  "builderPacketMustNameExactProductAndEvidenceHashes": true
+}
+
