@@ -74,51 +74,29 @@ jobs:
           npm --prefix .runtime/smarter-justice-v1.7.98 run deployment:doctor
           npm --prefix .runtime/smarter-justice-v1.7.98 run deployment:validate
 
-      - name: Require protected provider credential and exact service preflight
+      - name: Require protected exact-commit Render deploy hook
         env:
-          RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }}
-          RENDER_DEPLOY_EVIDENCE_PATH: ${{ runner.temp }}/render-provider-control.jsonl
+          RENDER_DEPLOY_HOOK_URL: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
         run: |
           set -euo pipefail
-          test -n "$RENDER_API_KEY"
-          node scripts/render-deploy-control-pre54.js service-preflight
+          test -n "$RENDER_DEPLOY_HOOK_URL"
 
-      - name: Request exact pre57 deployment through Render API
+      - name: Request exact pre57 deployment through protected Render hook
         id: deploy
         env:
-          RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }}
-          RENDER_DEPLOY_EVIDENCE_PATH: ${{ runner.temp }}/render-provider-control.jsonl
+          RENDER_DEPLOY_HOOK_URL: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
         run: |
-          node - <<'NODE'
+          set -euo pipefail
+          sep='?'; [[ "$RENDER_DEPLOY_HOOK_URL" == *'?'* ]] && sep='&'
+          curl --fail --silent --show-error --location --max-time 30 "${RENDER_DEPLOY_HOOK_URL}${sep}ref=${TARGET_SHA}" > "$RUNNER_TEMP/render-deploy-response.json"
+          RESPONSE="$RUNNER_TEMP/render-deploy-response.json" node - <<'NODE'
           const fs=require('fs');
-          const token=String(process.env.RENDER_API_KEY||'').trim();
-          const serviceId=process.env.RENDER_SERVICE_ID;
-          const targetSha=process.env.TARGET_SHA;
-          if(!token)throw new Error('Protected Render credential is unavailable');
-          const response=await fetch(`https://api.render.com/v1/services/${serviceId}/deploys`,{
-            method:'POST',
-            headers:{Accept:'application/json',Authorization:`Bearer ${token}`,'Content-Type':'application/json'},
-            body:JSON.stringify({clearCache:'do_not_clear',commitId:targetSha}),
-            signal:AbortSignal.timeout(30000)
-          });
-          if(![201,202].includes(response.status))throw new Error(`Render API ${response.status} while creating exact deploy`);
-          const parsed=JSON.parse(await response.text());
-          const deploy=parsed&&typeof parsed.deploy==='object'?parsed.deploy:parsed;
-          const deployId=String(deploy.id||'');
-          if(!/^dep-[a-z0-9]+$/i.test(deployId))throw new Error('Render deploy id is invalid');
-          const returnedCommit=String(deploy.commit?.id||deploy.commitId||'');
-          if(returnedCommit&&returnedCommit!==targetSha)throw new Error('Render returned a different commit');
+          const row=JSON.parse(fs.readFileSync(process.env.RESPONSE,'utf8'));
+          const deployId=String(row.deploy?.id||row.id||'');
+          if(!/^dep-[a-z0-9]+$/i.test(deployId))process.exit(1);
           fs.appendFileSync(process.env.GITHUB_ENV,`RENDER_DEPLOY_ID=${deployId}\n`,'utf8');
-          const row={at:new Date().toISOString(),kind:'provider_api_deploy_created',release:process.env.RELEASE,serviceId,deployId,status:deploy.status||'created',commitId:returnedCommit||targetSha,credentialMaterialPresent:false};
-          fs.appendFileSync(process.env.RENDER_DEPLOY_EVIDENCE_PATH,`${JSON.stringify(row)}\n`,{encoding:'utf8',mode:0o600});
-          console.log(JSON.stringify(row));
+          console.log(JSON.stringify({release:process.env.RELEASE,serviceId:process.env.RENDER_SERVICE_ID,deployId,commitId:process.env.TARGET_SHA,credentialMaterialPresent:false}));
           NODE
-
-      - name: Require exact provider terminal-live status
-        env:
-          RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }}
-          RENDER_DEPLOY_EVIDENCE_PATH: ${{ runner.temp }}/render-provider-control.jsonl
-        run: node scripts/render-deploy-control-pre54.js observe
 
       - name: Require both-domain pre57 identity, privacy boundary, held routes, and public UX
         shell: bash
@@ -160,11 +138,27 @@ jobs:
       - name: Provider-native rollback to exact accepted-live pre54 after failure
         if: failure() && steps.deploy.outcome == 'success'
         env:
-          RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }}
-          RENDER_ACCEPTED_LIVE_DEPLOY_ID: ${{ env.LAST_ACCEPTED_LIVE_DEPLOY_ID }}
-          RENDER_ACCEPTED_LIVE_SHA: ${{ env.LAST_ACCEPTED_LIVE_SHA }}
-          RENDER_DEPLOY_EVIDENCE_PATH: ${{ runner.temp }}/render-rollback-control.jsonl
-        run: node scripts/render-deploy-control-pre54.js rollback
+          RENDER_DEPLOY_HOOK_URL: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+          RENDER_BASE_URL: https://smarter-justice-app.onrender.com
+          PUBLIC_BASE_URL: https://smarterjustice.com
+        run: |
+          set -euo pipefail
+          sep='?'; [[ "$RENDER_DEPLOY_HOOK_URL" == *'?'* ]] && sep='&'
+          curl --fail --silent --show-error --location --max-time 30 "${RENDER_DEPLOY_HOOK_URL}${sep}ref=${LAST_ACCEPTED_LIVE_SHA}" > "$RUNNER_TEMP/render-rollback-response.json"
+          for attempt in $(seq 1 96); do
+            stamp="rollback-${attempt}-$(date +%s)"
+            if curl --fail --silent --show-error --max-time 20 "$RENDER_BASE_URL/health?sj_rollback_probe=$stamp" > "$RUNNER_TEMP/rollback-health.json" \
+              && curl --fail --silent --show-error --max-time 20 "$PUBLIC_BASE_URL/api/release-identity?sj_rollback_probe=$stamp" > "$RUNNER_TEMP/rollback-identity.json" \
+              && ROOT="$RUNNER_TEMP" node - <<'NODE'
+          const fs=require('fs'),path=require('path'),root=process.env.ROOT;
+          const health=JSON.parse(fs.readFileSync(path.join(root,'rollback-health.json'),'utf8'));
+          const id=JSON.parse(fs.readFileSync(path.join(root,'rollback-identity.json'),'utf8'));
+          if(health.ok!==true||id.release!=='v2.0.0-pre54'||id.gitCommit!==process.env.LAST_ACCEPTED_LIVE_SHA||id.marker!=='SMARTER_JUSTICE_PRE54_PROVIDER_NATIVE_DEPLOY_CONTROL')process.exit(1);
+          NODE
+            then exit 0; fi
+            sleep 10
+          done
+          exit 1
 
       - name: Upload immutable pre57 deployment evidence
         if: always()
@@ -172,7 +166,7 @@ jobs:
         with:
           name: smarter-justice-pre57-live-evidence-${{ github.run_id }}-${{ github.run_attempt }}
           path: |
-            ${{ runner.temp }}/render-provider-control.jsonl
+            ${{ runner.temp }}/render-deploy-response.json
             ${{ runner.temp }}/origin-identity.json
             ${{ runner.temp }}/public-identity.json
             ${{ runner.temp }}/measurement-status.json
@@ -180,6 +174,8 @@ jobs:
             ${{ runner.temp }}/navigator.html
             ${{ runner.temp }}/professionals.html
             ${{ runner.temp }}/attorney-tour.html
-            ${{ runner.temp }}/render-rollback-control.jsonl
+            ${{ runner.temp }}/render-rollback-response.json
+            ${{ runner.temp }}/rollback-health.json
+            ${{ runner.temp }}/rollback-identity.json
           if-no-files-found: warn
           retention-days: 90
