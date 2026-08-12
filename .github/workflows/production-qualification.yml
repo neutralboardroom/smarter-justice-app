@@ -80,7 +80,7 @@ jobs:
           mkdir -p "$render_source"
           git archive --format=tar HEAD | tar -xf - -C "$render_source"
           npm ci --prefix "$render_source" --omit=dev --no-audit --no-fund
-          node "$render_source/scripts/check-pre58-production-startup.js"
+          (cd "$render_source" && node scripts/check-pre58-production-startup.js)
 
       - name: Qualify pre58 collision-safe credential reconciliation
         working-directory: ${{ steps.source.outputs.path }}
