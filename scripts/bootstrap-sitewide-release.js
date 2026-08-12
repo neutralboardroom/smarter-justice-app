@@ -39,6 +39,13 @@ function run(command, args, options = {}) {
 
 function isolatedTestEnvironment(storagePath) {
   const env = { ...process.env, NODE_ENV: 'test', SMARTER_JUSTICE_STORAGE_DIR: storagePath };
+  // npm sets NODE_ENV=production for lifecycle commands when --omit=dev is
+  // active. Do not let that outer Render build choice contaminate the nested
+  // inherited qualification suite, which must run against isolated test data.
+  delete env.npm_config_omit;
+  delete env.NPM_CONFIG_OMIT;
+  delete env.npm_config_production;
+  delete env.NPM_CONFIG_PRODUCTION;
   const blockedExact = [
     'RENDER', 'RENDER_SERVICE_ID', 'RENDER_EXTERNAL_HOSTNAME', 'RENDER_DISK_MOUNT_PATH',
     'DATABASE_URL', 'REDIS_URL', 'PORT', 'APP_BASE_URL',

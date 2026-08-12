@@ -67,6 +67,21 @@ jobs:
           npm_config_fund: 'false'
         run: npm run postinstall
 
+      - name: Reproduce exact Render omit-dev lifecycle build
+        env:
+          SOURCE: ${{ steps.source.outputs.path }}
+          npm_config_registry: https://registry.npmjs.org/
+          npm_config_audit: 'false'
+          npm_config_fund: 'false'
+        run: |
+          set -euo pipefail
+          render_source="$RUNNER_TEMP/smarter-justice-render-build"
+          rm -rf "$render_source"
+          mkdir -p "$render_source"
+          git archive --format=tar HEAD | tar -xf - -C "$render_source"
+          npm ci --prefix "$render_source" --omit=dev --no-audit --no-fund
+          (cd "$render_source" && node scripts/check-pre58-production-startup.js)
+
       - name: Qualify pre58 collision-safe credential reconciliation
         working-directory: ${{ steps.source.outputs.path }}
         env:
