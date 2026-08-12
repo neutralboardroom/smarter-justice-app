@@ -1,0 +1,202 @@
+name: Smarter Justice exact pre58 repaired Render deployment
+
+on:
+  push:
+    branches:
+      - deploy/authorized-smarter-justice-pre58-repaired
+
+permissions:
+  contents: read
+  actions: read
+  checks: read
+
+concurrency:
+  group: smarter-justice-current-production
+  cancel-in-progress: false
+
+env:
+  TARGET_SHA: 4c348d3c7cb196515fc61ad1f3e876f917d4b830
+  TARGET_RELEASE: v2.0.0-pre58
+  TARGET_MARKER: SMARTER_JUSTICE_PRE58_NY_OFFICIAL_CREDENTIAL_RECONCILIATION
+  RENDER_BASE_URL: https://smarter-justice-app.onrender.com
+  PUBLIC_BASE_URL: https://smarterjustice.com
+  LAST_ACCEPTED_LIVE_SHA: a98c9adf8b34ed5acce188769d53be6f56d6587b
+  LAST_ACCEPTED_LIVE_RELEASE: v2.0.0-pre54
+  LAST_ACCEPTED_LIVE_MARKER: SMARTER_JUSTICE_PRE54_PROVIDER_NATIVE_DEPLOY_CONTROL
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    environment: production
+    steps:
+      - name: Checkout exact qualified repaired pre58 source
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+        with:
+          ref: ${{ env.TARGET_SHA }}
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Bind authorization, exact target and rollback authority
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$TARGET_SHA"
+          test -f deployment/pre58/OWNER_DEPLOYMENT_AUTHORIZATION__PRE58.json
+          test -f deployment/pre58/NY_OFFICIAL_CREDENTIAL_RECONCILIATION__PRE58.json
+          AUTH=deployment/pre58/OWNER_DEPLOYMENT_AUTHORIZATION__PRE58.json RECEIPT=deployment/pre58/NY_OFFICIAL_CREDENTIAL_RECONCILIATION__PRE58.json node - <<'NODE'
+          const fs=require('fs');
+          const auth=JSON.parse(fs.readFileSync(process.env.AUTH,'utf8'));
+          const receipt=JSON.parse(fs.readFileSync(process.env.RECEIPT,'utf8'));
+          if(auth.release!==process.env.TARGET_RELEASE||auth.authorized!==true)process.exit(1);
+          if(receipt.release!==process.env.TARGET_RELEASE||receipt.marker!==process.env.TARGET_MARKER)process.exit(1);
+          if(receipt.summary?.newYorkOfficialMatchesCompleted!==18||receipt.summary?.newJerseyRecordsPendingOperatorReview!==7)process.exit(1);
+          if(Object.entries(receipt.consequentialActionGates||{}).filter(([,v])=>typeof v==='boolean').some(([,v])=>v))process.exit(1);
+          NODE
+          git cat-file -e "$LAST_ACCEPTED_LIVE_SHA^{commit}"
+
+      - name: Require exact repaired target qualification
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          success="$(gh api "repos/$GITHUB_REPOSITORY/commits/$TARGET_SHA/check-runs" --jq '[.check_runs[] | select(.name == "qualification-gate" and .conclusion == "success")] | length')"
+          test "$success" -ge 1
+
+      - name: Capture exact accepted-live pre54 state
+        run: |
+          set -euo pipefail
+          stamp="previous-$(date +%s)"
+          curl --fail --silent --show-error --max-time 25 "$RENDER_BASE_URL/api/release-identity?sj_pre58_probe=$stamp" > "$RUNNER_TEMP/previous-origin-identity.json"
+          curl --fail --silent --show-error --max-time 25 "$PUBLIC_BASE_URL/api/release-identity?sj_pre58_probe=$stamp" > "$RUNNER_TEMP/previous-public-identity.json"
+          ORIGIN="$RUNNER_TEMP/previous-origin-identity.json" PUBLIC="$RUNNER_TEMP/previous-public-identity.json" node - <<'NODE'
+          const fs=require('fs');
+          for(const name of ['ORIGIN','PUBLIC']){
+            const i=JSON.parse(fs.readFileSync(process.env[name],'utf8'));
+            if(i.release!==process.env.LAST_ACCEPTED_LIVE_RELEASE||i.gitCommit!==process.env.LAST_ACCEPTED_LIVE_SHA||i.marker!==process.env.LAST_ACCEPTED_LIVE_MARKER)process.exit(1);
+          }
+          NODE
+
+      - name: Request exact repaired pre58 deployment through protected Render hook
+        id: request
+        env:
+          RENDER_DEPLOY_HOOK_URL: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+        run: |
+          set -euo pipefail
+          test -n "$RENDER_DEPLOY_HOOK_URL"
+          sep='?'
+          [[ "$RENDER_DEPLOY_HOOK_URL" == *'?'* ]] && sep='&'
+          curl --fail --silent --show-error --location --max-time 30 "${RENDER_DEPLOY_HOOK_URL}${sep}ref=${TARGET_SHA}" > "$RUNNER_TEMP/render-deploy-response.json"
+          node -e "const fs=require('fs');const x=JSON.parse(fs.readFileSync(process.env.RUNNER_TEMP+'/render-deploy-response.json'));if(!x.deploy?.id)process.exit(1);console.log('Render accepted deploy '+x.deploy.id)"
+
+      - name: Require exact both-domain pre58 cutover and protected boundaries
+        id: cutover
+        run: |
+          set -euo pipefail
+          for attempt in $(seq 1 120); do
+            echo "Both-domain pre58 verification attempt $attempt"
+            stamp="${TARGET_SHA}-${attempt}-$(date +%s)"
+            if curl --fail --silent --show-error --max-time 25 "$RENDER_BASE_URL/health" > "$RUNNER_TEMP/health.json" \
+              && curl --fail --silent --show-error --max-time 25 "$RENDER_BASE_URL/api/release-identity?sj_pre58_probe=$stamp" > "$RUNNER_TEMP/origin-identity.json" \
+              && curl --fail --silent --show-error --max-time 25 "$PUBLIC_BASE_URL/api/release-identity?sj_pre58_probe=$stamp" > "$RUNNER_TEMP/public-identity.json" \
+              && curl --fail --silent --show-error --max-time 25 "$PUBLIC_BASE_URL/api/public/private-measurement/status?sj_pre58_probe=$stamp" > "$RUNNER_TEMP/measurement-status.json" \
+              && curl --fail --silent --show-error --max-time 25 "$PUBLIC_BASE_URL/?sj_pre58_probe=$stamp" > "$RUNNER_TEMP/home.html" \
+              && curl --fail --silent --show-error --max-time 25 "$PUBLIC_BASE_URL/navigator?sj_pre58_probe=$stamp" > "$RUNNER_TEMP/navigator.html" \
+              && curl --fail --silent --show-error --max-time 25 "$PUBLIC_BASE_URL/professionals.html?sj_pre58_probe=$stamp" > "$RUNNER_TEMP/professionals.html" \
+              && curl --fail --silent --show-error --max-time 25 "$PUBLIC_BASE_URL/measurement-privacy.html?sj_pre58_probe=$stamp" > "$RUNNER_TEMP/measurement-privacy.html"; then
+              owner_code="$(curl --silent --output "$RUNNER_TEMP/owner-credential-response.json" --write-out '%{http_code}' --max-time 25 "$PUBLIC_BASE_URL/api/owner/credential-reconciliation-pre58?sj_pre58_probe=$stamp" || true)"
+              held_growth="$(curl --silent --output /dev/null --write-out '%{http_code}' --max-time 25 "$PUBLIC_BASE_URL/growth-operations-compliance.html?sj_pre58_probe=$stamp" || true)"
+              held_portals="$(curl --silent --output /dev/null --write-out '%{http_code}' --max-time 25 "$PUBLIC_BASE_URL/portals.html?sj_pre58_probe=$stamp" || true)"
+              if [ "$owner_code" = 403 ] && [ "$held_growth" = 404 ] && [ "$held_portals" = 404 ] && ROOT="$RUNNER_TEMP" node - <<'NODE'
+          const fs=require('fs'),path=require('path');
+          const root=process.env.ROOT,read=n=>fs.readFileSync(path.join(root,n),'utf8');
+          const h=JSON.parse(read('health.json'));
+          const origin=JSON.parse(read('origin-identity.json'));
+          const pub=JSON.parse(read('public-identity.json'));
+          if(h.ok!==true||h.app!=='Smarter Justice'||h.version!=='1.7.98')process.exit(1);
+          for(const id of [origin,pub]){
+            if(id.ok!==true||id.release!==process.env.TARGET_RELEASE||id.deploymentControlRelease!==process.env.TARGET_RELEASE||id.demoPathRelease!=='v2.0.0-pre52')process.exit(1);
+            if(id.gitCommit!==process.env.TARGET_SHA||id.marker!==process.env.TARGET_MARKER)process.exit(1);
+          }
+          const measurement=JSON.parse(read('measurement-status.json'));
+          if(measurement.consentRequired!==true||measurement.defaultConsent!=='not-granted'||measurement.measurementBoundary?.thirdPartyTrackers!==false)process.exit(1);
+          if(!/Smarter Justice/i.test(read('home.html'))||!/Navigator/i.test(read('navigator.html'))||!/Smarter Justice Profile Lookup/i.test(read('professionals.html')))process.exit(1);
+          if(!read('measurement-privacy.html').includes('The default is off.'))process.exit(1);
+          const owner=JSON.parse(read('owner-credential-response.json'));
+          if(owner.ok!==false)process.exit(1);
+          NODE
+              then
+                printf '%s\n' "$attempt" > "$RUNNER_TEMP/pre58-cutover-attempt.txt"
+                printf '%s\n' "$owner_code" > "$RUNNER_TEMP/owner-route-status.txt"
+                printf '%s\n' "$held_growth" > "$RUNNER_TEMP/held-growth-status.txt"
+                printf '%s\n' "$held_portals" > "$RUNNER_TEMP/held-portals-status.txt"
+                exit 0
+              fi
+            fi
+            sleep 10
+          done
+          echo 'Exact repaired pre58 identity did not pass both-domain acceptance within 20 minutes.' >&2
+          exit 1
+
+      - name: Roll back only after proving production changed from pre54
+        if: failure() && steps.request.outcome == 'success'
+        env:
+          RENDER_DEPLOY_HOOK_URL: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+        run: |
+          set -euo pipefail
+          current="$RUNNER_TEMP/current-identity-after-failure.json"
+          if ! curl --fail --silent --show-error --max-time 25 "$PUBLIC_BASE_URL/api/release-identity?sj_pre58_failure=$(date +%s)" > "$current"; then
+            echo 'ROLLBACK_WITHHELD_PRODUCTION_CHANGE_UNPROVEN' | tee "$RUNNER_TEMP/rollback-action.txt"
+            exit 0
+          fi
+          if IDENTITY="$current" node - <<'NODE'
+          const fs=require('fs');const i=JSON.parse(fs.readFileSync(process.env.IDENTITY,'utf8'));
+          if(i.release!==process.env.LAST_ACCEPTED_LIVE_RELEASE||i.gitCommit!==process.env.LAST_ACCEPTED_LIVE_SHA||i.marker!==process.env.LAST_ACCEPTED_LIVE_MARKER)process.exit(1);
+          NODE
+          then
+            echo 'ROLLBACK_NOT_REQUIRED_ACCEPTED_PRE54_STILL_LIVE' | tee "$RUNNER_TEMP/rollback-action.txt"
+            exit 0
+          fi
+          echo 'ROLLBACK_REQUESTED_PRODUCTION_CHANGED_FROM_PRE54' | tee "$RUNNER_TEMP/rollback-action.txt"
+          test -n "$RENDER_DEPLOY_HOOK_URL"
+          sep='?'
+          [[ "$RENDER_DEPLOY_HOOK_URL" == *'?'* ]] && sep='&'
+          curl --fail --silent --show-error --location --max-time 30 "${RENDER_DEPLOY_HOOK_URL}${sep}ref=${LAST_ACCEPTED_LIVE_SHA}" > "$RUNNER_TEMP/render-rollback-response.json"
+          for attempt in $(seq 1 80); do
+            if curl --fail --silent --show-error --max-time 25 "$PUBLIC_BASE_URL/api/release-identity?sj_pre58_rollback=$attempt-$(date +%s)" > "$RUNNER_TEMP/rollback-identity.json"; then
+              IDENTITY="$RUNNER_TEMP/rollback-identity.json" node - <<'NODE' && exit 0
+          const fs=require('fs');const i=JSON.parse(fs.readFileSync(process.env.IDENTITY,'utf8'));
+          if(i.release!==process.env.LAST_ACCEPTED_LIVE_RELEASE||i.gitCommit!==process.env.LAST_ACCEPTED_LIVE_SHA||i.marker!==process.env.LAST_ACCEPTED_LIVE_MARKER)process.exit(1);
+          NODE
+            fi
+            sleep 15
+          done
+          exit 1
+
+      - name: Upload immutable repaired pre58 deployment evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: smarter-justice-pre58-repaired-live-evidence-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            ${{ runner.temp }}/previous-origin-identity.json
+            ${{ runner.temp }}/previous-public-identity.json
+            ${{ runner.temp }}/render-deploy-response.json
+            ${{ runner.temp }}/pre58-cutover-attempt.txt
+            ${{ runner.temp }}/health.json
+            ${{ runner.temp }}/origin-identity.json
+            ${{ runner.temp }}/public-identity.json
+            ${{ runner.temp }}/measurement-status.json
+            ${{ runner.temp }}/home.html
+            ${{ runner.temp }}/navigator.html
+            ${{ runner.temp }}/professionals.html
+            ${{ runner.temp }}/measurement-privacy.html
+            ${{ runner.temp }}/owner-credential-response.json
+            ${{ runner.temp }}/owner-route-status.txt
+            ${{ runner.temp }}/held-growth-status.txt
+            ${{ runner.temp }}/held-portals-status.txt
+            ${{ runner.temp }}/current-identity-after-failure.json
+            ${{ runner.temp }}/rollback-action.txt
+            ${{ runner.temp }}/render-rollback-response.json
+            ${{ runner.temp }}/rollback-identity.json
+          if-no-files-found: warn
+          retention-days: 90
