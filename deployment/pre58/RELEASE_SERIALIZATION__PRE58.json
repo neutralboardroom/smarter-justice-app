@@ -1,0 +1,15 @@
+{
+  "schemaVersion": "1.0.0",
+  "release": "v2.0.0-pre58",
+  "carrierVersion": "v1.7.98",
+  "marker": "SMARTER_JUSTICE_PRE58_NY_OFFICIAL_CREDENTIAL_RECONCILIATION",
+  "normalHandoffZipCount": 3,
+  "requiredArtifacts": [
+    "smarter-justice-comprehensive-consolidation-workspace-v2.0.0-pre58-LEAN-ACTIVE.zip",
+    "SMARTER_JUSTICE_PRE58_EVIDENCE_RECEIPTS.zip",
+    "UNIVERSAL_SMARTER_JUSTICE__START_NOW__J47__PRE58_NY_OFFICIAL_CREDENTIAL_RECONCILIATION_NJ_PENDING_GATES_CLOSED__2026-08-12.zip"
+  ],
+  "freshExtractionValidationRequired": true,
+  "productZipQualifiedSourceRequired": true,
+  "builderPacketMustNameExactProductAndEvidenceHashes": true
+}

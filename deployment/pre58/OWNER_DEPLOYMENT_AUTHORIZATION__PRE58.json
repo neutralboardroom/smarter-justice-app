@@ -1,0 +1,13 @@
+{
+  "schemaVersion": "1.0.0",
+  "release": "v2.0.0-pre58",
+  "authorized": true,
+  "ownerCommand": "Start now. Then deploy it once completed.",
+  "issuedOn": "2026-08-12",
+  "scope": "The exact qualified v2.0.0-pre58 successor built from the J46-bound pre57 artifact only",
+  "qualifiedArtifactRequired": true,
+  "exactProductScopedOwnerCommandSatisfiedByCurrentInstruction": true,
+  "credentialsMayNotBePrintedStoredOrTransmitted": true,
+  "providerMutationPerformed": false,
+  "nextAllowedState": "PUBLISH_EXACT_QUALIFIED_SOURCE_THEN_DEPLOY_AND_VERIFY"
+}

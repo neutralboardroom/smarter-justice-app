@@ -67,6 +67,18 @@ jobs:
           npm_config_fund: 'false'
         run: npm run postinstall
 
+      - name: Qualify pre58 collision-safe credential reconciliation
+        working-directory: ${{ steps.source.outputs.path }}
+        env:
+          RUNTIME: ${{ steps.source.outputs.path }}/.runtime/smarter-justice-v${{ steps.source.outputs.version }}
+        run: |
+          set -euo pipefail
+          node --check scripts/apply-pre58-ny-credential-reconciliation.js
+          node --check scripts/check-pre58-production-startup.js
+          node --check "$RUNTIME/lib/credentialReconciliationPre58.js"
+          python3 deployment/pre58/test_pre58_credential_reconciliation.py
+          python3 deployment/pre58/test_pre58_release.py
+
       - name: Resolve qualified runtime
         id: runtime
         env:

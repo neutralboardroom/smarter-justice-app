@@ -1,0 +1,11 @@
+{
+  "schemaVersion": "1.0.0",
+  "release": "v2.0.0-pre58",
+  "reviewState": "PASS_NO_ORDINARY_PUBLIC_UI_CHANGE",
+  "reviewedSurfaces": ["home", "Navigator", "professional directory", "professional growth", "attorney tours", "membership", "mobile navigation", "privacy choices"],
+  "ordinaryPublicFilesWrittenByPre58Overlay": 0,
+  "protectedChange": "Owner-only NY credential reconciliation receipt and endpoint",
+  "publicUxUiBaseline": "v2.0.0-pre57 / public UX continuity through v2.0.0-pre56",
+  "finding": "The unique public UX/UI, truthful role boundaries, universal header, mobile navigation, consent-first aggregate measurement, and held-route publication gates are preserved exactly.",
+  "noLoss": true
+}

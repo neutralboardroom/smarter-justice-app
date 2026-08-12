@@ -1,0 +1,20 @@
+'use strict';
+const fs=require('fs'),path=require('path');
+const runtime=path.join(process.cwd(),'.runtime','smarter-justice-v1.7.98');
+const serverPath=path.join(runtime,'server.js');
+const receiptPath=path.join(process.cwd(),'deployment','pre58','NY_OFFICIAL_CREDENTIAL_RECONCILIATION__PRE58.json');
+const failures=[];
+if(!fs.existsSync(serverPath))failures.push('RUNTIME_SERVER_MISSING');
+if(!fs.existsSync(path.join(runtime,'lib','credentialReconciliationPre58.js')))failures.push('PRE58_RUNTIME_MODULE_MISSING');
+if(!fs.existsSync(receiptPath))failures.push('PRE58_RECEIPT_MISSING');
+const server=fs.existsSync(serverPath)?fs.readFileSync(serverPath,'utf8'):'';
+for(const marker of ["release:'v2.0.0-pre58'","demoPathRelease:'v2.0.0-pre52'","deploymentControlRelease:'v2.0.0-pre58'","SMARTER_JUSTICE_PRE58_NY_OFFICIAL_CREDENTIAL_RECONCILIATION","process.env.PORT","server.listen(port"])if(!server.includes(marker))failures.push(`SERVER_MARKER_MISSING:${marker}`);
+let receipt={};
+try{receipt=JSON.parse(fs.readFileSync(receiptPath,'utf8'));}catch{failures.push('PRE58_RECEIPT_INVALID');}
+if(receipt.summary?.newYorkRecordsAttempted!==18)failures.push('PRE58_NY_ATTEMPT_COUNT_INVALID');
+if(receipt.summary?.newYorkOfficialMatchesCompleted!==18)failures.push('PRE58_NY_MATCH_COUNT_INVALID');
+if(receipt.summary?.newJerseyRecordsPendingOperatorReview!==7)failures.push('PRE58_NJ_PENDING_COUNT_INVALID');
+if(Object.entries(receipt.consequentialActionGates||{}).filter(([,value])=>typeof value==='boolean').some(([,value])=>value))failures.push('PRE58_CONSEQUENTIAL_GATE_OPEN');
+const result={ok:failures.length===0,release:'v2.0.0-pre58',runtimeVersion:'v1.7.98',port:Number(process.env.PORT||3000),render:Boolean(process.env.RENDER),newYorkMatches:receipt.summary?.newYorkOfficialMatchesCompleted??null,newJerseyPending:receipt.summary?.newJerseyRecordsPendingOperatorReview??null,consequentialGates:'CLOSED',fullQualificationLocation:'BUILD_AND_CI_NOT_RUNTIME_START',failures};
+console.log(JSON.stringify(result));
+if(failures.length)process.exit(1);
