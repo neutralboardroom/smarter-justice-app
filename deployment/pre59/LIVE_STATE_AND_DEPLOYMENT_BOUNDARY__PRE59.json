@@ -1,0 +1,12 @@
+{
+  "schemaVersion": "1.0.0",
+  "release": "v2.0.0-pre59",
+  "qualificationState": "SOURCE_QUALIFIED_NONPRODUCTION_REHEARSAL_ONLY",
+  "publishedToGitHub": false,
+  "deployedToRender": false,
+  "claimedLive": false,
+  "providerMutationPerformed": false,
+  "credentialMutationPerformed": false,
+  "ordinaryPublicExposureChanged": false,
+  "noLiveClaimWithoutProof": true
+}

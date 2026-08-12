@@ -46,6 +46,13 @@ function isolatedTestEnvironment(storagePath) {
   delete env.NPM_CONFIG_OMIT;
   delete env.npm_config_production;
   delete env.NPM_CONFIG_PRODUCTION;
+  // The inherited qualification suite is intentionally network-isolated. In
+  // managed build environments, Node 22's experimental proxy mode emits a
+  // process-ID-bearing warning for every child command. That makes otherwise
+  // deterministic evidence logs differ between identical runs. Keep proxy
+  // access for the dependency install above, but disable only Node's proxy
+  // mode inside the no-network test suite.
+  delete env.NODE_USE_ENV_PROXY;
   const blockedExact = [
     'RENDER', 'RENDER_SERVICE_ID', 'RENDER_EXTERNAL_HOSTNAME', 'RENDER_DISK_MOUNT_PATH',
     'DATABASE_URL', 'REDIS_URL', 'PORT', 'APP_BASE_URL',

@@ -1,0 +1,9 @@
+{
+  "schemaVersion": "1.0.0",
+  "release": "v2.0.0-pre59",
+  "reviewState": "PASS_NO_ORDINARY_PUBLIC_UI_CHANGE",
+  "ordinaryPublicFilesWrittenByPre59": 0,
+  "protectedChange": "Non-production rollback and credential-rotation rehearsal contract and validation only",
+  "publicUxUiBaseline": "v2.0.0-pre58",
+  "noLoss": true
+}
