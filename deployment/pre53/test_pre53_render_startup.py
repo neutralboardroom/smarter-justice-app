@@ -11,7 +11,8 @@ pre55_start='node scripts/check-pre52-data-continuity.js && node scripts/check-p
 pre56_start='node scripts/check-pre52-data-continuity.js && node scripts/check-pre56-production-startup.js && npm --prefix .runtime/smarter-justice-v1.7.98 start'
 pre57_start='node scripts/check-pre52-data-continuity.js && node scripts/check-pre57-production-startup.js && npm --prefix .runtime/smarter-justice-v1.7.98 start'
 pre58_start='node scripts/check-pre52-data-continuity.js && node scripts/check-pre58-production-startup.js && npm --prefix .runtime/smarter-justice-v1.7.98 start'
-assert start in [pre53_start,pre54_start,pre55_start,pre56_start,pre57_start,pre58_start]
+pre59_start='node scripts/check-pre52-data-continuity.js && node scripts/check-pre58-production-startup.js && node scripts/check-pre59-nonproduction-drill.js && npm --prefix .runtime/smarter-justice-v1.7.98 start'
+assert start in [pre53_start,pre54_start,pre55_start,pre56_start,pre57_start,pre58_start,pre59_start]
 for forbidden in ['run_pre42_acceptance.py','test_pre45_public_alignment.py','test_pre46_growth_operations_compliance_story.py','test_pre47_professional_growth.py','test_pre48_marketing_compliance_expansion.py','test_pre49_marketing_currentness.py','test_pre50_attorney_demo_path.py','test_pre51_public_domain_release_identity.py','test_pre52_attorney_value_clarity.py','test_pre52_mobile_navigation.py']:
     assert forbidden not in start, forbidden
 server=(runtime/'server.js').read_text(errors='replace')
@@ -45,6 +46,7 @@ assert contract['builder']=='J41'
 assert contract['deploymentPolicy'].startswith('Do not merge/deploy pre53 until')
 
 env=os.environ.copy()
+env.pop('NODE_USE_ENV_PROXY', None)
 for key in list(env):
     if key.startswith(('DATABASE_','REDIS_','OBJECT_STORAGE_','AWS_','S3_')) or key in ['RENDER','RENDER_SERVICE_ID','RENDER_EXTERNAL_HOSTNAME','RENDER_DISK_MOUNT_PATH','APP_BASE_URL','OWNER_CONTROL_CENTER_TOKEN','ADMIN_TOKEN','PORTAL_RULES_API_TOKEN','OPENAI_API_KEY','STRIPE_SECRET_KEY','STRIPE_WEBHOOK_SECRET']:
         env.pop(key,None)
@@ -53,7 +55,7 @@ env['PORT']='0'
 with tempfile.TemporaryDirectory(prefix='sj-pre53-start-') as storage:
     env['SMARTER_JUSTICE_STORAGE_DIR']=storage
     started=time.monotonic()
-    if start in [pre54_start,pre55_start,pre56_start,pre57_start,pre58_start]:
+    if start in [pre54_start,pre55_start,pre56_start,pre57_start,pre58_start,pre59_start]:
         precheck=subprocess.run(['node','scripts/check-pre53-production-startup.js'],cwd=repo,env=env,text=True,capture_output=True)
         assert precheck.returncode==0, precheck.stdout+precheck.stderr
         command=['npm','--prefix','.runtime/smarter-justice-v1.7.98','start']

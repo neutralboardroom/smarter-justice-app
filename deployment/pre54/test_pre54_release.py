@@ -10,7 +10,8 @@ assert start in [
     'node scripts/check-pre52-data-continuity.js && node scripts/check-pre55-production-startup.js && npm --prefix .runtime/smarter-justice-v1.7.98 start',
     'node scripts/check-pre52-data-continuity.js && node scripts/check-pre56-production-startup.js && npm --prefix .runtime/smarter-justice-v1.7.98 start',
     'node scripts/check-pre52-data-continuity.js && node scripts/check-pre57-production-startup.js && npm --prefix .runtime/smarter-justice-v1.7.98 start',
-    'node scripts/check-pre52-data-continuity.js && node scripts/check-pre58-production-startup.js && npm --prefix .runtime/smarter-justice-v1.7.98 start'
+    'node scripts/check-pre52-data-continuity.js && node scripts/check-pre58-production-startup.js && npm --prefix .runtime/smarter-justice-v1.7.98 start',
+    'node scripts/check-pre52-data-continuity.js && node scripts/check-pre58-production-startup.js && node scripts/check-pre59-nonproduction-drill.js && npm --prefix .runtime/smarter-justice-v1.7.98 start'
 ]
 for forbidden in ['run_pre42_acceptance.py','test_pre45_public_alignment.py','test_pre49_marketing_currentness.py','test_pre52_attorney_value_clarity.py','test_pre53_render_startup.py','test_pre54_provider_deploy_control.py']:
     assert forbidden not in start, forbidden
@@ -43,6 +44,7 @@ contract=json.loads((repo/'deployment'/'pre54'/'PROVIDER_NATIVE_DEPLOY_CONTROL__
 assert contract['builder']=='J43' and contract['acceptedLiveRollbackAuthority']['renderDeployId']=='dep-d9tnna2d0e5s739kogg0'
 
 env=os.environ.copy()
+env.pop('NODE_USE_ENV_PROXY', None)
 for key in list(env):
     if key.startswith(('DATABASE_','REDIS_','OBJECT_STORAGE_','AWS_','S3_')) or key in ['RENDER','RENDER_SERVICE_ID','RENDER_EXTERNAL_HOSTNAME','RENDER_DISK_MOUNT_PATH','APP_BASE_URL','OWNER_CONTROL_CENTER_TOKEN','ADMIN_TOKEN','PORTAL_RULES_API_TOKEN','OPENAI_API_KEY','STRIPE_SECRET_KEY','STRIPE_WEBHOOK_SECRET']:
         env.pop(key,None)
