@@ -1,0 +1,22 @@
+name: Cancel known-failing pre58 deployment retry
+
+on:
+  push:
+    branches:
+      - ops/cancel-stuck-pre58-build-failure
+
+permissions:
+  contents: read
+
+concurrency:
+  group: smarter-justice-current-production
+  cancel-in-progress: true
+
+jobs:
+  supersede:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Record safe supersession
+        run: |
+          echo "Superseding pre58 retry after exact Render-mode build failure reproduction."
+          echo "Accepted-live pre54 remains unchanged; no rollback deployment is required."
