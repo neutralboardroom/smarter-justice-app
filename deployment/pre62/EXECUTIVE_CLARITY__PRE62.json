@@ -1,0 +1,81 @@
+{
+  "schemaVersion": "1.0.0",
+  "release": "v2.0.0-pre62",
+  "marker": "SMARTER_JUSTICE_PRE62_EXECUTIVE_CLARITY",
+  "state": "CANDIDATE_RENDERED_DESIGN_REVIEW_COMPLETE",
+  "purpose": "Refine the accepted pre61 architecture into a shorter, clearer and more professional experience without removing legal areas, community resources, module routes or professional capabilities.",
+  "designDirection": {
+    "brightWhiteSurfaces": true,
+    "restrainedNavyTealPalette": true,
+    "compactTypeHierarchy": true,
+    "smallPurposefulRadii": true,
+    "decorativeGradientsAdded": false,
+    "defaultCardShadowsReduced": true,
+    "customerDecisionPathsPrioritized": true,
+    "contentChangedForNovelty": false
+  },
+  "renderedReview": {
+    "actualBrowserRenderingUsed": true,
+    "desktopViewport": "1440x1000",
+    "phoneViewport": "390x844",
+    "routes": [
+      "/",
+      "/practice-areas.html",
+      "/community-resources.html",
+      "/attorney-partner-tour.html?practice=divorce"
+    ],
+    "screenshots": [
+      "screenshots/home__desktop.png",
+      "screenshots/home__phone.png",
+      "screenshots/legal-areas__desktop.png",
+      "screenshots/legal-areas__phone.png",
+      "screenshots/community-resources__desktop.png",
+      "screenshots/community-resources__phone.png",
+      "screenshots/professional-tour__desktop.png",
+      "screenshots/professional-tour__phone.png"
+    ],
+    "browserMetrics": "VISUAL_QA_METRICS__PRE62.json",
+    "verified": {
+      "horizontalOverflowAbsent": true,
+      "exactlyOneMenuControlPerReviewedRoute": true,
+      "mobileMenuOpenAndClosePassed": true,
+      "externalMicroportalLinksAbsent": true,
+      "desktopHomeScrollHeight": 2662,
+      "desktopLegalInitialCards": 12,
+      "phoneLegalInitialCards": 6,
+      "desktopCommunityInitialCards": 9,
+      "phoneCommunityInitialCards": 6,
+      "defaultProfessionalTourVisibleSteps": 1
+    }
+  },
+  "customerFunnels": {
+    "homepage": "One primary describe-your-situation funnel, six common starting paths and one supporting professional route.",
+    "legalDirectory": "Search first, eight focused guides, compact initial results and explicit access to all 69 areas.",
+    "communityResources": "Urgent-help boundary first, search and a limited category preview, then details on demand.",
+    "professionalAcquisition": "A step-by-step seven-part walkthrough is the default; the complete page remains optional.",
+    "modules": "All six main module pages retain central Smarter Justice destinations. No focused microportal host is exposed."
+  },
+  "preservation": {
+    "legalAreas": 69,
+    "communityCategories": 21,
+    "attorneyTourSteps": 7,
+    "homeStartingPaths": 6,
+    "routesRemoved": 0,
+    "capabilitiesRemoved": 0,
+    "noLoss": true
+  },
+  "versionContract": {
+    "coreApplicationVersion": "1.7.98",
+    "currentPlatformRelease": "v2.0.0-pre62",
+    "sealedRuntimeBaseline": "v2.0.0-pre58"
+  },
+  "deploymentContract": {
+    "source": "neutralboardroom/smarter-justice-app",
+    "branch": "main",
+    "qualifiedExactCommitRequired": true,
+    "pullRequestsDeploy": false,
+    "manualQualificationRunsDeploy": false,
+    "renderAutoDeployRemainsOff": true,
+    "productionMutationPerformed": false
+  }
+}

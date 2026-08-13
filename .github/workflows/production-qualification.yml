@@ -82,6 +82,7 @@ jobs:
           npm ci --prefix "$render_source" --omit=dev --no-audit --no-fund
           (cd "$render_source" && node scripts/check-pre58-production-startup.js)
           (cd "$render_source" && node scripts/check-pre61-professional-design-system.js)
+          (cd "$render_source" && node scripts/check-pre62-executive-clarity.js)
 
       - name: Qualify pre58 collision-safe credential reconciliation
         working-directory: ${{ steps.source.outputs.path }}
@@ -120,6 +121,20 @@ jobs:
           node --check "$RUNTIME/public/community-resources-pre60.js"
           node scripts/check-pre61-professional-design-system.js
           python3 deployment/pre61/test_pre61_professional_design_system.py
+
+      - name: Qualify pre62 executive clarity and customer funnels
+        working-directory: ${{ steps.source.outputs.path }}
+        env:
+          RUNTIME: ${{ steps.source.outputs.path }}/.runtime/smarter-justice-v${{ steps.source.outputs.version }}
+        run: |
+          set -euo pipefail
+          node --check scripts/apply-pre62-executive-clarity.js
+          node --check scripts/check-pre62-executive-clarity.js
+          node --check scripts/render-pre62-visual-qa.js
+          node --check "$RUNTIME/server.js"
+          node --check "$RUNTIME/public/attorney-partner-tour.js"
+          node scripts/check-pre62-executive-clarity.js
+          python3 deployment/pre62/test_pre62_executive_clarity.py
 
       - name: Resolve qualified runtime
         id: runtime
