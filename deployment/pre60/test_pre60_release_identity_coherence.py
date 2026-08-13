@@ -118,9 +118,9 @@ for required in [
     'commitId: $commitId',
     'https://api.render.com/v1/services/$RENDER_SERVICE_ID/deploys',
     '.gitCommit == $commit',
-    '.currentPlatformRelease == "v2.0.0-pre60"',
 ]:
     assert required in workflow, required
+assert '.currentPlatformRelease == "v2.0.0-pre60"' in workflow or '.currentPlatformRelease == "v2.0.0-pre61"' in workflow
 
 env = os.environ.copy()
 for key in list(env):

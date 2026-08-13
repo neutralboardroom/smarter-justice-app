@@ -15,9 +15,11 @@ PowerShell, and Render.
    monitoring it, and requires the deployment to become `live`.
 6. `/livez`, `/health`, and `/api/release-identity` must confirm the same commit.
 
-The pre60 release gate also requires `/livez` and `/health` to report the core
+The pre61 release gate also requires `/livez` and `/health` to report the core
 application version `1.7.98`, and release identity to report the current platform
-improvement `v2.0.0-pre60`.
+improvement `v2.0.0-pre61`. It also verifies the professional design-system
+overlay, a single working mobile menu, removal of legacy micro-portal links,
+and live same-origin destinations exposed by the six main module funnels.
 
 Pull requests, manual qualification runs, and non-`main` branches never deploy.
 Render auto-deploy remains off; GitHub is the only automatic promotion gate.

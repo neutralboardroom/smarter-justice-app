@@ -81,7 +81,7 @@ jobs:
           git archive --format=tar HEAD | tar -xf - -C "$render_source"
           npm ci --prefix "$render_source" --omit=dev --no-audit --no-fund
           (cd "$render_source" && node scripts/check-pre58-production-startup.js)
-          (cd "$render_source" && node scripts/check-pre60-release-identity-coherence.js)
+          (cd "$render_source" && node scripts/check-pre61-professional-design-system.js)
 
       - name: Qualify pre58 collision-safe credential reconciliation
         working-directory: ${{ steps.source.outputs.path }}
@@ -95,7 +95,7 @@ jobs:
           python3 deployment/pre58/test_pre58_credential_reconciliation.py
           python3 deployment/pre58/test_pre58_release.py
 
-      - name: Qualify pre60 live identity and specialty-start coherence
+      - name: Validate inherited pre60 overlay source
         working-directory: ${{ steps.source.outputs.path }}
         env:
           RUNTIME: ${{ steps.source.outputs.path }}/.runtime/smarter-justice-v${{ steps.source.outputs.version }}
@@ -106,8 +106,20 @@ jobs:
           node --check "$RUNTIME/server.js"
           node --check "$RUNTIME/lib/serviceReadiness.js"
           node --check "$RUNTIME/public/home.js"
-          node scripts/check-pre60-release-identity-coherence.js
-          python3 deployment/pre60/test_pre60_release_identity_coherence.py
+
+      - name: Qualify pre61 professional design, navigation, and module funnels
+        working-directory: ${{ steps.source.outputs.path }}
+        env:
+          RUNTIME: ${{ steps.source.outputs.path }}/.runtime/smarter-justice-v${{ steps.source.outputs.version }}
+        run: |
+          set -euo pipefail
+          node --check scripts/apply-pre61-professional-design-system.js
+          node --check scripts/check-pre61-professional-design-system.js
+          node --check "$RUNTIME/server.js"
+          node --check "$RUNTIME/public/practice-directory-pre60.js"
+          node --check "$RUNTIME/public/community-resources-pre60.js"
+          node scripts/check-pre61-professional-design-system.js
+          python3 deployment/pre61/test_pre61_professional_design_system.py
 
       - name: Resolve qualified runtime
         id: runtime
@@ -322,7 +334,7 @@ jobs:
               && jq -e '.ok == true and .version == "1.7.98"' "$health" > /dev/null \
               && jq -e \
                 --arg commit "$EXPECTED_COMMIT" \
-                '.ok == true and .currentPlatformRelease == "v2.0.0-pre60" and .coreApplicationVersion == "1.7.98" and .gitCommit == $commit and .gitBranch == "main" and .gitRepo == "neutralboardroom/smarter-justice-app" and .renderRuntime == true' \
+                '.ok == true and .currentPlatformRelease == "v2.0.0-pre61" and .coreApplicationVersion == "1.7.98" and .gitCommit == $commit and .gitBranch == "main" and .gitRepo == "neutralboardroom/smarter-justice-app" and .renderRuntime == true' \
                 "$identity" > /dev/null; then
               echo "Live release identity matches the exact qualified commit"
               exit 0
