@@ -33,4 +33,8 @@ for lifecycle_test in [
     assert "env.pop('NODE_USE_ENV_PROXY', None)" in lifecycle_source, lifecycle_test
 bootstrap = (repo / 'scripts/bootstrap-sitewide-release.js').read_text()
 assert 'delete env.NODE_USE_ENV_PROXY' in bootstrap
+pre56_measurement = (repo / 'deployment/pre56/test_pre56_private_measurement.py').read_text()
+assert pre56_measurement.count("'RENDER_DISK_MOUNT_PATH'") == 2
+assert pre56_measurement.count("'NODE_USE_ENV_PROXY'") == 2
+assert "'PG'" in pre56_measurement
 print('PASS PRE59 combined non-production rollback and credential-rotation rehearsal; 0 provider mutations, 0 credential values, gates closed')

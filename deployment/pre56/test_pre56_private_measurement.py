@@ -62,6 +62,9 @@ const measurement=require(path.join(root,'lib','privateAcquisitionMeasurementPre
 
 with tempfile.TemporaryDirectory(prefix='sj-pre56-measurement-') as storage:
     env = os.environ.copy()
+    for key in list(env):
+        if key.startswith(('DATABASE_', 'REDIS_', 'OBJECT_STORAGE_', 'AWS_', 'S3_', 'PG')) or key in ['RENDER', 'RENDER_DISK_MOUNT_PATH', 'DATABASE_URL', 'OWNER_CONTROL_CENTER_TOKEN', 'ADMIN_TOKEN', 'PORTAL_RULES_API_TOKEN', 'npm_config_omit', 'NPM_CONFIG_OMIT', 'npm_config_production', 'NPM_CONFIG_PRODUCTION', 'NODE_USE_ENV_PROXY']:
+            env.pop(key, None)
     env.update({
         'NODE_ENV': 'test',
         'SMARTER_JUSTICE_STORAGE_DIR': storage,
@@ -96,7 +99,7 @@ def request_json(url, method='GET', body=None):
 with tempfile.TemporaryDirectory(prefix='sj-pre56-http-') as storage:
     env = os.environ.copy()
     for key in list(env):
-        if key.startswith(('DATABASE_', 'REDIS_', 'OBJECT_STORAGE_', 'AWS_', 'S3_')) or key in ['RENDER', 'DATABASE_URL', 'OWNER_CONTROL_CENTER_TOKEN', 'ADMIN_TOKEN', 'PORTAL_RULES_API_TOKEN', 'npm_config_omit', 'NPM_CONFIG_OMIT', 'npm_config_production', 'NPM_CONFIG_PRODUCTION']:
+        if key.startswith(('DATABASE_', 'REDIS_', 'OBJECT_STORAGE_', 'AWS_', 'S3_', 'PG')) or key in ['RENDER', 'RENDER_DISK_MOUNT_PATH', 'DATABASE_URL', 'OWNER_CONTROL_CENTER_TOKEN', 'ADMIN_TOKEN', 'PORTAL_RULES_API_TOKEN', 'npm_config_omit', 'NPM_CONFIG_OMIT', 'npm_config_production', 'NPM_CONFIG_PRODUCTION', 'NODE_USE_ENV_PROXY']:
             env.pop(key, None)
     env.update({'NODE_ENV': 'test', 'PORT': '0', 'SMARTER_JUSTICE_STORAGE_DIR': storage, 'SJ_PRIVACY_MINIMIZED_MEASUREMENT_ENABLED': 'true'})
     proc = subprocess.Popen(['npm', 'start'], cwd=repo, env=env, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True, bufsize=1)
