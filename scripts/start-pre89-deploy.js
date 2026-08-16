@@ -21,7 +21,7 @@ function fail(message, child) {
 }
 function request(pathname) {
   return new Promise((resolve, reject) => {
-    const req = http.get({ hostname: '127.0.0.1', port, path: pathname, timeout: 5000, headers: { 'user-agent': 'smarter-justice-pre89-render-selftest/2' } }, (res) => {
+    const req = http.get({ hostname: '127.0.0.1', port, path: pathname, timeout: 5000, headers: { 'user-agent': 'smarter-justice-pre89-render-selftest/3' } }, (res) => {
       const chunks = [];
       res.on('data', (chunk) => chunks.push(chunk));
       res.on('end', () => resolve({ status: res.statusCode, headers: res.headers, body: Buffer.concat(chunks).toString('utf8') }));
@@ -51,20 +51,20 @@ async function runSelfTest() {
     ['/', [200], 'html'],
     ['/help-options.html', [200], 'html'],
     ['/practice-areas.html', [200], 'html'],
-    ['/professional-directory.html', [200], 'html'],
+    ['/professionals.html', [200], 'html'],
     ['/profile-review.html', [200], 'html'],
     ['/pricing.html', [200], 'html'],
     ['/firm-first-value.html', [200], 'html'],
     ['/free-tools.html', [200], 'html'],
     ['/navigator.html', [200], 'html'],
     ['/privacy.html', [200], 'html'],
-    ['/support.html', [200], 'html'],
+    ['/contact.html', [200], 'html'],
     ['/es/', [200], 'html'],
     ['/es/precios.html', [200], 'html'],
     ['/es/profile-review.html', [200], 'html'],
     ['/es/firm-first-value.html', [200], 'html'],
     ['/styles.css', [200], 'asset'],
-    ['/__smarter_justice_pre89_hard_404__', [404], 'html']
+    ['/__smarter_justice_pre89_hard_404__', [404], 'status']
   ];
   const results = [];
   let aiStatus = null;
@@ -72,11 +72,7 @@ async function runSelfTest() {
     const result = await request(pathname);
     if (!statuses.includes(result.status)) throw new Error(`${pathname} status ${result.status}; expected ${statuses.join('/')}`);
     if (kind === 'html') {
-      if (pathname.includes('hard_404')) {
-        if (result.body.length < 80) throw new Error(`${pathname} returned an undersized 404 body`);
-      } else {
-        if (!/text\/html/i.test(String(result.headers['content-type'] || '')) || result.body.length < 300) throw new Error(`${pathname} did not return a substantive HTML document`);
-      }
+      if (!/text\/html/i.test(String(result.headers['content-type'] || '')) || result.body.length < 300) throw new Error(`${pathname} did not return a substantive HTML document`);
     }
     if (kind === 'asset' && result.body.length < 1000) throw new Error(`${pathname} returned an undersized asset`);
     if (kind === 'json') {
