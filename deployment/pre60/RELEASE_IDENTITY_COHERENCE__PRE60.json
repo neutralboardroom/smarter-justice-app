@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "1.0.0",
+  "release": "v2.0.0-pre60",
+  "marker": "SMARTER_JUSTICE_PRE60_RELEASE_IDENTITY_COHERENCE",
+  "state": "QUALIFIED_PLATFORM_VISUAL_SYSTEM_AND_RELEASE_IDENTITY_COHERENCE",
+  "purpose": "Apply one coherent public and professional visual system, repair the longest public directories with search-first progressive disclosure, remove stale live-version signals, make selected legal-area links visibly focused, and retain the exact-commit qualification-gated GitHub-to-Render path without ZIP shuttling.",
+  "durableProductReviewRule": {
+    "repositoryBoundary": "AGENTS.md",
+    "reviewStandard": "deployment/ROGER_DURABLE_PRODUCT_REVIEW_RULES.md",
+    "requiredEveryVersion": true,
+    "actualRenderedDesktopAndPhoneReviewRequired": true,
+    "customerFunnelReviewRequired": true,
+    "changeForNoveltyProhibited": true,
+    "reasonedNoChangeDecisionAllowed": true,
+    "sourceTestsAloneAreVisualAcceptance": false,
+    "postDeployExactProductionReviewRequired": true
+  },
+  "publicExperienceRepair": {
+    "defectRegister": "deployment/pre60/PUBLIC_EXPERIENCE_DEFECT_REGISTER__PRE60.json",
+    "primaryStartPrecedesNavigatorPromotion": true,
+    "desktopHeadlineScaleReduced": true,
+    "duplicateCardArrowsRemoved": true,
+    "duplicateProfessionalSectionRemoved": true,
+    "helpControlRecognizesCurrentFooter": true,
+    "specialtyQueryProducesVisibleContext": true,
+    "attorneyTourThreeCardDesktopGridRestored": true,
+    "attorneyTourEndsAfterFinalStep": true,
+    "unifiedPublicAndProfessionalNavigation": true,
+    "cohesiveTypeSpacingCardAndFormSystem": true,
+    "practiceDirectorySearchFirst": true,
+    "practiceAreasPreserved": 69,
+    "practiceTopicsCollapsed": 69,
+    "practiceInitialCardLimit": 12,
+    "communityDirectorySearchFirst": true,
+    "communityCategoriesPreserved": 21,
+    "communityInitialCardLimit": 9,
+    "communityLongToolsCollapsed": true,
+    "communityRedundantTailRemoved": true
+  },
+  "versionContract": {
+    "coreApplicationVersion": "1.7.98",
+    "currentPlatformRelease": "v2.0.0-pre60",
+    "sealedRuntimeBaseline": "v2.0.0-pre58",
+    "livenessVersionSource": "runtime package.json"
+  },
+  "deploymentContract": {
+    "source": "neutralboardroom/smarter-justice-app",
+    "branch": "main",
+    "qualifiedExactCommitRequired": true,
+    "pullRequestsDeploy": false,
+    "manualQualificationRunsDeploy": false,
+    "renderAutoDeployRemainsOff": true,
+    "ordinaryZipTransferRequired": false,
+    "repositoryEnableVariable": "RENDER_DEPLOY_ENABLED",
+    "protectedSecretNames": [
+      "RENDER_API_KEY",
+      "RENDER_SERVICE_ID"
+    ]
+  },
+  "scope": {
+    "databaseChanged": false,
+    "environmentValuesChanged": false,
+    "domainsChanged": false,
+    "renderCommandsChanged": false,
+    "providerMutationPerformed": false,
+    "ordinaryPublicContentChanged": true
+  },
+  "noLoss": true
+}

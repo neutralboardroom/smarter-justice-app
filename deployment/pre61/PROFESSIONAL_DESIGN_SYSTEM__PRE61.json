@@ -1,0 +1,112 @@
+{
+  "schemaVersion": "1.0.0",
+  "release": "v2.0.0-pre61",
+  "marker": "SMARTER_JUSTICE_PRE61_PROFESSIONAL_DESIGN_SYSTEM",
+  "state": "CANDIDATE_RENDERED_DESIGN_REVIEW_COMPLETE",
+  "purpose": "Refine the accepted pre60 information architecture into a brighter, more restrained and professional design system; repair the desktop Navigator promotion; reduce visual noise and mobile scan length without removing routes, content, legal areas, community categories, or professional funnel steps.",
+  "designDirection": {
+    "brightWhiteSurfaces": true,
+    "restrainedNavyTealPalette": true,
+    "decorativeGradientsAdded": false,
+    "emojiPathIconsRemoved": true,
+    "defaultCardShadowsReduced": true,
+    "buttonsAndControlsUseRestrainedCorners": true,
+    "contentChangedForNovelty": false
+  },
+  "renderedReview": {
+    "actualBrowserRenderingUsed": true,
+    "desktopViewport": "1440x1000",
+    "phoneViewport": "390x844",
+    "routes": [
+      "/",
+      "/practice-areas.html",
+      "/community-resources.html",
+      "/attorney-partner-tour.html?practice=divorce"
+    ],
+    "baselineDefects": [
+      "Desktop Navigator promotion used four independent grid children in a three-column layout, forcing the heading into a narrow vertical word column.",
+      "Emoji practice icons could render inconsistently or as missing-glyph boxes and did not match the restrained professional brand.",
+      "Multiple historical style layers left excessive gradients, rounded surfaces, and default shadows across otherwise improved pre60 pages.",
+      "Phone legal-area and community scans exposed too many cards before the user reached progressive-disclosure controls.",
+      "The professional tour retained dense nested cards and oversized headings even after the pre60 content-length repair."
+    ],
+    "repairs": [
+      "Navigator promotion now has a structured content group and one clear action, with a responsive two-column desktop and one-column phone layout.",
+      "Six home practice icons use stable numbered markers instead of platform-dependent emoji.",
+      "Shared white surfaces, navy and teal color, six-to-nine-pixel radii, lighter borders, fewer default shadows, and tighter type scale now govern public and professional pages.",
+      "Phone legal-area and community initial scans show six choices while desktop retains twelve legal areas and nine community categories.",
+      "Professional-tour steps use a simpler numbered rail, flatter nested surfaces, and reduced mobile heading and spacing density."
+    ],
+    "remainingIntentionalLength": [
+      "All 69 legal areas remain available through search and the Show all control.",
+      "All 21 community categories remain available through search and the Show all control.",
+      "All seven attorney-tour steps remain available because they represent distinct acquisition, operations, compliance, and handoff decisions."
+    ]
+  },
+  "navigationAndLinkAudit": {
+    "duplicateMobileMenusRemoved": true,
+    "survivingMenuController": "/app.js",
+    "browserInteractionVerified": {
+      "phoneViewport": "390x844",
+      "routes": [
+        "/",
+        "/family-law.html",
+        "/practice-areas.html",
+        "/community-resources.html"
+      ],
+      "exactlyOneTogglePerRoute": true,
+      "opensAndClosesWithEscape": true,
+      "horizontalOverflowAbsent": true
+    },
+    "focusedMicroportalLinksRemoved": true,
+    "footerSpecialtyPortalGroupsRemoved": true,
+    "officialCommunityProviderLinksPreserved": true,
+    "moduleActionsRetargetedToCentralRoutes": true,
+    "moduleFunnelsTested": [
+      "/family-law.html",
+      "/injury.html",
+      "/rights-defense.html",
+      "/work-business.html",
+      "/property-debt.html",
+      "/estate-benefits-records.html"
+    ],
+    "moduleDestinationRule": "Every same-origin link exposed by the six main module funnels must return HTTP 200 in candidate qualification."
+  },
+  "preservation": {
+    "legalAreas": 69,
+    "communityCategories": 21,
+    "attorneyTourSteps": 7,
+    "homeStartingPaths": 6,
+    "desktopLegalInitialLimit": 12,
+    "phoneLegalInitialLimit": 6,
+    "desktopCommunityInitialLimit": 9,
+    "phoneCommunityInitialLimit": 6,
+    "routesRemoved": 0,
+    "capabilitiesRemoved": 0,
+    "noLoss": true
+  },
+  "versionContract": {
+    "coreApplicationVersion": "1.7.98",
+    "currentPlatformRelease": "v2.0.0-pre61",
+    "sealedRuntimeBaseline": "v2.0.0-pre58"
+  },
+  "deploymentContract": {
+    "source": "neutralboardroom/smarter-justice-app",
+    "branch": "main",
+    "qualifiedExactCommitRequired": true,
+    "pullRequestsDeploy": false,
+    "manualQualificationRunsDeploy": false,
+    "renderAutoDeployRemainsOff": true,
+    "ordinaryZipTransferRequired": false,
+    "productionMutationPerformed": false
+  },
+  "scope": {
+    "databaseChanged": false,
+    "environmentValuesChanged": false,
+    "domainsChanged": false,
+    "renderCommandsChanged": false,
+    "providerMutationPerformed": false,
+    "publicPresentationChanged": true,
+    "publicCapabilitiesChanged": false
+  }
+}

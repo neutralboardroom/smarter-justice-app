@@ -1,4 +1,6 @@
 node_modules
+.runtime
+deployment/pre62/screenshots/
 .env
 storage/*.json
 storage/uploads/*
