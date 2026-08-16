@@ -81,6 +81,7 @@ jobs:
           git archive --format=tar HEAD | tar -xf - -C "$render_source"
           npm ci --prefix "$render_source" --omit=dev --no-audit --no-fund
           (cd "$render_source" && node scripts/check-pre58-production-startup.js)
+          (cd "$render_source" && node scripts/check-pre61-professional-design-system.js)
 
       - name: Qualify pre58 collision-safe credential reconciliation
         working-directory: ${{ steps.source.outputs.path }}
@@ -93,6 +94,32 @@ jobs:
           node --check "$RUNTIME/lib/credentialReconciliationPre58.js"
           python3 deployment/pre58/test_pre58_credential_reconciliation.py
           python3 deployment/pre58/test_pre58_release.py
+
+      - name: Validate inherited pre60 overlay source
+        working-directory: ${{ steps.source.outputs.path }}
+        env:
+          RUNTIME: ${{ steps.source.outputs.path }}/.runtime/smarter-justice-v${{ steps.source.outputs.version }}
+        run: |
+          set -euo pipefail
+          node --check scripts/apply-pre60-release-identity-coherence.js
+          node --check scripts/check-pre60-release-identity-coherence.js
+          node --check "$RUNTIME/server.js"
+          node --check "$RUNTIME/lib/serviceReadiness.js"
+          node --check "$RUNTIME/public/home.js"
+
+      - name: Qualify pre61 professional design, navigation, and module funnels
+        working-directory: ${{ steps.source.outputs.path }}
+        env:
+          RUNTIME: ${{ steps.source.outputs.path }}/.runtime/smarter-justice-v${{ steps.source.outputs.version }}
+        run: |
+          set -euo pipefail
+          node --check scripts/apply-pre61-professional-design-system.js
+          node --check scripts/check-pre61-professional-design-system.js
+          node --check "$RUNTIME/server.js"
+          node --check "$RUNTIME/public/practice-directory-pre60.js"
+          node --check "$RUNTIME/public/community-resources-pre60.js"
+          node scripts/check-pre61-professional-design-system.js
+          python3 deployment/pre61/test_pre61_professional_design_system.py
 
       - name: Resolve qualified runtime
         id: runtime
@@ -149,3 +176,170 @@ jobs:
             echo "Qualification did not succeed: $RESULT"
             exit 1
           }
+
+  deploy-render:
+    name: Deploy exact qualified commit to Render
+    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' && vars.RENDER_DEPLOY_ENABLED == 'true' }}
+    needs: [qualification-gate]
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      EXPECTED_COMMIT: ${{ github.sha }}
+      RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }}
+      RENDER_SERVICE_ID: ${{ secrets.RENDER_SERVICE_ID }}
+      RELEASE_BASE_URL: https://smarter-justice-app.onrender.com
+    steps:
+      - name: Require protected deployment configuration
+        run: |
+          set -euo pipefail
+          test -n "$RENDER_API_KEY" || {
+            echo "RENDER_API_KEY is not configured"
+            exit 1
+          }
+          test -n "$RENDER_SERVICE_ID" || {
+            echo "RENDER_SERVICE_ID is not configured"
+            exit 1
+          }
+          test "$EXPECTED_COMMIT" = "$GITHUB_SHA"
+          test "$GITHUB_REF" = "refs/heads/main"
+
+      - name: Trigger the exact qualified commit
+        id: deploy
+        run: |
+          set -euo pipefail
+          response="$RUNNER_TEMP/render-create-deploy.json"
+          payload="$RUNNER_TEMP/render-create-deploy-payload.json"
+          jq -n \
+            --arg commitId "$EXPECTED_COMMIT" \
+            '{clearCache: "do_not_clear", commitId: $commitId}' > "$payload"
+
+          status_code="$(curl --silent --show-error \
+            --request POST \
+            --header "Authorization: Bearer $RENDER_API_KEY" \
+            --header "Accept: application/json" \
+            --header "Content-Type: application/json" \
+            --data-binary "@$payload" \
+            --output "$response" \
+            --write-out '%{http_code}' \
+            "https://api.render.com/v1/services/$RENDER_SERVICE_ID/deploys")"
+
+          case "$status_code" in
+            201|202) ;;
+            *)
+              echo "Render rejected the deployment request with HTTP $status_code"
+              exit 1
+              ;;
+          esac
+
+          deploy_id="$(jq -r '.id // .deploy.id // empty' "$response" 2>/dev/null || true)"
+          returned_commit="$(jq -r '.commit.id // .deploy.commit.id // empty' "$response" 2>/dev/null || true)"
+
+          if [ -n "$returned_commit" ] && [ "$returned_commit" != "$EXPECTED_COMMIT" ]; then
+            echo "Render returned a different commit than the qualified commit"
+            exit 1
+          fi
+
+          if [ -z "$deploy_id" ]; then
+            echo "The deploy was queued; resolving its exact deployment ID"
+            for attempt in $(seq 1 20); do
+              list_response="$RUNNER_TEMP/render-deploy-list.json"
+              list_status="$(curl --silent --show-error \
+                --header "Authorization: Bearer $RENDER_API_KEY" \
+                --header "Accept: application/json" \
+                --output "$list_response" \
+                --write-out '%{http_code}' \
+                "https://api.render.com/v1/services/$RENDER_SERVICE_ID/deploys?limit=20")"
+              test "$list_status" = "200" || {
+                echo "Unable to resolve queued deploy: HTTP $list_status"
+                exit 1
+              }
+              deploy_id="$(jq -r \
+                --arg commit "$EXPECTED_COMMIT" \
+                '[.[] | select((.deploy.commit.id // .commit.id // "") == $commit) | (.deploy.id // .id)][0] // empty' \
+                "$list_response")"
+              [ -n "$deploy_id" ] && break
+              sleep 6
+            done
+          fi
+
+          test -n "$deploy_id" || {
+            echo "Render accepted the request but its exact deployment ID could not be resolved"
+            exit 1
+          }
+          echo "deploy_id=$deploy_id" >> "$GITHUB_OUTPUT"
+          echo "Tracking Render deployment $deploy_id for the qualified commit"
+
+      - name: Require the exact Render deployment to become live
+        env:
+          DEPLOY_ID: ${{ steps.deploy.outputs.deploy_id }}
+        run: |
+          set -euo pipefail
+          for attempt in $(seq 1 120); do
+            response="$RUNNER_TEMP/render-deploy-status.json"
+            status_code="$(curl --silent --show-error \
+              --header "Authorization: Bearer $RENDER_API_KEY" \
+              --header "Accept: application/json" \
+              --output "$response" \
+              --write-out '%{http_code}' \
+              "https://api.render.com/v1/services/$RENDER_SERVICE_ID/deploys/$DEPLOY_ID")"
+            test "$status_code" = "200" || {
+              echo "Unable to read Render deployment status: HTTP $status_code"
+              exit 1
+            }
+
+            returned_id="$(jq -r '.id // empty' "$response")"
+            returned_commit="$(jq -r '.commit.id // empty' "$response")"
+            deploy_status="$(jq -r '.status // empty' "$response")"
+            test "$returned_id" = "$DEPLOY_ID"
+            test "$returned_commit" = "$EXPECTED_COMMIT" || {
+              echo "Tracked Render deployment does not match the qualified commit"
+              exit 1
+            }
+
+            case "$deploy_status" in
+              live)
+                echo "Exact qualified commit is live on Render"
+                exit 0
+                ;;
+              build_failed|update_failed|canceled|pre_deploy_failed|deactivated)
+                echo "Render deployment ended with status: $deploy_status"
+                exit 1
+                ;;
+              created|queued|build_in_progress|pre_deploy_in_progress|update_in_progress)
+                echo "Render deployment status: $deploy_status"
+                ;;
+              *)
+                echo "Unexpected Render deployment status: ${deploy_status:-missing}"
+                exit 1
+                ;;
+            esac
+            sleep 15
+          done
+          echo "Render deployment did not finish within 30 minutes"
+          exit 1
+
+      - name: Verify the live release identity
+        run: |
+          set -euo pipefail
+          for attempt in $(seq 1 20); do
+            livez="$RUNNER_TEMP/smarter-justice-livez.json"
+            health="$RUNNER_TEMP/smarter-justice-health.json"
+            identity="$RUNNER_TEMP/smarter-justice-release-identity.json"
+
+            if curl --silent --show-error --fail --max-time 30 "$RELEASE_BASE_URL/livez" > "$livez" \
+              && curl --silent --show-error --fail --max-time 30 "$RELEASE_BASE_URL/health" > "$health" \
+              && curl --silent --show-error --fail --max-time 30 "$RELEASE_BASE_URL/api/release-identity" > "$identity" \
+              && jq -e '.ok == true' "$livez" > /dev/null \
+              && jq -e '.ok == true and .version == "1.7.98"' "$livez" > /dev/null \
+              && jq -e '.ok == true and .version == "1.7.98"' "$health" > /dev/null \
+              && jq -e \
+                --arg commit "$EXPECTED_COMMIT" \
+                '.ok == true and .currentPlatformRelease == "v2.0.0-pre61" and .coreApplicationVersion == "1.7.98" and .gitCommit == $commit and .gitBranch == "main" and .gitRepo == "neutralboardroom/smarter-justice-app" and .renderRuntime == true' \
+                "$identity" > /dev/null; then
+              echo "Live release identity matches the exact qualified commit"
+              exit 0
+            fi
+            sleep 10
+          done
+          echo "Live endpoints did not confirm the exact qualified commit"
+          exit 1
