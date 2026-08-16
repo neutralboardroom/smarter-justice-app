@@ -9,6 +9,11 @@ const target = path.join(root, '.runtime', 'pre89-live');
 const markerPath = path.join(target, '.pre89-render-bootstrap.json');
 const port = Number(process.env.PORT || 10000);
 
+function truthy(name, fallback=false) {
+  const raw = process.env[name];
+  if (raw === undefined || raw === '') return fallback;
+  return /^(1|true|yes|on)$/i.test(String(raw));
+}
 function fail(message, child) {
   console.error(`[PRE89 START] ${message}`);
   if (child && !child.killed) child.kill('SIGTERM');
@@ -16,7 +21,7 @@ function fail(message, child) {
 }
 function request(pathname) {
   return new Promise((resolve, reject) => {
-    const req = http.get({ hostname: '127.0.0.1', port, path: pathname, timeout: 5000, headers: { 'user-agent': 'smarter-justice-pre89-render-selftest/1' } }, (res) => {
+    const req = http.get({ hostname: '127.0.0.1', port, path: pathname, timeout: 5000, headers: { 'user-agent': 'smarter-justice-pre89-render-selftest/2' } }, (res) => {
       const chunks = [];
       res.on('data', (chunk) => chunks.push(chunk));
       res.on('end', () => resolve({ status: res.statusCode, headers: res.headers, body: Buffer.concat(chunks).toString('utf8') }));
@@ -42,8 +47,9 @@ async function runSelfTest() {
     ['/health', [200], 'json'],
     ['/livez', [200], 'json'],
     ['/readyz?lane=free-professional-profiles', [200,503], 'json'],
+    ['/api/ai-status', [200], 'json'],
     ['/', [200], 'html'],
-    ['/find-help.html', [200], 'html'],
+    ['/help-options.html', [200], 'html'],
     ['/practice-areas.html', [200], 'html'],
     ['/professional-directory.html', [200], 'html'],
     ['/profile-review.html', [200], 'html'],
@@ -61,6 +67,7 @@ async function runSelfTest() {
     ['/__smarter_justice_pre89_hard_404__', [404], 'html']
   ];
   const results = [];
+  let aiStatus = null;
   for (const [pathname, statuses, kind] of matrix) {
     const result = await request(pathname);
     if (!statuses.includes(result.status)) throw new Error(`${pathname} status ${result.status}; expected ${statuses.join('/')}`);
@@ -73,12 +80,27 @@ async function runSelfTest() {
     }
     if (kind === 'asset' && result.body.length < 1000) throw new Error(`${pathname} returned an undersized asset`);
     if (kind === 'json') {
-      try { JSON.parse(result.body); } catch { throw new Error(`${pathname} did not return valid JSON`); }
+      let parsed;
+      try { parsed = JSON.parse(result.body); } catch { throw new Error(`${pathname} did not return valid JSON`); }
+      if (pathname === '/api/ai-status') aiStatus = parsed;
     }
     results.push({ path: pathname, status: result.status, bytes: Buffer.byteLength(result.body) });
   }
   const home = results.find((r) => r.path === '/');
+  const aiRuntime = {
+    keyConfigured: Boolean(String(process.env.OPENAI_API_KEY || '').trim()),
+    projectConfigured: Boolean(String(process.env.OPENAI_PROJECT_ID || '').trim()),
+    aiEnabledEnv: truthy('OPENAI_AI_ENABLED', false),
+    globalKillSwitch: truthy('AI_GLOBAL_KILL_SWITCH', true),
+    startingPointToolEnabled: truthy('AI_TOOL_SJ_STARTING_POINT_ENABLED', false),
+    selectedModel: String(process.env.OPENAI_MODEL || '').trim() || null,
+    publicAvailable: Boolean(aiStatus && aiStatus.available),
+    publicFeatureFlagState: aiStatus && aiStatus.featureFlagState || null,
+    liveSmokeState: aiStatus && aiStatus.liveSmokeState || null,
+    keyValueExposed: false
+  };
   console.log(`[PRE89 LIVE SELFTEST] PASS routes=${results.length} homeBytes=${home ? home.bytes : 0} profiles=12278 release=v2.0.0-pre89`);
+  console.log(`[PRE89 AI STATUS] ${JSON.stringify(aiRuntime)}`);
   console.log(`[PRE89 LIVE SELFTEST] ${JSON.stringify(results)}`);
 }
 
