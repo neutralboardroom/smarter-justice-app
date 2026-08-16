@@ -1,0 +1,134 @@
+{
+  "schemaVersion": "1.0.0",
+  "release": "v2.0.0-pre60",
+  "source": "owner-supplied production screenshots and live read-only inspection",
+  "productionUrl": "https://smarterjustice.com/",
+  "receivedAt": "2026-08-13",
+  "defects": [
+    {
+      "id": "PRE60-HOME-001",
+      "area": "homepage hierarchy",
+      "observed": "The Navigator promotion precedes the primary public starting task.",
+      "expected": "The public story form and core value proposition appear first; Navigator remains a secondary option.",
+      "sourceRepair": "Move the Navigator promotion immediately after the primary hero.",
+      "status": "repaired-in-source"
+    },
+    {
+      "id": "PRE60-HOME-002",
+      "area": "desktop typography",
+      "observed": "The primary headline is oversized and consumes most of the viewport.",
+      "expected": "The headline remains prominent without forcing the task form below the fold.",
+      "sourceRepair": "Reduce the desktop fluid headline ceiling from 72px to 62px.",
+      "status": "repaired-in-source"
+    },
+    {
+      "id": "PRE60-HOME-003",
+      "area": "starting-path cards",
+      "observed": "Card links render two arrows.",
+      "expected": "Each card link renders one arrow.",
+      "sourceRepair": "Remove the markup arrow and retain the CSS-generated arrow.",
+      "status": "repaired-in-source"
+    },
+    {
+      "id": "PRE60-HOME-004",
+      "area": "professional promotion",
+      "observed": "The growth, operations, and compliance promotion appears twice.",
+      "expected": "One professional promotion with a single clear path.",
+      "sourceRepair": "Remove the inherited duplicate section while preserving the current unified panel.",
+      "status": "repaired-in-source"
+    },
+    {
+      "id": "PRE60-HOME-005",
+      "area": "floating help control",
+      "observed": "The fixed help control can cover lower-page and footer content.",
+      "expected": "The control moves upward when the current footer is visible.",
+      "sourceRepair": "Observe both legacy and current footer classes.",
+      "status": "repaired-in-source"
+    },
+    {
+      "id": "PRE60-HOME-006",
+      "area": "specialty deep links",
+      "observed": "A practice query such as copyrights opens a generic homepage with no selected-area context.",
+      "expected": "The heading, explanatory text, form prompt, and document title visibly reflect the selected legal area.",
+      "sourceRepair": "Bind the practice query to a focused, privacy-preserving starting experience.",
+      "status": "repaired-in-source"
+    },
+    {
+      "id": "PRE60-TOUR-001",
+      "area": "attorney tour desktop layout",
+      "observed": "The three working advantages stack as three oversized full-width cards on desktop.",
+      "expected": "The three advantages display as a scannable three-column desktop comparison and collapse on small screens.",
+      "sourceRepair": "Restore the missing desktop grid declaration for three-card groups.",
+      "status": "repaired-in-source"
+    },
+    {
+      "id": "PRE60-TOUR-002",
+      "area": "attorney tour completion",
+      "observed": "After the seven-step tour reaches its final next-step actions, two inherited marketing sections repeat the proposition and create excessive empty space.",
+      "expected": "The guided story concludes after step 7 and proceeds directly to the legal footer.",
+      "sourceRepair": "Remove the redundant post-tour difference and Growth Workspace tail.",
+      "status": "repaired-in-source"
+    },
+    {
+      "id": "PRE60-TOUR-003",
+      "area": "attorney tour hero typography",
+      "observed": "The desktop tour headline dominates the first viewport and wraps into an unnecessarily tall block.",
+      "expected": "The tour headline remains prominent while leaving more of the legal-area selector and actions visible.",
+      "sourceRepair": "Reduce the tour-specific desktop headline ceiling from 64px to 56px.",
+      "status": "repaired-in-source"
+    },
+    {
+      "id": "PRE60-PLATFORM-001",
+      "area": "sitewide navigation",
+      "observed": "Core public routes use incompatible legacy header menus and the homepage contains two mobile menu systems.",
+      "expected": "One public navigation model, one professional navigation model, and one mobile menu control per page.",
+      "sourceRepair": "Apply shared public and professional headers across core routes and remove the duplicate homepage mobile menu.",
+      "status": "repaired-in-source"
+    },
+    {
+      "id": "PRE60-PLATFORM-002",
+      "area": "sitewide typography and spacing",
+      "observed": "Desktop H1 sizes vary from roughly 57px to 82px, page sections use inconsistent vertical rhythm, and high-volume cards consume excessive height.",
+      "expected": "A restrained common type scale, consistent page width, compact section spacing, and scannable cards.",
+      "sourceRepair": "Append a shared visual-system overlay for headers, heroes, type, cards, buttons, forms, spacing, and responsive breakpoints.",
+      "status": "repaired-in-source"
+    },
+    {
+      "id": "PRE60-AREAS-001",
+      "area": "legal-area directory length",
+      "observed": "All 69 legal-area cards and every topic list are expanded, producing a page approximately 20,911px tall.",
+      "expected": "Search and popular guides first, 12 compact cards initially, all 69 preserved on demand, and topic lists collapsed until requested.",
+      "sourceRepair": "Move search above the directory, limit popular guides to eight, hide later cards initially, and convert all 69 topic lists to accessible disclosures.",
+      "status": "repaired-in-source"
+    },
+    {
+      "id": "PRE60-AREAS-002",
+      "area": "legal-area directory hierarchy",
+      "observed": "The search control appears after a large group of focused pages and is easy to miss.",
+      "expected": "Search is the dominant directory action immediately after the hero, with a route for people who do not know the legal category.",
+      "sourceRepair": "Create a high-contrast search-first band and a direct link to the describe-what-happened starting form.",
+      "status": "repaired-in-source"
+    },
+    {
+      "id": "PRE60-COMMUNITY-001",
+      "area": "community-resource directory length",
+      "observed": "The page displays 40 card-like blocks across roughly 9,967px, including 21 need categories plus long plan and official-resource sections.",
+      "expected": "Search and nine common categories first, remaining categories on demand, and optional long tools collapsed.",
+      "sourceRepair": "Add category search, progressive disclosure for all 21 categories, and collapsed private-plan and official-directory sections.",
+      "status": "repaired-in-source"
+    },
+    {
+      "id": "PRE60-COMMUNITY-002",
+      "area": "community-resource completion",
+      "observed": "Multiple inherited promotional sections repeat portfolio and resource-sheet paths after the core directory.",
+      "expected": "One concise completion band with the three most useful next routes.",
+      "sourceRepair": "Replace the redundant tail with a private resource sheet, legal-area directory, and professional-directory action set.",
+      "status": "repaired-in-source"
+    }
+  ],
+  "remainingReview": [
+    "responsive visual inspection",
+    "keyboard and focus inspection",
+    "owner review of the qualified candidate before production promotion"
+  ]
+}
