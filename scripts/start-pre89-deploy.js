@@ -1,6 +1,7 @@
 'use strict';
 const fs = require('fs');
 const path = require('path');
+const { spawn } = require('child_process');
 
 const root = path.resolve(__dirname, '..');
 const target = path.join(root, '.runtime', 'pre89-live');
@@ -20,8 +21,23 @@ if (marker.preSealRuleLock !== 'PASS') fail('PRE89 pre-seal rule lock is not PAS
 
 const server = path.join(target, 'server.js');
 if (!fs.existsSync(server)) fail('PRE89 server.js is missing');
-process.env.SMARTER_JUSTICE_DEPLOYMENT_RELEASE = 'v2.0.0-pre89';
-process.env.SMARTER_JUSTICE_DEPLOYMENT_CARRIER_SHA256 = marker.carrierSha256;
-process.chdir(target);
-console.log(`[PRE89 START] starting ${marker.release} with ${marker.profileCounts.total} qualified Factory identities`);
-require(server);
+const env = {
+  ...process.env,
+  SMARTER_JUSTICE_DEPLOYMENT_RELEASE: 'v2.0.0-pre89',
+  SMARTER_JUSTICE_DEPLOYMENT_CARRIER_SHA256: marker.carrierSha256
+};
+console.log(`[PRE89 START] launching ${marker.release} with ${marker.profileCounts.total} qualified Factory identities`);
+const child = spawn(process.execPath, [server], {
+  cwd: target,
+  env,
+  stdio: 'inherit'
+});
+child.on('error', (error) => fail(`server process failed to start: ${error.message}`));
+child.on('exit', (code, signal) => {
+  if (signal) {
+    console.error(`[PRE89 START] server exited via signal ${signal}`);
+    process.kill(process.pid, signal);
+    return;
+  }
+  process.exit(code == null ? 1 : code);
+});
