@@ -55,14 +55,22 @@
   },
   "attorneyExperience": {
     "professionalDirectory": "PASS",
-    "findMyProfile": "PASS",
+    "findMyProfileRoute": "PASS",
     "attorneyTour": "PASS",
     "presenterTour": "PASS",
-    "professionalMembership": "PASS",
-    "attorneyLaunch": "PASS",
-    "professionalLogin": "PASS"
+    "professionalMembershipRoute": "PASS",
+    "attorneyLaunchRoute": "PASS",
+    "professionalLoginRoute": "PASS"
+  },
+  "launchReadiness": {
+    "freeProfessionalProfilesLane": "NOT_READY_FAIL_CLOSED",
+    "readinessHttpStatus": 503,
+    "confirmedBlocker": "owner_mfa",
+    "ownerAccounts": 1,
+    "ownerMfaEnabled": false,
+    "note": "Public directory and attorney demonstration are live. Full free-profile launch readiness must not be represented as green until the recorded operational and security gates, including owner MFA, are satisfied."
   },
   "nationalRogerRule": "SJ-RGR-PRE92-NATIONAL-USA-SCOPE",
   "postLiveErrorScan": "PASS_ZERO_ERRORS_OBSERVED",
-  "productionStatus": "LIVE_VERIFIED"
+  "productionStatus": "LIVE_WITH_FREE_PROFILE_READINESS_GATE_OPEN_ITEM"
 }
