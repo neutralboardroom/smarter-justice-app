@@ -4,7 +4,9 @@ const path=require('path');
 const crypto=require('crypto');
 const cp=require('child_process');
 const root=path.resolve(__dirname,'..');
-const archive=path.join(root,'PRE93_D1_DEPLOY_RUNTIME.tgz');
+const preferredArchive=path.join(root,'PRE93_D1_DEPLOY_RUNTIME.tgz');
+const uploadedArchive=path.join(root,'PRE93_D1_DEPLOY_RUNTIME(1).tgz');
+const archive=fs.existsSync(preferredArchive)?preferredArchive:uploadedArchive;
 const target=path.join(root,'.runtime','pre93-live');
 const expectedSha256='62597eaa30f484bcafb8de73553d2cf5225c7eb06514c4ca39f3a3b4d151ce5b';
 const expectedBytes=12947259;
@@ -12,7 +14,7 @@ function fail(message){console.error(`[PRE93-D1 DEPLOY] ${message}`);process.exi
 function assert(ok,message){if(!ok)fail(message)}
 function readJson(rel){const p=path.join(target,rel);assert(fs.existsSync(p),`missing required file: ${rel}`);return JSON.parse(fs.readFileSync(p,'utf8'))}
 function sha(file){return crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex')}
-assert(fs.existsSync(archive),'deployment carrier PRE93_D1_DEPLOY_RUNTIME.tgz is missing');
+assert(fs.existsSync(archive),'deployment carrier PRE93_D1_DEPLOY_RUNTIME.tgz or PRE93_D1_DEPLOY_RUNTIME(1).tgz is missing');
 const stat=fs.statSync(archive);assert(stat.size===expectedBytes,`carrier size mismatch: ${stat.size} != ${expectedBytes}`);
 const digest=sha(archive);assert(digest===expectedSha256,`carrier SHA-256 mismatch: ${digest}`);
 const members=cp.execFileSync('tar',['-tzf',archive],{encoding:'utf8',maxBuffer:32*1024*1024});
