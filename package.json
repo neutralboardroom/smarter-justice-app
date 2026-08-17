@@ -2,12 +2,12 @@
   "name": "smarter-justice-pre93-d1-render-bootstrap",
   "version": "2.0.0-pre93-d1",
   "private": true,
-  "description": "Fail-closed Render bootstrap for qualified Smarter Justice PRE93 plus attorney-directory/search/tour deployment amendment D1.",
+  "description": "Fail-closed Render bootstrap for qualified Smarter Justice PRE93 with D1-D4 attorney search, read-only Factory directory, national launch configuration, and launch-readiness diagnostics.",
   "engines": {
     "node": "22.x"
   },
   "scripts": {
-    "postinstall": "node scripts/bootstrap-pre93-deploy.js",
-    "start": "node scripts/start-pre93-deploy.js"
+    "postinstall": "node scripts/bootstrap-pre93-d4-deploy.js",
+    "start": "node scripts/start-pre93-d4-deploy.js"
   }
 }
