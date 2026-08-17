@@ -1,13 +1,13 @@
 {
-  "name": "smarter-justice-pre89-render-bootstrap",
-  "version": "2.0.0-pre89",
+  "name": "smarter-justice-pre93-d1-render-bootstrap",
+  "version": "2.0.0-pre93-d1",
   "private": true,
-  "description": "Fail-closed Render bootstrap for the exact qualified Smarter Justice PRE89 deployment carrier.",
+  "description": "Fail-closed Render bootstrap for qualified Smarter Justice PRE93 plus attorney-directory/search/tour deployment amendment D1.",
   "engines": {
     "node": "22.x"
   },
   "scripts": {
-    "postinstall": "node scripts/bootstrap-pre89-deploy.js",
-    "start": "node scripts/start-pre89-deploy.js"
+    "postinstall": "node scripts/bootstrap-pre93-deploy.js",
+    "start": "node scripts/start-pre93-deploy.js"
   }
 }
