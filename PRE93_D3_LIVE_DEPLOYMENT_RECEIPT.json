@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "smarter-justice.pre93-d3.live-deployment-receipt.v1",
+  "release": "v2.0.0-pre93",
+  "deploymentAmendment": "PRE93-D3-READ-ONLY-FACTORY-DIRECTORY",
+  "deployedAtUtc": "2026-08-17T18:46:41Z",
+  "render": {
+    "service": "smarter-justice-app",
+    "serviceId": "srv-d8ps9jgjs32c73918vvg",
+    "deployId": "dep-da1ldpe417fc73el0ak0",
+    "commit": "a25d30a489f251fadb72766394868d97087ba698",
+    "status": "live",
+    "primaryUrl": "https://smarter-justice-app.onrender.com",
+    "customDomain": "https://smarterjustice.com"
+  },
+  "carrier": {
+    "uploadedPath": "PRE93_D1_DEPLOY_RUNTIME(1).tgz",
+    "preferredPath": "PRE93_D1_DEPLOY_RUNTIME.tgz",
+    "bytes": 12947259,
+    "sha256": "62597eaa30f484bcafb8de73553d2cf5225c7eb06514c4ca39f3a3b4d151ce5b",
+    "buildIntegrity": "PASS"
+  },
+  "profileFactory": {
+    "version": "0.27.0",
+    "professionals": 12082,
+    "firms": 496,
+    "total": 12578,
+    "readOnlyDirectorySource": true,
+    "databaseBulkImport": false,
+    "onDemandJusticeMaterialization": true,
+    "platformOwnedFieldsImported": false,
+    "automaticClaims": false,
+    "automaticVerification": false,
+    "automaticBilling": false,
+    "automaticOutreach": false,
+    "automaticMemberCare": false
+  },
+  "liveSelfTest": {
+    "status": "PASS",
+    "routes": 17,
+    "searchableIndividualProfessionals": 12295,
+    "queries": {
+      "Adam Brooklyn": 2,
+      "family lawyer": 123,
+      "11201": 66
+    },
+    "everySearchFieldOptional": true,
+    "tokenAwarePartialSearch": true,
+    "paidOrganicBoost": false
+  },
+  "databaseBoundaryAfterDeploy": {
+    "marketplaceBulkProfessionals": 0,
+    "marketplaceBulkFirms": 0,
+    "profileFactoryImportMarker": null,
+    "expectedUnderD3": true
+  },
+  "attorneyExperience": {
+    "professionalDirectory": "PASS",
+    "findMyProfile": "PASS",
+    "attorneyTour": "PASS",
+    "presenterTour": "PASS",
+    "professionalMembership": "PASS",
+    "attorneyLaunch": "PASS",
+    "professionalLogin": "PASS"
+  },
+  "nationalRogerRule": "SJ-RGR-PRE92-NATIONAL-USA-SCOPE",
+  "postLiveErrorScan": "PASS_ZERO_ERRORS_OBSERVED",
+  "productionStatus": "LIVE_VERIFIED"
+}
