@@ -1,0 +1,16 @@
+  if (req.method === 'POST' && pathName === '/api/owner/auth/password-reset/request') {
+    const limited=await rateLimit(req,'owner-password-reset-request',{maxRequests:5,windowMs:60*60*1000}); if(limited)return json(res,429,{ok:false,error:'Too many owner password-reset requests. Try again later.',retryAfterSeconds:limited.retryAfterSeconds});
+    const body=await parseJson(req); const result=await ownerAccounts.requestPasswordReset(body.email); await store.flush();
+    return json(res,200,{ok:true,message:'If the active owner account matches that address, a reset message will be sent when owner email delivery is configured.',emailDeliveryConfigured:Boolean(result.deliveryAvailable),emergencyRecoveryAvailable:Boolean(ownerAccounts.ownerRecoveryStatus().emergencyRecoveryAvailable)});
+  }
+  if (req.method === 'POST' && pathName === '/api/owner/auth/password-reset/confirm') {
+    const limited=await rateLimit(req,'owner-password-reset-confirm',{maxRequests:10,windowMs:30*60*1000}); if(limited)return json(res,429,{ok:false,error:'Too many owner password-reset attempts. Try again later.',retryAfterSeconds:limited.retryAfterSeconds});
+    const body=await parseJson(req); const result=ownerAccounts.resetPassword(body.token,body.password); if(!result.error)await store.flush();
+    return result.error?json(res,400,{ok:false,error:result.error}):json(res,200,{ok:true,message:'Your owner password was reset. Sign in again on all devices.'});
+  }
+  if (req.method === 'POST' && pathName === '/api/owner/auth/password-reset/emergency') {
+    const limited=await rateLimit(req,'owner-emergency-password-reset',{maxRequests:5,windowMs:30*60*1000}); if(limited)return json(res,429,{ok:false,error:'Too many owner recovery attempts. Try again later.',retryAfterSeconds:limited.retryAfterSeconds});
+    const result=ownerAccounts.emergencyResetPassword(await parseJson(req)); if(!result.error)await store.flush();
+    return result.error?json(res,400,{ok:false,error:result.error}):json(res,200,{ok:true,message:'Your owner password was reset with the one-time Render recovery code. Sign in and enable MFA now.'});
+  }
+  if (req.method === 'POST' && pathName === '/api/owner/auth/logout') { const result=ownerAccounts.logout(req); return jsonWithCookie(res,200,{ok:true},[result.cookie,security.csrfCookie('',true)]); }
