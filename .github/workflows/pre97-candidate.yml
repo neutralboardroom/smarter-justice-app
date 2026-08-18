@@ -2,6 +2,8 @@ name: PRE97 Exact Carrier Qualification
 on:
   push:
     branches: [pre97-screenshot-audit-ux-auth-20260818]
+  pull_request:
+    branches: [main]
   workflow_dispatch:
 permissions:
   contents: read
