@@ -1,0 +1,12 @@
+/* PRE97 homepage refinements applied to the exact PRE96 carrier via runtime hooks. */
+.pre97-home-audit .pre97-home-hero{padding-top:clamp(2rem,4vw,3.3rem)!important;padding-bottom:clamp(2rem,4vw,3.4rem)!important}
+.pre97-home-audit .pre97-home-hero h1{font-size:clamp(2.65rem,5.2vw,4.7rem)!important;line-height:.98!important;max-width:760px}
+.pre97-home-audit .pre97-home-hero .lead{max-width:760px}
+.pre97-home-audit .pre97-jurisdiction-control{display:grid!important;grid-template-columns:1fr!important;gap:.38rem!important;align-items:start!important;margin:.7rem 0!important}
+.pre97-home-audit .pre97-jurisdiction-control select{width:100%;max-width:420px;margin:0!important}
+.pre97-home-audit .pre97-home-paths{padding-top:clamp(2rem,4vw,3.25rem)!important;padding-bottom:clamp(2rem,4vw,3.25rem)!important}
+.pre97-home-audit .pre97-home-paths article,.pre97-home-audit .pre97-home-paths .card{height:auto!important;min-height:0!important}
+.pre97-home-audit .pre97-home-attorney-cta{margin-top:0!important}
+.pre97-home-audit .pre97-home-attorney-cta h2,.pre97-home-audit .pre97-home-attorney-cta h3{max-width:860px;line-height:1.05}
+.pre97-home-audit .pre97-home-footer{padding-top:1.5rem!important;padding-bottom:1.5rem!important}
+@media(max-width:900px){.pre97-home-audit .pre97-home-hero h1{font-size:clamp(2.35rem,8vw,3.5rem)!important}.pre97-home-audit .pre97-home-hero{min-height:0!important}}
