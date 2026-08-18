@@ -51,8 +51,8 @@ jobs:
           while IFS= read -r file; do
             rel="${file#.runtime/pre97-candidate/public/}"
             route="/$rel"
-            code="$(curl -sS -o /tmp/pre97-page.html -w '%{http_code}' "http://127.0.0.1:3197$route")"
-            test "$code" = "200" || { echo "FAILED $route => $code"; exit 1; }
+            code="$(curl -L --max-redirs 5 -sS -o /tmp/pre97-page.html -w '%{http_code}' "http://127.0.0.1:3197$route")"
+            test "$code" = "200" || { echo "FAILED $route => final $code"; exit 1; }
             test "$(wc -c </tmp/pre97-page.html)" -gt 100
             count=$((count+1))
           done < <(find .runtime/pre97-candidate/public -type f -name '*.html' | sort)
