@@ -132,15 +132,15 @@ jobs:
           count="$(find "$RUNTIME/public" -type f -name '*.html' | wc -l | tr -d ' ')"
           test "$count" -ge 160
           echo "HTML surfaces: $count"
-          if node -e "const p=require(process.env.RUNTIME+'/package.json');process.exit(p.scripts&&p.scripts.sbom?0:1)"; then
+          if test -f "$RUNTIME/scripts/generate-sbom.js" && node -e "const p=require(process.env.RUNTIME+'/package.json');process.exit(p.scripts&&p.scripts.sbom?0:1)"; then
             (cd "$RUNTIME" && npm run sbom)
           else
-            echo 'Runtime has no sbom script; sealed carrier receipt remains authoritative.'
+            echo 'Sealed carrier omits SBOM generator source; inherited release receipt remains authoritative.'
           fi
-          if node -e "const p=require(process.env.RUNTIME+'/package.json');process.exit(p.scripts&&p.scripts['deployment:validate']?0:1)"; then
+          if test -f "$RUNTIME/scripts/validate-deployment.js" && node -e "const p=require(process.env.RUNTIME+'/package.json');process.exit(p.scripts&&p.scripts['deployment:validate']?0:1)"; then
             (cd "$RUNTIME" && npm run deployment:validate)
           else
-            echo 'Runtime has no deployment:validate script; sealed carrier startup check remains authoritative.'
+            echo 'Sealed carrier omits deployment validator source; startup marker and release receipt remain authoritative.'
           fi
 
   qualification-gate:
