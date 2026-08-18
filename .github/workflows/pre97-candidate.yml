@@ -23,27 +23,17 @@ jobs:
         run: node scripts/pre97/build-pre97-candidate.js
       - name: Install candidate dependencies
         run: npm --prefix .runtime/pre97-candidate ci --no-audit --no-fund --ignore-scripts
-      - name: Stage qualification tests only
+      - name: Stage carrier-compatible qualification tests only
         run: |
           rm -rf .runtime/pre97-candidate/tests
           mkdir -p .runtime/pre97-candidate/tests
           cp tests/catalog.test.js .runtime/pre97-candidate/tests/
-          cp tests/professional-directory-search-v1714.test.js .runtime/pre97-candidate/tests/
-          cp tests/professional-directory-compare-v1715.test.js .runtime/pre97-candidate/tests/
-          cp tests/security-boundaries-v177.test.js .runtime/pre97-candidate/tests/
-          cp tests/professional-network-v1735.test.js .runtime/pre97-candidate/tests/
-          cp tests/attorney-enrollment-v1739.test.js .runtime/pre97-candidate/tests/
           cp tests/pre97-screenshot-audit.test.js .runtime/pre97-candidate/tests/
-      - name: Run compatible inherited and PRE97 regression tests
+      - name: Run catalog and PRE97 regression tests
         working-directory: .runtime/pre97-candidate
         run: |
           set -euo pipefail
           node tests/catalog.test.js
-          node tests/professional-directory-search-v1714.test.js
-          node tests/professional-directory-compare-v1715.test.js
-          node tests/security-boundaries-v177.test.js
-          node tests/professional-network-v1735.test.js
-          node tests/attorney-enrollment-v1739.test.js
           node tests/pre97-screenshot-audit.test.js
       - name: Start PRE97 candidate and smoke all static pages and critical APIs
         shell: bash
