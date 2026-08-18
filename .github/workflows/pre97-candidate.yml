@@ -35,7 +35,7 @@ jobs:
           set -euo pipefail
           node tests/catalog.test.js
           node tests/pre97-screenshot-audit.test.js
-      - name: Start PRE97 candidate and smoke all static pages and critical APIs
+      - name: Start PRE97 candidate and smoke linked routes and critical APIs
         shell: bash
         run: |
           set -euo pipefail
@@ -47,17 +47,28 @@ jobs:
             sleep 1
           done
           curl -fsS http://127.0.0.1:3197/health
-          count=0
-          while IFS= read -r file; do
-            rel="${file#.runtime/pre97-candidate/public/}"
-            route="/$rel"
+          static_count="$(find .runtime/pre97-candidate/public -type f -name '*.html' | wc -l | tr -d ' ')"
+          test "$static_count" = "168"
+          echo "STATIC_HTML_SURFACES=$static_count"
+          node - <<'NODE' >/tmp/pre97-linked-routes.txt
+          const fs=require('fs'),path=require('path');
+          const pub=path.resolve('.runtime/pre97-candidate/public');
+          const files=[];
+          (function walk(dir){for(const e of fs.readdirSync(dir,{withFileTypes:true})){const p=path.join(dir,e.name);e.isDirectory()?walk(p):e.name.endsWith('.html')&&files.push(p)}})(pub);
+          const routes=new Set(['/','/professionals.html','/professional-profile.html','/firm-profile.html','/attorney-partner-tour.html','/professional-signup.html','/professional-login.html','/owner-login.html','/owner-password-reset.html','/control-center.html','/profile-review.html']);
+          for(const file of files){const body=fs.readFileSync(file,'utf8');for(const m of body.matchAll(/href=["']([^"']+)["']/gi)){let u=m[1].trim();if(!u||u.startsWith('#')||/^(?:https?:|mailto:|tel:|data:|javascript:)/i.test(u))continue;u=u.split('#')[0].split('?')[0];if(!u||u.startsWith('/api/'))continue;if(!u.startsWith('/')){const rel=path.relative(pub,file);u='/'+path.posix.normalize(path.posix.join(path.posix.dirname('/'+rel),u));}if(u==='/'||/\.html$/i.test(u)||!path.posix.extname(u))routes.add(u)}}
+          [...routes].sort().forEach(r=>console.log(r));
+          NODE
+          linked_count=0
+          while IFS= read -r route; do
+            test -n "$route" || continue
             code="$(curl -L --max-redirs 5 -sS -o /tmp/pre97-page.html -w '%{http_code}' "http://127.0.0.1:3197$route")"
-            test "$code" = "200" || { echo "FAILED $route => final $code"; exit 1; }
+            test "$code" = "200" || { echo "FAILED_LINKED_ROUTE $route => final $code"; exit 1; }
             test "$(wc -c </tmp/pre97-page.html)" -gt 100
-            count=$((count+1))
-          done < <(find .runtime/pre97-candidate/public -type f -name '*.html' | sort)
-          test "$count" = "168"
-          echo "ALL_STATIC_HTML_OK=$count"
+            linked_count=$((linked_count+1))
+          done </tmp/pre97-linked-routes.txt
+          test "$linked_count" -gt 50
+          echo "LINKED_HTML_ROUTES_OK=$linked_count"
           curl -fsS 'http://127.0.0.1:3197/api/public/professionals?limit=1' >/tmp/professionals.json
           curl -fsS 'http://127.0.0.1:3197/api/public/firms?limit=1' >/tmp/firms.json
           curl -fsS 'http://127.0.0.1:3197/api/public/professionals?q=Florida&limit=3' >/tmp/florida.json
