@@ -1,13 +1,11 @@
 {
-  "name": "smarter-justice-pre93-d1-render-bootstrap",
-  "version": "2.0.0-pre93-d1",
+  "name": "smarter-justice-pre96-render-bootstrap",
+  "version": "2.0.0-pre96",
   "private": true,
-  "description": "Fail-closed Render bootstrap for qualified Smarter Justice PRE93 with D1-D5 attorney search, read-only Factory directory, national launch configuration, readiness diagnostics, and secure owner password recovery.",
-  "engines": {
-    "node": "22.x"
-  },
+  "description": "Fail-closed Render bootstrap for exact qualified Smarter Justice PRE96.",
+  "engines": {"node": "22.x"},
   "scripts": {
-    "postinstall": "node scripts/bootstrap-pre93-d5-deploy.js",
-    "start": "node scripts/start-pre93-d5-deploy.js"
+    "postinstall": "node scripts/bootstrap-pre96-deploy.js",
+    "start": "node scripts/start-pre96-deploy.js"
   }
 }
