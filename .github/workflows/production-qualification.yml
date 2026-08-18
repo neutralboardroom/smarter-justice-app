@@ -79,16 +79,7 @@ jobs:
           if test -f "$render_source/.runtime/pre96-live/.pre96-render-bootstrap.json"; then
             (cd "$render_source" && node --check scripts/start-pre96-deploy.js)
             (cd "$render_source" && node --check .runtime/pre96-live/server.js)
-            RENDER_SOURCE="$render_source" node - <<'NODE'
-            const fs=require('fs'),path=require('path');
-            const root=process.env.RENDER_SOURCE;
-            const marker=JSON.parse(fs.readFileSync(path.join(root,'.runtime/pre96-live/.pre96-render-bootstrap.json'),'utf8'));
-            const pkg=JSON.parse(fs.readFileSync(path.join(root,'.runtime/pre96-live/package.json'),'utf8'));
-            if(marker.release!=='v2.0.0-pre96') throw new Error('current sealed carrier marker mismatch');
-            if(marker.carrierSha256!=='a506ac9c1c0447b97f412da30341ea616e089be423a3c43addf6ca3813f7a9bc') throw new Error('current carrier SHA mismatch');
-            if(pkg.version!=='2.0.0-pre96') throw new Error('current runtime version mismatch');
-            console.log('Current sealed PRE96 carrier startup structure qualified.');
-            NODE
+            RENDER_SOURCE="$render_source" node -e "const fs=require('fs'),path=require('path');const root=process.env.RENDER_SOURCE;const marker=JSON.parse(fs.readFileSync(path.join(root,'.runtime/pre96-live/.pre96-render-bootstrap.json'),'utf8'));const pkg=JSON.parse(fs.readFileSync(path.join(root,'.runtime/pre96-live/package.json'),'utf8'));if(marker.release!=='v2.0.0-pre96')throw new Error('current sealed carrier marker mismatch');if(marker.carrierSha256!=='a506ac9c1c0447b97f412da30341ea616e089be423a3c43addf6ca3813f7a9bc')throw new Error('current carrier SHA mismatch');if(pkg.version!=='2.0.0-pre96')throw new Error('current runtime version mismatch');console.log('Current sealed PRE96 carrier startup structure qualified.');"
           else
             (cd "$render_source" && node scripts/check-pre58-production-startup.js)
           fi
@@ -101,12 +92,7 @@ jobs:
             node --check scripts/bootstrap-pre96-deploy.js
             node --check scripts/start-pre96-deploy.js
             test -f .runtime/pre96-live/deployment/pre96/PRE96_RELEASE_SUMMARY.json
-            node - <<'NODE'
-            const fs=require('fs');
-            const r=JSON.parse(fs.readFileSync('.runtime/pre96-live/deployment/pre96/PRE96_RELEASE_SUMMARY.json','utf8'));
-            if(r.release!=='v2.0.0-pre96'||r.overallAssertions!==665||r.runtimeSmokeChecks!==177||r.sameOriginLinksChecked!==6005) throw new Error('PRE96 release qualification receipt mismatch');
-            console.log('PRE96 inherited qualification receipt verified.');
-            NODE
+            node -e "const fs=require('fs');const r=JSON.parse(fs.readFileSync('.runtime/pre96-live/deployment/pre96/PRE96_RELEASE_SUMMARY.json','utf8'));if(r.release!=='v2.0.0-pre96'||r.overallAssertions!==665||r.runtimeSmokeChecks!==177||r.sameOriginLinksChecked!==6005)throw new Error('PRE96 release qualification receipt mismatch');console.log('PRE96 inherited qualification receipt verified.');"
           else
             RUNTIME=".runtime/smarter-justice-v${{ steps.source.outputs.version }}"
             node --check scripts/apply-pre58-ny-credential-reconciliation.js
