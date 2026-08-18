@@ -23,8 +23,12 @@ jobs:
         run: node scripts/pre97/build-pre97-candidate.js
       - name: Install candidate dependencies
         run: npm --prefix .runtime/pre97-candidate ci --no-audit --no-fund --ignore-scripts
-      - name: Run inherited candidate tests when defined
-        run: npm --prefix .runtime/pre97-candidate test --if-present
+      - name: Stage inherited tests for qualification only
+        run: |
+          rm -rf .runtime/pre97-candidate/tests
+          cp -a tests .runtime/pre97-candidate/tests
+      - name: Run inherited candidate tests
+        run: npm --prefix .runtime/pre97-candidate test
       - name: Start PRE97 candidate and smoke critical routes
         shell: bash
         run: |
@@ -46,6 +50,7 @@ jobs:
         run: |
           cat .build/pre97/PRE97_ARTIFACT_RECEIPT.json
           test -s .build/pre97/PRE97_DEPLOY_RUNTIME.tgz
+          test ! -e .build/pre97/tests
       - name: Upload PRE97 exact runtime
         uses: actions/upload-artifact@v4
         with:
