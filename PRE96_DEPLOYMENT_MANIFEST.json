@@ -1,0 +1,33 @@
+{
+  "schemaVersion": "smarter-justice.pre96.render-deployment-manifest.v1",
+  "release": "v2.0.0-pre96",
+  "carrier": "PRE96_DEPLOY_RUNTIME.tgz",
+  "carrierSha256": "a506ac9c1c0447b97f412da30341ea616e089be423a3c43addf6ca3813f7a9bc",
+  "carrierBytes": 14393357,
+  "renderService": "smarter-justice-app",
+  "renderServiceId": "srv-d8ps9jgjs32c73918vvg",
+  "branch": "main",
+  "autoDeploy": false,
+  "product": {
+    "rogerRuleRecords": 650,
+    "activeRogerRequirements": 646,
+    "nationalRogerRule": "SJ-RGR-PRE92-NATIONAL-USA-SCOPE",
+    "maximumReasonableRogerRule": "SJ-RGR-PRE87-MAXIMUM-REASONABLE-BUILD-BREADTH",
+    "htmlSurfaces": 168,
+    "overallAssertions": 665,
+    "runtimeSmokeChecks": 177,
+    "sameOriginLinksChecked": 6005
+  },
+  "attorneyFactory": {
+    "version": "0.31.0",
+    "professionals": 12121,
+    "firms": 503,
+    "total": 12624,
+    "readOnly": true,
+    "databaseBulkImport": false,
+    "automaticClaims": false,
+    "automaticVerification": false,
+    "automaticBilling": false
+  },
+  "deploymentStatus": "AWAITING_EXACT_BINARY_CARRIER_UPLOAD_AND_MANUAL_RENDER_TRIGGER"
+}
