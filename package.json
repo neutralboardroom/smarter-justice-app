@@ -1,11 +1,11 @@
 {
-  "name": "smarter-justice-pre96-render-bootstrap",
-  "version": "2.0.0-pre96",
+  "name": "smarter-justice-pre103-render-bootstrap",
+  "version": "2.0.0-pre103",
   "private": true,
-  "description": "Fail-closed Render bootstrap for exact qualified Smarter Justice PRE96.",
+  "description": "Fail-closed Render bootstrap for exact qualified Smarter Justice PRE103.",
   "engines": {"node": "22.x"},
   "scripts": {
-    "postinstall": "node scripts/bootstrap-pre96-deploy.js",
-    "start": "node scripts/start-pre96-deploy.js"
+    "postinstall": "node scripts/bootstrap-pre103-deploy.js",
+    "start": "node scripts/start-pre103-deploy.js"
   }
 }
