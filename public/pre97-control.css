@@ -1,0 +1,9 @@
+/* PRE97 private Control Center refinements */
+.control-center-page .private-hero{padding-top:2.2rem!important;padding-bottom:1.5rem!important;min-height:0!important}
+.control-center-page .private-hero h1{font-size:clamp(2.35rem,4.4vw,3.7rem)!important;line-height:1!important;max-width:830px}
+.control-center-page #controlCenterLoginSection{padding-top:1.2rem!important;padding-bottom:2rem!important}
+.control-center-page #controlCenterLoginSection>.card{max-width:980px;margin:auto}
+.control-center-page .pre97-development-access{display:none!important}
+.control-center-page .private-header .brand{filter:none!important;opacity:1!important}
+.control-center-page .control-center-workspace{padding-top:1.5rem!important}
+@media(max-width:800px){.control-center-page .private-hero{padding:1.6rem 1rem!important}.control-center-page #controlCenterLoginSection{padding:1rem!important}}

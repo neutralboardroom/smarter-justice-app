@@ -1,0 +1,114 @@
+name: PRE97 Exact Carrier Qualification
+on:
+  push:
+    branches: [pre97-screenshot-audit-ux-auth-20260818]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  qualify-pre97:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Build PRE97 from exact PRE96 carrier
+        run: node scripts/pre97/build-pre97-candidate.js
+      - name: Install candidate dependencies
+        run: npm --prefix .runtime/pre97-candidate ci --no-audit --no-fund --ignore-scripts
+      - name: Stage carrier-compatible qualification tests only
+        run: |
+          rm -rf .runtime/pre97-candidate/tests
+          mkdir -p .runtime/pre97-candidate/tests
+          cp tests/catalog.test.js .runtime/pre97-candidate/tests/
+          cp tests/pre97-screenshot-audit.test.js .runtime/pre97-candidate/tests/
+      - name: Run catalog and PRE97 regression tests
+        working-directory: .runtime/pre97-candidate
+        run: |
+          set -euo pipefail
+          node tests/catalog.test.js
+          node tests/pre97-screenshot-audit.test.js
+      - name: Start PRE97 candidate and smoke linked routes and critical APIs
+        shell: bash
+        run: |
+          set -euo pipefail
+          PORT=3197 NODE_ENV=test APP_BASE_URL=http://127.0.0.1:3197 node .runtime/pre97-candidate/server.js > /tmp/pre97-server.log 2>&1 &
+          PID=$!
+          trap 'kill $PID 2>/dev/null || true; cat /tmp/pre97-server.log || true' EXIT
+          for i in $(seq 1 60); do
+            if curl -fsS http://127.0.0.1:3197/health >/tmp/pre97-health.json; then break; fi
+            sleep 1
+          done
+          curl -fsS http://127.0.0.1:3197/health
+          static_count="$(find .runtime/pre97-candidate/public -type f -name '*.html' | wc -l | tr -d ' ')"
+          test "$static_count" = "168"
+          echo "STATIC_HTML_SURFACES=$static_count"
+          node - <<'NODE' >/tmp/pre97-linked-routes.txt
+          const fs=require('fs'),path=require('path');
+          const pub=path.resolve('.runtime/pre97-candidate/public');
+          const files=[];
+          (function walk(dir){for(const e of fs.readdirSync(dir,{withFileTypes:true})){const p=path.join(dir,e.name);e.isDirectory()?walk(p):e.name.endsWith('.html')&&files.push(p)}})(pub);
+          const routes=new Set(['/','/professionals.html','/professional-profile.html','/firm-profile.html','/attorney-partner-tour.html','/professional-signup.html','/professional-login.html','/owner-login.html','/owner-password-reset.html','/control-center.html','/profile-review.html']);
+          for(const file of files){const body=fs.readFileSync(file,'utf8');for(const m of body.matchAll(/href=["']([^"']+)["']/gi)){let u=m[1].trim();if(!u||u.startsWith('#')||/^(?:https?:|mailto:|tel:|data:|javascript:)/i.test(u))continue;u=u.split('#')[0].split('?')[0];if(!u||u.startsWith('/api/'))continue;if(!u.startsWith('/')){const rel=path.relative(pub,file);u='/'+path.posix.normalize(path.posix.join(path.posix.dirname('/'+rel),u));}if(u==='/'||/\.html$/i.test(u)||!path.posix.extname(u))routes.add(u)}}
+          [...routes].sort().forEach(r=>console.log(r));
+          NODE
+          linked_count=0
+          while IFS= read -r route; do
+            test -n "$route" || continue
+            code="$(curl -L --max-redirs 5 -sS -o /tmp/pre97-page.html -w '%{http_code}' "http://127.0.0.1:3197$route")"
+            test "$code" = "200" || { echo "FAILED_LINKED_ROUTE $route => final $code"; exit 1; }
+            test "$(wc -c </tmp/pre97-page.html)" -gt 100
+            linked_count=$((linked_count+1))
+          done </tmp/pre97-linked-routes.txt
+          test "$linked_count" -gt 50
+          echo "LINKED_HTML_ROUTES_OK=$linked_count"
+          curl -fsS 'http://127.0.0.1:3197/api/public/professionals?limit=1' >/tmp/professionals.json
+          curl -fsS 'http://127.0.0.1:3197/api/public/firms?limit=1' >/tmp/firms.json
+          curl -fsS 'http://127.0.0.1:3197/api/public/professionals?q=Florida&limit=3' >/tmp/florida.json
+          node - <<'NODE'
+          const fs=require('fs');
+          const p=JSON.parse(fs.readFileSync('/tmp/professionals.json'));
+          const f=JSON.parse(fs.readFileSync('/tmp/firms.json'));
+          const fl=JSON.parse(fs.readFileSync('/tmp/florida.json'));
+          if(!p.ok||Number(p.total)<12000) throw new Error('professional directory API regression');
+          if(!f.ok||Number(f.total)<500) throw new Error('firm directory API regression');
+          if(Number(fl.total)<1) throw new Error('national Florida directory smoke failed');
+          console.log(`DIRECTORY_API_OK professionals=${p.total} firms=${f.total} florida=${fl.total}`);
+          NODE
+          for route in /api/owner/auth/status /api/professional/auth/status; do
+            code="$(curl -sS -o /tmp/auth.json -w '%{http_code}' "http://127.0.0.1:3197$route")"
+            test "$code" != "500"
+          done
+          for route in /api/owner/auth/login /api/professional/auth/login; do
+            code="$(curl -sS -o /tmp/auth-login.json -w '%{http_code}' -H 'content-type: application/json' -d '{"email":"synthetic-pre97@example.invalid","password":"not-a-real-credential"}' "http://127.0.0.1:3197$route")"
+            test "$code" != "500"
+          done
+      - name: Verify deterministic release receipt
+        run: |
+          cat .build/pre97/PRE97_ARTIFACT_RECEIPT.json
+          test -s .build/pre97/PRE97_DEPLOY_RUNTIME.tgz
+          first="$(sha256sum .build/pre97/PRE97_DEPLOY_RUNTIME.tgz | awk '{print $1}')"
+          node scripts/pre97/build-pre97-candidate.js >/tmp/pre97-rebuild.log
+          second="$(sha256sum .build/pre97/PRE97_DEPLOY_RUNTIME.tgz | awk '{print $1}')"
+          test "$first" = "$second"
+          echo "DETERMINISTIC_SHA256=$first"
+      - name: Upload PRE97 exact runtime
+        uses: actions/upload-artifact@v4
+        with:
+          name: SMARTER_JUSTICE_PRE97_EXACT_RUNTIME
+          path: |
+            .build/pre97/PRE97_DEPLOY_RUNTIME.tgz
+            .build/pre97/PRE97_ARTIFACT_RECEIPT.json
+            .runtime/pre97-candidate/deployment/pre97/PRE97_RELEASE_SUMMARY.json
+            .runtime/pre97-candidate/deployment/pre97/PRE97_SCREENSHOT_AUDIT_RECEIPT.md
+            .runtime/pre97-candidate/deployment/pre97/PRE97_NEXT_VERSION_IMPROVEMENT_LIST.md
+            .runtime/pre97-candidate/governance/current/ROGER_RULE_PROACTIVE_PAGE_BY_PAGE_AUDIT.md
+          if-no-files-found: error
+          retention-days: 30
