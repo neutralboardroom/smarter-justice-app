@@ -1,11 +1,11 @@
 {
-  "name": "smarter-justice-pre109-render-bootstrap",
-  "version": "2.0.0-pre109",
+  "name": "smarter-justice-pre110-render-bootstrap",
+  "version": "2.0.0-pre110",
   "private": true,
-  "description": "Fail-closed Render bootstrap for exact qualified Smarter Justice PRE109 Immigration + Tax reference form engine.",
+  "description": "Fail-closed Render bootstrap for exact qualified Smarter Justice PRE110 DGO v0.6.0 / UEC-1.4 revenue coordination release.",
   "engines": {"node": "22.x"},
   "scripts": {
-    "postinstall": "node scripts/bootstrap-pre109-deploy.js",
-    "start": "node scripts/start-pre109-deploy.js"
+    "postinstall": "node scripts/bootstrap-pre110-deploy.js",
+    "start": "node scripts/start-pre110-deploy.js"
   }
 }
