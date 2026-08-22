@@ -1,11 +1,11 @@
 {
-  "name": "smarter-justice-pre110-render-bootstrap",
-  "version": "2.0.0-pre110",
+  "name": "smarter-justice-pre117-render-bootstrap",
+  "version": "2.0.0-pre117",
   "private": true,
-  "description": "Fail-closed Render bootstrap for exact qualified Smarter Justice PRE110 DGO v0.6.0 / UEC-1.4 revenue coordination release.",
+  "description": "Fail-closed bootstrap for exact qualified Smarter Justice PRE117.",
   "engines": {"node": "22.x"},
   "scripts": {
-    "postinstall": "node scripts/bootstrap-pre110-deploy.js",
-    "start": "node scripts/start-pre110-deploy.js"
+    "postinstall": "node scripts/bootstrap-pre117-deploy.js",
+    "start": "node scripts/start-pre117-deploy.js"
   }
 }
