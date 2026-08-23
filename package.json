@@ -4,6 +4,10 @@
   "private": true,
   "description": "Fail-closed bootstrap for exact qualified Smarter Justice PRE117.",
   "engines": {"node": "22.x"},
+  "dependencies": {
+    "nodemailer": "^9.0.3",
+    "pg": "^8.13.1"
+  },
   "scripts": {
     "postinstall": "node scripts/bootstrap-pre117-deploy.js",
     "start": "node scripts/start-pre117-deploy.js"
