@@ -2,14 +2,14 @@
   "name": "smarter-justice-pre117-render-bootstrap",
   "version": "2.0.0-pre117",
   "private": true,
-  "description": "Fail-closed bootstrap for exact qualified Smarter Justice PRE117.",
+  "description": "Fail-closed bootstrap bridge for Smarter Justice PRE118 over the verified PRE117 carrier.",
   "engines": {"node": "22.x"},
   "dependencies": {
     "nodemailer": "^9.0.3",
     "pg": "^8.13.1"
   },
   "scripts": {
-    "postinstall": "node scripts/bootstrap-pre117-deploy.js",
-    "start": "node scripts/start-pre117-deploy.js"
+    "postinstall": "node scripts/bootstrap-pre118-deploy.js",
+    "start": "node scripts/start-pre118-deploy.js"
   }
 }
