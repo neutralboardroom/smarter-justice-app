@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Guided official forms | Smarter Justice</title>
+  <meta name="description" content="Use Smarter Justice guided questions to identify and prepare supported official Immigration and Tax PDFs for review.">
+  <link rel="icon" href="/favicon.svg">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/pre112-forms.css">
+  <script defer src="/app.js"></script>
+  <script defer src="/pre112-forms.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="/"><img src="/logo.svg" alt="Smarter Justice"></a>
+    <nav class="top-nav" aria-label="Main navigation"><a href="/">Navigator</a><a href="/immigration">Immigration help</a><a href="/professionals.html">Find a lawyer</a><a href="/free-tools.html">Free tools</a></nav>
+  </header>
+  <main id="main" class="pre109-shell">
+    <section class="pre109-hero">
+      <div class="pre109-kicker">Guided official forms</div>
+      <h1>Tell us what you’re trying to do.</h1>
+      <p>Smarter Justice can route supported Immigration and Tax situations into preserved official PDFs. You answer plain-language questions; controlled lanes map supported answers into the official form and give you a review copy.</p>
+    </section>
+    <div class="pre109-privacy"><strong>Your answers are used for this request.</strong> The PRE120 form endpoint does not save questionnaire answers. Download your review PDF and keep it somewhere you control. Smarter Justice does not sign or submit forms for you.</div>
+    <section class="pre109-card">
+      <h2>1. Start with your situation</h2>
+      <div class="pre109-grid">
+        <div class="pre109-field"><label for="module">Area</label><select id="module"><option value="immigration">Immigration</option><option value="tax">Tax</option></select></div>
+        <div class="pre109-field" id="goal-wrap"><label for="goal">What are you trying to do?</label><select id="goal"></select></div>
+      </div>
+      <div class="pre109-field"><label for="story">Anything important we should know?</label><textarea id="story" placeholder="Describe the situation without adding passwords or unrelated sensitive information."></textarea></div>
+      <div class="pre109-actions"><button class="pre109-btn" id="recommend" type="button">Find my starting forms</button></div>
+      <div id="recommend-status" class="pre109-status pre109-hidden" role="status"></div>
+      <div id="recommendations" class="pre109-forms"></div>
+    </section>
+    <section class="pre109-card pre109-hidden" id="guided">
+      <h2>2. Answer the form-specific questions</h2>
+      <p class="pre109-muted" id="guided-note"></p>
+      <form id="guided-form"></form>
+      <div class="pre109-actions"><button class="pre109-btn" id="generate" type="button">Create official PDF review copy</button><button class="pre109-btn secondary" id="clear" type="button">Clear answers</button></div>
+      <div id="generate-status" class="pre109-status pre109-hidden" role="status"></div>
+    </section>
+    <section class="pre109-card">
+      <h2>What “official” means here</h2>
+      <p class="pre109-muted">Smarter Justice uses preserved government PDFs rather than recreating those documents. PRE120 preserves twelve controlled official-PDF generation lanes. The wider immigration migration adds 112 catalog entries, 124 routing questions, 255 completion questions, and 113 form workflows—but it does not label those broader workflows filing-ready. Always review current agency instructions, edition dates, filing addresses, fees, signatures, eligibility, and every generated page before filing.</p>
+    </section>
+  </main>
+  <footer class="site-footer"><div><img class="footer-logo" src="/logo.svg" alt=""><p><strong>Smarter Justice</strong><br>Preparation and starting help, not a law firm, tax firm, accounting firm, or government agency.</p></div><div class="footer-links"><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/disclaimer.html">Disclaimer</a></div></footer>
+</body>
+</html>

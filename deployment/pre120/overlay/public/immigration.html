@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Immigration help | Smarter Justice</title>
+  <meta name="description" content="Start with your immigration situation, see possible forms and risk signals, and continue into guided preparation inside Smarter Justice.">
+  <link rel="canonical" href="https://smarterjustice.com/immigration">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/pre120-immigration.css">
+  <script defer src="/app.js"></script>
+  <script defer src="/pre120-immigration.js"></script>
+</head>
+<body class="u-page pre120-immigration" data-sj-page="immigration">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="u-header">
+    <div class="u-wrap pre120-nav">
+      <a class="u-brand" href="/" aria-label="Smarter Justice home"><img src="/logo.svg" alt="Smarter Justice"></a>
+      <nav aria-label="Main navigation">
+        <a href="/">Navigator</a>
+        <a href="/professionals.html">Find a lawyer</a>
+        <a href="/free-tools.html">Free tools</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="pre120-hero">
+      <div class="u-wrap pre120-hero-grid">
+        <div>
+          <p class="pre120-kicker">Immigration help inside Smarter Justice</p>
+          <h1>Start with what is happening.</h1>
+          <p class="pre120-lead">Describe the notice, status, goal, form, deadline, travel issue, or family situation. We’ll identify a careful starting point without pretending it is a filing or eligibility decision.</p>
+          <ul class="pre120-trust" aria-label="Privacy and service boundaries">
+            <li>No account required to start</li>
+            <li>This starting description is not saved</li>
+            <li>Nothing is signed or filed automatically</li>
+          </ul>
+        </div>
+
+        <form class="pre120-start" id="immigrationRouteForm" novalidate>
+          <div class="pre120-form-head">
+            <div>
+              <p class="pre120-step">Private starting point</p>
+              <h2>What do you need help with?</h2>
+            </div>
+            <label class="pre120-language" for="immigrationLanguage">
+              Language
+              <select id="immigrationLanguage" name="language">
+                <option value="en">English</option>
+                <option value="es">Español</option>
+              </select>
+            </label>
+          </div>
+          <label for="immigrationStory">Describe the situation</label>
+          <textarea id="immigrationStory" name="question" maxlength="2500" required placeholder="Example: I received an immigration court notice and the hearing is next month."></textarea>
+          <div class="pre120-form-meta"><span>Include dates from official notices when you can.</span><span id="immigrationCounter">2500 characters left</span></div>
+          <button class="pre120-primary" type="submit">Show my starting point</button>
+          <p class="pre120-form-note">Do not include passwords, payment-card information, or unrelated sensitive information.</p>
+        </form>
+      </div>
+    </section>
+
+    <section class="pre120-result-wrap" id="immigrationResultWrap" hidden>
+      <div class="u-wrap">
+        <section class="pre120-result" id="immigrationResult" aria-live="polite"></section>
+      </div>
+    </section>
+
+    <section class="pre120-section">
+      <div class="u-wrap">
+        <div class="pre120-section-head">
+          <div>
+            <p class="pre120-kicker">One connected immigration module</p>
+            <h2>Move from uncertainty to a reviewable plan.</h2>
+          </div>
+          <p>Smarter Justice now preserves the specialist routing, bilingual questions, document checklists, official-form evidence, and human-review boundaries that support a careful immigration workflow.</p>
+        </div>
+        <div class="pre120-cards">
+          <article>
+            <span>1</span>
+            <h3>Understand the issue</h3>
+            <p>Separate green-card, citizenship, family, visa, work, humanitarian, waiver, court, records, and other immigration paths.</p>
+          </article>
+          <article>
+            <span>2</span>
+            <h3>Catch risk early</h3>
+            <p>Court, removal, criminal, fraud, denial, deadline, and waiver signals raise the review level instead of being buried in a form flow.</p>
+          </article>
+          <article>
+            <span>3</span>
+            <h3>Prepare for review</h3>
+            <p>Continue through guided questions, possible forms, and document preparation. High-risk matters stop for immigration-attorney review.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="pre120-section pre120-soft">
+      <div class="u-wrap pre120-split">
+        <div>
+          <p class="pre120-kicker">Guided official forms</p>
+          <h2>Prepare supported review copies from preserved official PDFs.</h2>
+          <p>Smarter Justice keeps the exact official PDF for each controlled generation lane. Signatures, government-only fields, automatic filing, and automatic submission remain outside the system.</p>
+          <a class="pre120-primary pre120-link-button" href="/forms-center.html?module=immigration">Open guided immigration forms</a>
+        </div>
+        <aside class="pre120-boundary">
+          <h3>Before anything is filed</h3>
+          <ul>
+            <li>Review the current agency form page and edition.</li>
+            <li>Confirm eligibility, fees, filing address, and supporting evidence.</li>
+            <li>Read every page and add required signatures yourself.</li>
+            <li>Use an immigration lawyer when the route says review is required.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="pre120-section">
+      <div class="u-wrap pre120-search-grid">
+        <div>
+          <p class="pre120-kicker">Already know the form?</p>
+          <h2>Search the preserved immigration catalog.</h2>
+          <p>Catalog results show possible workflows and official sources. A match does not mean a form is correct for your case.</p>
+        </div>
+        <form class="pre120-catalog" id="immigrationCatalogForm">
+          <label for="immigrationCatalogQuery">Form number or topic</label>
+          <div><input id="immigrationCatalogQuery" name="q" maxlength="120" placeholder="I-90, citizenship, work permit…"><button type="submit">Search</button></div>
+          <section id="immigrationCatalogResults" aria-live="polite"></section>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="u-footer">
+    <div class="u-wrap pre120-footer">
+      <div><a class="u-brand" href="/"><img src="/logo.svg" alt="Smarter Justice"></a><p>Legal starting help and preparation tools—not a law firm or government agency.</p></div>
+      <nav aria-label="Legal links"><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/disclaimer.html">Disclaimer</a><a href="/security.html">Security</a></nav>
+    </div>
+  </footer>
+</body>
+</html>
