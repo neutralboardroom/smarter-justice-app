@@ -1,8 +1,8 @@
 {
-  "name": "smarter-justice-pre121-render-bootstrap",
-  "version": "2.0.0-pre121",
+  "name": "smarter-justice-pre122-render-bootstrap",
+  "version": "2.0.0-pre122",
   "private": true,
-  "description": "Fail-closed compact deployment bridge for the qualified Smarter Justice PRE121 no-loss runtime.",
+  "description": "Fail-closed compact deployment bridge for the qualified Smarter Justice PRE122 no-loss runtime.",
   "engines": {
     "node": "22.x"
   },
@@ -11,7 +11,7 @@
     "pg": "^8.13.1"
   },
   "scripts": {
-    "postinstall": "node scripts/bootstrap-pre121-deploy.js",
-    "start": "node scripts/start-pre121-deploy.js"
+    "postinstall": "node scripts/bootstrap-pre122-deploy.js",
+    "start": "node scripts/start-pre122-deploy.js"
   }
 }
