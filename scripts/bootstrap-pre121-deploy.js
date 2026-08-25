@@ -12,8 +12,8 @@ const extracted = path.join(root, '.runtime', runtimeName);
 const target = path.join(root, '.runtime', 'pre121-live');
 const overlayRoot = path.join(root, 'deployment', 'pre120', 'overlay');
 const pre121Overlay = path.join(root, 'SMARTER_JUSTICE__PRE121_RUNTIME_OVERLAY.zip');
-const pre121OverlaySize = 616935;
-const pre121OverlaySha256 = '758699d6be38f29c9b988b6eabe101ab0c67415d0a657b75de1ed3ed25aa3af3';
+const pre121OverlaySize = 629873;
+const pre121OverlaySha256 = 'ddfc2708b04cb63b0274a0fbbf39e071d1a0ad559d0791f09c4d2606b06cc846';
 const overlay = {
   'package.json': 'c4ef8af3034ea7df9e6b1ccd353e6e7d332bb0880673551a28b345363894645a',
   'package-lock.json': 'e2015a1ff3651ef315c1db763fd863d8b962f9fefc7a675a011ffcb89501d977',
@@ -86,7 +86,7 @@ if (probeResult.status !== 0) fail(probeResult.stderr || probeResult.stdout || '
 ok(fs.existsSync(pre121Overlay), 'PRE121 runtime overlay missing');
 ok(fs.statSync(pre121Overlay).size === pre121OverlaySize, 'PRE121 runtime overlay size mismatch');
 ok(sha(pre121Overlay) === pre121OverlaySha256, 'PRE121 runtime overlay hash mismatch');
-const extractPre121 = `import pathlib,sys,zipfile\nsrc=pathlib.Path(sys.argv[1]);out=pathlib.Path(sys.argv[2])\nwith zipfile.ZipFile(src) as z:\n names=z.namelist()\n assert len(names)==190 and len(set(names))==190\n assert 'public/index.html' in names and 'public/pre118-home.css' in names and 'public/pre121-site.css' in names and 'public/pre121-site.js' in names\n for name in names:\n  p=pathlib.PurePosixPath(name)\n  assert not p.is_absolute() and '..' not in p.parts\n z.extractall(out)`;
+const extractPre121 = `import pathlib,sys,zipfile\nsrc=pathlib.Path(sys.argv[1]);out=pathlib.Path(sys.argv[2])\nwith zipfile.ZipFile(src) as z:\n names=z.namelist()\n assert len(names)==191 and len(set(names))==191\n assert 'public/index.html' in names and 'public/pre118-home.css' in names and 'public/pre121-site.css' in names and 'public/pre121-site.js' in names\n for name in names:\n  p=pathlib.PurePosixPath(name)\n  assert not p.is_absolute() and '..' not in p.parts\n z.extractall(out)`;
 const pre121Result = cp.spawnSync(process.env.PYTHON_BIN || 'python3', ['-c', extractPre121, pre121Overlay, target], { encoding: 'utf8' });
 if (pre121Result.status !== 0) fail(pre121Result.stderr || pre121Result.stdout || 'PRE121 overlay extraction failed');
 count = 0;
@@ -94,9 +94,9 @@ walk(target);
 ok(count === 4425, `PRE121 runtime count mismatch ${count}`);
 const pre121Package = JSON.parse(fs.readFileSync(path.join(target, 'package.json'), 'utf8'));
 ok(pre121Package.version === '2.0.0-pre121', 'PRE121 package version mismatch');
-ok(sha(path.join(target, 'public/index.html')) === 'a6f39ff5125a5c5c3d561a3111ade790a93f985116df04e7336e4559c9fa273f', 'PRE121 homepage mismatch');
+ok(sha(path.join(target, 'public/index.html')) === 'fcb6ea18827b173291911ba9b27e629b3af33494a558701a7820530e37b1a3fd', 'PRE121 homepage mismatch');
 ok(sha(path.join(target, 'public/pre118-home.css')) === '4e2a7b25473ea8e13d6a371936a98e58cd193b93d322d7576cd2b15cca64749b', 'PRE118 homepage style missing');
-ok(sha(path.join(target, 'public/pre121-site.css')) === '260d67b55b3241c31b1affa526409f6f8a8a1c49f611d1843568bd86152e181e', 'PRE121 site style mismatch');
+ok(sha(path.join(target, 'public/pre121-site.css')) === '98707260b6f37570e5ff1565b5daa15c24394c8a01e4f80bec68f820d4838687', 'PRE121 site style mismatch');
 const pre121Probe = `const m=require(${JSON.stringify(path.join(target, 'lib/immigrationMigrationPre120.js'))});const f=require(${JSON.stringify(path.join(target, 'lib/formEnginePre120.js'))});const p=require(${JSON.stringify(path.join(target, 'package.json'))});const s=m.sourceStatus(),x=f.summary();if(p.version!=='2.0.0-pre121'||s.productAuthority!=='SMARTER_JUSTICE_ONLY'||s.navigatorOrCommunityAuthorityImported!==false||s.preservedDonorEvidence.catalogEntries!==112||s.preservedDonorEvidence.formWorkflows!==113||x.version!=='PRE120'||x.verifiedGeneration.length!==12)process.exit(1);`;
 const pre121ProbeResult = cp.spawnSync(process.execPath, ['-e', pre121Probe], { cwd: target, encoding: 'utf8' });
 if (pre121ProbeResult.status !== 0) fail(pre121ProbeResult.stderr || pre121ProbeResult.stdout || 'PRE121 semantic probe failed');
@@ -112,7 +112,7 @@ const marker = {
   pre120OverlayPaths: Object.keys(overlay),
   pre121OverlaySha256,
   pre121OverlaySize,
-  pre121OverlayMembers: 190,
+  pre121OverlayMembers: 191,
   acceptedHomepageFiles: ['public/index.html','public/pre118-home.css'],
   runtimeFiles: count,
   catalogEntries: 112,
