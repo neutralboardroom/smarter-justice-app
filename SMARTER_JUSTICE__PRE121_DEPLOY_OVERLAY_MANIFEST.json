@@ -337,7 +337,7 @@
     "public/portals.html": "8b0137eaec3d2ab86e71326dcf63af47e559888fba52fe915ebf565646545bb6",
     "public/practice-areas.html": "719ff5bf19159b1dca95daadbce6546db132a08fda3495d1c925a6220e426d55",
     "public/pre118-home.css": "4e2a7b25473ea8e13d6a371936a98e58cd193b93d322d7576cd2b15cca64749b",
-    "public/pre121-site.css": "3cee92e0bd35e0da859bdaf3a6839bd4f4d7133c38fd812c418f96cadfa3fe51",
+    "public/pre121-site.css": "260d67b55b3241c31b1affa526409f6f8a8a1c49f611d1843568bd86152e181e",
     "public/pre121-site.js": "e18de46478e3f6b342fd1b92622f8d4f9c4d3588ca9c67d76d0beb11725fc674",
     "public/pre95-profile-es.js": "bc1a5ec3c3b4ea245d4b49bf6e1197c15ea3e68ff8ab3e4e72930123633e97a7",
     "public/preparation-quality-check.html": "687c80f300c0a4a508639c43d3db71ad3c2f69b8cfcee00a1643bb4e304a86e7",
@@ -402,8 +402,8 @@
   ],
   "archive": {
     "name": "SMARTER_JUSTICE__PRE121_RUNTIME_OVERLAY.zip",
-    "sizeBytes": 614367,
-    "sha256": "b37300f26b969285a4f061d2cb78840b89496e8aa14a86aa2eb588c087cb2fd7"
+    "sizeBytes": 614385,
+    "sha256": "43b35d0d0ec7e43e2a9df0229c09fd494664c5f8b5681dfab2ab80e5ed0eecb7"
   },
   "deterministicArchiveMetadata": true
 }

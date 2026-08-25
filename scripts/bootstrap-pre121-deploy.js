@@ -12,8 +12,8 @@ const extracted = path.join(root, '.runtime', runtimeName);
 const target = path.join(root, '.runtime', 'pre121-live');
 const overlayRoot = path.join(root, 'deployment', 'pre120', 'overlay');
 const pre121Overlay = path.join(root, 'SMARTER_JUSTICE__PRE121_RUNTIME_OVERLAY.zip');
-const pre121OverlaySize = 614367;
-const pre121OverlaySha256 = 'b37300f26b969285a4f061d2cb78840b89496e8aa14a86aa2eb588c087cb2fd7';
+const pre121OverlaySize = 614385;
+const pre121OverlaySha256 = '43b35d0d0ec7e43e2a9df0229c09fd494664c5f8b5681dfab2ab80e5ed0eecb7';
 const overlay = {
   'package.json': 'c4ef8af3034ea7df9e6b1ccd353e6e7d332bb0880673551a28b345363894645a',
   'package-lock.json': 'e2015a1ff3651ef315c1db763fd863d8b962f9fefc7a675a011ffcb89501d977',
@@ -96,7 +96,7 @@ const pre121Package = JSON.parse(fs.readFileSync(path.join(target, 'package.json
 ok(pre121Package.version === '2.0.0-pre121', 'PRE121 package version mismatch');
 ok(sha(path.join(target, 'public/index.html')) === '1d830095cc96f0169218b01f52c14b4074c0e01dbd26dd8d23f1dda4dd3780a6', 'PRE121 homepage mismatch');
 ok(sha(path.join(target, 'public/pre118-home.css')) === '4e2a7b25473ea8e13d6a371936a98e58cd193b93d322d7576cd2b15cca64749b', 'PRE118 homepage style missing');
-ok(sha(path.join(target, 'public/pre121-site.css')) === '3cee92e0bd35e0da859bdaf3a6839bd4f4d7133c38fd812c418f96cadfa3fe51', 'PRE121 site style mismatch');
+ok(sha(path.join(target, 'public/pre121-site.css')) === '260d67b55b3241c31b1affa526409f6f8a8a1c49f611d1843568bd86152e181e', 'PRE121 site style mismatch');
 const pre121Probe = `const m=require(${JSON.stringify(path.join(target, 'lib/immigrationMigrationPre120.js'))});const f=require(${JSON.stringify(path.join(target, 'lib/formEnginePre120.js'))});const p=require(${JSON.stringify(path.join(target, 'package.json'))});const s=m.sourceStatus(),x=f.summary();if(p.version!=='2.0.0-pre121'||s.productAuthority!=='SMARTER_JUSTICE_ONLY'||s.navigatorOrCommunityAuthorityImported!==false||s.preservedDonorEvidence.catalogEntries!==112||s.preservedDonorEvidence.formWorkflows!==113||x.version!=='PRE120'||x.verifiedGeneration.length!==12)process.exit(1);`;
 const pre121ProbeResult = cp.spawnSync(process.execPath, ['-e', pre121Probe], { cwd: target, encoding: 'utf8' });
 if (pre121ProbeResult.status !== 0) fail(pre121ProbeResult.stderr || pre121ProbeResult.stdout || 'PRE121 semantic probe failed');
