@@ -4,8 +4,9 @@
   "baseRuntime": "v2.0.0-pre121 exact deployed runtime",
   "productAuthority": "SMARTER_JUSTICE_ONLY",
   "navigatorOrCommunityMutation": false,
-  "overlayMembers": 186,
+  "overlayMembers": 187,
   "overlayPaths": [
+    "data/practiceAreas.js",
     "package-lock.json",
     "package.json",
     "public/404.html",
@@ -194,6 +195,7 @@
     "server.js"
   ],
   "overlayMemberSha256": {
+    "data/practiceAreas.js": "9682e916823ac0dc47c5314a924c29e307b9e042bca510da1f45667b5b397fad",
     "package-lock.json": "2f0df25afe3e3f64c728422357d7b68a56b290db0080c615345d3e10f9b27807",
     "package.json": "87aefb6108273847c9bb86269dfa91b2dc8e0a613a41db3f192fee52a055ec43",
     "public/404.html": "e5c53c4ea28923fd266ce57e64e219cf3995ecba0c18f2eb94ee89851838ca67",
@@ -385,6 +387,9 @@
     "public/pre122-directory.css",
     "public/pre122-directory.js"
   ],
+  "forcedRuntimePaths": [
+    "data/practiceAreas.js"
+  ],
   "immigrationCoreSha256": {
     "lib/formEnginePre120.js": "6378720080f46939b001961a9a8d1cb8a73b42e542170fa6d6db837bd1745ce9",
     "lib/immigrationMigrationPre120.js": "9258a08aa48dfe05a83cd0960b1a729779617afc1672d3f25e411aa9c1cb05cd",
@@ -393,8 +398,8 @@
   },
   "archive": {
     "name": "SMARTER_JUSTICE__PRE122_RUNTIME_OVERLAY.zip",
-    "sizeBytes": 607960,
-    "sha256": "148e1232cf3f994c568e05e61a6fecfe59e9e3a225bf3ee53883de6d97fcb57d",
+    "sizeBytes": 620496,
+    "sha256": "f6f8ae7c0214ea73f0c4bf0ed447d45915396901760b5a8af8f06e59fa12dc2a",
     "base64Parts": [
       "SMARTER_JUSTICE__PRE122_RUNTIME_OVERLAY.zip.b64.part-00",
       "SMARTER_JUSTICE__PRE122_RUNTIME_OVERLAY.zip.b64.part-01",
