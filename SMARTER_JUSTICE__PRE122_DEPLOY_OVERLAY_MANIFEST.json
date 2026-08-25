@@ -385,7 +385,7 @@
     "public/veterans.html": "90899563392f0599a76cef12f3c26f74f631ac706d4197b6eea4922406dac253",
     "public/whole-situation.html": "c94f7a90e2342ba2d517dc1271bdbac295a670bdf1016f62e08bd82a65a8672f",
     "public/work-business.html": "99d228714f87d9c7ffdb1bbab906cb52bf64fc2a39d562419ba2542ea2a3c40d",
-    "server.js": "503be775277b55ac7510f2d7093084820662b441b2c7e8e80c19fba81d8c8f55"
+    "server.js": "862582389d8a876eda642694b6ea0f22ef36d60883634cf6df3cd612c8aff04f"
   },
   "additiveRuntimePaths": [
     "public/pre122-directory.css",
@@ -402,8 +402,8 @@
   },
   "archive": {
     "name": "SMARTER_JUSTICE__PRE122_RUNTIME_OVERLAY.zip",
-    "sizeBytes": 623128,
-    "sha256": "b86ba9751a782bf1ccedd0501f378437ff52ca2cf41d2f13ba0be4a770474dac",
+    "sizeBytes": 623894,
+    "sha256": "1ad54b4a7101a8c2de901f9b4b4f2b4f991919ea383a39a6e5d0c94ca7e2c453",
     "base64Parts": [
       "SMARTER_JUSTICE__PRE122_RUNTIME_OVERLAY.zip.b64.part-00",
       "SMARTER_JUSTICE__PRE122_RUNTIME_OVERLAY.zip.b64.part-01",
