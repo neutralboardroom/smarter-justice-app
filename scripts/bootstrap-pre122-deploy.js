@@ -63,7 +63,7 @@ const packageJson = JSON.parse(fs.readFileSync(path.join(target, 'package.json')
 ok(packageJson.version === '2.0.0-pre122', 'PRE122 package version mismatch');
 const approved = 'Focused legal starting help, practical tools, and independent professional search in one connected platform.';
 ok(fs.readFileSync(path.join(target, 'public', 'module.html'), 'utf8').includes(approved), 'approved positioning line missing');
-ok(fs.readFileSync(path.join(target, 'public', 'module.html'), 'utf8').includes('Car and vehicle accidents'), 'vehicle-accident coverage missing');
+ok(fs.readFileSync(path.join(target, 'data', 'practiceAreas.js'), 'utf8').includes('Car and vehicle accidents, injury claims'), 'vehicle-accident coverage missing');
 for (const [relative, expected] of Object.entries(manifest.immigrationCoreSha256)) {
   ok(sha(path.join(target, relative)) === expected, `Immigration Oasis core mismatch ${relative}`);
 }
