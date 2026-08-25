@@ -12,7 +12,7 @@ if (!fs.existsSync(marker)) {
   process.exit(1);
 }
 const metadata = JSON.parse(fs.readFileSync(marker, 'utf8'));
-if (metadata.release !== 'v2.0.0-pre121' || metadata.baseRelease !== 'v2.0.0-pre120' || metadata.productAuthority !== 'SMARTER_JUSTICE_ONLY' || metadata.navigatorOrCommunityMutation !== false || metadata.productionDeploymentAuthorized !== true || metadata.pre121OverlaySha256 !== '8faf71b7d117307c88605ea2ed41329c95c77fd1d3c7c5a51172a523ea0048ad') {
+if (metadata.release !== 'v2.0.0-pre121' || metadata.baseRelease !== 'v2.0.0-pre120' || metadata.productAuthority !== 'SMARTER_JUSTICE_ONLY' || metadata.navigatorOrCommunityMutation !== false || metadata.productionDeploymentAuthorized !== true || metadata.pre121OverlaySha256 !== '53fcc0bf3ad1b0620e953c35651514af614477c6e2b546c6f9361e182a852e17') {
   console.error('[PRE121 DEPLOY] marker mismatch');
   process.exit(1);
 }

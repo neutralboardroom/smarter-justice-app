@@ -12,8 +12,8 @@ const extracted = path.join(root, '.runtime', runtimeName);
 const target = path.join(root, '.runtime', 'pre121-live');
 const overlayRoot = path.join(root, 'deployment', 'pre120', 'overlay');
 const pre121Overlay = path.join(root, 'SMARTER_JUSTICE__PRE121_RUNTIME_OVERLAY.zip');
-const pre121OverlaySize = 630064;
-const pre121OverlaySha256 = '8faf71b7d117307c88605ea2ed41329c95c77fd1d3c7c5a51172a523ea0048ad';
+const pre121OverlaySize = 630014;
+const pre121OverlaySha256 = '53fcc0bf3ad1b0620e953c35651514af614477c6e2b546c6f9361e182a852e17';
 const overlay = {
   'package.json': 'c4ef8af3034ea7df9e6b1ccd353e6e7d332bb0880673551a28b345363894645a',
   'package-lock.json': 'e2015a1ff3651ef315c1db763fd863d8b962f9fefc7a675a011ffcb89501d977',
@@ -94,7 +94,7 @@ walk(target);
 ok(count === 4425, `PRE121 runtime count mismatch ${count}`);
 const pre121Package = JSON.parse(fs.readFileSync(path.join(target, 'package.json'), 'utf8'));
 ok(pre121Package.version === '2.0.0-pre121', 'PRE121 package version mismatch');
-ok(sha(path.join(target, 'public/index.html')) === '61ac12d8e8f7a27b0de015fdd366fecb6a309c4b6951cfa6a4d6812a4f73ae3c', 'PRE121 homepage mismatch');
+ok(sha(path.join(target, 'public/index.html')) === 'b3693d93d329e35c06174f7958ef073102442103974aab2203a44559e9fd10eb', 'PRE121 homepage mismatch');
 ok(sha(path.join(target, 'public/pre118-home.css')) === '4e2a7b25473ea8e13d6a371936a98e58cd193b93d322d7576cd2b15cca64749b', 'PRE118 homepage style missing');
 ok(sha(path.join(target, 'public/pre121-site.css')) === '98707260b6f37570e5ff1565b5daa15c24394c8a01e4f80bec68f820d4838687', 'PRE121 site style mismatch');
 const pre121Probe = `const m=require(${JSON.stringify(path.join(target, 'lib/immigrationMigrationPre120.js'))});const f=require(${JSON.stringify(path.join(target, 'lib/formEnginePre120.js'))});const p=require(${JSON.stringify(path.join(target, 'package.json'))});const s=m.sourceStatus(),x=f.summary();if(p.version!=='2.0.0-pre121'||s.productAuthority!=='SMARTER_JUSTICE_ONLY'||s.navigatorOrCommunityAuthorityImported!==false||s.preservedDonorEvidence.catalogEntries!==112||s.preservedDonorEvidence.formWorkflows!==113||x.version!=='PRE120'||x.verifiedGeneration.length!==12)process.exit(1);`;
