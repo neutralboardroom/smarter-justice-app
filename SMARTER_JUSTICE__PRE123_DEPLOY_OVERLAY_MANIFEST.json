@@ -7,8 +7,8 @@
   "purpose": "Attorney launch: polished customer-facing journeys, open professional account and application paths, $10 monthly or $100 annual individual membership, paid booking and user-selected professional-access positioning, safe provider readiness, and exact Immigration Oasis and PRE122 preservation.",
   "archive": {
     "fileName": "SMARTER_JUSTICE__PRE123_RUNTIME_OVERLAY.zip",
-    "sizeBytes": 144902,
-    "sha256": "4af5d68e751924212523a53dae250582fcef6370c5b0648e5dbdb06e40ea393e",
+    "sizeBytes": 145219,
+    "sha256": "ab286e262e254eb0ece722ab715384ac24ac58b7d18a4e6d4a99e225ecafc3bf",
     "base64Parts": [
       "SMARTER_JUSTICE__PRE123_RUNTIME_OVERLAY.zip.b64.part-001"
     ]
@@ -60,7 +60,7 @@
     "public/professional.js": "7d4de3c4f68f3d4d41fc9633ab03de04bc101b972745e6587145f1c6b3a0e350",
     "public/professionals.html": "64af41e6250bd5bac10108021213f8f31e63b5eaffbbc5ff9d3c9d76e8f50b8f",
     "public/program-status.js": "36d47fd12771a2445594bce96640b641ef98f3522f560b02bbeb629a0dea0e33",
-    "server.js": "1700c4cc218922498111bc2ed3bb96d7f37882ce8c1a2e34374973857a04ccd6",
+    "server.js": "97a00267d87721f8ee7f3fbab30d08052323cd6d9807e58748cb2439ead5191d",
     "tests/pre123-polish.test.js": "d6761de61ade42e662bd83a468467693f0a47ad050015635198b38e39b491714"
   },
   "predecessorMemberSha256": {
