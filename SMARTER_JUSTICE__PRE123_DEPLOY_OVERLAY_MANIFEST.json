@@ -7,8 +7,8 @@
   "purpose": "Attorney launch: polished customer-facing journeys, open professional account and application paths, $10 monthly or $100 annual individual membership, paid booking and user-selected professional-access positioning, safe provider readiness, and exact Immigration Oasis and PRE122 preservation.",
   "archive": {
     "fileName": "SMARTER_JUSTICE__PRE123_RUNTIME_OVERLAY.zip",
-    "sizeBytes": 144541,
-    "sha256": "be05980548500db4e04e5cbfb2dd47305fe27bdc3cb899538729260f0ddb1f84",
+    "sizeBytes": 144902,
+    "sha256": "4af5d68e751924212523a53dae250582fcef6370c5b0648e5dbdb06e40ea393e",
     "base64Parts": [
       "SMARTER_JUSTICE__PRE123_RUNTIME_OVERLAY.zip.b64.part-001"
     ]
@@ -45,8 +45,8 @@
     "package-lock.json": "aca43aa3a24fe1aaf53ddb8e110a8216407f8bef69acda974b2b0ad538c383a2",
     "package.json": "8315d863b86e18cd93fbee92dba6fb14a9d6a192e65d365caaa0dd819331bcc2",
     "public/attorney-launch.html": "fa794f4245629131fba5786387598ee2e7202fd807324316acdd31b7c71a395b",
-    "public/attorney-partner-tour.html": "50eaec64e2f3bedaeea2a0e6bbdb62959a40a1242da5d7a92538c91321c15e0c",
-    "public/es/membresia-profesional.html": "c2e24f8aeba153390ac205e9ec7692df264c300ec33855b0585fa462437feba7",
+    "public/attorney-partner-tour.html": "469e9cce934975e8ce0cfcd0aa90d73439634d4723ceb37c5ea9559635171ea8",
+    "public/es/membresia-profesional.html": "1b21a5925039786388dc141e4c008d3724571e8bc891c4851468fc3fb654d178",
     "public/es/para-abogados.html": "24f573308f1649aa046953455e2ae0791ee749dcd50b38ae76a43e5990a47f23",
     "public/es/precios.html": "52597ee26558c23a462efc093ed445da176b53c290ff5ca370a75bfc2e000eea",
     "public/find-my-profile.html": "575a2b4b19734d61506b189958993fc42877a59859ba4756cb57cf348349f3d5",
@@ -55,13 +55,13 @@
     "public/pre123-polish.js": "597e30f481fa064f229428728c5fd1864ff9149cecda1334905326be28b5e965",
     "public/pre124-launch.js": "95a3d33dfe43e26bcf0200349873fde342e575ff99177685fd59f87490e4fb31",
     "public/pricing.html": "162afdef4168b512f95c023dc8a7a8575e9086176eb3367e9d89949d49dc4202",
-    "public/professional-membership.html": "cd8c1e14d78228a59c7788420e599bbf41b283ac4dc06019a47041b781b68d5b",
+    "public/professional-membership.html": "8f294ec9ddb52c8e87d46b9efec4e1f2d6242aa9d80e6f309d7e304119ca774e",
     "public/professional-signup.html": "4510d47d7e24af8f2d3fedb5b4878ab3405e4a5f9d2f93fb7b74a8deb58069cb",
     "public/professional.js": "7d4de3c4f68f3d4d41fc9633ab03de04bc101b972745e6587145f1c6b3a0e350",
     "public/professionals.html": "64af41e6250bd5bac10108021213f8f31e63b5eaffbbc5ff9d3c9d76e8f50b8f",
     "public/program-status.js": "36d47fd12771a2445594bce96640b641ef98f3522f560b02bbeb629a0dea0e33",
-    "server.js": "23c95f3fbc60b990ffada6a4b56f48637d665fb44f29924b9bd3a8010e8b9906",
-    "tests/pre123-polish.test.js": "7117ff66d7aa8587ddf3a36c8805b395b5e6f496477cc123dde8d3ec53ddf105"
+    "server.js": "1700c4cc218922498111bc2ed3bb96d7f37882ce8c1a2e34374973857a04ccd6",
+    "tests/pre123-polish.test.js": "d6761de61ade42e662bd83a468467693f0a47ad050015635198b38e39b491714"
   },
   "predecessorMemberSha256": {
     "package-lock.json": "2f0df25afe3e3f64c728422357d7b68a56b290db0080c615345d3e10f9b27807",
