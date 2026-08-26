@@ -4,24 +4,26 @@
   "baseRuntime": "v2.0.0-pre122",
   "productAuthority": "SMARTER_JUSTICE_ONLY",
   "navigatorOrCommunityMutation": false,
-  "purpose": "Public and attorney journey polish, explicit free-profile and paid-access positioning, Navigator labeling and retired-link repair, and exact predecessor preservation.",
+  "purpose": "Public and attorney journey polish, explicit free-profile and paid-access positioning, availability and active-membership boundary repair, Navigator labeling and retired-link repair, and exact predecessor preservation.",
   "archive": {
     "fileName": "SMARTER_JUSTICE__PRE123_RUNTIME_OVERLAY.zip",
-    "sizeBytes": 31128,
-    "sha256": "fd16636db7fe691e1d852b89784b6e3d77df3e5751edd762811e27e5dfa8d0ad",
+    "sizeBytes": 64735,
+    "sha256": "93b62536169bd2fe11ffa4b250854d9a395be6f8b2258d2db69d042f4f12e03e",
     "base64Parts": [
       "SMARTER_JUSTICE__PRE123_RUNTIME_OVERLAY.zip.b64.part-001"
     ]
   },
-  "overlayMembers": 9,
+  "overlayMembers": 11,
   "overlayPaths": [
     "package-lock.json",
     "package.json",
     "public/attorney-partner-tour.html",
     "public/find-my-profile.html",
     "public/index.html",
+    "public/launch-status.html",
     "public/pre123-polish.js",
     "public/professional-membership.html",
+    "public/professional.js",
     "public/professionals.html",
     "tests/pre123-polish.test.js"
   ],
@@ -35,10 +37,12 @@
     "public/attorney-partner-tour.html": "1ae7827fbac1d5c0467a8e54e126e09dac12498e22204ba51ec60d96e2d9b63a",
     "public/find-my-profile.html": "8d72b0f04b16a42948e62f0a688a3cd9c3272de3ee9e111b9b526ba4dcb092c7",
     "public/index.html": "9b499f487c93477e5dcaf9fbe613f798d4decb5da621caac6875351fe49f2d27",
+    "public/launch-status.html": "75064216f3bc7d6e8e6e378534c373bc55fc680e4d48ec8c0a6490db8fb582c5",
     "public/pre123-polish.js": "597e30f481fa064f229428728c5fd1864ff9149cecda1334905326be28b5e965",
     "public/professional-membership.html": "80553bbb183152959a18a8b1810f0d1836483a9bce05e13c25f2c5988cdf3735",
+    "public/professional.js": "e7da83a0351ae33c5aae53d2c4e36d0aa0b558f815b44f078303489bae1d3a67",
     "public/professionals.html": "d1aa8f3c57ff87ef41af5b0a719ca3acf1cdb15c796dad3d689f6caa1d3466b6",
-    "tests/pre123-polish.test.js": "efb0120e1b78cb11e6ecea4fdff9791f0317430ca0caad70fc0ce30170221e82"
+    "tests/pre123-polish.test.js": "dde48657d603026c5978ca94656facba770f581f63abfb9ac7974fa1def1080f"
   },
   "predecessorMemberSha256": {
     "package-lock.json": "2f0df25afe3e3f64c728422357d7b68a56b290db0080c615345d3e10f9b27807",
@@ -46,7 +50,9 @@
     "public/attorney-partner-tour.html": "b8a7f924a6c96a2e0989cfa873e60602ab7f11e81f4a60ede2fa16bc090d0045",
     "public/find-my-profile.html": "a1eaa4bdeafca8b952da0aa89b29e23db605d7a5f7dd0d6acd94f8fd9b24d38f",
     "public/index.html": "abbdff8aebe3fd61e22d52aef4f2a8260c4ba423961960d8669ba56fb6484860",
+    "public/launch-status.html": "3cd1b0b6b829755cb76cf8bbaad67cf25f1b524b8a752b0addf7cf8a082e3912",
     "public/professional-membership.html": "430826e75ad453d45cda896d548766c8861e6cb2330fb01a64b3f1154d5fbdc4",
+    "public/professional.js": "29294304b0cdba7297c946ba8d03e797bfaa0bbdf27023317327a35998494535",
     "public/professionals.html": "a1a3a9d4c8484ba5d85d3fa20addd991a7aa4e58c7d4b79fbcbc7a8b1e645353"
   },
   "preservationAssertions": {

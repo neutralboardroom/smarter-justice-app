@@ -74,7 +74,7 @@ ok(productFiles(target).length === baseFiles.length + manifest.additiveRuntimePa
 const packageJson = JSON.parse(fs.readFileSync(path.join(target, 'package.json'), 'utf8'));
 ok(packageJson.version === '2.0.0-pre123', 'PRE123 package version mismatch');
 const approved = manifest.preservationAssertions.approvedPositioning;
-for (const relative of ['public/index.html', 'public/module.html', 'public/attorney-partner-tour.html', 'public/find-my-profile.html']) {
+for (const relative of ['public/index.html', 'public/module.html', 'public/attorney-partner-tour.html', 'public/find-my-profile.html', 'public/launch-status.html']) {
   ok(fs.readFileSync(path.join(target, relative), 'utf8').includes(approved), `approved positioning missing ${relative}`);
 }
 ok(fs.readFileSync(path.join(target, 'data', 'practiceAreas.js'), 'utf8').includes(manifest.preservationAssertions.vehicleCoverageNeedle), 'vehicle-accident coverage missing');
