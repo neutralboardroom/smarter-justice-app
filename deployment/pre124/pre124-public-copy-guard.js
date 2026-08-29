@@ -11,6 +11,7 @@
     [/Alignment required in the next material version/gi, 'Related community help'],
     [/Required alignment in the next material version/gi, 'Related community help'],
     [/Live state not re-affirmed/gi, 'Check the linked service for current availability'],
+    [/\bIn development\b/gi, 'More information coming soon'],
     [/Alineaci[oó]n requerida en la pr[oó]xima versi[oó]n material/gi, 'Ayuda comunitaria relacionada'],
     [/Ruta especializada independiente; estado en vivo no reafirmado/gi, 'Ruta especializada; consulte el servicio enlazado para ver la disponibilidad actual'],
     [/estado en vivo no reafirmado/gi, 'consulte el servicio enlazado para ver la disponibilidad actual'],
