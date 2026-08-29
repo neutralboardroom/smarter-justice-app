@@ -15,7 +15,7 @@ Release boundary: Smarter Justice only. PRE124 is based on the exact qualified P
 9. Preserve Car and vehicle accidents coverage and all unchanged PRE123/Immigration Oasis capabilities through the exact-predecessor no-loss chain.
 10. Require post-deployment live verification of the OpenAI provider path, health, core attorney journeys, public-copy cleanliness, and production logs before calling PRE124 fully live.
 
-## Owner-deferred item — do not execute until Roger directs it
+## Owner-deferred item — do not execute until the owner directs it
 
 - Stripe/payment setup is deliberately deferred. A later payment release should reuse or create the correct live recurring products/prices only after explicit owner direction, wire checkout/webhooks/customer billing management to Smarter Justice membership entitlements, and then independently test paid activation, renewal, cancellation, failed payment, refunds/credits where applicable, and entitlement removal. Do not infer that Stripe should be configured merely because pricing is public.
 
