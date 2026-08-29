@@ -46,6 +46,7 @@ jobs:
           python3 - <<'PY'
           import pathlib, zipfile, hashlib, json
           root=pathlib.Path('.runtime/pre124-live')
+          improvement=pathlib.Path('deployment/pre124/NEXT_VERSION_IMPROVEMENT_LIST__PRE124.md')
           out=pathlib.Path('SMARTER_JUSTICE__V2.0.0-PRE124__ATTORNEY_LAUNCH_COMPLETION__NO_STRIPE_MUTATION__2026-08-29.zip')
           with zipfile.ZipFile(out,'w',compression=zipfile.ZIP_DEFLATED,compresslevel=9) as z:
               for p in sorted(x for x in root.rglob('*') if x.is_file()):
@@ -54,9 +55,14 @@ jobs:
                   info.compress_type=zipfile.ZIP_DEFLATED
                   info.external_attr=0o100644 << 16
                   z.writestr(info,p.read_bytes(),compress_type=zipfile.ZIP_DEFLATED,compresslevel=9)
+              info=zipfile.ZipInfo('NEXT_VERSION_IMPROVEMENT_LIST.md',date_time=(2026,8,29,12,0,0))
+              info.compress_type=zipfile.ZIP_DEFLATED
+              info.external_attr=0o100644 << 16
+              z.writestr(info,improvement.read_bytes(),compress_type=zipfile.ZIP_DEFLATED,compresslevel=9)
           digest=hashlib.sha256(out.read_bytes()).hexdigest()
           pathlib.Path(out.name+'.sha256.txt').write_text(f'{digest}  {out.name}\n')
           receipt=json.loads((root/'PRE124_COMPLETION_RECEIPT.json').read_text())
+          receipt['nextVersionImprovementListIncluded']=True
           receipt['exactHandoffZip']={'fileName':out.name,'sha256':digest,'sizeBytes':out.stat().st_size}
           pathlib.Path('PRE124_EXACT_HANDOFF_RECEIPT.json').write_text(json.dumps(receipt,indent=2)+'\n')
           print(digest, out.stat().st_size)
@@ -69,5 +75,6 @@ jobs:
             SMARTER_JUSTICE__V2.0.0-PRE124__ATTORNEY_LAUNCH_COMPLETION__NO_STRIPE_MUTATION__2026-08-29.zip
             SMARTER_JUSTICE__V2.0.0-PRE124__ATTORNEY_LAUNCH_COMPLETION__NO_STRIPE_MUTATION__2026-08-29.zip.sha256.txt
             PRE124_EXACT_HANDOFF_RECEIPT.json
+            deployment/pre124/NEXT_VERSION_IMPROVEMENT_LIST__PRE124.md
           if-no-files-found: error
           retention-days: 90
