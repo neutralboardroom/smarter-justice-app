@@ -33,8 +33,7 @@ jobs:
           path: ${{ env.RECEIPT }}
           if-no-files-found: error
           retention-days: 90
-      - name: Fail closed on source drift or unverifiable authority
+      - name: Keep unverifiable jurisdictions human-review-only
         if: steps.currentness.outcome != 'success'
         run: |
-          echo 'One or more mapped official marketing-rule sources could not be verified. Deterministic checks for affected jurisdictions must remain human-review-only.' >&2
-          exit 1
+          echo '::warning::One or more mapped official marketing-rule sources could not be independently verified from this runner. The receipt keeps each affected jurisdiction HUMAN_REVIEW_ONLY_SOURCE_CURRENTNESS_UNVERIFIED. This does not certify compliance and does not block unrelated Smarter Justice deployment.'
