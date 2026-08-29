@@ -11,7 +11,7 @@
     "pg": "^8.13.1"
   },
   "scripts": {
-    "postinstall": "node scripts/bootstrap-pre124-deploy.js",
+    "postinstall": "node scripts/bootstrap-pre124-release.js",
     "start": "node scripts/start-pre124-deploy.js"
   }
 }
