@@ -129,15 +129,7 @@ jobs:
           node --check "$RUNTIME/lib/credentialReconciliationPre58.js"
           if test -f "$RUNTIME/.pre124-render-bootstrap.json"; then
             test -f "$SOURCE/deployment/pre58/NY_OFFICIAL_CREDENTIAL_RECONCILIATION__PRE58.json"
-            RUNTIME="$RUNTIME" node - <<'NODE'
-            const fs=require('fs'),path=require('path');
-            const runtime=process.env.RUNTIME;
-            const receipt=JSON.parse(fs.readFileSync(path.join(runtime,'PRE124_COMPLETION_RECEIPT.json'),'utf8'));
-            if(receipt.baseRelease!=='v2.0.0-pre123'||receipt.predecessorUnchangedFilesHashVerified!==true) throw new Error('PRE124 no-loss receipt missing');
-            const modulePath=path.join(runtime,'lib','credentialReconciliationPre58.js');
-            if(!fs.existsSync(modulePath)) throw new Error('retained PRE58 credential module missing');
-            console.log('Retained PRE58 credential reconciliation protected by PRE124 exact-predecessor no-loss verification');
-            NODE
+            RUNTIME="$RUNTIME" node -e "const fs=require('fs'),path=require('path'),r=process.env.RUNTIME,receipt=JSON.parse(fs.readFileSync(path.join(r,'PRE124_COMPLETION_RECEIPT.json'),'utf8')); if(receipt.baseRelease!=='v2.0.0-pre123'||receipt.predecessorUnchangedFilesHashVerified!==true||!fs.existsSync(path.join(r,'lib','credentialReconciliationPre58.js'))) process.exit(1); console.log('Retained PRE58 credential reconciliation protected by PRE124 exact-predecessor no-loss verification');"
           else
             (cd "$SOURCE" && RUNTIME="$RUNTIME" python3 deployment/pre58/test_pre58_credential_reconciliation.py)
             (cd "$SOURCE" && RUNTIME="$RUNTIME" python3 deployment/pre58/test_pre58_release.py)
