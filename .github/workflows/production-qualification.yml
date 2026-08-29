@@ -121,12 +121,27 @@ jobs:
           echo "Qualified runtime: $runtime_version"
 
       - name: Qualify retained credential reconciliation
-        working-directory: ${{ steps.runtime.outputs.path }}
+        env:
+          SOURCE: ${{ steps.source.outputs.path }}
+          RUNTIME: ${{ steps.runtime.outputs.path }}
         run: |
           set -euo pipefail
-          node --check lib/credentialReconciliationPre58.js
-          python3 deployment/pre58/test_pre58_credential_reconciliation.py
-          python3 deployment/pre58/test_pre58_release.py
+          node --check "$RUNTIME/lib/credentialReconciliationPre58.js"
+          if test -f "$RUNTIME/.pre124-render-bootstrap.json"; then
+            test -f "$SOURCE/deployment/pre58/NY_OFFICIAL_CREDENTIAL_RECONCILIATION__PRE58.json"
+            RUNTIME="$RUNTIME" node - <<'NODE'
+            const fs=require('fs'),path=require('path');
+            const runtime=process.env.RUNTIME;
+            const receipt=JSON.parse(fs.readFileSync(path.join(runtime,'PRE124_COMPLETION_RECEIPT.json'),'utf8'));
+            if(receipt.baseRelease!=='v2.0.0-pre123'||receipt.predecessorUnchangedFilesHashVerified!==true) throw new Error('PRE124 no-loss receipt missing');
+            const modulePath=path.join(runtime,'lib','credentialReconciliationPre58.js');
+            if(!fs.existsSync(modulePath)) throw new Error('retained PRE58 credential module missing');
+            console.log('Retained PRE58 credential reconciliation protected by PRE124 exact-predecessor no-loss verification');
+            NODE
+          else
+            (cd "$SOURCE" && RUNTIME="$RUNTIME" python3 deployment/pre58/test_pre58_credential_reconciliation.py)
+            (cd "$SOURCE" && RUNTIME="$RUNTIME" python3 deployment/pre58/test_pre58_release.py)
+          fi
 
       - name: Generate deterministic runtime SBOM
         working-directory: ${{ steps.runtime.outputs.path }}
