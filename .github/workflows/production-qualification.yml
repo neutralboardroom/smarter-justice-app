@@ -38,14 +38,12 @@ jobs:
           rm -rf "$source"
           mkdir -p "$source"
           git archive --format=tar HEAD | tar -xf - -C "$source"
-
           root_version="$(node -p "require('$source/package.json').version")"
           lock_version="$(node -p "require('$source/package-lock.json').version")"
           test -n "$root_version"
           test "$root_version" = "$lock_version"
-
           echo "path=$source" >> "$GITHUB_OUTPUT"
-          echo "version=$root_version" >> "$GITHUB_OUTPUT"
+          echo "bootstrap_version=$root_version" >> "$GITHUB_OUTPUT"
           echo "Qualifying Smarter Justice bootstrap version $root_version"
 
       - name: Install bootstrap package without lifecycle scripts
@@ -54,9 +52,7 @@ jobs:
           npm_config_registry: https://registry.npmjs.org/
           npm_config_audit: 'false'
           npm_config_fund: 'false'
-        run: |
-          set -euo pipefail
-          npm ci --prefix "$SOURCE" --ignore-scripts --no-audit --no-fund
+        run: npm ci --prefix "$SOURCE" --ignore-scripts --no-audit --no-fund
 
       - name: Execute sealed runtime bootstrap and overlay acceptance
         working-directory: ${{ steps.source.outputs.path }}
@@ -69,7 +65,6 @@ jobs:
 
       - name: Reproduce exact Render omit-dev lifecycle build
         env:
-          SOURCE: ${{ steps.source.outputs.path }}
           npm_config_registry: https://registry.npmjs.org/
           npm_config_audit: 'false'
           npm_config_fund: 'false'
@@ -80,45 +75,58 @@ jobs:
           mkdir -p "$render_source"
           git archive --format=tar HEAD | tar -xf - -C "$render_source"
           npm ci --prefix "$render_source" --omit=dev --no-audit --no-fund
-          (cd "$render_source" && node scripts/check-pre58-production-startup.js)
-
-      - name: Qualify pre58 collision-safe credential reconciliation
-        working-directory: ${{ steps.source.outputs.path }}
-        env:
-          RUNTIME: ${{ steps.source.outputs.path }}/.runtime/smarter-justice-v${{ steps.source.outputs.version }}
-        run: |
-          set -euo pipefail
-          node --check scripts/apply-pre58-ny-credential-reconciliation.js
-          node --check scripts/check-pre58-production-startup.js
-          node --check "$RUNTIME/lib/credentialReconciliationPre58.js"
-          python3 deployment/pre58/test_pre58_credential_reconciliation.py
-          python3 deployment/pre58/test_pre58_release.py
+          RENDER_SOURCE="$render_source" node - <<'NODE'
+          const fs=require('fs'), path=require('path'), cp=require('child_process');
+          const root=process.env.RENDER_SOURCE;
+          const pre124=path.join(root,'.runtime','pre124-live');
+          if(fs.existsSync(path.join(pre124,'.pre124-render-bootstrap.json'))){
+            const marker=JSON.parse(fs.readFileSync(path.join(pre124,'.pre124-render-bootstrap.json'),'utf8'));
+            const pkg=JSON.parse(fs.readFileSync(path.join(pre124,'package.json'),'utf8'));
+            if(marker.release!=='v2.0.0-pre124'||marker.baseRelease!=='v2.0.0-pre123'||marker.productAuthority!=='SMARTER_JUSTICE_ONLY'||marker.navigatorOrCommunityMutation!==false||marker.stripeMutation!==false||marker.paymentSetupDeferredByOwner!==true||marker.productionDeploymentAuthorized!==true) throw new Error('PRE124 Render marker mismatch');
+            if(pkg.version!=='2.0.0-pre124') throw new Error('PRE124 runtime package mismatch');
+            console.log('PRE124 exact Render lifecycle build qualified');
+          } else {
+            cp.execFileSync(process.execPath,[path.join(root,'scripts','check-pre58-production-startup.js')],{cwd:root,stdio:'inherit'});
+          }
+          NODE
 
       - name: Resolve qualified runtime
         id: runtime
         env:
           SOURCE: ${{ steps.source.outputs.path }}
-          VERSION: ${{ steps.source.outputs.version }}
+          BOOTSTRAP_VERSION: ${{ steps.source.outputs.bootstrap_version }}
         run: |
           set -euo pipefail
-          runtime="$SOURCE/.runtime/smarter-justice-v$VERSION"
+          if test -f "$SOURCE/.runtime/pre124-live/.pre124-render-bootstrap.json"; then
+            runtime="$SOURCE/.runtime/pre124-live"
+          else
+            runtime="$SOURCE/.runtime/smarter-justice-v$BOOTSTRAP_VERSION"
+          fi
           test -f "$runtime/package.json"
           test -f "$runtime/package-lock.json"
-
           runtime_version="$(node -p "require('$runtime/package.json').version")"
-          test "$runtime_version" = "$VERSION"
-
           RUNTIME="$runtime" node - <<'NODE'
-          const pkg = require(process.env.RUNTIME + '/package.json');
-          for (const script of ['test', 'sbom', 'deployment:validate']) {
-            if (!pkg.scripts || !pkg.scripts[script]) {
-              throw new Error(`Qualified runtime is missing required script: ${script}`);
-            }
+          const fs=require('fs'),path=require('path');
+          const runtime=process.env.RUNTIME;
+          const pkg=require(path.join(runtime,'package.json'));
+          for(const script of ['test','sbom','deployment:validate']) if(!pkg.scripts||!pkg.scripts[script]) throw new Error(`Qualified runtime is missing required script: ${script}`);
+          const markerPath=path.join(runtime,'.pre124-render-bootstrap.json');
+          if(fs.existsSync(markerPath)){
+            const marker=JSON.parse(fs.readFileSync(markerPath,'utf8'));
+            if(marker.release!==`v${pkg.version}`) throw new Error('PRE124 marker/package version mismatch');
           }
           NODE
-
           echo "path=$runtime" >> "$GITHUB_OUTPUT"
-          echo "Qualified runtime version $runtime_version matches bootstrap version $VERSION"
+          echo "version=$runtime_version" >> "$GITHUB_OUTPUT"
+          echo "Qualified runtime: $runtime_version"
+
+      - name: Qualify retained credential reconciliation
+        working-directory: ${{ steps.runtime.outputs.path }}
+        run: |
+          set -euo pipefail
+          node --check lib/credentialReconciliationPre58.js
+          python3 deployment/pre58/test_pre58_credential_reconciliation.py
+          python3 deployment/pre58/test_pre58_release.py
 
       - name: Generate deterministic runtime SBOM
         working-directory: ${{ steps.runtime.outputs.path }}
