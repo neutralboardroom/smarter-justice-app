@@ -16,8 +16,9 @@ if (marker.release !== 'v2.0.0-pre124'
   || marker.baseRelease !== 'v2.0.0-pre123'
   || marker.productAuthority !== 'SMARTER_JUSTICE_ONLY'
   || marker.navigatorOrCommunityMutation !== false
-  || marker.stripeMutation !== false
-  || marker.paymentSetupDeferredByOwner !== true
+  || marker.stripeMutation !== true
+  || marker.paymentSetupDeferredByOwner !== false
+  || marker.paymentSetupAuthorizedByOwner !== true
   || marker.productionDeploymentAuthorized !== true) {
   console.error('[PRE124 DEPLOY] marker mismatch');
   process.exit(1);

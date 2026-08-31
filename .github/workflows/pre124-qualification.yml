@@ -31,12 +31,14 @@ jobs:
         run: npm ci --omit=dev
       - name: Re-run PRE124 qualification
         run: node scripts/bootstrap-pre124-release.js
-      - name: Verify release marker and Stripe deferral
+      - name: Verify PRE124 attorney launch runtime
+        run: node deployment/pre124/test-pre124-launch.js
+      - name: Verify release marker and production billing authorization
         run: |
           node - <<'NODE'
           const fs=require('fs');
           const marker=JSON.parse(fs.readFileSync('.runtime/pre124-live/.pre124-render-bootstrap.json','utf8'));
-          if(marker.release!=='v2.0.0-pre124'||marker.baseRelease!=='v2.0.0-pre123'||marker.productAuthority!=='SMARTER_JUSTICE_ONLY'||marker.navigatorOrCommunityMutation!==false||marker.stripeMutation!==false||marker.paymentSetupDeferredByOwner!==true||marker.productionDeploymentAuthorized!==true) process.exit(1);
+          if(marker.release!=='v2.0.0-pre124'||marker.baseRelease!=='v2.0.0-pre123'||marker.productAuthority!=='SMARTER_JUSTICE_ONLY'||marker.navigatorOrCommunityMutation!==false||marker.stripeMutation!==true||marker.paymentSetupDeferredByOwner!==false||marker.paymentSetupAuthorizedByOwner!==true||marker.productionDeploymentAuthorized!==true) process.exit(1);
           const receipt=JSON.parse(fs.readFileSync('.runtime/pre124-live/PRE124_COMPLETION_RECEIPT.json','utf8'));
           if(!receipt.predecessorUnchangedFilesHashVerified||receipt.changes.publicPagesAudited<100) process.exit(1);
           console.log(JSON.stringify({release:marker.release,baseRelease:marker.baseRelease,publicPagesAudited:receipt.changes.publicPagesAudited,stripeMutation:marker.stripeMutation,paymentSetupDeferredByOwner:marker.paymentSetupDeferredByOwner},null,2));
@@ -47,7 +49,7 @@ jobs:
           import pathlib, zipfile, hashlib, json
           root=pathlib.Path('.runtime/pre124-live')
           improvement=pathlib.Path('deployment/pre124/NEXT_VERSION_IMPROVEMENT_LIST__PRE124.md')
-          out=pathlib.Path('SMARTER_JUSTICE__V2.0.0-PRE124__ATTORNEY_LAUNCH_COMPLETION__NO_STRIPE_MUTATION__2026-08-29.zip')
+          out=pathlib.Path('SMARTER_JUSTICE__V2.0.0-PRE124__ATTORNEY_LAUNCH_COMPLETION__PRODUCTION_BILLING_READY__2026-08-31.zip')
           with zipfile.ZipFile(out,'w',compression=zipfile.ZIP_DEFLATED,compresslevel=9) as z:
               for p in sorted(x for x in root.rglob('*') if x.is_file()):
                   rel=p.relative_to(root).as_posix()
@@ -75,8 +77,8 @@ jobs:
         with:
           name: smarter-justice-pre124-exact-handoff
           path: |
-            SMARTER_JUSTICE__V2.0.0-PRE124__ATTORNEY_LAUNCH_COMPLETION__NO_STRIPE_MUTATION__2026-08-29.zip
-            SMARTER_JUSTICE__V2.0.0-PRE124__ATTORNEY_LAUNCH_COMPLETION__NO_STRIPE_MUTATION__2026-08-29.zip.sha256.txt
+            SMARTER_JUSTICE__V2.0.0-PRE124__ATTORNEY_LAUNCH_COMPLETION__PRODUCTION_BILLING_READY__2026-08-31.zip
+            SMARTER_JUSTICE__V2.0.0-PRE124__ATTORNEY_LAUNCH_COMPLETION__PRODUCTION_BILLING_READY__2026-08-31.zip.sha256.txt
             PRE124_EXACT_HANDOFF_RECEIPT.json
             deployment/pre124/NEXT_VERSION_IMPROVEMENT_LIST__PRE124.md
           if-no-files-found: error

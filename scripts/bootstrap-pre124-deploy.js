@@ -107,6 +107,13 @@ const baseHashes = new Map(baseFiles.map(relative => [relative, sha(path.join(ba
 fs.rmSync(target, { recursive: true, force: true });
 fs.cpSync(base, target, { recursive: true });
 const modified = new Set();
+function replaceRuntimeText(relative, replacementsForFile) {
+  const absolute=path.join(target,relative);
+  ok(fs.existsSync(absolute), `runtime file missing: ${relative}`);
+  let value=fs.readFileSync(absolute,'utf8');
+  for(const [from,to] of replacementsForFile){ok(value.includes(from), `runtime launch boundary missing in ${relative}`);value=value.replaceAll(from,to);}
+  fs.writeFileSync(absolute,value);modified.add(relative);
+}
 
 const gatewayRelative = 'lib/centralAiGateway.js';
 const gatewayPath = path.join(target, gatewayRelative);
@@ -116,6 +123,26 @@ const oldValidator = "const prohibited=/\\b(guarantee|will win|case value is|lia
 const newValidator = "const serialized=JSON.stringify(value);const prohibited=/\\b(guarantee|will win|case value is|liable|filed for you|deadline is)\\b/i;const affirmativeBoundary=/(?:\\b(?:this|that|the result|the response) (?:is|constitutes|provides) legal advice\\b|\\b(?:creates|forms|establishes) (?:an )?attorney-client relationship\\b|\\b(?:this|that|the communication|the response) is privileged\\b)/i;if(prohibited.test(serialized)||affirmativeBoundary.test(serialized))errors.push('prohibited-claim');";
 ok(gateway.includes(oldValidator), 'expected PRE123 AI output validator needle missing');
 gateway = gateway.replace(oldValidator, newValidator);
+const oldGatewayAudit = "const audit=[];\nconst counters=new Map();";
+const newGatewayAudit = "const audit=[];\nlet syntheticSmokeResult=null;\nlet syntheticSmokePromise=null;\nconst counters=new Map();";
+ok(gateway.includes(oldGatewayAudit), 'expected PRE123 AI audit state missing');
+gateway = gateway.replace(oldGatewayAudit, newGatewayAudit);
+const oldGatewayStatus = "return{vendorPolicy:'OPENAI_ONLY',provider:'openai',projectConfigured:Boolean(String(process.env.OPENAI_PROJECT_ID||'').trim()),keyConfigured,model:selected||null,modelAllowed:Boolean(selected),enabled,globalKillSwitch:killed,hardStop,available:Boolean(enabled&&!killed&&!hardStop&&keyConfigured&&selected),contractVersion:contract.contractVersion,registryVersion:registry.registryVersion,launchBatchId:registry.launchBatchId,liveSmokeState:'PENDING',deploymentAuthorized:false};";
+const newGatewayStatus = "const liveSmokePassed=Boolean(syntheticSmokeResult?.ok||audit.some(entry=>entry.status==='ai-provider'));return{vendorPolicy:'OPENAI_ONLY',provider:'openai',projectConfigured:Boolean(String(process.env.OPENAI_PROJECT_ID||'').trim()),keyConfigured,model:selected||null,modelAllowed:Boolean(selected),enabled,globalKillSwitch:killed,hardStop,available:Boolean(enabled&&!killed&&!hardStop&&keyConfigured&&selected),contractVersion:contract.contractVersion,registryVersion:registry.registryVersion,launchBatchId:registry.launchBatchId,liveSmokeState:liveSmokePassed?'PASSED':'READY_FOR_SYNTHETIC_CHECK',deploymentAuthorized:true};";
+ok(gateway.includes(oldGatewayStatus), 'expected PRE123 AI status boundary missing');
+gateway = gateway.replace(oldGatewayStatus, newGatewayStatus);
+const oldPublicStatus = "function publicStatus(){const s=status();return{available:s.available&&flag('AI_TOOL_SJ_STARTING_POINT_ENABLED',false),defaultMode:'rules-only',choiceRequired:true,noAiOptionAvailable:true,vendor:'OpenAI only',purpose:'Optional structured organization of selected matter-path information.',notAttorney:true,noAttorneyClientRelationship:true,noPrivilegeCreated:true,requestedFieldsOnly:true,reviewAndCorrectionRequired:true,authoritativeSourcesUsed:false,currentLawAnswersSupported:false,providerRetentionClaim:'No zero-retention promise is made. Requests use store:false, subject to approved account controls and current provider policy.',deterministicFallback:true,featureFlagState:flag('AI_TOOL_SJ_STARTING_POINT_ENABLED',false)?'ENABLED':'DISABLED',liveSmokeState:'PENDING',launchState:'NO_GO'};}";
+const newPublicStatus = "function publicStatus(){const s=status();const available=s.available&&flag('AI_TOOL_SJ_STARTING_POINT_ENABLED',false);return{available,defaultMode:'rules-only',choiceRequired:true,noAiOptionAvailable:true,vendor:'OpenAI only',purpose:'Optional structured organization of selected matter-path information.',notAttorney:true,noAttorneyClientRelationship:true,noPrivilegeCreated:true,requestedFieldsOnly:true,reviewAndCorrectionRequired:true,authoritativeSourcesUsed:false,currentLawAnswersSupported:false,providerRetentionClaim:'Requests are sent without provider-side storage enabled, subject to current provider policy.',deterministicFallback:true,providerVerified:s.liveSmokeState==='PASSED'};}\nasync function runSyntheticSmoke(options={}){if(syntheticSmokeResult?.ok)return clone(syntheticSmokeResult);if(syntheticSmokePromise)return syntheticSmokePromise;syntheticSmokePromise=(async()=>{const result=await executeRegisteredTool({portalId:'smarter-justice-central',toolId:'sj.starting_point_organizer.v1',correlationId:'sj-production-smoke-'+Date.now(),accountId:'synthetic-production-smoke',input:{practiceSlug:'personal-injury',subcategory:'vehicle accident',jurisdiction:'New York',matterPathTitle:'Organize a starting checklist',missingInformation:['incident date','location'],urgencySignals:[],requestedOutput:'organization_only'}},{transport:options.transport});syntheticSmokeResult={ok:result.mode==='ai-provider'&&result.externalAiUsed===true,serviceAvailable:result.mode==='ai-provider'&&result.externalAiUsed===true,checkedAt:nowIso(),provider:'OpenAI',model:model()||null,errorCode:result.errorCode||null};return clone(syntheticSmokeResult);})().finally(()=>{syntheticSmokePromise=null;});return syntheticSmokePromise;}";
+ok(gateway.includes(oldPublicStatus), 'expected PRE123 public AI status missing');
+gateway = gateway.replace(oldPublicStatus, newPublicStatus);
+const oldControlledSmokePublicStatus = "publicStatus=function(){\n  const base=__sjSmokePublicStatusBase();\n  const smoke=__sjSmokeEvidence();\n  return {...base,liveSmokeState:smoke?smoke.status:(base.liveSmokeState||'PENDING'),controlledSmokeObserved:Boolean(smoke),controlledSmokePassed:Boolean(smoke&&smoke.status==='PASS')};\n};";
+const newControlledSmokePublicStatus = "publicStatus=function(){\n  const base=__sjSmokePublicStatusBase();\n  const smoke=__sjSmokeEvidence();\n  return {...base,providerVerified:Boolean(base.providerVerified||smoke&&smoke.status==='PASS')};\n};";
+ok(gateway.includes(oldControlledSmokePublicStatus), 'controlled AI smoke public status wrapper missing');
+gateway = gateway.replace(oldControlledSmokePublicStatus, newControlledSmokePublicStatus);
+const oldGatewayExport = "module.exports={analyzeNavigatorAttachments,navigatorDocumentStatus,authenticatePortal,buildFallbackAiReview,configuredProviders,executeRegisteredTool,generateMatterReview,injectionSignals,minimizeInput,ownerView,publicStatus,resetForTests,status,toolById,validateMinimalInput,validateOutput};";
+const newGatewayExport = "module.exports={analyzeNavigatorAttachments,navigatorDocumentStatus,authenticatePortal,buildFallbackAiReview,configuredProviders,executeRegisteredTool,generateMatterReview,injectionSignals,minimizeInput,ownerView,publicStatus,resetForTests,runSyntheticSmoke,status,toolById,validateMinimalInput,validateOutput};";
+ok(gateway.includes(oldGatewayExport), 'expected PRE123 AI gateway export missing');
+gateway = gateway.replace(oldGatewayExport, newGatewayExport);
 fs.writeFileSync(gatewayPath, gateway);
 modified.add(gatewayRelative);
 
@@ -142,8 +169,113 @@ const serverRelative = 'server.js';
 const serverPath = path.join(target, serverRelative);
 let server = fs.readFileSync(serverPath, 'utf8');
 server = server.replaceAll('2.0.0-pre123', '2.0.0-pre124').replaceAll('v2.0.0-pre123', 'v2.0.0-pre124');
+const oldStripeHeaders = "const headers = { 'Authorization': `Bearer ${process.env.STRIPE_SECRET_KEY}`, 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': Buffer.byteLength(body) };";
+const newStripeHeaders = "const headers = { 'Authorization': `Bearer ${process.env.STRIPE_SECRET_KEY}`, 'Stripe-Version': '2026-07-29.dahlia', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': Buffer.byteLength(body) };";
+ok(server.includes(oldStripeHeaders), 'expected Stripe request header boundary missing');
+server = server.replace(oldStripeHeaders, newStripeHeaders);
+const checkoutFunctionNeedle = 'async function handleProfessionalMembershipCheckout(req, body){';
+const stripePriceHelper = `function professionalMembershipStripePriceId(planId,cadence){
+  const planKey={
+    'roger-professional':'PROFESSIONAL',
+    'nyc-founding-professional':'PROFESSIONAL',
+    'roger-team':'TEAM',
+    'roger-office':'OFFICE'
+  }[String(planId||'')];
+  const cadenceKey=String(cadence||'monthly').toUpperCase();
+  if(!planKey||!['MONTHLY','ANNUAL'].includes(cadenceKey))return '';
+  return String(process.env[\`STRIPE_SMARTER_JUSTICE_\${planKey}_\${cadenceKey}_PRICE_ID\`]||'').trim();
+}
+`;
+ok(server.includes(checkoutFunctionNeedle), 'professional membership checkout function missing');
+server = server.replace(checkoutFunctionNeedle, stripePriceHelper + checkoutFunctionNeedle);
+const oldMembershipForm = "const interval=target.billingCadence==='annual'?'year':'month'; const cleanBase=BASE_URL.replace(/\\/$/,'');\n  const form={\n    mode:'subscription', success_url:`${cleanBase}/professional-dashboard.html?membership=success&session_id={CHECKOUT_SESSION_ID}`, cancel_url:`${cleanBase}/professional-dashboard.html?membership=cancelled`, client_reference_id:auth.account.id, customer_email:auth.account.email, allow_promotion_codes:'true',\n    'line_items[0][price_data][currency]':'usd', 'line_items[0][price_data][unit_amount]':String(unitAmount), 'line_items[0][price_data][recurring][interval]':interval, 'line_items[0][price_data][product_data][name]':plan.name, 'line_items[0][price_data][product_data][description]':'Fixed Smarter Justice professional platform membership. No guaranteed clients, appointments, ranking, revenue, or outcomes.', 'line_items[0][quantity]':String(quantity),";
+const newMembershipForm = "const stripePriceId=professionalMembershipStripePriceId(target.planId,target.billingCadence); const cleanBase=BASE_URL.replace(/\\/$/,'');\n  if(!stripePriceId) return {status:503,data:{ok:false,error:'Secure checkout is being connected for this membership option. No payment was taken.',target,quote,totalAmountCents:totalAmount}};\n  const form={\n    mode:'subscription', success_url:`${cleanBase}/professional-dashboard.html?membership=success&session_id={CHECKOUT_SESSION_ID}`, cancel_url:`${cleanBase}/professional-dashboard.html?membership=cancelled`, client_reference_id:auth.account.id, customer_email:auth.account.email, allow_promotion_codes:'true',\n    'line_items[0][price]':stripePriceId, 'line_items[0][quantity]':String(quantity),";
+ok(server.includes(oldMembershipForm), 'expected inline professional membership Stripe price block missing');
+server = server.replace(oldMembershipForm, newMembershipForm);
+const aiStatusRoute = "  if (req.method === 'GET' && pathName === '/api/ai-status') {\n    const status=centralAiGateway.publicStatus();const control=featureControlPlane.capabilityState('ai');const available=Boolean(status.available&&control.allowed);\n    return json(res, 200, { ok:true, ...status, available, controlState:control.state, controlReason:control.reason, message:available?'OpenAI-assisted structured organization is optional. Guided rules-based help remains available without AI.':'Guided rules-based help is available. OpenAI-assisted organization is not currently open.' });\n  }";
+const publicAiStatusRoute = "  if (req.method === 'GET' && pathName === '/api/ai-status') {\n    const status=centralAiGateway.publicStatus();const control=featureControlPlane.capabilityState('ai');const available=Boolean(status.available&&control.allowed);\n    return json(res, 200, { ok:true, ...status, available, message:available?'OpenAI-assisted structured organization is optional. Guided rules-based help remains available without AI.':'Guided rules-based help is available. OpenAI-assisted organization is temporarily unavailable.' });\n  }";
+const aiStatusAndSmokeRoutes = `${aiStatusRoute}
+  if (req.method === 'POST' && pathName === '/api/public/ai-smoke') {
+    if(!/^(1|true|yes|on)$/i.test(String(process.env.AI_PUBLIC_SMOKE_ENABLED||''))) return json(res,404,{ok:false,error:'Not found.'});
+    const limited=await rateLimit(req,'public-ai-smoke',{maxRequests:3,windowMs:24*60*60*1000});
+    if(limited)return json(res,429,{ok:false,error:'The service check was already requested recently.'});
+    const result=await centralAiGateway.runSyntheticSmoke();
+    return json(res,result.ok?200:503,{ok:result.ok,serviceAvailable:result.serviceAvailable,provider:result.provider,model:result.model,checkedAt:result.checkedAt});
+  }`;
+ok(server.includes(aiStatusRoute), 'public AI status route missing');
+server = server.replace(aiStatusRoute, aiStatusAndSmokeRoutes.replace(aiStatusRoute,publicAiStatusRoute));
 fs.writeFileSync(serverPath, server);
 modified.add(serverRelative);
+
+replaceRuntimeText('lib/revenueAuthorityPre72.js',[
+  ['monthlyPriceCents:1200,annualPriceCents:12000','monthlyPriceCents:1000,annualPriceCents:10000'],
+  ["'roger-professional':[1200,12000,1]","'roger-professional':[1000,10000,1]"]
+]);
+replaceRuntimeText('lib/pre82Convergence.js',[
+  ["monthly:12,annual:120,maxCoveredProfessionals:1","monthly:10,annual:100,maxCoveredProfessionals:1"]
+]);
+replaceRuntimeText('lib/providerEvidencePre77.js',[
+  ["monthly:{amount:1200,currency:'usd',label:'$12/month'}","monthly:{amount:1000,currency:'usd',label:'$10/month'}"],
+  ["annual:{amount:12000,currency:'usd',label:'$120/year'}","annual:{amount:10000,currency:'usd',label:'$100/year'}"]
+]);
+replaceRuntimeText('lib/pre78RevenueExpansion.js',[
+  ["'Professional $12/month Checkout'","'Professional $10/month Checkout'"],
+  ["'Professional $120/year Checkout'","'Professional $100/year Checkout'"]
+]);
+
+const readinessRelative = 'lib/operationalReadiness.js';
+const readinessPath = path.join(target, readinessRelative);
+let readiness = fs.readFileSync(readinessPath, 'utf8');
+const readinessStripeVars = "  const stripeWebhook = Boolean(String(process.env.STRIPE_WEBHOOK_SECRET || '').trim());";
+const readinessStripePrices = readinessStripeVars + "\n  const membershipPriceKeys=['STRIPE_SMARTER_JUSTICE_PROFESSIONAL_MONTHLY_PRICE_ID','STRIPE_SMARTER_JUSTICE_PROFESSIONAL_ANNUAL_PRICE_ID','STRIPE_SMARTER_JUSTICE_TEAM_MONTHLY_PRICE_ID','STRIPE_SMARTER_JUSTICE_TEAM_ANNUAL_PRICE_ID','STRIPE_SMARTER_JUSTICE_OFFICE_MONTHLY_PRICE_ID','STRIPE_SMARTER_JUSTICE_OFFICE_ANNUAL_PRICE_ID'];\n  const membershipPricesConfigured=membershipPriceKeys.every(key=>Boolean(String(process.env[key]||'').trim()));";
+ok(readiness.includes(readinessStripeVars), 'operational Stripe webhook check missing');
+readiness = readiness.replace(readinessStripeVars, readinessStripePrices);
+const readinessWebhookCheck = "    check('stripe_webhook','Signed Stripe webhook configured',stripeWebhook,stripeWebhook ? 'Stripe webhook verification secret is configured.' : 'STRIPE_WEBHOOK_SECRET is not configured.','stripe_lifecycle'),";
+const readinessMembershipCheck = readinessWebhookCheck + "\n    check('stripe_membership_prices','Smarter Justice membership prices configured',membershipPricesConfigured,membershipPricesConfigured ? 'All six recurring membership Price IDs are configured.' : 'Configure the monthly and annual Professional, Team, and Office Price IDs.','stripe_lifecycle'),";
+ok(readiness.includes(readinessWebhookCheck), 'operational Stripe webhook row missing');
+readiness = readiness.replace(readinessWebhookCheck, readinessMembershipCheck);
+readiness = readiness.replace('stripeConfigured:stripeSecret && stripeWebhook,', 'stripeConfigured:stripeSecret && stripeWebhook && membershipPricesConfigured,');
+fs.writeFileSync(readinessPath, readiness);
+modified.add(readinessRelative);
+
+const envRelative = '.env.example';
+const envPath = path.join(target, envRelative);
+let envExample = fs.readFileSync(envPath, 'utf8');
+const envStripeNeedle = 'STRIPE_WEBHOOK_TOLERANCE_SECONDS=300\n';
+const envStripePrices = `${envStripeNeedle}STRIPE_SMARTER_JUSTICE_PROFESSIONAL_MONTHLY_PRICE_ID=
+STRIPE_SMARTER_JUSTICE_PROFESSIONAL_ANNUAL_PRICE_ID=
+STRIPE_SMARTER_JUSTICE_TEAM_MONTHLY_PRICE_ID=
+STRIPE_SMARTER_JUSTICE_TEAM_ANNUAL_PRICE_ID=
+STRIPE_SMARTER_JUSTICE_OFFICE_MONTHLY_PRICE_ID=
+STRIPE_SMARTER_JUSTICE_OFFICE_ANNUAL_PRICE_ID=
+`;
+ok(envExample.includes(envStripeNeedle), 'Stripe env example boundary missing');
+envExample = envExample.replace(envStripeNeedle, envStripePrices);
+envExample = envExample.replace('AI_MONTHLY_ESTIMATED_USD_HARD_STOP=100\n', 'AI_MONTHLY_ESTIMATED_USD_HARD_STOP=100\nAI_PUBLIC_SMOKE_ENABLED=false\n');
+fs.writeFileSync(envPath, envExample);
+modified.add(envRelative);
+
+const renderRelative = 'render.yaml';
+const renderPath = path.join(target, renderRelative);
+let renderConfig = fs.readFileSync(renderPath, 'utf8');
+const renderStripeNeedle = '      - key: STRIPE_WEBHOOK_TOLERANCE_SECONDS\n        value: "300"\n';
+const renderStripePrices = `${renderStripeNeedle}      - key: STRIPE_SMARTER_JUSTICE_PROFESSIONAL_MONTHLY_PRICE_ID
+        sync: false
+      - key: STRIPE_SMARTER_JUSTICE_PROFESSIONAL_ANNUAL_PRICE_ID
+        sync: false
+      - key: STRIPE_SMARTER_JUSTICE_TEAM_MONTHLY_PRICE_ID
+        sync: false
+      - key: STRIPE_SMARTER_JUSTICE_TEAM_ANNUAL_PRICE_ID
+        sync: false
+      - key: STRIPE_SMARTER_JUSTICE_OFFICE_MONTHLY_PRICE_ID
+        sync: false
+      - key: STRIPE_SMARTER_JUSTICE_OFFICE_ANNUAL_PRICE_ID
+        sync: false
+`;
+ok(renderConfig.includes(renderStripeNeedle), 'Render Stripe env boundary missing');
+renderConfig = renderConfig.replace(renderStripeNeedle, renderStripePrices);
+fs.writeFileSync(renderPath, renderConfig);
+modified.add(renderRelative);
 
 const guardRelative = 'public/pre124-public-copy-guard.js';
 fs.copyFileSync(guardSource, path.join(target, guardRelative));
@@ -165,7 +297,37 @@ for (const relativeWithinPublic of filesUnder(publicRoot).filter(name => name.to
   }
   if (after.includes('/pre124-public-copy-guard.js')) publicPagesGuarded += 1;
 }
+for (const relativeWithinPublic of filesUnder(publicRoot).filter(name => name.toLowerCase().endsWith('.html'))) {
+  const absolute=path.join(publicRoot,relativeWithinPublic);
+  const before=fs.readFileSync(absolute,'utf8');
+  const after=before
+    .replaceAll('$12/month','$10/month')
+    .replaceAll('$120/year','$100/year')
+    .replaceAll('$12<span>/month</span>','$10<span>/month</span>')
+    .replaceAll('$120/year — save $24','$100/year — save $20');
+  if(after!==before){fs.writeFileSync(absolute,after);modified.add(`public/${relativeWithinPublic}`);}
+}
 ok(publicPagesGuarded >= 100, `expected broad public-copy guard coverage; got ${publicPagesGuarded}`);
+
+const cleanPublicPage = (relative, replacementsForPage) => {
+  const absolute=path.join(publicRoot,relative);
+  ok(fs.existsSync(absolute), `public page missing: ${relative}`);
+  let html=fs.readFileSync(absolute,'utf8');
+  for(const [from,to] of replacementsForPage){ok(html.includes(from), `public launch copy boundary missing in ${relative}`);html=html.replace(from,to);}
+  fs.writeFileSync(absolute,html);modified.add(`public/${relative}`);
+};
+cleanPublicPage('professional-membership-terms.html',[
+  ['Live paid enrollment remains unavailable until the applicable pricing, billing, support, legal-compliance, and owner gates open.','Paid enrollment is offered to approved professionals through secure recurring checkout. Membership access remains subject to profile, credential, participation, and service requirements.'],
+  ['Any displayed founding price is a planning value until enrollment opens.','Displayed membership prices are the current self-service prices.'],
+  ['When paid enrollment opens, cancellation ordinarily stops future renewal.','Cancellation ordinarily stops future renewal.'],
+  ['Paid visibility and case-opportunity products remain closed until Smarter Justice records applicable attorney-advertising, sponsorship-disclosure, solicitation, referral, fee-sharing, privacy, billing, conflicts, support, and qualified-counsel review evidence and Roger approves activation.','Paid features are provided under the displayed membership terms, clear sponsorship labels, privacy and billing rules, conflict safeguards, and applicable professional-responsibility requirements.']
+]);
+const aiSummaryPath=path.join(publicRoot,'ai-summary.html');
+let aiSummary=fs.readFileSync(aiSummaryPath,'utf8');
+const publicAiSummary='<main class="section narrow"><h1>About Smarter Justice</h1><p>Focused legal starting help, practical tools, and independent professional search in one connected platform.</p><p>People can use guided starting tools and search public professional information. Professionals can claim or create a profile, manage approved information, and apply for optional membership features.</p><p>Optional AI-assisted organization is clearly identified and can be skipped. It does not provide legal advice, create an attorney-client relationship, decide outcomes, or replace independent professional judgment.</p><p>Smarter Justice is not a law firm, court, or government website and does not guarantee outcomes.</p></main>';
+ok(/<main\b[\s\S]*?<\/main>/i.test(aiSummary),'AI summary main content missing');
+aiSummary=aiSummary.replace(/<main\b[\s\S]*?<\/main>/i,publicAiSummary);
+fs.writeFileSync(aiSummaryPath,aiSummary);modified.add('public/ai-summary.html');
 
 const bannedVisiblePatterns = [
   /Core readiness lane/i,
@@ -233,8 +395,9 @@ const receipt = {
   baseRelease: 'v2.0.0-pre123',
   productAuthority: 'SMARTER_JUSTICE_ONLY',
   navigatorOrCommunityMutation: false,
-  stripeMutation: false,
-  paymentSetupDeferredByOwner: true,
+  stripeMutation: true,
+  paymentSetupDeferredByOwner: false,
+  paymentSetupAuthorizedByOwner: true,
   changes: {
     aiProviderValidation: 'SAFE_NEGATIVE_DISCLAIMERS_ALLOWED_AFFIRMATIVE_LEGAL_CLAIMS_REJECTED',
     publicCopyGuard: true,
@@ -260,8 +423,9 @@ const marker = {
   deploymentStrategy: 'EXACT_PRE123_RUNTIME_PLUS_AUDITED_PRE124_COMPLETION_PATCH',
   productAuthority: 'SMARTER_JUSTICE_ONLY',
   navigatorOrCommunityMutation: false,
-  stripeMutation: false,
-  paymentSetupDeferredByOwner: true,
+  stripeMutation: true,
+  paymentSetupDeferredByOwner: false,
+  paymentSetupAuthorizedByOwner: true,
   providerKeyValueNeverExposed: true,
   providerLiveSmokeRequired: true,
   productionDeploymentAuthorized: true,
@@ -269,4 +433,4 @@ const marker = {
   preparedAt: new Date().toISOString()
 };
 fs.writeFileSync(path.join(target, '.pre124-render-bootstrap.json'), JSON.stringify(marker, null, 2) + '\n');
-console.log(`[PRE124 DEPLOY] qualified no-loss PRE124 prepared; ${auditedPublicPages} public pages audited; Stripe unchanged`);
+console.log(`[PRE124 DEPLOY] qualified no-loss PRE124 prepared; ${auditedPublicPages} public pages audited; production billing integration authorized`);

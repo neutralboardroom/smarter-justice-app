@@ -82,7 +82,7 @@ jobs:
           if(fs.existsSync(path.join(pre124,'.pre124-render-bootstrap.json'))){
             const marker=JSON.parse(fs.readFileSync(path.join(pre124,'.pre124-render-bootstrap.json'),'utf8'));
             const pkg=JSON.parse(fs.readFileSync(path.join(pre124,'package.json'),'utf8'));
-            if(marker.release!=='v2.0.0-pre124'||marker.baseRelease!=='v2.0.0-pre123'||marker.productAuthority!=='SMARTER_JUSTICE_ONLY'||marker.navigatorOrCommunityMutation!==false||marker.stripeMutation!==false||marker.paymentSetupDeferredByOwner!==true||marker.productionDeploymentAuthorized!==true) throw new Error('PRE124 Render marker mismatch');
+            if(marker.release!=='v2.0.0-pre124'||marker.baseRelease!=='v2.0.0-pre123'||marker.productAuthority!=='SMARTER_JUSTICE_ONLY'||marker.navigatorOrCommunityMutation!==false||marker.stripeMutation!==true||marker.paymentSetupDeferredByOwner!==false||marker.paymentSetupAuthorizedByOwner!==true||marker.productionDeploymentAuthorized!==true) throw new Error('PRE124 Render marker mismatch');
             if(pkg.version!=='2.0.0-pre124') throw new Error('PRE124 runtime package mismatch');
             console.log('PRE124 exact Render lifecycle build qualified');
           } else {
