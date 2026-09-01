@@ -3,7 +3,6 @@
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
-const os = require('os');
 const { spawnSync } = require('child_process');
 
 const root = path.resolve(__dirname, '..');
@@ -61,8 +60,13 @@ ok(predecessorMarker.newStripeSetup === false, 'PRE125 Stripe boundary mismatch'
 
 const baseFiles = filesUnder(source);
 const baseHashes = new Map(baseFiles.map(relative => [relative, sha(path.join(source, relative))]));
-const staging = path.join(os.tmpdir(), `smarter-justice-pre126-${process.pid}-${crypto.randomBytes(6).toString('hex')}`);
-const retired = path.join(os.tmpdir(), `smarter-justice-pre126-retired-${process.pid}-${crypto.randomBytes(6).toString('hex')}`);
+// Keep the staging and retired directories beside the runtime target. The
+// final rename is intentionally atomic and therefore must stay on the same
+// filesystem (Render mounts /tmp separately from the checked-out repository).
+const runtimeRoot = path.dirname(target);
+fs.mkdirSync(runtimeRoot, { recursive:true });
+const staging = path.join(runtimeRoot, `.pre126-staging-${process.pid}-${crypto.randomBytes(6).toString('hex')}`);
+const retired = path.join(runtimeRoot, `.pre126-retired-${process.pid}-${crypto.randomBytes(6).toString('hex')}`);
 fs.rmSync(staging, { recursive:true, force:true, maxRetries:5, retryDelay:100 });
 fs.cpSync(source, staging, { recursive:true });
 if (fs.existsSync(target)) fs.renameSync(target, retired);

@@ -66,6 +66,13 @@
       "id": "D-012",
       "decision": "Do not imply that listed courts, bar associations, government agencies, legal services, or events are partners or endorsers.",
       "status": "ACCEPTED_AND_IMPLEMENTED"
+    },
+    {
+      "id": "D-013",
+      "decision": "Build generated runtimes in private sibling directories and atomically rename them into place on the same filesystem.",
+      "reason": "The first PRE127 Render attempt proved that /tmp and the repository can be separate mounts; cross-device rename is not atomic and fails with EXDEV.",
+      "boundary": "Never copy directly into the live generated target and never weaken the atomic swap to hide a filesystem error.",
+      "status": "ACCEPTED_AND_IMPLEMENTED"
     }
   ],
   "openQuestions": [

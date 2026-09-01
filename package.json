@@ -11,7 +11,7 @@
     "pg": "^8.13.1"
   },
   "scripts": {
-    "postinstall": "node scripts/bootstrap-pre127-release.js",
+    "postinstall": "node tests/pre127-render-filesystem.test.js && node scripts/bootstrap-pre127-release.js",
     "start": "node scripts/start-pre127-deploy.js",
     "test": "npm --prefix .runtime/pre127-live test",
     "qualify:pre127": "node scripts/bootstrap-pre127-release.js && npm --prefix .runtime/pre127-live run qualify:pre127",

@@ -3,7 +3,6 @@
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
-const os = require('os');
 const { spawnSync } = require('child_process');
 
 const root = path.resolve(__dirname, '..');
@@ -76,8 +75,13 @@ const baseHashes = new Map(baseFiles.map(relative => [relative, sha(path.join(so
 const predecessorHomepageSha256 = baseHashes.get('public/index.html');
 const predecessorSpanishHomepageSha256 = baseHashes.get('public/es/index.html');
 ok(Boolean(predecessorHomepageSha256 && predecessorSpanishHomepageSha256), 'PRE126 homepage hashes are missing');
-const staging = path.join(os.tmpdir(), `smarter-justice-pre127-${process.pid}-${crypto.randomBytes(6).toString('hex')}`);
-const retired = path.join(os.tmpdir(), `smarter-justice-pre127-retired-${process.pid}-${crypto.randomBytes(6).toString('hex')}`);
+// Keep the staging and retired directories beside the runtime target. The
+// final rename is intentionally atomic and therefore must stay on the same
+// filesystem (Render mounts /tmp separately from the checked-out repository).
+const runtimeRoot = path.dirname(target);
+fs.mkdirSync(runtimeRoot, { recursive:true });
+const staging = path.join(runtimeRoot, `.pre127-staging-${process.pid}-${crypto.randomBytes(6).toString('hex')}`);
+const retired = path.join(runtimeRoot, `.pre127-retired-${process.pid}-${crypto.randomBytes(6).toString('hex')}`);
 fs.rmSync(staging, { recursive:true, force:true, maxRetries:5, retryDelay:100 });
 fs.cpSync(source, staging, { recursive:true });
 if (fs.existsSync(target)) fs.renameSync(target, retired);

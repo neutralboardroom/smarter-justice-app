@@ -44,4 +44,8 @@ The edition review boundary is September 8, 2026. Builders must review or expire
 
 ## Release engineering note
 
-An inherited generated `.runtime` directory initially produced a predecessor unchanged-file mismatch. It was moved aside recoverably and PRE126 was reconstructed fresh. A later repeat exposed a workspace-synchronizer race: a temporary `.rsync-tmp` directory could appear while a generated runtime was being replaced. The PRE126 and PRE127 builders now copy into off-workspace staging and atomically swap the target directory. PRE127 treats `.runtime` as generated output and relies on tracked predecessor scripts, overlay hashes, receipts, repeat reconstruction, and clean-clone qualification for authority.
+An inherited generated `.runtime` directory initially produced a predecessor unchanged-file mismatch. It was moved aside recoverably and PRE126 was reconstructed fresh. A later repeat exposed a workspace-synchronizer race: a temporary `.rsync-tmp` directory could appear while a generated runtime was being replaced. The builders therefore copy into a private staging directory and atomically swap the target directory.
+
+The first PRE127 Render promotion attempt then exposed a second filesystem boundary: Render mounts `/tmp` separately from the checked-out repository, so a rename from `/tmp` into `.runtime` failed with `EXDEV`. PRE126 remained live. The PRE126 and PRE127 builders now place both staging and retired directories beside their `.runtime` targets. This preserves the atomic swap while guaranteeing that the rename stays on one filesystem. See `release-evidence/PRE127_RENDER_DEPLOYMENT_INCIDENT.md` for the exact incident and prevention record.
+
+PRE127 treats `.runtime` as generated output and relies on tracked predecessor scripts, overlay hashes, receipts, repeat reconstruction, clean-clone qualification, production-style omit-development-dependency reconstruction, and exact-commit Render verification for authority.

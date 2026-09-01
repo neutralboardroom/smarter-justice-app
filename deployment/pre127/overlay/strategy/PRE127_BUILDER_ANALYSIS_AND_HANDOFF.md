@@ -81,11 +81,12 @@ Roger owns the hyperlocal community idea. The founder-supplied Justice Truck ori
 
 ## Known operational facts and limitations
 
-1. PRE126 was produced through a layered deterministic reconstruction chain. Reusing an inherited `.runtime` directory first exposed an older marker inconsistency and later a workspace-synchronizer race that could create `.rsync-tmp` while a generated runtime was being deleted. The generated runtime was moved aside recoverably, PRE126 was reconstructed fresh, and the direct PRE126 bootstrap passed. PRE126 and PRE127 reconstruction now build in an off-workspace staging directory and atomically swap the generated target, so a synchronizer cannot populate a half-built release directory. Qualification still treats `.runtime` as disposable output rather than source authority.
+1. PRE126 was produced through a layered deterministic reconstruction chain. Reusing an inherited `.runtime` directory first exposed an older marker inconsistency and later a workspace-synchronizer race that could create `.rsync-tmp` while a generated runtime was being deleted. The generated runtime was moved aside recoverably, PRE126 was reconstructed fresh, and the direct PRE126 bootstrap passed. PRE126 and PRE127 reconstruction now build in private same-filesystem sibling staging directories and atomically swap the generated target, so a synchronizer cannot populate a half-built release directory and Render cannot encounter a cross-device rename. Qualification still treats `.runtime` as disposable output rather than source authority.
 2. The local PRE126 commit and remote production PRE126 commit differ because the remote commit was created through the connected repository workflow; their Git tree is identical. PRE127 receipts track both identities and the shared tree.
 3. The production readiness endpoint can remain non-ready for protected owner, durable-storage, email, or legal-approval blockers even when the public web service is live and healthy. Do not falsify those blockers.
 4. A prior production OpenAI synthetic check received a provider-rate response while the deterministic fallback remained available. PRE127 does not change OpenAI provider or environment configuration.
 5. Candidate communities are research items only. No second community is launched or promised here.
+6. The first PRE127 Render attempt (`dep-dabkmre10ojc73dtm6jg`, commit `72bfe6ec865ada1a771f8249d59ff165fc04839f`) failed during build because `/tmp` and the repository were separate filesystems. The live PRE126 deployment was not replaced. The builder fix keeps staging and retirement beside the target and is documented in `release-evidence/PRE127_RENDER_DEPLOYMENT_INCIDENT.md`.
 
 ## Required qualification
 

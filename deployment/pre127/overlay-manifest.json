@@ -20,12 +20,13 @@
     { "path": "public/pre127-community.js", "sha256": "dfe63479907d46c4e40281a957afa8b0042a5604f325cf9d28299b3e22808c19" },
     { "path": "public/professional-community.html", "sha256": "0e2426f63611c640773947c7f28f82585e94adfe6722a48a9fc96baa3c4771c4" },
     { "path": "public/professional-membership.html", "sha256": "8e5284555b1a053dcb0ed4f6e240a6ba3a8c609a719c2be775e928f22b8c190e" },
-    { "path": "release-evidence/PRE127_IMPLEMENTATION_NOTES.md", "sha256": "44eac39c8bc917a95e2d30e6d3af52e85cd1285c70ebde43f14f60d1dc967548" },
+    { "path": "release-evidence/PRE127_IMPLEMENTATION_NOTES.md", "sha256": "71a6c576d841c5cecf491f76123643985e3ae0dc597736e33ae442ad2e214216" },
+    { "path": "release-evidence/PRE127_RENDER_DEPLOYMENT_INCIDENT.md", "sha256": "edef4f9ea9716a220ab86f61474207ff1c757b0622b0326f3363587486034c19" },
     { "path": "release-evidence/PRE127_SOURCE_CURRENTNESS.json", "sha256": "18db296fea719634725a21e5c920090303f5d4fee9aa2d6e63cec1239c172be3" },
     { "path": "scripts/deployment-doctor-pre127.js", "sha256": "dba13894a8ec8061aa00d7fd5570cd2a9c538417f84e95767760aede368e387a" },
     { "path": "scripts/validate-pre127-deployment-kit.js", "sha256": "fea6a47b57e58a20434a95322a5786013f3e0ef0e93f160c4bb5ce583ab1444d" },
-    { "path": "strategy/PRE127_BUILDER_ANALYSIS_AND_HANDOFF.md", "sha256": "02aaa557a0f5f60bc5a54969a80cd3bb35ddf0a805810dbd24db6a71285ce740" },
-    { "path": "strategy/PRE127_DECISION_LOG.json", "sha256": "0d7e3cd26d13d0db4255e6f186edfbec896626f2aa69eb10f39235b6db39bd56" },
+    { "path": "strategy/PRE127_BUILDER_ANALYSIS_AND_HANDOFF.md", "sha256": "c422e31a3f10965261f003202ab65c10e17781d455e4a0551b06a447e58c1eba" },
+    { "path": "strategy/PRE127_DECISION_LOG.json", "sha256": "39bceff46ee0a2724941d36312730aa2fed2fc47976683aabd2b2c98b266a508" },
     { "path": "strategy/SMARTER_JUSTICE_HYPERLOCAL_LEGAL_COMMUNITY_STRATEGY_PRE127.md", "sha256": "a544f28b9c52ac1da9975abcd7ad9243985aad1e03634758f2bebb429200e653" },
     { "path": "tests/pre127-professional-community.test.js", "sha256": "b40df594d9098a20ddc50edae1b9d0beab7ddac2cf885eba2193974eb5e2e76a" }
   ]
