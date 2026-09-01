@@ -1,0 +1,110 @@
+name: PRE127 professional legal-community qualification
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/pre127-qualification.yml'
+      - '.github/workflows/production-qualification.yml'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'scripts/bootstrap-pre126-release.js'
+      - 'scripts/bootstrap-pre127-release.js'
+      - 'scripts/start-pre127-deploy.js'
+      - 'deployment/pre127/**'
+
+permissions:
+  contents: read
+
+jobs:
+  qualify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout current Smarter Justice authority
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+        with:
+          fetch-depth: 0
+
+      - name: Use Node 22
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+        with:
+          node-version: '22.x'
+          package-manager-cache: false
+
+      - name: Verify bootstrap package identity
+        run: |
+          test "$(node -p "require('./package.json').version")" = "2.0.0-pre127"
+          test "$(node -p "require('./package-lock.json').version")" = "2.0.0-pre127"
+
+      - name: Install and construct exact runtime
+        env:
+          npm_config_audit: 'false'
+          npm_config_fund: 'false'
+        run: npm ci --omit=dev --no-audit --no-fund
+
+      - name: Reconstruct a second time
+        run: node scripts/bootstrap-pre127-release.js
+
+      - name: Syntax-check release code
+        run: |
+          node --check scripts/bootstrap-pre126-release.js
+          node --check scripts/bootstrap-pre127-release.js
+          node --check scripts/start-pre127-deploy.js
+          node --check deployment/pre127/overlay/data/legalCommunityProgramPre127.js
+          node --check deployment/pre127/overlay/lib/legalCommunityProgramPre127.js
+          node --check deployment/pre127/overlay/lib/legalCommunityMembershipPre127.js
+          node --check deployment/pre127/overlay/public/pre127-community.js
+          node --check .runtime/pre127-live/server.js
+
+      - name: Run product, security, and deployment qualification
+        working-directory: .runtime/pre127-live
+        run: |
+          npm test
+          npm run deployment:doctor
+          npm run deployment:validate
+
+      - name: Verify exact product, pricing, privacy, provider, and rollback boundaries
+        run: |
+          node - <<'NODE'
+          const fs=require('fs');
+          const root='.runtime/pre127-live';
+          const marker=JSON.parse(fs.readFileSync(`${root}/.pre127-render-bootstrap.json`,'utf8'));
+          const receipt=JSON.parse(fs.readFileSync(`${root}/PRE127_COMPLETION_RECEIPT.json`,'utf8'));
+          if(marker.release!=='v2.0.0-pre127'||marker.baseRelease!=='v2.0.0-pre126'||marker.productAuthority!=='SMARTER_JUSTICE_ONLY'||marker.professionalCommunityExperienceMutation!==true||marker.homepagePreserved!==true||marker.homepageRedesign!==false||marker.oneConnectedDomainAndBrand!==true||marker.newStripeSetup!==false||marker.newStripeProviderMutation!==false||marker.environmentVariableMutation!==false||marker.productionDeploymentAuthorized!==true) process.exit(1);
+          if(marker.predecessorProductionCommit!=='55a7fd1c13353a5c045e72a20cf08a1ce54c208c'||marker.predecessorTree!=='8d62a223cdb8e1f61e37fbef467e3f38e9109159') process.exit(1);
+          if(receipt.noLossFromPredecessor!==true||receipt.predecessorUnchangedFilesHashVerified!==true||receipt.rollbackProductionCommit!==marker.predecessorProductionCommit||receipt.pricingAmountsChanged!==false||receipt.foundingPriceProtectionPromised!==false||receipt.newStripeSetup!==false||receipt.privateMatterCommunityPersonalization!==false||receipt.automaticLinkedInPosting!==false||receipt.unsolicitedOutreachAutomation!==false||receipt.strategyAndBuilderNotesIncluded!==true||receipt.sourceCurrentnessEvidenceIncluded!==true||receipt.retainedSecurityRegressionSuites!==true) process.exit(1);
+          console.log(JSON.stringify({release:marker.release,baseRelease:marker.baseRelease,launchCommunity:receipt.launchCommunity,prices:receipt.pricesPreserved,homepagePreserved:receipt.homepagePreserved,newStripeSetup:receipt.newStripeSetup,rollbackProductionCommit:receipt.rollbackProductionCommit},null,2));
+          NODE
+
+      - name: Build exact deterministic handoff
+        run: |
+          python3 - <<'PY'
+          import hashlib, json, pathlib, zipfile
+          root=pathlib.Path('.runtime/pre127-live')
+          out=pathlib.Path('SMARTER_JUSTICE__V2.0.0-PRE127__WORKING_HYPERLOCAL_PROFESSIONAL_COMMUNITY__DOWNTOWN_BROOKLYN__HOMEPAGE_PRESERVED__PRICES_PRESERVED__NO_NEW_STRIPE_SETUP__2026-09-01.zip')
+          with zipfile.ZipFile(out,'w',compression=zipfile.ZIP_DEFLATED,compresslevel=9) as z:
+              for p in sorted(x for x in root.rglob('*') if x.is_file()):
+                  info=zipfile.ZipInfo(p.relative_to(root).as_posix(),date_time=(2026,9,1,12,0,0))
+                  info.compress_type=zipfile.ZIP_DEFLATED
+                  info.external_attr=0o100644 << 16
+                  z.writestr(info,p.read_bytes(),compress_type=zipfile.ZIP_DEFLATED,compresslevel=9)
+          digest=hashlib.sha256(out.read_bytes()).hexdigest()
+          pathlib.Path(out.name+'.sha256.txt').write_text(f'{digest}  {out.name}\n')
+          receipt=json.loads((root/'PRE127_COMPLETION_RECEIPT.json').read_text())
+          receipt['exactHandoffZip']={'fileName':out.name,'sha256':digest,'sizeBytes':out.stat().st_size}
+          pathlib.Path('PRE127_EXACT_HANDOFF_RECEIPT.json').write_text(json.dumps(receipt,indent=2)+'\n')
+          print(json.dumps(receipt['exactHandoffZip'],indent=2))
+          PY
+
+      - name: Upload exact handoff
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: smarter-justice-pre127-exact-handoff
+          path: |
+            SMARTER_JUSTICE__V2.0.0-PRE127__WORKING_HYPERLOCAL_PROFESSIONAL_COMMUNITY__DOWNTOWN_BROOKLYN__HOMEPAGE_PRESERVED__PRICES_PRESERVED__NO_NEW_STRIPE_SETUP__2026-09-01.zip
+            SMARTER_JUSTICE__V2.0.0-PRE127__WORKING_HYPERLOCAL_PROFESSIONAL_COMMUNITY__DOWNTOWN_BROOKLYN__HOMEPAGE_PRESERVED__PRICES_PRESERVED__NO_NEW_STRIPE_SETUP__2026-09-01.zip.sha256.txt
+            PRE127_EXACT_HANDOFF_RECEIPT.json
+          if-no-files-found: error
+          retention-days: 90

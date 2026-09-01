@@ -1,0 +1,90 @@
+{
+  "schemaVersion": "smarter-justice.pre127.source-currentness.v1",
+  "release": "v2.0.0-pre127",
+  "editionId": "downtown-brooklyn-2026-09-01",
+  "observedAt": "2026-09-01",
+  "reviewDueAt": "2026-09-08T23:59:59-04:00",
+  "method": "Human-reviewed direct responsible-source pages; summaries are deliberately narrower than their sources and include reliance boundaries.",
+  "sources": [
+    {
+      "id": "new-york-court-terms-2026",
+      "responsibleOrganization": "New York State Unified Court System",
+      "url": "https://www.nycourts.gov/about-us/terms-court-calendar-holidays",
+      "supports": ["2026 Court Term 9 dates", "2026 Court Term 10 dates"],
+      "reviewBy": "2026-10-12"
+    },
+    {
+      "id": "kings-supreme-civil-term",
+      "responsibleOrganization": "New York State Unified Court System",
+      "url": "https://www.nycourts.gov/courts/2nd-judicial-district/kings-county-supreme-court-civil-term",
+      "supports": ["Civil Term location", "published status-conference notice"],
+      "reviewBy": "2026-09-08"
+    },
+    {
+      "id": "kings-civil-part-6",
+      "responsibleOrganization": "New York State Unified Court System",
+      "url": "https://www.nycourts.gov/courts/2nd-judicial-district/kings-county-supreme-court-civil-term/hon-joy-f-campanelli",
+      "supports": ["page update date", "published CVAP4M effective date"],
+      "reviewBy": "2026-09-08"
+    },
+    {
+      "id": "kings-civil-part-17",
+      "responsibleOrganization": "New York State Unified Court System",
+      "url": "https://www.nycourts.gov/courts/2nd-judicial-district/kings-county-supreme-court-civil-term/hon-saul-stein",
+      "supports": ["page update date and scope"],
+      "reviewBy": "2026-09-08"
+    },
+    {
+      "id": "kings-civil-part-80",
+      "responsibleOrganization": "New York State Unified Court System",
+      "url": "https://www.nycourts.gov/courts/2nd-judicial-district/kings-county-supreme-court-civil-term/hon-patria-frias-colon",
+      "supports": ["page update date and scope"],
+      "reviewBy": "2026-09-08"
+    },
+    {
+      "id": "brooklyn-bar-ai-ethics-event",
+      "responsibleOrganization": "Brooklyn Bar Association",
+      "url": "https://brooklynbar.org/?eid=352612&evAction=showDetail&pg=events",
+      "supports": ["listed September 16, 2026 program"],
+      "reviewBy": "2026-09-16"
+    },
+    {
+      "id": "new-york-attorney-advertising-order",
+      "responsibleOrganization": "New York State Unified Court System",
+      "url": "https://www.nycourts.gov/LegacyPDFS/RULES/jointappellate/Signed%20Letter%20to%20DOS-Joint%20Order.pdf",
+      "supports": ["Joint Appellate Division rule amendments and effective date"],
+      "reviewBy": "2026-10-01"
+    },
+    {
+      "id": "kings-uniform-motion-rules",
+      "responsibleOrganization": "New York State Unified Court System",
+      "url": "https://www.nycourts.gov/courts/kings-county-supreme-court-civil-term/uniform-rules-papers-motions",
+      "supports": ["working link to official general Civil Term motion rules"],
+      "reviewBy": "2026-10-01"
+    },
+    {
+      "id": "brooklyn-court-law-library",
+      "responsibleOrganization": "New York State Unified Court System",
+      "url": "https://www.nycourts.gov/courts/2nd-judicial-district/supreme-court-library-brooklyn",
+      "supports": ["public law-library location and services"],
+      "reviewBy": "2026-12-01"
+    },
+    {
+      "id": "nyc-right-to-counsel",
+      "responsibleOrganization": "City of New York",
+      "url": "https://www.nyc.gov/site/mayorspeu/resources/right-to-counsel.page",
+      "supports": ["working link and limited description of official tenant legal-help information"],
+      "reviewBy": "2026-12-01"
+    }
+  ],
+  "excludedFromThisEdition": [
+    {
+      "item": "case-specific or highly granular deadlines found on other part pages",
+      "reason": "The brief should not compress case-sensitive procedural detail into marketing content; readers must use complete current rules and case-specific notices."
+    },
+    {
+      "item": "owner LinkedIn connection and contact totals",
+      "reason": "Founder-supplied estimates remain useful for strategy but are not published as verified platform facts."
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "schemaVersion": "smarter-justice.pre127.decision-log.v1",
+  "release": "v2.0.0-pre127",
+  "decisions": [
+    {
+      "id": "D-001",
+      "decision": "Smarter Justice becomes a network of hyperlocal legal communities, while profiles remain the free identity layer.",
+      "ownerAttribution": "The core hyperlocal legal-community concept is Roger's idea.",
+      "status": "ACCEPTED_AND_IMPLEMENTED"
+    },
+    {
+      "id": "D-002",
+      "decision": "Use one SmarterJustice.com brand, account, profile graph, and membership relationship with nested local communities.",
+      "rejectedAlternative": "Independent domains and brands for every neighborhood.",
+      "status": "ACCEPTED_AND_IMPLEMENTED"
+    },
+    {
+      "id": "D-003",
+      "decision": "Launch the first working community around Downtown Brooklyn / Civic Center and preserve parent context for Kings County, New York City, and New York State.",
+      "status": "ACCEPTED_AND_IMPLEMENTED"
+    },
+    {
+      "id": "D-004",
+      "decision": "Preserve the existing homepage's task-first first viewport and established visual system in PRE127.",
+      "reason": "The product can change its professional proposition without forcing another homepage redesign.",
+      "status": "ACCEPTED_AND_IMPLEMENTED"
+    },
+    {
+      "id": "D-005",
+      "decision": "Sell recurring participation, local intelligence, professional presence, and tools—not profile accuracy, credentials, organic ranking, endorsement, referrals, or guaranteed clients.",
+      "status": "ACCEPTED_AND_IMPLEMENTED"
+    },
+    {
+      "id": "D-006",
+      "decision": "Preserve $10/$100 Professional, $29/$290 Team, and $49/$490 Office price amounts and label the offer as a founding launch.",
+      "boundary": "Do not promise grandfathering or lifetime price protection until checkout, terms, receipts, renewals, billing behavior, and owner-approved legal review all match.",
+      "status": "ACCEPTED_AND_IMPLEMENTED"
+    },
+    {
+      "id": "D-007",
+      "decision": "Create a working member home with a current local feed, practice-area filters, durable signed-in preferences, source resources, and a manual LinkedIn share kit.",
+      "status": "ACCEPTED_AND_IMPLEMENTED"
+    },
+    {
+      "id": "D-008",
+      "decision": "Support owner-posted source-linked briefs to LinkedIn but do not automate posting, scrape contacts, mass-message connections, or treat a connection as outreach consent.",
+      "status": "ACCEPTED_AND_IMPLEMENTED"
+    },
+    {
+      "id": "D-009",
+      "decision": "Use only professional-selected practice and geography preferences for personalization in PRE127.",
+      "boundary": "No private user matter, individual demand signal, or inferred sensitive interest enters the member feed.",
+      "status": "ACCEPTED_AND_IMPLEMENTED"
+    },
+    {
+      "id": "D-010",
+      "decision": "Editorial items require responsible-source URLs, observation dates, review boundaries, expiry when time-sensitive, human approval, and a public correction path.",
+      "status": "ACCEPTED_AND_IMPLEMENTED"
+    },
+    {
+      "id": "D-011",
+      "decision": "Do not mutate Stripe products, prices, provider configuration, secrets, or environment variables in PRE127.",
+      "status": "ACCEPTED_AND_IMPLEMENTED"
+    },
+    {
+      "id": "D-012",
+      "decision": "Do not imply that listed courts, bar associations, government agencies, legal services, or events are partners or endorsers.",
+      "status": "ACCEPTED_AND_IMPLEMENTED"
+    }
+  ],
+  "openQuestions": [
+    "Which candidate Brooklyn micro-community reaches enough professional and editorial density to launch second?",
+    "Should a future binding founding-price protection term be approved and implemented across checkout, billing, terms, receipts, renewal, and support?",
+    "Which professional capabilities are included at each tier once usage data exists?",
+    "What minimum cohort and suppression policy would be required before any privacy-qualified aggregate demand signal?",
+    "Which organization-submission workflow can preserve authority, moderation, expiry, correction, and anti-spam controls?"
+  ]
+}

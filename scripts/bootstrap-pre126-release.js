@@ -3,6 +3,7 @@
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
+const os = require('os');
 const { spawnSync } = require('child_process');
 
 const root = path.resolve(__dirname, '..');
@@ -60,8 +61,13 @@ ok(predecessorMarker.newStripeSetup === false, 'PRE125 Stripe boundary mismatch'
 
 const baseFiles = filesUnder(source);
 const baseHashes = new Map(baseFiles.map(relative => [relative, sha(path.join(source, relative))]));
-fs.rmSync(target, { recursive:true, force:true });
-fs.cpSync(source, target, { recursive:true });
+const staging = path.join(os.tmpdir(), `smarter-justice-pre126-${process.pid}-${crypto.randomBytes(6).toString('hex')}`);
+const retired = path.join(os.tmpdir(), `smarter-justice-pre126-retired-${process.pid}-${crypto.randomBytes(6).toString('hex')}`);
+fs.rmSync(staging, { recursive:true, force:true, maxRetries:5, retryDelay:100 });
+fs.cpSync(source, staging, { recursive:true });
+if (fs.existsSync(target)) fs.renameSync(target, retired);
+fs.renameSync(staging, target);
+try { fs.rmSync(retired, { recursive:true, force:true, maxRetries:5, retryDelay:100 }); } catch {}
 const modified = new Set();
 
 ok(fs.existsSync(overlayManifestPath), 'PRE126 overlay manifest is missing');

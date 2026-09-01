@@ -1,0 +1,85 @@
+{
+  "schemaVersion": "smarter-justice.hyperlocal-legal-community-publishing-standard.v1",
+  "release": "v2.0.0-pre127",
+  "effectiveDate": "2026-09-01",
+  "owner": "Smarter Justice",
+  "purpose": "Keep every legal-community brief useful, attributable, current, privacy-safe, and independent of payment or outreach pressure.",
+  "publicationStates": [
+    "DRAFT",
+    "SOURCE_REVIEW",
+    "READY_FOR_HUMAN_APPROVAL",
+    "PUBLISHED_CURRENT",
+    "HELD_SOURCE_CHANGED",
+    "EXPIRED",
+    "CORRECTED",
+    "RETRACTED"
+  ],
+  "requiredFields": [
+    "stable item id",
+    "plain-language title and summary",
+    "responsible source name and direct URL",
+    "observation date",
+    "review-by date",
+    "expiry for time-sensitive information",
+    "audience",
+    "practice-area tags when supported",
+    "correction path"
+  ],
+  "sourcePolicy": {
+    "primaryOrResponsibleSourcePreferred": true,
+    "searchResultPageIsNotAQualifyingSource": true,
+    "sourceMustSupportPublishedClaim": true,
+    "relationshipOrEndorsementMayNotBeImplied": true,
+    "timeSensitiveInformationMustTellReadersToConfirm": true,
+    "legalAdviceFromBriefsProhibited": true
+  },
+  "currentnessPolicy": {
+    "targetCadence": "Weekly only when qualified content exists",
+    "automaticPublication": false,
+    "humanSourceReviewBeforePublication": true,
+    "staleItemsFailClosed": true,
+    "eventItemsExpireNoLaterThanTheirResponsibleSourceDate": true,
+    "changedOrUnavailableSourceAction": "Hold the item, preserve the audit record, and republish only after human review."
+  },
+  "privacyPolicy": {
+    "privateUserMatterContent": "PROHIBITED",
+    "individualDemandSignals": "PROHIBITED",
+    "aggregateDemandSignals": "NOT_IMPLEMENTED; require separate minimum-cohort, suppression, review, and legal approval controls",
+    "memberPersonalizationInputs": [
+      "professional-selected practice areas",
+      "professional-selected home community",
+      "professional-selected participating communities",
+      "professional-supplied service areas"
+    ]
+  },
+  "distributionPolicy": {
+    "manualLinkedInSharing": "SUPPORTED",
+    "automaticLinkedInPosting": "NOT_IMPLEMENTED",
+    "massDirectMessaging": "NOT_AUTHORIZED",
+    "connectionOrContactCountClaims": "DO_NOT_PUBLISH WITHOUT OWNER VERIFICATION",
+    "professionalNetworkConnection": "Does not establish consent to email, direct-message, call, recommend, or sell data",
+    "shareDraftRequirement": "Keep canonical brief URL, source/currentness context, and a reminder to review before posting"
+  },
+  "commercialIndependence": {
+    "publisherMaySellMembership": true,
+    "paymentMayChangeCredentialFacts": false,
+    "paymentMayChangeVerification": false,
+    "paymentMayBuyOrganicRank": false,
+    "paymentMayCreateEndorsement": false,
+    "paymentMayGuaranteeClients": false,
+    "sponsorshipRule": "Any future paid exposure must be optional, conspicuously labeled, and separated from organic relevance and editorial judgment."
+  },
+  "corrections": {
+    "publicPath": "/contact.html?topic=community-brief-correction",
+    "preservePriorVersion": true,
+    "materialCorrectionMustBeLabeled": true,
+    "retractionMustRemainAuditable": true
+  },
+  "releaseBoundaries": {
+    "firstCommunity": "Downtown Brooklyn / Civic Center",
+    "oneBrandAndAccount": true,
+    "homepageRedesignInThisRelease": false,
+    "stripeCatalogMutationInThisRelease": false,
+    "providerOrEnvironmentMutationInThisRelease": false
+  }
+}

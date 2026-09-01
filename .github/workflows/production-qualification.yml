@@ -78,10 +78,18 @@ jobs:
           RENDER_SOURCE="$render_source" node - <<'NODE'
           const fs=require('fs'),path=require('path'),cp=require('child_process');
           const root=process.env.RENDER_SOURCE;
+          const pre127=path.join(root,'.runtime','pre127-live');
           const pre126=path.join(root,'.runtime','pre126-live');
           const pre125=path.join(root,'.runtime','pre125-live');
           const pre124=path.join(root,'.runtime','pre124-live');
-          if(fs.existsSync(path.join(pre126,'.pre126-render-bootstrap.json'))){
+          if(fs.existsSync(path.join(pre127,'.pre127-render-bootstrap.json'))){
+            const marker=JSON.parse(fs.readFileSync(path.join(pre127,'.pre127-render-bootstrap.json'),'utf8'));
+            const pkg=JSON.parse(fs.readFileSync(path.join(pre127,'package.json'),'utf8'));
+            if(marker.release!=='v2.0.0-pre127'||marker.baseRelease!=='v2.0.0-pre126'||marker.productAuthority!=='SMARTER_JUSTICE_ONLY'||marker.professionalCommunityExperienceMutation!==true||marker.homepagePreserved!==true||marker.homepageRedesign!==false||marker.oneConnectedDomainAndBrand!==true||marker.newStripeSetup!==false||marker.newStripeProviderMutation!==false||marker.environmentVariableMutation!==false||marker.productionDeploymentAuthorized!==true) throw new Error('PRE127 Render marker mismatch');
+            if(marker.predecessorProductionCommit!=='55a7fd1c13353a5c045e72a20cf08a1ce54c208c'||marker.predecessorTree!=='8d62a223cdb8e1f61e37fbef467e3f38e9109159') throw new Error('PRE127 predecessor identity mismatch');
+            if(pkg.version!=='2.0.0-pre127') throw new Error('PRE127 runtime package mismatch');
+            console.log('PRE127 exact Render lifecycle build qualified');
+          } else if(fs.existsSync(path.join(pre126,'.pre126-render-bootstrap.json'))){
             const marker=JSON.parse(fs.readFileSync(path.join(pre126,'.pre126-render-bootstrap.json'),'utf8'));
             const pkg=JSON.parse(fs.readFileSync(path.join(pre126,'package.json'),'utf8'));
             if(marker.release!=='v2.0.0-pre126'||marker.baseRelease!=='v2.0.0-pre125'||marker.productAuthority!=='SMARTER_JUSTICE_ONLY'||marker.legalCommunityNetworkMutation!==true||marker.homepageAndVisualDirectionAuthorized!==true||marker.oneConnectedDomainAndBrand!==true||marker.newStripeSetup!==false||marker.newStripeProviderMutation!==false||marker.environmentVariableMutation!==false||marker.productionDeploymentAuthorized!==true) throw new Error('PRE126 Render marker mismatch');
@@ -110,7 +118,9 @@ jobs:
           BOOTSTRAP_VERSION: ${{ steps.source.outputs.bootstrap_version }}
         run: |
           set -euo pipefail
-          if test -f "$SOURCE/.runtime/pre126-live/.pre126-render-bootstrap.json"; then
+          if test -f "$SOURCE/.runtime/pre127-live/.pre127-render-bootstrap.json"; then
+            runtime="$SOURCE/.runtime/pre127-live"
+          elif test -f "$SOURCE/.runtime/pre126-live/.pre126-render-bootstrap.json"; then
             runtime="$SOURCE/.runtime/pre126-live"
           elif test -f "$SOURCE/.runtime/pre125-live/.pre125-render-bootstrap.json"; then
             runtime="$SOURCE/.runtime/pre125-live"
@@ -127,10 +137,14 @@ jobs:
           const runtime=process.env.RUNTIME;
           const pkg=require(path.join(runtime,'package.json'));
           for(const script of ['test','sbom','deployment:validate']) if(!pkg.scripts||!pkg.scripts[script]) throw new Error(`Qualified runtime is missing required script: ${script}`);
+          const marker127=path.join(runtime,'.pre127-render-bootstrap.json');
           const marker126=path.join(runtime,'.pre126-render-bootstrap.json');
           const marker125=path.join(runtime,'.pre125-render-bootstrap.json');
           const marker124=path.join(runtime,'.pre124-render-bootstrap.json');
-          if(fs.existsSync(marker126)){
+          if(fs.existsSync(marker127)){
+            const marker=JSON.parse(fs.readFileSync(marker127,'utf8'));
+            if(marker.release!==`v${pkg.version}`) throw new Error('PRE127 marker/package version mismatch');
+          } else if(fs.existsSync(marker126)){
             const marker=JSON.parse(fs.readFileSync(marker126,'utf8'));
             if(marker.release!==`v${pkg.version}`) throw new Error('PRE126 marker/package version mismatch');
           } else if(fs.existsSync(marker125)){
@@ -152,7 +166,10 @@ jobs:
         run: |
           set -euo pipefail
           node --check "$RUNTIME/lib/credentialReconciliationPre58.js"
-          if test -f "$RUNTIME/.pre126-render-bootstrap.json"; then
+          if test -f "$RUNTIME/.pre127-render-bootstrap.json"; then
+            (cd "$RUNTIME" && npm test)
+            RUNTIME="$RUNTIME" node -e "const fs=require('fs'),path=require('path'),r=process.env.RUNTIME,receipt=JSON.parse(fs.readFileSync(path.join(r,'PRE127_COMPLETION_RECEIPT.json'),'utf8')); if(receipt.baseRelease!=='v2.0.0-pre126'||receipt.noLossFromPredecessor!==true||receipt.predecessorUnchangedFilesHashVerified!==true||receipt.professionalCommunityExperienceMutation!==true||receipt.homepagePreserved!==true||receipt.homepageRedesign!==false||receipt.pricingAmountsChanged!==false||receipt.foundingPriceProtectionPromised!==false||receipt.newStripeSetup!==false||receipt.privateMatterCommunityPersonalization!==false||receipt.automaticLinkedInPosting!==false||receipt.rollbackProductionCommit!=='55a7fd1c13353a5c045e72a20cf08a1ce54c208c'||receipt.strategyAndBuilderNotesIncluded!==true||receipt.sourceCurrentnessEvidenceIncluded!==true||receipt.retainedSecurityRegressionSuites!==true||!fs.existsSync(path.join(r,'lib','oneBuilderOperatingSystem.js'))||!fs.existsSync(path.join(r,'lib','credentialReconciliationPre58.js'))) process.exit(1); console.log('PRE127 professional-community release and retained predecessor controls qualified');"
+          elif test -f "$RUNTIME/.pre126-render-bootstrap.json"; then
             (cd "$RUNTIME" && npm test)
             RUNTIME="$RUNTIME" node -e "const fs=require('fs'),path=require('path'),r=process.env.RUNTIME,receipt=JSON.parse(fs.readFileSync(path.join(r,'PRE126_COMPLETION_RECEIPT.json'),'utf8')); if(receipt.baseRelease!=='v2.0.0-pre125'||receipt.noLossFromPredecessor!==true||receipt.predecessorUnchangedFilesHashVerified!==true||receipt.legalCommunityNetworkMutation!==true||receipt.pricingAmountsChanged!==false||receipt.newStripeSetup!==false||receipt.rollbackCommit!=='2e4b90c083c469bc0e055747258fc9521eed06b2'||receipt.restoredOwnerRuntimeDependencies!==true||receipt.retainedSecurityRegressionSuites!==true||!fs.existsSync(path.join(r,'lib','oneBuilderOperatingSystem.js'))||!fs.existsSync(path.join(r,'lib','credentialReconciliationPre58.js'))) process.exit(1); console.log('PRE126 legal-community release and retained predecessor controls qualified');"
           elif test -f "$RUNTIME/.pre125-render-bootstrap.json"; then
