@@ -1,0 +1,102 @@
+name: PRE125 one-builder qualification and exact runtime
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/pre125-qualification.yml'
+      - '.github/workflows/production-qualification.yml'
+      - 'package.json'
+      - 'scripts/bootstrap-pre125-release.js'
+      - 'scripts/start-pre125-deploy.js'
+      - 'deployment/pre125/**'
+
+permissions:
+  contents: read
+
+jobs:
+  qualify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout current Smarter Justice authority
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+      - name: Use Node 22
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+        with:
+          node-version: '22.x'
+          package-manager-cache: false
+      - name: Install and construct exact PRE125 runtime
+        env:
+          npm_config_audit: 'false'
+          npm_config_fund: 'false'
+        run: npm ci --omit=dev --no-audit --no-fund
+      - name: Reconstruct PRE125 a second time
+        run: node scripts/bootstrap-pre125-release.js
+      - name: Syntax-check new release code
+        run: |
+          node --check scripts/bootstrap-pre125-release.js
+          node --check scripts/start-pre125-deploy.js
+          node --check deployment/pre125/test-pre125-one-builder.js
+          node --check .runtime/pre125-live/lib/oneBuilderOperatingSystem.js
+          node --check .runtime/pre125-live/scripts/validate-pre125-deployment-kit.js
+      - name: Run one-builder and professional-opportunity acceptance
+        run: node deployment/pre125/test-pre125-one-builder.js
+      - name: Regenerate current SBOM and validate deployment kit
+        working-directory: .runtime/pre125-live
+        env:
+          SBOM_CREATED_AT: '2026-08-31T23:00:00.000Z'
+        run: |
+          npm run sbom
+          npm run deployment:validate
+      - name: Verify exact release boundary
+        run: |
+          node - <<'NODE'
+          const fs=require('fs');
+          const root='.runtime/pre125-live';
+          const marker=JSON.parse(fs.readFileSync(`${root}/.pre125-render-bootstrap.json`,'utf8'));
+          const receipt=JSON.parse(fs.readFileSync(`${root}/PRE125_COMPLETION_RECEIPT.json`,'utf8'));
+          if(marker.release!=='v2.0.0-pre125'||marker.baseRelease!=='v2.0.0-pre124'||marker.productAuthority!=='SMARTER_JUSTICE_ONLY'||marker.singleBuilderReleaseOwner!==true||marker.internalLaneCount!==6||marker.navigatorOrCommunityMutation!==false||marker.newStripeSetup!==false||marker.newStripeProviderMutation!==false||marker.environmentVariableMutation!==false||marker.productionDeploymentAuthorized!==true) process.exit(1);
+          if(receipt.noLossFromPredecessor!==true||receipt.predecessorUnchangedFilesHashVerified!==true||receipt.newStripeSetup!==false||receipt.newStripeCatalogMutation!==false||receipt.contactabilityConsentSeparated!==true||receipt.replaceNotAppendProfileQualification!==true) process.exit(1);
+          console.log(JSON.stringify({release:marker.release,baseRelease:marker.baseRelease,internalLanes:marker.internalLaneCount,newStripeSetup:marker.newStripeSetup,noLoss:receipt.noLossFromPredecessor},null,2));
+          NODE
+      - name: Build exact deterministic PRE125 handoff
+        run: |
+          python3 - <<'PY'
+          import pathlib, zipfile, hashlib, json
+          root=pathlib.Path('.runtime/pre125-live')
+          improvement=pathlib.Path('deployment/pre125/NEXT_VERSION_IMPROVEMENT_LIST__PRE125.md')
+          out=pathlib.Path('SMARTER_JUSTICE__V2.0.0-PRE125__ONE_BUILDER_INTERNAL_LANES__PROFESSIONAL_OPPORTUNITIES__NO_NEW_STRIPE_SETUP__2026-08-31.zip')
+          with zipfile.ZipFile(out,'w',compression=zipfile.ZIP_DEFLATED,compresslevel=9) as z:
+              for p in sorted(x for x in root.rglob('*') if x.is_file()):
+                  rel=p.relative_to(root).as_posix()
+                  if rel == 'NEXT_VERSION_IMPROVEMENT_LIST.md':
+                      continue
+                  info=zipfile.ZipInfo(rel,date_time=(2026,8,31,23,0,0))
+                  info.compress_type=zipfile.ZIP_DEFLATED
+                  info.external_attr=0o100644 << 16
+                  z.writestr(info,p.read_bytes(),compress_type=zipfile.ZIP_DEFLATED,compresslevel=9)
+              info=zipfile.ZipInfo('NEXT_VERSION_IMPROVEMENT_LIST.md',date_time=(2026,8,31,23,0,0))
+              info.compress_type=zipfile.ZIP_DEFLATED
+              info.external_attr=0o100644 << 16
+              z.writestr(info,improvement.read_bytes(),compress_type=zipfile.ZIP_DEFLATED,compresslevel=9)
+          digest=hashlib.sha256(out.read_bytes()).hexdigest()
+          pathlib.Path(out.name+'.sha256.txt').write_text(f'{digest}  {out.name}\n')
+          receipt=json.loads((root/'PRE125_COMPLETION_RECEIPT.json').read_text())
+          receipt['nextVersionImprovementListIncluded']=True
+          receipt['exactHandoffZip']={'fileName':out.name,'sha256':digest,'sizeBytes':out.stat().st_size}
+          pathlib.Path('PRE125_EXACT_HANDOFF_RECEIPT.json').write_text(json.dumps(receipt,indent=2)+'\n')
+          print(json.dumps(receipt['exactHandoffZip'],indent=2))
+          PY
+      - name: Upload exact PRE125 handoff
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: smarter-justice-pre125-exact-handoff
+          path: |
+            SMARTER_JUSTICE__V2.0.0-PRE125__ONE_BUILDER_INTERNAL_LANES__PROFESSIONAL_OPPORTUNITIES__NO_NEW_STRIPE_SETUP__2026-08-31.zip
+            SMARTER_JUSTICE__V2.0.0-PRE125__ONE_BUILDER_INTERNAL_LANES__PROFESSIONAL_OPPORTUNITIES__NO_NEW_STRIPE_SETUP__2026-08-31.zip.sha256.txt
+            PRE125_EXACT_HANDOFF_RECEIPT.json
+            deployment/pre125/NEXT_VERSION_IMPROVEMENT_LIST__PRE125.md
+          if-no-files-found: error
+          retention-days: 90
