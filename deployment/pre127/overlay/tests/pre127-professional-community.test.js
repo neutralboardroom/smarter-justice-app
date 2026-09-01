@@ -7,6 +7,9 @@ const path = require('path');
 
 const root = path.resolve(__dirname, '..');
 const temporaryStorage = fs.mkdtempSync(path.join(os.tmpdir(), 'sj-pre127-test-'));
+process.env.NODE_ENV = 'test';
+delete process.env.RENDER;
+delete process.env.DATABASE_URL;
 process.env.SMARTER_JUSTICE_STORAGE_DIR = temporaryStorage;
 
 try {

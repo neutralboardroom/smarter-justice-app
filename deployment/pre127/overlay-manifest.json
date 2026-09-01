@@ -27,6 +27,6 @@
     { "path": "strategy/PRE127_BUILDER_ANALYSIS_AND_HANDOFF.md", "sha256": "02aaa557a0f5f60bc5a54969a80cd3bb35ddf0a805810dbd24db6a71285ce740" },
     { "path": "strategy/PRE127_DECISION_LOG.json", "sha256": "0d7e3cd26d13d0db4255e6f186edfbec896626f2aa69eb10f39235b6db39bd56" },
     { "path": "strategy/SMARTER_JUSTICE_HYPERLOCAL_LEGAL_COMMUNITY_STRATEGY_PRE127.md", "sha256": "a544f28b9c52ac1da9975abcd7ad9243985aad1e03634758f2bebb429200e653" },
-    { "path": "tests/pre127-professional-community.test.js", "sha256": "ed172d1df01c6750138b501a9839320b5cf602d1611235ed3871c45a2d2b77bd" }
+    { "path": "tests/pre127-professional-community.test.js", "sha256": "b40df594d9098a20ddc50edae1b9d0beab7ddac2cf885eba2193974eb5e2e76a" }
   ]
 }
