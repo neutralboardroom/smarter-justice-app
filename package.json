@@ -1,8 +1,8 @@
 {
-  "name": "smarter-justice-pre123-render-bootstrap",
+  "name": "smarter-justice-pre125-render-bootstrap",
   "version": "2.0.0-pre123",
   "private": true,
-  "description": "Compact deployment bridge that reconstructs exact PRE123 and then applies the qualified Smarter Justice PRE124 completion layer.",
+  "description": "Compact deployment bridge that reconstructs exact PRE124 production and applies the qualified Smarter Justice PRE125 one-builder internal-lane release.",
   "engines": {
     "node": "22.x"
   },
@@ -11,7 +11,7 @@
     "pg": "^8.13.1"
   },
   "scripts": {
-    "postinstall": "node scripts/bootstrap-pre124-release.js",
-    "start": "node scripts/start-pre124-deploy.js"
+    "postinstall": "node scripts/bootstrap-pre125-release.js",
+    "start": "node scripts/start-pre125-deploy.js"
   }
 }
