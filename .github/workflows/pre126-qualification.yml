@@ -35,8 +35,13 @@ jobs:
 
       - name: Verify bootstrap package identity
         run: |
-          test "$(node -p "require('./package.json').version")" = "2.0.0-pre126"
-          test "$(node -p "require('./package-lock.json').version")" = "2.0.0-pre126"
+          root_version="$(node -p "require('./package.json').version")"
+          lock_version="$(node -p "require('./package-lock.json').version")"
+          test "$root_version" = "$lock_version"
+          case "$root_version" in
+            2.0.0-pre126|2.0.0-pre127) ;;
+            *) echo "Unsupported bootstrap version for retained PRE126 qualification: $root_version"; exit 1 ;;
+          esac
 
       - name: Install and construct exact runtime
         env:
