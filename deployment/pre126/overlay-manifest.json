@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "smarter-justice.pre126.overlay-manifest.v1",
+  "release": "v2.0.0-pre126",
+  "baseRelease": "v2.0.0-pre125",
+  "files": [
+    { "path": "data/legalCommunityNetworkPre126.js", "sha256": "86fbeb17c793f5c3e16c3fccb0683454c944ee0e0e10f389f6397a8cd2715543" },
+    { "path": "governance/HYPERLOCAL_LEGAL_COMMUNITY_STANDARD.json", "sha256": "1fb7dd9966d7e46af36698dc027d0770f1f4ef7e2186d5a5581b4e2021acae04" },
+    { "path": "lib/legalCommunityMembershipPre126.js", "sha256": "3ac05f2a9c8970f779cbd5e1ce8599bc3e97f1f6d006018bb2c48b9e8274f0b0" },
+    { "path": "lib/legalCommunityNetworkPre126.js", "sha256": "f948d064342791be8a3112147e13ddccbb213b6cfb9a415f9409c38a8a4fff58" },
+    { "path": "public/attorney-partner-tour.html", "sha256": "fc7c99bee10e9f8f66080fb48ee2a392d31456222a32a010d2ca3adde58eaa64" },
+    { "path": "public/communities/downtown-brooklyn.html", "sha256": "b7779116b7debb5a98e8ab88b147bec43f7ab1cce51d1453b34857a75caad050" },
+    { "path": "public/communities.html", "sha256": "c06f1283a8a260f2af7585fb67ba2cd7dbdef757b3441ec49b85d7e41ccf949c" },
+    { "path": "public/community-briefs/downtown-brooklyn.html", "sha256": "a362b2799a2895f28391f619b936f7ff668f6d0db4deff38159e71d5f945546c" },
+    { "path": "public/es/comunidades/downtown-brooklyn.html", "sha256": "3c2e68ad2d78acbf8769f0f1cc654d2808069e52a2eae2153db6ec886e62fd58" },
+    { "path": "public/es/comunidades.html", "sha256": "0a0cb8472d1119960786b6d72b676cb7ca638ef436a8cd409d09ebfbaeef238a" },
+    { "path": "public/es/membresia-profesional.html", "sha256": "6f964b4d2eea1f9e86221f20d4053d8effb4c18cb13913e1e81b9373d7889446" },
+    { "path": "public/es/para-abogados.html", "sha256": "080aeb4f0ad58dc12d76ca66b2ff79ea7124c1f1ac8a3631adb17e6465c2f48a" },
+    { "path": "public/index.html", "sha256": "c7200e84d3406b6477dbb735694ffec78a67a23225bc06c42c5616fd73037d07" },
+    { "path": "public/pre126-community.css", "sha256": "8eddd95ac7caab2545d4e37ad918fa2c68fd3ed3abb5e613dc1bd50580e5f7a9" },
+    { "path": "public/pre126-community.js", "sha256": "f7f9649c78b67695613d0343e665faa882edac28171fb529a202db0894ef0be0" },
+    { "path": "public/professional-membership.html", "sha256": "4d50b66be4c0359378df95529ec8cc95cf0e4f1ffcdeb4c91b8a28a945d21c18" },
+    { "path": "release-evidence/PRE126_LOCAL_SOURCE_CURRENTNESS.json", "sha256": "439d6ae98c4084977627b8739830fad87abec767df5d05a9bd78342083412ac2" },
+    { "path": "scripts/deployment-doctor-pre126.js", "sha256": "f4edb35f1e1c56459fecbe75a613df9fab0463d84f5b1c0f793d0cc82e434891" },
+    { "path": "scripts/validate-pre126-deployment-kit.js", "sha256": "4e61bb4eb64c7211f0dfc4d599de10c9615e7c151076e0bc4e21ac1a25f43f42" },
+    { "path": "tests/pre126-hyperlocal-legal-community.test.js", "sha256": "ed8ff95fe648f40c33a2fc06be8f86307711b4a607725e20ae2f2278cabc71bc" }
+  ]
+}

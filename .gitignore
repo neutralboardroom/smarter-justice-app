@@ -4,3 +4,5 @@ storage/*.json
 storage/uploads/*
 *.log
 .DS_Store
+.runtime/
+scripts/.bootstrap-pre124-effective.js

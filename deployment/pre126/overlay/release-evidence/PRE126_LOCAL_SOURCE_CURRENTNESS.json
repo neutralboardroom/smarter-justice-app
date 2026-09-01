@@ -1,0 +1,39 @@
+{
+  "schemaVersion": "smarter-justice.local-source-currentness.v1",
+  "communityId": "downtown-brooklyn",
+  "observedAt": "2026-09-01",
+  "reviewBy": "2026-12-01",
+  "officialCourtSources": [
+    "https://www.nycourts.gov/courts/2nd-judicial-district/kings-county-supreme-court-civil-term",
+    "https://www.nycourts.gov/courts/2nd-judicial-district/kings-county-family-court",
+    "https://www.nycourts.gov/courts/2nd-judicial-district/kings-county-supreme-court-criminal-term/general-information",
+    "https://www.nycourts.gov/new-york-city-criminal-court/nyc-criminal-court-general-information-locations",
+    "https://www.nycourts.gov/courts/kings-county-supreme-court-civil-term/help-center",
+    "https://www.nycourts.gov/about-us/terms-court-calendar-holidays",
+    "https://www.nycourts.gov/rules/requests-public-comment"
+  ],
+  "organizationSources": [
+    "https://brooklynbar.org/",
+    "https://referral.brooklynbar.org/",
+    "https://legalaidnyc.org/office/brooklyn-neighborhood-office/",
+    "https://www.legalservicesnyc.org/boroughs/brooklyn-legal-services/",
+    "https://bds.org/contact",
+    "https://www.accessjusticebrooklyn.org/"
+  ],
+  "boundaries": {
+    "relationshipOrPartnershipInferred": false,
+    "lawyerReferralServiceClaimed": false,
+    "organizationEligibilityDeterminedBySmarterJustice": false,
+    "timeSensitiveItemsExpire": true,
+    "confirmWithResponsibleSource": true
+  },
+  "founderOrigin": {
+    "sourceType": "FOUNDER_SUPPLIED_FIRST_PARTY_ACCOUNT",
+    "suppliedAt": "2026-09-01",
+    "business": "Rock and Hammer Tax Services",
+    "office": "26 Court Street",
+    "justiceTruckOrigin": "Downtown Brooklyn courthouse area",
+    "dateInferred": false,
+    "partnershipInferred": false
+  }
+}

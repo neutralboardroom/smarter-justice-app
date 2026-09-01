@@ -1,8 +1,8 @@
 {
-  "name": "smarter-justice-pre125-render-bootstrap",
-  "version": "2.0.0-pre123",
+  "name": "smarter-justice-pre126-render-bootstrap",
+  "version": "2.0.0-pre126",
   "private": true,
-  "description": "Compact deployment bridge that reconstructs exact PRE124 production and applies the qualified Smarter Justice PRE125 one-builder internal-lane release.",
+  "description": "Compact deployment bridge that reconstructs exact PRE125 production and applies the qualified Smarter Justice connected hyperlocal legal-community release.",
   "engines": {
     "node": "22.x"
   },
@@ -11,7 +11,11 @@
     "pg": "^8.13.1"
   },
   "scripts": {
-    "postinstall": "node scripts/bootstrap-pre125-release.js",
-    "start": "node scripts/start-pre125-deploy.js"
+    "postinstall": "node scripts/bootstrap-pre126-release.js",
+    "start": "node scripts/start-pre126-deploy.js",
+    "test": "npm --prefix .runtime/pre126-live test",
+    "qualify:pre126": "node scripts/bootstrap-pre126-release.js && npm --prefix .runtime/pre126-live run qualify:pre126",
+    "deployment:validate": "npm --prefix .runtime/pre126-live run deployment:validate",
+    "deployment:doctor": "npm --prefix .runtime/pre126-live run deployment:doctor"
   }
 }

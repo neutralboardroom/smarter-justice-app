@@ -1,15 +1,45 @@
-# Smarter Justice v1.7.83
+# Smarter Justice v2.0.0-pre126
 
-Exact source and immediate rollback: `smarter-justice-v1.7.82.zip` (SHA-256 `61fea278a69055915e9b4b916e4b64ec514614f1746cacf659a6931ccd0228b1`). v1.7.83 preserves the OpenAI-only central gateway, V12 safeguards, V14 exact-artifact binding, non-self-referential release evidence, unified live operations, preview-only batch/readiness planning, canonical segmented acceptance, and detached delivery receipt automation from v1.7.82.
+Smarter Justice is a public legal-help platform and one connected network of hyperlocal legal communities.
 
-The material product improvement is a first-gap-only owner evidence collection packet with provider-specific nonsecret fields, required checks, dependencies, forbidden inputs, expiry, deterministic digest, and JSON/text output. The material builder improvement is a dynamic non-persisted acceptance evidence bundle that cross-checks the 145-command manifest, working receipt, package identities, both inventories, owner receipt, source/packet binding, and detached-final boundary.
+The public experience remains task-first: a person can describe what happened, receive a free starting response without an account, use preparation tools, find local public resources, and independently search source-linked lawyer and law-firm profiles.
 
-This central operations and release-governance release adds 0 new professionals.
+The professional experience now centers on legal-community membership. Public factual profiles remain free. Paid membership adds local legal intelligence, community participation, professional and firm presence tools, scheduling and follow-up workflows, and optional user-selected opportunities where active. Payment does not purchase credentials, verification, endorsement, organic rank, guaranteed clients, or an attorney-client relationship.
 
-The suite contains 145 dependency-independent commands and 146 total readiness parts. PostgreSQL-dependent readiness remains separately gated and unclaimed. No provider credential, live service state, repository state, deployment state, production action, or public AI activation is inferred from local source. Launch remains `NO_GO`.
+## First legal community
 
-Smarter Justice remains a self-contained umbrella legal platform with product-local portal boundaries, deterministic non-AI fallbacks, owner-protected operational views, and the exact five-product initial cutover boundary. See `NEXT_VERSION_IMPROVEMENT_LIST.md` for the preserved 34-item evidence-rich backlog.
+The initial community is **Downtown Brooklyn / Civic Center**, nested under Brooklyn / Kings County, New York City, and New York State. It includes:
 
-Neutral Boardroom remains the preserved separate billing, seller-of-record, entitlement, and financial-governance architecture; no live integration or boundary change is claimed by this release.
+- official court locations and current court-calendar items;
+- independent public-help and legal-service organizations;
+- source-linked professional activity;
+- live local profile searches from the read-only Profile Factory snapshot;
+- English and Spanish public routes;
+- a share-ready local professional brief;
+- a professional community home and durable geography preferences.
 
-One Smarter Justice professional identity remains the central account boundary for approved legal-network participation while portal-local data and permissions stay separated.
+Downtown Brooklyn is also the founder-supplied birthplace of the Justice Truck idea, connected to Roger's operation of Rock and Hammer Tax Services, its mobile tax-truck offices, and the office at 26 Court Street. The release does not infer a date, institutional partnership, or endorsement from that account.
+
+## Pricing and provider boundary
+
+The existing prices are preserved:
+
+- Professional: $10/month or $100/year;
+- Team: $29/month or $290/year, up to 5 professionals;
+- Office: $49/month or $490/year, up to 15 professionals;
+- Enterprise / Network: custom.
+
+This release makes no new Stripe product, price, coupon, payment-link, provider, secret, webhook, or environment-variable change.
+
+## Reproducible build
+
+```bash
+npm ci --omit=dev --no-audit --no-fund
+npm test
+npm run deployment:validate
+npm start
+```
+
+The compact bootstrap reconstructs exact PRE125 production, verifies the hash-pinned community overlay, checks every unchanged predecessor file, restores the tracked evidence dependencies required by the authenticated owner control center, replays the retained security regression suites, generates a deterministic SBOM, and creates the PRE126 completion and rollback receipts.
+
+Immediate rollback source: Git commit `2e4b90c083c469bc0e055747258fc9521eed06b2` (PRE125).

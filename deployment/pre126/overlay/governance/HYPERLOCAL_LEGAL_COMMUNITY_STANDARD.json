@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "smarter-justice.hyperlocal-legal-community-standard.v1",
+  "product": "Smarter Justice",
+  "authority": "SMARTER_JUSTICE_ONLY",
+  "networkModel": "ONE_CONNECTED_PLATFORM_WITH_NESTED_HYPERLOCAL_COMMUNITIES",
+  "communityUnit": "SMALLEST_SELF_SUSTAINING_LOCAL_LEGAL_COMMUNITY",
+  "launchCommunity": "downtown-brooklyn",
+  "hierarchy": [
+    "New York",
+    "New York City",
+    "Brooklyn / Kings County",
+    "Downtown Brooklyn / Civic Center"
+  ],
+  "geographyTruth": {
+    "officeLocation": "FACTUAL_BUSINESS_LOCATION_WITH_SEPARATE_SOURCE_OR_CONFIRMATION",
+    "homeCommunity": "PRIMARY_PROFESSIONAL_COMMUNITY_NOT_AN_OFFICE_CLAIM",
+    "participatingCommunities": "OPTIONAL_COMMUNITIES_FOR_INFORMATION_AND_PARTICIPATION",
+    "serviceAreas": "PROFESSIONAL_SUPPLIED_AND_SUBJECT_TO_JURISDICTION_FIT_CONFLICT_AVAILABILITY_AND_ENGAGEMENT",
+    "parentCommunities": "INHERITED_BROADER_INFORMATION"
+  },
+  "membershipTruth": {
+    "freePublicProfile": true,
+    "paidParticipation": true,
+    "credentialTruthPurchased": false,
+    "verificationPurchased": false,
+    "hiddenOrganicRankPurchased": false,
+    "endorsementPurchased": false,
+    "clientsGuaranteed": false,
+    "attorneyClientRelationshipAutomatic": false
+  },
+  "contentTruth": {
+    "sourceUrlRequired": true,
+    "observationDateRequired": true,
+    "timeSensitiveExpiryRequired": true,
+    "partnershipInferenceProhibited": true,
+    "privateMatterFeedProhibited": true,
+    "individualDemandSignalProhibited": true,
+    "aggregateDemandRequiresPrivacyQualification": true
+  },
+  "communityViability": {
+    "dimensions": [
+      "documented professional and firm presence",
+      "courts and legal institutions",
+      "legal-service organizations",
+      "professional activity",
+      "distinct local identity",
+      "repeatable source-linked content"
+    ],
+    "outcomes": [
+      "LAUNCH_INDEPENDENTLY",
+      "COMBINE_WITH_NEIGHBORING_AREA",
+      "KEEP_AS_FILTER"
+    ],
+    "publicNumericScore": false
+  },
+  "socialModel": {
+    "structuredProfessionalUtility": true,
+    "openComments": false,
+    "followerCounts": false,
+    "engagementBait": false,
+    "shareableSourceLinkedBriefs": true
+  }
+}

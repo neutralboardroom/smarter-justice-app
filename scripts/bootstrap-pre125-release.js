@@ -195,7 +195,7 @@ function createOpportunity(input = {}) {
   assert(input.userSelectedSharing === true, 'The user must choose what is shared.');
   assert(!input.rawSensitiveDocument || input.secureDocumentReference, 'Sensitive documents require a secure reference rather than raw event data.');
   const opportunity = {
-    opportunityId: input.opportunityId || `sjopp_${crypto.randomUUID()}`,
+    opportunityId: input.opportunityId || \`sjopp_\${crypto.randomUUID()}\`,
     type: input.type,
     jurisdiction: input.jurisdiction,
     practiceArea: input.practiceArea || 'UNSPECIFIED',
@@ -232,7 +232,7 @@ function assignOpportunity(opportunity = {}, professional = {}, input = {}) {
   const qualification = qualifyProfessionalForOpportunity(professional, opportunity);
   assert(qualification.eligible, 'Professional is not eligible for this opportunity.');
   const assignment = {
-    assignmentId: input.assignmentId || `sjassign_${crypto.randomUUID()}`,
+    assignmentId: input.assignmentId || \`sjassign_\${crypto.randomUUID()}\`,
     opportunityId: opportunity.opportunityId,
     professionalId: professional.professionalId,
     status: 'ASSIGNED_PENDING_PROFESSIONAL_ACCEPTANCE',
