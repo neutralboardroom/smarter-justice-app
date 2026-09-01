@@ -11,6 +11,7 @@ on:
       - 'scripts/bootstrap-pre125-release.js'
       - 'scripts/start-pre125-deploy.js'
       - 'deployment/pre125/**'
+      - 'deployment/pre127/**'
 
 permissions:
   contents: read

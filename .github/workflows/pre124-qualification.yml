@@ -11,6 +11,7 @@ on:
       - 'scripts/bootstrap-pre124-release.js'
       - 'scripts/start-pre124-deploy.js'
       - 'deployment/pre124/**'
+      - 'deployment/pre127/**'
       - 'deployment/pre49/**'
       - '.github/workflows/marketing-compliance-currentness-pre49.yml'
 

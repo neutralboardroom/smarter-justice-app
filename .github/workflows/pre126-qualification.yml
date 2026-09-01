@@ -13,6 +13,7 @@ on:
       - 'scripts/bootstrap-pre126-release.js'
       - 'scripts/start-pre126-deploy.js'
       - 'deployment/pre126/**'
+      - 'deployment/pre127/**'
 
 permissions:
   contents: read

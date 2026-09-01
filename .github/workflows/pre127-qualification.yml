@@ -6,6 +6,9 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/pre127-qualification.yml'
+      - '.github/workflows/pre124-qualification.yml'
+      - '.github/workflows/pre125-qualification.yml'
+      - '.github/workflows/pre126-qualification.yml'
       - '.github/workflows/production-qualification.yml'
       - 'package.json'
       - 'package-lock.json'
