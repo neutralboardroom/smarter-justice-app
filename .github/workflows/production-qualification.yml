@@ -76,15 +76,21 @@ jobs:
           git archive --format=tar HEAD | tar -xf - -C "$render_source"
           npm ci --prefix "$render_source" --omit=dev --no-audit --no-fund
           RENDER_SOURCE="$render_source" node - <<'NODE'
-          const fs=require('fs'), path=require('path'), cp=require('child_process');
+          const fs=require('fs'),path=require('path'),cp=require('child_process');
           const root=process.env.RENDER_SOURCE;
+          const pre125=path.join(root,'.runtime','pre125-live');
           const pre124=path.join(root,'.runtime','pre124-live');
-          if(fs.existsSync(path.join(pre124,'.pre124-render-bootstrap.json'))){
+          if(fs.existsSync(path.join(pre125,'.pre125-render-bootstrap.json'))){
+            const marker=JSON.parse(fs.readFileSync(path.join(pre125,'.pre125-render-bootstrap.json'),'utf8'));
+            const pkg=JSON.parse(fs.readFileSync(path.join(pre125,'package.json'),'utf8'));
+            if(marker.release!=='v2.0.0-pre125'||marker.baseRelease!=='v2.0.0-pre124'||marker.productAuthority!=='SMARTER_JUSTICE_ONLY'||marker.singleBuilderReleaseOwner!==true||marker.internalLaneCount!==6||marker.navigatorOrCommunityMutation!==false||marker.newStripeSetup!==false||marker.newStripeProviderMutation!==false||marker.environmentVariableMutation!==false||marker.productionDeploymentAuthorized!==true) throw new Error('PRE125 Render marker mismatch');
+            if(pkg.version!=='2.0.0-pre125') throw new Error('PRE125 runtime package mismatch');
+            console.log('PRE125 exact Render lifecycle build qualified');
+          } else if(fs.existsSync(path.join(pre124,'.pre124-render-bootstrap.json'))){
             const marker=JSON.parse(fs.readFileSync(path.join(pre124,'.pre124-render-bootstrap.json'),'utf8'));
             const pkg=JSON.parse(fs.readFileSync(path.join(pre124,'package.json'),'utf8'));
-            if(marker.release!=='v2.0.0-pre124'||marker.baseRelease!=='v2.0.0-pre123'||marker.productAuthority!=='SMARTER_JUSTICE_ONLY'||marker.navigatorOrCommunityMutation!==false||marker.stripeMutation!==true||marker.paymentSetupDeferredByOwner!==false||marker.paymentSetupAuthorizedByOwner!==true||marker.productionDeploymentAuthorized!==true) throw new Error('PRE124 Render marker mismatch');
-            if(pkg.version!=='2.0.0-pre124') throw new Error('PRE124 runtime package mismatch');
-            console.log('PRE124 exact Render lifecycle build qualified');
+            if(marker.release!=='v2.0.0-pre124'||pkg.version!=='2.0.0-pre124') throw new Error('PRE124 fallback mismatch');
+            console.log('PRE124 fallback lifecycle build qualified');
           } else {
             cp.execFileSync(process.execPath,[path.join(root,'scripts','check-pre58-production-startup.js')],{cwd:root,stdio:'inherit'});
           }
@@ -97,7 +103,9 @@ jobs:
           BOOTSTRAP_VERSION: ${{ steps.source.outputs.bootstrap_version }}
         run: |
           set -euo pipefail
-          if test -f "$SOURCE/.runtime/pre124-live/.pre124-render-bootstrap.json"; then
+          if test -f "$SOURCE/.runtime/pre125-live/.pre125-render-bootstrap.json"; then
+            runtime="$SOURCE/.runtime/pre125-live"
+          elif test -f "$SOURCE/.runtime/pre124-live/.pre124-render-bootstrap.json"; then
             runtime="$SOURCE/.runtime/pre124-live"
           else
             runtime="$SOURCE/.runtime/smarter-justice-v$BOOTSTRAP_VERSION"
@@ -110,9 +118,13 @@ jobs:
           const runtime=process.env.RUNTIME;
           const pkg=require(path.join(runtime,'package.json'));
           for(const script of ['test','sbom','deployment:validate']) if(!pkg.scripts||!pkg.scripts[script]) throw new Error(`Qualified runtime is missing required script: ${script}`);
-          const markerPath=path.join(runtime,'.pre124-render-bootstrap.json');
-          if(fs.existsSync(markerPath)){
-            const marker=JSON.parse(fs.readFileSync(markerPath,'utf8'));
+          const marker125=path.join(runtime,'.pre125-render-bootstrap.json');
+          const marker124=path.join(runtime,'.pre124-render-bootstrap.json');
+          if(fs.existsSync(marker125)){
+            const marker=JSON.parse(fs.readFileSync(marker125,'utf8'));
+            if(marker.release!==`v${pkg.version}`) throw new Error('PRE125 marker/package version mismatch');
+          } else if(fs.existsSync(marker124)){
+            const marker=JSON.parse(fs.readFileSync(marker124,'utf8'));
             if(marker.release!==`v${pkg.version}`) throw new Error('PRE124 marker/package version mismatch');
           }
           NODE
@@ -120,16 +132,19 @@ jobs:
           echo "version=$runtime_version" >> "$GITHUB_OUTPUT"
           echo "Qualified runtime: $runtime_version"
 
-      - name: Qualify retained credential reconciliation
+      - name: Qualify one-builder release and retained credential reconciliation
         env:
           SOURCE: ${{ steps.source.outputs.path }}
           RUNTIME: ${{ steps.runtime.outputs.path }}
         run: |
           set -euo pipefail
           node --check "$RUNTIME/lib/credentialReconciliationPre58.js"
-          if test -f "$RUNTIME/.pre124-render-bootstrap.json"; then
+          if test -f "$RUNTIME/.pre125-render-bootstrap.json"; then
+            (cd "$SOURCE" && node deployment/pre125/test-pre125-one-builder.js)
+            RUNTIME="$RUNTIME" node -e "const fs=require('fs'),path=require('path'),r=process.env.RUNTIME,receipt=JSON.parse(fs.readFileSync(path.join(r,'PRE125_COMPLETION_RECEIPT.json'),'utf8')); if(receipt.baseRelease!=='v2.0.0-pre124'||receipt.noLossFromPredecessor!==true||receipt.predecessorUnchangedFilesHashVerified!==true||receipt.oneAuthoritativeBuilder!==true||receipt.internalLaneCount!==6||receipt.newStripeSetup!==false||!fs.existsSync(path.join(r,'lib','oneBuilderOperatingSystem.js'))||!fs.existsSync(path.join(r,'lib','credentialReconciliationPre58.js'))) process.exit(1); console.log('PRE125 one-builder lanes and retained credential reconciliation qualified');"
+          elif test -f "$RUNTIME/.pre124-render-bootstrap.json"; then
             test -f "$SOURCE/deployment/pre58/NY_OFFICIAL_CREDENTIAL_RECONCILIATION__PRE58.json"
-            RUNTIME="$RUNTIME" node -e "const fs=require('fs'),path=require('path'),r=process.env.RUNTIME,receipt=JSON.parse(fs.readFileSync(path.join(r,'PRE124_COMPLETION_RECEIPT.json'),'utf8')); if(receipt.baseRelease!=='v2.0.0-pre123'||receipt.predecessorUnchangedFilesHashVerified!==true||!fs.existsSync(path.join(r,'lib','credentialReconciliationPre58.js'))) process.exit(1); console.log('Retained PRE58 credential reconciliation protected by PRE124 exact-predecessor no-loss verification');"
+            RUNTIME="$RUNTIME" node -e "const fs=require('fs'),path=require('path'),r=process.env.RUNTIME,receipt=JSON.parse(fs.readFileSync(path.join(r,'PRE124_COMPLETION_RECEIPT.json'),'utf8')); if(receipt.baseRelease!=='v2.0.0-pre123'||receipt.predecessorUnchangedFilesHashVerified!==true||!fs.existsSync(path.join(r,'lib','credentialReconciliationPre58.js'))) process.exit(1); console.log('Retained PRE58 credential reconciliation protected by PRE124 no-loss verification');"
           else
             (cd "$SOURCE" && RUNTIME="$RUNTIME" python3 deployment/pre58/test_pre58_credential_reconciliation.py)
             (cd "$SOURCE" && RUNTIME="$RUNTIME" python3 deployment/pre58/test_pre58_release.py)
@@ -137,6 +152,8 @@ jobs:
 
       - name: Generate deterministic runtime SBOM
         working-directory: ${{ steps.runtime.outputs.path }}
+        env:
+          SBOM_CREATED_AT: '2026-08-31T23:00:00.000Z'
         run: npm run sbom
 
       - name: Validate runtime deployment kit
