@@ -14,4 +14,10 @@ for (const release of ['pre126','pre127','pre128']) {
   assert.match(source, new RegExp('const retired = path\\.join\\(runtimeRoot, `\\.' + release + '-retired-'), `${release} retirement must be a target sibling`);
   assert.match(source, /fs\.renameSync\(staging, target\);/, `${release} must retain the atomic staged-target rename`);
 }
+const pre128Source = fs.readFileSync(path.join(root, 'scripts', 'bootstrap-pre128-release.js'), 'utf8');
+assert.match(pre128Source, /function isolatedQualificationEnvironment\(/, 'PRE128 must isolate build-time qualification from runtime providers');
+for (const key of ['RENDER','DATABASE_URL','OWNER_','SMTP_','STRIPE_','OPENAI_']) {
+  assert(pre128Source.includes(key), `PRE128 qualification isolation must account for ${key}`);
+}
+assert.match(pre128Source, /isolatedQualificationEnvironment\(\{ test:true \}\)/, 'PRE128 security and HTTP tests must use the isolated test environment');
 console.log('pre128-render-filesystem.test.js passed');

@@ -48,18 +48,27 @@ function replaceSection(content, start, end, replacement, label) {
   ok(from >= 0 && to > from, `${label} anchors are missing`);
   return content.slice(0, from) + replacement + content.slice(to);
 }
-function run(label, command, args, cwd = target) {
-  const result = spawnSync(command, args, { cwd, env:process.env, encoding:'utf8', maxBuffer:32 * 1024 * 1024 });
+function run(label, command, args, cwd = target, env = process.env) {
+  const result = spawnSync(command, args, { cwd, env, encoding:'utf8', maxBuffer:32 * 1024 * 1024 });
   const output = `${result.stdout || ''}${result.stderr || ''}`;
   if (output) process.stdout.write(output);
   if (result.status !== 0) fail(`${label} failed with status ${result.status}:\n${output}`);
   return { label, command:[command, ...args].join(' '), status:result.status, output:output.slice(-12000) };
 }
-function runWithFilesystemConvergenceRetry(label, command, args, cwd) {
+function isolatedQualificationEnvironment({ test = false } = {}) {
+  const env = { ...process.env };
+  for (const key of Object.keys(env)) {
+    if (/^(?:RENDER(?:_|$)|DATABASE_URL$|PG(?:HOST|PORT|USER|PASSWORD|DATABASE|SSLMODE|POOL|CONNECT)|OWNER_|ADMIN_TOKEN$|SMTP_|STRIPE_|OPENAI_|SMARTER_JUSTICE_ENVIRONMENT$|SMARTER_JUSTICE_STORAGE_DIR$|SJ_PRE128_FORCE_PROFESSIONAL_ENROLLMENT_CLOSED$)/.test(key)) delete env[key];
+  }
+  if (test) env.NODE_ENV = 'test';
+  else delete env.NODE_ENV;
+  return env;
+}
+function runWithFilesystemConvergenceRetry(label, command, args, cwd, env = process.env) {
   const retryable = /(?:(?:base|PRE\d+) runtime count mismatch \d+|ENOTEMPTY)/i;
   let lastOutput = '';
   for (let attempt = 1; attempt <= 6; attempt += 1) {
-    const result = spawnSync(command, args, { cwd, env:process.env, encoding:'utf8', maxBuffer:32 * 1024 * 1024 });
+    const result = spawnSync(command, args, { cwd, env, encoding:'utf8', maxBuffer:32 * 1024 * 1024 });
     const output = `${result.stdout || ''}${result.stderr || ''}`;
     if (result.status === 0) {
       if (output) process.stdout.write(output);
@@ -123,7 +132,7 @@ function transformPublicText(sourceText) {
 }
 
 ok(fs.existsSync(predecessorScript), 'PRE127 release bootstrap is missing');
-runWithFilesystemConvergenceRetry('PRE127 reconstruction', process.execPath, [predecessorScript], root);
+runWithFilesystemConvergenceRetry('PRE127 reconstruction', process.execPath, [predecessorScript], root, isolatedQualificationEnvironment());
 ok(fs.existsSync(path.join(source, '.pre127-render-bootstrap.json')), 'PRE127 marker is missing');
 const predecessorMarker = JSON.parse(fs.readFileSync(path.join(source, '.pre127-render-bootstrap.json'), 'utf8'));
 ok(predecessorMarker.release === baseRelease, 'PRE127 release mismatch');
@@ -434,10 +443,16 @@ run('SBOM generation', process.execPath, [path.join(target, 'scripts', 'generate
 modified.add('SBOM.spdx.json');
 
 const preliminaryTests = [];
+const isolatedTestEnvironment = isolatedQualificationEnvironment({ test:true });
 for (const testFile of ['tests/pre128-universal-successor.test.js','tests/pre128-http-contract.test.js','tests/pre128-system-qualification.test.js','tests/security-boundaries-v177.test.js','tests/security-readiness.test.js']) {
-  preliminaryTests.push(run(testFile, process.execPath, [path.join(target, testFile)]));
+  preliminaryTests.push(run(testFile, process.execPath, [path.join(target, testFile)], target, isolatedTestEnvironment));
 }
 
+const evidenceDirectory = path.join(target, 'release-evidence', 'pre128');
+fs.rmSync(evidenceDirectory, { recursive:true, force:true, maxRetries:5, retryDelay:100 });
+for (const generated of ['release-evidence/PRE128_HIGH_CONFIDENCE_SECRET_SCAN.json','.pre128-render-bootstrap.json','PRE128_COMPLETION_RECEIPT.json','PRE128_BUILD_FILE_MANIFEST.json']) {
+  fs.rmSync(path.join(target, generated), { force:true });
+}
 const highConfidenceSecretScan = scanHighConfidenceSecrets(target);
 ok(highConfidenceSecretScan.status === 'PASS', `High-confidence secret scan found ${highConfidenceSecretScan.highConfidenceFindingCount} possible secrets`);
 write('release-evidence/PRE128_HIGH_CONFIDENCE_SECRET_SCAN.json', JSON.stringify({ schemaVersion:'smarter-justice.pre128-high-confidence-secret-scan.v1', release, candidateId, ...highConfidenceSecretScan }, null, 2) + '\n', modified);
@@ -446,9 +461,15 @@ const volatileLineageEvidence = new Set([
   '.pre121-render-bootstrap.json','.pre122-render-bootstrap.json','.pre123-render-bootstrap.json','.pre124-render-bootstrap.json','.pre125-render-bootstrap.json','.pre126-render-bootstrap.json','.pre127-render-bootstrap.json',
   'PRE124_COMPLETION_RECEIPT.json','PRE125_COMPLETION_RECEIPT.json','PRE126_COMPLETION_RECEIPT.json','PRE127_COMPLETION_RECEIPT.json'
 ]);
-const manifestRows = filesUnder(target).filter(relative => !relative.startsWith('release-evidence/pre128/') && !['.pre128-render-bootstrap.json','PRE128_COMPLETION_RECEIPT.json','PRE128_BUILD_FILE_MANIFEST.json'].includes(relative) && !volatileLineageEvidence.has(relative)).map(relative => ({ path:relative, sha256:sha(path.join(target, relative)), bytes:fs.statSync(path.join(target, relative)).size }));
+const generatedSecretScanPath = 'release-evidence/PRE128_HIGH_CONFIDENCE_SECRET_SCAN.json';
+const artifactHashExclusions = [
+  ...[...volatileLineageEvidence].sort().map(path => ({path,reason:'Inherited predecessor build receipt contains a regeneration timestamp; retained for lineage but excluded from reproducible candidate hash.'})),
+  {path:generatedSecretScanPath,reason:'Generated security evidence is retained and referenced by the security audit; the product hash covers the files it scanned rather than the scan summary itself.'}
+];
+const artifactHashExcludedPaths = new Set(artifactHashExclusions.map(row => row.path));
+const manifestRows = filesUnder(target).filter(relative => !relative.startsWith('release-evidence/pre128/') && !['.pre128-render-bootstrap.json','PRE128_COMPLETION_RECEIPT.json','PRE128_BUILD_FILE_MANIFEST.json'].includes(relative) && !artifactHashExcludedPaths.has(relative)).map(relative => ({ path:relative, sha256:sha(path.join(target, relative)), bytes:fs.statSync(path.join(target, relative)).size }));
 const artifactHash = shaBuffer(JSON.stringify(manifestRows));
-write('PRE128_BUILD_FILE_MANIFEST.json', JSON.stringify({ schemaVersion:'smarter-justice.pre128.build-file-manifest.v1', release, candidateId, sourceCommit, sourceTree, fileCount:manifestRows.length, artifactSha256:artifactHash, artifactHashScope:'Runtime and public product files with volatile predecessor timestamps excluded.', excludedFromArtifactHash:[...volatileLineageEvidence].sort().map(path => ({path,reason:'Inherited predecessor build receipt contains a regeneration timestamp; retained for lineage but excluded from reproducible candidate hash.'})), files:manifestRows }, null, 2) + '\n', modified);
+write('PRE128_BUILD_FILE_MANIFEST.json', JSON.stringify({ schemaVersion:'smarter-justice.pre128.build-file-manifest.v1', release, candidateId, sourceCommit, sourceTree, fileCount:manifestRows.length, artifactSha256:artifactHash, artifactHashScope:'Runtime and public product files with volatile or generated evidence summaries excluded.', excludedFromArtifactHash:artifactHashExclusions, files:manifestRows }, null, 2) + '\n', modified);
 
 const evidenceNames = [
   'CURRENT_STATE_AND_LINEAGE_RECEIPT','CURRENT_STATE_AND_PRE120_TO_PRE127_LINEAGE','CURRENT_OWNER_AUTHORITY_AND_ROLE_BINDING','PRE_BUILD_SMARTER_JUSTICE_ROLE_AND_PRODUCT_SCOPE_LOCK','RELEASE_LEASE_AND_CONCURRENCY_RECEIPT','LIVE_SOURCE_DATABASE_DEPLOYMENT_IDENTITY','SMARTER_JUSTICE_STRATEGY_AND_PRODUCT_CONSTITUTION','SMARTER_JUSTICE_AUTHORITY_TOPOLOGY','EFFECTIVE_RUNTIME_SURFACE_MANIFEST','UNIFIED_INFORMATION_ARCHITECTURE_AND_ROUTE_MANIFEST','CANONICAL_DATA_GRAPH_AND_FACT_OWNERSHIP_MANIFEST','NO_LOSS_CAPABILITY_AND_DATA_MATRIX','LEGACY_MICROPORTAL_ERADICATION_AND_REDIRECT_RECEIPT','PUBLIC_LANGUAGE_AND_FUNNEL_COPY_AUDIT','PROFESSIONAL_COPY_CLAIM_TO_CAPABILITY_MATRIX','ORGANIZATIONAL_CLAIMS_MATRIX','PROFESSIONAL_COMMUNITY_ORGANIZATION_CHARTER_AND_BOUNDARY_RECEIPT','MEMBER_CLASS_AUTHORITY_MATRIX','MEMBER_ELIGIBILITY_GOVERNANCE_CONDUCT_AND_MODERATION_RECEIPT','LEGAL_COMMUNITY_AREA_VS_MEMBER_CHAPTER_MANIFEST','LEGAL_COMMUNITY_ARCHITECTURE_AND_GEOGRAPHY_SEMANTICS_MANIFEST','CHAPTER_READINESS_AND_OPERATING_CAPACITY_RECEIPT','LEGAL_COMMUNITY_FEATURE_AVAILABILITY_AND_FRESHNESS_RECEIPT','LEGAL_COMMUNITY_INTELLIGENCE_ACCEPTANCE_AND_FRESHNESS_TEST','PROFILE_AS_FREE_TRUST_SUBSTRATE_TEST','PROFILE_FACTORY_AUTHORITY_RESOLUTION','PROFILE_FACTORY_HANDOFF_ACCEPTANCE_AND_RECHECK_RECEIPT','PROFILE_CANON_PROFILE_FACTORY_HANDOFF_AND_DEDUPE_ACCEPTANCE','PROFILE_CANON_AND_PLATFORM_OWNED_FIELD_PRESERVATION','CLAIM_CORRECTION_SUPPRESSION_AND_REMOVAL_TEST','PROFILE_FIRM_OFFICE_COUNT_PARITY_AND_DEDUPE','FIRM_AUTHORITY_OFFICE_ROSTER_AND_SEAT_TEST','MEMBERSHIP_PROFILE_RANKING_INDEPENDENCE_TEST','MEMBERSHIP_BADGE_LITERAL_MEANING_TEST','MEMBERSHIP_BENEFIT_AVAILABILITY_MATRIX','PROFESSIONAL_POSITIONING_VALUE_AND_FIRST_VALUE_RECEIPT','ATTORNEY_AND_FIRM_FUNNEL_E2E_RECEIPT','MEMBER_FIRST_VALUE_AND_RECURRING_VALUE_EVIDENCE','MEMBER_CARE_RETENTION_AND_COMMUNICATIONS_RECEIPT','CURRENT_PRICE_AND_PLAN_AUTHORITY','PLAN_PRICE_BILLING_ENTITLEMENT_CANCELLATION_RECONCILIATION','PRICING_PLAN_CHECKOUT_ENTITLEMENT_CANCELLATION_RECEIPT','RANKING_SPONSORSHIP_ADVERTISING_AND_REFERRAL_BOUNDARY_AUDIT','INQUIRY_REFERRAL_SOLICITATION_AND_FEE_GATE','EVENTS_PROGRAMS_EDUCATION_AND_CLE_TRUTH_RECEIPT','COMMUNITY_CONTRIBUTION_MODERATION_TEST','PEER_CONNECTION_PRIVACY_CONSENT_AND_ABUSE_TEST','MEMBER_CONDUCT_MODERATION_AND_APPEAL_TEST','COMPETITION_AND_PROFESSIONAL_COMMUNITY_CONDUCT_TEST','PUBLIC_LEGAL_WORKFLOW_E2E','PUBLIC_HELP_COMMERCIAL_DATA_FIREWALL_TEST','LEGAL_INFORMATION_SOURCE_CURRENTNESS_AND_CONFLICT_AUDIT','AI_LEGAL_SAFETY_AND_DOCUMENT_RED_TEAM','PROFESSIONAL_RESPONSIBILITY_ADVERTISING_AND_INSTITUTIONAL_TRUTH_AUDIT','SECURITY_PRIVACY_AUTHORIZATION_AND_DATA_SEPARATION_AUDIT','DESIGN_MOBILE_WCAG_AND_BILINGUAL_PARITY_RECEIPT','SEO_INDEXABILITY_STRUCTURED_DATA_AND_SITEMAP_AUDIT','PERFORMANCE_OBSERVABILITY_AND_PRIVACY_SAFE_ANALYTICS_RECEIPT','EXPERIMENT_AND_FUNNEL_TRUST_GUARDRAIL_RECEIPT','DONOR_CAPABILITY_DISPOSITION_LEDGER','PRE_SEAL_SMARTER_JUSTICE_ROLE_AND_PRODUCT_SCOPE_LOCK','BUILD_TEST_AND_ARTIFACT_MANIFEST','MIGRATION_BACKUP_AND_RECOVERY_RECEIPT','DEPLOYMENT_ROLLBACK_AND_LIVE_VERIFICATION_RECEIPT','NEXT_VERSION_IMPROVEMENT_LIST','FINAL_SUCCESSOR_MANIFEST'
@@ -467,13 +488,11 @@ const specialDetails = {
   LEGACY_MICROPORTAL_ERADICATION_AND_REDIRECT_RECEIPT:{ retiredRoutes:['/founding-portals.html','/portal-router.html','/portal-preparation.html','/community-network.html'], successors:['/communities','/practice-areas.html','/free-tools.html'], separateDomainsCreated:false, onePlatform:true, oldTopologyApisReturn:410 },
   PROFILE_AS_FREE_TRUST_SUBSTRATE_TEST:{ freeProfile:true, paymentRequiredForAccuracy:false, paymentChangesCredentials:false, paymentChangesOrganicRank:false },
   MEMBERSHIP_BENEFIT_AVAILABILITY_MATRIX:{ source:'data/legalCommunityProgramPre128.js', paidEnrollmentOpen:false, checkoutOpen:false },
-  SECURITY_PRIVACY_AUTHORIZATION_AND_DATA_SEPARATION_AUDIT:{ highConfidenceSecretScan:{status:highConfidenceSecretScan.status,findings:highConfidenceSecretScan.highConfidenceFindingCount,textFilesScanned:highConfidenceSecretScan.textFilesScanned,bytesScanned:highConfidenceSecretScan.bytesScanned}, directOwnerRoutesProtected:true, directProfessionalWorkspaceRoutesProtected:true, productionProfessionalEnrollmentFailClosed:true, professionalBillingActivationFailClosed:true },
+  SECURITY_PRIVACY_AUTHORIZATION_AND_DATA_SEPARATION_AUDIT:{ highConfidenceSecretScan:{status:highConfidenceSecretScan.status,findings:highConfidenceSecretScan.highConfidenceFindingCount,textFilesScanned:highConfidenceSecretScan.textFilesScanned,bytesScanned:highConfidenceSecretScan.bytesScanned}, buildTimeProviderEnvironmentIsolated:true, directOwnerRoutesProtected:true, directProfessionalWorkspaceRoutesProtected:true, productionProfessionalEnrollmentFailClosed:true, professionalBillingActivationFailClosed:true },
   BUILD_TEST_AND_ARTIFACT_MANIFEST:{ artifactSha256:artifactHash, fileCount:manifestRows.length, volatileLineageEvidenceExcluded:[...volatileLineageEvidence].sort(), tests:preliminaryTests.map(row => ({label:row.label,status:'PASS'})) },
   DEPLOYMENT_ROLLBACK_AND_LIVE_VERIFICATION_RECEIPT:{ deploymentState:'NOT_DEPLOYED_AT_SOURCE_QUALIFICATION', rollbackProductionCommit:sourceCommit, rollbackDeploymentId:'dep-dabkqv2d0e5s739nr860', liveVerificationState:'PENDING_DEPLOYMENT' },
   FINAL_SUCCESSOR_MANIFEST:{ releaseState:'QUALIFIED_SUCCESSOR', deploymentState:'NOT_DEPLOYED_AT_SOURCE_QUALIFICATION', artifactSha256:artifactHash, publicScope:'Truthful public legal help, free Downtown Brooklyn community preview, corrected professional funnel, and closed paid lanes.' }
 };
-const evidenceDirectory = path.join(target, 'release-evidence', 'pre128');
-fs.rmSync(evidenceDirectory, { recursive:true, force:true });
 fs.mkdirSync(evidenceDirectory, { recursive:true });
 for (const name of evidenceNames) {
   const status = blockedLanes.has(name) ? 'BLOCKED' : (notApplicable.has(name) ? 'NOT_APPLICABLE' : 'PASS');
@@ -509,6 +528,7 @@ const completionReceipt = {
   newProfessionalRegistrationOpen:false, paidMembershipEnrollmentOpen:false, checkoutOpen:false, paidEntitlementsIssued:false,
   prices:{professional:[10,100],team:[29,290],office:[49,490],enterprise:'custom'}, pricesArePlannedDues:true,
   newStripeSetup:false, providerMutation:false, environmentVariableMutation:false,
+  buildTimeProviderEnvironmentIsolated:true,
   privateMatterCommunityPersonalization:false, automaticLinkedInPosting:false, unsolicitedOutreachAutomation:false,
   publicAssetReleaseIdentifiersRemoved:true, runtimeMaterialCopyRewriteRemoved:true, evidenceArtifacts:66,
   tests:preliminaryTests.map(row => ({name:row.label,status:'PASS'})), artifactSha256:artifactHash, generatedAt:new Date().toISOString()

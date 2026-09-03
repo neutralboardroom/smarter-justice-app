@@ -20,7 +20,8 @@ PRE128 fixes those problems without redesigning the established homepage or repl
 10. Direct owner pages and authenticated professional dashboard, firm-operations, and currentness workspaces redirect to the correct sign-in boundary before static content is served. Their APIs retain independent authorization checks.
 11. The exact inherited PRE120 carrier occasionally reports a transient file count while the workspace filesystem is still converging after extraction. PRE128 retries the full hash-pinned predecessor reconstruction up to six times, with increasing short waits, and never changes or bypasses the required count or archive hash.
 12. Qualification performs a high-confidence static scan for private keys and common live-token formats. It excludes the public-source Profile Factory corpus, reports only redacted finding metadata, and fails the build if a match is found.
-13. The reproducible candidate hash covers runtime and public product files. Eleven inherited PRE121–PRE127 build markers and completion receipts are retained for lineage but excluded from that hash because their only cross-build differences are regeneration timestamps; the build manifest names every exclusion and reason.
+13. The reproducible candidate hash covers runtime and public product files. Eleven inherited PRE121–PRE127 build markers/completion receipts are retained for lineage but excluded because their only cross-build differences are regeneration timestamps. The generated high-confidence scan summary is also retained outside the product hash; the product files it scans remain inside it. The build manifest names every exclusion and reason.
+14. Build-time predecessor reconstruction and qualification run in a deliberately isolated environment. Render identity, disk, database, owner, administration, email, payment, and AI provider variables are removed before tests start, so temporary test storage cannot resolve to production resources and synthetic credentials cannot collide with a live account.
 
 ## Identity and field ownership
 
@@ -66,3 +67,5 @@ The exact rollback source is Git commit `a746c2d689c03ba713d9d31dd952bc9fd2137db
 ## Release-state discipline
 
 Source qualification, Git publication, Render deployment, and live verification are separate facts. The source completion receipt intentionally says not deployed. A post-deployment receipt must name the exact Git commit, Render deployment ID, runtime version, artifact hash, tested canonical URLs, and rollback target. If any of those identities disagree, the candidate is not the live qualified successor.
+
+The first PRE128 Render attempt, deployment `dep-dacph7h5efls73e32ro0` at Git commit `fbafa0db674b6ffc8e6ebb048f46c49cebe2fb83`, failed during the inherited security test before promotion. The test process had inherited Render runtime variables, so `RENDER_DISK_MOUNT_PATH` overrode its temporary storage directory and the synthetic owner login encountered the existing production owner state. PRE127 stayed live. PRE128 now strips runtime/provider variables from all build-time reconstruction and tests; see `release-evidence/PRE128_RENDER_DEPLOYMENT_INCIDENT.md`.
