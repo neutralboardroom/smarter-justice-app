@@ -1,8 +1,8 @@
 {
-  "name": "smarter-justice-pre127-render-bootstrap",
-  "version": "2.0.0-pre127",
+  "name": "smarter-justice-pre128-render-bootstrap",
+  "version": "2.0.0-pre128",
   "private": true,
-  "description": "Compact deployment bridge that reconstructs exact PRE126 production and applies the qualified Smarter Justice working professional-community release.",
+  "description": "Compact deployment bridge that reconstructs exact PRE127 production and applies the qualified truthful Smarter Justice universal successor.",
   "engines": {
     "node": "22.x"
   },
@@ -11,11 +11,12 @@
     "pg": "^8.13.1"
   },
   "scripts": {
-    "postinstall": "node tests/pre127-render-filesystem.test.js && node scripts/bootstrap-pre127-release.js",
-    "start": "node scripts/start-pre127-deploy.js",
-    "test": "npm --prefix .runtime/pre127-live test",
-    "qualify:pre127": "node scripts/bootstrap-pre127-release.js && npm --prefix .runtime/pre127-live run qualify:pre127",
-    "deployment:validate": "npm --prefix .runtime/pre127-live run deployment:validate",
-    "deployment:doctor": "npm --prefix .runtime/pre127-live run deployment:doctor"
+    "postinstall": "node tests/pre128-render-filesystem.test.js && node scripts/bootstrap-pre128-release.js",
+    "start": "node scripts/start-pre128-deploy.js",
+    "migrate": "node scripts/migrate-pre128-deploy.js",
+    "test": "npm --prefix .runtime/pre128-live test",
+    "qualify:pre128": "node scripts/bootstrap-pre128-release.js && npm --prefix .runtime/pre128-live run qualify:pre128",
+    "deployment:validate": "npm --prefix .runtime/pre128-live run deployment:validate",
+    "deployment:doctor": "npm --prefix .runtime/pre128-live run deployment:doctor"
   }
 }

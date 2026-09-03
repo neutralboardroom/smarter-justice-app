@@ -1,0 +1,48 @@
+{
+  "artifact": "PRE_BUILD_SMARTER_JUSTICE_ROLE_AND_PRODUCT_SCOPE_LOCK",
+  "product": "Smarter Justice",
+  "canonicalBuilderIdentity": "Smarter Justice authoritative product builder",
+  "stableRoleId": "SMARTER_JUSTICE_PLATFORM",
+  "ownerCommandId": "SJ-UNIVERSAL-NEXT-2026-09-03-be08b177d197",
+  "ownerCommandSha256": "be08b177d19712c28844976ee2ba98b5c1f8ee4d6a6a002f0e282d8fdbe74587",
+  "candidateId": "SMARTER_JUSTICE_V2.0.0-PRE128_UNIVERSAL_SUCCESSOR_2026-09-03",
+  "recordedAt": "2026-09-03T14:48:06Z",
+  "writableSource": {
+    "repository": "neutralboardroom/smarter-justice-app",
+    "candidateBranch": "pre128-universal-successor",
+    "promotionBranch": "main",
+    "baseCommit": "a746c2d689c03ba713d9d31dd952bc9fd2137dbb",
+    "baseTree": "966152d3e62f4a4df45dcfb7241f3a444a90f97d"
+  },
+  "acceptedPredecessorCandidate": {
+    "version": "2.0.0-pre127",
+    "commit": "a746c2d689c03ba713d9d31dd952bc9fd2137dbb",
+    "tree": "966152d3e62f4a4df45dcfb7241f3a444a90f97d",
+    "renderDeployment": "dep-dabkqv2d0e5s739nr860",
+    "renderService": "srv-d8ps9jgjs32c73918vvg",
+    "liveStateObserved": "LIVE_VERIFIED_PREDECESSOR"
+  },
+  "affectedDataAndServices": [
+    "Smarter Justice source and generated runtime",
+    "public, professional, membership, profile, community, and administrative routes",
+    "Smarter Justice PostgreSQL schema and data through read-only reconciliation unless a tested migration is later qualified",
+    "Render service srv-d8ps9jgjs32c73918vvg",
+    "GitHub main branch after qualification"
+  ],
+  "externalProducerAndAuthorityContracts": [
+    "Profile Factory may supply evidence only through accepted handoff contracts",
+    "local sources may supply dated facts but cannot publish directly",
+    "Stripe remains payment provider authority; no product, price, coupon, key, webhook, or environment mutation is authorized by this lock",
+    "Render remains deployment authority for the existing service"
+  ],
+  "deploymentAuthorityState": "OWNER_AUTHORIZED_IF_EXACT_ARTIFACT_QUALIFIES_AND_ROLLBACK_REMAINS_AVAILABLE",
+  "destructiveChangeState": "FALSE",
+  "authorityTransfer": false,
+  "unresolvedConflicts": [
+    "Current plan and provider mapping must be reconciled before any price or checkout change",
+    "Protected readiness blockers must remain fail-closed unless independently satisfied",
+    "Public PRE127 internal language and legacy portal topology require full inventory and disposition",
+    "Professional community active-versus-forming claims require capability and operating-capacity proof"
+  ],
+  "state": "SOURCE_QUALIFIED_BASE_LOCKED"
+}

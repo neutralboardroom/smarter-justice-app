@@ -1,0 +1,32 @@
+{
+  "schemaVersion": "smarter-justice.pre128.overlay-manifest.v1",
+  "release": "v2.0.0-pre128",
+  "baseRelease": "v2.0.0-pre127",
+  "files": [
+    { "path": "data/legalCommunityProgramPre128.js", "sha256": "1203dc469ac4243d97c3165f4972a0ff2b9f9a67c119989e6034231c824ee9a9" },
+    { "path": "governance/PROFESSIONAL_COMMUNITY_CHARTER_PRE128.json", "sha256": "e2d3007e11ecaf061ed5d662289ac332bcc39cff84b955a7ae56d042940970f5" },
+    { "path": "lib/legalCommunityMembershipPre128.js", "sha256": "df002f144e1820688d03c226ab57e6b596cc5cc71d9a48a5e85f57bc352a8985" },
+    { "path": "lib/legalCommunityProgramPre128.js", "sha256": "7105db9e736f50923e308fbc610dcf94f93aadb210a5ae15096fac95fd262589" },
+    { "path": "lib/publicLegalAreasPre128.js", "sha256": "f638d51867a258fea6c65309f553ae89a87e8e93dad143d63c4a03092c7563df" },
+    { "path": "public/attorney-partner-tour.html", "sha256": "9e519f61e614f83dd49318200e7e858af9574a844431472e423583a0915d590e" },
+    { "path": "public/community-experience.js", "sha256": "305ad2b2f6a552d46e2cc5bacb8e2d1ccd731b7cc6ce2c17b3e366268ef6be4d" },
+    { "path": "public/es/comunidad-profesional.html", "sha256": "27540ab79683470c732fcf7cc6b01636aa26ce17861dd0a052ed45fc051edb83" },
+    { "path": "public/es/membresia-profesional.html", "sha256": "710b00e65f5f0d50089cde27acbc7b6bbcacf47cad5ce7b534fa910aae7726f1" },
+    { "path": "public/es/para-abogados.html", "sha256": "f179a93bf556c23a9beca9818b6887741b478bc3c7c2f72de79f609443c95a04" },
+    { "path": "public/find-my-profile.html", "sha256": "6500044229a666d2dba1add1d6c6b98aa807b29a5ebfe845ffa71b1fa16c6e70" },
+    { "path": "public/professional-community.html", "sha256": "8789b8a12d04173cef19240bf9e9226c08162091fb8ce300c124a21a4cfb58dd" },
+    { "path": "public/professional-membership-terms.html", "sha256": "cc2a70f463a798997abf9b9ff20e0790e0e8a60370cc282c0ebf6cac9de3f10c" },
+    { "path": "public/professional-membership.html", "sha256": "0d69b4d802a9d95ed71a88a67fcd7c292225d2cce6567cf86dd8eb0152d19ec1" },
+    { "path": "public/professional-signup.html", "sha256": "3b1bde21948f0fb54c1a86285d0da7fc4c5b08f3017cf195cfc365a96023dbb3" },
+    { "path": "public/program-status.js", "sha256": "873411bca9ce70a734aca1d96da1a5fa5632320a8a293d72647f2e2046c2d6fe" },
+    { "path": "release-evidence/PRE_BUILD_SMARTER_JUSTICE_ROLE_AND_PRODUCT_SCOPE_LOCK.json", "sha256": "031e6a7ed5bd6d9754ebacd375ed9b9fc0c59d42bdd565650965fd14109fc635" },
+    { "path": "release-evidence/RELEASE_LEASE_AND_CONCURRENCY_RECEIPT.json", "sha256": "5ec97a74833399cfb8d6797c4ac0eeb89752a5bd6491cfd3dfcfd368aab29c06" },
+    { "path": "scripts/deployment-doctor-pre128.js", "sha256": "928f336bdb1cc76f8787dcf8c8d1618de1a096006150c6b86c2cce09b78922d3" },
+    { "path": "scripts/validate-pre128-deployment-kit.js", "sha256": "efdc5c4e52facf1c060aa418aa1fe4c1dab1fde3ac7867a0c6e2a61ab5028e6a" },
+    { "path": "strategy/PRE128_BUILDER_ANALYSIS_AND_HANDOFF.md", "sha256": "be85c182e1281bb7aa8dec182349ce5be4f04d65ceb35ce8aba4616b1d078e94" },
+    { "path": "strategy/SMARTER_JUSTICE_STRATEGY_AND_PRODUCT_CONSTITUTION.md", "sha256": "0ddbe391d86c63e1a13ffc23601473e6c5b20b7145b19c0c39b78ff53b19581c" },
+    { "path": "tests/pre128-http-contract.test.js", "sha256": "93b46fbf1d8eb526eaec2ec48224a4eec5eb422ef920fd5994b988067b035a4b" },
+    { "path": "tests/pre128-system-qualification.test.js", "sha256": "a671d6e596565565114f0083969fbf34ef7ecb6feeff87ed1ce5ed555706857c" },
+    { "path": "tests/pre128-universal-successor.test.js", "sha256": "0f4771cb0fd5bd5e44a432d35b621b6a860e8b06cd03d6daa78b86dcd0a0a55c" }
+  ]
+}

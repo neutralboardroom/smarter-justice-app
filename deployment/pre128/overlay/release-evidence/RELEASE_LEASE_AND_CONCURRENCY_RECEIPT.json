@@ -1,0 +1,34 @@
+{
+  "artifact": "RELEASE_LEASE_AND_CONCURRENCY_RECEIPT",
+  "product": "Smarter Justice",
+  "stableRoleId": "SMARTER_JUSTICE_PLATFORM",
+  "ownerCommandId": "SJ-UNIVERSAL-NEXT-2026-09-03-be08b177d197",
+  "candidateId": "SMARTER_JUSTICE_V2.0.0-PRE128_UNIVERSAL_SUCCESSOR_2026-09-03",
+  "owner": "current authoritative Smarter Justice builder",
+  "startedAt": "2026-09-03T14:48:06Z",
+  "heartbeatAt": "2026-09-03T14:48:06Z",
+  "expiresAt": "2026-09-03T20:48:06Z",
+  "branchAndWorktree": {
+    "branch": "pre128-universal-successor",
+    "worktree": "/workspace/scratch/d5456b85ef23/smarter-justice-app",
+    "remoteBase": "a746c2d689c03ba713d9d31dd952bc9fd2137dbb"
+  },
+  "databaseLane": "READ_ONLY_RECONCILIATION; NO MIGRATION LEASE GRANTED YET",
+  "deploymentLane": "RESERVED_FOR_ONE_EXACT_QUALIFIED_PRE128_COMMIT; NO DEPLOY IN PROGRESS",
+  "observedConcurrency": {
+    "remoteMain": "a746c2d689c03ba713d9d31dd952bc9fd2137dbb",
+    "currentLiveDeployment": "dep-dabkqv2d0e5s739nr860",
+    "currentLiveCommit": "a746c2d689c03ba713d9d31dd952bc9fd2137dbb",
+    "renderAutoDeploy": false,
+    "conflictingDeploy": false,
+    "conflictingRepositoryWriterObserved": false,
+    "conflictingMigrationObserved": false
+  },
+  "isolation": {
+    "experiments": "none",
+    "testData": "local or isolated fixtures only",
+    "productionWritesBeforePromotion": false
+  },
+  "recoveryRule": "If the lease expires or main/live moves, stop the conflicting mutation, preserve work, rereconcile, rebase or requalify, and issue a new lease receipt.",
+  "state": "ACTIVE"
+}

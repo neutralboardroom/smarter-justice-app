@@ -1,0 +1,52 @@
+{
+  "schemaVersion": "smarter-justice.professional-community-charter.v1",
+  "product": "Smarter Justice",
+  "candidate": "SMARTER_JUSTICE_V2.0.0-PRE128_UNIVERSAL_SUCCESSOR_2026-09-03",
+  "effectiveFor": "PRE128 public product representation",
+  "legalFormClaimed": false,
+  "separateOrganizationClaimed": false,
+  "chapterSystemClaimed": false,
+  "governingBoardClaimed": false,
+  "memberVotingClaimed": false,
+  "barAssociationClaimed": false,
+  "lawyerReferralServiceClaimed": false,
+  "cleProviderClaimed": false,
+  "courtOrGovernmentAffiliationClaimed": false,
+  "purpose": "Provide a useful Smarter Justice hyperlocal professional experience around responsibly sourced local information, free factual profiles, practical participation paths, and clearly available tools.",
+  "publishedArea": {
+    "id": "downtown-brooklyn",
+    "name": "Downtown Brooklyn / Civic Center Legal Community",
+    "kind": "Smarter Justice organizing area",
+    "status": "organizing",
+    "not": ["government boundary", "court program", "bar-association chapter", "office claim", "license jurisdiction", "service area", "paid member chapter"]
+  },
+  "memberClasses": [
+    {"id":"professional","label":"Individual professional","activePaidEnrollment":false,"votes":0,"governingAuthority":false},
+    {"id":"firm-team","label":"Firm or team","activePaidEnrollment":false,"votes":0,"governingAuthority":false}
+  ],
+  "conduct": {
+    "prohibited": [
+      "price or fee coordination",
+      "market or client allocation",
+      "coordinated bidding or client acceptance",
+      "collective boycotts",
+      "confidential client disclosure",
+      "competitively sensitive information exchange",
+      "member contact harvesting",
+      "unwanted marketing",
+      "false affiliation or endorsement claims",
+      "credential or specialty misrepresentation"
+    ],
+    "memberSubmissionsOpen": false,
+    "peerConnectionsOpen": false,
+    "moderationAndAppealRequiredBeforeOpening": true
+  },
+  "trust": {
+    "profileFactsRemainFree": true,
+    "paymentAffectsCredentials": false,
+    "paymentAffectsVerification": false,
+    "paymentAffectsOrganicOrdering": false,
+    "guaranteedClients": false,
+    "attorneyClientRelationshipCreatedByPlatformAction": false
+  }
+}
