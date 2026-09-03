@@ -114,6 +114,8 @@ function localReferences(html, pagePath) {
     item = await request('/api/ai-status');
     assert.equal(item.response.status, 200);
     assert.deepEqual(Object.keys(item.data).sort(), ['available','message','ok','rulesBasedHelpAvailable']);
+    assert.equal(item.data.available, false);
+    assert.equal(item.data.rulesBasedHelpAvailable, true);
     item = await request('/api/public/ai-smoke', { method:'POST', headers:{'Content-Type':'application/json'}, body:'{}' });
     assert.equal(item.response.status, 404);
 
@@ -146,6 +148,7 @@ function localReferences(html, pagePath) {
     for (const term of ['stripeSecret','webhookConfigured','keyConfigured','killSwitch','controlReason']) assert(!providerText.includes(term), term);
     assert.equal(provider.data.professionalRegistration.available, false);
     assert.equal(provider.data.membershipEnrollment.available, false);
+    assert.equal(provider.data.aiAssistance.available, false);
 
     for (const route of ['/api/professional/auth/signup','/api/professional/pilot-program/application/save','/api/professional/pilot-program/application/submit','/api/professional/membership/checkout','/api/professional-membership-interest','/api/professional-launch-interest']) {
       const closed = await request(route, { method:'POST', headers:{'Content-Type':'application/json'}, body:'{}' });

@@ -20,14 +20,15 @@
     { "path": "public/professional-signup.html", "sha256": "3b1bde21948f0fb54c1a86285d0da7fc4c5b08f3017cf195cfc365a96023dbb3" },
     { "path": "public/program-status.js", "sha256": "873411bca9ce70a734aca1d96da1a5fa5632320a8a293d72647f2e2046c2d6fe" },
     { "path": "release-evidence/PRE_BUILD_SMARTER_JUSTICE_ROLE_AND_PRODUCT_SCOPE_LOCK.json", "sha256": "031e6a7ed5bd6d9754ebacd375ed9b9fc0c59d42bdd565650965fd14109fc635" },
+    { "path": "release-evidence/PRE128_PRODUCTION_AI_AVAILABILITY_CORRECTION.md", "sha256": "9a3b2af2d54ed68b609ddae0070d9b5a8d3df267d83f1580dc9543f0440bffa3" },
     { "path": "release-evidence/PRE128_RENDER_DEPLOYMENT_INCIDENT.md", "sha256": "3abc0690530b70fd4102f6c2a0a04fd3452bd7805eba35a71cd4b4d65c61f038" },
     { "path": "release-evidence/RELEASE_LEASE_AND_CONCURRENCY_RECEIPT.json", "sha256": "5ec97a74833399cfb8d6797c4ac0eeb89752a5bd6491cfd3dfcfd368aab29c06" },
     { "path": "scripts/deployment-doctor-pre128.js", "sha256": "928f336bdb1cc76f8787dcf8c8d1618de1a096006150c6b86c2cce09b78922d3" },
     { "path": "scripts/validate-pre128-deployment-kit.js", "sha256": "efdc5c4e52facf1c060aa418aa1fe4c1dab1fde3ac7867a0c6e2a61ab5028e6a" },
-    { "path": "strategy/PRE128_BUILDER_ANALYSIS_AND_HANDOFF.md", "sha256": "6da8f443ed95e1f65269200eccd88212a0838c72c790bfc89ebd188bb60744f0" },
+    { "path": "strategy/PRE128_BUILDER_ANALYSIS_AND_HANDOFF.md", "sha256": "bd2059cfcb216ad8bd6a74e480c37bf91428134d7f80a3af281478bf418dcec8" },
     { "path": "strategy/SMARTER_JUSTICE_STRATEGY_AND_PRODUCT_CONSTITUTION.md", "sha256": "0ddbe391d86c63e1a13ffc23601473e6c5b20b7145b19c0c39b78ff53b19581c" },
-    { "path": "tests/pre128-http-contract.test.js", "sha256": "93b46fbf1d8eb526eaec2ec48224a4eec5eb422ef920fd5994b988067b035a4b" },
-    { "path": "tests/pre128-system-qualification.test.js", "sha256": "a671d6e596565565114f0083969fbf34ef7ecb6feeff87ed1ce5ed555706857c" },
-    { "path": "tests/pre128-universal-successor.test.js", "sha256": "0f4771cb0fd5bd5e44a432d35b621b6a860e8b06cd03d6daa78b86dcd0a0a55c" }
+    { "path": "tests/pre128-http-contract.test.js", "sha256": "f75c7a5bccd3558439a9dad1326613febf5dd1f2c9c59ee4fc00b70c993a5dfd" },
+    { "path": "tests/pre128-system-qualification.test.js", "sha256": "2073d0566fd8d3d603f021e5793bae8ba975688a08327b25f3794b5323118abe" },
+    { "path": "tests/pre128-universal-successor.test.js", "sha256": "7f1e720a5b3b25ee32cb10bc660a6cf5d7886e8b828a0475f0e509760df5ecf8" }
   ]
 }

@@ -131,6 +131,12 @@ try {
   assert(server.includes('New professional registration and paid membership enrollment are temporarily unavailable'));
   assert(server.includes('SJ_PRE128_FORCE_PROFESSIONAL_ENROLLMENT_CLOSED'));
   assert(server.includes("return {handled:true,activated:false,closed:true"));
+  assert(server.includes('status.available&&status.providerVerified&&control.allowed'));
+  assert(server.includes('aiStatus.available&&aiStatus.providerVerified&&aiControl.allowed'));
+  const publicAiSmoke = server.slice(server.indexOf("pathName === '/api/public/ai-smoke'"), server.indexOf("/^\\/api\\/internal\\/ai-gateway"));
+  assert(publicAiSmoke.includes('Guided rules-based help remains available.'));
+  assert(!publicAiSmoke.includes('provider:result.provider'));
+  assert(!publicAiSmoke.includes('model:result.model'));
   assert(!server.includes('X-Smarter-Justice-Demo-Path'));
 
   const htmlFiles = walk(path.join(root, 'public'), ['.html']);

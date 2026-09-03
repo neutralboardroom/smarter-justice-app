@@ -58,11 +58,21 @@ async function response(pathname, options = {}) {
     assert.equal(item.result.status, 200);
     assert.deepEqual(Object.keys(item.data).sort(), ['app','ok','version']);
 
+    item = await response('/api/ai-status');
+    assert.equal(item.result.status, 200);
+    assert.equal(item.data.available, false);
+    assert.equal(item.data.rulesBasedHelpAvailable, true);
+
+    item = await response('/api/public-config');
+    assert.equal(item.result.status, 200);
+    assert.equal(item.data.assistance.aiAssistanceAvailable, false);
+
     item = await response('/api/public/provider-readiness');
     assert.equal(item.result.status, 200);
     assert.equal(item.data.professionalRegistration.available, false);
     assert.equal(item.data.membershipEnrollment.available, false);
     assert.equal(item.data.rulesBasedHelp.available, true);
+    assert.equal(item.data.aiAssistance.available, false);
     for (const key of ['stripeSecretConfigured','stripeWebhookConfigured','openAiKeyConfigured','openAiModelConfigured','openAiGlobalKillSwitch','paymentCapability']) assert.equal(key in item.data, false, key);
 
     item = await response('/api/public/legal-community-membership');
