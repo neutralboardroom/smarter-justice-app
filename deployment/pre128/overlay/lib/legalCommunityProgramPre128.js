@@ -7,10 +7,12 @@ function clone(value) { return JSON.parse(JSON.stringify(value)); }
 
 function cleanSourceLanguage(value) {
   return String(value || '')
-    .replace(/source-linked/gi, 'with links to original sources')
-    .replace(/responsible source/gi, 'original source')
-    .replace(/review boundary/gi, 'check-again date')
-    .replace(/review or expiry boundary/gi, 'date to check or remove the item')
+    .replace(/source-linked/gi, 'source-backed')
+    .replace(/\bresponsible sources\b/gi, 'original sources')
+    .replace(/\bresponsible source\b/gi, 'original source')
+    .replace(/\breview or expiry boundary\b/gi, 'date to check or remove the item')
+    .replace(/\breview boundary\b/gi, 'next review date')
+    .replace(/\ba original source\b/gi, 'an original source')
     .replace(/first[- ]value/gi, 'getting started');
 }
 

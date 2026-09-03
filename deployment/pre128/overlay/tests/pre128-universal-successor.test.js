@@ -64,7 +64,12 @@ try {
   assert(experience.forYourPractice.some(row => row.id === 'kings-civil-part-6-update-2026-08'));
   assert.equal(experience.privacyBoundary.privateUserMattersUsed, false);
   assert.equal(experience.gettingStarted.length, 4);
-  assert(!JSON.stringify(experience).includes('source-linked'));
+  const experienceCopy = JSON.stringify(experience);
+  assert(!experienceCopy.includes('source-linked'));
+  assert(!experienceCopy.includes('responsible source'));
+  assert(!experienceCopy.includes('review boundary'));
+  assert(!experienceCopy.includes('Pcheck-again date'));
+  assert(!experienceCopy.includes('a original source'));
 
   const initial = membership.updateForAccount('account-test', {
     homeCommunityId:'downtown-brooklyn',
@@ -144,6 +149,9 @@ try {
   for (const file of textFiles) {
     const source = fs.readFileSync(file, 'utf8');
     assert(!/\bPRE\d{2,4}\b/i.test(source), `public release identifier:${path.relative(root,file)}`);
+    assert(!/\b(?:a |build a |current |search |see |no current |complete )with original source links\b/i.test(source), `mechanical source wording:${path.relative(root,file)}`);
+    assert(!/Pcheck-again date/i.test(source), `substring copy corruption:${path.relative(root,file)}`);
+    assert(!/\ba original source\b/i.test(source), `original-source article:${path.relative(root,file)}`);
   }
   for (const file of htmlFiles) {
     const html = fs.readFileSync(file, 'utf8');

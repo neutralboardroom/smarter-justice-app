@@ -6,8 +6,8 @@
     { "path": "data/legalCommunityProgramPre128.js", "sha256": "1203dc469ac4243d97c3165f4972a0ff2b9f9a67c119989e6034231c824ee9a9" },
     { "path": "governance/PROFESSIONAL_COMMUNITY_CHARTER_PRE128.json", "sha256": "e2d3007e11ecaf061ed5d662289ac332bcc39cff84b955a7ae56d042940970f5" },
     { "path": "lib/legalCommunityMembershipPre128.js", "sha256": "df002f144e1820688d03c226ab57e6b596cc5cc71d9a48a5e85f57bc352a8985" },
-    { "path": "lib/legalCommunityProgramPre128.js", "sha256": "7105db9e736f50923e308fbc610dcf94f93aadb210a5ae15096fac95fd262589" },
-    { "path": "lib/publicLegalAreasPre128.js", "sha256": "f638d51867a258fea6c65309f553ae89a87e8e93dad143d63c4a03092c7563df" },
+    { "path": "lib/legalCommunityProgramPre128.js", "sha256": "63a51f9d701eed61e7c22f69d4575e1c9dd3fb03c3c424c2d313b57b05832169" },
+    { "path": "lib/publicLegalAreasPre128.js", "sha256": "3851e96e2d27e6e5846f1d651caaafa66bb88e851e176540a820a7a958529f19" },
     { "path": "public/attorney-partner-tour.html", "sha256": "9e519f61e614f83dd49318200e7e858af9574a844431472e423583a0915d590e" },
     { "path": "public/community-experience.js", "sha256": "305ad2b2f6a552d46e2cc5bacb8e2d1ccd731b7cc6ce2c17b3e366268ef6be4d" },
     { "path": "public/es/comunidad-profesional.html", "sha256": "27540ab79683470c732fcf7cc6b01636aa26ce17861dd0a052ed45fc051edb83" },
@@ -21,14 +21,15 @@
     { "path": "public/program-status.js", "sha256": "873411bca9ce70a734aca1d96da1a5fa5632320a8a293d72647f2e2046c2d6fe" },
     { "path": "release-evidence/PRE_BUILD_SMARTER_JUSTICE_ROLE_AND_PRODUCT_SCOPE_LOCK.json", "sha256": "031e6a7ed5bd6d9754ebacd375ed9b9fc0c59d42bdd565650965fd14109fc635" },
     { "path": "release-evidence/PRE128_PRODUCTION_AI_AVAILABILITY_CORRECTION.md", "sha256": "9a3b2af2d54ed68b609ddae0070d9b5a8d3df267d83f1580dc9543f0440bffa3" },
+    { "path": "release-evidence/PRE128_PUBLIC_COPY_TRANSFORMATION_CORRECTION.md", "sha256": "28458a26581681d40ea75855771b74f5fde218cd04c93a9b28e60397df1c001f" },
     { "path": "release-evidence/PRE128_RENDER_DEPLOYMENT_INCIDENT.md", "sha256": "3abc0690530b70fd4102f6c2a0a04fd3452bd7805eba35a71cd4b4d65c61f038" },
     { "path": "release-evidence/RELEASE_LEASE_AND_CONCURRENCY_RECEIPT.json", "sha256": "5ec97a74833399cfb8d6797c4ac0eeb89752a5bd6491cfd3dfcfd368aab29c06" },
     { "path": "scripts/deployment-doctor-pre128.js", "sha256": "928f336bdb1cc76f8787dcf8c8d1618de1a096006150c6b86c2cce09b78922d3" },
     { "path": "scripts/validate-pre128-deployment-kit.js", "sha256": "efdc5c4e52facf1c060aa418aa1fe4c1dab1fde3ac7867a0c6e2a61ab5028e6a" },
-    { "path": "strategy/PRE128_BUILDER_ANALYSIS_AND_HANDOFF.md", "sha256": "bd2059cfcb216ad8bd6a74e480c37bf91428134d7f80a3af281478bf418dcec8" },
+    { "path": "strategy/PRE128_BUILDER_ANALYSIS_AND_HANDOFF.md", "sha256": "773f52aab8c87ed166355b60c9dd174ca6c09a4107b3373f079ac7081558b4c7" },
     { "path": "strategy/SMARTER_JUSTICE_STRATEGY_AND_PRODUCT_CONSTITUTION.md", "sha256": "0ddbe391d86c63e1a13ffc23601473e6c5b20b7145b19c0c39b78ff53b19581c" },
     { "path": "tests/pre128-http-contract.test.js", "sha256": "f75c7a5bccd3558439a9dad1326613febf5dd1f2c9c59ee4fc00b70c993a5dfd" },
     { "path": "tests/pre128-system-qualification.test.js", "sha256": "2073d0566fd8d3d603f021e5793bae8ba975688a08327b25f3794b5323118abe" },
-    { "path": "tests/pre128-universal-successor.test.js", "sha256": "7f1e720a5b3b25ee32cb10bc660a6cf5d7886e8b828a0475f0e509760df5ecf8" }
+    { "path": "tests/pre128-universal-successor.test.js", "sha256": "3568482f9aeb1a1c92349e1e9c68104e807d8d4e6b3cf51d1b751679c215460e" }
   ]
 }

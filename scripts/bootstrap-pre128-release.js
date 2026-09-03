@@ -121,9 +121,12 @@ function transformPublicText(sourceText) {
     .replace(/\$120\/year/gi, '$100/year').replace(/\$120\/año/gi, '$100/año').replace(/\$120 annually/gi, '$100 annually')
     .replace(/\$12\/month/gi, '$10/month').replace(/\$12\/mo\b/gi, '$10/mo').replace(/\$12\/mes/gi, '$10/mes').replace(/\$12 monthly/gi, '$10 monthly')
     .replace(/save \$24/gi, 'save $20').replace(/ahorra \$24/gi, 'ahorra $20')
-    .replace(/source-linked/gi, 'with original source links')
-    .replace(/responsible source/gi, 'original source')
-    .replace(/review boundary/gi, 'check-again date')
+    .replace(/source-linked/gi, 'source-backed')
+    .replace(/\bresponsible sources\b/gi, 'original sources')
+    .replace(/\bresponsible source\b/gi, 'original source')
+    .replace(/\bPreview boundary\b/g, 'Preview limits')
+    .replace(/\breview boundary\b/gi, 'next review date')
+    .replace(/\ba original source\b/gi, 'an original source')
     .replace(/currentness basis/gi, 'source and review date')
     .replace(/\bMember Care\b/g, 'account support')
     .replace(/owner workbench/gi, 'administration')
@@ -318,17 +321,17 @@ for (const relative of filesUnder(publicRoot)) {
   if (relative === 'community-resources.js') value = value.replace('data?.validation?.ok', 'data?.verified');
   if (relative === 'index.html') {
     value = value.replace('Join your local Smarter Justice legal community.', 'Explore your local Smarter Justice legal community.')
-      .replace('Keep your public profile free. Membership adds with original source links local intelligence, community participation, consultation and inquiry tools, review requests, follow-up, and shared firm workflows.', 'Keep your public profile free. Explore local information, original sources, a practice filter, and a shareable brief. Paid membership and checkout are not open.')
+      .replace('Keep your public profile free. Membership adds source-backed local intelligence, community participation, consultation and inquiry tools, review requests, follow-up, and shared firm workflows.', 'Keep your public profile free. Explore local information, original sources, a practice filter, and a shareable brief. Paid membership and checkout are not open.')
       .replace('Membership buys participation and tools—not credentials, endorsement, guaranteed clients, or hidden organic ranking.', 'Future membership will buy participation and tools—not credentials, endorsement, guaranteed clients, or hidden organic ranking. No payment is accepted today.')
       .replace('See the member experience', 'See the free community preview');
   }
   if (relative === 'communities.html') {
     value = value.replace('Use the working community home.', 'Explore the free professional preview.')
-      .replace('Follow with original source links local activity, filter by practice, strengthen your professional presence, find ways to participate, and copy a current LinkedIn brief.', 'Review local activity with original sources, filter by practice, find public participation paths, and copy a current LinkedIn brief. Paid membership is not open.')
+      .replace('Follow source-backed local activity, filter by practice, strengthen your professional presence, find ways to participate, and copy a current LinkedIn brief.', 'Review local activity with original sources, filter by practice, find public participation paths, and copy a current LinkedIn brief. Paid membership is not open.')
       .replace('Open the professional community home', 'Open the free professional preview');
   }
   if (relative === 'communities/downtown-brooklyn.html') {
-    value = value.replace('Current with original source links activity', 'Current local activity with original sources')
+    value = value.replace('Current source-backed activity', 'Current local activity with original sources')
       .replace('See the professional member home', 'See the free professional preview')
       .replace('Keep the public profile free. Founding membership adds local intelligence, practice focus, participation, professional presence, and optional practice tools.', 'Keep the public profile free. Explore local information, a practice filter, public participation paths, and a shareable brief without payment. Paid membership is not open.')
       .replace('Open the working member home', 'Open the free professional preview')

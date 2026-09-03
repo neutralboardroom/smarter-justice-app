@@ -8,7 +8,7 @@ function clean(value) {
     .replace(/\bportal\b/gi, 'legal area')
     .replace(/\bportals\b/gi, 'legal areas')
     .replace(/cross-legal area/gi, 'cross-area')
-    .replace(/source-linked/gi, 'with original source links')
+    .replace(/source-linked/gi, 'source-backed')
     .replace(/currentness/gi, 'last-checked status')
     .replace(/\s+/g, ' ')
     .trim();
