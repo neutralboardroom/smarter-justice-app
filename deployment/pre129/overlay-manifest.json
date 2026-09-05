@@ -4,16 +4,16 @@
   "baseRelease": "v2.0.0-pre128",
   "files": [
     {
-      "path": "NEXT_VERSION_IMPROVEMENT_LIST.md",
-      "sha256": "3bf338286a5a07ed77b2c89e5e795772954b2eb1329b3e068040f7ba7c799c4d"
-    },
-    {
       "path": "governance/PROFESSIONAL_MEMBERSHIP_LAUNCH_ACCEPTANCE_PRE129.json",
       "sha256": "9d3e1e741163963ec74fabd4cb0c14bdcd2b768374a1aa3cdd0283b2500ad5e4"
     },
     {
       "path": "lib/professionalLaunchGatePre129.js",
       "sha256": "e36090d450cd632cd139113643c447b86ab96823227e1a4973556fd612d0010c"
+    },
+    {
+      "path": "NEXT_VERSION_IMPROVEMENT_LIST.md",
+      "sha256": "3bf338286a5a07ed77b2c89e5e795772954b2eb1329b3e068040f7ba7c799c4d"
     },
     {
       "path": "release-evidence/PRE129_DEPLOYMENT_AND_ROLLBACK.md",
