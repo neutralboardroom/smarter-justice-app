@@ -29,7 +29,7 @@
     },
     {
       "path": "scripts/validate-pre129-deployment-kit.js",
-      "sha256": "174fc2ccb7b8fe63dbbfba3c5c87582412f2726e26434247b5c1d3410318f883"
+      "sha256": "34c5e921112ee4e8962d0e1d6bb40c3f6bf8a301495138a20207b2fad8916e6b"
     },
     {
       "path": "tests/pre129-launch-readiness.test.js",
