@@ -1,0 +1,53 @@
+{
+  "schemaVersion": "smarter-justice.professional-membership-launch-acceptance.pre129.v1",
+  "release": "v2.0.0-pre129",
+  "recordedAt": "2026-09-05T23:45:00.000Z",
+  "ownerDirection": {
+    "launchReadinessRequired": true,
+    "paidMembershipMayOpenOnlyAfterAllGatesPass": true,
+    "linkedinProspectingMayBeginOnlyWithTruthfulCurrentLandingAndNoUnsupportedPaidClaim": true
+  },
+  "publicProfessionalPreview": {
+    "available": true,
+    "paid": false,
+    "prospectingLandingReady": true,
+    "landingPath": "/attorney-partner-tour.html"
+  },
+  "professionalRegistration": {
+    "requestedOpen": false,
+    "transactionalEmailDomain": "smarterjustice.com",
+    "emailProviderDomainCreated": true,
+    "emailProviderDomainVerified": false,
+    "verificationAndRecoveryE2EPassed": false,
+    "abuseAndEnumerationTestsPassed": false,
+    "open": false
+  },
+  "paidMembership": {
+    "requestedOpen": false,
+    "smarterJusticeStripeAccountAuthorityVerified": false,
+    "stripeProductsAndPricesMapped": false,
+    "signedWebhookLifecyclePassed": false,
+    "entitlementGrantRevokePassed": false,
+    "monthlyAnnualCadencePassed": false,
+    "seatLimitsPassed": false,
+    "invoiceRenewalCancellationRefundPassed": false,
+    "firstValueAfterPaymentPassed": false,
+    "memberSupportOwnerAccepted": false,
+    "bilingualPurchasePathAccepted": false,
+    "professionalResponsibilityReviewAccepted": false,
+    "ownerLaunchGoRecorded": false,
+    "open": false
+  },
+  "isolation": {
+    "franklinNavigatorStripeExcluded": true,
+    "franklinNavigatorEmailDomainExcluded": true,
+    "crossProductPaymentOrEmailReuseByInference": false
+  },
+  "releasePolicy": {
+    "environmentVariableCanClose": true,
+    "environmentVariableCanOpen": false,
+    "providerConfigurationAloneCanOpen": false,
+    "sourceControlledAcceptanceRequired": true,
+    "newReleaseRequiredToChangeRequestedOpenToTrue": true
+  }
+}
