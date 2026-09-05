@@ -1,6 +1,8 @@
 'use strict';
 
 const assert = require('assert');
+const fs = require('fs');
+const path = require('path');
 const gate = require('../lib/professionalLaunchGatePre129');
 
 const validation = gate.validate();
@@ -13,6 +15,11 @@ assert.equal(validation.state.paidEnrollmentOpen, false);
 assert.equal(validation.state.checkoutOpen, false);
 assert.equal(validation.state.paidEntitlementsMayActivate, false);
 assert.equal(validation.state.environmentVariableCanOpen, false);
+
+const server = fs.readFileSync(path.join(__dirname, '..', 'server.js'), 'utf8');
+assert(server.includes("process.env.NODE_ENV==='test'&&!process.env.RENDER&&envFlag('SJ_PRE129_TEST_ALLOW_PROFESSIONAL_REGISTRATION')"));
+assert(server.includes("const pre129PaidEnrollmentClosed=pre129ForceClosed||!pre129LaunchState.paidEnrollmentOpen"));
+assert(!server.includes("pre129TestRegistrationBypass&&!pre129LaunchState.paidEnrollmentOpen"));
 
 const safe = gate.publicStatus();
 assert.equal(safe.linkedinProspecting.available, true);
