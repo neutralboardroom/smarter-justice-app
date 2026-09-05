@@ -12,7 +12,7 @@ const gate = require('../lib/professionalLaunchGatePre129');
 assert.equal(marker.release, 'v2.0.0-pre129');
 assert.equal(marker.baseRelease, 'v2.0.0-pre128');
 assert.equal(marker.productAuthority, 'SMARTER_JUSTICE_ONLY');
-assert.equal(marker.professionalRegistrationOpen, false);
+assert.equal(marker.newProfessionalRegistrationOpen, false);
 assert.equal(marker.paidMembershipEnrollmentOpen, false);
 assert.equal(marker.checkoutOpen, false);
 assert.equal(marker.environmentVariableCanOpen, false);
