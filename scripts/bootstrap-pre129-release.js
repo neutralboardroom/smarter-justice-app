@@ -165,12 +165,13 @@ fs.writeFileSync(serverPath, server);
 
 const packagePath = path.join(target, 'package.json');
 const runtimePackage = JSON.parse(fs.readFileSync(packagePath, 'utf8'));
-const retainedTest = runtimePackage.scripts?.test || 'npm run qualify:pre128';
+const retainedSystemTest = runtimePackage.scripts?.['test:pre128:system'] || 'node tests/pre128-system-qualification.test.js';
+const retainedSecurityTest = runtimePackage.scripts?.['test:security'] || 'node tests/security-boundaries-v177.test.js && node tests/security-readiness.test.js';
 runtimePackage.name = 'smarter-justice-pre129-runtime';
 runtimePackage.version = '2.0.0-pre129';
 runtimePackage.description = 'Smarter Justice launch-readiness successor with source-controlled professional registration and paid-membership gates.';
 runtimePackage.scripts = runtimePackage.scripts || {};
-runtimePackage.scripts['test:pre128:retained'] = retainedTest;
+runtimePackage.scripts['test:pre128:retained'] = `${retainedSystemTest} && ${retainedSecurityTest}`;
 runtimePackage.scripts['test:pre129:launch'] = 'node tests/pre129-launch-readiness.test.js';
 runtimePackage.scripts['deployment:validate'] = 'node scripts/validate-pre129-deployment-kit.js';
 runtimePackage.scripts['deployment:doctor'] = 'node scripts/deployment-doctor-pre129.js';
