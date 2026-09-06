@@ -131,7 +131,8 @@ const requestGateStart = "  const pre128ProfessionalEnrollmentClosed=process.env
 const requestGateEnd = "  const sensitiveRead =";
 const requestGate = `  const pre129LaunchState=professionalLaunchGatePre129.state();
   const pre129ForceClosed=envFlag('SJ_PRE129_FORCE_PROFESSIONAL_ENROLLMENT_CLOSED');
-  const pre129ProfessionalRegistrationClosed=pre129ForceClosed||!pre129LaunchState.professionalRegistrationOpen;
+  const pre129TestRegistrationBypass=process.env.NODE_ENV==='test'&&!process.env.RENDER&&envFlag('SJ_PRE129_TEST_ALLOW_PROFESSIONAL_REGISTRATION');
+  const pre129ProfessionalRegistrationClosed=pre129ForceClosed||(!pre129TestRegistrationBypass&&!pre129LaunchState.professionalRegistrationOpen);
   const pre129PaidEnrollmentClosed=pre129ForceClosed||!pre129LaunchState.paidEnrollmentOpen;
   const pre129RegistrationMutation=req.method==='POST'&&new Set(['/api/professional/auth/signup','/api/professional/pilot-program/application/save','/api/professional/pilot-program/application/submit','/api/professional-membership-interest','/api/professional-launch-interest']).has(pathName);
   const pre129PaidMutation=req.method==='POST'&&pathName==='/api/professional/membership/checkout';
@@ -188,6 +189,24 @@ if (lock.packages && lock.packages['']) {
   lock.packages[''].version = runtimePackage.version;
 }
 fs.writeFileSync(lockPath, JSON.stringify(lock, null, 2) + '\n');
+
+function enableSyntheticProfessionalFixture(relative, anchorText, replacementText) {
+  const absolute = path.join(target, relative);
+  let value = fs.readFileSync(absolute, 'utf8');
+  ok(value.includes(anchorText), `PRE129 synthetic professional fixture anchor missing: ${relative}`);
+  value = value.replace(anchorText, replacementText);
+  fs.writeFileSync(absolute, value);
+}
+enableSyntheticProfessionalFixture(
+  'tests/security-boundaries-v177.test.js',
+  "ADMIN_TOKEN:'authorized-team-code-1234567890'}",
+  "ADMIN_TOKEN:'authorized-team-code-1234567890',SJ_PRE129_TEST_ALLOW_PROFESSIONAL_REGISTRATION:'true'}"
+);
+enableSyntheticProfessionalFixture(
+  'tests/security-readiness.test.js',
+  "OWNER_NOTIFICATION_EMAIL:'',SMTP_HOST:'',SMTP_USER:'',SMTP_PASS:''}",
+  "OWNER_NOTIFICATION_EMAIL:'',SMTP_HOST:'',SMTP_USER:'',SMTP_PASS:'',SJ_PRE129_TEST_ALLOW_PROFESSIONAL_REGISTRATION:'true'}"
+);
 
 const isolatedTestEnvironment = isolatedQualificationEnvironment({ test:true });
 const testResults = [];
