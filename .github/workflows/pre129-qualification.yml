@@ -1,0 +1,123 @@
+name: PRE129 launch-readiness qualification
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'deployment/pre129/**'
+      - 'scripts/bootstrap-pre129-release.js'
+      - '.github/workflows/pre129-qualification.yml'
+  push:
+    branches:
+      - smarter-justice-pre129-20260906
+    paths:
+      - 'deployment/pre129/**'
+      - 'scripts/bootstrap-pre129-release.js'
+      - '.github/workflows/pre129-qualification.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pre129-qualification-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  qualify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - name: Checkout exact candidate source
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+
+      - name: Use Node 22
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+        with:
+          node-version: '22.x'
+          package-manager-cache: false
+
+      - name: Install bootstrap dependencies without lifecycle scripts
+        env:
+          npm_config_registry: https://registry.npmjs.org/
+          npm_config_audit: 'false'
+          npm_config_fund: 'false'
+        run: npm ci --ignore-scripts --no-audit --no-fund
+
+      - name: Build exact PRE129 candidate from PRE128
+        env:
+          CI: 'true'
+          npm_config_registry: https://registry.npmjs.org/
+          npm_config_audit: 'false'
+          npm_config_fund: 'false'
+        run: node scripts/bootstrap-pre129-release.js
+
+      - name: Run complete PRE129 candidate qualification
+        working-directory: .runtime/pre129-live
+        run: npm test
+
+      - name: Inspect candidate launch gate
+        working-directory: .runtime/pre129-live
+        run: npm run deployment:doctor
+
+      - name: Require fail-closed commerce and cross-product isolation
+        working-directory: .runtime/pre129-live
+        run: |
+          node - <<'NODE'
+          const fs=require('fs');
+          const gate=require('./lib/professionalLaunchGatePre129');
+          const state=gate.state();
+          if(state.professionalRegistrationOpen||state.paidEnrollmentOpen||state.checkoutOpen) throw new Error('PRE129 launch gate unexpectedly opened.');
+          const receipt=JSON.parse(fs.readFileSync('PRE129_COMPLETION_RECEIPT.json','utf8'));
+          if(receipt.franklinProviderReuse!==false) throw new Error('Franklin provider isolation failed.');
+          if(receipt.environmentVariableCanOpen!==false) throw new Error('Environment variable opening is prohibited.');
+          console.log('PRE129 fail-closed launch and provider isolation qualified');
+          NODE
+
+      - name: Create deterministic PRE129 runtime ZIP
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import zipfile, hashlib, json
+          root=Path('.runtime/pre129-live')
+          out=Path('SMARTER_JUSTICE__V2.0.0-PRE129__LAUNCH_READINESS_SOURCE_CANDIDATE__2026-09-06.zip')
+          excluded={'node_modules'}
+          files=[]
+          for p in sorted(root.rglob('*')):
+              if not p.is_file():
+                  continue
+              rel=p.relative_to(root).as_posix()
+              if any(part in excluded for part in p.relative_to(root).parts):
+                  continue
+              files.append((p,rel))
+          with zipfile.ZipFile(out,'w',compression=zipfile.ZIP_DEFLATED,compresslevel=9) as z:
+              for p,rel in files:
+                  info=zipfile.ZipInfo(rel,date_time=(2026,9,6,0,0,0))
+                  info.compress_type=zipfile.ZIP_DEFLATED
+                  info.external_attr=(0o100644 & 0xFFFF) << 16
+                  z.writestr(info,p.read_bytes(),compress_type=zipfile.ZIP_DEFLATED,compresslevel=9)
+          digest=hashlib.sha256(out.read_bytes()).hexdigest()
+          attestation={
+              'file':out.name,
+              'bytes':out.stat().st_size,
+              'sha256':digest,
+              'candidate':'v2.0.0-pre129',
+              'deploymentAuthorized':False,
+              'productionPredecessorCommit':'962db2fe8a0b66dff2ad58bda75caf9e983bf45a',
+              'productionRollbackDeployment':'dep-dacq74vavr4c739dmipg'
+          }
+          Path('PRE129_RELEASE_ATTESTATION.json').write_text(json.dumps(attestation,indent=2)+'\n')
+          print(json.dumps(attestation,indent=2))
+          PY
+
+      - name: Upload exact PRE129 candidate and attestation
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: smarter-justice-pre129-launch-readiness
+          path: |
+            SMARTER_JUSTICE__V2.0.0-PRE129__LAUNCH_READINESS_SOURCE_CANDIDATE__2026-09-06.zip
+            PRE129_RELEASE_ATTESTATION.json
+          if-no-files-found: error
+          retention-days: 30

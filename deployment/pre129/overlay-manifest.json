@@ -1,0 +1,39 @@
+{
+  "schemaVersion": "smarter-justice.pre129.overlay-manifest.v1",
+  "release": "v2.0.0-pre129",
+  "baseRelease": "v2.0.0-pre128",
+  "files": [
+    {
+      "path": "governance/PROFESSIONAL_MEMBERSHIP_LAUNCH_ACCEPTANCE_PRE129.json",
+      "sha256": "9d3e1e741163963ec74fabd4cb0c14bdcd2b768374a1aa3cdd0283b2500ad5e4"
+    },
+    {
+      "path": "lib/professionalLaunchGatePre129.js",
+      "sha256": "e36090d450cd632cd139113643c447b86ab96823227e1a4973556fd612d0010c"
+    },
+    {
+      "path": "NEXT_VERSION_IMPROVEMENT_LIST.md",
+      "sha256": "3bf338286a5a07ed77b2c89e5e795772954b2eb1329b3e068040f7ba7c799c4d"
+    },
+    {
+      "path": "release-evidence/PRE129_DEPLOYMENT_AND_ROLLBACK.md",
+      "sha256": "39c7fb9b178673283a92837011a1588a2b077dfa4347e57c49e8233ab1e467e0"
+    },
+    {
+      "path": "release-evidence/PRE129_LAUNCH_PROVIDER_RECONCILIATION.md",
+      "sha256": "a664ebfe2202fe2498e673f1d00a3cfd8417b5c57177e81c51c0d2cce3853123"
+    },
+    {
+      "path": "scripts/deployment-doctor-pre129.js",
+      "sha256": "dc6bcd13a7a5c9dc0aaad40b21e0b23ca68074cbb13f614696ced0fc1cf1a63e"
+    },
+    {
+      "path": "scripts/validate-pre129-deployment-kit.js",
+      "sha256": "34c5e921112ee4e8962d0e1d6bb40c3f6bf8a301495138a20207b2fad8916e6b"
+    },
+    {
+      "path": "tests/pre129-launch-readiness.test.js",
+      "sha256": "2cfb0f669b20dedad4924d8aa7608d6d8234af3b3d5753736a6da9f6eb29abc5"
+    }
+  ]
+}
