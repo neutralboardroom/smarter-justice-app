@@ -234,7 +234,7 @@ write('PRE129_BUILD_FILE_MANIFEST.json', JSON.stringify({
 
 const completionReceipt = {
   schemaVersion:'smarter-justice.pre129.completion-receipt.v1',
-  releaseState:'QUALIFIED_SUCCESSOR',
+  releaseState:'SOURCE_QUALIFIED',
   release, baseRelease, candidateId, ownerCommandId,
   recordedAt, productAuthority:'SMARTER_JUSTICE_ONLY',
   sourceCommit, sourceTree, predecessorArtifactSha256,
@@ -279,7 +279,7 @@ const marker = {
   providerMutation:false,
   stripeMutation:false,
   productionDeploymentAuthorized:false,
-  qualificationState:'QUALIFIED_SUCCESSOR',
+  qualificationState:'SOURCE_QUALIFIED',
   artifactSha256:artifactHash,
   runtimeFiles:filesUnder(target).length,
   preparedAt:recordedAt
@@ -287,4 +287,4 @@ const marker = {
 write('.pre129-render-bootstrap.json', JSON.stringify(marker, null, 2) + '\n');
 
 run('PRE129 post-seal validation', process.execPath, [path.join(target, 'scripts', 'validate-pre129-deployment-kit.js')], target, isolatedTestEnvironment);
-console.log(`[PRE129 RELEASE] QUALIFIED_SUCCESSOR prepared artifact=${artifactHash}; professional preview is prospecting-ready; registration, paid enrollment, and checkout remain closed.`);
+console.log(`[PRE129 RELEASE] SOURCE_QUALIFIED candidate prepared artifact=${artifactHash}; professional preview is prospecting-ready; registration, paid enrollment, and checkout remain closed.`);
